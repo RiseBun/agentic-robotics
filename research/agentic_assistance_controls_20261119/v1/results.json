@@ -1,0 +1,54 @@
+[
+  {
+    "mode": "stop",
+    "seed": 77,
+    "passed": true,
+    "episode_id": "2bd2651cc15a8feb7361da8fb6232656",
+    "state_at_terminal": {
+      "status": "stopped",
+      "goal": {
+        "holding": "red cube"
+      },
+      "used": {
+        "decisions": 2,
+        "calls": 0,
+        "motion_steps": 0,
+        "idle_steps": 37,
+        "wall_seconds": 3.7417932969983667
+      }
+    },
+    "models": 2,
+    "control_scope": "no robot movement requested; physical owner-confirmed hold and stale workbench response fencing only",
+    "closed": true,
+    "source_unchanged": true
+  },
+  {
+    "mode": "goal_change",
+    "seed": 78,
+    "passed": true,
+    "episode_id": "60c3e2a88a00b77198e6dbbd52d7cb4c",
+    "state_at_terminal": {
+      "status": "awaiting_user",
+      "assistance": {
+        "origin": "model",
+        "message": "新目标需要绿色方块证据",
+        "block": null,
+        "hold_confirmed": true
+      },
+      "goal": {
+        "holding": "green cube"
+      },
+      "used": {
+        "decisions": 4,
+        "calls": 0,
+        "motion_steps": 0,
+        "idle_steps": 75,
+        "wall_seconds": 5.419159562094137
+      }
+    },
+    "models": 4,
+    "control_scope": "no robot movement requested; physical owner-confirmed hold and stale workbench response fencing only",
+    "closed": true,
+    "source_unchanged": true
+  }
+]

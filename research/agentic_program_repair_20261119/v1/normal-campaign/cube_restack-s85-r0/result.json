@@ -1,0 +1,22 @@
+{
+  "trial_id": "cube_restack-s85-r0",
+  "task": "cube_restack",
+  "seed": 85,
+  "repeat": 0,
+  "text": "把绿色方块从红色方块上移开，再将红色方块放在绿色方块上，释放后空夹爪。",
+  "outcome": "infrastructure_error",
+  "episode_id": "bcae11bed9e94ad395af227e0a74b9fe",
+  "started_at": 1795142669.735,
+  "error": "fetch failed",
+  "close_error": "fetch failed",
+  "ended_at": 1795143274.113,
+  "total_seconds": 604.3780000209808,
+  "used_at_close": {
+    "decisions": 6,
+    "calls": 20,
+    "motion_steps": 336,
+    "idle_steps": 1135,
+    "wall_seconds": 76.33752015908249
+  },
+  "source_unchanged": true
+}

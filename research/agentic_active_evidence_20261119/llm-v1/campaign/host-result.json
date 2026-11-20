@@ -1,0 +1,77 @@
+{
+  "planned": 8,
+  "results": [
+    {
+      "pair_id": "stack-s61",
+      "variant": "baseline",
+      "task": "cube_stack",
+      "seed": 61,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_active_evidence_20261119\\llm-v1\\campaign\\stack-s61\\baseline"
+    },
+    {
+      "pair_id": "stack-s61",
+      "variant": "candidate",
+      "task": "cube_stack",
+      "seed": 61,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_active_evidence_20261119\\llm-v1\\campaign\\stack-s61\\candidate"
+    },
+    {
+      "pair_id": "restack-s61",
+      "variant": "candidate",
+      "task": "cube_restack",
+      "seed": 61,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_active_evidence_20261119\\llm-v1\\campaign\\restack-s61\\candidate"
+    },
+    {
+      "pair_id": "restack-s61",
+      "variant": "baseline",
+      "task": "cube_restack",
+      "seed": 61,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_active_evidence_20261119\\llm-v1\\campaign\\restack-s61\\baseline"
+    },
+    {
+      "pair_id": "stack-s62",
+      "variant": "baseline",
+      "task": "cube_stack",
+      "seed": 62,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_active_evidence_20261119\\llm-v1\\campaign\\stack-s62\\baseline"
+    },
+    {
+      "pair_id": "stack-s62",
+      "variant": "candidate",
+      "task": "cube_stack",
+      "seed": 62,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_active_evidence_20261119\\llm-v1\\campaign\\stack-s62\\candidate"
+    },
+    {
+      "pair_id": "restack-s62",
+      "variant": "candidate",
+      "task": "cube_restack",
+      "seed": 62,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_active_evidence_20261119\\llm-v1\\campaign\\restack-s62\\candidate"
+    },
+    {
+      "pair_id": "restack-s62",
+      "variant": "baseline",
+      "task": "cube_restack",
+      "seed": 62,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_active_evidence_20261119\\llm-v1\\campaign\\restack-s62\\baseline"
+    }
+  ]
+}

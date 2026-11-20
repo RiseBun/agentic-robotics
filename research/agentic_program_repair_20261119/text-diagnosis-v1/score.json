@@ -1,0 +1,32 @@
+{
+  "conditions": [
+    {
+      "condition": "compact",
+      "preflight": "valid",
+      "elapsed_ms": 8079,
+      "api_calls": 0
+    },
+    {
+      "condition": "full_text",
+      "preflight": "invalid",
+      "diagnostic": {
+        "kind": "unbound_name",
+        "name": "nz",
+        "line": 8,
+        "column": 16,
+        "available_locals": [
+          "g",
+          "p",
+          "q",
+          "x",
+          "y",
+          "z"
+        ],
+        "scope": "Names bound at this expression; no inferred replacement or robot action"
+      },
+      "elapsed_ms": 8692,
+      "api_calls": 0
+    }
+  ],
+  "scope": "One request per condition, no physical execution, not a causal comparison"
+}

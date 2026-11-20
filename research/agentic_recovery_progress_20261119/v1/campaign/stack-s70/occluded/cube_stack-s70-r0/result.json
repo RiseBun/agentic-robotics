@@ -1,0 +1,97 @@
+{
+  "trial_id": "cube_stack-s70-r0",
+  "task": "cube_stack",
+  "seed": 70,
+  "repeat": 0,
+  "text": "把红色方块放到绿色方块上，释放后空夹爪。",
+  "outcome": "awaiting_user",
+  "episode_id": "e3dea08ef510c6c4ff5f1c1adbbc8f9b",
+  "started_at": 1795109679.292,
+  "terminal_at": 1795109786.966,
+  "policy_seconds": 107.67400002479553,
+  "public_at_decision": {
+    "status": "unknown",
+    "evidence": [
+      {
+        "status": "verified",
+        "evidence_ref": "frame-001556.npz",
+        "captured_at": 1795109773.2587597,
+        "gripper_width_m": 0.07998284700569439,
+        "command": "open",
+        "reason": "public_open_aperture; bounded_cube_scope"
+      },
+      {
+        "relation": [
+          "red cube",
+          "green cube"
+        ],
+        "samples": [
+          "unknown",
+          "unknown",
+          "unknown",
+          "unknown",
+          "unknown"
+        ],
+        "geometry": [],
+        "window_steps": 22,
+        "scope": "visible geometry after release; not contact truth"
+      }
+    ],
+    "evidence_ref": "frame-001556.npz",
+    "captured_at": 1795109773.2587597,
+    "control_step": 1556
+  },
+  "used_at_decision": {
+    "decisions": 10,
+    "calls": 10,
+    "motion_steps": 214,
+    "idle_steps": 1618,
+    "wall_seconds": 100.5511327541899
+  },
+  "public_after_settle": {
+    "status": "unknown",
+    "evidence": [
+      {
+        "status": "verified",
+        "evidence_ref": "frame-001855.npz",
+        "captured_at": 1795109788.1933622,
+        "gripper_width_m": 0.07999410855806424,
+        "command": "open",
+        "reason": "public_open_aperture; bounded_cube_scope"
+      },
+      {
+        "relation": [
+          "red cube",
+          "green cube"
+        ],
+        "samples": [
+          "unknown",
+          "unknown",
+          "unknown",
+          "unknown",
+          "unknown"
+        ],
+        "geometry": [],
+        "window_steps": 20,
+        "scope": "visible geometry after release; not contact truth"
+      }
+    ],
+    "evidence_ref": "frame-001855.npz",
+    "captured_at": 1795109788.1933622,
+    "control_step": 1855
+  },
+  "private_scoring": "pending_offline",
+  "feedback_categories": [
+    "invalid_program"
+  ],
+  "ended_at": 1795109789.288,
+  "total_seconds": 109.99600005149841,
+  "used_at_close": {
+    "decisions": 10,
+    "calls": 10,
+    "motion_steps": 214,
+    "idle_steps": 1657,
+    "wall_seconds": 102.48847911600024
+  },
+  "source_unchanged": true
+}

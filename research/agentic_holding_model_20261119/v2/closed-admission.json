@@ -1,0 +1,18 @@
+[
+  {
+    "pair_id": "stack-s70",
+    "variant": "recoverable",
+    "task": "cube_stack",
+    "seed": 70,
+    "episode_id": "88d3cfe4c53523af12e9c3bedce678d1",
+    "outcome": "completed"
+  },
+  {
+    "pair_id": "stack-s70",
+    "variant": "occluded",
+    "task": "cube_stack",
+    "seed": 70,
+    "episode_id": "643144b61bce80ec45bb2d8ca0445940",
+    "outcome": "needs_attention"
+  }
+]

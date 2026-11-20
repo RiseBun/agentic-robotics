@@ -1,0 +1,30 @@
+{
+  "tasks": [
+    "cube_lifting",
+    "cube_stack",
+    "cube_restack"
+  ],
+  "seeds": [
+    83
+  ],
+  "repeats": 1,
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "experience": "disabled",
+  "faults": "none",
+  "purpose": "Autonomous natural task feasibility after bounded IK and encoder/FK TCP acceptance",
+  "budgets": {
+    "decisions": 12,
+    "calls": 40,
+    "motion_steps": 1500,
+    "wall_seconds": 300
+  },
+  "limitations": [
+    "One new seed per task, no statistical or causal algorithm comparison",
+    "No reset during recovery; all environments close before independent scoring"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "host_error": {
+    "error": "Campaign halted after preserved trial: changed source or unconfirmed close",
+    "stack": "Error: Campaign halted after preserved trial: changed source or unconfirmed close\n    at runCampaign (file:///C:/Users/LPN19/Desktop/qicitech.com/update/research/agentic_program_repair_20261119/v1/source/runtime/scripts/robot-campaign.mjs:210:57)\n    at async C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_program_repair_20261119\\v1\\source\\runtime\\scripts\\campaign-host.cjs:52:18"
+  },
+  "note": "Every original trial has a terminal result; authoritative closure is separately checked before export"
+}

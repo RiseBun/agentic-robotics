@@ -1,0 +1,12 @@
+{
+  "name": "embuddies-robot-runtime",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test robot/*.test.mjs",
+    "verify": "node --test robot/*.test.mjs",
+    "stage": "node scripts/stage-robot-runtime.mjs"
+  },
+  "devDependencies": { "playwright": "^1.63.0" }
+}

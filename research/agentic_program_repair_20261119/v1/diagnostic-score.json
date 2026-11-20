@@ -1,0 +1,173 @@
+{
+  "episode_id": "ac14883b72abe4445c2809ef4b676889",
+  "original_outcome": "needs_attention",
+  "trial_failure": "transport_error",
+  "close_request_error": "fetch failed",
+  "authority_close": "wall_budget_exhausted",
+  "used": {
+    "decisions": 6,
+    "calls": 15,
+    "motion_steps": 215,
+    "idle_steps": 5602,
+    "wall_seconds": 300.0432785348967
+  },
+  "diagnostic_error_feedback": {
+    "category": "invalid_program",
+    "phase": "execution",
+    "api": null,
+    "call_id": null,
+    "message": "Dictionary has no valid key 0; use a named public field. Available fields: coordinate_convention, tcp_xyz, tcp_wxyz, control_step, joint_positions, gripper_joint_positions, last_gripper_command, last_home_memory_sync, objects, last_motion, evidence_ref, image_ref, backend, episode_id, recorded_depth_quantization_m, captured_at (line 2)",
+    "evidence": {
+      "kind": "invalid_subscript",
+      "line": 2,
+      "column": 11,
+      "container_type": "dict",
+      "requested_key": 0,
+      "available_fields": [
+        "coordinate_convention",
+        "tcp_xyz",
+        "tcp_wxyz",
+        "control_step",
+        "joint_positions",
+        "gripper_joint_positions",
+        "last_gripper_command",
+        "last_home_memory_sync",
+        "objects",
+        "last_motion",
+        "evidence_ref",
+        "image_ref",
+        "backend",
+        "episode_id",
+        "recorded_depth_quantization_m",
+        "captured_at"
+      ]
+    },
+    "observation": {
+      "evidence_ref": "frame-000213.npz",
+      "captured_at": 1795114823.1621249,
+      "control_step": 213
+    },
+    "causal_status": "not_established"
+  },
+  "first_model_decision": {
+    "decision": "run_code",
+    "message": "修正状态字典访问方式，垂直抬升绿色方块并验证夹持。",
+    "subgoal": "lift-and-check-green",
+    "remaining_steps": [
+      "将绿色方块移到桌面空位并释放",
+      "重新定位并抓取红色方块",
+      "抬升并验证夹持红色方块",
+      "检查绿色方块作为支撑面的新鲜位置与尺寸证据",
+      "将红色方块放到绿色方块上并释放后垂直退回",
+      "验证最终堆叠关系与空夹爪"
+    ],
+    "goal": {
+      "on": [
+        "red cube",
+        "green cube"
+      ],
+      "empty_gripper": true
+    },
+    "code": "state = get_execution_state()\ntcp_xyz = state[\"tcp_xyz\"]\ntcp_wxyz = state[\"tcp_wxyz\"]\nlift_xyz = [tcp_xyz[0], tcp_xyz[1], tcp_xyz[2] + 0.12]\ngoto_pose(lift_xyz, tcp_wxyz, z_approach=0.0)\ncheck_holding(\"green cube\")",
+    "contract": {
+      "postcondition": {
+        "holding": "green cube"
+      }
+    }
+  },
+  "first_model_segment_execution": "completed",
+  "first_model_segment_postcondition": {
+    "condition": {
+      "holding": "green cube"
+    },
+    "status": "verified",
+    "evidence": [
+      {
+        "state": "satisfied",
+        "object_name": "green cube",
+        "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+        "samples": [
+          {
+            "control_step": 552,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.1117172597520216,
+            "surface_tcp_distance_m": 0.0029858251625789053,
+            "tcp_height_above_reference_m": 0.11037601510440039
+          },
+          {
+            "control_step": 557,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.11321527601336548,
+            "surface_tcp_distance_m": 0.003167805141182394,
+            "tcp_height_above_reference_m": 0.11151985212527105
+          },
+          {
+            "control_step": 562,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.1134239872469002,
+            "surface_tcp_distance_m": 0.0030415876467658016,
+            "tcp_height_above_reference_m": 0.11196497747874716
+          },
+          {
+            "control_step": 567,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.11341129919296525,
+            "surface_tcp_distance_m": 0.0029504184222001253,
+            "tcp_height_above_reference_m": 0.11213841134600429
+          },
+          {
+            "control_step": 572,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.11352041582087252,
+            "surface_tcp_distance_m": 0.0029413105803610573,
+            "tcp_height_above_reference_m": 0.11220573536544028
+          }
+        ],
+        "window_control_steps": 20,
+        "maximum_relative_surface_drift_m": 0.00036605581540540737,
+        "estimated_center_tcp_offset_xyz": [
+          -0.00019165631047002307,
+          -0.00097518275540312,
+          -0.002652367611497647
+        ],
+        "reference_tcp_wxyz": [
+          0.0004054372548125684,
+          5.272030830383301e-05,
+          0.9999998807907104,
+          2.7152520488016307e-05
+        ],
+        "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+        "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+      }
+    ],
+    "evidence_ref": "frame-000572.npz",
+    "captured_at": 1795114841.105068,
+    "control_step": 572
+  },
+  "verified_green_holding_after_repair": true,
+  "repaired_stage_contact_proxy": {
+    "status": "verified",
+    "samples": 43,
+    "span_seconds": 22.08702540397644,
+    "scope": "bilateral green finger contact from public repaired-stage holding check until next release request; not task completion"
+  },
+  "source_unchanged": true,
+  "reset_count": 1,
+  "independent": {
+    "independent_success": false,
+    "verified_system_success": false,
+    "physical_success_unacknowledged": false,
+    "public_declared_completion": false,
+    "false_completion": false,
+    "private_settle_samples": 3,
+    "private_settle_span_seconds": 1.0986032485961914,
+    "private_last": false,
+    "failure_observed": false,
+    "recovered_after_observed_failure": false,
+    "reset_count": 1,
+    "max_stop_latency_seconds": 0.06744370609521866
+  },
+  "budget_ledger_matches": true,
+  "scorer_sha256": "38dd6ecd06e74758731504b30771dcad95da12c44dd5052342652f0b89e8fccf",
+  "scope": "Original interrupted prepared case, one model repair diagnostic; not full-task success or causal comparison"
+}

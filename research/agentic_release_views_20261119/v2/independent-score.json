@@ -1,0 +1,107 @@
+{
+  "job": 20758,
+  "task": "cube_restack",
+  "seed": 66,
+  "model_used": false,
+  "trials": [
+    {
+      "mode": "single",
+      "episode_id": "92f62e1842bf0fe09f00ba3a9e21ba33",
+      "physical_outcome": {
+        "status": "failed",
+        "sample_count": 3,
+        "span_seconds": 1.0497422218322754,
+        "values": [
+          false,
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_verification": "unknown",
+      "false_completion": false,
+      "reset_count": 1,
+      "support_before": "unknown",
+      "support_after": "unknown",
+      "source_unchanged": true,
+      "continuous_simulation": {
+        "wall_seconds": 5.00505777890794,
+        "sim_seconds": 5.000000000006111,
+        "ratio": 0.9989894664307086
+      },
+      "used": {
+        "decisions": 9,
+        "calls": 26,
+        "motion_steps": 385,
+        "idle_steps": 620,
+        "wall_seconds": 58.28618501499295
+      }
+    },
+    {
+      "mode": "dual",
+      "episode_id": "30492fdfe57f09a6cb73437aa7c5a0e9",
+      "physical_outcome": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.5002188682556152,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_verification": "verified",
+      "false_completion": false,
+      "reset_count": 1,
+      "support_before": "unknown",
+      "support_after": "available",
+      "source_unchanged": true,
+      "continuous_simulation": {
+        "wall_seconds": 5.005286883097142,
+        "sim_seconds": 5.000000000006111,
+        "ratio": 0.9989437402461615
+      },
+      "used": {
+        "decisions": 9,
+        "calls": 28,
+        "motion_steps": 433,
+        "idle_steps": 588,
+        "wall_seconds": 52.72777413204312
+      }
+    },
+    {
+      "mode": "dual_masked",
+      "episode_id": "4d2dd8ddef990c05f313ff45b375f5b8",
+      "physical_outcome": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5015571117401123,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_verification": "unknown",
+      "false_completion": false,
+      "reset_count": 1,
+      "support_before": "unknown",
+      "support_after": "unknown",
+      "source_unchanged": true,
+      "continuous_simulation": {
+        "wall_seconds": 5.004538161214441,
+        "sim_seconds": 5.000000000006111,
+        "ratio": 0.9990931908075951
+      },
+      "used": {
+        "decisions": 9,
+        "calls": 26,
+        "motion_steps": 385,
+        "idle_steps": 547,
+        "wall_seconds": 48.29481828585267
+      }
+    }
+  ],
+  "scope": "Three fixed-controller conditions on one seen failing scene; not autonomous model performance or success rate",
+  "scorer_sha256": "84d25a42b0b1891c82ade88451f791812377cb06d83400ead32a4fec85c66449"
+}

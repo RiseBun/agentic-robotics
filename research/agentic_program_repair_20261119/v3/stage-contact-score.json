@@ -1,0 +1,21 @@
+{
+  "rows": [
+    {
+      "object_name": "green cube",
+      "public_holding_verified": true,
+      "contact_proxy": "verified",
+      "samples": 38,
+      "span_seconds": 19.586693286895752,
+      "window_end": "release_request"
+    },
+    {
+      "object_name": "red cube",
+      "public_holding_verified": true,
+      "contact_proxy": "verified",
+      "samples": 67,
+      "span_seconds": 34.793598651885986,
+      "window_end": "release_request"
+    }
+  ],
+  "scope": "Bilateral finger contact after public holding checks until next release request or close; not full-task completion"
+}

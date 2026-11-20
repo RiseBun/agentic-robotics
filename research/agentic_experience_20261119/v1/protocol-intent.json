@@ -1,0 +1,16 @@
+{
+  "task": "cube_restack",
+  "seed": 65,
+  "order": [
+    "baseline",
+    "candidate"
+  ],
+  "preparation": "fixed public controller, includes clearing green from red",
+  "experience_source": "independently scored old cube_stack/62 recovery only; no current trial admission",
+  "comparison": "same source, model, prompt, APIs, fault and original cumulative budgets; only retrieval differs",
+  "limitations": [
+    "One pair, sequential execution; waiting cost counted, no latency causality claim",
+    "Artificial failure handoff; no natural or end-to-end success-rate claim",
+    "Predefined repair extraction; no general skill induction or RSI"
+  ]
+}

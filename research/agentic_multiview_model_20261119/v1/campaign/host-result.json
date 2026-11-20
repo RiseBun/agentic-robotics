@@ -1,0 +1,77 @@
+{
+  "planned": 8,
+  "results": [
+    {
+      "pair_id": "stack-s67",
+      "variant": "baseline",
+      "task": "cube_stack",
+      "seed": 67,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_multiview_model_20261119\\v1\\campaign\\stack-s67\\baseline"
+    },
+    {
+      "pair_id": "stack-s67",
+      "variant": "candidate",
+      "task": "cube_stack",
+      "seed": 67,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_multiview_model_20261119\\v1\\campaign\\stack-s67\\candidate"
+    },
+    {
+      "pair_id": "restack-s67",
+      "variant": "candidate",
+      "task": "cube_restack",
+      "seed": 67,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_multiview_model_20261119\\v1\\campaign\\restack-s67\\candidate"
+    },
+    {
+      "pair_id": "restack-s67",
+      "variant": "baseline",
+      "task": "cube_restack",
+      "seed": 67,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_multiview_model_20261119\\v1\\campaign\\restack-s67\\baseline"
+    },
+    {
+      "pair_id": "stack-s68",
+      "variant": "baseline",
+      "task": "cube_stack",
+      "seed": 68,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_multiview_model_20261119\\v1\\campaign\\stack-s68\\baseline"
+    },
+    {
+      "pair_id": "stack-s68",
+      "variant": "candidate",
+      "task": "cube_stack",
+      "seed": 68,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_multiview_model_20261119\\v1\\campaign\\stack-s68\\candidate"
+    },
+    {
+      "pair_id": "restack-s68",
+      "variant": "candidate",
+      "task": "cube_restack",
+      "seed": 68,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_multiview_model_20261119\\v1\\campaign\\restack-s68\\candidate"
+    },
+    {
+      "pair_id": "restack-s68",
+      "variant": "baseline",
+      "task": "cube_restack",
+      "seed": 68,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_multiview_model_20261119\\v1\\campaign\\restack-s68\\baseline"
+    }
+  ]
+}

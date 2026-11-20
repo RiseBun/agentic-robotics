@@ -1,0 +1,362 @@
+{
+  "rows": [
+    {
+      "mode": "green_after_release_until_lateral_view",
+      "episode_id": "80540b17e2b1b70fcce6c096f4089325",
+      "independent_physical": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.5494241714477539,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_final": "verified",
+      "skill_reached": true,
+      "acquisition": {
+        "id": 73,
+        "episode_id": "80540b17e2b1b70fcce6c096f4089325",
+        "segment_id": "17eadd1aa20b470fa1cc18719835ec5e",
+        "time": 1795086887.1094437,
+        "kind": "evidence_acquisition_finished",
+        "status": "verified",
+        "acquisition_id": "ca80f3c5cac14108aa3e2c7252f91bbe",
+        "acquisition_type": "placement_verification",
+        "top": "red cube",
+        "support": "green cube",
+        "revision": 3,
+        "views_used": 1,
+        "reason": "public_relation_checked",
+        "empty_gripper": {
+          "status": "verified",
+          "evidence_ref": "frame-000508.npz",
+          "captured_at": 1795086886.8449876,
+          "gripper_width_m": 0.07997935593061417,
+          "command": "open",
+          "reason": "public_open_aperture; bounded_cube_scope"
+        },
+        "before": {
+          "status": "unknown",
+          "evidence": [
+            {
+              "status": "verified",
+              "evidence_ref": "frame-000459.npz",
+              "captured_at": 1795086884.3984334,
+              "gripper_width_m": 0.07992838714341316,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown"
+              ],
+              "geometry": [],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000459.npz",
+          "captured_at": 1795086884.3984334,
+          "control_step": 459
+        },
+        "goal_verification": {
+          "status": "verified",
+          "evidence": [
+            {
+              "status": "verified",
+              "evidence_ref": "frame-000508.npz",
+              "captured_at": 1795086886.8449876,
+              "gripper_width_m": 0.07997935593061417,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "verified",
+                "verified",
+                "verified",
+                "verified",
+                "verified",
+                "verified"
+              ],
+              "geometry": [
+                {
+                  "control_step": 484,
+                  "horizontal_residual_m": 0.01545347117239993,
+                  "height_difference_m": 0.04497165600816013,
+                  "support_width_m": 0.05263212497361473,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 488,
+                  "horizontal_residual_m": 0.01545347117239993,
+                  "height_difference_m": 0.04497165600816013,
+                  "support_width_m": 0.05263212497361473,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 493,
+                  "horizontal_residual_m": 0.01545347117239993,
+                  "height_difference_m": 0.04497165600816013,
+                  "support_width_m": 0.05263212497361473,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 498,
+                  "horizontal_residual_m": 0.015453469563138547,
+                  "height_difference_m": 0.04497165115450187,
+                  "support_width_m": 0.05263212497361473,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 503,
+                  "horizontal_residual_m": 0.015453469563138547,
+                  "height_difference_m": 0.04497165115450187,
+                  "support_width_m": 0.05263212497361473,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 508,
+                  "horizontal_residual_m": 0.015453469563138547,
+                  "height_difference_m": 0.04497165115450187,
+                  "support_width_m": 0.05263212497361473,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                }
+              ],
+              "window_steps": 24,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000508.npz",
+          "captured_at": 1795086886.8449876,
+          "control_step": 508
+        },
+        "evidence_ref": "frame-000508.npz",
+        "captured_at": 1795086886.8449876,
+        "clearance": {
+          "status": "available",
+          "empty_gripper": {
+            "status": "verified",
+            "evidence_ref": "frame-000459.npz",
+            "captured_at": 1795086884.3984334,
+            "gripper_width_m": 0.07992838714341316,
+            "command": "open",
+            "reason": "public_open_aperture; bounded_cube_scope"
+          },
+          "required_tcp_z_m": 0.07550674781546637,
+          "actual_tcp_xyz": [
+            0.6707493740198843,
+            -0.1145357730893367,
+            0.09398246535652958
+          ],
+          "release_id": "ae9cb9e910de4f38915fb239b21d01ec",
+          "reason": "bounded_cube_post_release_clearance"
+        },
+        "actual_tcp_xyz": [
+          0.6707544057823123,
+          -0.01458292651375278,
+          0.09398069141370183
+        ],
+        "total_views_used": 1,
+        "elapsed_seconds": 2.329365077195689,
+        "used_delta": {
+          "decisions": 0,
+          "calls": 1,
+          "motion_steps": 16,
+          "idle_steps": 31
+        }
+      },
+      "gripper_calls_after_inspection": 0,
+      "reset_count": 1,
+      "false_public_confirmation": false,
+      "used": {
+        "decisions": 5,
+        "calls": 12,
+        "motion_steps": 213,
+        "idle_steps": 354,
+        "wall_seconds": 36.9191494861152
+      }
+    },
+    {
+      "mode": "green_after_release_persistent",
+      "episode_id": "ba225b9895eafb5ed01ea5320527c9d9",
+      "independent_physical": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.5023448467254639,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_final": "unknown",
+      "skill_reached": true,
+      "acquisition": {
+        "id": 78,
+        "episode_id": "ba225b9895eafb5ed01ea5320527c9d9",
+        "segment_id": "df0d0f1afa2345fe8c8fbad502cafe18",
+        "time": 1795086915.0301404,
+        "kind": "evidence_acquisition_finished",
+        "status": "unknown",
+        "acquisition_id": "800ce9e3dc224fb18e3d4bb5e1ee3fd1",
+        "acquisition_type": "placement_verification",
+        "top": "red cube",
+        "support": "green cube",
+        "revision": 3,
+        "views_used": 2,
+        "reason": "placement_remains_unknown; views_exhausted",
+        "empty_gripper": {
+          "status": "verified",
+          "evidence_ref": "frame-000452.npz",
+          "captured_at": 1795086914.763142,
+          "gripper_width_m": 0.07990191262505708,
+          "command": "open",
+          "reason": "public_open_aperture; bounded_cube_scope"
+        },
+        "before": {
+          "status": "unknown",
+          "evidence": [
+            {
+              "status": "verified",
+              "evidence_ref": "frame-000362.npz",
+              "captured_at": 1795086910.261212,
+              "gripper_width_m": 0.07993990515562563,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown"
+              ],
+              "geometry": [],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000362.npz",
+          "captured_at": 1795086910.261212,
+          "control_step": 362
+        },
+        "goal_verification": {
+          "status": "unknown",
+          "evidence": [
+            {
+              "status": "verified",
+              "evidence_ref": "frame-000452.npz",
+              "captured_at": 1795086914.763142,
+              "gripper_width_m": 0.07990191262505708,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown"
+              ],
+              "geometry": [],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000452.npz",
+          "captured_at": 1795086914.763142,
+          "control_step": 452
+        },
+        "evidence_ref": "frame-000452.npz",
+        "captured_at": 1795086914.763142,
+        "clearance": {
+          "status": "available",
+          "empty_gripper": {
+            "status": "verified",
+            "evidence_ref": "frame-000362.npz",
+            "captured_at": 1795086910.261212,
+            "gripper_width_m": 0.07993990515562563,
+            "command": "open",
+            "reason": "public_open_aperture; bounded_cube_scope"
+          },
+          "required_tcp_z_m": 0.07415759330991738,
+          "actual_tcp_xyz": [
+            0.6707351390308972,
+            -0.11454050972298124,
+            0.09397788940425211
+          ],
+          "release_id": "a9938c63cb3241e2ae03db4e2c9be078",
+          "reason": "bounded_cube_post_release_clearance"
+        },
+        "actual_tcp_xyz": [
+          0.6707600407693803,
+          -0.2143888136503813,
+          0.09397656406319117
+        ],
+        "total_views_used": 2,
+        "elapsed_seconds": 4.399465451948345,
+        "used_delta": {
+          "decisions": 0,
+          "calls": 2,
+          "motion_steps": 34,
+          "idle_steps": 54
+        }
+      },
+      "gripper_calls_after_inspection": 0,
+      "reset_count": 1,
+      "false_public_confirmation": false,
+      "used": {
+        "decisions": 5,
+        "calls": 13,
+        "motion_steps": 231,
+        "idle_steps": 254,
+        "wall_seconds": 26.005709480959922
+      }
+    }
+  ],
+  "scope": "synthetic post-release RGB-D fault; not natural occlusion or success rate",
+  "scorer_sha256": "914bca37acf7dc0569035036fb6c732fcd50cb31b24adb3a874a724b014e0298"
+}

@@ -1,0 +1,38 @@
+{
+  "schedule": [
+    {
+      "pair_id": "stack-s70",
+      "task": "cube_stack",
+      "seed": 70,
+      "variant": "recoverable"
+    },
+    {
+      "pair_id": "stack-s70",
+      "task": "cube_stack",
+      "seed": 70,
+      "variant": "occluded"
+    }
+  ],
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "controller": "product model from initial scene; no fixed preparation or handoff",
+  "fault": "one actual actuator release for thirty steps, scheduled ten steps after first verified red hold and idle",
+  "occluded": "mask red public RGB-D in both cameras after monitor hold confirmation; never clear automatically",
+  "budgets": {
+    "decisions": 12,
+    "calls": 40,
+    "motion_steps": 1500,
+    "wall_seconds": 300
+  },
+  "experience": "disabled",
+  "admission": "retain all outcomes, no reset/replay; private scoring only after both episodes closed",
+  "limitations": [
+    "Two fault conditions once each; no algorithm comparator or statistical claim",
+    "Injected actuator/sensor faults, not natural slip or collision",
+    "Actual model/thinking/action phase at detection audited from events, not assumed"
+  ]
+}

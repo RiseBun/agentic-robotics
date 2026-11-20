@@ -1,0 +1,552 @@
+{
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "groups": {
+    "baseline": {
+      "trials": 4,
+      "independent_physical_successes": 3,
+      "infrastructure_errors": 1,
+      "verified_system_successes": 2,
+      "false_completions": 0,
+      "unknown_independent": 0,
+      "inspect_support_calls": 2,
+      "inspect_placement_calls": 0,
+      "placement_unknown_to_verified": 0,
+      "unknown_to_available": 2
+    },
+    "candidate": {
+      "trials": 4,
+      "independent_physical_successes": 2,
+      "infrastructure_errors": 0,
+      "verified_system_successes": 2,
+      "false_completions": 0,
+      "unknown_independent": 0,
+      "inspect_support_calls": 2,
+      "inspect_placement_calls": 0,
+      "placement_unknown_to_verified": 0,
+      "unknown_to_available": 2
+    }
+  },
+  "rows": [
+    {
+      "pair_id": "stack-s63",
+      "variant": "baseline",
+      "task": "cube_stack",
+      "seed": 63,
+      "episode_id": "4db9d282762b655a3bb12ac6a2fd6820",
+      "outcome": "completed",
+      "error": null,
+      "close_error": null,
+      "independent_physical": "verified",
+      "independent_evidence": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.5008788108825684,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "verified",
+      "false_completion": false,
+      "verified_system_success": true,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 5,
+        "calls": 11,
+        "motion_steps": 201,
+        "idle_steps": 1192,
+        "wall_seconds": 79.51169728511013
+      },
+      "cost_source": "Runtime episode.json after confirmed close",
+      "client_recorded_used_at_close": {
+        "decisions": 5,
+        "calls": 11,
+        "motion_steps": 201,
+        "idle_steps": 1192,
+        "wall_seconds": 79.51169728511013
+      },
+      "total_seconds": 91.61999988555908,
+      "inspect_support_calls": 0,
+      "inspect_placement_calls": 0,
+      "placement_acquisitions": 0,
+      "placement_unknown_to_verified": 0,
+      "placement_acquisition_costs": [],
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 0,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 1,
+      "successful_open_calls": 2,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "stack-s63",
+      "variant": "candidate",
+      "task": "cube_stack",
+      "seed": 63,
+      "episode_id": "b40933e9d85beecdd35d3977f02d1aef",
+      "outcome": "completed",
+      "error": null,
+      "close_error": null,
+      "independent_physical": "verified",
+      "independent_evidence": {
+        "status": "verified",
+        "sample_count": 3,
+        "span_seconds": 1.0518684387207031,
+        "values": [
+          true,
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "verified",
+      "false_completion": false,
+      "verified_system_success": true,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 4,
+        "calls": 10,
+        "motion_steps": 201,
+        "idle_steps": 1009,
+        "wall_seconds": 68.64305421407335
+      },
+      "cost_source": "Runtime episode.json after confirmed close",
+      "client_recorded_used_at_close": {
+        "decisions": 4,
+        "calls": 10,
+        "motion_steps": 201,
+        "idle_steps": 1009,
+        "wall_seconds": 68.64305421407335
+      },
+      "total_seconds": 77.96600008010864,
+      "inspect_support_calls": 0,
+      "inspect_placement_calls": 0,
+      "placement_acquisitions": 0,
+      "placement_unknown_to_verified": 0,
+      "placement_acquisition_costs": [],
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 0,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 1,
+      "successful_open_calls": 2,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "restack-s63",
+      "variant": "candidate",
+      "task": "cube_restack",
+      "seed": 63,
+      "episode_id": "161e000b03c9792d2443886f04623ae8",
+      "outcome": "needs_attention",
+      "error": null,
+      "close_error": null,
+      "independent_physical": "failed",
+      "independent_evidence": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.550872802734375,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "unknown",
+      "false_completion": false,
+      "verified_system_success": false,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 12,
+        "calls": 30,
+        "motion_steps": 801,
+        "idle_steps": 3331,
+        "wall_seconds": 209.24639168102294
+      },
+      "cost_source": "Runtime episode.json after confirmed close",
+      "client_recorded_used_at_close": {
+        "decisions": 12,
+        "calls": 30,
+        "motion_steps": 801,
+        "idle_steps": 3331,
+        "wall_seconds": 209.24639168102294
+      },
+      "total_seconds": 218.25,
+      "inspect_support_calls": 0,
+      "inspect_placement_calls": 0,
+      "placement_acquisitions": 0,
+      "placement_unknown_to_verified": 0,
+      "placement_acquisition_costs": [],
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 1,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 1,
+      "successful_open_calls": 5,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "restack-s63",
+      "variant": "baseline",
+      "task": "cube_restack",
+      "seed": 63,
+      "episode_id": "becd4a8e9c70f264ed1124d87b93b430",
+      "outcome": "needs_attention",
+      "error": null,
+      "close_error": null,
+      "independent_physical": "verified",
+      "independent_evidence": {
+        "status": "verified",
+        "sample_count": 3,
+        "span_seconds": 1.0041475296020508,
+        "values": [
+          true,
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "unknown",
+      "false_completion": false,
+      "verified_system_success": false,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 12,
+        "calls": 29,
+        "motion_steps": 429,
+        "idle_steps": 3616,
+        "wall_seconds": 205.19355851295404
+      },
+      "cost_source": "Runtime episode.json after confirmed close",
+      "client_recorded_used_at_close": {
+        "decisions": 12,
+        "calls": 29,
+        "motion_steps": 429,
+        "idle_steps": 3616,
+        "wall_seconds": 205.19355851295404
+      },
+      "total_seconds": 213.8949999809265,
+      "inspect_support_calls": 2,
+      "inspect_placement_calls": 0,
+      "placement_acquisitions": 0,
+      "placement_unknown_to_verified": 0,
+      "placement_acquisition_costs": [],
+      "acquisition_results": 2,
+      "unknown_acquisitions": 2,
+      "unknown_to_available": 2,
+      "unknown_to_available_ratio": 1.0,
+      "view_attempts": 2,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 2,
+      "acquisition_costs": [
+        {
+          "status": "available",
+          "used": {
+            "decisions": 0,
+            "calls": 3,
+            "motion_steps": 15,
+            "idle_steps": 53
+          },
+          "wall_seconds": 3.3703403561376035
+        },
+        {
+          "status": "available",
+          "used": {
+            "decisions": 0,
+            "calls": 3,
+            "motion_steps": 17,
+            "idle_steps": 49
+          },
+          "wall_seconds": 3.2758279819972813
+        }
+      ],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 4,
+      "successful_open_calls": 3,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "stack-s64",
+      "variant": "baseline",
+      "task": "cube_stack",
+      "seed": 64,
+      "episode_id": "d8acb9b0661e96731cc51bbf965c0775",
+      "outcome": "completed",
+      "error": null,
+      "close_error": null,
+      "independent_physical": "verified",
+      "independent_evidence": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.5447397232055664,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "verified",
+      "false_completion": false,
+      "verified_system_success": true,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 5,
+        "calls": 13,
+        "motion_steps": 199,
+        "idle_steps": 1265,
+        "wall_seconds": 74.72796647599898
+      },
+      "cost_source": "Runtime episode.json after confirmed close",
+      "client_recorded_used_at_close": {
+        "decisions": 5,
+        "calls": 13,
+        "motion_steps": 199,
+        "idle_steps": 1265,
+        "wall_seconds": 74.72796647599898
+      },
+      "total_seconds": 82.34100008010864,
+      "inspect_support_calls": 0,
+      "inspect_placement_calls": 0,
+      "placement_acquisitions": 0,
+      "placement_unknown_to_verified": 0,
+      "placement_acquisition_costs": [],
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 0,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 1,
+      "successful_open_calls": 2,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "stack-s64",
+      "variant": "candidate",
+      "task": "cube_stack",
+      "seed": 64,
+      "episode_id": "c8d7239e4e3ad6ea4367e9558059aba7",
+      "outcome": "completed",
+      "error": null,
+      "close_error": null,
+      "independent_physical": "verified",
+      "independent_evidence": {
+        "status": "verified",
+        "sample_count": 3,
+        "span_seconds": 1.0337326526641846,
+        "values": [
+          true,
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "verified",
+      "false_completion": false,
+      "verified_system_success": true,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 4,
+        "calls": 11,
+        "motion_steps": 201,
+        "idle_steps": 1013,
+        "wall_seconds": 62.223170819925144
+      },
+      "cost_source": "Runtime episode.json after confirmed close",
+      "client_recorded_used_at_close": {
+        "decisions": 4,
+        "calls": 11,
+        "motion_steps": 201,
+        "idle_steps": 1013,
+        "wall_seconds": 62.223170819925144
+      },
+      "total_seconds": 70.15699982643127,
+      "inspect_support_calls": 0,
+      "inspect_placement_calls": 0,
+      "placement_acquisitions": 0,
+      "placement_unknown_to_verified": 0,
+      "placement_acquisition_costs": [],
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 0,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 1,
+      "successful_open_calls": 2,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "restack-s64",
+      "variant": "candidate",
+      "task": "cube_restack",
+      "seed": 64,
+      "episode_id": "059fa6850cfba35d58fac483b1ab22bc",
+      "outcome": "needs_attention",
+      "error": null,
+      "close_error": null,
+      "independent_physical": "failed",
+      "independent_evidence": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5097951889038086,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "unknown",
+      "false_completion": false,
+      "verified_system_success": false,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 12,
+        "calls": 37,
+        "motion_steps": 440,
+        "idle_steps": 4458,
+        "wall_seconds": 246.37188556604087
+      },
+      "cost_source": "Runtime episode.json after confirmed close",
+      "client_recorded_used_at_close": {
+        "decisions": 12,
+        "calls": 37,
+        "motion_steps": 440,
+        "idle_steps": 4458,
+        "wall_seconds": 246.37188556604087
+      },
+      "total_seconds": 257.021999835968,
+      "inspect_support_calls": 2,
+      "inspect_placement_calls": 0,
+      "placement_acquisitions": 0,
+      "placement_unknown_to_verified": 0,
+      "placement_acquisition_costs": [],
+      "acquisition_results": 2,
+      "unknown_acquisitions": 2,
+      "unknown_to_available": 2,
+      "unknown_to_available_ratio": 1.0,
+      "view_attempts": 2,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 4,
+      "acquisition_costs": [
+        {
+          "status": "available",
+          "used": {
+            "decisions": 0,
+            "calls": 3,
+            "motion_steps": 18,
+            "idle_steps": 53
+          },
+          "wall_seconds": 3.5274285059422255
+        },
+        {
+          "status": "available",
+          "used": {
+            "decisions": 0,
+            "calls": 3,
+            "motion_steps": 14,
+            "idle_steps": 49
+          },
+          "wall_seconds": 3.132203785935417
+        }
+      ],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 3,
+      "successful_open_calls": 3,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "restack-s64",
+      "variant": "baseline",
+      "task": "cube_restack",
+      "seed": 64,
+      "episode_id": "f2b84da799f33920956f31a1a8973c8c",
+      "outcome": "infrastructure_error",
+      "error": "Runtime request timed out",
+      "close_error": "fetch failed",
+      "independent_physical": "failed",
+      "independent_evidence": {
+        "status": "failed",
+        "sample_count": 3,
+        "span_seconds": 1.0440645217895508,
+        "values": [
+          false,
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "unknown",
+      "false_completion": false,
+      "verified_system_success": false,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 6,
+        "calls": 18,
+        "motion_steps": 291,
+        "idle_steps": 20195,
+        "wall_seconds": 1025.9610654879361
+      },
+      "cost_source": "Runtime episode.json after confirmed close",
+      "client_recorded_used_at_close": {
+        "decisions": 6,
+        "calls": 18,
+        "motion_steps": 291,
+        "idle_steps": 1337,
+        "wall_seconds": 83.0961204150226
+      },
+      "total_seconds": 486.2479999065399,
+      "inspect_support_calls": 0,
+      "inspect_placement_calls": 0,
+      "placement_acquisitions": 0,
+      "placement_unknown_to_verified": 0,
+      "placement_acquisition_costs": [],
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 0,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 0,
+      "successful_open_calls": 3,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    }
+  ],
+  "scorer_sha256": "e5b3a3db41859d9c188baf1494f5be6853da4dff35b85714d8a6bad2c44ce97b",
+  "limitations": [
+    "One trial per task/seed/condition; diagnostic only",
+    "Physical success concerns the recorded end window only",
+    "Missing per-release evidence is unscored, never assumed safe"
+  ]
+}

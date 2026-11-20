@@ -1,0 +1,30 @@
+{
+  "tasks": [
+    "cube_lifting",
+    "cube_stack",
+    "cube_restack"
+  ],
+  "seeds": [
+    90
+  ],
+  "repeats": 1,
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "experience": "disabled",
+  "fault_injection": "none",
+  "budgets": {
+    "decisions": 12,
+    "calls": 40,
+    "motion_steps": 1500,
+    "wall_seconds": 300
+  },
+  "changes": [
+    "Zero-API unbound-name errors use focused repair context with the same model",
+    "Raw event streams remain persisted but are not duplicated into decision history"
+  ],
+  "scope": "Current-version ordinary task regression, no baseline or causal benefit claim"
+}

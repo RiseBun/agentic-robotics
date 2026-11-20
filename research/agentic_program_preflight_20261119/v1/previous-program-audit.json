@@ -1,0 +1,666 @@
+{
+  "episodes": 10,
+  "segments": 72,
+  "api_calls": 0,
+  "rows": [
+    {
+      "dataset": "agentic_holding_model_20261119/v2",
+      "mode": "recoverable",
+      "episode_id": "88d3cfe4c53523af12e9c3bedce678d1",
+      "segment_id": "676ade416a9248c68b5c14287aca0907",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_holding_model_20261119/v2",
+      "mode": "recoverable",
+      "episode_id": "88d3cfe4c53523af12e9c3bedce678d1",
+      "segment_id": "74888dcaa0cb4416880a144d7c327ea1",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_holding_model_20261119/v2",
+      "mode": "recoverable",
+      "episode_id": "88d3cfe4c53523af12e9c3bedce678d1",
+      "segment_id": "cfd856fd3f314817b28de75831299f9a",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_holding_model_20261119/v2",
+      "mode": "recoverable",
+      "episode_id": "88d3cfe4c53523af12e9c3bedce678d1",
+      "segment_id": "c7843ba99f7a410ba5f1708f81dea18d",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_holding_model_20261119/v2",
+      "mode": "recoverable",
+      "episode_id": "88d3cfe4c53523af12e9c3bedce678d1",
+      "segment_id": "27d892f3b63f4050b7ee5191a8d63385",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_holding_model_20261119/v2",
+      "mode": "occluded",
+      "episode_id": "643144b61bce80ec45bb2d8ca0445940",
+      "segment_id": "edff3111c3aa4101bef71d84d4fea15c",
+      "old_execution": "failed",
+      "old_error": "'nz'",
+      "preflight": "rejected",
+      "error": "Unbound local name 'nz'; define it before use (line 11)"
+    },
+    {
+      "dataset": "agentic_holding_model_20261119/v2",
+      "mode": "occluded",
+      "episode_id": "643144b61bce80ec45bb2d8ca0445940",
+      "segment_id": "57b9c9dcd3b5412493a19f377be1d3e2",
+      "old_execution": "failed",
+      "old_error": "'nz'",
+      "preflight": "rejected",
+      "error": "Unbound local name 'nz'; define it before use (line 7)"
+    },
+    {
+      "dataset": "agentic_holding_model_20261119/v2",
+      "mode": "occluded",
+      "episode_id": "643144b61bce80ec45bb2d8ca0445940",
+      "segment_id": "a7ad2f34cc884c7fa110a40e36b08285",
+      "old_execution": "failed",
+      "old_error": "'nz'",
+      "preflight": "rejected",
+      "error": "Unbound local name 'nz'; define it before use (line 7)"
+    },
+    {
+      "dataset": "agentic_holding_model_20261119/v2",
+      "mode": "occluded",
+      "episode_id": "643144b61bce80ec45bb2d8ca0445940",
+      "segment_id": "8501535c2aa44f89b752c032f830f301",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_holding_model_20261119/v2",
+      "mode": "occluded",
+      "episode_id": "643144b61bce80ec45bb2d8ca0445940",
+      "segment_id": "a2d81d26341c4c11b85129d32e4df698",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_holding_model_20261119/v2",
+      "mode": "occluded",
+      "episode_id": "643144b61bce80ec45bb2d8ca0445940",
+      "segment_id": "5f92f0b475c64e1a8c3289db3c98016a",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "542d008bf71168eaa799851bacb408d2",
+      "segment_id": "932a19ee01cb47899558e6c17b2ef956",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "542d008bf71168eaa799851bacb408d2",
+      "segment_id": "b565431057e14caf88798dc046ce7081",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "542d008bf71168eaa799851bacb408d2",
+      "segment_id": "0d580cebd1dd4433b0ccb63d9fa781c0",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "542d008bf71168eaa799851bacb408d2",
+      "segment_id": "5be85a6d08ad4c339acb49d3465e95a4",
+      "old_execution": "failed",
+      "old_error": "'nz'",
+      "preflight": "rejected",
+      "error": "Unbound local name 'nz'; define it before use (line 6)"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "542d008bf71168eaa799851bacb408d2",
+      "segment_id": "a03f996c89584d559cb5df8262af5420",
+      "old_execution": "failed",
+      "old_error": "'nz'",
+      "preflight": "rejected",
+      "error": "Unbound local name 'nz'; define it before use (line 6)"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "542d008bf71168eaa799851bacb408d2",
+      "segment_id": "49a883f33b174744bf0c835ab13959d7",
+      "old_execution": "failed",
+      "old_error": "'nz'",
+      "preflight": "rejected",
+      "error": "Unbound local name 'nz'; define it before use (line 6)"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "542d008bf71168eaa799851bacb408d2",
+      "segment_id": "463ecd5fde7c4315a4dded1ae3908b8e",
+      "old_execution": "failed",
+      "old_error": "'nz'",
+      "preflight": "rejected",
+      "error": "Unbound local name 'nz'; define it before use (line 6)"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "542d008bf71168eaa799851bacb408d2",
+      "segment_id": "2371bd3bd6bc45d3b9071d651ffe45ff",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "542d008bf71168eaa799851bacb408d2",
+      "segment_id": "351d29e7be8b446a98612f45a5307a9e",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "542d008bf71168eaa799851bacb408d2",
+      "segment_id": "0218ee984f7948a9b8afce46354ffb64",
+      "old_execution": "failed",
+      "old_error": "Public effect unknown",
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "542d008bf71168eaa799851bacb408d2",
+      "segment_id": "50da58cfb2064e77a7db26715421175b",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "60b87f8d027e760ef41469536d128643",
+      "segment_id": "c514aefc0cd74525bc3cd0d1eb4eeca3",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "60b87f8d027e760ef41469536d128643",
+      "segment_id": "51717ddd880e4f3c9444cac6c3f62de4",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "60b87f8d027e760ef41469536d128643",
+      "segment_id": "9c54fcb5341c41eaa9cab9f6eddbfd7e",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "60b87f8d027e760ef41469536d128643",
+      "segment_id": "ff9fe0f5c36d46ba96802bb433e62037",
+      "old_execution": "failed",
+      "old_error": "Public effect unknown",
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "60b87f8d027e760ef41469536d128643",
+      "segment_id": "42688457623e450794a60ef537aa2cb3",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "60b87f8d027e760ef41469536d128643",
+      "segment_id": "04136d28b26a4a0f8f62f9d7b6d5b7b0",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "60b87f8d027e760ef41469536d128643",
+      "segment_id": "5269f480bbe645d384e9d398540d7678",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "60b87f8d027e760ef41469536d128643",
+      "segment_id": "d4298112b60241e7b84559ed7a40d103",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "718e9df9f708da39624aa9564728d303",
+      "segment_id": "53af9acb4b444c3287db2b5892df3258",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "718e9df9f708da39624aa9564728d303",
+      "segment_id": "41235b760a454132ad2e54b159a646c1",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "718e9df9f708da39624aa9564728d303",
+      "segment_id": "e9c8fc918a8d46208d6e2f00d3768384",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "718e9df9f708da39624aa9564728d303",
+      "segment_id": "31c3154f1e9f49a6b664ccea2c583e85",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "718e9df9f708da39624aa9564728d303",
+      "segment_id": "fee76b177a1e4609a4b3098aee63b28e",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "718e9df9f708da39624aa9564728d303",
+      "segment_id": "cc6f683553d842e3a2fb878dcce61666",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "718e9df9f708da39624aa9564728d303",
+      "segment_id": "eb03bb6354954d4abdcdfc4ec93b28d8",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "718e9df9f708da39624aa9564728d303",
+      "segment_id": "ba98a920711445d4b4d8f310381e2590",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "718e9df9f708da39624aa9564728d303",
+      "segment_id": "723d6738a6704cf5a84aca626435018d",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "718e9df9f708da39624aa9564728d303",
+      "segment_id": "cde01ec42d18439c88654b9759d610d1",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "92a778a73fc4255305c47898e91c98b4",
+      "segment_id": "03b7846aa6e340bdaa104fc7d7cbdbdf",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "92a778a73fc4255305c47898e91c98b4",
+      "segment_id": "14dc475b923f480785550e713c0a518a",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "92a778a73fc4255305c47898e91c98b4",
+      "segment_id": "631a6d96f99441dc832121e0ac1de5d5",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "baseline",
+      "episode_id": "92a778a73fc4255305c47898e91c98b4",
+      "segment_id": "c87c4771af6f464c86302c38488f06ec",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "66aa98e2ed1a8704a5fce23d0a2f1169",
+      "segment_id": "9f6da5dd8ce24b7585c9fb75f8866ba9",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "66aa98e2ed1a8704a5fce23d0a2f1169",
+      "segment_id": "768454d189464a2a90adbd513ccfff43",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "66aa98e2ed1a8704a5fce23d0a2f1169",
+      "segment_id": "0750ed358954457f8f4ce4fb1ca83fdc",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "8e11a50c44abc59bfa828e5f6308ba3c",
+      "segment_id": "5d754a8ab91c4172b5e3055cef69aed5",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "8e11a50c44abc59bfa828e5f6308ba3c",
+      "segment_id": "746069d30d3a4a579753014d89eca424",
+      "old_execution": "failed",
+      "old_error": "0",
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "8e11a50c44abc59bfa828e5f6308ba3c",
+      "segment_id": "7e99913f9f7d40a88121576fe7b016ab",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "8e11a50c44abc59bfa828e5f6308ba3c",
+      "segment_id": "c26aae042bd74a32b956d681ceb9dbaa",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "8e11a50c44abc59bfa828e5f6308ba3c",
+      "segment_id": "758baf7e9e574e9b9ff3b6bac9f58382",
+      "old_execution": "failed",
+      "old_error": "Public effect unknown",
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "8e11a50c44abc59bfa828e5f6308ba3c",
+      "segment_id": "45636671c25142298bd43a3f95f882d2",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "8e11a50c44abc59bfa828e5f6308ba3c",
+      "segment_id": "78259d16eef14984807383f7e34d2ac5",
+      "old_execution": "failed",
+      "old_error": "Public effect unknown",
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "8e11a50c44abc59bfa828e5f6308ba3c",
+      "segment_id": "edc5a90030e04e93b89f080d432381ca",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "8e11a50c44abc59bfa828e5f6308ba3c",
+      "segment_id": "c58af25d45db47b48103198c98b52473",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "8e11a50c44abc59bfa828e5f6308ba3c",
+      "segment_id": "0792bea1fdcd4accb5300baca5e0b437",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "9d9de92ef8258e896ba44e0922504560",
+      "segment_id": "cd68c5836f004aeab4cabf57d8b712aa",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "9d9de92ef8258e896ba44e0922504560",
+      "segment_id": "d4ec0fdc90e2444bbed2467376b33723",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "9d9de92ef8258e896ba44e0922504560",
+      "segment_id": "af9ae853ed2b41a294e533aad0e666ec",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "9d9de92ef8258e896ba44e0922504560",
+      "segment_id": "642f090d865a431699e5516e82d9fbf0",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "9d9de92ef8258e896ba44e0922504560",
+      "segment_id": "23baa7ade8d849deaa806d2af5b37c36",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "9d9de92ef8258e896ba44e0922504560",
+      "segment_id": "b68328967e844118a4b4abc5e54022fe",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "c2bf06e64ab4f0eb4de6fe089c3aab7e",
+      "segment_id": "93df3babd7b347408436fa5bd291b348",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "c2bf06e64ab4f0eb4de6fe089c3aab7e",
+      "segment_id": "812fb88a17914aa2be26c2aaf764a79a",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "c2bf06e64ab4f0eb4de6fe089c3aab7e",
+      "segment_id": "d918d7f3db8d45d8b26fe6200705d208",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "c2bf06e64ab4f0eb4de6fe089c3aab7e",
+      "segment_id": "0ec01e3ee2584d20b78fa71b4e1880a9",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "c2bf06e64ab4f0eb4de6fe089c3aab7e",
+      "segment_id": "2ffaddcca11b41cbb77a31d766af0008",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "c2bf06e64ab4f0eb4de6fe089c3aab7e",
+      "segment_id": "592db253f27e4b50b75cd0bf72fdfb58",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "c2bf06e64ab4f0eb4de6fe089c3aab7e",
+      "segment_id": "7999bc067b184300b96155a3bcdb8205",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "c2bf06e64ab4f0eb4de6fe089c3aab7e",
+      "segment_id": "759d5a1f30bd46cf99832d17b90c003d",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    },
+    {
+      "dataset": "agentic_multiview_model_20261119/v1",
+      "mode": "candidate",
+      "episode_id": "c2bf06e64ab4f0eb4de6fe089c3aab7e",
+      "segment_id": "5dce42b0ca204a388586bd64419afb91",
+      "old_execution": "completed",
+      "old_error": null,
+      "preflight": "accepted"
+    }
+  ],
+  "completed_programs_rejected": 0,
+  "unbound_nz_programs_rejected": 7,
+  "interpreter_sha256": "09eda6de71e688d28c2acbbf833c06809d90e50e994458e11aff0b7eda770ef1",
+  "scope": "Closed-code static replay, not repeated model/physics performance"
+}

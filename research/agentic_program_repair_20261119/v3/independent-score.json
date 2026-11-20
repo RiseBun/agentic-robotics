@@ -1,0 +1,59 @@
+{
+  "episode_id": "9bc98e11247cf8f5f77f4b7e6aaf9085",
+  "outcome": "needs_attention",
+  "independent": {
+    "independent_success": false,
+    "verified_system_success": false,
+    "physical_success_unacknowledged": false,
+    "public_declared_completion": false,
+    "false_completion": false,
+    "private_settle_samples": 3,
+    "private_settle_span_seconds": 1.0019712448120117,
+    "private_last": false,
+    "failure_observed": false,
+    "recovered_after_observed_failure": false,
+    "reset_count": 1,
+    "max_stop_latency_seconds": 0.09293649112805724
+  },
+  "invalid_preparation_api_count": 0,
+  "diagnostic": {
+    "kind": "unbound_name",
+    "name": "nz",
+    "line": 8,
+    "column": 16,
+    "available_locals": [
+      "g",
+      "p",
+      "q",
+      "x",
+      "y",
+      "z"
+    ],
+    "scope": "Names bound at this expression; no inferred replacement or robot action"
+  },
+  "first_model_decision": {
+    "decision": "run_code",
+    "message": "Repaired the unbound identifier by using the defined z coordinate from the green cube pose.",
+    "subgoal": "invalid-unbound_name",
+    "remaining_steps": [],
+    "code": "g = get_object_pose(\"green cube\")\np = g[0]\nx = p[0]\ny = p[1]\nz = p[2]\nq = [0,0,1,0]\nopen_gripper()\ngoto_pose([x,y,z],q,z_approach=0.10)\nclose_gripper()",
+    "contract": null
+  },
+  "first_model_segment_execution": "completed",
+  "first_model_segment_feedback": null,
+  "assistance": null,
+  "unchanged_code_returned": false,
+  "invalid_programs_after_handoff": 1,
+  "source_unchanged": true,
+  "used": {
+    "decisions": 12,
+    "calls": 29,
+    "motion_steps": 398,
+    "idle_steps": 3152,
+    "wall_seconds": 185.07588817109354
+  },
+  "reset_count": 1,
+  "budget_ledger_matches": true,
+  "scorer_sha256": "4bf7552a3a7c9c3aaba93306e837a0091808014a2fc12450c221d6f0c274a9a2",
+  "scope": "One prepared unbound-name failure followed by autonomous repair/original-goal execution; not natural success rate or causal comparison"
+}

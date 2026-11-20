@@ -1,0 +1,40 @@
+{
+  "backend": "fixture; not robot benchmark",
+  "model_calls": 6,
+  "tasks": [
+    {
+      "task": "cube_lifting",
+      "episode_id": "77f1db096ceaab0b37ae1a6a3d07650a",
+      "used": {
+        "decisions": 2,
+        "calls": 1,
+        "motion_steps": 20,
+        "idle_steps": 21,
+        "wall_seconds": 0.4072232999606058
+      }
+    },
+    {
+      "task": "cube_stack",
+      "episode_id": "13bda8af4de55e66ae10871ecd8b3894",
+      "used": {
+        "decisions": 2,
+        "calls": 2,
+        "motion_steps": 40,
+        "idle_steps": 26,
+        "wall_seconds": 0.6575609999708831
+      }
+    },
+    {
+      "task": "cube_restack",
+      "episode_id": "3290fb1e0e266a6c0902e824480aee6b",
+      "used": {
+        "decisions": 2,
+        "calls": 2,
+        "motion_steps": 40,
+        "idle_steps": 26,
+        "wall_seconds": 0.6568506000330672
+      }
+    }
+  ],
+  "removed_routes_rejected": true
+}

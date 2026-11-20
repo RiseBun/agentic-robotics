@@ -1,0 +1,59 @@
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+.npm-cache/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Local configuration, credentials and runtime state
+.env
+.env.*
+!.env.example
+.tmp/
+runtime/data/
+**/secrets.json
+**/*token.txt
+**/*.pem
+**/*.key
+**/Local State
+*.sqlite
+*.sqlite-*
+*.db
+
+# Large external dependencies and private/raw run artifacts
+third_party/
+models/
+cache/
+robot-records/
+**/*-records/
+**/records/
+**/source/
+**/state-at-terminal.json
+**/*options.json
+**/workbench.jsonl
+**/evaluation-private.jsonl
+**/*-request.json
+**/*-response.json
+*.npz
+*.npy
+*.pt
+*.pth
+*.safetensors
+*.tar.gz
+*.zip
+*.exe
+*.dll
+*.log
+*.pid
+*.lnk
+
+# Editor and OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

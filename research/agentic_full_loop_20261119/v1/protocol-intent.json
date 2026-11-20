@@ -1,0 +1,30 @@
+{
+  "normal_tasks": [
+    "cube_lifting",
+    "cube_stack",
+    "cube_restack"
+  ],
+  "normal_seed": 73,
+  "active_task": "cube_stack",
+  "active_seed": 74,
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "experience": "disabled",
+  "default_policy": "current development recovery context and guard enabled",
+  "active_fault": "One finite actuator release during five-second public RPC latency in a new model segment after prior verified red hold",
+  "limitations": [
+    "One trial per case; not a statistical or algorithm comparison",
+    "Active code waiting for RPC; not uninterrupted moving-arm slip detection",
+    "No scene reset during recovery; all cases closed before private scoring; preserve failed coverage as failure to cover"
+  ],
+  "budgets": {
+    "decisions": 12,
+    "calls": 40,
+    "motion_steps": 1500,
+    "wall_seconds": 300
+  }
+}

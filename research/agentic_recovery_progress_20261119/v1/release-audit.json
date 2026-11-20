@@ -1,0 +1,18 @@
+[
+  {
+    "variant": "recoverable",
+    "final_object_release_count": 1,
+    "releases_without_available_support": 0,
+    "unsupported_release_event_ids": [],
+    "repeated_view_within_acquisition": 0,
+    "view_attempts": 0
+  },
+  {
+    "variant": "occluded",
+    "final_object_release_count": 0,
+    "releases_without_available_support": 0,
+    "unsupported_release_event_ids": [],
+    "repeated_view_within_acquisition": 0,
+    "view_attempts": 0
+  }
+]

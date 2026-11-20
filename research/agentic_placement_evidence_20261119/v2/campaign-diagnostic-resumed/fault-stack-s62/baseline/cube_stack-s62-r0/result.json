@@ -1,0 +1,22 @@
+{
+  "trial_id": "cube_stack-s62-r0",
+  "task": "cube_stack",
+  "seed": 62,
+  "repeat": 0,
+  "text": "把红色方块放到绿色方块上，释放后空夹爪。",
+  "outcome": "infrastructure_error",
+  "episode_id": "7ba934c9cb2dab4ac63d8d3983840a1d",
+  "started_at": 1795093613.602,
+  "error": "fetch failed",
+  "close_error": "fetch failed",
+  "ended_at": 1795094046.019,
+  "total_seconds": 432.4170000553131,
+  "used_at_close": {
+    "decisions": 3,
+    "calls": 7,
+    "motion_steps": 116,
+    "idle_steps": 501,
+    "wall_seconds": 39.04263233090751
+  },
+  "source_unchanged": true
+}

@@ -1,0 +1,72 @@
+{
+  "cases": [
+    {
+      "mode": "stop",
+      "episode_id": "03773cbeece30e7f860dec97a7bfa7a6",
+      "diagnosis_passed": true,
+      "actual_motion_covered": true,
+      "source_unchanged": true,
+      "views_used": 1,
+      "execution": "cancelled",
+      "late_old_api_starts": 0,
+      "late_release": false,
+      "old_revision_rejected": null,
+      "stop_latencies_seconds": [
+        0.02977678901515901,
+        0.08719470398500562,
+        0.04692252282984555,
+        0.030569616006687284
+      ],
+      "public_goal_status": "unknown",
+      "held_contact_proxy": {
+        "status": "verified",
+        "samples": 7,
+        "span_seconds": 3.1464407444000244,
+        "scope": "bilateral finger contact after first stop confirmation; not task completion or calibrated slip detection"
+      },
+      "reset_count": 1,
+      "used": {
+        "decisions": 4,
+        "calls": 12,
+        "motion_steps": 119,
+        "idle_steps": 276,
+        "wall_seconds": 29.726199330063537
+      }
+    },
+    {
+      "mode": "goal_change",
+      "episode_id": "d81d10c8be5b2f16abaf553d308525a5",
+      "diagnosis_passed": true,
+      "actual_motion_covered": true,
+      "source_unchanged": true,
+      "views_used": 1,
+      "execution": "cancelled",
+      "late_old_api_starts": 0,
+      "late_release": false,
+      "old_revision_rejected": true,
+      "stop_latencies_seconds": [
+        0.04105429304763675,
+        0.05971156503073871,
+        0.04942761198617518,
+        0.057269928976893425
+      ],
+      "public_goal_status": "verified",
+      "held_contact_proxy": {
+        "status": "verified",
+        "samples": 6,
+        "span_seconds": 2.650743246078491,
+        "scope": "bilateral finger contact after first stop confirmation; not task completion or calibrated slip detection"
+      },
+      "reset_count": 1,
+      "used": {
+        "decisions": 4,
+        "calls": 12,
+        "motion_steps": 120,
+        "idle_steps": 196,
+        "wall_seconds": 17.511297835968435
+      }
+    }
+  ],
+  "scorer_sha256": "4b8d669f2475a5253b2ca4b8e6f5f3393a5d41a1e0c4d2ba3d0eefe9a50ab092",
+  "scope": "Fixed public driver, synthetic support occlusion, stack seed 76; interruption diagnosis, no LLM or success-rate comparison"
+}

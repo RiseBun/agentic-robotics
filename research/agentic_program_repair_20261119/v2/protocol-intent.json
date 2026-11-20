@@ -1,0 +1,24 @@
+{
+  "task": "cube_restack",
+  "seed": 87,
+  "mode": "unbound_name",
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "purpose": "One rejected unbound-name program, then original-goal repair by the product model",
+  "experience": "disabled",
+  "budgets": {
+    "decisions": 12,
+    "calls": 40,
+    "motion_steps": 1500,
+    "wall_seconds": 300
+  },
+  "limitations": [
+    "Fixed failure preparation, not a natural task benchmark",
+    "No comparison or statistical claim",
+    "Old failed trials retained; no reset or budget clearing during model recovery"
+  ]
+}

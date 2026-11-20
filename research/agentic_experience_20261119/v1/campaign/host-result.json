@@ -1,0 +1,174 @@
+[
+  {
+    "mode": "baseline",
+    "episode_id": "08c113259092762281c11bda88c3ca96",
+    "handoff_event_id": 158,
+    "started_at": 1795101895.451,
+    "preparation_used": {
+      "decisions": 10,
+      "calls": 26,
+      "motion_steps": 371,
+      "idle_steps": 584,
+      "wall_seconds": 55.838974030921236
+    },
+    "outcome": "needs_attention",
+    "public_at_decision": {
+      "status": "unknown",
+      "evidence": [
+        {
+          "status": "unknown",
+          "evidence_ref": "frame-002265.npz",
+          "captured_at": 1795101960.6624153,
+          "gripper_width_m": 0.03962199889414871,
+          "command": "closed",
+          "reason": "open_empty_gripper_not_confirmed"
+        },
+        {
+          "relation": [
+            "red cube",
+            "green cube"
+          ],
+          "samples": [
+            "unknown"
+          ],
+          "geometry": [
+            {
+              "control_step": 2265,
+              "horizontal_residual_m": 0.01946758597064071,
+              "height_difference_m": 0.051798851561313766,
+              "support_width_m": 0.03421170203582217,
+              "center_methods": [
+                "visible_box",
+                "visible_side_plane_and_prior_rgbd_cube_size"
+              ]
+            }
+          ],
+          "window_steps": 0,
+          "scope": "visible geometry after release; not contact truth"
+        }
+      ],
+      "evidence_ref": "frame-002265.npz",
+      "captured_at": 1795101960.6624153,
+      "control_step": 2265
+    },
+    "terminal_at": 1795101964.807,
+    "ended_at": 1795101968.927,
+    "used_at_close": {
+      "decisions": 12,
+      "calls": 34,
+      "motion_steps": 430,
+      "idle_steps": 1973,
+      "wall_seconds": 128.21056687505916
+    },
+    "source_unchanged": true,
+    "experience_corpus_unchanged": true
+  },
+  {
+    "mode": "candidate",
+    "episode_id": "51da2877dbd41af6025cb63664dc833a",
+    "handoff_event_id": 158,
+    "started_at": 1795101969.434,
+    "preparation_used": {
+      "decisions": 10,
+      "calls": 26,
+      "motion_steps": 371,
+      "idle_steps": 2050,
+      "wall_seconds": 130.02193644200452
+    },
+    "outcome": "completed",
+    "public_at_decision": {
+      "status": "verified",
+      "evidence": [
+        {
+          "status": "verified",
+          "evidence_ref": "frame-003926.npz",
+          "captured_at": 1795102044.5623264,
+          "gripper_width_m": 0.0799830872490255,
+          "command": "open",
+          "reason": "public_open_aperture; bounded_cube_scope"
+        },
+        {
+          "relation": [
+            "red cube",
+            "green cube"
+          ],
+          "samples": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ],
+          "geometry": [
+            {
+              "control_step": 3906,
+              "horizontal_residual_m": 0.007962127951512113,
+              "height_difference_m": 0.04480307239785647,
+              "support_width_m": 0.034173186558814114,
+              "center_methods": [
+                "visible_box",
+                "visible_side_plane_and_prior_rgbd_cube_size"
+              ]
+            },
+            {
+              "control_step": 3911,
+              "horizontal_residual_m": 0.007962127951512113,
+              "height_difference_m": 0.04480307239785647,
+              "support_width_m": 0.034173186558814114,
+              "center_methods": [
+                "visible_box",
+                "visible_side_plane_and_prior_rgbd_cube_size"
+              ]
+            },
+            {
+              "control_step": 3916,
+              "horizontal_residual_m": 0.007962127951512113,
+              "height_difference_m": 0.04480307239785647,
+              "support_width_m": 0.034173186558814114,
+              "center_methods": [
+                "visible_box",
+                "visible_side_plane_and_prior_rgbd_cube_size"
+              ]
+            },
+            {
+              "control_step": 3921,
+              "horizontal_residual_m": 0.007962127951512113,
+              "height_difference_m": 0.04480307239785647,
+              "support_width_m": 0.034173186558814114,
+              "center_methods": [
+                "visible_box",
+                "visible_side_plane_and_prior_rgbd_cube_size"
+              ]
+            },
+            {
+              "control_step": 3926,
+              "horizontal_residual_m": 0.007963112699707047,
+              "height_difference_m": 0.04480307239785647,
+              "support_width_m": 0.034173186558814114,
+              "center_methods": [
+                "visible_box",
+                "visible_side_plane_and_prior_rgbd_cube_size"
+              ]
+            }
+          ],
+          "window_steps": 20,
+          "scope": "visible geometry after release; not contact truth"
+        }
+      ],
+      "evidence_ref": "frame-003926.npz",
+      "captured_at": 1795102044.5623264,
+      "control_step": 3926
+    },
+    "terminal_at": 1795102044.965,
+    "ended_at": 1795102053.981,
+    "used_at_close": {
+      "decisions": 12,
+      "calls": 34,
+      "motion_steps": 480,
+      "idle_steps": 3514,
+      "wall_seconds": 208.6726637640968
+    },
+    "source_unchanged": true,
+    "experience_corpus_unchanged": true
+  }
+]

@@ -1,0 +1,210 @@
+{
+  "cases": [
+    {
+      "mode": "cube_lifting",
+      "episode_id": "5de59982884566cbdda62971f8c37bf8",
+      "driver_passed": true,
+      "error": null,
+      "public_final": "verified",
+      "independent_task": {
+        "status": "verified",
+        "sample_count": 3,
+        "span_seconds": 1.0542399883270264,
+        "values": [
+          true,
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "false_completion": false,
+      "completed_cartesian_commands": 2,
+      "completed_phases": 3,
+      "maximum_position_error_m": 0.0029034734950558316,
+      "maximum_orientation_error_rad": 0.0021052354088388894,
+      "accepted_out_of_tolerance": 0,
+      "ik_attempts": 4,
+      "refinements": 1,
+      "late_cartesian_events": null,
+      "late_api_starts": null,
+      "old_revision_rejected": null,
+      "reset_count": 1,
+      "source_unchanged": true,
+      "budget_ledger_matches": true,
+      "used": {
+        "decisions": 4,
+        "calls": 7,
+        "motion_steps": 121,
+        "idle_steps": 236,
+        "wall_seconds": 26.13083774712868
+      }
+    },
+    {
+      "mode": "cube_stack",
+      "episode_id": "b8dec7d78c5f9934953d70c14980d112",
+      "driver_passed": true,
+      "error": null,
+      "public_final": "verified",
+      "independent_task": {
+        "status": "verified",
+        "sample_count": 3,
+        "span_seconds": 1.0013220310211182,
+        "values": [
+          true,
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "false_completion": false,
+      "completed_cartesian_commands": 4,
+      "completed_phases": 6,
+      "maximum_position_error_m": 0.0027801779180441533,
+      "maximum_orientation_error_rad": 0.003633497550589169,
+      "accepted_out_of_tolerance": 0,
+      "ik_attempts": 7,
+      "refinements": 1,
+      "late_cartesian_events": null,
+      "late_api_starts": null,
+      "old_revision_rejected": null,
+      "reset_count": 1,
+      "source_unchanged": true,
+      "budget_ledger_matches": true,
+      "used": {
+        "decisions": 5,
+        "calls": 10,
+        "motion_steps": 217,
+        "idle_steps": 198,
+        "wall_seconds": 23.59928205702454
+      }
+    },
+    {
+      "mode": "cube_restack",
+      "episode_id": "37e00a9e45bfca134a9e3851d7d5d90d",
+      "driver_passed": true,
+      "error": null,
+      "public_final": "verified",
+      "independent_task": {
+        "status": "verified",
+        "sample_count": 3,
+        "span_seconds": 1.009140968322754,
+        "values": [
+          true,
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "false_completion": false,
+      "completed_cartesian_commands": 8,
+      "completed_phases": 12,
+      "maximum_position_error_m": 0.0029966185341666457,
+      "maximum_orientation_error_rad": 0.004740427700269978,
+      "accepted_out_of_tolerance": 0,
+      "ik_attempts": 13,
+      "refinements": 1,
+      "late_cartesian_events": null,
+      "late_api_starts": null,
+      "old_revision_rejected": null,
+      "reset_count": 1,
+      "source_unchanged": true,
+      "budget_ledger_matches": true,
+      "used": {
+        "decisions": 8,
+        "calls": 20,
+        "motion_steps": 417,
+        "idle_steps": 370,
+        "wall_seconds": 42.19199991109781
+      }
+    },
+    {
+      "mode": "unreachable",
+      "episode_id": "5e6017027437e595ec72adee0718d78f",
+      "driver_passed": true,
+      "error": null,
+      "public_final": null,
+      "independent_task": null,
+      "false_completion": null,
+      "completed_cartesian_commands": 0,
+      "completed_phases": 0,
+      "maximum_position_error_m": null,
+      "maximum_orientation_error_rad": null,
+      "accepted_out_of_tolerance": 0,
+      "ik_attempts": 3,
+      "refinements": 2,
+      "late_cartesian_events": null,
+      "late_api_starts": null,
+      "old_revision_rejected": null,
+      "reset_count": 1,
+      "source_unchanged": true,
+      "budget_ledger_matches": true,
+      "used": {
+        "decisions": 1,
+        "calls": 1,
+        "motion_steps": 0,
+        "idle_steps": 35,
+        "wall_seconds": 3.547118498943746
+      }
+    },
+    {
+      "mode": "cancel_ik",
+      "episode_id": "b921ce12f038951021d90e850096050a",
+      "driver_passed": true,
+      "error": null,
+      "public_final": null,
+      "independent_task": null,
+      "false_completion": null,
+      "completed_cartesian_commands": 0,
+      "completed_phases": 0,
+      "maximum_position_error_m": null,
+      "maximum_orientation_error_rad": null,
+      "accepted_out_of_tolerance": 0,
+      "ik_attempts": 0,
+      "refinements": 0,
+      "late_cartesian_events": [],
+      "late_api_starts": [],
+      "old_revision_rejected": null,
+      "reset_count": 1,
+      "source_unchanged": true,
+      "budget_ledger_matches": true,
+      "used": {
+        "decisions": 1,
+        "calls": 1,
+        "motion_steps": 0,
+        "idle_steps": 46,
+        "wall_seconds": 3.9151054630056024
+      }
+    },
+    {
+      "mode": "change_goal_ik",
+      "episode_id": "3a3ebcef28866434815939bfd1efe87e",
+      "driver_passed": true,
+      "error": null,
+      "public_final": null,
+      "independent_task": null,
+      "false_completion": null,
+      "completed_cartesian_commands": 0,
+      "completed_phases": 0,
+      "maximum_position_error_m": null,
+      "maximum_orientation_error_rad": null,
+      "accepted_out_of_tolerance": 0,
+      "ik_attempts": 0,
+      "refinements": 0,
+      "late_cartesian_events": [],
+      "late_api_starts": [],
+      "old_revision_rejected": true,
+      "reset_count": 1,
+      "source_unchanged": true,
+      "budget_ledger_matches": true,
+      "used": {
+        "decisions": 1,
+        "calls": 1,
+        "motion_steps": 0,
+        "idle_steps": 46,
+        "wall_seconds": 3.8964956568088382
+      }
+    }
+  ],
+  "scope": "Fixed public geometry driver and synthetic delayed-IK controls; no LLM or success-rate comparison",
+  "scorer_sha256": "657d8b40ff04893cdc73300e084b42081ee16273adf17926e150103a7f330849"
+}

@@ -1,0 +1,7 @@
+{
+  "python_tests": 123,
+  "node_tests": 54,
+  "production_source_matches_frozen": true,
+  "source_digest": "9b19dc6f3eadd94de9d9677e275c1629aeb5e435fb7f466029d617f86f50a17c",
+  "package_scope": "Runtime import graph only; installed application not replaced"
+}

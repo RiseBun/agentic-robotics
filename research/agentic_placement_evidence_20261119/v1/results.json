@@ -1,0 +1,1845 @@
+[
+  {
+    "mode": "green_after_release_until_lateral_view",
+    "episode_id": "80540b17e2b1b70fcce6c096f4089325",
+    "runtime": {
+      "backend": "cap",
+      "source_digest": "14d2bb94860d6a4007420bcb65afeb9b33e60be0e4eabae1263967a0e3a834ef",
+      "python": "3.10.20",
+      "features": {
+        "inspect_support": true,
+        "inspect_placement": true,
+        "support_camera_fault": "green_after_release_until_lateral_view"
+      },
+      "upstream_source_digest": "0fa5306451e6b9ada1224e99c3344b8bf1075cbb36515bd623beed98ba640e3f",
+      "upstream_revision": "53e9966d7a8e2fa7494676772bccc35280f5c0ed"
+    },
+    "before_inspection": {
+      "status": "unknown",
+      "evidence": [
+        {
+          "status": "verified",
+          "evidence_ref": "frame-000448.npz",
+          "captured_at": 1795086371.371548,
+          "gripper_width_m": 0.07992517795503318,
+          "command": "open",
+          "reason": "public_open_aperture; bounded_cube_scope"
+        },
+        {
+          "relation": [
+            "red cube",
+            "green cube"
+          ],
+          "samples": [
+            "unknown",
+            "unknown",
+            "unknown",
+            "unknown",
+            "unknown"
+          ],
+          "geometry": [],
+          "window_steps": 20,
+          "scope": "visible geometry after release; not contact truth"
+        }
+      ],
+      "evidence_ref": "frame-000448.npz"
+    },
+    "public_final": {
+      "status": "verified",
+      "evidence": [
+        {
+          "status": "verified",
+          "evidence_ref": "frame-000544.npz",
+          "captured_at": 1795086376.1645718,
+          "gripper_width_m": 0.07999493073368967,
+          "command": "open",
+          "reason": "public_open_aperture; bounded_cube_scope"
+        },
+        {
+          "relation": [
+            "red cube",
+            "green cube"
+          ],
+          "samples": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ],
+          "geometry": [
+            {
+              "control_step": 529,
+              "horizontal_residual_m": 0.015427377671003729,
+              "height_difference_m": 0.04497415253770931,
+              "support_width_m": 0.05263566820237367,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 534,
+              "horizontal_residual_m": 0.015427377671003729,
+              "height_difference_m": 0.04497415253770931,
+              "support_width_m": 0.05263566820237367,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 539,
+              "horizontal_residual_m": 0.015427377671003729,
+              "height_difference_m": 0.04497415253770931,
+              "support_width_m": 0.05263566820237367,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 544,
+              "horizontal_residual_m": 0.015427377671003729,
+              "height_difference_m": 0.044974118718847274,
+              "support_width_m": 0.05263566820237367,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 549,
+              "horizontal_residual_m": 0.01542780075227815,
+              "height_difference_m": 0.044974118718847274,
+              "support_width_m": 0.05263566820237367,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            }
+          ],
+          "window_steps": 20,
+          "scope": "visible geometry after release; not contact truth"
+        }
+      ],
+      "evidence_ref": "frame-000544.npz"
+    },
+    "segments": [
+      {
+        "id": "c2d8a60e1c804077b0178e807bbd6b0c",
+        "revision": 1,
+        "subgoal": "grasp-red cube",
+        "code": "p, unused, extent = get_object_pose('red cube')\nopen_gripper()\ngoto_pose(p, [0,0,1,0], z_approach=0.10)\nclose_gripper()",
+        "contract": null,
+        "precondition_results": [],
+        "execution": "completed",
+        "effect": "failed",
+        "cancel_requested": false,
+        "verification_wait": {
+          "status": "ready",
+          "reason": "public_window_complete",
+          "action_step": 180,
+          "snapshot_age_seconds": 0.25406932830810547,
+          "snapshot_after_action": true,
+          "windows": [
+            {
+              "relation": "on",
+              "observed_window_steps": 20,
+              "required_window_steps": 20,
+              "first_step": 186,
+              "last_step": 206
+            }
+          ],
+          "evidence_ref": "frame-000206.npz",
+          "elapsed_seconds": 0.0005510500632226467
+        },
+        "goal_verification": {
+          "status": "failed",
+          "evidence": [
+            {
+              "status": "unknown",
+              "evidence_ref": "frame-000206.npz",
+              "captured_at": 1795086359.2623014,
+              "gripper_width_m": 0.03995429201391418,
+              "command": "closed",
+              "reason": "open_empty_gripper_not_confirmed"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "failed",
+                "failed",
+                "failed",
+                "failed",
+                "failed"
+              ],
+              "geometry": [
+                {
+                  "control_step": 186,
+                  "horizontal_residual_m": 0.1910427652566653,
+                  "height_difference_m": -0.006777906037487347,
+                  "support_width_m": 0.05031645086011205,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 191,
+                  "horizontal_residual_m": 0.190813115456853,
+                  "height_difference_m": -0.007019922247561247,
+                  "support_width_m": 0.05043821161817058,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 196,
+                  "horizontal_residual_m": 0.19094491131469146,
+                  "height_difference_m": -0.007151777661873887,
+                  "support_width_m": 0.05031645086011205,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 201,
+                  "horizontal_residual_m": 0.19093851813839732,
+                  "height_difference_m": -0.0070630875299087514,
+                  "support_width_m": 0.05031645086011205,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 206,
+                  "horizontal_residual_m": 0.19094919499643512,
+                  "height_difference_m": -0.007095402643746293,
+                  "support_width_m": 0.05031645086011205,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                }
+              ],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000206.npz"
+        },
+        "stage_verification": {
+          "status": "unknown",
+          "reason": "No public postcondition declared"
+        }
+      },
+      {
+        "id": "2f60d95c2e5e4ed083288f98364a8c66",
+        "revision": 1,
+        "subgoal": "lift-red cube",
+        "code": "s=get_execution_state()\np=s[\"tcp_xyz\"]\np[2]=p[2]+0.12\ngoto_pose(p,s[\"tcp_wxyz\"])\ncheck_holding('red cube')",
+        "contract": {
+          "preconditions": [],
+          "postcondition": {
+            "holding": "red cube"
+          }
+        },
+        "precondition_results": [],
+        "execution": "completed",
+        "effect": "failed",
+        "cancel_requested": false,
+        "verification_wait": {
+          "status": "ready",
+          "reason": "public_window_complete",
+          "action_step": 257,
+          "snapshot_age_seconds": 0.3979811668395996,
+          "snapshot_after_action": true,
+          "windows": [
+            {
+              "relation": "holding",
+              "observed_window_steps": 20,
+              "required_window_steps": 20,
+              "first_step": 260,
+              "last_step": 280
+            },
+            {
+              "relation": "on",
+              "observed_window_steps": 20,
+              "required_window_steps": 20,
+              "first_step": 260,
+              "last_step": 280
+            }
+          ],
+          "evidence_ref": "frame-000275.npz",
+          "elapsed_seconds": 0.0004288421478122473
+        },
+        "goal_verification": {
+          "status": "failed",
+          "evidence": [
+            {
+              "status": "unknown",
+              "evidence_ref": "frame-000275.npz",
+              "captured_at": 1795086362.712938,
+              "gripper_width_m": 0.03962961193390941,
+              "command": "closed",
+              "reason": "open_empty_gripper_not_confirmed"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "failed",
+                "failed",
+                "failed",
+                "failed",
+                "failed"
+              ],
+              "geometry": [
+                {
+                  "control_step": 260,
+                  "horizontal_residual_m": 0.19043270355089753,
+                  "height_difference_m": 0.10911550900539009,
+                  "support_width_m": 0.05016924838347518,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 265,
+                  "horizontal_residual_m": 0.19018891272333346,
+                  "height_difference_m": 0.111419294189756,
+                  "support_width_m": 0.05016924838347518,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 270,
+                  "horizontal_residual_m": 0.1905446591765271,
+                  "height_difference_m": 0.11177342335451892,
+                  "support_width_m": 0.05016924838347518,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 275,
+                  "horizontal_residual_m": 0.19021502647149052,
+                  "height_difference_m": 0.11327783119120974,
+                  "support_width_m": 0.05016924838347518,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 280,
+                  "horizontal_residual_m": 0.19014722579399343,
+                  "height_difference_m": 0.11332927058431745,
+                  "support_width_m": 0.05016924838347518,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                }
+              ],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000275.npz"
+        },
+        "stage_verification": {
+          "condition": {
+            "holding": "red cube"
+          },
+          "status": "verified",
+          "evidence": [
+            {
+              "state": "satisfied",
+              "object_name": "red cube",
+              "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+              "samples": [
+                {
+                  "control_step": 260,
+                  "evidence": "holding_supported",
+                  "visible_surface_lift_m": 0.11112382743176064,
+                  "surface_tcp_distance_m": 0.01881672198726862,
+                  "tcp_height_above_reference_m": 0.10615250413572558
+                },
+                {
+                  "control_step": 265,
+                  "evidence": "holding_supported",
+                  "visible_surface_lift_m": 0.11428252083502247,
+                  "surface_tcp_distance_m": 0.019131569089931043,
+                  "tcp_height_above_reference_m": 0.10827793254575815
+                },
+                {
+                  "control_step": 270,
+                  "evidence": "holding_supported",
+                  "visible_surface_lift_m": 0.11554377852856268,
+                  "surface_tcp_distance_m": 0.019265551971641707,
+                  "tcp_height_above_reference_m": 0.10910496337076862
+                },
+                {
+                  "control_step": 275,
+                  "evidence": "holding_supported",
+                  "visible_surface_lift_m": 0.11558408993063349,
+                  "surface_tcp_distance_m": 0.01920207602398569,
+                  "tcp_height_above_reference_m": 0.10942712348812644
+                },
+                {
+                  "control_step": 280,
+                  "evidence": "holding_supported",
+                  "visible_surface_lift_m": 0.1155555598835315,
+                  "surface_tcp_distance_m": 0.019164290684666654,
+                  "tcp_height_above_reference_m": 0.10955266713461238
+                }
+              ],
+              "window_control_steps": 20,
+              "maximum_relative_surface_drift_m": 0.001467926922155643,
+              "estimated_center_tcp_offset_xyz": [
+                0.007186578996615678,
+                -0.0004725213643142906,
+                -0.00829116603343695
+              ],
+              "reference_tcp_wxyz": [
+                0.008748570457100868,
+                -1.2189149856567383e-05,
+                0.9999608397483826,
+                0.0011461118701845407
+              ],
+              "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+              "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+            }
+          ],
+          "evidence_ref": "frame-000275.npz"
+        }
+      },
+      {
+        "id": "1db217d7c3b34519868a658797849caf",
+        "revision": 2,
+        "subgoal": "release-red cube",
+        "code": "goto_pose([0.6697695313853169, -0.11446445289898723, -0.03900368625255224], [0.008718692697584629, -1.0907649993896484e-05, 0.9999610781669617, 0.0011416934430599213], z_approach=0.10)\nopen_gripper()\ngoto_pose([0.6697695313853169, -0.11446445289898723, 0.10099631374744777], [0.008718692697584629, -1.0907649993896484e-05, 0.9999610781669617, 0.0011416934430599213])",
+        "contract": {
+          "preconditions": [
+            {
+              "holding": "red cube"
+            }
+          ],
+          "postcondition": {
+            "on": [
+              "red cube",
+              "green cube"
+            ],
+            "empty_gripper": true
+          }
+        },
+        "precondition_results": [
+          {
+            "condition": {
+              "holding": "red cube"
+            },
+            "status": "verified",
+            "evidence": [
+              {
+                "state": "satisfied",
+                "object_name": "red cube",
+                "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+                "samples": [
+                  {
+                    "control_step": 280,
+                    "evidence": "holding_supported",
+                    "visible_surface_lift_m": 0.1155555598835315,
+                    "surface_tcp_distance_m": 0.019164290684666654,
+                    "tcp_height_above_reference_m": 0.10955266713461238
+                  },
+                  {
+                    "control_step": 285,
+                    "evidence": "holding_supported",
+                    "visible_surface_lift_m": 0.11553653206022874,
+                    "surface_tcp_distance_m": 0.019160395908429474,
+                    "tcp_height_above_reference_m": 0.10956623206046243
+                  },
+                  {
+                    "control_step": 290,
+                    "evidence": "holding_supported",
+                    "visible_surface_lift_m": 0.11551887171562775,
+                    "surface_tcp_distance_m": 0.019158187342138196,
+                    "tcp_height_above_reference_m": 0.10955503170183106
+                  },
+                  {
+                    "control_step": 295,
+                    "evidence": "holding_supported",
+                    "visible_surface_lift_m": 0.11550483460519367,
+                    "surface_tcp_distance_m": 0.019156373451221863,
+                    "tcp_height_above_reference_m": 0.10954927314502438
+                  },
+                  {
+                    "control_step": 300,
+                    "evidence": "holding_supported",
+                    "visible_surface_lift_m": 0.11550212302349461,
+                    "surface_tcp_distance_m": 0.01915464656283303,
+                    "tcp_height_above_reference_m": 0.10954553484243577
+                  },
+                  {
+                    "control_step": 305,
+                    "evidence": "holding_supported",
+                    "visible_surface_lift_m": 0.11550029971855894,
+                    "surface_tcp_distance_m": 0.019156128606228704,
+                    "tcp_height_above_reference_m": 0.10954309851006862
+                  }
+                ],
+                "window_control_steps": 25,
+                "maximum_relative_surface_drift_m": 0.00016933176683034902,
+                "estimated_center_tcp_offset_xyz": [
+                  0.00770864735701865,
+                  -0.0006369845580658159,
+                  -0.007677203452431128
+                ],
+                "reference_tcp_wxyz": [
+                  0.008716724812984467,
+                  -1.0848045349121094e-05,
+                  0.999961256980896,
+                  0.001141498563811183
+                ],
+                "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+                "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+              }
+            ],
+            "evidence_ref": "frame-000305.npz"
+          }
+        ],
+        "execution": "completed",
+        "effect": "unknown",
+        "cancel_requested": false,
+        "verification_wait": {
+          "status": "ready",
+          "reason": "public_window_complete",
+          "action_step": 401,
+          "snapshot_age_seconds": 0.3899810314178467,
+          "snapshot_after_action": true,
+          "windows": [
+            {
+              "relation": "on",
+              "observed_window_steps": 20,
+              "required_window_steps": 20,
+              "first_step": 403,
+              "last_step": 423
+            }
+          ],
+          "evidence_ref": "frame-000418.npz",
+          "elapsed_seconds": 1.1807968278881162
+        },
+        "goal_verification": {
+          "status": "unknown",
+          "evidence": [
+            {
+              "status": "verified",
+              "evidence_ref": "frame-000418.npz",
+              "captured_at": 1795086369.8618412,
+              "gripper_width_m": 0.07972127012011661,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown"
+              ],
+              "geometry": [],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000418.npz"
+        },
+        "stage_verification": {
+          "condition": {
+            "on": [
+              "red cube",
+              "green cube"
+            ],
+            "empty_gripper": true
+          },
+          "status": "unknown",
+          "evidence": [
+            {
+              "status": "verified",
+              "evidence_ref": "frame-000418.npz",
+              "captured_at": 1795086369.8618412,
+              "gripper_width_m": 0.07972127012011661,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown"
+              ],
+              "geometry": [],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000418.npz"
+        },
+        "feedback": {
+          "category": "insufficient_evidence",
+          "phase": "postcondition",
+          "api": null,
+          "call_id": null,
+          "message": "Public effect unknown",
+          "evidence": {
+            "status": "unknown",
+            "evidence": [
+              {
+                "status": "verified",
+                "evidence_ref": "frame-000418.npz",
+                "captured_at": 1795086369.8618412,
+                "gripper_width_m": 0.07972127012011661,
+                "command": "open",
+                "reason": "public_open_aperture; bounded_cube_scope"
+              },
+              {
+                "relation": [
+                  "red cube",
+                  "green cube"
+                ],
+                "samples": [
+                  "unknown",
+                  "unknown",
+                  "unknown",
+                  "unknown",
+                  "unknown"
+                ],
+                "geometry": [],
+                "window_steps": 20,
+                "scope": "visible geometry after release; not contact truth"
+              }
+            ],
+            "evidence_ref": "frame-000418.npz"
+          },
+          "observation": {
+            "evidence_ref": "frame-000418.npz",
+            "captured_at": 1795086369.8618412,
+            "control_step": 418
+          },
+          "causal_status": "not_established"
+        }
+      },
+      {
+        "id": "2c89271f31d0413a8c49de321ea3c99e",
+        "revision": 3,
+        "subgoal": "inspect-placement",
+        "code": "inspect_placement(\"red cube\", \"green cube\")",
+        "contract": null,
+        "precondition_results": [],
+        "execution": "completed",
+        "effect": "verified",
+        "cancel_requested": false,
+        "evidence_acquisition": {
+          "status": "verified",
+          "acquisition_id": "06daf8409a954a6e96993d078a8c5873",
+          "acquisition_type": "placement_verification",
+          "top": "red cube",
+          "support": "green cube",
+          "revision": 3,
+          "views_used": 1,
+          "reason": "public_relation_checked",
+          "empty_gripper": {
+            "status": "verified",
+            "evidence_ref": "frame-000489.npz",
+            "captured_at": 1795086373.414464,
+            "gripper_width_m": 0.07997235322307908,
+            "command": "open",
+            "reason": "public_open_aperture; bounded_cube_scope"
+          },
+          "before": {
+            "status": "unknown",
+            "evidence": [
+              {
+                "status": "verified",
+                "evidence_ref": "frame-000448.npz",
+                "captured_at": 1795086371.371548,
+                "gripper_width_m": 0.07992517795503318,
+                "command": "open",
+                "reason": "public_open_aperture; bounded_cube_scope"
+              },
+              {
+                "relation": [
+                  "red cube",
+                  "green cube"
+                ],
+                "samples": [
+                  "unknown",
+                  "unknown",
+                  "unknown",
+                  "unknown",
+                  "unknown"
+                ],
+                "geometry": [],
+                "window_steps": 20,
+                "scope": "visible geometry after release; not contact truth"
+              }
+            ],
+            "evidence_ref": "frame-000448.npz"
+          },
+          "goal_verification": {
+            "status": "verified",
+            "evidence": [
+              {
+                "status": "verified",
+                "evidence_ref": "frame-000489.npz",
+                "captured_at": 1795086373.414464,
+                "gripper_width_m": 0.07997235322307908,
+                "command": "open",
+                "reason": "public_open_aperture; bounded_cube_scope"
+              },
+              {
+                "relation": [
+                  "red cube",
+                  "green cube"
+                ],
+                "samples": [
+                  "verified",
+                  "verified",
+                  "verified",
+                  "verified",
+                  "verified"
+                ],
+                "geometry": [
+                  {
+                    "control_step": 474,
+                    "horizontal_residual_m": 0.015427890796402331,
+                    "height_difference_m": 0.04497415253770931,
+                    "support_width_m": 0.05263566820237367,
+                    "center_methods": [
+                      "visible_box",
+                      "visible_box"
+                    ]
+                  },
+                  {
+                    "control_step": 479,
+                    "horizontal_residual_m": 0.015427890796402331,
+                    "height_difference_m": 0.04497415253770931,
+                    "support_width_m": 0.05263566820237367,
+                    "center_methods": [
+                      "visible_box",
+                      "visible_box"
+                    ]
+                  },
+                  {
+                    "control_step": 484,
+                    "horizontal_residual_m": 0.015427890796402331,
+                    "height_difference_m": 0.04497415253770931,
+                    "support_width_m": 0.05263566820237367,
+                    "center_methods": [
+                      "visible_box",
+                      "visible_box"
+                    ]
+                  },
+                  {
+                    "control_step": 489,
+                    "horizontal_residual_m": 0.015427890796402331,
+                    "height_difference_m": 0.04497415253770931,
+                    "support_width_m": 0.05263566820237367,
+                    "center_methods": [
+                      "visible_box",
+                      "visible_box"
+                    ]
+                  },
+                  {
+                    "control_step": 494,
+                    "horizontal_residual_m": 0.015427890796402331,
+                    "height_difference_m": 0.04497415253770931,
+                    "support_width_m": 0.05263566820237367,
+                    "center_methods": [
+                      "visible_box",
+                      "visible_box"
+                    ]
+                  }
+                ],
+                "window_steps": 20,
+                "scope": "visible geometry after release; not contact truth"
+              }
+            ],
+            "evidence_ref": "frame-000489.npz"
+          },
+          "clearance": {
+            "status": "available",
+            "empty_gripper": {
+              "status": "verified",
+              "evidence_ref": "frame-000448.npz",
+              "captured_at": 1795086371.371548,
+              "gripper_width_m": 0.07992517795503318,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            "required_tcp_z_m": 0.07364455279854448,
+            "actual_tcp_xyz": [
+              0.6707514055620936,
+              -0.11463170853723796,
+              0.09396386656368749
+            ],
+            "release_id": "1243979719db42d0ab953943ef4ee08f",
+            "reason": "bounded_cube_post_release_clearance"
+          },
+          "evidence_ref": "frame-000489.npz",
+          "captured_at": 1795086373.414464,
+          "actual_tcp_xyz": [
+            0.6707620111814826,
+            -0.0148124852279545,
+            0.09395759901623726
+          ],
+          "total_views_used": 1,
+          "elapsed_seconds": 2.1119635270442814,
+          "used_delta": {
+            "decisions": 0,
+            "calls": 1,
+            "motion_steps": 16,
+            "idle_steps": 28
+          }
+        },
+        "verification_wait": {
+          "status": "ready",
+          "reason": "public_window_complete",
+          "action_step": 471,
+          "snapshot_age_seconds": 0.4476451873779297,
+          "snapshot_after_action": true,
+          "windows": [
+            {
+              "relation": "on",
+              "observed_window_steps": 20,
+              "required_window_steps": 20,
+              "first_step": 474,
+              "last_step": 494
+            }
+          ],
+          "evidence_ref": "frame-000489.npz",
+          "elapsed_seconds": 0.0005158649291843176
+        },
+        "goal_verification": {
+          "status": "verified",
+          "evidence": [
+            {
+              "status": "verified",
+              "evidence_ref": "frame-000489.npz",
+              "captured_at": 1795086373.414464,
+              "gripper_width_m": 0.07997235322307908,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "verified",
+                "verified",
+                "verified",
+                "verified",
+                "verified"
+              ],
+              "geometry": [
+                {
+                  "control_step": 474,
+                  "horizontal_residual_m": 0.015427890796402331,
+                  "height_difference_m": 0.04497415253770931,
+                  "support_width_m": 0.05263566820237367,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 479,
+                  "horizontal_residual_m": 0.015427890796402331,
+                  "height_difference_m": 0.04497415253770931,
+                  "support_width_m": 0.05263566820237367,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 484,
+                  "horizontal_residual_m": 0.015427890796402331,
+                  "height_difference_m": 0.04497415253770931,
+                  "support_width_m": 0.05263566820237367,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 489,
+                  "horizontal_residual_m": 0.015427890796402331,
+                  "height_difference_m": 0.04497415253770931,
+                  "support_width_m": 0.05263566820237367,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 494,
+                  "horizontal_residual_m": 0.015427890796402331,
+                  "height_difference_m": 0.04497415253770931,
+                  "support_width_m": 0.05263566820237367,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                }
+              ],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000489.npz"
+        },
+        "stage_verification": {
+          "status": "unknown",
+          "reason": "No public postcondition declared"
+        }
+      }
+    ],
+    "used": {
+      "decisions": 5,
+      "calls": 12,
+      "motion_steps": 213,
+      "idle_steps": 338,
+      "wall_seconds": 35.725016037002206
+    },
+    "closed": "closed"
+  },
+  {
+    "mode": "green_after_release_persistent",
+    "episode_id": "ba225b9895eafb5ed01ea5320527c9d9",
+    "runtime": {
+      "backend": "cap",
+      "source_digest": "14d2bb94860d6a4007420bcb65afeb9b33e60be0e4eabae1263967a0e3a834ef",
+      "python": "3.10.20",
+      "features": {
+        "inspect_support": true,
+        "inspect_placement": true,
+        "support_camera_fault": "green_after_release_persistent"
+      },
+      "upstream_source_digest": "0fa5306451e6b9ada1224e99c3344b8bf1075cbb36515bd623beed98ba640e3f",
+      "upstream_revision": "53e9966d7a8e2fa7494676772bccc35280f5c0ed"
+    },
+    "before_inspection": {
+      "status": "unknown",
+      "evidence": [
+        {
+          "status": "verified",
+          "evidence_ref": "frame-000360.npz",
+          "captured_at": 1795086396.8727539,
+          "gripper_width_m": 0.07992838713443878,
+          "command": "open",
+          "reason": "public_open_aperture; bounded_cube_scope"
+        },
+        {
+          "relation": [
+            "red cube",
+            "green cube"
+          ],
+          "samples": [
+            "unknown",
+            "unknown",
+            "unknown",
+            "unknown",
+            "unknown"
+          ],
+          "geometry": [],
+          "window_steps": 20,
+          "scope": "visible geometry after release; not contact truth"
+        }
+      ],
+      "evidence_ref": "frame-000360.npz"
+    },
+    "error": "inspect-placement: Public effect unknown",
+    "public_final": {
+      "status": "unknown",
+      "evidence": [
+        {
+          "status": "verified",
+          "evidence_ref": "frame-000470.npz",
+          "captured_at": 1795086402.3823636,
+          "gripper_width_m": 0.07996262836598306,
+          "command": "open",
+          "reason": "public_open_aperture; bounded_cube_scope"
+        },
+        {
+          "relation": [
+            "red cube",
+            "green cube"
+          ],
+          "samples": [
+            "unknown",
+            "unknown",
+            "unknown",
+            "unknown",
+            "unknown"
+          ],
+          "geometry": [],
+          "window_steps": 20,
+          "scope": "visible geometry after release; not contact truth"
+        }
+      ],
+      "evidence_ref": "frame-000470.npz"
+    },
+    "segments": [
+      {
+        "id": "4d23a7be54534827888d736d3d354f3d",
+        "revision": 1,
+        "subgoal": "grasp-red cube",
+        "code": "p, unused, extent = get_object_pose('red cube')\nopen_gripper()\ngoto_pose(p, [0,0,1,0], z_approach=0.10)\nclose_gripper()",
+        "contract": null,
+        "precondition_results": [],
+        "execution": "completed",
+        "effect": "failed",
+        "cancel_requested": false,
+        "verification_wait": {
+          "status": "ready",
+          "reason": "public_window_complete",
+          "action_step": 91,
+          "snapshot_age_seconds": 0.3443000316619873,
+          "snapshot_after_action": true,
+          "windows": [
+            {
+              "relation": "on",
+              "observed_window_steps": 20,
+              "required_window_steps": 20,
+              "first_step": 100,
+              "last_step": 120
+            }
+          ],
+          "evidence_ref": "frame-000115.npz",
+          "elapsed_seconds": 0.0005559639539569616
+        },
+        "goal_verification": {
+          "status": "failed",
+          "evidence": [
+            {
+              "status": "unknown",
+              "evidence_ref": "frame-000115.npz",
+              "captured_at": 1795086384.6246712,
+              "gripper_width_m": 0.03998646042639417,
+              "command": "closed",
+              "reason": "open_empty_gripper_not_confirmed"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "failed",
+                "failed",
+                "failed",
+                "failed",
+                "failed"
+              ],
+              "geometry": [
+                {
+                  "control_step": 100,
+                  "horizontal_residual_m": 0.19081642374395957,
+                  "height_difference_m": -0.006964905094825211,
+                  "support_width_m": 0.0503512050525943,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 105,
+                  "horizontal_residual_m": 0.1909766020266159,
+                  "height_difference_m": -0.007047758112462707,
+                  "support_width_m": 0.0503512050525943,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 110,
+                  "horizontal_residual_m": 0.1908816647405218,
+                  "height_difference_m": -0.007102203107849175,
+                  "support_width_m": 0.05031645086011205,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 115,
+                  "horizontal_residual_m": 0.1909995578930214,
+                  "height_difference_m": -0.007023967670419545,
+                  "support_width_m": 0.05031645086011205,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 120,
+                  "horizontal_residual_m": 0.19099837140100573,
+                  "height_difference_m": -0.007054197757678959,
+                  "support_width_m": 0.05031645086011205,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                }
+              ],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000115.npz"
+        },
+        "stage_verification": {
+          "status": "unknown",
+          "reason": "No public postcondition declared"
+        }
+      },
+      {
+        "id": "76d1e4e6db31424380c608b54ec8c799",
+        "revision": 1,
+        "subgoal": "lift-red cube",
+        "code": "s=get_execution_state()\np=s[\"tcp_xyz\"]\np[2]=p[2]+0.12\ngoto_pose(p,s[\"tcp_wxyz\"])\ncheck_holding('red cube')",
+        "contract": {
+          "preconditions": [],
+          "postcondition": {
+            "holding": "red cube"
+          }
+        },
+        "precondition_results": [],
+        "execution": "completed",
+        "effect": "failed",
+        "cancel_requested": false,
+        "verification_wait": {
+          "status": "ready",
+          "reason": "public_window_complete",
+          "action_step": 168,
+          "snapshot_age_seconds": 0.4480876922607422,
+          "snapshot_after_action": true,
+          "windows": [
+            {
+              "relation": "holding",
+              "observed_window_steps": 20,
+              "required_window_steps": 20,
+              "first_step": 169,
+              "last_step": 189
+            },
+            {
+              "relation": "on",
+              "observed_window_steps": 20,
+              "required_window_steps": 20,
+              "first_step": 169,
+              "last_step": 189
+            }
+          ],
+          "evidence_ref": "frame-000184.npz",
+          "elapsed_seconds": 0.0006401119753718376
+        },
+        "goal_verification": {
+          "status": "failed",
+          "evidence": [
+            {
+              "status": "unknown",
+              "evidence_ref": "frame-000184.npz",
+              "captured_at": 1795086388.0737538,
+              "gripper_width_m": 0.03963075105967809,
+              "command": "closed",
+              "reason": "open_empty_gripper_not_confirmed"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "failed",
+                "failed",
+                "failed",
+                "failed",
+                "failed"
+              ],
+              "geometry": [
+                {
+                  "control_step": 169,
+                  "horizontal_residual_m": 0.1905085928173884,
+                  "height_difference_m": 0.10842673507372197,
+                  "support_width_m": 0.05016924838347518,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 174,
+                  "horizontal_residual_m": 0.19037348073382174,
+                  "height_difference_m": 0.11114228618265284,
+                  "support_width_m": 0.05016924838347518,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 179,
+                  "horizontal_residual_m": 0.19055998247881673,
+                  "height_difference_m": 0.11166846059858374,
+                  "support_width_m": 0.05016924838347518,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 184,
+                  "horizontal_residual_m": 0.190211724254733,
+                  "height_difference_m": 0.11323450034501373,
+                  "support_width_m": 0.05016924838347518,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                },
+                {
+                  "control_step": 189,
+                  "horizontal_residual_m": 0.19014464582684112,
+                  "height_difference_m": 0.11330904866207539,
+                  "support_width_m": 0.05016924838347518,
+                  "center_methods": [
+                    "visible_box",
+                    "visible_box"
+                  ]
+                }
+              ],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000184.npz"
+        },
+        "stage_verification": {
+          "condition": {
+            "holding": "red cube"
+          },
+          "status": "verified",
+          "evidence": [
+            {
+              "state": "satisfied",
+              "object_name": "red cube",
+              "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+              "samples": [
+                {
+                  "control_step": 169,
+                  "evidence": "holding_supported",
+                  "visible_surface_lift_m": 0.11129906173485105,
+                  "surface_tcp_distance_m": 0.019333402689261422,
+                  "tcp_height_above_reference_m": 0.10455838149954816
+                },
+                {
+                  "control_step": 174,
+                  "evidence": "holding_supported",
+                  "visible_surface_lift_m": 0.11337486173900785,
+                  "surface_tcp_distance_m": 0.019030711381996728,
+                  "tcp_height_above_reference_m": 0.1076592400815693
+                },
+                {
+                  "control_step": 179,
+                  "evidence": "holding_supported",
+                  "visible_surface_lift_m": 0.11556551793356468,
+                  "surface_tcp_distance_m": 0.01936191280207203,
+                  "tcp_height_above_reference_m": 0.10886556840643305
+                },
+                {
+                  "control_step": 184,
+                  "evidence": "holding_supported",
+                  "visible_surface_lift_m": 0.11559903869353533,
+                  "surface_tcp_distance_m": 0.019245900143652166,
+                  "tcp_height_above_reference_m": 0.10933522470387287
+                },
+                {
+                  "control_step": 189,
+                  "evidence": "holding_supported",
+                  "visible_surface_lift_m": 0.11556100642263412,
+                  "surface_tcp_distance_m": 0.019186455511357666,
+                  "tcp_height_above_reference_m": 0.10951790591496997
+                }
+              ],
+              "window_control_steps": 20,
+              "maximum_relative_surface_drift_m": 0.0010259416824304857,
+              "estimated_center_tcp_offset_xyz": [
+                0.007628286369735893,
+                -0.0003916489906680698,
+                -0.0076413849303293875
+              ],
+              "reference_tcp_wxyz": [
+                0.008760850876569748,
+                -1.3709068298339844e-05,
+                0.9999608397483826,
+                0.0011499414686113596
+              ],
+              "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+              "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+            }
+          ],
+          "evidence_ref": "frame-000184.npz"
+        }
+      },
+      {
+        "id": "b45c9560760c454dae14ee75e8736661",
+        "revision": 2,
+        "subgoal": "release-red cube",
+        "code": "goto_pose([0.6697541929790842, -0.11446405477326542, -0.03901246950303203], [0.008732530288398266, -1.2248754501342773e-05, 0.9999611377716064, 0.0011446913704276085], z_approach=0.10)\nopen_gripper()\ngoto_pose([0.6697541929790842, -0.11446405477326542, 0.10098753049696799], [0.008732530288398266, -1.2248754501342773e-05, 0.9999611377716064, 0.0011446913704276085])",
+        "contract": {
+          "preconditions": [
+            {
+              "holding": "red cube"
+            }
+          ],
+          "postcondition": {
+            "on": [
+              "red cube",
+              "green cube"
+            ],
+            "empty_gripper": true
+          }
+        },
+        "precondition_results": [
+          {
+            "condition": {
+              "holding": "red cube"
+            },
+            "status": "verified",
+            "evidence": [
+              {
+                "state": "satisfied",
+                "object_name": "red cube",
+                "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+                "samples": [
+                  {
+                    "control_step": 189,
+                    "evidence": "holding_supported",
+                    "visible_surface_lift_m": 0.11556100642263412,
+                    "surface_tcp_distance_m": 0.019186455511357666,
+                    "tcp_height_above_reference_m": 0.10951790591496997
+                  },
+                  {
+                    "control_step": 194,
+                    "evidence": "holding_supported",
+                    "visible_surface_lift_m": 0.11554106694686359,
+                    "surface_tcp_distance_m": 0.0191740176674922,
+                    "tcp_height_above_reference_m": 0.10956075245002547
+                  },
+                  {
+                    "control_step": 199,
+                    "evidence": "holding_supported",
+                    "visible_surface_lift_m": 0.11551932754186167,
+                    "surface_tcp_distance_m": 0.01917377999247698,
+                    "tcp_height_above_reference_m": 0.10954719096025675
+                  },
+                  {
+                    "control_step": 204,
+                    "evidence": "holding_supported",
+                    "visible_surface_lift_m": 0.11550709036065895,
+                    "surface_tcp_distance_m": 0.019173066945388277,
+                    "tcp_height_above_reference_m": 0.1095408490494705
+                  },
+                  {
+                    "control_step": 209,
+                    "evidence": "holding_supported",
+                    "visible_surface_lift_m": 0.11549849978932758,
+                    "surface_tcp_distance_m": 0.019170813030739906,
+                    "tcp_height_above_reference_m": 0.10953675159195599
+                  },
+                  {
+                    "control_step": 214,
+                    "evidence": "holding_supported",
+                    "visible_surface_lift_m": 0.11549984389232501,
+                    "surface_tcp_distance_m": 0.019171304388578014,
+                    "tcp_height_above_reference_m": 0.10953421000743511
+                  }
+                ],
+                "window_control_steps": 25,
+                "maximum_relative_surface_drift_m": 0.00017989647150920568,
+                "estimated_center_tcp_offset_xyz": [
+                  0.007714446924867835,
+                  -0.0006306578389810788,
+                  -0.007676143092624233
+                ],
+                "reference_tcp_wxyz": [
+                  0.008730324916541576,
+                  -1.2308359146118164e-05,
+                  0.9999610781669617,
+                  0.0011443889234215021
+                ],
+                "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+                "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+              }
+            ],
+            "evidence_ref": "frame-000214.npz"
+          }
+        ],
+        "execution": "completed",
+        "effect": "unknown",
+        "cancel_requested": false,
+        "verification_wait": {
+          "status": "ready",
+          "reason": "public_window_complete",
+          "action_step": 313,
+          "snapshot_age_seconds": 0.3799550533294678,
+          "snapshot_after_action": true,
+          "windows": [
+            {
+              "relation": "on",
+              "observed_window_steps": 20,
+              "required_window_steps": 20,
+              "first_step": 315,
+              "last_step": 335
+            }
+          ],
+          "evidence_ref": "frame-000330.npz",
+          "elapsed_seconds": 1.181505428161472
+        },
+        "goal_verification": {
+          "status": "unknown",
+          "evidence": [
+            {
+              "status": "verified",
+              "evidence_ref": "frame-000330.npz",
+              "captured_at": 1795086395.3803005,
+              "gripper_width_m": 0.07973322507166947,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown"
+              ],
+              "geometry": [],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000330.npz"
+        },
+        "stage_verification": {
+          "condition": {
+            "on": [
+              "red cube",
+              "green cube"
+            ],
+            "empty_gripper": true
+          },
+          "status": "unknown",
+          "evidence": [
+            {
+              "status": "verified",
+              "evidence_ref": "frame-000330.npz",
+              "captured_at": 1795086395.3803005,
+              "gripper_width_m": 0.07973322507166947,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown"
+              ],
+              "geometry": [],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000330.npz"
+        },
+        "feedback": {
+          "category": "insufficient_evidence",
+          "phase": "postcondition",
+          "api": null,
+          "call_id": null,
+          "message": "Public effect unknown",
+          "evidence": {
+            "status": "unknown",
+            "evidence": [
+              {
+                "status": "verified",
+                "evidence_ref": "frame-000330.npz",
+                "captured_at": 1795086395.3803005,
+                "gripper_width_m": 0.07973322507166947,
+                "command": "open",
+                "reason": "public_open_aperture; bounded_cube_scope"
+              },
+              {
+                "relation": [
+                  "red cube",
+                  "green cube"
+                ],
+                "samples": [
+                  "unknown",
+                  "unknown",
+                  "unknown",
+                  "unknown",
+                  "unknown"
+                ],
+                "geometry": [],
+                "window_steps": 20,
+                "scope": "visible geometry after release; not contact truth"
+              }
+            ],
+            "evidence_ref": "frame-000330.npz"
+          },
+          "observation": {
+            "evidence_ref": "frame-000330.npz",
+            "captured_at": 1795086395.3803005,
+            "control_step": 330
+          },
+          "causal_status": "not_established"
+        }
+      },
+      {
+        "id": "fd1d02a141f2498b9209fd11af99e6f7",
+        "revision": 3,
+        "subgoal": "inspect-placement",
+        "code": "inspect_placement(\"red cube\", \"green cube\")",
+        "contract": null,
+        "precondition_results": [],
+        "execution": "failed",
+        "effect": "unknown",
+        "cancel_requested": false,
+        "evidence_acquisition": {
+          "status": "unknown",
+          "acquisition_id": "deb1b6953d6f43f991482d6ffaf03857",
+          "acquisition_type": "placement_verification",
+          "top": "red cube",
+          "support": "green cube",
+          "revision": 3,
+          "views_used": 2,
+          "reason": "placement_remains_unknown; views_exhausted",
+          "empty_gripper": {
+            "status": "verified",
+            "evidence_ref": "frame-000445.npz",
+            "captured_at": 1795086401.1359682,
+            "gripper_width_m": 0.07988818419774561,
+            "command": "open",
+            "reason": "public_open_aperture; bounded_cube_scope"
+          },
+          "before": {
+            "status": "unknown",
+            "evidence": [
+              {
+                "status": "verified",
+                "evidence_ref": "frame-000360.npz",
+                "captured_at": 1795086396.8727539,
+                "gripper_width_m": 0.07992838713443878,
+                "command": "open",
+                "reason": "public_open_aperture; bounded_cube_scope"
+              },
+              {
+                "relation": [
+                  "red cube",
+                  "green cube"
+                ],
+                "samples": [
+                  "unknown",
+                  "unknown",
+                  "unknown",
+                  "unknown",
+                  "unknown"
+                ],
+                "geometry": [],
+                "window_steps": 20,
+                "scope": "visible geometry after release; not contact truth"
+              }
+            ],
+            "evidence_ref": "frame-000360.npz"
+          },
+          "goal_verification": {
+            "status": "unknown",
+            "evidence": [
+              {
+                "status": "verified",
+                "evidence_ref": "frame-000445.npz",
+                "captured_at": 1795086401.1359682,
+                "gripper_width_m": 0.07988818419774561,
+                "command": "open",
+                "reason": "public_open_aperture; bounded_cube_scope"
+              },
+              {
+                "relation": [
+                  "red cube",
+                  "green cube"
+                ],
+                "samples": [
+                  "unknown",
+                  "unknown",
+                  "unknown",
+                  "unknown",
+                  "unknown"
+                ],
+                "geometry": [],
+                "window_steps": 20,
+                "scope": "visible geometry after release; not contact truth"
+              }
+            ],
+            "evidence_ref": "frame-000445.npz"
+          },
+          "clearance": {
+            "status": "available",
+            "empty_gripper": {
+              "status": "verified",
+              "evidence_ref": "frame-000360.npz",
+              "captured_at": 1795086396.8727539,
+              "gripper_width_m": 0.07992838713443878,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            "required_tcp_z_m": 0.07363242187401269,
+            "actual_tcp_xyz": [
+              0.6707359427522819,
+              -0.11463160689427702,
+              0.09395491701580656
+            ],
+            "release_id": "907fbedf076843d5bfd528614aca4795",
+            "reason": "bounded_cube_post_release_clearance"
+          },
+          "evidence_ref": "frame-000445.npz",
+          "captured_at": 1795086401.1359682,
+          "actual_tcp_xyz": [
+            0.6707785642379245,
+            -0.21437137631278322,
+            0.09395272122090816
+          ],
+          "total_views_used": 2,
+          "elapsed_seconds": 4.3471257879864424,
+          "used_delta": {
+            "decisions": 0,
+            "calls": 2,
+            "motion_steps": 34,
+            "idle_steps": 54
+          }
+        },
+        "error": "Public effect unknown",
+        "feedback": {
+          "category": "insufficient_evidence",
+          "phase": "execution",
+          "api": "inspect_placement",
+          "call_id": "2a1a5708c6494515a9c6bd86b2e1517e",
+          "message": "Public effect unknown",
+          "evidence": {
+            "status": "unknown",
+            "acquisition_id": "deb1b6953d6f43f991482d6ffaf03857",
+            "acquisition_type": "placement_verification",
+            "top": "red cube",
+            "support": "green cube",
+            "revision": 3,
+            "views_used": 2,
+            "reason": "placement_remains_unknown; views_exhausted",
+            "empty_gripper": {
+              "status": "verified",
+              "evidence_ref": "frame-000445.npz",
+              "captured_at": 1795086401.1359682,
+              "gripper_width_m": 0.07988818419774561,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            "before": {
+              "status": "unknown",
+              "evidence": [
+                {
+                  "status": "verified",
+                  "evidence_ref": "frame-000360.npz",
+                  "captured_at": 1795086396.8727539,
+                  "gripper_width_m": 0.07992838713443878,
+                  "command": "open",
+                  "reason": "public_open_aperture; bounded_cube_scope"
+                },
+                {
+                  "relation": [
+                    "red cube",
+                    "green cube"
+                  ],
+                  "samples": [
+                    "unknown",
+                    "unknown",
+                    "unknown",
+                    "unknown",
+                    "unknown"
+                  ],
+                  "geometry": [],
+                  "window_steps": 20,
+                  "scope": "visible geometry after release; not contact truth"
+                }
+              ],
+              "evidence_ref": "frame-000360.npz"
+            },
+            "goal_verification": {
+              "status": "unknown",
+              "evidence": [
+                {
+                  "status": "verified",
+                  "evidence_ref": "frame-000445.npz",
+                  "captured_at": 1795086401.1359682,
+                  "gripper_width_m": 0.07988818419774561,
+                  "command": "open",
+                  "reason": "public_open_aperture; bounded_cube_scope"
+                },
+                {
+                  "relation": [
+                    "red cube",
+                    "green cube"
+                  ],
+                  "samples": [
+                    "unknown",
+                    "unknown",
+                    "unknown",
+                    "unknown",
+                    "unknown"
+                  ],
+                  "geometry": [],
+                  "window_steps": 20,
+                  "scope": "visible geometry after release; not contact truth"
+                }
+              ],
+              "evidence_ref": "frame-000445.npz"
+            },
+            "clearance": {
+              "status": "available",
+              "empty_gripper": {
+                "status": "verified",
+                "evidence_ref": "frame-000360.npz",
+                "captured_at": 1795086396.8727539,
+                "gripper_width_m": 0.07992838713443878,
+                "command": "open",
+                "reason": "public_open_aperture; bounded_cube_scope"
+              },
+              "required_tcp_z_m": 0.07363242187401269,
+              "actual_tcp_xyz": [
+                0.6707359427522819,
+                -0.11463160689427702,
+                0.09395491701580656
+              ],
+              "release_id": "907fbedf076843d5bfd528614aca4795",
+              "reason": "bounded_cube_post_release_clearance"
+            },
+            "evidence_ref": "frame-000445.npz",
+            "captured_at": 1795086401.1359682,
+            "actual_tcp_xyz": [
+              0.6707785642379245,
+              -0.21437137631278322,
+              0.09395272122090816
+            ],
+            "total_views_used": 2,
+            "elapsed_seconds": 4.3471257879864424,
+            "used_delta": {
+              "decisions": 0,
+              "calls": 2,
+              "motion_steps": 34,
+              "idle_steps": 54
+            }
+          },
+          "observation": {
+            "evidence_ref": "frame-000445.npz",
+            "captured_at": 1795086401.1359682,
+            "control_step": 445
+          },
+          "causal_status": "not_established"
+        },
+        "verification_wait": {
+          "status": "not_required"
+        },
+        "goal_verification": {
+          "status": "unknown",
+          "evidence": [
+            {
+              "status": "verified",
+              "evidence_ref": "frame-000445.npz",
+              "captured_at": 1795086401.1359682,
+              "gripper_width_m": 0.07988818419774561,
+              "command": "open",
+              "reason": "public_open_aperture; bounded_cube_scope"
+            },
+            {
+              "relation": [
+                "red cube",
+                "green cube"
+              ],
+              "samples": [
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown",
+                "unknown"
+              ],
+              "geometry": [],
+              "window_steps": 20,
+              "scope": "visible geometry after release; not contact truth"
+            }
+          ],
+          "evidence_ref": "frame-000445.npz"
+        },
+        "stage_verification": {
+          "status": "unknown",
+          "reason": "No public postcondition declared"
+        }
+      }
+    ],
+    "used": {
+      "decisions": 5,
+      "calls": 13,
+      "motion_steps": 231,
+      "idle_steps": 248,
+      "wall_seconds": 25.71645761304535
+    },
+    "closed": "closed"
+  }
+]

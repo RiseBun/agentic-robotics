@@ -1,0 +1,230 @@
+{
+  "sources": {
+    "files": [
+      {
+        "path": "cap-runtime/agentic_cap/__init__.py",
+        "sha256": "5cb4b242593ae0ce5b128a906afdeb25197722c581f1817c12f673763f291558"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/active_evidence.py",
+        "sha256": "dcabae7aa4fed7404791fdf23d479f50dc5427ac533cce5119aeb47381c830d6"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/cap_backend.py",
+        "sha256": "fc8e00f7ace3cd272659339e468bcd3ef9dc39b1454b87f3b284b902b088deab"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/core.py",
+        "sha256": "841ce4e3fba224aa8e9e85d8fd15725dc6ab9ffb5f2a4dc5eb8edd5b5fac6968"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/evaluator.py",
+        "sha256": "3cdb33f44881a31dabd1584ddb3aa630a6514b331b5e605b1492abf210431b89"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/feedback.py",
+        "sha256": "94ac8ac92cbb1a701a496863406ee2a6d23c1d624e50fdc1332d400ae6d89efe"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/fixture.py",
+        "sha256": "01573511535ee1fa94e388cacfe5c10abe8cd5bee9963c4ba260affa81d9fed3"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/holding.py",
+        "sha256": "c67e0e703440cbecabf731768b5995444c795149cef751f0383824c90125ad81"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/interpreter.py",
+        "sha256": "c5b3cb191a71e6e5ca4c00689d74d82df8670046885f9ca56353073e77c5a6bc"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/placement_evidence.py",
+        "sha256": "d798feb237223ea9379b0902cd4e4fb1211be0065473e622dd7229e5e5538bc5"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/public_sensors.py",
+        "sha256": "c2e2e662fe0f65b8fe0ddc6d95fd426354c7c60ab4707e72afd361d88c412ea2"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/safe_retreat.py",
+        "sha256": "a8808362bee32500e403c5e081a9412613c11bec35e916cc221be10688dbc381"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/server.py",
+        "sha256": "254509342ce6a8794e1bd7516e1e2f270650834c675b62e83316f00d8528f359"
+      },
+      {
+        "path": "runtime/model-providers/errors.mjs",
+        "sha256": "0e1ea0819c01bbbbf6076914fbd24a4f7aa918680e809ba57853f6d304d98c29"
+      },
+      {
+        "path": "runtime/model-providers/openai-responses.mjs",
+        "sha256": "1769fb8ae0b39ddaf88eca7453670cebd7614d9153526479feb3bd884cf20529"
+      },
+      {
+        "path": "runtime/model-providers/registry.mjs",
+        "sha256": "0ed1cf36f4182acdcb60d025071c6e757029117cfa65db552b21ae49b955729d"
+      },
+      {
+        "path": "runtime/robot/application.mjs",
+        "sha256": "91707646ed256b8ee7a948e2786d2a19e7053152bfca55b5a93169853f9a9b3d"
+      },
+      {
+        "path": "runtime/robot/coordinator.mjs",
+        "sha256": "cf079f3a16cc391e912bdf80b44a740fde5e40f34c11f484f3b6af977d737276"
+      },
+      {
+        "path": "runtime/robot/deadline.mjs",
+        "sha256": "1309b056293b86cfa4f7b36a89af598cbaedd0a96e1e40ee379ec013559508ea"
+      },
+      {
+        "path": "runtime/robot/experience.mjs",
+        "sha256": "5c3565c998c21d278f5e50e2886dae57c92285b1d55566aae5b189cafcace544"
+      },
+      {
+        "path": "runtime/robot/model.mjs",
+        "sha256": "0b78924e5b370c52986f8dbf7283ec72a85e4811bdfb101ee81525b0faf7956d"
+      },
+      {
+        "path": "runtime/robot/runtime-client.mjs",
+        "sha256": "61cc326e01ab7629a5aab1756bab29b5cf19a4cf5a18561dbb4a9f57ace50e64"
+      }
+    ],
+    "digest": "9b19dc6f3eadd94de9d9677e275c1629aeb5e435fb7f466029d617f86f50a17c"
+  },
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "cases": [
+    {
+      "mode": "baseline",
+      "url": "http://127.0.0.1:18147",
+      "fault_mode": "retreat_recovers",
+      "experience": false,
+      "episode_id": "a1bc1dfde762f80a128dcda86943a275",
+      "diagnostic": {
+        "mode": "retreat_recovers",
+        "task": "cube_restack",
+        "seed": 66,
+        "label": "baseline",
+        "episode_id": "a1bc1dfde762f80a128dcda86943a275",
+        "prepared": true,
+        "source_sha256": {
+          "agentic_cap/__init__.py": "5cb4b242593ae0ce5b128a906afdeb25197722c581f1817c12f673763f291558",
+          "agentic_cap/active_evidence.py": "dcabae7aa4fed7404791fdf23d479f50dc5427ac533cce5119aeb47381c830d6",
+          "agentic_cap/cap_backend.py": "fc8e00f7ace3cd272659339e468bcd3ef9dc39b1454b87f3b284b902b088deab",
+          "agentic_cap/core.py": "841ce4e3fba224aa8e9e85d8fd15725dc6ab9ffb5f2a4dc5eb8edd5b5fac6968",
+          "agentic_cap/evaluator.py": "3cdb33f44881a31dabd1584ddb3aa630a6514b331b5e605b1492abf210431b89",
+          "agentic_cap/feedback.py": "94ac8ac92cbb1a701a496863406ee2a6d23c1d624e50fdc1332d400ae6d89efe",
+          "agentic_cap/fixture.py": "01573511535ee1fa94e388cacfe5c10abe8cd5bee9963c4ba260affa81d9fed3",
+          "agentic_cap/holding.py": "c67e0e703440cbecabf731768b5995444c795149cef751f0383824c90125ad81",
+          "agentic_cap/interpreter.py": "c5b3cb191a71e6e5ca4c00689d74d82df8670046885f9ca56353073e77c5a6bc",
+          "agentic_cap/placement_evidence.py": "d798feb237223ea9379b0902cd4e4fb1211be0065473e622dd7229e5e5538bc5",
+          "agentic_cap/public_sensors.py": "c2e2e662fe0f65b8fe0ddc6d95fd426354c7c60ab4707e72afd361d88c412ea2",
+          "agentic_cap/safe_retreat.py": "a8808362bee32500e403c5e081a9412613c11bec35e916cc221be10688dbc381",
+          "agentic_cap/server.py": "254509342ce6a8794e1bd7516e1e2f270650834c675b62e83316f00d8528f359",
+          "experiments/active_view_trial.py": "9f816bf5e3b320ce0cc7dcd4f49c1a7807283348075b4a4d1bb6ac355f513399",
+          "experiments/episode_deadline_trial.py": "a4593c5eb97d77ae9a8ee8eb49290cda5c1d27116957f13a60ee0085f85a08f3",
+          "experiments/placement_inspection_trial.py": "5d62ec4fc1dd0c42e8583e1bdc9335bfb0c0e562768f286d90d0e917a2e3cc5f",
+          "experiments/placement_view_trial.py": "dee25aadf614836e7a8059e3f77cf94730259d620195663c61441e708396eaca",
+          "experiments/public_cube_geometry.py": "d13e9c63af1acb4d3126cb7a5feaecc6edd312d84b9a8318856007fa1e4a71b2",
+          "experiments/replay_public_geometry.py": "bbe89932bbf937d825b541be72c2751b2edd73afa12f5b0668a610b10a0b16d8",
+          "experiments/retreat_model_server.py": "f63d18daa5020d4ec1663f839950c59c96fa195e163107125398114909e2c0eb",
+          "experiments/run_active_evidence_smoke.py": "4c167189e18f09671a70f1e4e82fc49ddb3107e55d058d36ee966abb248b3e41",
+          "experiments/runtime_support_trial.py": "614e9bd7bb8b8772fe0c189e824b8d4f3dab16302735d60fb43bed1292971146",
+          "experiments/score_active_view.py": "aa495bb8138a23dd3d441a00975e798480cc146f614a4cf5bf37950fa489e288",
+          "experiments/score_evidence_campaign.py": "e5b3a3db41859d9c188baf1494f5be6853da4dff35b85714d8a6bad2c44ce97b",
+          "experiments/score_experience_trial.py": "6ef74341cae79a97d007410d0cb926d4909dd824005d6dde4a97b4e8958cbf53",
+          "experiments/score_placement_diagnosis.py": "914bca37acf7dc0569035036fb6c732fcd50cb31b24adb3a874a724b014e0298",
+          "experiments/score_public_geometry.py": "ae3eadc2937153a4463b31a9915abf4c182b9213eb8040b9e389ab793c69cf72",
+          "experiments/score_retreat_model.py": "2293d4f9bb822ae5fa5d71ef156635f422b4e066500e38cb9e1b1bad0320a4ac",
+          "experiments/score_vertical_retreat.py": "81c066a9dbd6a3503b5ae2964e25c6ff42f307afdde1dacdd1b42d621aefc41d",
+          "experiments/vertical_retreat_trial.py": "ef4d4e6c771148e9d1b9147bf470d18136cd92c19f1cae0345bce394c124cb7f"
+        },
+        "scope": "fixed public preparation followed by model-only recovery; not end-to-end task benchmark",
+        "handoff_event_id": 164,
+        "preparation_used": {
+          "decisions": 10,
+          "calls": 28,
+          "motion_steps": 385,
+          "idle_steps": 517,
+          "wall_seconds": 53.63778688386083
+        }
+      }
+    },
+    {
+      "mode": "candidate",
+      "url": "http://127.0.0.1:18148",
+      "fault_mode": "retreat_recovers",
+      "experience": true,
+      "episode_id": "ce219236ac4d3feaa746415ddca4d010",
+      "diagnostic": {
+        "mode": "retreat_recovers",
+        "task": "cube_restack",
+        "seed": 66,
+        "label": "candidate",
+        "episode_id": "ce219236ac4d3feaa746415ddca4d010",
+        "prepared": true,
+        "source_sha256": {
+          "agentic_cap/__init__.py": "5cb4b242593ae0ce5b128a906afdeb25197722c581f1817c12f673763f291558",
+          "agentic_cap/active_evidence.py": "dcabae7aa4fed7404791fdf23d479f50dc5427ac533cce5119aeb47381c830d6",
+          "agentic_cap/cap_backend.py": "fc8e00f7ace3cd272659339e468bcd3ef9dc39b1454b87f3b284b902b088deab",
+          "agentic_cap/core.py": "841ce4e3fba224aa8e9e85d8fd15725dc6ab9ffb5f2a4dc5eb8edd5b5fac6968",
+          "agentic_cap/evaluator.py": "3cdb33f44881a31dabd1584ddb3aa630a6514b331b5e605b1492abf210431b89",
+          "agentic_cap/feedback.py": "94ac8ac92cbb1a701a496863406ee2a6d23c1d624e50fdc1332d400ae6d89efe",
+          "agentic_cap/fixture.py": "01573511535ee1fa94e388cacfe5c10abe8cd5bee9963c4ba260affa81d9fed3",
+          "agentic_cap/holding.py": "c67e0e703440cbecabf731768b5995444c795149cef751f0383824c90125ad81",
+          "agentic_cap/interpreter.py": "c5b3cb191a71e6e5ca4c00689d74d82df8670046885f9ca56353073e77c5a6bc",
+          "agentic_cap/placement_evidence.py": "d798feb237223ea9379b0902cd4e4fb1211be0065473e622dd7229e5e5538bc5",
+          "agentic_cap/public_sensors.py": "c2e2e662fe0f65b8fe0ddc6d95fd426354c7c60ab4707e72afd361d88c412ea2",
+          "agentic_cap/safe_retreat.py": "a8808362bee32500e403c5e081a9412613c11bec35e916cc221be10688dbc381",
+          "agentic_cap/server.py": "254509342ce6a8794e1bd7516e1e2f270650834c675b62e83316f00d8528f359",
+          "experiments/active_view_trial.py": "9f816bf5e3b320ce0cc7dcd4f49c1a7807283348075b4a4d1bb6ac355f513399",
+          "experiments/episode_deadline_trial.py": "a4593c5eb97d77ae9a8ee8eb49290cda5c1d27116957f13a60ee0085f85a08f3",
+          "experiments/placement_inspection_trial.py": "5d62ec4fc1dd0c42e8583e1bdc9335bfb0c0e562768f286d90d0e917a2e3cc5f",
+          "experiments/placement_view_trial.py": "dee25aadf614836e7a8059e3f77cf94730259d620195663c61441e708396eaca",
+          "experiments/public_cube_geometry.py": "d13e9c63af1acb4d3126cb7a5feaecc6edd312d84b9a8318856007fa1e4a71b2",
+          "experiments/replay_public_geometry.py": "bbe89932bbf937d825b541be72c2751b2edd73afa12f5b0668a610b10a0b16d8",
+          "experiments/retreat_model_server.py": "f63d18daa5020d4ec1663f839950c59c96fa195e163107125398114909e2c0eb",
+          "experiments/run_active_evidence_smoke.py": "4c167189e18f09671a70f1e4e82fc49ddb3107e55d058d36ee966abb248b3e41",
+          "experiments/runtime_support_trial.py": "614e9bd7bb8b8772fe0c189e824b8d4f3dab16302735d60fb43bed1292971146",
+          "experiments/score_active_view.py": "aa495bb8138a23dd3d441a00975e798480cc146f614a4cf5bf37950fa489e288",
+          "experiments/score_evidence_campaign.py": "e5b3a3db41859d9c188baf1494f5be6853da4dff35b85714d8a6bad2c44ce97b",
+          "experiments/score_experience_trial.py": "6ef74341cae79a97d007410d0cb926d4909dd824005d6dde4a97b4e8958cbf53",
+          "experiments/score_placement_diagnosis.py": "914bca37acf7dc0569035036fb6c732fcd50cb31b24adb3a874a724b014e0298",
+          "experiments/score_public_geometry.py": "ae3eadc2937153a4463b31a9915abf4c182b9213eb8040b9e389ab793c69cf72",
+          "experiments/score_retreat_model.py": "2293d4f9bb822ae5fa5d71ef156635f422b4e066500e38cb9e1b1bad0320a4ac",
+          "experiments/score_vertical_retreat.py": "81c066a9dbd6a3503b5ae2964e25c6ff42f307afdde1dacdd1b42d621aefc41d",
+          "experiments/vertical_retreat_trial.py": "ef4d4e6c771148e9d1b9147bf470d18136cd92c19f1cae0345bce394c124cb7f"
+        },
+        "scope": "fixed public preparation followed by model-only recovery; not end-to-end task benchmark",
+        "handoff_event_id": 164,
+        "preparation_used": {
+          "decisions": 10,
+          "calls": 28,
+          "motion_steps": 385,
+          "idle_steps": 540,
+          "wall_seconds": 53.74758564098738
+        }
+      }
+    }
+  ],
+  "experience_corpus": {
+    "files": [
+      {
+        "path": "candidates/dd6e64ac7a5baf2a22bd33544b1bc6b5c0dd9f079cc24f8648737c8585c56052.json",
+        "sha256": "293513a6bf784f8331887dc54a9246c8461d4506ec4bf0c5cb79bd38e7c49beb"
+      },
+      {
+        "path": "validated/dd6e64ac7a5baf2a22bd33544b1bc6b5c0dd9f079cc24f8648737c8585c56052.json",
+        "sha256": "2d97ae552541e9e0f025ba718deb61c9648e5c868444d957ad077bce1a937079"
+      }
+    ],
+    "digest": "cb56ce1e767266fd0257aecdc1b62524b561d29478709c1df796d5f05fea0c1c"
+  },
+  "settle_milliseconds": 1250,
+  "scope": "Fixed public failure preparation; frozen historical corpus present/absent. Bounded recovery transfer diagnosis, not end-to-end or statistical evidence."
+}

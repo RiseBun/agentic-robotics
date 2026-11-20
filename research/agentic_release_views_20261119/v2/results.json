@@ -1,0 +1,1358 @@
+[
+  {
+    "mode": "single",
+    "episode_id": "92f62e1842bf0fe09f00ba3a9e21ba33",
+    "status": "completed",
+    "before": {
+      "status": "unknown",
+      "object_name": "green cube",
+      "evidence_ref": "frame-000881.npz",
+      "scope": "public RGB-D support visibility; center not independently verified",
+      "captured_at": 1795104696.4536037,
+      "control_step": 881,
+      "horizontal_span_ratio": 0.021491094337548033,
+      "observed_scale_m": 0.03654123509080065,
+      "visible_depth_pixels": 123,
+      "reason": "support_horizontal_extent_truncated"
+    },
+    "after": {
+      "status": "unknown",
+      "object_name": "green cube",
+      "evidence_ref": "frame-000896.npz",
+      "scope": "public RGB-D support visibility; center not independently verified",
+      "captured_at": 1795104697.2088997,
+      "control_step": 896,
+      "horizontal_span_ratio": 0.015197841023865297,
+      "observed_scale_m": 0.03654123509080065,
+      "visible_depth_pixels": 124,
+      "reason": "support_horizontal_extent_truncated"
+    },
+    "observation": {
+      "coordinate_convention": {
+        "frame": "cap_robot_base",
+        "definition": "CaP-X Panda fixed_mount0_base; camera and TCP expressed in this frame",
+        "length_unit": "m",
+        "angle_unit": "rad",
+        "quaternion_order": "WXYZ"
+      },
+      "tcp_xyz": [
+        0.43577802978943453,
+        0.10235615908188513,
+        -0.05234634635117438
+      ],
+      "tcp_wxyz": [
+        -0.014789829961955547,
+        0.0005803108215332031,
+        0.9998121857643127,
+        -0.012495203875005245
+      ],
+      "control_step": 896,
+      "joint_positions": [
+        0.21217833089372143,
+        0.6283733016474032,
+        -0.001008087269214405,
+        -2.426779488761345,
+        -0.14536868746356696,
+        3.0196990478631336,
+        -1.999074842598304
+      ],
+      "gripper_joint_positions": [
+        0.020016645353215658,
+        -0.019599097367458795
+      ],
+      "last_gripper_command": "closed",
+      "last_home_memory_sync": null,
+      "objects": {
+        "red cube": {
+          "status": "visible",
+          "object_name": "red cube",
+          "color_pixels": 318,
+          "valid_depth_pixels": 318,
+          "estimator": "dominant_rgb_visible_surface; task_specific_baseline",
+          "reason": "surface_observed_not_center_verified",
+          "surface_median_xyz": [
+            0.44661561197153354,
+            0.10111941307371816,
+            -0.0517880742225236
+          ],
+          "surface_q05_xyz": [
+            0.42488634079419924,
+            0.08308621014522656,
+            -0.07805437458942385
+          ],
+          "surface_q95_xyz": [
+            0.4470176459581777,
+            0.11940267218581407,
+            -0.041255135576038215
+          ],
+          "surface_span_xyz": [
+            0.022131305163978487,
+            0.03631646204058751,
+            0.03679923901338564
+          ],
+          "visible_plane": {
+            "normal": [
+              0.9383965660801024,
+              -0.030654708568034872,
+              0.3441978698534912
+            ],
+            "offset": 0.39332350686409484,
+            "rms_m": 0.005761810228480134
+          }
+        },
+        "green cube": {
+          "status": "visible",
+          "object_name": "green cube",
+          "color_pixels": 124,
+          "valid_depth_pixels": 124,
+          "estimator": "dominant_rgb_visible_surface; task_specific_baseline",
+          "reason": "surface_observed_not_center_verified",
+          "surface_median_xyz": [
+            0.43327705286621043,
+            0.09442712193287667,
+            -0.10559407531571091
+          ],
+          "surface_q05_xyz": [
+            0.4327820865853141,
+            0.07870558095144276,
+            -0.11957502511188267
+          ],
+          "surface_q95_xyz": [
+            0.43333743446703976,
+            0.11441211506804042,
+            -0.08575212095822077
+          ],
+          "surface_span_xyz": [
+            0.0005553478817256763,
+            0.03570653411659766,
+            0.033822904153661904
+          ],
+          "visible_plane": {
+            "normal": [
+              0.9947982783346652,
+              -0.032986288833341315,
+              0.09637577585363118
+            ],
+            "offset": 0.41717424304191303,
+            "rms_m": 0.0024698741097764145
+          }
+        }
+      },
+      "last_motion": {
+        "status": "reached",
+        "joint_error_rad": 0.017137964185202685,
+        "control_steps": 22
+      },
+      "evidence_ref": "frame-000896.npz",
+      "image_ref": "frame-000896.png",
+      "backend": "cap",
+      "episode_id": "92f62e1842bf0fe09f00ba3a9e21ba33",
+      "recorded_depth_quantization_m": 0.001,
+      "captured_at": 1795104697.2088997,
+      "simulation_time": 44.80000000000891,
+      "capabilities": [
+        "inspect_support",
+        "inspect_placement"
+      ],
+      "empty_gripper_evidence": {
+        "status": "unknown",
+        "evidence_ref": "frame-000896.npz",
+        "captured_at": 1795104697.2088997,
+        "gripper_width_m": 0.03961574272067445,
+        "command": "closed",
+        "reason": "open_empty_gripper_not_confirmed"
+      },
+      "support_evidence": {
+        "green cube": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000896.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795104697.2088997,
+          "control_step": 896,
+          "horizontal_span_ratio": 0.015197841023865297,
+          "observed_scale_m": 0.03654123509080065,
+          "visible_depth_pixels": 124,
+          "reason": "support_horizontal_extent_truncated"
+        },
+        "red cube": {
+          "status": "available",
+          "object_name": "red cube",
+          "evidence_ref": "frame-000896.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795104697.2088997,
+          "control_step": 896,
+          "horizontal_span_ratio": 0.5705962352295992,
+          "observed_scale_m": 0.03878627968001434,
+          "visible_depth_pixels": 318,
+          "reason": "visible_box_support; not_center_verified"
+        }
+      },
+      "recovery_options": {
+        "vertical_retreat": {
+          "status": "available",
+          "reason": "recorded_vertical_reversal_only",
+          "target_xyz": [
+            0.43569617868056454,
+            0.10149874759817192,
+            0.06031446160529222
+          ],
+          "target_wxyz": [
+            -0.014060292392969131,
+            -5.3554773330688477e-05,
+            0.9997984170913696,
+            -0.014318477362394333
+          ],
+          "evidence_ref": "frame-000831.npz",
+          "scope": "retrace last public vertical descent; bounded cube scene"
+        }
+      },
+      "revision": 7,
+      "goal": {
+        "on": [
+          "red cube",
+          "green cube"
+        ],
+        "empty_gripper": true
+      },
+      "age_seconds": 0.2676663398742676
+    },
+    "verification": {
+      "status": "unknown",
+      "evidence": [
+        {
+          "status": "unknown",
+          "evidence_ref": "frame-000896.npz",
+          "captured_at": 1795104697.2088997,
+          "gripper_width_m": 0.03961574272067445,
+          "command": "closed",
+          "reason": "open_empty_gripper_not_confirmed"
+        },
+        {
+          "relation": [
+            "red cube",
+            "green cube"
+          ],
+          "samples": [
+            "unknown",
+            "unknown",
+            "unknown",
+            "unknown",
+            "unknown"
+          ],
+          "geometry": [
+            {
+              "control_step": 876,
+              "horizontal_residual_m": 0.005592894744570198,
+              "height_difference_m": 0.04289334962635245,
+              "support_width_m": 0.035738932757466424,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 881,
+              "horizontal_residual_m": 0.0055941747228443715,
+              "height_difference_m": 0.04298996664499767,
+              "support_width_m": 0.03572045100616161,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 886,
+              "horizontal_residual_m": 0.005598095438621358,
+              "height_difference_m": 0.04299311807408313,
+              "support_width_m": 0.03572430595477935,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 891,
+              "horizontal_residual_m": 0.005598596408077163,
+              "height_difference_m": 0.04307926676796334,
+              "support_width_m": 0.03570342248333333,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 896,
+              "horizontal_residual_m": 0.005506341260779858,
+              "height_difference_m": 0.043008817952320685,
+              "support_width_m": 0.03570653411659766,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            }
+          ],
+          "window_steps": 20,
+          "scope": "visible geometry after release; not contact truth"
+        }
+      ],
+      "evidence_ref": "frame-000896.npz",
+      "captured_at": 1795104697.2088997,
+      "control_step": 896
+    },
+    "continuous_simulation": {
+      "wall_seconds": 5.00505777890794,
+      "sim_seconds": 5.000000000006111,
+      "ratio": 0.9989894664307086
+    },
+    "passed": true,
+    "closed": "closed",
+    "used": {
+      "decisions": 9,
+      "calls": 26,
+      "motion_steps": 385,
+      "idle_steps": 620,
+      "wall_seconds": 58.28618501499295
+    },
+    "source_unchanged": true
+  },
+  {
+    "mode": "dual",
+    "episode_id": "30492fdfe57f09a6cb73437aa7c5a0e9",
+    "status": "completed",
+    "before": {
+      "status": "unknown",
+      "object_name": "green cube",
+      "evidence_ref": "frame-000819.npz",
+      "scope": "public RGB-D support visibility; center not independently verified",
+      "captured_at": 1795104745.8213134,
+      "control_step": 819,
+      "horizontal_span_ratio": 0.025671527225996305,
+      "observed_scale_m": 0.03689885859131857,
+      "visible_depth_pixels": 125,
+      "reason": "support_horizontal_extent_truncated"
+    },
+    "after": {
+      "status": "available",
+      "object_name": "green cube",
+      "evidence_ref": "frame-000834.npz",
+      "scope": "current calibrated RGB-D surface union; support visibility only, not goal completion",
+      "captured_at": 1795104746.5837073,
+      "control_step": 834,
+      "horizontal_span_ratio": 0.95277042529953,
+      "observed_scale_m": 0.038225467860054096,
+      "visible_depth_pixels": 913,
+      "reason": "visible_box_support; not_center_verified",
+      "camera_name": "public_rgbd_union",
+      "camera_names": [
+        "robot0_robotview",
+        "robot0_eye_in_hand"
+      ],
+      "evidence_refs": [
+        "frame-000834.npz",
+        "view-robot0_eye_in_hand-000834.npz"
+      ],
+      "image_refs": [
+        "frame-000834.png",
+        "view-robot0_eye_in_hand-000834.png"
+      ],
+      "primary_evidence": {
+        "status": "unknown",
+        "object_name": "green cube",
+        "evidence_ref": "frame-000834.npz",
+        "scope": "public RGB-D support visibility; center not independently verified",
+        "captured_at": 1795104746.5837073,
+        "control_step": 834,
+        "horizontal_span_ratio": 0.052758202238670164,
+        "observed_scale_m": 0.036597178904120606,
+        "visible_depth_pixels": 127,
+        "reason": "support_horizontal_extent_truncated"
+      },
+      "view_checks": [
+        {
+          "camera_name": "robot0_eye_in_hand",
+          "status": "unknown",
+          "reason": "support_horizontal_extent_truncated",
+          "evidence_ref": "view-robot0_eye_in_hand-000834.npz"
+        }
+      ],
+      "support_geometry": {
+        "status": "visible",
+        "object_name": "green cube",
+        "valid_depth_pixels": 913,
+        "surface_median_xyz": [
+          0.40201569388208774,
+          0.09849836076496482,
+          -0.0823095971190784
+        ],
+        "surface_q05_xyz": [
+          0.3950702414261739,
+          0.08023788655522286,
+          -0.1093888506950766
+        ],
+        "surface_q95_xyz": [
+          0.433295709286228,
+          0.11665798182552012,
+          -0.08215177991422493
+        ],
+        "surface_span_xyz": [
+          0.038225467860054096,
+          0.036420095270297256,
+          0.027237070780851677
+        ],
+        "estimator": "measured_current_calibrated_rgbd_union; surface_not_center_verified"
+      }
+    },
+    "observation": {
+      "coordinate_convention": {
+        "frame": "cap_robot_base",
+        "definition": "CaP-X Panda fixed_mount0_base; camera and TCP expressed in this frame",
+        "length_unit": "m",
+        "angle_unit": "rad",
+        "quaternion_order": "WXYZ"
+      },
+      "tcp_xyz": [
+        0.4361200189116737,
+        0.10232065429143611,
+        -0.0514910577175246
+      ],
+      "tcp_wxyz": [
+        -0.015356289222836494,
+        0.0006003379821777344,
+        0.9998031854629517,
+        -0.012536117807030678
+      ],
+      "control_step": 834,
+      "joint_positions": [
+        0.21289151385037186,
+        0.6259057331789054,
+        -0.000951679195092254,
+        -2.4265236608675385,
+        -0.13974595947826948,
+        3.015897254184849,
+        -2.0039169379762254
+      ],
+      "gripper_joint_positions": [
+        0.019972638283556977,
+        -0.01964195397557011
+      ],
+      "last_gripper_command": "closed",
+      "last_home_memory_sync": null,
+      "objects": {
+        "red cube": {
+          "status": "visible",
+          "object_name": "red cube",
+          "color_pixels": 328,
+          "valid_depth_pixels": 328,
+          "estimator": "dominant_rgb_visible_surface; task_specific_baseline",
+          "reason": "surface_observed_not_center_verified",
+          "surface_median_xyz": [
+            0.44665724031150233,
+            0.10115884971983974,
+            -0.04883359020766287
+          ],
+          "surface_q05_xyz": [
+            0.4243361976018846,
+            0.08295304087445102,
+            -0.07752626397285962
+          ],
+          "surface_q95_xyz": [
+            0.4469957831850176,
+            0.11930841624583645,
+            -0.04107069880477001
+          ],
+          "surface_span_xyz": [
+            0.02265958558313297,
+            0.03635537537138543,
+            0.036455565168089614
+          ],
+          "visible_plane": {
+            "normal": [
+              0.9191122661016187,
+              -0.03070818181486057,
+              0.3927972121479133
+            ],
+            "offset": 0.3817758617089795,
+            "rms_m": 0.006250893810968055
+          }
+        },
+        "green cube": {
+          "status": "visible",
+          "object_name": "green cube",
+          "color_pixels": 127,
+          "valid_depth_pixels": 127,
+          "estimator": "dominant_rgb_visible_surface; task_specific_baseline",
+          "reason": "surface_observed_not_center_verified",
+          "surface_median_xyz": [
+            0.4332818485041694,
+            0.09458150751438384,
+            -0.10559407531571091
+          ],
+          "surface_q05_xyz": [
+            0.43140462641293126,
+            0.07871812504740494,
+            -0.11957063561561854
+          ],
+          "surface_q95_xyz": [
+            0.43333542777891965,
+            0.11435658790819513,
+            -0.08297345671149793
+          ],
+          "surface_span_xyz": [
+            0.0019308013659883883,
+            0.035638462860790185,
+            0.036597178904120606
+          ],
+          "visible_plane": {
+            "normal": [
+              0.9907254743563138,
+              -0.04099002997471013,
+              0.1295486468633682
+            ],
+            "offset": 0.41102728948927864,
+            "rms_m": 0.00288022768119078
+          }
+        }
+      },
+      "last_motion": {
+        "status": "reached",
+        "joint_error_rad": 0.017126300115870786,
+        "control_steps": 22
+      },
+      "evidence_ref": "frame-000834.npz",
+      "image_ref": "frame-000834.png",
+      "backend": "cap",
+      "episode_id": "30492fdfe57f09a6cb73437aa7c5a0e9",
+      "recorded_depth_quantization_m": 0.001,
+      "captured_at": 1795104746.5837073,
+      "simulation_time": 41.70000000000512,
+      "camera_views": {
+        "robot0_eye_in_hand": {
+          "camera_name": "robot0_eye_in_hand",
+          "coordinate_convention": {
+            "frame": "cap_robot_base",
+            "definition": "CaP-X Panda fixed_mount0_base; camera and TCP expressed in this frame",
+            "length_unit": "m",
+            "angle_unit": "rad",
+            "quaternion_order": "WXYZ"
+          },
+          "captured_at": 1795104746.5912826,
+          "control_step": 834,
+          "evidence_ref": "view-robot0_eye_in_hand-000834.npz",
+          "image_ref": "view-robot0_eye_in_hand-000834.png",
+          "objects": {
+            "red cube": {
+              "status": "visible",
+              "object_name": "red cube",
+              "color_pixels": 3043,
+              "valid_depth_pixels": 3043,
+              "estimator": "dominant_rgb_visible_surface; task_specific_baseline",
+              "reason": "surface_observed_not_center_verified",
+              "surface_median_xyz": [
+                0.4203718308208283,
+                0.10279304184917513,
+                -0.04278840418803881
+              ],
+              "surface_q05_xyz": [
+                0.4095768053802366,
+                0.0845335053261516,
+                -0.04325320411338766
+              ],
+              "surface_q95_xyz": [
+                0.43110919817633847,
+                0.12102077634658663,
+                -0.042320585921537916
+              ],
+              "surface_span_xyz": [
+                0.021532392796101862,
+                0.03648727102043503,
+                0.0009326181918497406
+              ],
+              "visible_plane": {
+                "normal": [
+                  0.22889616023293635,
+                  -0.09326940849731102,
+                  0.968972324305075
+                ],
+                "offset": 0.044811026011278794,
+                "rms_m": 0.005347490162908971
+              }
+            },
+            "green cube": {
+              "status": "visible",
+              "object_name": "green cube",
+              "color_pixels": 786,
+              "valid_depth_pixels": 786,
+              "estimator": "dominant_rgb_visible_surface; task_specific_baseline",
+              "reason": "surface_observed_not_center_verified",
+              "surface_median_xyz": [
+                0.4011741910476305,
+                0.09932589735091751,
+                -0.08228784679996694
+              ],
+              "surface_q05_xyz": [
+                0.39458179398339643,
+                0.08104796509803736,
+                -0.08242495849025402
+              ],
+              "surface_q95_xyz": [
+                0.4069640601653125,
+                0.11667401086754382,
+                -0.08215217817674209
+              ],
+              "surface_span_xyz": [
+                0.012382266181916068,
+                0.03562604576950647,
+                0.0002727803135119389
+              ],
+              "visible_plane": {
+                "normal": [
+                  -0.014385656775401174,
+                  0.005303044372786281,
+                  0.9998824583917454
+                ],
+                "offset": -0.0874869986389899,
+                "rms_m": 0.00028388759016177213
+              }
+            }
+          },
+          "episode_id": "30492fdfe57f09a6cb73437aa7c5a0e9"
+        }
+      },
+      "support_view_fusions": {
+        "green cube": {
+          "status": "candidate",
+          "reason": "measured_points_joined_pending_existing_visibility_check",
+          "episode_id": "30492fdfe57f09a6cb73437aa7c5a0e9",
+          "coordinate_convention": {
+            "frame": "cap_robot_base",
+            "definition": "CaP-X Panda fixed_mount0_base; camera and TCP expressed in this frame",
+            "length_unit": "m",
+            "angle_unit": "rad",
+            "quaternion_order": "WXYZ"
+          },
+          "control_step": 834,
+          "captured_at": 1795104746.5837073,
+          "evidence_ref": "frame-000834.npz",
+          "evidence_refs": [
+            "frame-000834.npz",
+            "view-robot0_eye_in_hand-000834.npz"
+          ],
+          "image_refs": [
+            "frame-000834.png",
+            "view-robot0_eye_in_hand-000834.png"
+          ],
+          "camera_names": [
+            "robot0_robotview",
+            "robot0_eye_in_hand"
+          ],
+          "objects": {
+            "green cube": {
+              "status": "visible",
+              "object_name": "green cube",
+              "valid_depth_pixels": 913,
+              "surface_median_xyz": [
+                0.40201569388208774,
+                0.09849836076496482,
+                -0.0823095971190784
+              ],
+              "surface_q05_xyz": [
+                0.3950702414261739,
+                0.08023788655522286,
+                -0.1093888506950766
+              ],
+              "surface_q95_xyz": [
+                0.433295709286228,
+                0.11665798182552012,
+                -0.08215177991422493
+              ],
+              "surface_span_xyz": [
+                0.038225467860054096,
+                0.036420095270297256,
+                0.027237070780851677
+              ],
+              "estimator": "measured_current_calibrated_rgbd_union; surface_not_center_verified"
+            }
+          }
+        },
+        "red cube": {
+          "status": "candidate",
+          "reason": "measured_points_joined_pending_existing_visibility_check",
+          "episode_id": "30492fdfe57f09a6cb73437aa7c5a0e9",
+          "coordinate_convention": {
+            "frame": "cap_robot_base",
+            "definition": "CaP-X Panda fixed_mount0_base; camera and TCP expressed in this frame",
+            "length_unit": "m",
+            "angle_unit": "rad",
+            "quaternion_order": "WXYZ"
+          },
+          "control_step": 834,
+          "captured_at": 1795104746.5837073,
+          "evidence_ref": "frame-000834.npz",
+          "evidence_refs": [
+            "frame-000834.npz",
+            "view-robot0_eye_in_hand-000834.npz"
+          ],
+          "image_refs": [
+            "frame-000834.png",
+            "view-robot0_eye_in_hand-000834.png"
+          ],
+          "camera_names": [
+            "robot0_robotview",
+            "robot0_eye_in_hand"
+          ],
+          "objects": {
+            "red cube": {
+              "status": "visible",
+              "object_name": "red cube",
+              "valid_depth_pixels": 3371,
+              "surface_median_xyz": [
+                0.42150539375260393,
+                0.10278863774283456,
+                -0.04280029458550304
+              ],
+              "surface_q05_xyz": [
+                0.409579442107998,
+                0.08450622294992147,
+                -0.051891132149584906
+              ],
+              "surface_q95_xyz": [
+                0.44664468229917703,
+                0.12054245640268707,
+                -0.0422630579737407
+              ],
+              "surface_span_xyz": [
+                0.037065240191179016,
+                0.036036233452765604,
+                0.009628074175844208
+              ],
+              "estimator": "measured_current_calibrated_rgbd_union; surface_not_center_verified"
+            }
+          }
+        }
+      },
+      "capabilities": [
+        "inspect_support",
+        "inspect_placement"
+      ],
+      "empty_gripper_evidence": {
+        "status": "unknown",
+        "evidence_ref": "frame-000834.npz",
+        "captured_at": 1795104746.5837073,
+        "gripper_width_m": 0.039614592259127085,
+        "command": "closed",
+        "reason": "open_empty_gripper_not_confirmed"
+      },
+      "support_evidence": {
+        "green cube": {
+          "status": "available",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000834.npz",
+          "scope": "current calibrated RGB-D surface union; support visibility only, not goal completion",
+          "captured_at": 1795104746.5837073,
+          "control_step": 834,
+          "horizontal_span_ratio": 0.95277042529953,
+          "observed_scale_m": 0.038225467860054096,
+          "visible_depth_pixels": 913,
+          "reason": "visible_box_support; not_center_verified",
+          "camera_name": "public_rgbd_union",
+          "camera_names": [
+            "robot0_robotview",
+            "robot0_eye_in_hand"
+          ],
+          "evidence_refs": [
+            "frame-000834.npz",
+            "view-robot0_eye_in_hand-000834.npz"
+          ],
+          "image_refs": [
+            "frame-000834.png",
+            "view-robot0_eye_in_hand-000834.png"
+          ],
+          "primary_evidence": {
+            "status": "unknown",
+            "object_name": "green cube",
+            "evidence_ref": "frame-000834.npz",
+            "scope": "public RGB-D support visibility; center not independently verified",
+            "captured_at": 1795104746.5837073,
+            "control_step": 834,
+            "horizontal_span_ratio": 0.052758202238670164,
+            "observed_scale_m": 0.036597178904120606,
+            "visible_depth_pixels": 127,
+            "reason": "support_horizontal_extent_truncated"
+          },
+          "view_checks": [
+            {
+              "camera_name": "robot0_eye_in_hand",
+              "status": "unknown",
+              "reason": "support_horizontal_extent_truncated",
+              "evidence_ref": "view-robot0_eye_in_hand-000834.npz"
+            }
+          ],
+          "support_geometry": {
+            "status": "visible",
+            "object_name": "green cube",
+            "valid_depth_pixels": 913,
+            "surface_median_xyz": [
+              0.40201569388208774,
+              0.09849836076496482,
+              -0.0823095971190784
+            ],
+            "surface_q05_xyz": [
+              0.3950702414261739,
+              0.08023788655522286,
+              -0.1093888506950766
+            ],
+            "surface_q95_xyz": [
+              0.433295709286228,
+              0.11665798182552012,
+              -0.08215177991422493
+            ],
+            "surface_span_xyz": [
+              0.038225467860054096,
+              0.036420095270297256,
+              0.027237070780851677
+            ],
+            "estimator": "measured_current_calibrated_rgbd_union; surface_not_center_verified"
+          }
+        },
+        "red cube": {
+          "status": "available",
+          "object_name": "red cube",
+          "evidence_ref": "frame-000834.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795104746.5837073,
+          "control_step": 834,
+          "horizontal_span_ratio": 0.5842165263096609,
+          "observed_scale_m": 0.03878627968001434,
+          "visible_depth_pixels": 328,
+          "reason": "visible_box_support; not_center_verified",
+          "camera_name": "robot0_robotview"
+        }
+      },
+      "recovery_options": {
+        "vertical_retreat": {
+          "status": "available",
+          "reason": "recorded_vertical_reversal_only",
+          "target_xyz": [
+            0.43608033510755145,
+            0.10148787697072598,
+            0.06126644115725201
+          ],
+          "target_wxyz": [
+            -0.014573959633708,
+            -3.4749507904052734e-05,
+            0.9997907280921936,
+            -0.014340424910187721
+          ],
+          "evidence_ref": "frame-000765.npz",
+          "scope": "retrace last public vertical descent; bounded cube scene"
+        }
+      },
+      "revision": 7,
+      "goal": {
+        "on": [
+          "red cube",
+          "green cube"
+        ],
+        "empty_gripper": true
+      },
+      "age_seconds": 0.2752506732940674
+    },
+    "verification": {
+      "status": "verified",
+      "evidence": [
+        {
+          "status": "verified",
+          "evidence_ref": "frame-000914.npz",
+          "captured_at": 1795104750.5802171,
+          "gripper_width_m": 0.07982019528033381,
+          "command": "open",
+          "reason": "public_open_aperture; bounded_cube_scope"
+        },
+        {
+          "relation": [
+            "red cube",
+            "green cube"
+          ],
+          "samples": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ],
+          "geometry": [
+            {
+              "control_step": 894,
+              "horizontal_residual_m": 0.009723626043128248,
+              "height_difference_m": 0.040934662209972245,
+              "support_width_m": 0.03619329834770929,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 899,
+              "horizontal_residual_m": 0.009724526980635794,
+              "height_difference_m": 0.040935448950230185,
+              "support_width_m": 0.03619329834770929,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 904,
+              "horizontal_residual_m": 0.00972233762031485,
+              "height_difference_m": 0.040936299934778084,
+              "support_width_m": 0.03619329834770929,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 909,
+              "horizontal_residual_m": 0.009721121911348437,
+              "height_difference_m": 0.040936299934778084,
+              "support_width_m": 0.03619329834770929,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 914,
+              "horizontal_residual_m": 0.00972120778775965,
+              "height_difference_m": 0.040937359323705055,
+              "support_width_m": 0.03619329834770929,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            }
+          ],
+          "window_steps": 20,
+          "scope": "visible geometry after release; not contact truth"
+        }
+      ],
+      "evidence_ref": "frame-000914.npz",
+      "captured_at": 1795104750.5802171,
+      "control_step": 914
+    },
+    "continuous_simulation": {
+      "wall_seconds": 5.005286883097142,
+      "sim_seconds": 5.000000000006111,
+      "ratio": 0.9989437402461615
+    },
+    "passed": true,
+    "closed": "closed",
+    "used": {
+      "decisions": 9,
+      "calls": 28,
+      "motion_steps": 433,
+      "idle_steps": 588,
+      "wall_seconds": 52.72777413204312
+    },
+    "source_unchanged": true
+  },
+  {
+    "mode": "dual_masked",
+    "episode_id": "4d2dd8ddef990c05f313ff45b375f5b8",
+    "status": "completed",
+    "before": {
+      "status": "unknown",
+      "object_name": "green cube",
+      "evidence_ref": "frame-000803.npz",
+      "scope": "public RGB-D support visibility; center not independently verified",
+      "captured_at": 1795104798.3651054,
+      "control_step": 803,
+      "horizontal_span_ratio": 0.021815423523654114,
+      "observed_scale_m": 0.03654123509080065,
+      "visible_depth_pixels": 119,
+      "reason": "support_horizontal_extent_truncated"
+    },
+    "after": {
+      "status": "unknown",
+      "object_name": "green cube",
+      "evidence_ref": "frame-000823.npz",
+      "scope": "public RGB-D support visibility; center not independently verified",
+      "captured_at": 1795104799.3677733,
+      "control_step": 823,
+      "reason": "support_not_visible",
+      "camera_name": "robot0_robotview",
+      "view_checks": [
+        {
+          "camera_name": "robot0_eye_in_hand",
+          "status": "unknown",
+          "reason": "support_not_visible",
+          "evidence_ref": "view-robot0_eye_in_hand-000823.npz"
+        }
+      ],
+      "fusion_reason": "each_view_requires_visible_depth"
+    },
+    "observation": {
+      "coordinate_convention": {
+        "frame": "cap_robot_base",
+        "definition": "CaP-X Panda fixed_mount0_base; camera and TCP expressed in this frame",
+        "length_unit": "m",
+        "angle_unit": "rad",
+        "quaternion_order": "WXYZ"
+      },
+      "tcp_xyz": [
+        0.4366861719656986,
+        0.10226368182701916,
+        -0.05175046625044004
+      ],
+      "tcp_wxyz": [
+        -0.014831294305622578,
+        0.000602036714553833,
+        0.9998146891593933,
+        -0.012241005897521973
+      ],
+      "control_step": 823,
+      "joint_positions": [
+        0.21329795304015128,
+        0.6272858683940726,
+        -0.001304296918006563,
+        -2.4252267986047102,
+        -0.13659333446393418,
+        3.0171952972844407,
+        -2.006921809973519
+      ],
+      "gripper_joint_positions": [
+        0.020028689327049005,
+        -0.01958770692222784
+      ],
+      "last_gripper_command": "closed",
+      "last_home_memory_sync": null,
+      "objects": {
+        "red cube": {
+          "status": "visible",
+          "object_name": "red cube",
+          "color_pixels": 321,
+          "valid_depth_pixels": 321,
+          "estimator": "dominant_rgb_visible_surface; task_specific_baseline",
+          "reason": "surface_observed_not_center_verified",
+          "surface_median_xyz": [
+            0.4478075817433491,
+            0.1013051425386337,
+            -0.05076286586621337
+          ],
+          "surface_q05_xyz": [
+            0.4247968800972882,
+            0.08293123219105915,
+            -0.07971485813296009
+          ],
+          "surface_q95_xyz": [
+            0.44833306795329975,
+            0.11946589563305482,
+            -0.04143927494439065
+          ],
+          "surface_span_xyz": [
+            0.023536187856011526,
+            0.03653466344199567,
+            0.03827558318856944
+          ],
+          "visible_plane": {
+            "normal": [
+              0.9569825125406881,
+              0.0631888063101283,
+              0.2831812943123413
+            ],
+            "offset": 0.41505396710181747,
+            "rms_m": 0.007121999932868781
+          }
+        },
+        "green cube": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "color_pixels": 0,
+          "valid_depth_pixels": 0,
+          "estimator": "dominant_rgb_visible_surface; task_specific_baseline",
+          "reason": "insufficient_visible_depth"
+        }
+      },
+      "last_motion": {
+        "status": "reached",
+        "joint_error_rad": 0.017171796954398695,
+        "control_steps": 22
+      },
+      "evidence_ref": "frame-000823.npz",
+      "image_ref": "frame-000823.png",
+      "backend": "cap",
+      "episode_id": "4d2dd8ddef990c05f313ff45b375f5b8",
+      "recorded_depth_quantization_m": 0.001,
+      "captured_at": 1795104799.3677733,
+      "simulation_time": 41.15000000000445,
+      "camera_views": {
+        "robot0_eye_in_hand": {
+          "camera_name": "robot0_eye_in_hand",
+          "coordinate_convention": {
+            "frame": "cap_robot_base",
+            "definition": "CaP-X Panda fixed_mount0_base; camera and TCP expressed in this frame",
+            "length_unit": "m",
+            "angle_unit": "rad",
+            "quaternion_order": "WXYZ"
+          },
+          "captured_at": 1795104799.3805976,
+          "control_step": 823,
+          "evidence_ref": "view-robot0_eye_in_hand-000823.npz",
+          "image_ref": "view-robot0_eye_in_hand-000823.png",
+          "objects": {
+            "red cube": {
+              "status": "visible",
+              "object_name": "red cube",
+              "color_pixels": 2965,
+              "valid_depth_pixels": 2965,
+              "estimator": "dominant_rgb_visible_surface; task_specific_baseline",
+              "reason": "surface_observed_not_center_verified",
+              "surface_median_xyz": [
+                0.421475858240542,
+                0.10272705171966644,
+                -0.04304670068264996
+              ],
+              "surface_q05_xyz": [
+                0.4106670354114813,
+                0.08447577337066137,
+                -0.043532899301427654
+              ],
+              "surface_q95_xyz": [
+                0.4322492492613936,
+                0.12096129736791573,
+                -0.04256686554476538
+              ],
+              "surface_span_xyz": [
+                0.02158221384991227,
+                0.03648552399725437,
+                0.0009660337566622726
+              ],
+              "visible_plane": {
+                "normal": [
+                  0.5781810846729907,
+                  -0.11597152692699908,
+                  0.8076244413516619
+                ],
+                "offset": 0.19646624242710245,
+                "rms_m": 0.0059159386273185816
+              }
+            },
+            "green cube": {
+              "status": "unknown",
+              "object_name": "green cube",
+              "color_pixels": 0,
+              "valid_depth_pixels": 0,
+              "estimator": "dominant_rgb_visible_surface; task_specific_baseline",
+              "reason": "insufficient_visible_depth"
+            }
+          },
+          "episode_id": "4d2dd8ddef990c05f313ff45b375f5b8"
+        }
+      },
+      "support_view_fusions": {
+        "green cube": {
+          "status": "unknown",
+          "reason": "each_view_requires_visible_depth"
+        },
+        "red cube": {
+          "status": "candidate",
+          "reason": "measured_points_joined_pending_existing_visibility_check",
+          "episode_id": "4d2dd8ddef990c05f313ff45b375f5b8",
+          "coordinate_convention": {
+            "frame": "cap_robot_base",
+            "definition": "CaP-X Panda fixed_mount0_base; camera and TCP expressed in this frame",
+            "length_unit": "m",
+            "angle_unit": "rad",
+            "quaternion_order": "WXYZ"
+          },
+          "control_step": 823,
+          "captured_at": 1795104799.3677733,
+          "evidence_ref": "frame-000823.npz",
+          "evidence_refs": [
+            "frame-000823.npz",
+            "view-robot0_eye_in_hand-000823.npz"
+          ],
+          "image_refs": [
+            "frame-000823.png",
+            "view-robot0_eye_in_hand-000823.png"
+          ],
+          "camera_names": [
+            "robot0_robotview",
+            "robot0_eye_in_hand"
+          ],
+          "objects": {
+            "red cube": {
+              "status": "visible",
+              "object_name": "red cube",
+              "valid_depth_pixels": 3286,
+              "surface_median_xyz": [
+                0.4226117109867991,
+                0.10272245323158881,
+                -0.04306021261716123
+              ],
+              "surface_q05_xyz": [
+                0.41066812714513135,
+                0.08446381965788019,
+                -0.05391029631687967
+              ],
+              "surface_q95_xyz": [
+                0.44780516888406585,
+                0.12073098283288623,
+                -0.04247997272474738
+              ],
+              "surface_span_xyz": [
+                0.037137041738934506,
+                0.03626716317500604,
+                0.011430323592132294
+              ],
+              "estimator": "measured_current_calibrated_rgbd_union; surface_not_center_verified"
+            }
+          }
+        }
+      },
+      "capabilities": [
+        "inspect_support",
+        "inspect_placement"
+      ],
+      "empty_gripper_evidence": {
+        "status": "unknown",
+        "evidence_ref": "frame-000823.npz",
+        "captured_at": 1795104799.3677733,
+        "gripper_width_m": 0.03961639624927685,
+        "command": "closed",
+        "reason": "open_empty_gripper_not_confirmed"
+      },
+      "support_evidence": {
+        "green cube": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000823.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795104799.3677733,
+          "control_step": 823,
+          "reason": "support_not_visible",
+          "camera_name": "robot0_robotview",
+          "view_checks": [
+            {
+              "camera_name": "robot0_eye_in_hand",
+              "status": "unknown",
+              "reason": "support_not_visible",
+              "evidence_ref": "view-robot0_eye_in_hand-000823.npz"
+            }
+          ],
+          "fusion_reason": "each_view_requires_visible_depth"
+        },
+        "red cube": {
+          "status": "available",
+          "object_name": "red cube",
+          "evidence_ref": "frame-000823.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795104799.3677733,
+          "control_step": 823,
+          "horizontal_span_ratio": 0.6068173604218908,
+          "observed_scale_m": 0.03878627968001434,
+          "visible_depth_pixels": 321,
+          "reason": "visible_box_support; not_center_verified",
+          "camera_name": "robot0_robotview"
+        }
+      },
+      "recovery_options": {
+        "vertical_retreat": {
+          "status": "available",
+          "reason": "recorded_vertical_reversal_only",
+          "target_xyz": [
+            0.43655825031230605,
+            0.10138313966388554,
+            0.0610131448023966
+          ],
+          "target_wxyz": [
+            -0.014155255630612373,
+            -2.7239322662353516e-05,
+            0.9998005628585815,
+            -0.014091416262090206
+          ],
+          "evidence_ref": "frame-000753.npz",
+          "scope": "retrace last public vertical descent; bounded cube scene"
+        }
+      },
+      "revision": 8,
+      "goal": {
+        "on": [
+          "red cube",
+          "green cube"
+        ],
+        "empty_gripper": true
+      },
+      "age_seconds": 0.2717742919921875
+    },
+    "verification": {
+      "status": "unknown",
+      "evidence": [
+        {
+          "status": "unknown",
+          "evidence_ref": "frame-000823.npz",
+          "captured_at": 1795104799.3677733,
+          "gripper_width_m": 0.03961639624927685,
+          "command": "closed",
+          "reason": "open_empty_gripper_not_confirmed"
+        },
+        {
+          "relation": [
+            "red cube",
+            "green cube"
+          ],
+          "samples": [
+            "unknown",
+            "unknown",
+            "unknown",
+            "unknown",
+            "unknown"
+          ],
+          "geometry": [
+            {
+              "control_step": 803,
+              "horizontal_residual_m": 0.0059812518090281075,
+              "height_difference_m": 0.04167194953034366,
+              "support_width_m": 0.0358116757580368,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            },
+            {
+              "control_step": 808,
+              "horizontal_residual_m": 0.005985575230326021,
+              "height_difference_m": 0.0416970046856005,
+              "support_width_m": 0.035817748729959964,
+              "center_methods": [
+                "visible_box",
+                "visible_box"
+              ]
+            }
+          ],
+          "window_steps": 20,
+          "scope": "visible geometry after release; not contact truth"
+        }
+      ],
+      "evidence_ref": "frame-000823.npz",
+      "captured_at": 1795104799.3677733,
+      "control_step": 823
+    },
+    "continuous_simulation": {
+      "wall_seconds": 5.004538161214441,
+      "sim_seconds": 5.000000000006111,
+      "ratio": 0.9990931908075951
+    },
+    "passed": true,
+    "closed": "closed",
+    "used": {
+      "decisions": 9,
+      "calls": 26,
+      "motion_steps": 385,
+      "idle_steps": 547,
+      "wall_seconds": 48.29481828585267
+    },
+    "source_unchanged": true
+  }
+]

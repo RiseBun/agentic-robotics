@@ -1,0 +1,181 @@
+{
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "groups": {
+    "baseline": {
+      "trials": 1,
+      "independent_physical_successes": 0,
+      "infrastructure_errors": 1,
+      "verified_system_successes": 0,
+      "false_completions": 0,
+      "unknown_independent": 0,
+      "inspect_support_calls": 0,
+      "inspect_placement_calls": 0,
+      "placement_unknown_to_verified": 0,
+      "unknown_to_available": 0
+    },
+    "candidate": {
+      "trials": 1,
+      "independent_physical_successes": 1,
+      "infrastructure_errors": 0,
+      "verified_system_successes": 1,
+      "false_completions": 0,
+      "unknown_independent": 0,
+      "inspect_support_calls": 0,
+      "inspect_placement_calls": 2,
+      "placement_unknown_to_verified": 1,
+      "unknown_to_available": 0
+    }
+  },
+  "rows": [
+    {
+      "pair_id": "fault-stack-s62",
+      "variant": "candidate",
+      "task": "cube_stack",
+      "seed": 62,
+      "episode_id": "9f3ca3de4577978f970de085db0c2c8a",
+      "outcome": "completed",
+      "error": null,
+      "close_error": null,
+      "independent_physical": "verified",
+      "independent_evidence": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.5051634311676025,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "verified",
+      "false_completion": false,
+      "verified_system_success": true,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 8,
+        "calls": 15,
+        "motion_steps": 219,
+        "idle_steps": 1741,
+        "wall_seconds": 106.23627093504183
+      },
+      "cost_source": "Runtime episode.json after confirmed close",
+      "client_recorded_used_at_close": {
+        "decisions": 8,
+        "calls": 15,
+        "motion_steps": 219,
+        "idle_steps": 1741,
+        "wall_seconds": 106.23627093504183
+      },
+      "total_seconds": 118.22699999809265,
+      "inspect_support_calls": 0,
+      "inspect_placement_calls": 2,
+      "placement_acquisitions": 2,
+      "placement_unknown_to_verified": 1,
+      "placement_acquisition_costs": [
+        {
+          "status": "unknown",
+          "views": 0,
+          "used": {
+            "decisions": 0,
+            "calls": 0,
+            "motion_steps": 0,
+            "idle_steps": 0
+          },
+          "wall_seconds": 0.002445447025820613
+        },
+        {
+          "status": "verified",
+          "views": 1,
+          "used": {
+            "decisions": 0,
+            "calls": 1,
+            "motion_steps": 13,
+            "idle_steps": 26
+          },
+          "wall_seconds": 1.930045974906534
+        }
+      ],
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 1,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 0,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 1,
+      "successful_open_calls": 2,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "fault-stack-s62",
+      "variant": "baseline",
+      "task": "cube_stack",
+      "seed": 62,
+      "episode_id": "7ba934c9cb2dab4ac63d8d3983840a1d",
+      "outcome": "infrastructure_error",
+      "error": "fetch failed",
+      "close_error": "fetch failed",
+      "independent_physical": "failed",
+      "independent_evidence": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.550957441329956,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "unknown",
+      "false_completion": false,
+      "verified_system_success": false,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 4,
+        "calls": 7,
+        "motion_steps": 116,
+        "idle_steps": 14522,
+        "wall_seconds": 740.080770263914
+      },
+      "cost_source": "Runtime episode.json after confirmed close",
+      "client_recorded_used_at_close": {
+        "decisions": 3,
+        "calls": 7,
+        "motion_steps": 116,
+        "idle_steps": 501,
+        "wall_seconds": 39.04263233090751
+      },
+      "total_seconds": 432.4170000553131,
+      "inspect_support_calls": 0,
+      "inspect_placement_calls": 0,
+      "placement_acquisitions": 0,
+      "placement_unknown_to_verified": 0,
+      "placement_acquisition_costs": [],
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 0,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 0,
+      "successful_open_calls": 1,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    }
+  ],
+  "scorer_sha256": "e5b3a3db41859d9c188baf1494f5be6853da4dff35b85714d8a6bad2c44ce97b",
+  "limitations": [
+    "One trial per task/seed/condition; diagnostic only",
+    "Physical success concerns the recorded end window only",
+    "Missing per-release evidence is unscored, never assumed safe"
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "version": 1,
+  "plan": [
+    {
+      "trial_id": "cube_stack-s70-r0",
+      "task": "cube_stack",
+      "seed": 70,
+      "repeat": 0,
+      "text": "把红色方块放到绿色方块上，释放后空夹爪。"
+    }
+  ],
+  "sources": {
+    "files": [
+      {
+        "path": "cap-runtime/agentic_cap/__init__.py",
+        "sha256": "5cb4b242593ae0ce5b128a906afdeb25197722c581f1817c12f673763f291558"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/active_evidence.py",
+        "sha256": "66bcf8bfbc2cffa3d1382cd815774bb009366f9c6ee36cbc54dac223160588f6"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/cap_backend.py",
+        "sha256": "2117b790d7895a16eb3907a063b81c0ddf5adf1a806b79e541066eb0b3e47020"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/core.py",
+        "sha256": "84845377f4881e68ef6ebafeca773b396fe88346785650cd278ed8b61a5c2702"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/evaluator.py",
+        "sha256": "3cdb33f44881a31dabd1584ddb3aa630a6514b331b5e605b1492abf210431b89"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/feedback.py",
+        "sha256": "6ac25231e6761fd0dce750a306ef7fcbb91617bf68c3a9b6e6f96941fa7daf94"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/fixture.py",
+        "sha256": "01573511535ee1fa94e388cacfe5c10abe8cd5bee9963c4ba260affa81d9fed3"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/holding.py",
+        "sha256": "c67e0e703440cbecabf731768b5995444c795149cef751f0383824c90125ad81"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/holding_watchdog.py",
+        "sha256": "f1fdd660192f639298a95499a4bd97e252b0bae04dedf8c3f5b9161e7577dab4"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/interpreter.py",
+        "sha256": "c5b3cb191a71e6e5ca4c00689d74d82df8670046885f9ca56353073e77c5a6bc"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/placement_evidence.py",
+        "sha256": "d798feb237223ea9379b0902cd4e4fb1211be0065473e622dd7229e5e5538bc5"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/public_sensors.py",
+        "sha256": "723ea8bfe84826e9f78b7be08204963a6368822c4f72b82860f28bca37835713"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/public_views.py",
+        "sha256": "1ed92584d3518bdee3a22b15a98348fbda94e405ae2e9c81932dc60a55507853"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/safe_retreat.py",
+        "sha256": "a8808362bee32500e403c5e081a9412613c11bec35e916cc221be10688dbc381"
+      },
+      {
+        "path": "cap-runtime/agentic_cap/server.py",
+        "sha256": "d1be2f6d87942568e378f08f9e9449ee20bc11e2d23890c0c10b7eaaf6ce46ff"
+      },
+      {
+        "path": "runtime/model-providers/errors.mjs",
+        "sha256": "0e1ea0819c01bbbbf6076914fbd24a4f7aa918680e809ba57853f6d304d98c29"
+      },
+      {
+        "path": "runtime/model-providers/openai-responses.mjs",
+        "sha256": "1769fb8ae0b39ddaf88eca7453670cebd7614d9153526479feb3bd884cf20529"
+      },
+      {
+        "path": "runtime/model-providers/registry.mjs",
+        "sha256": "0ed1cf36f4182acdcb60d025071c6e757029117cfa65db552b21ae49b955729d"
+      },
+      {
+        "path": "runtime/robot/application.mjs",
+        "sha256": "91707646ed256b8ee7a948e2786d2a19e7053152bfca55b5a93169853f9a9b3d"
+      },
+      {
+        "path": "runtime/robot/coordinator.mjs",
+        "sha256": "7f1b9bf9630aa5aefea891b439d62a693ff188e8a308ddd883518ebf3b839963"
+      },
+      {
+        "path": "runtime/robot/deadline.mjs",
+        "sha256": "1309b056293b86cfa4f7b36a89af598cbaedd0a96e1e40ee379ec013559508ea"
+      },
+      {
+        "path": "runtime/robot/experience.mjs",
+        "sha256": "a4f7e6a2fd54d2442c07a18d6f2c735f328ee409de77419511704a8c3006568c"
+      },
+      {
+        "path": "runtime/robot/model.mjs",
+        "sha256": "7ccaaf8edad9d1ffb2e8820f13cdd5df17888d1ab66f0294a6b131cc8f1d6a21"
+      },
+      {
+        "path": "runtime/robot/runtime-client.mjs",
+        "sha256": "61cc326e01ab7629a5aab1756bab29b5cf19a4cf5a18561dbb4a9f57ace50e64"
+      }
+    ],
+    "digest": "6a40518d5e070d2d9878838194b3a3555d7bffc1fd5b2399f5aea8266d3989d7"
+  },
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "model_digest": "4ac22285c1e06b5e8054a909a6c3771855d885b7bc07b0dfb13ad1a9d53e07a9",
+  "runtime": {
+    "service": "agentic-cap",
+    "protocol": 1,
+    "backend": "cap",
+    "source_digest": "0cb0c135fe189f2ad7e059cf4a58eda2c45d4888978bae3468a9ba870150ea0c",
+    "python": "3.10.20",
+    "recovery_contract": "57f36db539724a00220fd5a298ea0113c05a2bf4ddb3835444273a88751f7ec6",
+    "features": {
+      "inspect_support": true,
+      "support_second_view": "robot0_eye_in_hand",
+      "holding_watchdog": true,
+      "inspect_placement": true,
+      "support_camera_fault": "",
+      "diagnostic_fault": "occluded"
+    },
+    "upstream_source_digest": "0fa5306451e6b9ada1224e99c3344b8bf1075cbb36515bd623beed98ba640e3f",
+    "upstream_revision": "53e9966d7a8e2fa7494676772bccc35280f5c0ed",
+    "diagnostic": {
+      "type": "holding-model",
+      "mode": "occluded",
+      "scope": "one injected actuator release after public verified hold; no reset/preparation/controller handoff"
+    }
+  },
+  "settle_milliseconds": 1250,
+  "versions": {
+    "node": "24.21.0",
+    "acorn": "8.18.0",
+    "ada": "4.0.0",
+    "amaro": "1.1.11",
+    "ares": "1.34.8",
+    "brotli": "1.2.0",
+    "cldr": "48.0",
+    "icu": "78.2",
+    "llhttp": "9.4.3",
+    "merve": "1.2.2",
+    "modules": "149",
+    "napi": "10",
+    "nbytes": "0.1.4",
+    "ncrypto": "0.0.1",
+    "nghttp2": "1.70.0",
+    "nghttp3": "",
+    "ngtcp2": "",
+    "openssl": "0.0.0",
+    "simdjson": "4.6.7",
+    "simdutf": "7.7.0",
+    "sqlite": "3.53.4",
+    "tz": "2026d",
+    "undici": "7.29.1",
+    "unicode": "17.0",
+    "uv": "1.52.1",
+    "uvwasi": "0.0.23",
+    "v8": "15.2.124.28-electron.0",
+    "zlib": "1.3.2.1-motley",
+    "zstd": "1.6.0",
+    "electron": "44.7.0",
+    "chrome": "152.0.7977.130"
+  },
+  "scoring": "All admitted trials retained. Public completion and post-settle public check are separate. Private scoring is offline only."
+}

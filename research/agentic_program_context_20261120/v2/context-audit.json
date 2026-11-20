@@ -1,0 +1,159 @@
+{
+  "summary": {
+    "requests": 21,
+    "max_context_chars": 51554,
+    "max_history_chars": 23251,
+    "raw_events_requests": 0,
+    "repair_requests": 4
+  },
+  "requests": [
+    {
+      "trial_id": "cube_lifting-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 414,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_lifting-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 8009,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_lifting-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 16477,
+      "history_chars": 3934,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 432,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 7587,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 18402,
+      "history_chars": 3403,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 19533,
+      "history_chars": 3403,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s90-r0",
+      "scope": "preflight_code_repair",
+      "context_chars": 962,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s90-r0",
+      "scope": "preflight_code_repair",
+      "context_chars": 961,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 31111,
+      "history_chars": 12414,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s90-r0",
+      "scope": "preflight_code_repair",
+      "context_chars": 889,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 40660,
+      "history_chars": 17417,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s90-r0",
+      "scope": "preflight_code_repair",
+      "context_chars": 961,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 45743,
+      "history_chars": 20478,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 45418,
+      "history_chars": 20478,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_stack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 415,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_stack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 7732,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_stack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 19717,
+      "history_chars": 3252,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_stack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 23115,
+      "history_chars": 7374,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_stack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 41885,
+      "history_chars": 17311,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_stack-s90-r0",
+      "scope": "task_decision",
+      "context_chars": 51554,
+      "history_chars": 23251,
+      "has_raw_events": false
+    }
+  ],
+  "scope": "Saved request bodies only; no causal benefit claim"
+}

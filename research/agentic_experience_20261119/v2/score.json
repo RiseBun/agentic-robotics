@@ -1,0 +1,199 @@
+{
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "sources": "9b19dc6f3eadd94de9d9677e275c1629aeb5e435fb7f466029d617f86f50a17c",
+  "rows": [
+    {
+      "mode": "baseline",
+      "episode_id": "a1bc1dfde762f80a128dcda86943a275",
+      "outcome": "needs_attention",
+      "independent_physical": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5010561943054199,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_at_decision": "unknown",
+      "false_completion": false,
+      "model_decisions": 2,
+      "decision_sequence": [
+        "run_code",
+        "run_code"
+      ],
+      "autonomous_retreats": 1,
+      "support_inspections": 0,
+      "support_available_after_retreat": true,
+      "acquisitions": [],
+      "views": 0,
+      "duplicate_views": 0,
+      "successful_releases": 0,
+      "release_gates": [
+        {
+          "allowed": false,
+          "evidence": {
+            "status": "unknown",
+            "object_name": "green cube",
+            "evidence_ref": "frame-002231.npz",
+            "scope": "public RGB-D support visibility; center not independently verified",
+            "captured_at": 1795102532.3862069,
+            "control_step": 2231,
+            "horizontal_span_ratio": 0.023710656889009772,
+            "observed_scale_m": 0.03654123509080065,
+            "visible_depth_pixels": 166,
+            "reason": "support_horizontal_extent_truncated"
+          }
+        }
+      ],
+      "contact_before_intentional_release": {
+        "status": "verified",
+        "sample_count": 95,
+        "scope": "bilateral contact proxy, not a calibrated slip detector"
+      },
+      "model_asked_user": false,
+      "reset_count": 1,
+      "preparation_used": {
+        "decisions": 10,
+        "calls": 28,
+        "motion_steps": 385,
+        "idle_steps": 517,
+        "wall_seconds": 53.63778688386083
+      },
+      "used": {
+        "decisions": 12,
+        "calls": 33,
+        "motion_steps": 436,
+        "idle_steps": 1882,
+        "wall_seconds": 124.38360731187277
+      },
+      "model_elapsed_seconds": 64.64400005340576,
+      "condition": "baseline",
+      "task": "cube_restack",
+      "seed": 66,
+      "retrievals": 0,
+      "hits": 0,
+      "retrieved_ids": [],
+      "retrieval_milliseconds": 0,
+      "retrieval_errors": 0
+    },
+    {
+      "mode": "candidate",
+      "episode_id": "ce219236ac4d3feaa746415ddca4d010",
+      "outcome": "needs_attention",
+      "independent_physical": {
+        "status": "failed",
+        "sample_count": 3,
+        "span_seconds": 1.001927375793457,
+        "values": [
+          false,
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_at_decision": "unknown",
+      "false_completion": false,
+      "model_decisions": 2,
+      "decision_sequence": [
+        "run_code",
+        "run_code"
+      ],
+      "autonomous_retreats": 1,
+      "support_inspections": 1,
+      "support_available_after_retreat": true,
+      "acquisitions": [
+        {
+          "status": "available",
+          "reason": "already_available",
+          "views_used": 0,
+          "used_delta": {
+            "decisions": 0,
+            "calls": 1,
+            "motion_steps": 0,
+            "idle_steps": 24
+          }
+        }
+      ],
+      "views": 0,
+      "duplicate_views": 0,
+      "successful_releases": 0,
+      "release_gates": [
+        {
+          "allowed": false,
+          "evidence": {
+            "status": "unknown",
+            "object_name": "green cube",
+            "evidence_ref": "frame-003402.npz",
+            "scope": "public RGB-D support visibility; center not independently verified",
+            "captured_at": 1795102589.9131422,
+            "control_step": 3402,
+            "horizontal_span_ratio": 0.015126268700459123,
+            "observed_scale_m": 0.03654123509080065,
+            "visible_depth_pixels": 156,
+            "reason": "support_horizontal_extent_truncated"
+          }
+        }
+      ],
+      "contact_before_intentional_release": {
+        "status": "verified",
+        "sample_count": 73,
+        "scope": "bilateral contact proxy, not a calibrated slip detector"
+      },
+      "model_asked_user": false,
+      "reset_count": 1,
+      "preparation_used": {
+        "decisions": 10,
+        "calls": 28,
+        "motion_steps": 385,
+        "idle_steps": 540,
+        "wall_seconds": 53.74758564098738
+      },
+      "used": {
+        "decisions": 12,
+        "calls": 35,
+        "motion_steps": 436,
+        "idle_steps": 3045,
+        "wall_seconds": 181.51607145485468
+      },
+      "model_elapsed_seconds": 52.67400002479553,
+      "condition": "candidate",
+      "task": "cube_restack",
+      "seed": 66,
+      "retrievals": 2,
+      "hits": 1,
+      "retrieved_ids": [
+        "dd6e64ac7a5baf2a22bd33544b1bc6b5c0dd9f079cc24f8648737c8585c56052"
+      ],
+      "retrieval_milliseconds": 3,
+      "retrieval_errors": 0
+    }
+  ],
+  "scorer_sha256": "6ef74341cae79a97d007410d0cb926d4909dd824005d6dde4a97b4e8958cbf53",
+  "limitations": [
+    "One new restack seed, fixed preparation and explicit sensor masking; not natural or end-to-end tasks",
+    "Same model/prompt/guards/budget; only historical hints vary; one case per condition",
+    "Corpus recognizes one predefined repair shape; not automatic general skill discovery",
+    "Retrieval is not proof the model causally used the experience; no statistical conclusion"
+  ],
+  "experience_corpus": {
+    "files": [
+      {
+        "path": "candidates/dd6e64ac7a5baf2a22bd33544b1bc6b5c0dd9f079cc24f8648737c8585c56052.json",
+        "sha256": "293513a6bf784f8331887dc54a9246c8461d4506ec4bf0c5cb79bd38e7c49beb"
+      },
+      {
+        "path": "validated/dd6e64ac7a5baf2a22bd33544b1bc6b5c0dd9f079cc24f8648737c8585c56052.json",
+        "sha256": "2d97ae552541e9e0f025ba718deb61c9648e5c868444d957ad077bce1a937079"
+      }
+    ],
+    "digest": "cb56ce1e767266fd0257aecdc1b62524b561d29478709c1df796d5f05fea0c1c"
+  },
+  "recovery_scorer_sha256": "2293d4f9bb822ae5fa5d71ef156635f422b4e066500e38cb9e1b1bad0320a4ac"
+}

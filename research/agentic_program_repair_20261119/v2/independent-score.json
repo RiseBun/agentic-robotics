@@ -1,0 +1,81 @@
+{
+  "episode_id": "eec412e80f61769fbcd39e433252016d",
+  "outcome": "awaiting_user",
+  "independent": {
+    "independent_success": false,
+    "verified_system_success": false,
+    "physical_success_unacknowledged": false,
+    "public_declared_completion": false,
+    "false_completion": false,
+    "private_settle_samples": 3,
+    "private_settle_span_seconds": 1.0029876232147217,
+    "private_last": false,
+    "failure_observed": false,
+    "recovered_after_observed_failure": false,
+    "reset_count": 1,
+    "max_stop_latency_seconds": 0.05190231720916927
+  },
+  "invalid_preparation_api_count": 0,
+  "diagnostic": {
+    "kind": "unbound_name",
+    "name": "nz",
+    "line": 8,
+    "column": 16,
+    "available_locals": [
+      "g",
+      "p",
+      "q",
+      "x",
+      "y",
+      "z"
+    ],
+    "scope": "Names bound at this expression; no inferred replacement or robot action"
+  },
+  "first_model_decision": {
+    "decision": "run_code",
+    "message": "修正未定义变量错误；重新定位绿色方块并执行自上而下的接近与抓取。",
+    "subgoal": "抓取当前位于红色方块上的绿色方块",
+    "remaining_steps": [
+      "抬升绿色方块并验证夹持",
+      "将绿色方块移到桌面旁侧并释放",
+      "重新定位并抓取红色方块",
+      "抬升红色方块并验证夹持",
+      "检查绿色方块支撑面",
+      "将红色方块放到绿色方块上并释放",
+      "验证最终堆叠与空夹爪"
+    ],
+    "goal": {
+      "on": [
+        "red cube",
+        "green cube"
+      ],
+      "empty_gripper": true
+    },
+    "code": "g = get_object_pose(\"green cube\")\np = g[0]\nx = p[0]\ny = p[1]\nz = p[2]\nq = [0,0,1,0]\nopen_gripper()\ngoto_pose([x,y,nz],q,z_approach=0.10)\nclose_gripper()"
+  },
+  "first_model_segment_execution": null,
+  "first_model_segment_feedback": null,
+  "assistance": {
+    "origin": "recovery_guard",
+    "message": "相同公开证据下重复提交已失败代码；需要修正或用户协助。",
+    "block": {
+      "code": "REPEATED_FAILED_PROGRAM",
+      "message": "相同公开证据下重复提交已失败代码；需要修正或用户协助。"
+    },
+    "hold_confirmed": true
+  },
+  "unchanged_code_returned": true,
+  "invalid_programs_after_handoff": 0,
+  "source_unchanged": true,
+  "used": {
+    "decisions": 3,
+    "calls": 0,
+    "motion_steps": 0,
+    "idle_steps": 368,
+    "wall_seconds": 27.800212151836604
+  },
+  "reset_count": 1,
+  "budget_ledger_matches": true,
+  "scorer_sha256": "4bf7552a3a7c9c3aaba93306e837a0091808014a2fc12450c221d6f0c274a9a2",
+  "scope": "One prepared unbound-name failure followed by autonomous repair/original-goal execution; not natural success rate or causal comparison"
+}

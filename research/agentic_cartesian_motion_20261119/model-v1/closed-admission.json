@@ -1,0 +1,20 @@
+[
+  {
+    "variant": "normal",
+    "trial_id": "cube_lifting-s83-r0",
+    "episode_id": "1b0c32d4897fb77bdcdf7f6a2cdb3db8",
+    "outcome": "completed"
+  },
+  {
+    "variant": "normal",
+    "trial_id": "cube_stack-s83-r0",
+    "episode_id": "4de46f260e4eed991130cb7a2ffd5ab5",
+    "outcome": "completed"
+  },
+  {
+    "variant": "normal",
+    "trial_id": "cube_restack-s83-r0",
+    "episode_id": "530f9d41591c6ab5e03937b8751e3d9c",
+    "outcome": "awaiting_user"
+  }
+]

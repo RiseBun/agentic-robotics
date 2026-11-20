@@ -1,0 +1,726 @@
+[
+  {
+    "mode": "no_fault",
+    "episode_id": "565811c2f6cef5ac18a0bcf9dca754f3",
+    "passed": true,
+    "segment": {
+      "id": "911abad532ea4815ab9f903c5deecabb",
+      "revision": 2,
+      "subgoal": "no_fault",
+      "code": "diagnostic_wait()\ndiagnostic_late_action()",
+      "contract": null,
+      "precondition_results": [],
+      "execution": "completed",
+      "effect": "verified",
+      "cancel_requested": false,
+      "verification_wait": {
+        "status": "ready",
+        "reason": "public_window_complete",
+        "action_step": 264,
+        "snapshot_age_seconds": 0.3957812786102295,
+        "snapshot_after_action": true,
+        "windows": [
+          {
+            "relation": "holding",
+            "observed_window_steps": 25,
+            "required_window_steps": 20,
+            "first_step": 397,
+            "last_step": 422
+          }
+        ],
+        "evidence_ref": "frame-000422.npz",
+        "elapsed_seconds": 0.0005515250377357006
+      },
+      "goal_verification": {
+        "status": "verified",
+        "evidence": [
+          {
+            "state": "satisfied",
+            "object_name": "red cube",
+            "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+            "samples": [
+              {
+                "control_step": 397,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.10850831655745258,
+                "surface_tcp_distance_m": 0.00953361305373221,
+                "tcp_height_above_reference_m": 0.10765318394088093
+              },
+              {
+                "control_step": 402,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.10850940992535538,
+                "surface_tcp_distance_m": 0.009537368540546126,
+                "tcp_height_above_reference_m": 0.10765318394088093
+              },
+              {
+                "control_step": 407,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.10851050329325818,
+                "surface_tcp_distance_m": 0.00953988203339844,
+                "tcp_height_above_reference_m": 0.10765318394088093
+              },
+              {
+                "control_step": 412,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.10851213340540417,
+                "surface_tcp_distance_m": 0.009542465377041294,
+                "tcp_height_above_reference_m": 0.10765318394088093
+              },
+              {
+                "control_step": 417,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.10851376351755018,
+                "surface_tcp_distance_m": 0.009545049621491612,
+                "tcp_height_above_reference_m": 0.10765318394088093
+              },
+              {
+                "control_step": 422,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.10851485688545295,
+                "surface_tcp_distance_m": 0.009547563688444033,
+                "tcp_height_above_reference_m": 0.10765318394088093
+              }
+            ],
+            "window_control_steps": 25,
+            "maximum_relative_surface_drift_m": 1.4939820387368548e-05,
+            "estimated_center_tcp_offset_xyz": [
+              0.002208366199147438,
+              -0.00012492535855233768,
+              -0.007174816296379305
+            ],
+            "reference_tcp_wxyz": [
+              0.0007083903183229268,
+              0.00014293193817138672,
+              0.9999995231628418,
+              9.63965430855751e-06
+            ],
+            "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+            "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+          }
+        ],
+        "evidence_ref": "frame-000422.npz",
+        "captured_at": 1795106789.5181353,
+        "control_step": 422
+      },
+      "stage_verification": {
+        "status": "unknown",
+        "reason": "No public postcondition declared"
+      }
+    },
+    "public_final": {
+      "status": "verified",
+      "evidence": [
+        {
+          "state": "satisfied",
+          "object_name": "red cube",
+          "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+          "samples": [
+            {
+              "control_step": 422,
+              "evidence": "holding_supported",
+              "visible_surface_lift_m": 0.10851485688545295,
+              "surface_tcp_distance_m": 0.009547563688444033,
+              "tcp_height_above_reference_m": 0.10765318394088093
+            },
+            {
+              "control_step": 427,
+              "evidence": "holding_supported",
+              "visible_surface_lift_m": 0.10851267014964738,
+              "surface_tcp_distance_m": 0.009549758154631615,
+              "tcp_height_above_reference_m": 0.10765309452711418
+            },
+            {
+              "control_step": 432,
+              "evidence": "holding_supported",
+              "visible_surface_lift_m": 0.10850940992535538,
+              "surface_tcp_distance_m": 0.009551465413301187,
+              "tcp_height_above_reference_m": 0.10764225792127277
+            },
+            {
+              "control_step": 437,
+              "evidence": "holding_supported",
+              "visible_surface_lift_m": 0.10850286959735497,
+              "surface_tcp_distance_m": 0.00955680257298753,
+              "tcp_height_above_reference_m": 0.10763213667015678
+            },
+            {
+              "control_step": 442,
+              "evidence": "holding_supported",
+              "visible_surface_lift_m": 0.10849960937306297,
+              "surface_tcp_distance_m": 0.009558874110301764,
+              "tcp_height_above_reference_m": 0.10762709830497223
+            },
+            {
+              "control_step": 447,
+              "evidence": "holding_supported",
+              "visible_surface_lift_m": 0.10849851600516017,
+              "surface_tcp_distance_m": 0.009560170595146626,
+              "tcp_height_above_reference_m": 0.10762372959060151
+            }
+          ],
+          "window_control_steps": 25,
+          "maximum_relative_surface_drift_m": 1.749344383958414e-05,
+          "estimated_center_tcp_offset_xyz": [
+            0.0022295027805869783,
+            -0.00012127375530748396,
+            -0.007123754398632026
+          ],
+          "reference_tcp_wxyz": [
+            0.0006758118979632854,
+            0.00014293193817138672,
+            0.9999998211860657,
+            8.242583135142922e-06
+          ],
+          "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+          "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+        }
+      ],
+      "evidence_ref": "frame-000447.npz",
+      "captured_at": 1795106790.7669346,
+      "control_step": 447
+    },
+    "closed": "closed",
+    "used": {
+      "decisions": 3,
+      "calls": 9,
+      "motion_steps": 113,
+      "idle_steps": 344,
+      "wall_seconds": 30.692665613023564
+    },
+    "source_unchanged": true
+  },
+  {
+    "mode": "actuator_release",
+    "episode_id": "7afae2a5d262a950bf251d0e51aedcf9",
+    "passed": true,
+    "segment": {
+      "id": "bc52ddfb9ef54e8ca04aeb6ec9d638c1",
+      "revision": 2,
+      "subgoal": "actuator_release",
+      "code": "diagnostic_wait()\ndiagnostic_late_action()",
+      "contract": null,
+      "precondition_results": [],
+      "execution": "cancelled",
+      "effect": "failed",
+      "cancel_requested": true,
+      "halt_code": "PUBLIC_HOLDING_LOSS",
+      "halt_evidence": {
+        "status": "violated",
+        "scope": "public holding contradiction; physical cause not established",
+        "object_name": "red cube",
+        "arm": {
+          "object_name": "red cube",
+          "control_step": 177,
+          "evidence_ref": "frame-000177.npz"
+        },
+        "evidence_ref": "frame-000252.npz",
+        "captured_at": 1795106806.1767704,
+        "control_step": 252,
+        "evidence": {
+          "state": "violated",
+          "object_name": "red cube",
+          "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+          "samples": [
+            {
+              "control_step": 227,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.0008183941961482366,
+              "surface_tcp_distance_m": 0.1079623159810709,
+              "tcp_height_above_reference_m": 0.10767575112257398
+            },
+            {
+              "control_step": 232,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.1079379377207426,
+              "tcp_height_above_reference_m": 0.10768152007489193
+            },
+            {
+              "control_step": 237,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.1079408509289239,
+              "tcp_height_above_reference_m": 0.10768496358416904
+            },
+            {
+              "control_step": 242,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.10794307800405725,
+              "tcp_height_above_reference_m": 0.1076875274418371
+            },
+            {
+              "control_step": 247,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.10794423593326624,
+              "tcp_height_above_reference_m": 0.10768889884221611
+            },
+            {
+              "control_step": 252,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.10794512485370393,
+              "tcp_height_above_reference_m": 0.10768994227187044
+            }
+          ],
+          "reason": "object_remains_low_while_tcp_is_high"
+        },
+        "evidence_refs": [
+          "frame-000227.npz",
+          "frame-000232.npz",
+          "frame-000237.npz",
+          "frame-000242.npz",
+          "frame-000247.npz",
+          "frame-000252.npz"
+        ],
+        "reason": "object_remains_low_while_tcp_is_high"
+      },
+      "error": "Cancelled or superseded goal",
+      "feedback": {
+        "category": "public_holding_loss",
+        "phase": "execution",
+        "api": "diagnostic_wait",
+        "call_id": "0fd558fea75245d28a4511d57c6f15f5",
+        "message": "Cancelled or superseded goal",
+        "evidence": {
+          "status": "violated",
+          "scope": "public holding contradiction; physical cause not established",
+          "object_name": "red cube",
+          "arm": {
+            "object_name": "red cube",
+            "control_step": 177,
+            "evidence_ref": "frame-000177.npz"
+          },
+          "evidence_ref": "frame-000252.npz",
+          "captured_at": 1795106806.1767704,
+          "control_step": 252,
+          "evidence": {
+            "state": "violated",
+            "object_name": "red cube",
+            "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+            "samples": [
+              {
+                "control_step": 227,
+                "evidence": "not_held_supported",
+                "visible_surface_lift_m": 0.0008183941961482366,
+                "surface_tcp_distance_m": 0.1079623159810709,
+                "tcp_height_above_reference_m": 0.10767575112257398
+              },
+              {
+                "control_step": 232,
+                "evidence": "not_held_supported",
+                "visible_surface_lift_m": 0.000852098778885646,
+                "surface_tcp_distance_m": 0.1079379377207426,
+                "tcp_height_above_reference_m": 0.10768152007489193
+              },
+              {
+                "control_step": 237,
+                "evidence": "not_held_supported",
+                "visible_surface_lift_m": 0.000852098778885646,
+                "surface_tcp_distance_m": 0.1079408509289239,
+                "tcp_height_above_reference_m": 0.10768496358416904
+              },
+              {
+                "control_step": 242,
+                "evidence": "not_held_supported",
+                "visible_surface_lift_m": 0.000852098778885646,
+                "surface_tcp_distance_m": 0.10794307800405725,
+                "tcp_height_above_reference_m": 0.1076875274418371
+              },
+              {
+                "control_step": 247,
+                "evidence": "not_held_supported",
+                "visible_surface_lift_m": 0.000852098778885646,
+                "surface_tcp_distance_m": 0.10794423593326624,
+                "tcp_height_above_reference_m": 0.10768889884221611
+              },
+              {
+                "control_step": 252,
+                "evidence": "not_held_supported",
+                "visible_surface_lift_m": 0.000852098778885646,
+                "surface_tcp_distance_m": 0.10794512485370393,
+                "tcp_height_above_reference_m": 0.10768994227187044
+              }
+            ],
+            "reason": "object_remains_low_while_tcp_is_high"
+          },
+          "evidence_refs": [
+            "frame-000227.npz",
+            "frame-000232.npz",
+            "frame-000237.npz",
+            "frame-000242.npz",
+            "frame-000247.npz",
+            "frame-000252.npz"
+          ],
+          "reason": "object_remains_low_while_tcp_is_high"
+        },
+        "observation": {
+          "evidence_ref": "frame-000252.npz",
+          "captured_at": 1795106806.1767704,
+          "control_step": 252
+        },
+        "causal_status": "not_established"
+      },
+      "verification_wait": {
+        "status": "not_required"
+      },
+      "goal_verification": {
+        "status": "failed",
+        "evidence": [
+          {
+            "state": "violated",
+            "object_name": "red cube",
+            "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+            "samples": [
+              {
+                "control_step": 227,
+                "evidence": "not_held_supported",
+                "visible_surface_lift_m": 0.0008183941961482366,
+                "surface_tcp_distance_m": 0.1079623159810709,
+                "tcp_height_above_reference_m": 0.10767575112257398
+              },
+              {
+                "control_step": 232,
+                "evidence": "not_held_supported",
+                "visible_surface_lift_m": 0.000852098778885646,
+                "surface_tcp_distance_m": 0.1079379377207426,
+                "tcp_height_above_reference_m": 0.10768152007489193
+              },
+              {
+                "control_step": 237,
+                "evidence": "not_held_supported",
+                "visible_surface_lift_m": 0.000852098778885646,
+                "surface_tcp_distance_m": 0.1079408509289239,
+                "tcp_height_above_reference_m": 0.10768496358416904
+              },
+              {
+                "control_step": 242,
+                "evidence": "not_held_supported",
+                "visible_surface_lift_m": 0.000852098778885646,
+                "surface_tcp_distance_m": 0.10794307800405725,
+                "tcp_height_above_reference_m": 0.1076875274418371
+              },
+              {
+                "control_step": 247,
+                "evidence": "not_held_supported",
+                "visible_surface_lift_m": 0.000852098778885646,
+                "surface_tcp_distance_m": 0.10794423593326624,
+                "tcp_height_above_reference_m": 0.10768889884221611
+              },
+              {
+                "control_step": 252,
+                "evidence": "not_held_supported",
+                "visible_surface_lift_m": 0.000852098778885646,
+                "surface_tcp_distance_m": 0.10794512485370393,
+                "tcp_height_above_reference_m": 0.10768994227187044
+              }
+            ],
+            "reason": "object_remains_low_while_tcp_is_high"
+          }
+        ],
+        "evidence_ref": "frame-000252.npz",
+        "captured_at": 1795106806.1767704,
+        "control_step": 252
+      },
+      "stage_verification": {
+        "status": "unknown",
+        "reason": "No public postcondition declared"
+      }
+    },
+    "old_decision_rejected": true,
+    "alert": {
+      "identity": [
+        "red cube",
+        177
+      ],
+      "code": "PUBLIC_HOLDING_LOSS",
+      "revision": 3,
+      "hold_serial": 3,
+      "hold_confirmed": true,
+      "evidence": {
+        "status": "violated",
+        "scope": "public holding contradiction; physical cause not established",
+        "object_name": "red cube",
+        "arm": {
+          "object_name": "red cube",
+          "control_step": 177,
+          "evidence_ref": "frame-000177.npz"
+        },
+        "evidence_ref": "frame-000252.npz",
+        "captured_at": 1795106806.1767704,
+        "control_step": 252,
+        "evidence": {
+          "state": "violated",
+          "object_name": "red cube",
+          "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+          "samples": [
+            {
+              "control_step": 227,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.0008183941961482366,
+              "surface_tcp_distance_m": 0.1079623159810709,
+              "tcp_height_above_reference_m": 0.10767575112257398
+            },
+            {
+              "control_step": 232,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.1079379377207426,
+              "tcp_height_above_reference_m": 0.10768152007489193
+            },
+            {
+              "control_step": 237,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.1079408509289239,
+              "tcp_height_above_reference_m": 0.10768496358416904
+            },
+            {
+              "control_step": 242,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.10794307800405725,
+              "tcp_height_above_reference_m": 0.1076875274418371
+            },
+            {
+              "control_step": 247,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.10794423593326624,
+              "tcp_height_above_reference_m": 0.10768889884221611
+            },
+            {
+              "control_step": 252,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.10794512485370393,
+              "tcp_height_above_reference_m": 0.10768994227187044
+            }
+          ],
+          "reason": "object_remains_low_while_tcp_is_high"
+        },
+        "evidence_refs": [
+          "frame-000227.npz",
+          "frame-000232.npz",
+          "frame-000237.npz",
+          "frame-000242.npz",
+          "frame-000247.npz",
+          "frame-000252.npz"
+        ],
+        "reason": "object_remains_low_while_tcp_is_high"
+      },
+      "event_id": 42,
+      "hold_latency_seconds": 0.04095520009286702
+    },
+    "public_final": {
+      "status": "failed",
+      "evidence": [
+        {
+          "state": "violated",
+          "object_name": "red cube",
+          "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+          "samples": [
+            {
+              "control_step": 252,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.10794512485370393,
+              "tcp_height_above_reference_m": 0.10768994227187044
+            },
+            {
+              "control_step": 257,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.10794577469198283,
+              "tcp_height_above_reference_m": 0.1076906875365876
+            },
+            {
+              "control_step": 262,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.10794578737514923,
+              "tcp_height_above_reference_m": 0.10769068749012176
+            },
+            {
+              "control_step": 267,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.10794578737514923,
+              "tcp_height_above_reference_m": 0.10769068749012176
+            },
+            {
+              "control_step": 272,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.10794578737514923,
+              "tcp_height_above_reference_m": 0.10769068749012176
+            },
+            {
+              "control_step": 277,
+              "evidence": "not_held_supported",
+              "visible_surface_lift_m": 0.000852098778885646,
+              "surface_tcp_distance_m": 0.10794578737514923,
+              "tcp_height_above_reference_m": 0.10769068749012176
+            }
+          ],
+          "reason": "object_remains_low_while_tcp_is_high"
+        }
+      ],
+      "evidence_ref": "frame-000277.npz",
+      "captured_at": 1795106807.4206002,
+      "control_step": 277
+    },
+    "closed": "closed",
+    "used": {
+      "decisions": 3,
+      "calls": 8,
+      "motion_steps": 113,
+      "idle_steps": 172,
+      "wall_seconds": 16.030490215867758
+    },
+    "source_unchanged": true
+  },
+  {
+    "mode": "red_pixels_missing",
+    "episode_id": "1be2c716a0a5e62700536a7fc783b1e9",
+    "passed": true,
+    "segment": {
+      "id": "a470d18c452e4cc0ae0e3b07d54259dd",
+      "revision": 2,
+      "subgoal": "red_pixels_missing",
+      "code": "diagnostic_wait()\ndiagnostic_late_action()",
+      "contract": null,
+      "precondition_results": [],
+      "execution": "completed",
+      "effect": "unknown",
+      "cancel_requested": false,
+      "verification_wait": {
+        "status": "ready",
+        "reason": "public_window_complete",
+        "action_step": 159,
+        "snapshot_age_seconds": 0.383225679397583,
+        "snapshot_after_action": true,
+        "windows": [
+          {
+            "relation": "holding",
+            "observed_window_steps": 25,
+            "required_window_steps": 20,
+            "first_step": 289,
+            "last_step": 314
+          }
+        ],
+        "evidence_ref": "frame-000314.npz",
+        "elapsed_seconds": 0.0004623839631676674
+      },
+      "goal_verification": {
+        "status": "unknown",
+        "evidence": [
+          {
+            "state": "unknown",
+            "object_name": "red cube",
+            "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+            "samples": [
+              {
+                "control_step": 289,
+                "evidence": "unknown",
+                "reason": "object_not_visible"
+              },
+              {
+                "control_step": 294,
+                "evidence": "unknown",
+                "reason": "object_not_visible"
+              },
+              {
+                "control_step": 299,
+                "evidence": "unknown",
+                "reason": "object_not_visible"
+              },
+              {
+                "control_step": 304,
+                "evidence": "unknown",
+                "reason": "object_not_visible"
+              },
+              {
+                "control_step": 309,
+                "evidence": "unknown",
+                "reason": "object_not_visible"
+              },
+              {
+                "control_step": 314,
+                "evidence": "unknown",
+                "reason": "object_not_visible"
+              }
+            ],
+            "window_control_steps": 25,
+            "reason": "mixed_or_insufficient_public_evidence"
+          }
+        ],
+        "evidence_ref": "frame-000314.npz",
+        "captured_at": 1795106825.8460119,
+        "control_step": 314
+      },
+      "stage_verification": {
+        "status": "unknown",
+        "reason": "No public postcondition declared"
+      }
+    },
+    "public_final": {
+      "status": "unknown",
+      "evidence": [
+        {
+          "state": "unknown",
+          "object_name": "red cube",
+          "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+          "samples": [
+            {
+              "control_step": 314,
+              "evidence": "unknown",
+              "reason": "object_not_visible"
+            },
+            {
+              "control_step": 319,
+              "evidence": "unknown",
+              "reason": "object_not_visible"
+            },
+            {
+              "control_step": 324,
+              "evidence": "unknown",
+              "reason": "object_not_visible"
+            },
+            {
+              "control_step": 329,
+              "evidence": "unknown",
+              "reason": "object_not_visible"
+            },
+            {
+              "control_step": 334,
+              "evidence": "unknown",
+              "reason": "object_not_visible"
+            },
+            {
+              "control_step": 339,
+              "evidence": "unknown",
+              "reason": "object_not_visible"
+            }
+          ],
+          "window_control_steps": 25,
+          "reason": "mixed_or_insufficient_public_evidence"
+        }
+      ],
+      "evidence_ref": "frame-000339.npz",
+      "captured_at": 1795106827.0883307,
+      "control_step": 339
+    },
+    "closed": "closed",
+    "used": {
+      "decisions": 3,
+      "calls": 9,
+      "motion_steps": 113,
+      "idle_steps": 236,
+      "wall_seconds": 19.20468518906273
+    },
+    "source_unchanged": true
+  }
+]

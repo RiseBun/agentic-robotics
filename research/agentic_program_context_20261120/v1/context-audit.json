@@ -1,0 +1,103 @@
+{
+  "requests": [
+    {
+      "trial_id": "cube_lifting-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 414,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_lifting-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 7978,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_lifting-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 17053,
+      "history_chars": 3248,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 432,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 7260,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 18757,
+      "history_chars": 3837,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 26888,
+      "history_chars": 8922,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 34128,
+      "history_chars": 15578,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 41240,
+      "history_chars": 18348,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_restack-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 51297,
+      "history_chars": 23796,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_stack-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 415,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_stack-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 7718,
+      "history_chars": 2,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_stack-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 19386,
+      "history_chars": 3257,
+      "has_raw_events": false
+    },
+    {
+      "trial_id": "cube_stack-s89-r0",
+      "scope": "task_decision",
+      "context_chars": 27203,
+      "history_chars": 8352,
+      "has_raw_events": false
+    }
+  ],
+  "scope": "Recorded request bodies only; no performance or causal benefit claim"
+}

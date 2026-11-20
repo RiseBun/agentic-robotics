@@ -1,0 +1,175 @@
+{
+  "trial_id": "cube_lifting-s89-r0",
+  "task": "cube_lifting",
+  "seed": 89,
+  "repeat": 0,
+  "text": "抓起红色方块并保持抬起，不要释放。",
+  "outcome": "completed",
+  "episode_id": "df488f8d94bb8262ee35820037465eef",
+  "started_at": 1795146308.153,
+  "terminal_at": 1795146364.882,
+  "policy_seconds": 56.728999853134155,
+  "public_at_decision": {
+    "status": "verified",
+    "evidence": [
+      {
+        "state": "satisfied",
+        "object_name": "red cube",
+        "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+        "samples": [
+          {
+            "control_step": 791,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.09563577491388406,
+            "surface_tcp_distance_m": 0.005515555996710341,
+            "tcp_height_above_reference_m": 0.09102078090830674
+          },
+          {
+            "control_step": 796,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.09815505395770091,
+            "surface_tcp_distance_m": 0.0069572029569021565,
+            "tcp_height_above_reference_m": 0.09218546003600016
+          },
+          {
+            "control_step": 801,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.09694112767139501,
+            "surface_tcp_distance_m": 0.005607466504836829,
+            "tcp_height_above_reference_m": 0.0926387121328961
+          },
+          {
+            "control_step": 806,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.09709377291617327,
+            "surface_tcp_distance_m": 0.005612908482591611,
+            "tcp_height_above_reference_m": 0.09281513697054727
+          },
+          {
+            "control_step": 811,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.09699373146913817,
+            "surface_tcp_distance_m": 0.005612352874404431,
+            "tcp_height_above_reference_m": 0.0928840411279434
+          },
+          {
+            "control_step": 815,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.09698341802646504,
+            "surface_tcp_distance_m": 0.005615009931495324,
+            "tcp_height_above_reference_m": 0.09290711599984014
+          }
+        ],
+        "window_control_steps": 24,
+        "maximum_relative_surface_drift_m": 0.0014715778281856294,
+        "estimated_center_tcp_offset_xyz": [
+          -0.005417530730735531,
+          -0.0006046526243789051,
+          0.0034669845225354084
+        ],
+        "reference_tcp_wxyz": [
+          0.00061510392697528,
+          0.000010520219802856445,
+          0.9999996423721313,
+          0.00001587744918651879
+        ],
+        "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+        "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+      }
+    ],
+    "evidence_ref": "frame-000815.npz",
+    "captured_at": 1795146365.6289084,
+    "control_step": 815
+  },
+  "used_at_decision": {
+    "decisions": 3,
+    "calls": 7,
+    "motion_steps": 121,
+    "idle_steps": 700,
+    "wall_seconds": 49.70374982897192
+  },
+  "public_after_settle": {
+    "status": "verified",
+    "evidence": [
+      {
+        "state": "satisfied",
+        "object_name": "red cube",
+        "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+        "samples": [
+          {
+            "control_step": 850,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.09719254951164369,
+            "surface_tcp_distance_m": 0.006171224872374213,
+            "tcp_height_above_reference_m": 0.0928799279665631
+          },
+          {
+            "control_step": 855,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.09693396798532317,
+            "surface_tcp_distance_m": 0.006150556773275495,
+            "tcp_height_above_reference_m": 0.09287930948143563
+          },
+          {
+            "control_step": 860,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.09680932100837664,
+            "surface_tcp_distance_m": 0.006087607758234828,
+            "tcp_height_above_reference_m": 0.09287895929162306
+          },
+          {
+            "control_step": 865,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.09672569228050956,
+            "surface_tcp_distance_m": 0.006178974303198788,
+            "tcp_height_above_reference_m": 0.09287866127559556
+          },
+          {
+            "control_step": 870,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.09656945804763328,
+            "surface_tcp_distance_m": 0.006141660590750861,
+            "tcp_height_above_reference_m": 0.09287854952560928
+          },
+          {
+            "control_step": 875,
+            "evidence": "holding_supported",
+            "visible_surface_lift_m": 0.09644067453194508,
+            "surface_tcp_distance_m": 0.006132544174545287,
+            "tcp_height_above_reference_m": 0.09287848247462527
+          }
+        ],
+        "window_control_steps": 25,
+        "maximum_relative_surface_drift_m": 0.0009644173011190538,
+        "estimated_center_tcp_offset_xyz": [
+          -0.007076323098786752,
+          -0.0005624312827360919,
+          0.0026117175364369413
+        ],
+        "reference_tcp_wxyz": [
+          0.0005823948886245489,
+          0.000010073184967041016,
+          0.999999463558197,
+          0.000013931392459198833
+        ],
+        "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+        "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+      }
+    ],
+    "evidence_ref": "frame-000875.npz",
+    "captured_at": 1795146368.6230698,
+    "control_step": 875
+  },
+  "private_scoring": "pending_offline",
+  "feedback_categories": [],
+  "ended_at": 1795146369.841,
+  "total_seconds": 61.687999963760376,
+  "used_at_close": {
+    "decisions": 3,
+    "calls": 7,
+    "motion_steps": 121,
+    "idle_steps": 787,
+    "wall_seconds": 54.054689599899575
+  },
+  "source_unchanged": true
+}

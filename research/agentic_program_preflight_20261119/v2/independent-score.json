@@ -1,0 +1,32 @@
+{
+  "job": 20778,
+  "episode_id": "9fd02576f66df0ac239dbd3f21fae853",
+  "independent_success": true,
+  "verified_system_success": true,
+  "physical_success_unacknowledged": false,
+  "public_declared_completion": true,
+  "false_completion": false,
+  "private_settle_samples": 3,
+  "private_settle_span_seconds": 1.0524981021881104,
+  "private_last": true,
+  "failure_observed": false,
+  "recovered_after_observed_failure": false,
+  "reset_count": 1,
+  "max_stop_latency_seconds": 0.06235161400400102,
+  "public_final": "verified",
+  "source_unchanged": true,
+  "invalid_segment_execution": "failed",
+  "invalid_segment_api_calls": 0,
+  "invalid_segment_api_budget_delta": 0,
+  "corrected_segment_execution": "completed",
+  "used": {
+    "decisions": 4,
+    "calls": 9,
+    "motion_steps": 114,
+    "idle_steps": 261,
+    "wall_seconds": 26.656837571179494
+  },
+  "scorer_sha256": "631201fdcd5362aae74daac4f0e1ae466c170b572a5450c571943c8879dd60dc",
+  "base_scorer_sha256": "03cb0f74186fee82c0593e3af5b83816363a0e02710c282d28f4b96359fcd235",
+  "scope": "One fixed-controller cube_lifting/71 regression; not an LLM recovery or success-rate experiment"
+}

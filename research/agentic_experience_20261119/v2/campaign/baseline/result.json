@@ -1,0 +1,64 @@
+{
+  "mode": "baseline",
+  "episode_id": "a1bc1dfde762f80a128dcda86943a275",
+  "handoff_event_id": 164,
+  "started_at": 1795102469.582,
+  "preparation_used": {
+    "decisions": 10,
+    "calls": 28,
+    "motion_steps": 385,
+    "idle_steps": 588,
+    "wall_seconds": 57.15503039397299
+  },
+  "outcome": "needs_attention",
+  "public_at_decision": {
+    "status": "unknown",
+    "evidence": [
+      {
+        "status": "unknown",
+        "evidence_ref": "frame-002231.npz",
+        "captured_at": 1795102532.3862069,
+        "gripper_width_m": 0.03962402161310358,
+        "command": "closed",
+        "reason": "open_empty_gripper_not_confirmed"
+      },
+      {
+        "relation": [
+          "red cube",
+          "green cube"
+        ],
+        "samples": [
+          "unknown"
+        ],
+        "geometry": [
+          {
+            "control_step": 2231,
+            "horizontal_residual_m": 0.005541740207261478,
+            "height_difference_m": 0.04415532321018975,
+            "support_width_m": 0.03505961010044921,
+            "center_methods": [
+              "visible_box",
+              "visible_side_plane_and_prior_rgbd_cube_size"
+            ]
+          }
+        ],
+        "window_steps": 0,
+        "scope": "visible geometry after release; not contact truth"
+      }
+    ],
+    "evidence_ref": "frame-002231.npz",
+    "captured_at": 1795102532.3862069,
+    "control_step": 2231
+  },
+  "terminal_at": 1795102534.226,
+  "ended_at": 1795102538.269,
+  "used_at_close": {
+    "decisions": 12,
+    "calls": 33,
+    "motion_steps": 436,
+    "idle_steps": 1882,
+    "wall_seconds": 124.38360731187277
+  },
+  "source_unchanged": true,
+  "experience_corpus_unchanged": true
+}

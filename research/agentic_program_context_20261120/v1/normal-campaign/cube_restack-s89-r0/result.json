@@ -1,0 +1,208 @@
+{
+  "trial_id": "cube_restack-s89-r0",
+  "task": "cube_restack",
+  "seed": 89,
+  "repeat": 0,
+  "text": "把绿色方块从红色方块上移开，再将红色方块放在绿色方块上，释放后空夹爪。",
+  "outcome": "completed",
+  "episode_id": "0d18b1b7cd1bf5a48db931ca6ada153b",
+  "started_at": 1795146451.634,
+  "terminal_at": 1795146586.58,
+  "policy_seconds": 134.94599986076355,
+  "public_at_decision": {
+    "status": "verified",
+    "evidence": [
+      {
+        "status": "verified",
+        "evidence_ref": "frame-002489.npz",
+        "captured_at": 1795146587.399152,
+        "gripper_width_m": 0.0799204336879572,
+        "command": "open",
+        "reason": "public_open_aperture; bounded_cube_scope"
+      },
+      {
+        "relation": [
+          "red cube",
+          "green cube"
+        ],
+        "samples": [
+          "verified",
+          "verified",
+          "verified",
+          "verified",
+          "verified"
+        ],
+        "geometry": [
+          {
+            "control_step": 2469,
+            "horizontal_residual_m": 0.0054624884676688695,
+            "height_difference_m": 0.04064695791804086,
+            "support_width_m": 0.03641726438563935,
+            "center_methods": [
+              "visible_box",
+              "visible_side_plane_and_prior_rgbd_cube_size"
+            ]
+          },
+          {
+            "control_step": 2474,
+            "horizontal_residual_m": 0.005462719658157622,
+            "height_difference_m": 0.04064695791804086,
+            "support_width_m": 0.03641726438563935,
+            "center_methods": [
+              "visible_box",
+              "visible_side_plane_and_prior_rgbd_cube_size"
+            ]
+          },
+          {
+            "control_step": 2479,
+            "horizontal_residual_m": 0.005462719658157622,
+            "height_difference_m": 0.04064727241911692,
+            "support_width_m": 0.03641726438563935,
+            "center_methods": [
+              "visible_box",
+              "visible_side_plane_and_prior_rgbd_cube_size"
+            ]
+          },
+          {
+            "control_step": 2484,
+            "horizontal_residual_m": 0.005462719658157622,
+            "height_difference_m": 0.04064723124758504,
+            "support_width_m": 0.03641726438563935,
+            "center_methods": [
+              "visible_box",
+              "visible_side_plane_and_prior_rgbd_cube_size"
+            ]
+          },
+          {
+            "control_step": 2489,
+            "horizontal_residual_m": 0.005462719658157622,
+            "height_difference_m": 0.04064723124758504,
+            "support_width_m": 0.03641726438563935,
+            "center_methods": [
+              "visible_box",
+              "visible_side_plane_and_prior_rgbd_cube_size"
+            ]
+          }
+        ],
+        "window_steps": 20,
+        "scope": "visible geometry after release; not contact truth"
+      }
+    ],
+    "evidence_ref": "frame-002489.npz",
+    "captured_at": 1795146587.399152,
+    "control_step": 2489
+  },
+  "used_at_decision": {
+    "decisions": 7,
+    "calls": 32,
+    "motion_steps": 430,
+    "idle_steps": 2063,
+    "wall_seconds": 127.35788391996175
+  },
+  "public_after_settle": {
+    "status": "verified",
+    "evidence": [
+      {
+        "status": "verified",
+        "evidence_ref": "frame-002523.npz",
+        "captured_at": 1795146589.0975444,
+        "gripper_width_m": 0.07998207656259265,
+        "command": "open",
+        "reason": "public_open_aperture; bounded_cube_scope"
+      },
+      {
+        "relation": [
+          "red cube",
+          "green cube"
+        ],
+        "samples": [
+          "verified",
+          "verified",
+          "verified",
+          "verified",
+          "verified",
+          "verified"
+        ],
+        "geometry": [
+          {
+            "control_step": 2499,
+            "horizontal_residual_m": 0.005462792761277131,
+            "height_difference_m": 0.04064708860441546,
+            "support_width_m": 0.03641726438563935,
+            "center_methods": [
+              "visible_box",
+              "visible_side_plane_and_prior_rgbd_cube_size"
+            ]
+          },
+          {
+            "control_step": 2504,
+            "horizontal_residual_m": 0.005462792761277131,
+            "height_difference_m": 0.04064708860441546,
+            "support_width_m": 0.03641726438563935,
+            "center_methods": [
+              "visible_box",
+              "visible_side_plane_and_prior_rgbd_cube_size"
+            ]
+          },
+          {
+            "control_step": 2509,
+            "horizontal_residual_m": 0.005463250988632983,
+            "height_difference_m": 0.04064570069927369,
+            "support_width_m": 0.03641726438563935,
+            "center_methods": [
+              "visible_box",
+              "visible_side_plane_and_prior_rgbd_cube_size"
+            ]
+          },
+          {
+            "control_step": 2514,
+            "horizontal_residual_m": 0.005463250988632983,
+            "height_difference_m": 0.040646339886891356,
+            "support_width_m": 0.03641726438563935,
+            "center_methods": [
+              "visible_box",
+              "visible_side_plane_and_prior_rgbd_cube_size"
+            ]
+          },
+          {
+            "control_step": 2519,
+            "horizontal_residual_m": 0.005463250988632983,
+            "height_difference_m": 0.040646200268218885,
+            "support_width_m": 0.03641726438563935,
+            "center_methods": [
+              "visible_box",
+              "visible_side_plane_and_prior_rgbd_cube_size"
+            ]
+          },
+          {
+            "control_step": 2523,
+            "horizontal_residual_m": 0.005463337483419834,
+            "height_difference_m": 0.040646200268218885,
+            "support_width_m": 0.03641726438563935,
+            "center_methods": [
+              "visible_box",
+              "visible_side_plane_and_prior_rgbd_cube_size"
+            ]
+          }
+        ],
+        "window_steps": 24,
+        "scope": "visible geometry after release; not contact truth"
+      }
+    ],
+    "evidence_ref": "frame-002523.npz",
+    "captured_at": 1795146589.0975444,
+    "control_step": 2523
+  },
+  "private_scoring": "pending_offline",
+  "feedback_categories": [],
+  "ended_at": 1795146589.893,
+  "total_seconds": 138.25899982452393,
+  "used_at_close": {
+    "decisions": 7,
+    "calls": 32,
+    "motion_steps": 430,
+    "idle_steps": 2118,
+    "wall_seconds": 130.09248113795184
+  },
+  "source_unchanged": true
+}

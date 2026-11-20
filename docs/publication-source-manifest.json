@@ -1,0 +1,2413 @@
+{
+  "scope": "Files copied from the working tree before publication documentation/configuration edits; no credentials, caches, raw runs, dependency distributions or frozen duplicate source trees",
+  "files": [
+    {
+      "path": "desktop/main.cjs",
+      "sha256": "55ee5befe95ca75425815feec1a43731b466d9ca4ac799d2b7bfecfa39b61a62"
+    },
+    {
+      "path": "desktop/package-lock.json",
+      "sha256": "2021731e5c42eb1f2a35c1909720bef298ec0928adcab510e5ce12ddb1408cfe"
+    },
+    {
+      "path": "desktop/package.json",
+      "sha256": "d64a6f4a2de00fe4f549d97f8a3b81149ff2d4ee6d284108a89c58eb44c9b163"
+    },
+    {
+      "path": "desktop/preload.cjs",
+      "sha256": "61ed4c74905159d37e7aa7a5c9e3dbea76ba75add931c17634ef3d6bc4516a9e"
+    },
+    {
+      "path": "desktop/runtime-supervisor.cjs",
+      "sha256": "9ccef0576b85b74df0c254e0a58888353cc52ca00ea70f09a95666c31ae8ee2d"
+    },
+    {
+      "path": "frontend/index.html",
+      "sha256": "9bb93f39da7e6758d767222ada7de790ab54463e3c6d346a3f3a0752d66f41e8"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "aa01764a44af54a1b89c99443cf8f43c521187adc88d3cea4aae319f886909ae"
+    },
+    {
+      "path": "frontend/package.json",
+      "sha256": "e33ffd3edcf79f79bdf1e578d0757b090691ac0d30d43060f6210518d1976907"
+    },
+    {
+      "path": "frontend/tsconfig.json",
+      "sha256": "f50c4e2041897a44d5e09579d746f031d7341f1a390cb658383e9bcc46003476"
+    },
+    {
+      "path": "frontend/vite.config.ts",
+      "sha256": "578d80d466b730eda620f56309af97f5d30042d40f4d48feb8c2c6d91bcc90e5"
+    },
+    {
+      "path": "frontend/vitest.config.ts",
+      "sha256": "35a577dab3eb573a5f30301f104dfd982b0779f5f7b28cb83f554095a7562497"
+    },
+    {
+      "path": "frontend/src/main.tsx",
+      "sha256": "9b41a004518880db3b5217a4b95663f232d7a1546b27b91f66c5fb4fa498e815"
+    },
+    {
+      "path": "frontend/src/robot.css",
+      "sha256": "ca6b43f687e70e76b620019a1ca2fad58fc0ea6434b90cf196e0cc1ef9d93132"
+    },
+    {
+      "path": "frontend/src/RobotWorkbench.test.tsx",
+      "sha256": "1b632bf12a639c6b4e9c060073c6702263835b643bcf7626e95bb85f716f3444"
+    },
+    {
+      "path": "frontend/src/RobotWorkbench.tsx",
+      "sha256": "603273ea2bdb2c1b0f96ee5e2dfdc218adb72e2df31388c63bdeedf8c5ab6cec"
+    },
+    {
+      "path": "frontend/src/test-setup.ts",
+      "sha256": "47a16065c1da9dedc12dc71b2abf472b40e17f0a05c9b947665213e3638ab765"
+    },
+    {
+      "path": "runtime/application-service.mjs",
+      "sha256": "c0f9c5a4d8a70ac8e057fb43ad839cbd089f11104e70eb15f43f56ad57067d4d"
+    },
+    {
+      "path": "runtime/assistant-output.mjs",
+      "sha256": "8a32acf455595cdab717ad601afd297c1408305e7928f89e3456059c8a0e69bb"
+    },
+    {
+      "path": "runtime/channels.mjs",
+      "sha256": "f1dfd21475c8479b5aae443d53971fdacd057fbf8903b84a220190b907b2c897"
+    },
+    {
+      "path": "runtime/config-store.mjs",
+      "sha256": "7f6e467ce7c867e69281e6317dfd32db5b62b86d943fb59f10f808fb0b7edaf7"
+    },
+    {
+      "path": "runtime/record-database.mjs",
+      "sha256": "16dbc5b36fe1081c7a0b5d95dc654691d73ac92eded485b8d8e698a7aaa34483"
+    },
+    {
+      "path": "runtime/secret-store.mjs",
+      "sha256": "6a7e97be4bb39d791d977dff2dbe92820c886580b869274da4f291fff7c626ba"
+    },
+    {
+      "path": "runtime/utility-entry.mjs",
+      "sha256": "27002a0cea308f552e277859c70d1f8c8684e03b13477a81f1407d11d257cd0e"
+    },
+    {
+      "path": "runtime/package.json",
+      "sha256": "3ec0950ab027df7ca807d50525b474a8bf4ef76f6d2895c813c5e2a29af50ebc"
+    },
+    {
+      "path": "runtime/package-lock.json",
+      "sha256": "f38eabb5b6f7101f11860feb75d8879cb6278e6b68f2f30a61a26c73fb6b4269"
+    },
+    {
+      "path": "runtime/robot/application.mjs",
+      "sha256": "91707646ed256b8ee7a948e2786d2a19e7053152bfca55b5a93169853f9a9b3d"
+    },
+    {
+      "path": "runtime/robot/campaign.test.mjs",
+      "sha256": "7fdb7b4fd1c7b1cd4f5414a35403713fc159a2ffdfe08b32c8fc7f2bd5c5fa10"
+    },
+    {
+      "path": "runtime/robot/coordinator.mjs",
+      "sha256": "51b771f0c8e17230842d654d0be823c4c67e2fdf185ea2bd3d9593acb838552e"
+    },
+    {
+      "path": "runtime/robot/coordinator.test.mjs",
+      "sha256": "1b1bfe183de1b8b88f9da9ebb7ef5e0660c4108df92d7f464410c19c07453d7b"
+    },
+    {
+      "path": "runtime/robot/deadline.mjs",
+      "sha256": "1309b056293b86cfa4f7b36a89af598cbaedd0a96e1e40ee379ec013559508ea"
+    },
+    {
+      "path": "runtime/robot/deadline.test.mjs",
+      "sha256": "d5fa5939b74497174575d91b851450a05343ee7b763281ef4d3ec1b2d94e111e"
+    },
+    {
+      "path": "runtime/robot/experience.mjs",
+      "sha256": "3f925f58eea2791caad4e6bde332bc5274b3efd31f8129a9cd0d415941a0dc55"
+    },
+    {
+      "path": "runtime/robot/experience.test.mjs",
+      "sha256": "e37a2c5b5b07033f18b9f1f26447611ccf410a42e452f86c9b3b2f482ae71d42"
+    },
+    {
+      "path": "runtime/robot/model.mjs",
+      "sha256": "2264e35953ae3996cff0a13aa2662129fc0e7d2bf5bd96dd869786c9994eb7ef"
+    },
+    {
+      "path": "runtime/robot/model.test.mjs",
+      "sha256": "4d39f27b668646adc0eeaaeec6d95d55519f499d36138414fb71091a3f4a02b9"
+    },
+    {
+      "path": "runtime/robot/recovery.mjs",
+      "sha256": "05a321ec7d3a325816aa937ba7606b46d1019a7258322c4eb68034fcab2f61de"
+    },
+    {
+      "path": "runtime/robot/recovery.test.mjs",
+      "sha256": "57f3608d092a0c3a168fefe1bdb2cf036e3e49853995bf8d86a27cc8679c4daa"
+    },
+    {
+      "path": "runtime/robot/runtime-client.mjs",
+      "sha256": "61cc326e01ab7629a5aab1756bab29b5cf19a4cf5a18561dbb4a9f57ace50e64"
+    },
+    {
+      "path": "runtime/robot/runtime-client.test.mjs",
+      "sha256": "a2b87040bf8ea322d774ebf5bf3215ecde569098a7b79bb95b5d57426802ccde"
+    },
+    {
+      "path": "runtime/model-providers/errors.mjs",
+      "sha256": "0e1ea0819c01bbbbf6076914fbd24a4f7aa918680e809ba57853f6d304d98c29"
+    },
+    {
+      "path": "runtime/model-providers/openai-responses.mjs",
+      "sha256": "1769fb8ae0b39ddaf88eca7453670cebd7614d9153526479feb3bd884cf20529"
+    },
+    {
+      "path": "runtime/model-providers/registry.mjs",
+      "sha256": "0ed1cf36f4182acdcb60d025071c6e757029117cfa65db552b21ae49b955729d"
+    },
+    {
+      "path": "runtime/scripts/campaign-host.cjs",
+      "sha256": "8c66002e826379dba7bae2873f01dc08765cc3fc789619fe17f57495905ff958"
+    },
+    {
+      "path": "runtime/scripts/export-campaign.mjs",
+      "sha256": "15c180c57d839332e7bc8575147dd267a34d0d5c51dfec5edc76c5fbfe35669b"
+    },
+    {
+      "path": "runtime/scripts/export-robot-live.mjs",
+      "sha256": "bcdc115a7764ddc7ce389c3931b1ee803561635bdf4bcf65cf27fd02eea583c8"
+    },
+    {
+      "path": "runtime/scripts/import-repair-experience.mjs",
+      "sha256": "7c098c3ac1b985325c13c1a265f0d9388ab7d48d0bb8548614335e9175e77426"
+    },
+    {
+      "path": "runtime/scripts/program-repair-model-diagnosis.mjs",
+      "sha256": "e4a92b619765fe662c111a47b29c540b040fd1cebff6abda14f8f2900d7e1d74"
+    },
+    {
+      "path": "runtime/scripts/retreat-model-diagnosis.mjs",
+      "sha256": "7e0226ba391c0a4f06e403d62e4fbf23bc531d72e0dbaae057b0fa8d6f88610a"
+    },
+    {
+      "path": "runtime/scripts/robot-campaign.mjs",
+      "sha256": "2ce7a76fa79eb62e9a2675270e8d351c918de4f1cda5c5e02f79d2affed9fa57"
+    },
+    {
+      "path": "runtime/scripts/smoke-robot-desktop.mjs",
+      "sha256": "2a01f038cf7e414d4c5ebefa468d332fc132f6e6c84e6be44406e7e6baf724d7"
+    },
+    {
+      "path": "runtime/scripts/stage-robot-runtime.mjs",
+      "sha256": "61dc05349b607b0e5a3413dfb54e25ea78f325bfc4092ea7fbf5ccdadc020885"
+    },
+    {
+      "path": "runtime/scripts/trial-robot-live.mjs",
+      "sha256": "dd358ecbe8f6ff7e99ca8097cdc3136ca50b25a939274b808068c298e8b1d346"
+    },
+    {
+      "path": "cap-runtime/README.md",
+      "sha256": "30faf09784c10baacebf81f7ca09c1a5af411197a662144da848d5c6c27fc718"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/active_evidence.py",
+      "sha256": "d802b0dd3373c142b2d32bbb1cd047605e570ac5590397d0c2e19f8affe01c20"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/cap_backend.py",
+      "sha256": "126344ff17ca4c3c3852f68185683cea456983908ad3a9d047bd4becc7d0552d"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/cartesian_motion.py",
+      "sha256": "a34aa67e5f6c5d03603e58906e04f37f67ec3a281a18edb056bf99d3601fb8bb"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/core.py",
+      "sha256": "275113d573641f35dc6ada898a91f2a22635b0632059105417fcd4a27336a3fc"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/evaluator.py",
+      "sha256": "3cdb33f44881a31dabd1584ddb3aa630a6514b331b5e605b1492abf210431b89"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/feedback.py",
+      "sha256": "0b9b4d6eecf065ade81e165000c54a36c2113d1a41055be1212f5de172cdd25d"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/fixture.py",
+      "sha256": "01573511535ee1fa94e388cacfe5c10abe8cd5bee9963c4ba260affa81d9fed3"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/holding.py",
+      "sha256": "c67e0e703440cbecabf731768b5995444c795149cef751f0383824c90125ad81"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/holding_watchdog.py",
+      "sha256": "f1fdd660192f639298a95499a4bd97e252b0bae04dedf8c3f5b9161e7577dab4"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/interpreter.py",
+      "sha256": "db47d03455c3140d4274c5f40eb55597c1f3ee2a94cbba68281861db71726f37"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/placement_evidence.py",
+      "sha256": "d798feb237223ea9379b0902cd4e4fb1211be0065473e622dd7229e5e5538bc5"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/public_sensors.py",
+      "sha256": "723ea8bfe84826e9f78b7be08204963a6368822c4f72b82860f28bca37835713"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/public_views.py",
+      "sha256": "1ed92584d3518bdee3a22b15a98348fbda94e405ae2e9c81932dc60a55507853"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/safe_retreat.py",
+      "sha256": "a8808362bee32500e403c5e081a9412613c11bec35e916cc221be10688dbc381"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/server.py",
+      "sha256": "6574e640a10b1751cb0d787b016856ea468907e8274422c715fb7d46cb1ffc47"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/__init__.py",
+      "sha256": "5cb4b242593ae0ce5b128a906afdeb25197722c581f1817c12f673763f291558"
+    },
+    {
+      "path": "cap-runtime/experiments/active_holding_model_server.py",
+      "sha256": "5ba864d0ac234d18dadd124e188c9a61a6997fc6ae917bb9df8ebca6fef1c2d6"
+    },
+    {
+      "path": "cap-runtime/experiments/active_view_trial.py",
+      "sha256": "9f816bf5e3b320ce0cc7dcd4f49c1a7807283348075b4a4d1bb6ac355f513399"
+    },
+    {
+      "path": "cap-runtime/experiments/cartesian_contract_trial.py",
+      "sha256": "a85a18c4bbfa7ffa64bde319c278299bcdee0e7ae9b90b22df97841e539e2f13"
+    },
+    {
+      "path": "cap-runtime/experiments/episode_deadline_trial.py",
+      "sha256": "a4593c5eb97d77ae9a8ee8eb49290cda5c1d27116957f13a60ee0085f85a08f3"
+    },
+    {
+      "path": "cap-runtime/experiments/holding_model_server.py",
+      "sha256": "dda8d09ccecc89426f125de7d02074cbff6236b6db84dd5e11ffdec6e4aac895"
+    },
+    {
+      "path": "cap-runtime/experiments/holding_watchdog_trial.py",
+      "sha256": "d9956a82fff3c41dad5cc760aeda99a83031e2a22d0a676697d2c6cfdb6711a1"
+    },
+    {
+      "path": "cap-runtime/experiments/placement_inspection_trial.py",
+      "sha256": "5d62ec4fc1dd0c42e8583e1bdc9335bfb0c0e562768f286d90d0e917a2e3cc5f"
+    },
+    {
+      "path": "cap-runtime/experiments/placement_view_trial.py",
+      "sha256": "dee25aadf614836e7a8059e3f77cf94730259d620195663c61441e708396eaca"
+    },
+    {
+      "path": "cap-runtime/experiments/program_preflight_trial.py",
+      "sha256": "c77f5556289e00a98c462b44f9c856ab1dfe8014e588a3904337e70deabc38e5"
+    },
+    {
+      "path": "cap-runtime/experiments/program_repair_model_server.py",
+      "sha256": "fa3e84bf3639dcc67ea930e0c06a91dc9926ec33b9e7aabc4032815dd9f2794d"
+    },
+    {
+      "path": "cap-runtime/experiments/public_cube_geometry.py",
+      "sha256": "d13e9c63af1acb4d3126cb7a5feaecc6edd312d84b9a8318856007fa1e4a71b2"
+    },
+    {
+      "path": "cap-runtime/experiments/release_camera_probe.py",
+      "sha256": "550cbca8d50b9a3ebbf1dc762e6b16136c80d7e928f29ea3b43fa16b05263693"
+    },
+    {
+      "path": "cap-runtime/experiments/release_second_view_trial.py",
+      "sha256": "f23f513e292ca944bb487786941653620e350ab9abc9c636d9c0c6316adc8f4c"
+    },
+    {
+      "path": "cap-runtime/experiments/replay_public_geometry.py",
+      "sha256": "bbe89932bbf937d825b541be72c2751b2edd73afa12f5b0668a610b10a0b16d8"
+    },
+    {
+      "path": "cap-runtime/experiments/retreat_model_server.py",
+      "sha256": "f63d18daa5020d4ec1663f839950c59c96fa195e163107125398114909e2c0eb"
+    },
+    {
+      "path": "cap-runtime/experiments/runtime_support_trial.py",
+      "sha256": "614e9bd7bb8b8772fe0c189e824b8d4f3dab16302735d60fb43bed1292971146"
+    },
+    {
+      "path": "cap-runtime/experiments/run_active_evidence_smoke.py",
+      "sha256": "4c167189e18f09671a70f1e4e82fc49ddb3107e55d058d36ee966abb248b3e41"
+    },
+    {
+      "path": "cap-runtime/experiments/score_active_view.py",
+      "sha256": "aa495bb8138a23dd3d441a00975e798480cc146f614a4cf5bf37950fa489e288"
+    },
+    {
+      "path": "cap-runtime/experiments/score_evidence_campaign.py",
+      "sha256": "e5b3a3db41859d9c188baf1494f5be6853da4dff35b85714d8a6bad2c44ce97b"
+    },
+    {
+      "path": "cap-runtime/experiments/score_experience_trial.py",
+      "sha256": "6ef74341cae79a97d007410d0cb926d4909dd824005d6dde4a97b4e8958cbf53"
+    },
+    {
+      "path": "cap-runtime/experiments/score_placement_diagnosis.py",
+      "sha256": "914bca37acf7dc0569035036fb6c732fcd50cb31b24adb3a874a724b014e0298"
+    },
+    {
+      "path": "cap-runtime/experiments/score_public_geometry.py",
+      "sha256": "ae3eadc2937153a4463b31a9915abf4c182b9213eb8040b9e389ab793c69cf72"
+    },
+    {
+      "path": "cap-runtime/experiments/score_retreat_model.py",
+      "sha256": "2293d4f9bb822ae5fa5d71ef156635f422b4e066500e38cb9e1b1bad0320a4ac"
+    },
+    {
+      "path": "cap-runtime/experiments/score_vertical_retreat.py",
+      "sha256": "81c066a9dbd6a3503b5ae2964e25c6ff42f307afdde1dacdd1b42d621aefc41d"
+    },
+    {
+      "path": "cap-runtime/experiments/support_controls_trial.py",
+      "sha256": "61f762b96f289852f441100381ea732533147562d7cb898f848c32acfbb0ed8e"
+    },
+    {
+      "path": "cap-runtime/experiments/vertical_retreat_trial.py",
+      "sha256": "ef4d4e6c771148e9d1b9147bf470d18136cd92c19f1cae0345bce394c124cb7f"
+    },
+    {
+      "path": "cap-runtime/tests/real_smoke.py",
+      "sha256": "6a901abe3868cb118fe25689a3da74d4ed79337b034a7dfdda0cdbdf57c676bb"
+    },
+    {
+      "path": "cap-runtime/tests/real_tasks.py",
+      "sha256": "219c79cd2c000fe96ae86d34b0cf77764c478b1bbb1ee09df79d105f0e90abc7"
+    },
+    {
+      "path": "cap-runtime/tests/run_active_view.sbatch",
+      "sha256": "671e6c591ce19c0cf235dbd1b6fb05b8a89619455697460067c3aa71b0c3a9d2"
+    },
+    {
+      "path": "cap-runtime/tests/run_campaign.sbatch",
+      "sha256": "0f6f43c467c68766cd4197d980ac671ec771eb4405be00ac2e400dc47f263c2f"
+    },
+    {
+      "path": "cap-runtime/tests/run_evidence_gate3.sbatch",
+      "sha256": "c1859b393a7f2828fc48bbf76f90a5f99ec509df34ed6b9dbfd9aae1510546f4"
+    },
+    {
+      "path": "cap-runtime/tests/run_evidence_llm.sbatch",
+      "sha256": "974afb62273a84694bad73fb5833781f640359f4e343213f44e424d978e398e3"
+    },
+    {
+      "path": "cap-runtime/tests/run_live.sbatch",
+      "sha256": "c32219ec0bdcea666d8f2c162fc607ecce1e239360152665bb41b4d1fcfea099"
+    },
+    {
+      "path": "cap-runtime/tests/run_placement_diagnosis.sbatch",
+      "sha256": "5c146f894814cfb32417f25ea2088b1b83b2a1583cef48bcc8c649db06db5c5e"
+    },
+    {
+      "path": "cap-runtime/tests/run_placement_llm.sbatch",
+      "sha256": "85b2bdff5f03d82f73b5ca597feaabf823ae7138351f5088b88a0b34a940791e"
+    },
+    {
+      "path": "cap-runtime/tests/run_real_smoke.sbatch",
+      "sha256": "077f4ead2165f31edb39dee1ce4a7fde873cadbe94607b9725c05d463fce994d"
+    },
+    {
+      "path": "cap-runtime/tests/score_campaign.py",
+      "sha256": "03cb0f74186fee82c0593e3af5b83816363a0e02710c282d28f4b96359fcd235"
+    },
+    {
+      "path": "cap-runtime/tests/start_contracts_baseline.sh",
+      "sha256": "b00fd2f4f782a934aa3bcbd43fc1d5f3a25d2561e3a567607b41c98d8afa45b4"
+    },
+    {
+      "path": "cap-runtime/tests/start_final_runtime.sh",
+      "sha256": "4801abc32907b8fc84f03adeeb18933e55a5b32f96768dc96aeb79380a79ffd3"
+    },
+    {
+      "path": "cap-runtime/tests/test_active_evidence.py",
+      "sha256": "15a181e237c5dab322c48963585a2ba4a782893aad0227262122c2bfef8af6ed"
+    },
+    {
+      "path": "cap-runtime/tests/test_active_holding_model.py",
+      "sha256": "5ccdec44ea728e5dac9c9b39fa7d481c9088b6d523f10dc890e227cb86ad91bf"
+    },
+    {
+      "path": "cap-runtime/tests/test_active_view.py",
+      "sha256": "aac4b64b710e69eeae95c95b4529793d6f3f69bbdf497d234f65439b9780b0b6"
+    },
+    {
+      "path": "cap-runtime/tests/test_active_view_scoring.py",
+      "sha256": "2603612164b6f5dfb204a257ec2ce6ceeca3f5fb2cc9055ea948c91e5858d3f8"
+    },
+    {
+      "path": "cap-runtime/tests/test_campaign_scoring.py",
+      "sha256": "db00fb5a2ed9c3917215440c770f1aa940883370652450d66dabfa0f81372e6e"
+    },
+    {
+      "path": "cap-runtime/tests/test_cartesian_motion.py",
+      "sha256": "d5ce8276f518570de0f80146e1209b720c6bf82917342bbd543ae43f432858c9"
+    },
+    {
+      "path": "cap-runtime/tests/test_contracts.py",
+      "sha256": "eca12cb5923361fbdedffc102627178fc9910e158c67a1b7cec94703ce40ed73"
+    },
+    {
+      "path": "cap-runtime/tests/test_coordinate_records.py",
+      "sha256": "a5f323ab2d85120670108be7c09e739a2eab35725bad7b00482638fbd904e498"
+    },
+    {
+      "path": "cap-runtime/tests/test_episode_deadline.py",
+      "sha256": "25bf209a5ae23dcb5a6cd729ae8a1373a5c2da095f9907d569ceb1e0e6afb681"
+    },
+    {
+      "path": "cap-runtime/tests/test_evidence_integration.py",
+      "sha256": "b94163d81b2b66cf2155ab07aab9f0e47ec6e71151ccaa4faf54b54e69c1bed2"
+    },
+    {
+      "path": "cap-runtime/tests/test_evidence_scoring.py",
+      "sha256": "dedf4fd25460335d70a58d386d1332f7843d5a1a8d1dcf7b76e40e7bc6957cc5"
+    },
+    {
+      "path": "cap-runtime/tests/test_geometry_probe.py",
+      "sha256": "ff9225a4da6431c732f8b81c6d8784c5cfb8c40dcd231b539a65c685b5d36f92"
+    },
+    {
+      "path": "cap-runtime/tests/test_geometry_scoring.py",
+      "sha256": "34b0a58d244565c58f8a42b3a487545befaeacca11980953307e22fe90fb2940"
+    },
+    {
+      "path": "cap-runtime/tests/test_holding_model_diagnosis.py",
+      "sha256": "5745b82c3a6023ef7118f8f8a1107c7ac82272df7278f1d99f6be1fbfedebcea"
+    },
+    {
+      "path": "cap-runtime/tests/test_holding_watchdog.py",
+      "sha256": "699d5027507a56188027d15b0a1eecb5a319282649ab13dea42dbd700d6a9909"
+    },
+    {
+      "path": "cap-runtime/tests/test_placement_evidence.py",
+      "sha256": "367bb7d41cd757d09362f0724a1d261ebd33822f7a14cae58f1ce123f02824a7"
+    },
+    {
+      "path": "cap-runtime/tests/test_placement_view.py",
+      "sha256": "f9cc4ee6fcf9d6041aa5c7dd222b28053a1beaafcb706c1cacbceaee4f78e9b3"
+    },
+    {
+      "path": "cap-runtime/tests/test_program_diagnostics.py",
+      "sha256": "3b66e160c03bfe54194c65edcbb1646f65e211cc2259e499d547c04c4064f38f"
+    },
+    {
+      "path": "cap-runtime/tests/test_program_preflight.py",
+      "sha256": "347c5a4e2489b8e2b2da65105db5bb43ea105183da55db1b6e72b434073083ba"
+    },
+    {
+      "path": "cap-runtime/tests/test_public_views.py",
+      "sha256": "937063e81d658ac9a031235ab429c35e21f3f8f436b456aa1a22b64945730984"
+    },
+    {
+      "path": "cap-runtime/tests/test_recovery_public_state.py",
+      "sha256": "aa914beec8a9d7065d78ae89b564ac769069a753e180b00f3d978cf287fa3dc3"
+    },
+    {
+      "path": "cap-runtime/tests/test_retreat_diagnosis.py",
+      "sha256": "90c478fb8e75f8522731174b9a19518be65d912379a24abc36a5799d97757ae0"
+    },
+    {
+      "path": "cap-runtime/tests/test_retreat_model_scoring.py",
+      "sha256": "987979972a0546e1faaaf8204f4dd5dd6363f5cc5b1fb39b093e7b92e42ebfe3"
+    },
+    {
+      "path": "cap-runtime/tests/test_runtime.py",
+      "sha256": "099c179d0b0904e83f2ffcfad52b3631da70ac1fb76d10ec113f10e471eb9e02"
+    },
+    {
+      "path": "cap-runtime/tests/test_verification.py",
+      "sha256": "40df8196d17d00ab6dfb4d001a3eb114763c538e9a30adda0f35b57d615e2f6b"
+    },
+    {
+      "path": "cap-runtime/tests/test_verification_wait.py",
+      "sha256": "3ddd1bde73d16ea842fae5ecd2ea2520a4612fda308dc9767aea5b3ec8ead0a5"
+    },
+    {
+      "path": "docs/active-view-experiment.md",
+      "sha256": "43a9108d191c58d887a4274cabff7d854820dc24e4df119661fb7c83412506cb"
+    },
+    {
+      "path": "docs/agentic-improvement.md",
+      "sha256": "d3827a7cd02e24ac0588b0afe7cee56c9f24c0083c609569ebe8b5592dc5f965"
+    },
+    {
+      "path": "docs/agentic-roadmap-alignment.md",
+      "sha256": "aa1daefd744252928edb5e156dfd29e3502a5fbe45df6e2bdbdb91b3aefddaaa"
+    },
+    {
+      "path": "docs/cartesian-motion-plan.md",
+      "sha256": "af5d3980db81052f450ea1bdf9f4fcbc406860ee0f9e75fafdf8e64b18ab9850"
+    },
+    {
+      "path": "docs/experience-reuse.md",
+      "sha256": "76a5484f7a39cd7e20490495a8e2e53aa2f33a77c9849d3520b4597d41ee84d1"
+    },
+    {
+      "path": "docs/geometry-experiment.md",
+      "sha256": "7b87e6148779cef5560aaf447571673f3784365f51e75bd942df1c32b4957ff5"
+    },
+    {
+      "path": "docs/holding-monitor.md",
+      "sha256": "f0160ce35137f1c8a89c533909ced1d81560ace179cb892eb0cb0ec334217bc0"
+    },
+    {
+      "path": "docs/llm-evidence-experiment.md",
+      "sha256": "b5f620be4f4787bc6882286ab7e2205d2d08390323236a6d85e034da27e1b39f"
+    },
+    {
+      "path": "docs/placement-verification.md",
+      "sha256": "4c201a39a36ea7559e17d5f1ffc37ad1dd7ee510103de579fdb82c8039b43b52"
+    },
+    {
+      "path": "docs/placement-view-experiment.md",
+      "sha256": "560baac441270f4a96b9e1820c0dceaabb24731e89a984f765c06a8842d6f651"
+    },
+    {
+      "path": "docs/program-repair-plan.md",
+      "sha256": "9408c75fe7188d90f70964ff786569496aa38446fcf640a9d26aa1707bbd998d"
+    },
+    {
+      "path": "docs/recovery-progress-plan.md",
+      "sha256": "746dd8cb5dff94d6de12ac8635510a7ea33e9efe73a70255a9892e4f14b4cb86"
+    },
+    {
+      "path": "docs/robot-mvp.md",
+      "sha256": "a8b0c2a90de23cf80bd3876e0d173e79ba3a72c8607c03e4cebbce1cf1ab6fc0"
+    },
+    {
+      "path": "docs/verification-window-experiment.md",
+      "sha256": "13a4933c38d4578decbfda8f887bcc81c7003fe1fa42796a9900b5f16167927d"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/protocol.json",
+      "sha256": "05bfb28222a4e6b618874eb5d42f9b01dc7cdca3ba12bd8806f59b55f6922e48"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/score.json",
+      "sha256": "737227c2ad871c9d54a7c6127a63ad67a14806af71980b38bb43aec2e69e7c37"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/结果与下一步.md",
+      "sha256": "58dd4639e2f24f42778b3158fca006deaa3894f268c2cecdb425fa5929d2430c"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/host-result.json",
+      "sha256": "9ae7401f031a689e01a446b6581abac2987362177cba9658b62b1f9b05f8ebaa"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/restack-s61/baseline/campaign.json",
+      "sha256": "625436eb9aaef7e4d1d6230f8a58406e672254dddd584f6eb0089711f01edb27"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/restack-s61/baseline/cube_restack-s61-r0/result.json",
+      "sha256": "7369f027b3f59724170eabf97354b4cecfd62ded4864a16d01d8691d538d1c89"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/restack-s61/candidate/campaign.json",
+      "sha256": "3423549400917da26759c1992e413258402e29c37ac3d637fadc8fff5a2ee705"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/restack-s61/candidate/cube_restack-s61-r0/result.json",
+      "sha256": "f39e7d4ff52f6955d7515c120154c26b4cd202802e4fce9f98db6d6f68cc4694"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/restack-s62/baseline/campaign.json",
+      "sha256": "1e61c5a2563d469d31dcd6cc9c3da10332d0bc2fe841c9f3b5a06a37f9490141"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/restack-s62/baseline/cube_restack-s62-r0/result.json",
+      "sha256": "31eeb8661f4cfc07f899c3605a9038e629e323d8936630d81701f3be94761b04"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/restack-s62/candidate/campaign.json",
+      "sha256": "43c52b0ebc508514db10d6842ea06b7243dab41c5af3b6f8df1a675180c733a0"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/restack-s62/candidate/cube_restack-s62-r0/result.json",
+      "sha256": "d44064635694641101e8a0654fdf2bd03c7cc7c22f001d80348d97bca4161ca1"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/stack-s61/baseline/campaign.json",
+      "sha256": "722adb7dcd6cbc7233487f6501952aa300ad3e92c607ad14f52f609279cb6671"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/stack-s61/baseline/cube_stack-s61-r0/result.json",
+      "sha256": "cf49bae214f4f409ef4f4c65903247d7e5304f519c0133cedf816b72be510ec0"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/stack-s61/candidate/campaign.json",
+      "sha256": "b0c3c50d6b16af58a4f3981554121306fe230b94db7ef55d80696da1bf176a6d"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/stack-s61/candidate/cube_stack-s61-r0/result.json",
+      "sha256": "0630f8aff26109edf823872d1570ad3c5d39e08fd9e167a22567d460805a14b0"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/stack-s62/baseline/campaign.json",
+      "sha256": "b07f2b55c71081623efe1966ea4eba964e97500401c4753cc6565befc381453c"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/stack-s62/baseline/cube_stack-s62-r0/result.json",
+      "sha256": "a3d0e391dcaeab0674e3b3fae4ef5b64c57b06b090b899888de8fa055f7f474d"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/stack-s62/candidate/campaign.json",
+      "sha256": "f6eccacfad53113b3052f8dd12d09c2b4de6b80fcff202d2991fbd0e2df76e26"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/llm-v1/campaign/stack-s62/candidate/cube_stack-s62-r0/result.json",
+      "sha256": "f488f2f7a2a1c191a8fe06f4412762ed6bb4501af96818aac48b52fbfb1781c1"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/v2/experiment.json",
+      "sha256": "4cc0190755ff590de0ed4f3cb9efe3ff40d6f1245e11c4fb677d35a7c8e5db96"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/v2/fixed-results.json",
+      "sha256": "cdc9387823b4d6eeb200f82c383ee9aae94364199051fc1a4145b7694eb84368"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/v2/gate3-score.json",
+      "sha256": "5398e5a3780df9b1c2243f73bf1fd60bb6d793303cfaa0996252081d448637d4"
+    },
+    {
+      "path": "research/agentic_active_evidence_20261119/v2/结果与根因.md",
+      "sha256": "1ebccf3a8503c6619a0a7b0831a2735ae11d6cfbdb068ce7c85f67ede4fe0097"
+    },
+    {
+      "path": "research/agentic_assistance_controls_20261119/v1/audit_closed.py",
+      "sha256": "cafa68f05198ff7e7d96bf9a184cffef605221fa75e59293b1ec33a826353018"
+    },
+    {
+      "path": "research/agentic_assistance_controls_20261119/v1/closed-audit.json",
+      "sha256": "56c6cc437ca544ca342e2456dc948a8641f2d60257cf2f64f0c520c6427cbaa8"
+    },
+    {
+      "path": "research/agentic_assistance_controls_20261119/v1/export_closed.py",
+      "sha256": "0b93c147e9076845bc6b0629b56d8962af3b8b320a8267516408229e65d1519a"
+    },
+    {
+      "path": "research/agentic_assistance_controls_20261119/v1/freeze.json",
+      "sha256": "3ed22f27f2ae30f91151efa148bf4a123f1854b273be2cc3cc9f5f87dc28152f"
+    },
+    {
+      "path": "research/agentic_assistance_controls_20261119/v1/prepare.py",
+      "sha256": "6d5de9dc77954dc6bed34061266486260cb82111e234b0133c8423d69285de48"
+    },
+    {
+      "path": "research/agentic_assistance_controls_20261119/v1/results.json",
+      "sha256": "e23f309029dc2123ceb99dd886d0b2a25784b299e97581dc67e78426cc7963e2"
+    },
+    {
+      "path": "research/agentic_assistance_controls_20261119/v1/run.mjs",
+      "sha256": "a0f29c122ee53ddf46de4a3781ee67a5d29f3eb15ca0e175ea28e1410dfc7ca1"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/diagnosis-v1/admission.json",
+      "sha256": "14c4965578ebe7523625fc35e249ebe1a717771f3fb852696ad61559ba2bbc34"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/diagnosis-v1/prepare.py",
+      "sha256": "d5c1d2ac1823e4669d39200dfb40ed59d9674d08f5da01d5b8c2fcede3f2f8f9"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/diagnosis-v1/replay.py",
+      "sha256": "bbca3a655834ef59a413d5457ff548b149a61a20b3b2546cca47d7d1868136c4"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/diagnosis-v1/result.json",
+      "sha256": "1a0a5f1e56f2dc161846e74a2a902fdc48b4a767167a890259596b17a3111e02"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/diagnosis-v1/run.sbatch",
+      "sha256": "6e0ed3489b73bfc61e424609b38553d9982e0be06a2075be34c188697c38f4be"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/diagnosis-v1/结果与边界.md",
+      "sha256": "4a621c5d897d34b76352925ec2e8002c79e9528c2e14af28680c5e82b84f595c"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/admission.json",
+      "sha256": "9fda95982834adf0f73f931880b7d93938ab2cff3f8c84a6231a5e2b445e6a6b"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/closed-admission.json",
+      "sha256": "1eb177932cfe61274f4d2ff7f81477aa678785deb605e0b19653cfbec9b1abe3"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/collect_admission.py",
+      "sha256": "359ea6cb77ee03678572f907c3ee8572230518f993afeaed8c4c04be04e7c269"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/deploy.py",
+      "sha256": "c6254e4851a64f3e3f0223775ecda2565a068829011f372eb1e6cf997ee643b2"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/export_closed.py",
+      "sha256": "486dd57382b581a001e941b4517b47a9ed9e2aa54bad20396d6b69b2ad33415a"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/freeze.json",
+      "sha256": "b8336a5e3464dac7bb05887bab055fa4c536811e0082aede28a461b669a3eb25"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/independent-score.json",
+      "sha256": "e5c58951e4670b59bcd250ee3364535debed2b28ed62d0db7391635dee4574a6"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/launch.mjs",
+      "sha256": "07932d2d8e27c072d0ce9be9fdde6c4a62ce4cbf5565f2b3734bbbe0b11226fa"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/prepare.py",
+      "sha256": "ed3869f57acb0f1e2d9ae90ed00a4865bf73b8fe332dfb4e39209edeff3f2019"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/protocol-intent.json",
+      "sha256": "ab0343a6521e6d8d91f06592fc02c118897dd8a7a7127238ced58f6c62d69d2c"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/run.sbatch",
+      "sha256": "8a96cdfff57987f8d437e081424ff66ca01b5727ff2b7b8f102a06281a881590"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/score_closed.py",
+      "sha256": "e2c50db0088f44680e245d16ecb63c0b978d9657b56dbf6616ebb03a16f25edc"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/status.mjs",
+      "sha256": "c7147b38ade9d1bb482890343b437f42ba887f067804bea91c02dc1e115bbc93"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/结果与边界.md",
+      "sha256": "bc085f063085e1bab19529635ebe2da4222a20b89bb4fe0c428e80529c824977"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/normal-campaign/campaign.json",
+      "sha256": "63492521d68ef30969b7ffd71b363b031709891ae9cbd3836df88611104af0df"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/normal-campaign/host-result.json",
+      "sha256": "54ffaeddeba9e212366af97df49be1fa822e8169c6f9f31ac46bbe3496f89d67"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/normal-campaign/cube_lifting-s83-r0/result.json",
+      "sha256": "26aeaa74dba3b9957282b23cb3634de022e7619d6a10406fb2aa614cdd746b68"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/normal-campaign/cube_restack-s83-r0/result.json",
+      "sha256": "2ef5ffb76936342aae214d37f4ab3fcb305035b7b375b0d0e3afd5be05ba409f"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/model-v1/normal-campaign/cube_stack-s83-r0/result.json",
+      "sha256": "140aed75d796eefdcf23e4242c096a40cfe4e57c7631499d3c162dac84c35f28"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/physical-v1/admission.json",
+      "sha256": "ab70a0cecced338f05ddee3e49ac81b177a32ad70a56fd46c1c78bb973c3f3bd"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/physical-v1/deploy.py",
+      "sha256": "c6254e4851a64f3e3f0223775ecda2565a068829011f372eb1e6cf997ee643b2"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/physical-v1/export_closed.py",
+      "sha256": "730ae366db202819c48fe128bb510e1458423f74dd0082ff6e16ec6a678b9c79"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/physical-v1/freeze.json",
+      "sha256": "6ee620298a37a6e3cee639c3c02fc215abeea88219a30a60e35e26d05a56764d"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/physical-v1/freeze.py",
+      "sha256": "2433e4b67d217925183d03e14284beaba18842737333918a990c00a03632bf21"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/physical-v1/independent-score.json",
+      "sha256": "82bc696ef6feed6d9703d4bba1a88bc0988777eaa00a0cec1d50bdd9d88c70e7"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/physical-v1/prepare.py",
+      "sha256": "3356e12be352bc64692f593f8946261dafafc52c83ed9f3842578bd1ff57149d"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/physical-v1/results.json",
+      "sha256": "12ea53ff881cddf5387a7949dd4b078244ff3de689c229c1492200122c308000"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/physical-v1/run.sbatch",
+      "sha256": "cf4a3f51b4f007d13fd7faa5a275c22f2c7b70e4a2f402ec86323dfc4edce190"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/physical-v1/score_closed.py",
+      "sha256": "657d8b40ff04893cdc73300e084b42081ee16273adf17926e150103a7f330849"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/physical-v1/结果与边界.md",
+      "sha256": "f3e2a0a154fd5cef4a5faa2ce7350b47a3af5c389e979430665b51cf358b98b8"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/support-controls-v1/admission.json",
+      "sha256": "d0cf5def64f32762b5e83185293a161dea461a16b60c0dc9c2a502a0db397634"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/support-controls-v1/audit_closed.py",
+      "sha256": "e08ac196548698bc9383c6a85cc8c636223ab6df77c25b7a535e85de30cbce18"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/support-controls-v1/closed-audit.json",
+      "sha256": "9d086f90a02ddcf5a77a8aa98e5000396316c2e149fa27337a8c12a151c0a566"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/support-controls-v1/deploy.py",
+      "sha256": "6e9bceedc1a5c222dc0e8efbe0dc09da66a6dd269943caf52ad968e9106467a0"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/support-controls-v1/export_closed.py",
+      "sha256": "426545628eb60aa21318134b27f43191414e2be1c2e1278867de182db3da81a3"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/support-controls-v1/freeze.json",
+      "sha256": "3f311579637ff80ebd252bb0ccfb9dc8ef238def9a96f94a109d63f0691a9fc4"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/support-controls-v1/freeze.py",
+      "sha256": "2433e4b67d217925183d03e14284beaba18842737333918a990c00a03632bf21"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/support-controls-v1/prepare.py",
+      "sha256": "103fc9f380cc54c047f050b082cb01925cc61f7af0ba1fc302941ae3a07169e2"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/support-controls-v1/run.sbatch",
+      "sha256": "9140072d87d76c59411c90c750cc752787c886d976fbf0eb8b6da421afeff79d"
+    },
+    {
+      "path": "research/agentic_cartesian_motion_20261119/support-controls-v1/结果与边界.md",
+      "sha256": "98cf560712c9294ca5ed5fa049b9945ca219d069e3dab7ebb2a3e9f96cc5749f"
+    },
+    {
+      "path": "research/agentic_deadline_20261119/v1/freeze.json",
+      "sha256": "660159049b62ed5e623f8e510cfefc82b6bad633770afd87fd8e8fcc630b49ac"
+    },
+    {
+      "path": "research/agentic_deadline_20261119/v1/run.sbatch",
+      "sha256": "e087082c4b2fd9158749df6f1521b08092b77ea7ec3ebfe6aa9f2dc3a6ac9b75"
+    },
+    {
+      "path": "research/agentic_deadline_20261119/v1/结果与边界.md",
+      "sha256": "a16e0359ea860c24362900d95545e3dc1c167387da8ac368a4934568a271dc9a"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/deploy.py",
+      "sha256": "fbb35968efd962da65a1b23fb51f7c7bbf870a42ebe832bc1e0730da1dda0eb3"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/export_closed.py",
+      "sha256": "1e4a6537678e7cbf4ac0b3091adc1b03703c8fde010231c0522a926af784ab29"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/freeze.json",
+      "sha256": "884880cff92888cde27ffa3c5a354d241cfad7786321090885ac0a61e7c2898f"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/freeze.py",
+      "sha256": "e1c4cc03f1131c8daf9aff7c7c5603534318cc7173f8b537bedf5b6a4c6462a1"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/launch-when-ready.mjs",
+      "sha256": "936de6c4e35e920232866bf9fb194a4de076edc40651b55705174fdb4ed83bac"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/protocol-intent.json",
+      "sha256": "4810e73b70fc09757da29bc694a8b3a4927d94bc6e747505fbb0a438482a6278"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/run.sbatch",
+      "sha256": "75ec1eda4f07a995814378264034783aadcc4fcb8122b616f60ef2d831c41d56"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/score.json",
+      "sha256": "688f145bde8d390f1687e7fd2cee94d43fba8e1e2718827fcf8a7d8c0959e025"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/结果与边界.md",
+      "sha256": "715012e035427cbe937a65c68c27a940becf98bac8e012833cb783171e7b76b5"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/campaign/host-result.json",
+      "sha256": "e4b8ff616b0e289a3a8a1e727c58579b70dd0c7878c0c76815739e77f5253bb7"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/campaign/protocol.json",
+      "sha256": "e5b9f8abcad01f706f3c28706bf86ec00fb6b58bf0098145d1e2feb574359cc6"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/campaign/baseline/result.json",
+      "sha256": "556bad87e6c6b373b7927e48f3a5525def6b760d2171555846b5d6dad0028fda"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v1/campaign/candidate/result.json",
+      "sha256": "487636bfda96765ce88fc39dd1e9cad187207c1277ea65c27e951ecbb42a753f"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/deploy.py",
+      "sha256": "fbb35968efd962da65a1b23fb51f7c7bbf870a42ebe832bc1e0730da1dda0eb3"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/export_closed.py",
+      "sha256": "1e4a6537678e7cbf4ac0b3091adc1b03703c8fde010231c0522a926af784ab29"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/freeze.json",
+      "sha256": "664e6f3510706ffd3419d2203210f7948dae1cfd70619c7ab12669692c597fa9"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/freeze.py",
+      "sha256": "59af47023b8d6343df4703e9e7c9a477b61212e4a17277c62c9339c83e1ea3d2"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/launch-when-ready.mjs",
+      "sha256": "64dce8ae734b1b1b9b7c13d27dc910a698e329a80c291ee4d98c96e11b99bc64"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/protocol-intent.json",
+      "sha256": "9bc7f6d7bd1e4ac9f20ec0608c0ab89af3ae1326f60d3982701d59dde7d45e7b"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/run.sbatch",
+      "sha256": "d826badf42c6ca2b070391bad24f90b0a07451dfa5b2bd5fb611e975e54cd068"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/score.json",
+      "sha256": "a743448c73e7dc1a28795f4f269f7c5a155e731d3e370b28195250abbf6cd645"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/结果与边界.md",
+      "sha256": "836322a72d10baa26967e33775044a26b1cf143d7f4b392e8df8b0057d10fd6f"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/campaign/host-result.json",
+      "sha256": "8327ec2af3e31c96d238e89559d43375d7b18e87aaadd61e1370aa36d39e43f7"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/campaign/protocol.json",
+      "sha256": "eceb4771550e2206db870c55cc9fa41a33e576af7a27b1f3d75eb77cba8f3949"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/campaign/baseline/result.json",
+      "sha256": "5d0dcb86dc2144acfae0d025ae5361a346a29031285c8ab05ef2a0d7872a5af0"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/campaign/candidate/result.json",
+      "sha256": "584ae7d4ae9dd4944b2c0855e3db155afaf1bc6c132a57127270b634a20efb7d"
+    },
+    {
+      "path": "research/agentic_experience_20261119/v2/verification/development.json",
+      "sha256": "e3a41338154d0e9ef12f6162f8e0b0b264286002d1bfdda93800b1327f6cbcce"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/admission.json",
+      "sha256": "2dacdeddf5d1529fb6c8a306b3a941a53c74dbe0c4910b2b6f5ffda59d44c392"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/audit_motions.py",
+      "sha256": "a0c97174c9ddaf11895b5cc9a1977b5a6321d530b11338e5e250da6388265167"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/closed-admission.json",
+      "sha256": "8c43092055d6e48e53354043c917a73f8318412cf6cf5ac888e2fc89ca420975"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/collect_admission.py",
+      "sha256": "c2de44800ff7e5aa4b7fa6c2d25c621572105c91c49e1876597009de76987552"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/deploy.py",
+      "sha256": "c6254e4851a64f3e3f0223775ecda2565a068829011f372eb1e6cf997ee643b2"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/export_closed.py",
+      "sha256": "1837577982cf21538c46f396fa06e37685a43def847255aefdaf92c09754ff98"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/freeze.json",
+      "sha256": "9f5a53ce2a921cf74df15fe47d08184eba2958389d1a2c88c124919872a58faf"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/independent-score.json",
+      "sha256": "c4e722493947bf17636fffc3df8c31358e3481ba83676dcb272df01a6aaa40a8"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/inspect_upstream.py",
+      "sha256": "f917ba11dcbb2b492d75bb1c2f464e8890893d7fe9fa5b53e5ae13eecef9ad71"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/launch.mjs",
+      "sha256": "1e85c6808b53f7b5b90045655bce9e5c45bdf7e65f90fd82a1465a7327d12c22"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/prepare.py",
+      "sha256": "226baa0f82bbd07b1798efb0d16d7a49c7acacb110b6fe734b50080b3587579c"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/protocol-intent.json",
+      "sha256": "5a4cee06ae6f486bfa25f349f96cec7c38932e2f5077b3d63d3a9b6fd9d8363e"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/public-motion-audit.json",
+      "sha256": "b61695d79a3d0e19079f42312ceeebe8ecb6342aaba522c35bc0a3b991dbc88d"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/run.sbatch",
+      "sha256": "58dd3068431dcb54d55f5b518f8cd38a76322c2ad621d07e952669f4e6a38db9"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/score_closed.py",
+      "sha256": "fbe6f32b26a6052daedd2c09fa89ca6ae0f5aa90dc860bd119445b6cf7dd4b4b"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/status.mjs",
+      "sha256": "0926d9ae5fc963b03f22b3c392c508a7d6c544713077153ad961c5b7247d7b2a"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/upstream-control.py",
+      "sha256": "cefca5a7e77dad689deb5279bf99baad13d7026287c4aeac4afc294fd6c99410"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/upstream-ik-vel-cost.py",
+      "sha256": "bf80d434d34abb8cbd80d49b323ddfec74dca5504c7bba197e714f8e018d6fee"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/upstream-pyroki-context.py",
+      "sha256": "fab49dbf1653169c0f5a1de40fbcd4deff19cdfb0aba950cf7385a17e8d674fb"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/upstream-pyroki-server.py",
+      "sha256": "2782f0e2934db5f8f59ab00ebad2987d5fdfb2802d0200a3b04e80d2abee13b6"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/upstream-pyroki.py",
+      "sha256": "09a03b43b2136b6ac4059ce57e47abfbe2e7465dac99b309cbce42976fbe8563"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/upstream-services.py",
+      "sha256": "d641b60c39f04963796fd7ec2385cb78349b6a93ec62c330fe78f1716dfa2b41"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/upstream-task.yaml",
+      "sha256": "b10cb6e4b6ede750b2d3cfd0fc3e0fe05f176d6a84595f4a02abcb4f8df963d8"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/结果与根因.md",
+      "sha256": "1bf1def7f2673dfb18a4621735923076ddd92aa5cd7eeaf18299fd5612175a13"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/active-campaign/campaign.json",
+      "sha256": "91f06df42464b34aa01192b2fe54a3e77abe46cf92fee672a3e15aff4cf1abbe"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/active-campaign/host-result.json",
+      "sha256": "d8a1943cd4451f8e2154861e2334197f6003c458f120c807eaea6356e9201162"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/active-campaign/cube_stack-s74-r0/result.json",
+      "sha256": "63db19adfed7cfd5ac171e5ed03970e864bf1caaf956b5729b6f3fda2e97d595"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/normal-campaign/campaign.json",
+      "sha256": "0db1672cb91a6512c45450a80e9bda54acfd473589f657043ecd4abc9b72bbcc"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/normal-campaign/host-result.json",
+      "sha256": "5ff3e7579771ae25bd1000fc88198de3b6c91dc9abd8bb48f5d453a28033fb6d"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/normal-campaign/cube_lifting-s73-r0/result.json",
+      "sha256": "d629a49ddc07b2be244557ab621a7c564db0379a453e70fc5d7cebd5031ba965"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/normal-campaign/cube_restack-s73-r0/result.json",
+      "sha256": "055a255717777cf9b3f8ac83c93303dc78f29d51c59cee21149786c83a9ab485"
+    },
+    {
+      "path": "research/agentic_full_loop_20261119/v1/normal-campaign/cube_stack-s73-r0/result.json",
+      "sha256": "8d10a3c60d79c2d049fa28da4b8e78439c11cbeadeef845970d53661c07ce4a2"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v1/freeze.json",
+      "sha256": "79597078b16f8d6d1969de3a7362a7b626784c3165f0850fe1b5d13bec1871bc"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v1/freeze.py",
+      "sha256": "9d769b6c8c2793e45c668bcf0eb5f1e61599955afd9ad194c2f024fb39e7eb57"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v1/launch-when-ready.mjs",
+      "sha256": "4ea98b0f076db81ffef0a096b00886863ce2f652c5b1c90d275a2c63486b57c8"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v1/protocol-intent.json",
+      "sha256": "1cbd51c8ba140a2ac1ec052acd4182cfe39a198cc8b63a6551e05a63c490ac39"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v1/run.sbatch",
+      "sha256": "50426776fe293b94e6e6b067c8e90e75570c9dfff6611af10724941a8bae0651"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v1/未派发说明.md",
+      "sha256": "1b6f213ce48a4f37da3b3505aa4bea5c23e59f63da8422ce67308eb0a1abc2eb"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/audit_preflight.py",
+      "sha256": "ecc55563e862bbc86449069772ef5bbdc57a9fad638b41e3711837e9b27cb889"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/closed-admission.json",
+      "sha256": "bc74938bc5ff9466ed0ec31fe8efd156b2193c70485498f7581f1a687952c793"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/collect_admission.py",
+      "sha256": "5403f8c9b4dc7c69159c62e027dc3d83170a6316fc1c54db243de821e0f3c13a"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/export_closed.py",
+      "sha256": "11bdbc0e59fc9e91412d29968b625804b9d384b1936cca384b8c08cdb434a0b4"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/freeze.json",
+      "sha256": "989a1e1b1949057d78c216b441f137520c9f44e917a3f31f9616d03eb3d96dc5"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/freeze.py",
+      "sha256": "9d769b6c8c2793e45c668bcf0eb5f1e61599955afd9ad194c2f024fb39e7eb57"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/independent-score.json",
+      "sha256": "07e0d293edda21fb92c11933b14b2886b2645790f754f251c85810b40a4a4baf"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/launch-when-ready.mjs",
+      "sha256": "4ea98b0f076db81ffef0a096b00886863ce2f652c5b1c90d275a2c63486b57c8"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/protocol-intent.json",
+      "sha256": "1cbd51c8ba140a2ac1ec052acd4182cfe39a198cc8b63a6551e05a63c490ac39"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/run.sbatch",
+      "sha256": "82c2289bf1f44caabf52fd928370f3203df5b0a1b94713a090def59fa5f898c7"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/score_closed.py",
+      "sha256": "13a04ab1dd1821cc0ba1b892ba5529a2474ee6eb87319c22c71d17f5d21e7068"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/结果与边界.md",
+      "sha256": "35378e93005af21a54ed92d83339b51696782db0984e5ea643c6ac859ef8b587"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/campaign/host-result.json",
+      "sha256": "8753065b2663a027f61dc9ffa03909eddce8cc9453a9e3aa70ce61530ce58b3c"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/campaign/stack-s70/occluded/campaign.json",
+      "sha256": "7c170bad86223dba1c09f5b88f6a5edfe7cdefef840563cf237eb2ae6381beb2"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/campaign/stack-s70/occluded/cube_stack-s70-r0/result.json",
+      "sha256": "b2a057449ca0072a83f60698dcc03a662212310891e15857456106263b1eb292"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/campaign/stack-s70/recoverable/campaign.json",
+      "sha256": "3deb451b0e978387a8e81115bf27b2b6247ca86ed05e780bea9babec275cb3d9"
+    },
+    {
+      "path": "research/agentic_holding_model_20261119/v2/campaign/stack-s70/recoverable/cube_stack-s70-r0/result.json",
+      "sha256": "3068c7b230059b90e8c70d737373ee36495fcde5afcbe2299858d9f8c859430b"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v1/freeze.json",
+      "sha256": "18c7453f635ca058ae84bf38d79274c632dd5ec0ed923aec2cab321e25c8ce61"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v1/freeze.py",
+      "sha256": "e794d2319392f0403ebabb97ca2735be9442ac8ce30dbebb1c3a83712afddc8a"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v1/run.sbatch",
+      "sha256": "712c6334efded68c33c9e79936871a55fbdbac0e9e8e48d078a33d0cfd719a4b"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v1/未派发说明.md",
+      "sha256": "a79d84099fa6f9da82e35fac4d1f5526fb8456cbbdf31c98ee9c80c57fe78710"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v2/deploy_after.py",
+      "sha256": "4f22f2ecf8d8fb7d215a6332f650be648006039f621079d94778663324862070"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v2/export_closed.py",
+      "sha256": "b2f4c60a2801bb7eef8f6967c91ae5c9adce4bc9597dd8bf31f25ff64fd2dcb1"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v2/freeze.json",
+      "sha256": "50280de899ffabadfdd82d7be397d49032791e02f8b5064b36fb4bca6584593c"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v2/freeze.py",
+      "sha256": "e794d2319392f0403ebabb97ca2735be9442ac8ce30dbebb1c3a83712afddc8a"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v2/independent-score.json",
+      "sha256": "30944eefc61c133c36d24ba862fd6a95c2570894a5a918ce35c8d1df063442a6"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v2/results.json",
+      "sha256": "541697c6dbaa603b43fcd45a53ea65fc605831d5329f341e6296d369a6fbdb06"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v2/run.sbatch",
+      "sha256": "c7338d1bdb38383aad76ce76c90f4997f0ee7051a728acbf0750761ea535888a"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v2/score_closed.py",
+      "sha256": "67140030bb9ff5654ea0a7c010ec90b1407caafd3c6db10d3a93726bd0a33a89"
+    },
+    {
+      "path": "research/agentic_holding_monitor_20261119/v2/结果与边界.md",
+      "sha256": "a5b3e0acc0d9cda24ae646703e009975f7cd59b1bd407add7fca0d9db2084558"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/closed-admission.json",
+      "sha256": "0adf7aa323d88dfbe4b6d35a386e2a881899325883c198ebaf24bdee0ea6639e"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/collect_admission.py",
+      "sha256": "69e0dfeb17aaf9a9ab0279772294b60a07292ea44e3139bf1e50316f2939d96b"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/export_closed.py",
+      "sha256": "ce321f13d0e6ebb781eeb15f6c5b14a71a11a96c7bd284d7c7738a2c5c3521e2"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/freeze.json",
+      "sha256": "73e84375ccc455f3be4ba81a3daf304fb373efdeb2b8a2ef7829c7c80e814c16"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/freeze.py",
+      "sha256": "e2ed2cc42d82066375b09d8fea10e276bbcd8a6879e463b57f777e011c3ddc2c"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/independent-score.json",
+      "sha256": "3a60c7d7190a71098f09d48c375fc8f171615d2b37460cee5130aeadd9c1f0a8"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/launch-when-ready.mjs",
+      "sha256": "4ea98b0f076db81ffef0a096b00886863ce2f652c5b1c90d275a2c63486b57c8"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/protocol-intent.json",
+      "sha256": "1ad061e9cee531c645d5488a168feb316abb07e4504e37984a1551bc7e9da2ce"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/run.sbatch",
+      "sha256": "eb035965d78cbfc4a66a70b6596cf15c50e2f53e6b695a88f2361785c4006bf5"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/score_closed.py",
+      "sha256": "149dec519f21f610e2a25631e3a4e6829fcea70767518c870c77c2134bc88d58"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/结果与边界.md",
+      "sha256": "5e76a695841eb10c54a61cef07423f0e7cded042d762df8857e61160a3f93407"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/host-result.json",
+      "sha256": "e5548266d45c99b23fd45bd18d07ef048fa727b24ab0272426b03c6b123e5aaa"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/restack-s67/baseline/campaign.json",
+      "sha256": "768bf394134f9a5a67bbe79db3682e79fac4dc0cc55f9433a7dcd67f7dac07e0"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/restack-s67/baseline/cube_restack-s67-r0/result.json",
+      "sha256": "1825792136497917fa3e60c3bbbb0498eeb4f7421edc370c8eb5500bca09c6cb"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/restack-s67/candidate/campaign.json",
+      "sha256": "e37fd61711fe34abacadfb57dab91d0526aa39ca816d616c4f4afa3416d3cb0f"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/restack-s67/candidate/cube_restack-s67-r0/result.json",
+      "sha256": "182ff86aea11c5ac56121b151409c15d2cc7dbe1ed5075f800d0b66fc0ef5067"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/restack-s68/baseline/campaign.json",
+      "sha256": "e306e6d5af32fc11fd0720201a91cb613127ba40a3ff1c2bad17f78e8b84d9ec"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/restack-s68/baseline/cube_restack-s68-r0/result.json",
+      "sha256": "674086478f0ecec926d8177d50e24b3c8ecf868fbfefedd2e526ae082997e162"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/restack-s68/candidate/campaign.json",
+      "sha256": "5854c9a97948cad18b9ff298f334a5520f1cd12b57bfc42e8fafb1e282336e8d"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/restack-s68/candidate/cube_restack-s68-r0/result.json",
+      "sha256": "ae3b03cd93e70ea3a6138779d17b4a8e1d7366bac31e94fedc7c710277b29128"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/stack-s67/baseline/campaign.json",
+      "sha256": "f0bdf6fa3ce8632c789f3f8c443015fefda0a74e85dba8f36b16e2119b381216"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/stack-s67/baseline/cube_stack-s67-r0/result.json",
+      "sha256": "eb6a5e5c1c62631c9bf6a8e14bf02fbefebe4e1571d51d223d944700eaceaaa0"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/stack-s67/candidate/campaign.json",
+      "sha256": "e47064503cd4eba66876ebbe95ef071e878239841df05c9c8bae1f4f868fce30"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/stack-s67/candidate/cube_stack-s67-r0/result.json",
+      "sha256": "5ff13331be39bae1bf7fd42fdc83d6fcb63181a5497f74104738da483f1f19e2"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/stack-s68/baseline/campaign.json",
+      "sha256": "336ecfaf4b7cfadd10dbbc0dc3bfae631c16a186f13d860916d20b27e2c2a074"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/stack-s68/baseline/cube_stack-s68-r0/result.json",
+      "sha256": "8ea3575822bcf33af311ebb6b22b33f238ece88ed5c7b0db810ca43e71251590"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/stack-s68/candidate/campaign.json",
+      "sha256": "1b8a4ace7ee8f9c8a3d0ac5e606bfa8560272fce8bd78ec72269692ee5d8c04f"
+    },
+    {
+      "path": "research/agentic_multiview_model_20261119/v1/campaign/stack-s68/candidate/cube_stack-s68-r0/result.json",
+      "sha256": "a4b22fa0a4081f70330ee2cd0e682e7e23ecb8687b5c0cb5d149cb8866fdd8be"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/diagnose_public_release_frames.py",
+      "sha256": "9239c20d5071f286dc098e67642ca10a019656819470ff1a346c35411a46845c"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v1/results.json",
+      "sha256": "54cfddbbe9e23cf1ad4dcd1e6c0eca22cce6daef1fd69a7ef18440f59c2174c2"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v1/score.json",
+      "sha256": "d49ea46bea18fdc53e89b79678cd29c79e0c7c6f23a55f98424866bdeb0be00c"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/await-diagnostic-health.mjs",
+      "sha256": "7fb063de5299e6c8d4f60ec9299168f9085b398465e2124eabebf85d26902045"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/close-interrupted-episode.py",
+      "sha256": "dd977eec5b0393ecf26ee472c2843ccb8de83cf51fcb89d8aeac9cab28b6f821"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/diagnosis-score.json",
+      "sha256": "1ebd18b226e80a97ee67da092b601bc786250ad881e69f71fa03ad96d91005f7"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/diagnostic-model-score.json",
+      "sha256": "fbf9133f7d20b0941d83ac159838e74129f23f527bc3440fc90655b7164c78af"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/natural-score.json",
+      "sha256": "123d3e7d3273bc6ff418658739188bc1f1393b0a5e43ae720e4e0f1d10890c7c"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/run-model-diagnostic.sbatch",
+      "sha256": "0134145b36b14036b42a7ed4c9e39f7542c7ee33fd7054ed1640a93308ada373"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/诊断结果.md",
+      "sha256": "67d8002c9b82473d515425bf16de0a5ce3f45bdc5d90d7daebea2fedf629d599"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-diagnostic-resumed/fault-stack-s62/baseline/campaign.json",
+      "sha256": "9e6f4971f144e2bac75a721b517c62b44db7fbf612707402dac0b9ea5fff4477"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-diagnostic-resumed/fault-stack-s62/baseline/cube_stack-s62-r0/result.json",
+      "sha256": "c34a4311c7f6e8f3714c8c23445f0df59e6c2ffc5193bc62244a3fde4c2ed742"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-diagnostic-resumed/fault-stack-s62/candidate/campaign.json",
+      "sha256": "e03912cd7e6eae26211b0de673be6e85ed7700d852c3a06f67b4487a4b485646"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-diagnostic-resumed/fault-stack-s62/candidate/cube_stack-s62-r0/result.json",
+      "sha256": "d636315636145080c7eb1dbf13a818f05515a555a78d6a6020eb8c981bdc24d0"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/restack-s63/baseline/campaign.json",
+      "sha256": "96376aaf00683c81cc6b4040315795f8b8cdb2bccc6c40eb5698f49e05531d4a"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/restack-s63/baseline/cube_restack-s63-r0/result.json",
+      "sha256": "0676c5059717c96d3f7e5bcbbc328f78c16e70523afc4d897054240396c0a5dc"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/restack-s63/candidate/campaign.json",
+      "sha256": "d8019fd9fdfbae4fdb983055f774d9ccaced6cf5a63033e1a080a6e750561954"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/restack-s63/candidate/cube_restack-s63-r0/result.json",
+      "sha256": "24af0b168a0bf65217e86da3e047bb0904ecc94a04f6d6da360ebabd502a389b"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/restack-s64/baseline/campaign.json",
+      "sha256": "df0ee4ae25a84811cd3868cb7fc2d830424d77f41ba3451b7af286c226bb8634"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/restack-s64/baseline/cube_restack-s64-r0/result.json",
+      "sha256": "121179ffdcef8fcc931f64afcc960d0ee3857c363f5b661caafde4982bd827f0"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/restack-s64/candidate/campaign.json",
+      "sha256": "b9c72b728b965c090ecb1809671ac65f0c5163e3122ac67baabc2174e082d695"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/restack-s64/candidate/cube_restack-s64-r0/result.json",
+      "sha256": "e2f1fec7a00dab8b735ccb137a3d4fe8ebe6de2e98c3c2a23d7be63f1a5e0466"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/stack-s63/baseline/campaign.json",
+      "sha256": "1cfa2a79ae6c69cc70508b5229c5690c53368fb0b9c6c3b15df293e1bf87664e"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/stack-s63/baseline/cube_stack-s63-r0/result.json",
+      "sha256": "a7326b4fd59840e5364c16dcea30f9cad067f2ea429b4b2bd54a544a4f66702c"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/stack-s63/candidate/campaign.json",
+      "sha256": "282604da4a9fa64e12ee019dd1ffefff64108b44af9181c230864fe5d087ee63"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/stack-s63/candidate/cube_stack-s63-r0/result.json",
+      "sha256": "2eac4ad56a97e9fa1a7202416e564b7ab1b849fa077130571ea859cb2effae0c"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/stack-s64/baseline/campaign.json",
+      "sha256": "a7bf74f6281e1ac5ad17e34c775c496005372981de80f26358717203c943c7f4"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/stack-s64/baseline/cube_stack-s64-r0/result.json",
+      "sha256": "31958a81d706d8c35ea49d799e9f2dc6adf6a88f21774acee0af1040f44b2f8a"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/stack-s64/candidate/campaign.json",
+      "sha256": "f5c587a67504b7f3bcbfae5b59b3894b0a53a7851a14b69ed7486022b340dbbb"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/campaign-natural/stack-s64/candidate/cube_stack-s64-r0/result.json",
+      "sha256": "d0b954f0bb64d221860b05a4de49ba980ffa8c87cf4fd7fd10a1c13d801f5aa1"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/desktop-smoke/report.json",
+      "sha256": "1a61aac862fec414bc866a1b60a206e4969c8de685bed323679e9cbd1247a341"
+    },
+    {
+      "path": "research/agentic_placement_evidence_20261119/v2/desktop-smoke-final/report.json",
+      "sha256": "7206ade5df3ea640b78425a30a08470fd6b0eb12377a597617a646231f6090ae"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/admission.json",
+      "sha256": "ec50d17c78a126a6b811d37d5861b8100708e86ef892e7f8701807d70d847fd7"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/closed-admission.json",
+      "sha256": "d8f04dc919aa6be734a3b0fbe4534d69e4a6da5fa04c392c7efb085793d48a3b"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/collect_admission.py",
+      "sha256": "df94c6edaa225465e14783783dea6199f8bb0c4f9f1a74d5ebbb2f0007675c02"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/context-audit.json",
+      "sha256": "ced9fa486b8b3bdd9cbdf226148c812bb1abb2c67813e6fe2389ab5e27b6ec79"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/deploy.py",
+      "sha256": "c6254e4851a64f3e3f0223775ecda2565a068829011f372eb1e6cf997ee643b2"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/export_closed.py",
+      "sha256": "258b00f7bce5204fa965aeef7b23cbb61038323934bd08dab4704dfe48dd0a61"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/freeze.json",
+      "sha256": "cbb87fa74de5827cc1fc77b8ad5177ff653a894a9973a44aa5328f8e1e9092eb"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/host-terminal-audit.json",
+      "sha256": "b2a9904add08b69d55b072dc3666a6a7146658110871c46ebd18f4e0bca4b51c"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/independent-score.json",
+      "sha256": "de1a52ab7c03efb13ca6c26a4e3c24e7ef04cb69ff88b81d502af65281aebaf8"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/launch.mjs",
+      "sha256": "07932d2d8e27c072d0ce9be9fdde6c4a62ce4cbf5565f2b3734bbbe0b11226fa"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/prepare.py",
+      "sha256": "0fff8881f348f4a9ac7e48558ee540a125cf6903f18b6d9f9a0d21dd0794c20e"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/protocol-intent.json",
+      "sha256": "8ef86596e7d11f14a0c308a64fa79dba4001b550a5242f9fcee4c4cc6200372d"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/run.sbatch",
+      "sha256": "20944c15b1e205b425a42549eaa60aacd45dafad4fe476ade879e5599a5d40c6"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/score_closed.py",
+      "sha256": "a8cb3792d1f36db31f62b59059e8c69859a9d7245e257780940ffeb0257dd146"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/status.mjs",
+      "sha256": "c7147b38ade9d1bb482890343b437f42ba887f067804bea91c02dc1e115bbc93"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/结果与边界.md",
+      "sha256": "e5b92c9ca5013df9fb6feecfc3518d6b46bb054a107d8768b61998c4bf92824a"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/normal-campaign/campaign.json",
+      "sha256": "1da75644f93b93e0a581c094afe08edc9965631efb989320863bd04b7e9bd70b"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/normal-campaign/host-result.json",
+      "sha256": "579b20c008f55c3ac728f525ea17ecc9d654669bb39cde65073fcf0e41c6087d"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/normal-campaign/cube_lifting-s89-r0/result.json",
+      "sha256": "f8c346ca90539136ffc6f23022ab6ac9c695e9b710a01d0d9f1da997225f9f76"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/normal-campaign/cube_restack-s89-r0/result.json",
+      "sha256": "fdb2c94e036092e874be5ed6ac86d16279dc7ad38763b10396c02d4615fd3259"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v1/normal-campaign/cube_stack-s89-r0/result.json",
+      "sha256": "64f7399bf62eb8188e4a758b310293896ce72b476d764e70338cba678f74579e"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/admission.json",
+      "sha256": "c057479250ae78e2dd7c0955393e9f83b271dde4f64e7dde204723e448466f84"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/audit_context.py",
+      "sha256": "fa6198db7f1f491b878a2187ac76b418d90f77140f2996d0780ba2eb77d9a031"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/closed-admission.json",
+      "sha256": "a31b98a354a65b29355e58a48e6221f49955251c0f126c1d1c1aadc668c98c0e"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/collect_admission.py",
+      "sha256": "df94c6edaa225465e14783783dea6199f8bb0c4f9f1a74d5ebbb2f0007675c02"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/context-audit.json",
+      "sha256": "dc3b047e2f6913234ade47e6abf0e965b67d5c6da7ad79f452547ae9b3a422d9"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/deploy.py",
+      "sha256": "c6254e4851a64f3e3f0223775ecda2565a068829011f372eb1e6cf997ee643b2"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/export_closed.py",
+      "sha256": "258b00f7bce5204fa965aeef7b23cbb61038323934bd08dab4704dfe48dd0a61"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/freeze.json",
+      "sha256": "dae7492f763c8929bccaea44dd96ce0a277aa53b6f70e37fe45dabb658f0a944"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/host-terminal-audit.json",
+      "sha256": "b2a9904add08b69d55b072dc3666a6a7146658110871c46ebd18f4e0bca4b51c"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/launch.mjs",
+      "sha256": "b2f57a8e701fcb9e9a365f19fd1045ce032b4fb68f816215ab286075a4bf45fb"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/prepare.py",
+      "sha256": "ddd5d6f450bf0453491871b9aba5dcff9c8ebdd9c68f53794555c11e370b7e55"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/protocol-intent.json",
+      "sha256": "21994cb99ee5b4464c5d8f5aa38f200972ca2ba04d4549e004fcc20523dcb043"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/run.sbatch",
+      "sha256": "764e4b74ae34041fe449ec236414520b22835b15bf6e74eb0e2c2c03d5d4578a"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/score_closed.py",
+      "sha256": "be8fc1c3479a4f00be6dea5b4f24d1af489699f40022fc4fe4221627345d67ae"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/status.mjs",
+      "sha256": "c7147b38ade9d1bb482890343b437f42ba887f067804bea91c02dc1e115bbc93"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/normal-campaign/campaign.json",
+      "sha256": "a6ec8921dfef494726bc9bcc2afe3e76da3bfb5edbe76e29dc7ee5a9113b43a8"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/normal-campaign/host-result.json",
+      "sha256": "9c1de67e49dab0ffa522f49fc9b9c68696e9e96aef74cd53d59049c98895ca9c"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/normal-campaign/cube_lifting-s90-r0/result.json",
+      "sha256": "107b651a9625f21a8366834b12155bfd2eee6ec6ca55e4b681d147b5c7d54f05"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/normal-campaign/cube_restack-s90-r0/result.json",
+      "sha256": "3a9cff824dbb7cbbb2e5ec77305b1226e28e7d3275dcec2b54c0550823d82c35"
+    },
+    {
+      "path": "research/agentic_program_context_20261120/v2/normal-campaign/cube_stack-s90-r0/result.json",
+      "sha256": "6a622e118a5886f3ebe558e9c2a175736c017f226f16a492e333a7a684cbcb4b"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v1/audit_previous_programs.py",
+      "sha256": "7365dca6360c5fe12a49c01f896d4820aa52f2808204568af0410f96d6dac1aa"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v1/export_closed.py",
+      "sha256": "242e9cdca64b5d8320e85130e1a5271c897573a5170bc95dbda46e8dc7593800"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v1/freeze.json",
+      "sha256": "15a938b26831b0f342c0dec1749f6e752cb271adee0397981c40ea9007a89042"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v1/freeze.py",
+      "sha256": "c501ec2842a13bdd21ec9916aecbc7f05f31267a3c0ff62427eba7fb3800ada5"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v1/independent-score.json",
+      "sha256": "4f45b929866f5dc81a3c9d4f31a1006611e8047e0175f4fce25ac6118245bc84"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v1/previous-program-audit.json",
+      "sha256": "6184582aee063b17043948449da9eb4274de8d00ee3c7404322faca4184d8900"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v1/result.json",
+      "sha256": "1ca350811b3cfe8da035e07f0e1ab1141ee9d230e66094bb60c7d9cd51bfb133"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v1/run.sbatch",
+      "sha256": "9b7e831f43b87695570fae20ee20df985edc48cff6fd4b13e132b37ebb2bd5ad"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v1/score_closed.py",
+      "sha256": "9d487fcbcde5992873e2ea87b587656796a9f6f7b357ab84a961aa537ead6b75"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v1/结果与边界.md",
+      "sha256": "f48e2d9e953c27e34077e13de6c4616f95e317b0b47c5d3656f27f83a44c7fc5"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v2/admission.json",
+      "sha256": "d0212b71b9861baf84fcc13145d7597e24dcbff58de25b5d0012ca352d969a89"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v2/export_closed.py",
+      "sha256": "1c126e0bca192c1030c9f3d26e0f7833554d5082e420ae056735037321543936"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v2/freeze.json",
+      "sha256": "f7801a99f19940be32d4135b0e9975d5bfd6e8dbf7506ea6ba81d491525adeb0"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v2/freeze.py",
+      "sha256": "6f0d2bdfd64553da34da1789275bc5bb42628bbd87487d4c5136087830d50be2"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v2/independent-score.json",
+      "sha256": "0b369d90ae6b0e92e0644cb39a0e0d77c02b4b72f84609723a777738153c6ee1"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v2/prepare.py",
+      "sha256": "7a5d2b234dd79ee368bbcab4bf2bfecb86eb605ad4e31f335d52a0568e311c92"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v2/run.sbatch",
+      "sha256": "8a8a3bc91238704cae955555279963187bfcf6683b5caf2fa5d6d5d147ef85cf"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v2/score_closed.py",
+      "sha256": "631201fdcd5362aae74daac4f0e1ae466c170b572a5450c571943c8879dd60dc"
+    },
+    {
+      "path": "research/agentic_program_preflight_20261119/v2/结果与边界.md",
+      "sha256": "e20052987a42ce914c25a81e826a7585e495ea8b9081fcee8e43c40f6f70c4ce"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/admission.json",
+      "sha256": "075dc81a1820200866759e59e4978e8045086d2a52678e218d7d94dd03afd21d"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/closed-admission.json",
+      "sha256": "9a753bb195629aeb2faf303af04331d1a0a45d063abff3c6d3940bde887995c7"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/collect_admission.py",
+      "sha256": "3dfc40b2e09d5759b4d07cd3382fef49a2649c1db91b4516825c03279625657d"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/export_closed.py",
+      "sha256": "4b31e2bdc842f5c40966ab2ae542cc72dd2fbae48fa68fd37b67941e2a4c869b"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/host-terminal-audit.json",
+      "sha256": "b2a9904add08b69d55b072dc3666a6a7146658110871c46ebd18f4e0bca4b51c"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/independent-score.json",
+      "sha256": "e5de39a3296ceaf389609717b1873670677a5905dd9f1961705b2dabbff615a6"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/launch.mjs",
+      "sha256": "69801b80c3e1227ef6065753391bfcef3474e6119be48cc3cccddf42b70b4058"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/prepare.py",
+      "sha256": "8c23a269db7a85a471cb802563660e9e24da5f678aba3ce2898003826bdacdf2"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/prepare_scoring.py",
+      "sha256": "a584c76b1a5f2677211bc92532cc261fcd226c4039e9796ac1a1e32b4fdeea27"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/protocol-intent.json",
+      "sha256": "18da156c4beb3a8be251b3164e053d0456a2f673d1eeab9134070f431fd322b3"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/run.sbatch",
+      "sha256": "fae28198bf7499d852db5d30c8abf0675b1e9559c99361adfee83225c01b76a5"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/score_closed.py",
+      "sha256": "a58bc928656d1775053c389e6f889253b2f95d9e7ca5dac4a1e7f36c7ada62a5"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/status.mjs",
+      "sha256": "c7147b38ade9d1bb482890343b437f42ba887f067804bea91c02dc1e115bbc93"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/结果与边界.md",
+      "sha256": "74c40d5d5bc2144f805614127185a42798a0a84750c48b612803e8c716eb4831"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/normal-campaign/campaign.json",
+      "sha256": "91b5e637768db6ba9baac9a3f862f0f351b0ef405b1861d722d116d7da05701d"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/normal-campaign/host-result.json",
+      "sha256": "07b5586450821a155dc901ef2ede0f0e36aff5078349a2ebdaa6c2fac6945be7"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/restack-v1/normal-campaign/cube_restack-s86-r0/result.json",
+      "sha256": "46a4913444f2678ac898787991e94a5c840ded720b88df9e69fd0dce8383d47b"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/text-diagnosis-v1/admission.json",
+      "sha256": "a3b8fe06cf2b5452be9a2b84dd3c92045cbb35594b1ae195665d4b65416bad92"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/text-diagnosis-v1/compact-result.json",
+      "sha256": "a0f1c6305701ef62fee6ba0ce1aef40dfef47ab6f07662a5954443b01d638251"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/text-diagnosis-v1/full_text-result.json",
+      "sha256": "e3507ce121232625adfca6204fef45770b25dd994e927c6270bc4e138f68e60b"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/text-diagnosis-v1/host.cjs",
+      "sha256": "aec287ba4a2a0647a30c23be7822f08151dc4d68915b37ddea16202faaab7411"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/text-diagnosis-v1/protocol.json",
+      "sha256": "9c80b373f08f43b998a20754d2d2860f683969d05c15ba50d78550ba6c7da7a3"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/text-diagnosis-v1/score.json",
+      "sha256": "12a41bceface1bd1148ed1d7ce8ddff484f86c322df539f658c01a3b6cad59a3"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/text-diagnosis-v1/结果与边界.md",
+      "sha256": "60d830afc7377ca888dec7e5b2b3fc6827c7195b9653aba8baf01b1df4e1b44e"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/admission.json",
+      "sha256": "fafd685cd51248d5d897d4a0b57e57e89d247b73b95bd3a2e122d87446e1787e"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/audit_admission.py",
+      "sha256": "e08183ad6851bcbad9d2c26c2514a691ed49ccbff4610ce729dae2349bb49098"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/closed-admission.json",
+      "sha256": "58e450cf303e606452546093b8efe42dc9ec06b39acd13cd4b68c2af623314d6"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/collect_admission.py",
+      "sha256": "df94c6edaa225465e14783783dea6199f8bb0c4f9f1a74d5ebbb2f0007675c02"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/continue-natural.sbatch",
+      "sha256": "8c82c6f712bd2747811b929dbdc1a8d7142058edb1d98a8b6d634f803480bc74"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/deploy.py",
+      "sha256": "c6254e4851a64f3e3f0223775ecda2565a068829011f372eb1e6cf997ee643b2"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/diagnostic-score.json",
+      "sha256": "f18470703155feba2d34e992ed7c4c014edcfc65218d094709e6618f7e95c58f"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/export_closed.py",
+      "sha256": "258b00f7bce5204fa965aeef7b23cbb61038323934bd08dab4704dfe48dd0a61"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/freeze.json",
+      "sha256": "99bcb87a2fd5ac1468a11709a4ec29debda31d99601c41b869cb8eabdceab455"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/host-terminal-audit.json",
+      "sha256": "1f2ea8d2151b606018347820ad85fd1f1d5fa15113b090d9d257cdce304e4c1e"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/independent-score.json",
+      "sha256": "e04cc1028cb66fffc89a3287e31c92772262e0a39475bd528c9e940003681190"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/interruption-audit.json",
+      "sha256": "f5d2aefe1aeb6530ff555780b3dac207b4628c679dfa2b9369f82d4ad2985d39"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/launch-natural.mjs",
+      "sha256": "07932d2d8e27c072d0ce9be9fdde6c4a62ce4cbf5565f2b3734bbbe0b11226fa"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/launch.mjs",
+      "sha256": "c1b5a5a037500b7f65c24a60fdd6af64245632c9923389f5833e7f3336e707d7"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/prepare.py",
+      "sha256": "1681c2e83d4367b708eca184a8c6d483ebe55d3b5c40e5a59292674d1f367ce9"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/prepare_continuation.py",
+      "sha256": "d1f406d1eeee83c8fb0e1f6649db9b65adf6cd59fc15163823db792c91e7eb08"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/prepare_scoring.py",
+      "sha256": "65a393bbc772aa0fb0779188e56638bc65709854995354973dc318fe7e5d54e3"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/protocol-intent.json",
+      "sha256": "7eaac2650beff7be01a9836715289f5d394f5c198437e94454b74df5a6d36bb4"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/run.sbatch",
+      "sha256": "d997e6fe68ebc8dc158eb524b562f0da1d70ca0df1cf17bc9f82bf4f63f6b8aa"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/score_closed.py",
+      "sha256": "04535a806cd4f3834a5a3f4ccdb4723c080f96150c82ae73e45e3f40d77a0a1e"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/score_diagnostic.py",
+      "sha256": "38dd6ecd06e74758731504b30771dcad95da12c44dd5052342652f0b89e8fccf"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/status.mjs",
+      "sha256": "c103b73219a431b251db662fa37f0255dcb63593ceb29c054811c457dc9125b1"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/结果与边界.md",
+      "sha256": "7e103e4f5986b89a95aec49efce2490fe6aff1cc2b41beb8cc824985770cccbc"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/normal-campaign/campaign.json",
+      "sha256": "68b0edbd003e00ac7f110f171e00eae58d23c82770d3333b320dd478d9289111"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/normal-campaign/cube_lifting-s85-r0/result.json",
+      "sha256": "43d1c96923cd4879d87c96cd4ee2220811e3803d25e29e6f5013e103b5d39a90"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/normal-campaign/cube_restack-s85-r0/result.json",
+      "sha256": "cacef9d8a3aac622e19116fab494962155b1dc3c5f4fe2d2deaa7460a5bc3441"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/normal-campaign/cube_stack-s85-r0/result.json",
+      "sha256": "f935209242783c65661e0d863763cee475da245c77043f9167fb42f065f39d13"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/repair-campaign/protocol.json",
+      "sha256": "eadb25544dfcb11d7475995421579343e39badaf271c45f5095563e663f92537"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v1/repair-campaign/field_access/result.json",
+      "sha256": "b6a790d6561749d8b6989d95104dc82ddbf54d641125c884246cab76cb3de10c"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/admission.json",
+      "sha256": "225be21a6a140f85837e9503d15e11ee1139a84b5369b387236fd626875ab385"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/deploy.py",
+      "sha256": "c6254e4851a64f3e3f0223775ecda2565a068829011f372eb1e6cf997ee643b2"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/export_closed.py",
+      "sha256": "41ec0ff3de55f41232b828d7889b93d03fe44a627b8aa99bb328fe55a85f5c80"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/freeze.json",
+      "sha256": "64ad820fd5401ff2f695fd81b3fa7c2a24118a327e3d9f4a926ba47afa5155e3"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/independent-score.json",
+      "sha256": "0d69a8d7571d6e9b8a082ffbcd94f847fcf259a8c33c2178ab72cb96859a7bcb"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/launch.mjs",
+      "sha256": "58e2e607a9f094459fa1f7f3050761754264bdd89e92a2dc39731e10d4258b33"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/prepare.py",
+      "sha256": "4d2105e4abb30b828ec5a558c1e462bdfff2002a4a690183a8f15f57f51f56f8"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/protocol-intent.json",
+      "sha256": "7fd4f0ce80d126e7adc23318b8983f9de832e1518e123402643d7a53a5bd4a8e"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/run.sbatch",
+      "sha256": "bb2210a30435fdbfdf029f5f9b29ec3dea0edf8ffdf94a6c9a766364b8cdd581"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/score_closed.py",
+      "sha256": "4bf7552a3a7c9c3aaba93306e837a0091808014a2fc12450c221d6f0c274a9a2"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/status.mjs",
+      "sha256": "82733d4b0fb6ba56c05507dd66fb8ed460c648e375156868e206ccbb88ecfd37"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/结果与边界.md",
+      "sha256": "b5d503921edfe5bb5f403af418f53fc1f4c259c501ccf00c39096453c04c58cb"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/repair-campaign/host-result.json",
+      "sha256": "049d74453196ba5ace4e2a345778828eab29bbe47f6358abea74e9e33694f788"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/repair-campaign/protocol.json",
+      "sha256": "b52c47843a4d6ea8e8530e4124bd3d60b5592bf851d28213585c85a1ac5c4bd1"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v2/repair-campaign/unbound_name/result.json",
+      "sha256": "54e176e44d80159e0961eae1e189e1335fa847e550ea486769b0f6a244ba103b"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/admission.json",
+      "sha256": "7dc21e3036171975e79ba990a1b961ab7cbd842da7ecc997927532293d03fb6a"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/deploy.py",
+      "sha256": "c6254e4851a64f3e3f0223775ecda2565a068829011f372eb1e6cf997ee643b2"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/export_closed.py",
+      "sha256": "41ec0ff3de55f41232b828d7889b93d03fe44a627b8aa99bb328fe55a85f5c80"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/freeze.json",
+      "sha256": "e1fafa9fa23ce8b5ceca98119ab9006aa7e5a6cb96c665b7c0b4fe2849b8138b"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/independent-score.json",
+      "sha256": "b430b613b2930a155f5d3f0e7f8351f9eeec2743b17315bee697cf0960fe71f3"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/launch.mjs",
+      "sha256": "58e2e607a9f094459fa1f7f3050761754264bdd89e92a2dc39731e10d4258b33"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/prepare.py",
+      "sha256": "83f9513b1fe6d293fb91fa9febb878b6dca35443d61b2eea58983aee4c2cf914"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/protocol-intent.json",
+      "sha256": "91302d348ae15de610ccaed3345d3563eabbaeca5aaafc130c7ab87135ad8b0f"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/run.sbatch",
+      "sha256": "022ce0c9428f7e9647a6f04938440ad60ad5a19dbbf43780faab33ec2c2d61fb"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/score_closed.py",
+      "sha256": "4bf7552a3a7c9c3aaba93306e837a0091808014a2fc12450c221d6f0c274a9a2"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/score_stages.py",
+      "sha256": "164c04ac4d0aa51d21aca4efceed7ecdb5c48a5fb8f2a1955454bffbaec0f534"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/stage-contact-score.json",
+      "sha256": "0dd314c03cd94f668b1a8ac68b8938fe98ecff07f7b79a00674d99712f19ba9f"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/status.mjs",
+      "sha256": "82733d4b0fb6ba56c05507dd66fb8ed460c648e375156868e206ccbb88ecfd37"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/结果与边界.md",
+      "sha256": "74ce28459b938d9a5813eb7a0821e9486d8060c9727d82b3e68441d4862945f8"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/repair-campaign/host-result.json",
+      "sha256": "bc88b57b74445c1446d2c88747b0020119958148a52ee950c0cd1785fd59f178"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/repair-campaign/protocol.json",
+      "sha256": "ff0ec18f8e934a1cc2c543848c6b21b5462118e12b751e1b950472e93905261b"
+    },
+    {
+      "path": "research/agentic_program_repair_20261119/v3/repair-campaign/unbound_name/result.json",
+      "sha256": "285105682855de509f48b1bda712fe0eade78ca185b8dd2f471d29126dcfa63b"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/admission.json",
+      "sha256": "888855fda4887c893188daa100e31c352c5dff558b5fa5f455d81781f5f4d1ad"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/audit_release.py",
+      "sha256": "c8775acf11a798295cf51903966f03f582cbfcd0658d25141400c645774d225d"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/closed-admission.json",
+      "sha256": "41c71b0e1453f40018e2e347db2ac85395f64f87d61a80cc5d98a79d6d9600d9"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/collect_admission.py",
+      "sha256": "71526a51c35cbd14c66a194b12f1836f2077479e495eed04a8b615b7af697779"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/deploy.py",
+      "sha256": "c6254e4851a64f3e3f0223775ecda2565a068829011f372eb1e6cf997ee643b2"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/export_closed.py",
+      "sha256": "788a32de6cfea1f6df96918186694cf8c5d92132b5f0e767457dd86fcecb3f5a"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/freeze.json",
+      "sha256": "84c015a151dd53c683c57e0e33209b6c9f1320878d49e5a37a0c4434847e6b40"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/freeze.py",
+      "sha256": "6e23a08830dc70fa1530cf480a25107f9009bfc67a4000cdcfd9f78c212a8d64"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/independent-score.json",
+      "sha256": "a9c4b69680b146fe9bf59c4ae6c35f711bfd39df97d0785f855a122140fecd34"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/launch-when-ready.mjs",
+      "sha256": "2dd4f69a419bcd26e573ceb693f0d40e82e2c6723396004e25b96bdc82e6374e"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/prepare.py",
+      "sha256": "32b5a78ed92bb8941b546f5588b53581886bfdd367a934356f5c486c89a54dc3"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/prepare_score.py",
+      "sha256": "9f520922a83700544da2375ff50ebd51d0b29aeeff2d709613b8818d7d7f13eb"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/protocol-intent.json",
+      "sha256": "c7e4473bf7686d3d8a8c68c38274b314d8744ae038917dd0654d4e36cb22c6f1"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/release-audit.json",
+      "sha256": "b59d7651dc7a1a222042b10f12fc0768543396e644034fd86f252ae6be1d9596"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/run.sbatch",
+      "sha256": "14b756a7a932f04f263b5ffa125140a4f4af577594a7adbbadd7a73866d419aa"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/score_closed.py",
+      "sha256": "cf2aa2144c026f4bcc2d28fd20677d7c05a3f36f53708ef6e3100e060cc68a99"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/status.mjs",
+      "sha256": "7d2fd1bed6be8674664ef887f129a06eb4514077d141c65e88aa171132343553"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/结果与边界.md",
+      "sha256": "9ed652d662a5142ee7ed7b358022a4e6ff99a2808a61b8d4019ed63d8ac6f404"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/campaign/host-result.json",
+      "sha256": "3e3bf15cc829844cd181308b18439a373878bb9099bf13b4f3d21a5d9a9ae1af"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/campaign/stack-s70/occluded/campaign.json",
+      "sha256": "d23a07709a77c70a0c9253c6d777908e5b6be07ee9c8ce69fe256c6bedeb77bf"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/campaign/stack-s70/occluded/cube_stack-s70-r0/result.json",
+      "sha256": "005b248e10be6632311785233f40a64fbb489054d7e8f5a5c32e0ab12a3d5269"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/campaign/stack-s70/recoverable/campaign.json",
+      "sha256": "3aa0b95f259e2d19164c2f32723be4769b4d9dfcca1c29b8bd73fedf46087e94"
+    },
+    {
+      "path": "research/agentic_recovery_progress_20261119/v1/campaign/stack-s70/recoverable/cube_stack-s70-r0/result.json",
+      "sha256": "302ab468fde1dbfc3478771ff790839c1622e8cff2dd6a9cdf18f63f621e1100"
+    },
+    {
+      "path": "research/agentic_release_views_20261119/v1/export_closed.py",
+      "sha256": "4cb62fbee21ecd72cd4ed5fdb5c5c7c091fd2ae5540adf7ab177f4f5b0574f69"
+    },
+    {
+      "path": "research/agentic_release_views_20261119/v1/freeze.json",
+      "sha256": "28c387631124ddde6f9937d17f83feb7c2c27e6f83deb9b5a60256e134b16b7d"
+    },
+    {
+      "path": "research/agentic_release_views_20261119/v1/freeze.py",
+      "sha256": "5474d399c95f5cceb490e0d220939285bf46efe5fa8242e3b1d90c4fd50e5030"
+    },
+    {
+      "path": "research/agentic_release_views_20261119/v1/run.sbatch",
+      "sha256": "d3b79736d25a422dea841535e4a92815098d27e170cb13bcef10b2e505a63ff0"
+    },
+    {
+      "path": "research/agentic_release_views_20261119/v2/export_closed.py",
+      "sha256": "d1d1ffbd781520e2889f12fa5567f11f80bc085a3c7f51aabe53b19cc31f54f8"
+    },
+    {
+      "path": "research/agentic_release_views_20261119/v2/freeze.json",
+      "sha256": "3c9ebf2f89aef4edd1f0e39ba3b245835c8d921d934039ee6514ccd536d9ae6d"
+    },
+    {
+      "path": "research/agentic_release_views_20261119/v2/freeze.py",
+      "sha256": "5474d399c95f5cceb490e0d220939285bf46efe5fa8242e3b1d90c4fd50e5030"
+    },
+    {
+      "path": "research/agentic_release_views_20261119/v2/independent-score.json",
+      "sha256": "3942d67f5569ef27b351a3c77358502e0ed53e93f4fced9dc9fcdae828296f1b"
+    },
+    {
+      "path": "research/agentic_release_views_20261119/v2/results.json",
+      "sha256": "503a0de5393e38d72997118ee7f71818e5583e3dccd363f05acf8f0a9869e3ac"
+    },
+    {
+      "path": "research/agentic_release_views_20261119/v2/run.sbatch",
+      "sha256": "13c52f748bd92f373574f3b81e5ad42514cb9ff8bd4bf939ecc246eb2b4d5261"
+    },
+    {
+      "path": "research/agentic_release_views_20261119/v2/score_closed.py",
+      "sha256": "84d25a42b0b1891c82ade88451f791812377cb06d83400ead32a4fec85c66449"
+    },
+    {
+      "path": "research/agentic_release_views_20261119/v2/结果与下一步.md",
+      "sha256": "21a1860e0fac90e1407fa47912a648ff9ef3b409f850ff8f9d1a01bb470fa347"
+    },
+    {
+      "path": "research/agentic_support_controls_20261119/v1/admission.json",
+      "sha256": "c92f7c47c514af9861d2c2a2cd1c5a83c932b37de479ebd6cf00e4d0adfd5dc0"
+    },
+    {
+      "path": "research/agentic_support_controls_20261119/v1/audit_closed.py",
+      "sha256": "4b8d669f2475a5253b2ca4b8e6f5f3393a5d41a1e0c4d2ba3d0eefe9a50ab092"
+    },
+    {
+      "path": "research/agentic_support_controls_20261119/v1/closed-audit.json",
+      "sha256": "073754a257290dd5b2faef0431d1162673b9c469aaa0b63d90fd61b89661a472"
+    },
+    {
+      "path": "research/agentic_support_controls_20261119/v1/deploy.py",
+      "sha256": "353e2350fd7fcd3e66cb3f2ec0804e2acf6f8c8e63946fa4c25ea224197cf5d8"
+    },
+    {
+      "path": "research/agentic_support_controls_20261119/v1/export_closed.py",
+      "sha256": "e8cd4c47d02debea652d863ec7fb72b6502c643e0c408bf597ff6b0e1c8b39e3"
+    },
+    {
+      "path": "research/agentic_support_controls_20261119/v1/freeze.json",
+      "sha256": "525a89ecd2741ae082cc2ec0e8355928776d14f726b48becbf345b659c3a2b6d"
+    },
+    {
+      "path": "research/agentic_support_controls_20261119/v1/freeze.py",
+      "sha256": "2433e4b67d217925183d03e14284beaba18842737333918a990c00a03632bf21"
+    },
+    {
+      "path": "research/agentic_support_controls_20261119/v1/prepare.py",
+      "sha256": "982e8d22f8c763e33c4bff92e02227232946211e65346e8130c0b11500195f00"
+    },
+    {
+      "path": "research/agentic_support_controls_20261119/v1/results.json",
+      "sha256": "80438b7ec39e6e94ba0e87b6062fe79ab9ff75f4160010aafae18bc495a91f5e"
+    },
+    {
+      "path": "research/agentic_support_controls_20261119/v1/run.sbatch",
+      "sha256": "83df4079e8b8824b847faff659ae57b7f9280374b08cccb2c29dd24a6ab61243"
+    },
+    {
+      "path": "research/agentic_support_controls_20261119/v1/结果与边界.md",
+      "sha256": "621172d43319526daf5340c8cd151afe7d93fb8e8a4cca33fcbe94ad1e2305e8"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_20261119/diagnose_anchor.py",
+      "sha256": "c5fe199424da877823afe5c01851d5e263e2a0ac0afbeb9adbd38225bd78b579"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_20261119/协议与进展.md",
+      "sha256": "43174e5bd3b025c3487a2a3806c0f912b4cfa39a8515d3484d2b61691a600ec3"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_20261119/v1/freeze.json",
+      "sha256": "9e863968ce568d7b60caf2867f87638d6b4d6fb66b39d2ae15a180b0a897945f"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_20261119/v1/run.sbatch",
+      "sha256": "dc4617eeef564bc64198fe29f89eef7f250180195a24c3464e18f156139a0f61"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_20261119/v2/freeze.json",
+      "sha256": "ace2d4a11420a0a0ad4a7483c49bdea2e75c6804b802c1fa1efa8c36a25f1d05"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_20261119/v2/run.sbatch",
+      "sha256": "849279aeacd5122e18a4ee1c0c052aa67bdd57a34973fd72d07d28d6317d0c21"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_20261119/v2/score.json",
+      "sha256": "c3e96a475894669cabbaacacd9eaab336c52d6381e9e8ce3838b9cdc1354b096"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_20261119/v3/freeze.json",
+      "sha256": "7183e8f07f2121ccf64a09661323767fc85a52eaa3b0cbed55740637bfc285ac"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_20261119/v3/run.sbatch",
+      "sha256": "9bf9636c769358c507522557407641691286150a4f3dc5131505155455ded735"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_20261119/v3/score.json",
+      "sha256": "1a31e35685aecf866001d532d05cb72e948fcf4b120e321521377e36613b6c91"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_model_20261119/v1/freeze.json",
+      "sha256": "773b25e155b878ec9e0238d56f1120ce31b1d2f231e0d5bd93be4237c4b45b6e"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_model_20261119/v1/launch-when-ready.mjs",
+      "sha256": "23064fed511814da3624a1786c9989252896b037f02b20db4bd005e29904b849"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_model_20261119/v1/run.sbatch",
+      "sha256": "c0ff3d1fbd73d0e395443d78808b7dc5918e17434de1b8cfd98a0570bac6b342"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_model_20261119/v1/score.json",
+      "sha256": "e13dd0bfb70ef38a77de3ec841155e1b886c2388ba5a96b53afeb1e1dfa54fc2"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_model_20261119/v1/结果与边界.md",
+      "sha256": "b3bd26417806ab16b4ee9568d3ffd68c97f0c7ba8147e129ef938153c330fd6c"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_model_20261119/v1/campaign/host-result.json",
+      "sha256": "49cb32dabdd16b0aa0a4700c9b9855050bb7e3637db8716c8415d780172a937e"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_model_20261119/v1/campaign/protocol.json",
+      "sha256": "ce5047f94c9985356545d674a4251ac3d14fdf68a1f745c21118f0057eefcdad"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_model_20261119/v1/campaign/persistent_unknown/result.json",
+      "sha256": "399984220e603bb5ad57a2e3c732c82de5b5f90e8ea876100436d2a08795e72f"
+    },
+    {
+      "path": "research/agentic_vertical_retreat_model_20261119/v1/campaign/retreat_recovers/result.json",
+      "sha256": "ad6d2ee7d2eec94f761d8850627608ee5a083472a6842e8f23dec9b97bab7bcf"
+    },
+    {
+      "path": "README.md",
+      "sha256": "9777edf5200d6dab683d63d412e0a04ac23a696bff80056f0c35a0d1e09f1f3c"
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "ad8c5e2ea67d853ac69c15ab40676838d684205acdef68e7e00a138025021272"
+    },
+    {
+      "path": "start-development.ps1",
+      "sha256": "445a7994890345349638742cac0490ee042b5d9743fb93389e1174bf4b0a1704"
+    },
+    {
+      "path": "start-embuddies.ps1",
+      "sha256": "9011e6349a481db468a546368d26cb2b7e4e8a1b97ecce53f78109c14cbee071"
+    },
+    {
+      "path": "start-embuddies.vbs",
+      "sha256": "02035a550ad900563396b4e0a64a4a5fa1c23ea2a792494f73f700375590b8fa"
+    },
+    {
+      "path": "启动embuddies.cmd",
+      "sha256": "dac15e74a43517385482b29394127525c12bd5f70990b94efdb5830296f04b1a"
+    },
+    {
+      "path": "启动embuddies.ps1",
+      "sha256": "44ca3fd0d19051fa07ce4c02f0c747ed2865caaa0f7d4f2fd4b2ea5ffa5bbf0d"
+    },
+    {
+      "path": "build-windows.ps1",
+      "sha256": "47f3c101a24a422ccd8bc89421dbb6189b3e84f774a43334578e886c9ed42efc"
+    },
+    {
+      "path": ".github/workflows/robot-quality.yml",
+      "sha256": "8281edd86780430803b7a63f5de889bb4b9d54efd4fa5e998fcc9e3184a7cec8"
+    }
+  ]
+}

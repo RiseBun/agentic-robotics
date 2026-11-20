@@ -1,0 +1,802 @@
+[
+  {
+    "mode": "stop",
+    "episode_id": "03773cbeece30e7f860dec97a7bfa7a6",
+    "passed": true,
+    "coverage_reached": true,
+    "control_result": {
+      "stopped": true,
+      "hold_serial": 3
+    },
+    "inspection_segment": {
+      "id": "e1a5ec573dc64b6ea2b46aafd2f80abb",
+      "revision": 3,
+      "subgoal": "inspect-support",
+      "code": "inspect_support(\"green cube\",\"red cube\")\nopen_gripper()",
+      "contract": null,
+      "precondition_results": [],
+      "api_attempts": [
+        {
+          "call_id": "6524a29d5ea44cc2bc834ccbac4e9ef5",
+          "name": "inspect_support",
+          "args": [
+            "green cube",
+            "red cube"
+          ],
+          "kwargs": {},
+          "status": "cancelled",
+          "feedback": {
+            "category": "cancelled",
+            "phase": "execution",
+            "api": "inspect_support",
+            "call_id": "6524a29d5ea44cc2bc834ccbac4e9ef5",
+            "message": "Cancelled or superseded goal",
+            "evidence": null,
+            "observation": {
+              "evidence_ref": "frame-000314.npz",
+              "captured_at": 1795111437.8083875,
+              "control_step": 314
+            },
+            "causal_status": "not_established"
+          }
+        }
+      ],
+      "execution": "cancelled",
+      "effect": "unknown",
+      "cancel_requested": true,
+      "evidence_acquisition": {
+        "status": "unknown",
+        "acquisition_id": "36294f86ec0749db9db1d02727c4a8b1",
+        "revision": 3,
+        "support": "green cube",
+        "held_object": "red cube",
+        "reason": "Cancelled or superseded goal",
+        "before": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000289.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795111436.5645287,
+          "control_step": 289,
+          "reason": "support_not_visible"
+        },
+        "holding": {
+          "status": "verified",
+          "evidence": {
+            "state": "satisfied",
+            "object_name": "red cube",
+            "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+            "samples": [
+              {
+                "control_step": 299,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.11864295998351199,
+                "surface_tcp_distance_m": 0.02052621337587396,
+                "tcp_height_above_reference_m": 0.1168018833921499
+              },
+              {
+                "control_step": 304,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.11858233467377363,
+                "surface_tcp_distance_m": 0.02056639122802681,
+                "tcp_height_above_reference_m": 0.11680114908654844
+              },
+              {
+                "control_step": 309,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.11852024053897878,
+                "surface_tcp_distance_m": 0.020595172277104418,
+                "tcp_height_above_reference_m": 0.1168005500349818
+              },
+              {
+                "control_step": 314,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.11850076738645521,
+                "surface_tcp_distance_m": 0.020957272504744495,
+                "tcp_height_above_reference_m": 0.11680026654535176
+              },
+              {
+                "control_step": 319,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.1184344411797576,
+                "surface_tcp_distance_m": 0.021368920539992682,
+                "tcp_height_above_reference_m": 0.11680007161923506
+              }
+            ],
+            "window_control_steps": 20,
+            "maximum_relative_surface_drift_m": 0.00123747707714983,
+            "estimated_center_tcp_offset_xyz": [
+              0.014512040863021824,
+              6.0218554434610105e-05,
+              -0.01490624609314209
+            ],
+            "reference_tcp_wxyz": [
+              0.01808128133416176,
+              -3.5434961318969727e-05,
+              0.9998347759246826,
+              -0.0016505471430718899
+            ],
+            "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+            "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+          }
+        },
+        "error_code": "CANCELLED",
+        "after": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000314.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795111437.8083875,
+          "control_step": 314,
+          "reason": "support_not_visible"
+        },
+        "actual_tcp_xyz": [
+          0.721131371818657,
+          -0.061082549367691794,
+          0.03558482139578041
+        ],
+        "actual_tcp_wxyz": [
+          0.01808144897222519,
+          -3.540515899658203e-05,
+          0.9998348951339722,
+          -0.0016504493542015553
+        ],
+        "views_used": 1,
+        "total_views_used": 1,
+        "evidence_ref": "frame-000314.npz",
+        "captured_at": 1795111437.8083875,
+        "elapsed_seconds": 1.3063287499826401,
+        "used_delta": {
+          "decisions": 0,
+          "calls": 2,
+          "motion_steps": 0,
+          "idle_steps": 26
+        }
+      },
+      "error": "Cancelled or superseded goal",
+      "feedback": {
+        "category": "cancelled",
+        "phase": "execution",
+        "api": "inspect_support",
+        "call_id": "6524a29d5ea44cc2bc834ccbac4e9ef5",
+        "message": "Cancelled or superseded goal",
+        "evidence": null,
+        "observation": {
+          "evidence_ref": "frame-000314.npz",
+          "captured_at": 1795111437.8083875,
+          "control_step": 314
+        },
+        "causal_status": "not_established"
+      },
+      "verification_wait": {
+        "status": "not_required"
+      },
+      "goal_verification": {
+        "status": "unknown",
+        "evidence": [
+          {
+            "status": "unknown",
+            "evidence_ref": "frame-000319.npz",
+            "captured_at": 1795111438.057747,
+            "gripper_width_m": 0.045804505678151246,
+            "command": "closed",
+            "reason": "open_empty_gripper_not_confirmed"
+          },
+          {
+            "relation": [
+              "red cube",
+              "green cube"
+            ],
+            "samples": [
+              "unknown",
+              "unknown",
+              "unknown",
+              "unknown",
+              "unknown"
+            ],
+            "geometry": [],
+            "window_steps": 20,
+            "scope": "visible geometry after release; not contact truth"
+          }
+        ],
+        "evidence_ref": "frame-000319.npz",
+        "captured_at": 1795111438.057747,
+        "control_step": 319
+      },
+      "stage_verification": {
+        "status": "unknown",
+        "reason": "No public postcondition declared"
+      }
+    },
+    "late_old_api_starts": [],
+    "view_count": 1,
+    "release_after_cancel": false,
+    "public_before_cancel": {
+      "evidence_ref": "frame-000314.npz",
+      "tcp_xyz": [
+        0.721131371818657,
+        -0.061082549367691794,
+        0.03558482139578041
+      ],
+      "tcp_wxyz": [
+        0.01808144897222519,
+        -3.540515899658203e-05,
+        0.9998348951339722,
+        -0.0016504493542015553
+      ]
+    },
+    "post_cancel_probe": {
+      "id": "45887310e4e848bcaa2183a9b9d8f488",
+      "revision": 3,
+      "subgoal": "fresh-holding",
+      "code": "get_execution_state()\ncheck_holding(\"red cube\")",
+      "contract": null,
+      "precondition_results": [],
+      "api_attempts": [
+        {
+          "call_id": "034f4e24c7db499b9ce6e1fc79aea465",
+          "name": "get_execution_state",
+          "args": [],
+          "kwargs": {},
+          "status": "completed",
+          "result": {}
+        },
+        {
+          "call_id": "f2a38b103f344af1879ab3a2a1d7ee86",
+          "name": "check_holding",
+          "args": [
+            "red cube"
+          ],
+          "kwargs": {},
+          "status": "completed",
+          "result": {
+            "status": "verified"
+          }
+        }
+      ],
+      "execution": "completed",
+      "effect": "unknown",
+      "cancel_requested": false,
+      "verification_wait": {
+        "status": "ready",
+        "reason": "public_window_complete",
+        "action_step": 244,
+        "snapshot_age_seconds": 0.4469609260559082,
+        "snapshot_after_action": true,
+        "windows": [
+          {
+            "relation": "on",
+            "observed_window_steps": 20,
+            "required_window_steps": 20,
+            "first_step": 334,
+            "last_step": 354
+          }
+        ],
+        "evidence_ref": "frame-000354.npz",
+        "elapsed_seconds": 0.000502564013004303
+      },
+      "goal_verification": {
+        "status": "unknown",
+        "evidence": [
+          {
+            "status": "unknown",
+            "evidence_ref": "frame-000354.npz",
+            "captured_at": 1795111439.8152235,
+            "gripper_width_m": 0.04458116826557333,
+            "command": "closed",
+            "reason": "open_empty_gripper_not_confirmed"
+          },
+          {
+            "relation": [
+              "red cube",
+              "green cube"
+            ],
+            "samples": [
+              "unknown",
+              "unknown",
+              "unknown",
+              "unknown",
+              "unknown"
+            ],
+            "geometry": [],
+            "window_steps": 20,
+            "scope": "visible geometry after release; not contact truth"
+          }
+        ],
+        "evidence_ref": "frame-000354.npz",
+        "captured_at": 1795111439.8152235,
+        "control_step": 354
+      },
+      "stage_verification": {
+        "status": "unknown",
+        "reason": "No public postcondition declared"
+      }
+    },
+    "public_final": {
+      "status": "unknown",
+      "evidence": [
+        {
+          "status": "unknown",
+          "evidence_ref": "frame-000359.npz",
+          "captured_at": 1795111440.0651674,
+          "gripper_width_m": 0.04441837902416041,
+          "command": "closed",
+          "reason": "open_empty_gripper_not_confirmed"
+        },
+        {
+          "relation": [
+            "red cube",
+            "green cube"
+          ],
+          "samples": [
+            "unknown",
+            "unknown",
+            "unknown",
+            "unknown",
+            "unknown"
+          ],
+          "geometry": [],
+          "window_steps": 20,
+          "scope": "visible geometry after release; not contact truth"
+        }
+      ],
+      "evidence_ref": "frame-000359.npz",
+      "captured_at": 1795111440.0651674,
+      "control_step": 359
+    },
+    "goal": {
+      "on": [
+        "red cube",
+        "green cube"
+      ],
+      "empty_gripper": true
+    },
+    "closed": "closed",
+    "used": {
+      "decisions": 4,
+      "calls": 12,
+      "motion_steps": 119,
+      "idle_steps": 276,
+      "wall_seconds": 29.726199330063537
+    },
+    "source_unchanged": true
+  },
+  {
+    "mode": "goal_change",
+    "episode_id": "d81d10c8be5b2f16abaf553d308525a5",
+    "passed": true,
+    "coverage_reached": true,
+    "control_result": {
+      "stopped": true
+    },
+    "inspection_segment": {
+      "id": "2e876129ae264b5f89eccdf607366a82",
+      "revision": 3,
+      "subgoal": "inspect-support",
+      "code": "inspect_support(\"green cube\",\"red cube\")\nopen_gripper()",
+      "contract": null,
+      "precondition_results": [],
+      "api_attempts": [
+        {
+          "call_id": "32f516df7fa54231a38992c6bb718f26",
+          "name": "inspect_support",
+          "args": [
+            "green cube",
+            "red cube"
+          ],
+          "kwargs": {},
+          "status": "cancelled",
+          "feedback": {
+            "category": "cancelled",
+            "phase": "execution",
+            "api": "inspect_support",
+            "call_id": "32f516df7fa54231a38992c6bb718f26",
+            "message": "Cancelled or superseded goal",
+            "evidence": null,
+            "observation": {
+              "evidence_ref": "frame-000240.npz",
+              "captured_at": 1795111455.9720223,
+              "control_step": 240
+            },
+            "causal_status": "not_established"
+          }
+        }
+      ],
+      "execution": "cancelled",
+      "effect": "unknown",
+      "cancel_requested": true,
+      "evidence_acquisition": {
+        "status": "unknown",
+        "acquisition_id": "8e26db1634334f2f8521ef749c80e85b",
+        "revision": 3,
+        "support": "green cube",
+        "held_object": "red cube",
+        "reason": "Cancelled or superseded goal",
+        "before": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000215.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795111454.7206042,
+          "control_step": 215,
+          "reason": "support_not_visible"
+        },
+        "holding": {
+          "status": "verified",
+          "evidence": {
+            "state": "satisfied",
+            "object_name": "red cube",
+            "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+            "samples": [
+              {
+                "control_step": 225,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.11865147255010788,
+                "surface_tcp_distance_m": 0.02058577479533627,
+                "tcp_height_above_reference_m": 0.11681697027629899
+              },
+              {
+                "control_step": 230,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.11858629767960893,
+                "surface_tcp_distance_m": 0.020602644577634707,
+                "tcp_height_above_reference_m": 0.116816386114999
+              },
+              {
+                "control_step": 235,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.11856808606002817,
+                "surface_tcp_distance_m": 0.020834231846423062,
+                "tcp_height_above_reference_m": 0.11681595147918047
+              },
+              {
+                "control_step": 240,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.11849915981809728,
+                "surface_tcp_distance_m": 0.02117378046633064,
+                "tcp_height_above_reference_m": 0.11681566724638798
+              },
+              {
+                "control_step": 245,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.1184307114201307,
+                "surface_tcp_distance_m": 0.021572283281717185,
+                "tcp_height_above_reference_m": 0.11681548818002961
+              }
+            ],
+            "window_control_steps": 20,
+            "maximum_relative_surface_drift_m": 0.0012596907713184646,
+            "estimated_center_tcp_offset_xyz": [
+              0.01456220994579005,
+              0.0009018975916484859,
+              -0.01494974356874014
+            ],
+            "reference_tcp_wxyz": [
+              0.018086064606904984,
+              -3.600120544433594e-05,
+              0.9998349547386169,
+              -0.0016527804546058178
+            ],
+            "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+            "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+          }
+        },
+        "error_code": "CANCELLED",
+        "after": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000240.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795111455.9720223,
+          "control_step": 240,
+          "reason": "support_not_visible"
+        },
+        "actual_tcp_xyz": [
+          0.721133617517139,
+          -0.061082977338763916,
+          0.035600222096816625
+        ],
+        "actual_tcp_wxyz": [
+          0.01808609999716282,
+          -3.597140312194824e-05,
+          0.9998350739479065,
+          -0.0016527739353477955
+        ],
+        "views_used": 1,
+        "total_views_used": 1,
+        "evidence_ref": "frame-000240.npz",
+        "captured_at": 1795111455.9720223,
+        "elapsed_seconds": 1.3091733548790216,
+        "used_delta": {
+          "decisions": 0,
+          "calls": 2,
+          "motion_steps": 1,
+          "idle_steps": 25
+        }
+      },
+      "error": "Cancelled or superseded goal",
+      "feedback": {
+        "category": "cancelled",
+        "phase": "execution",
+        "api": "inspect_support",
+        "call_id": "32f516df7fa54231a38992c6bb718f26",
+        "message": "Cancelled or superseded goal",
+        "evidence": null,
+        "observation": {
+          "evidence_ref": "frame-000240.npz",
+          "captured_at": 1795111455.9720223,
+          "control_step": 240
+        },
+        "causal_status": "not_established"
+      },
+      "verification_wait": {
+        "status": "not_required"
+      },
+      "goal_verification": {
+        "status": "unknown",
+        "evidence": [
+          {
+            "status": "unknown",
+            "evidence_ref": "frame-000245.npz",
+            "captured_at": 1795111456.2208178,
+            "gripper_width_m": 0.04570122335068321,
+            "command": "closed",
+            "reason": "open_empty_gripper_not_confirmed"
+          },
+          {
+            "relation": [
+              "red cube",
+              "green cube"
+            ],
+            "samples": [
+              "unknown",
+              "unknown",
+              "unknown",
+              "unknown",
+              "unknown"
+            ],
+            "geometry": [],
+            "window_steps": 20,
+            "scope": "visible geometry after release; not contact truth"
+          }
+        ],
+        "evidence_ref": "frame-000245.npz",
+        "captured_at": 1795111456.2208178,
+        "control_step": 245
+      },
+      "stage_verification": {
+        "status": "unknown",
+        "reason": "No public postcondition declared"
+      }
+    },
+    "late_old_api_starts": [],
+    "view_count": 1,
+    "release_after_cancel": false,
+    "old_revision_rejected": true,
+    "public_before_cancel": {
+      "evidence_ref": "frame-000240.npz",
+      "tcp_xyz": [
+        0.721133617517139,
+        -0.061082977338763916,
+        0.035600222096816625
+      ],
+      "tcp_wxyz": [
+        0.01808609999716282,
+        -3.597140312194824e-05,
+        0.9998350739479065,
+        -0.0016527739353477955
+      ]
+    },
+    "post_cancel_probe": {
+      "id": "f84db7ff9b53433e9ca7551a9514e8dd",
+      "revision": 4,
+      "subgoal": "fresh-holding",
+      "code": "get_execution_state()\ncheck_holding(\"red cube\")",
+      "contract": null,
+      "precondition_results": [],
+      "api_attempts": [
+        {
+          "call_id": "80d000e5dbd248fa82a83625d4568187",
+          "name": "get_execution_state",
+          "args": [],
+          "kwargs": {},
+          "status": "completed",
+          "result": {}
+        },
+        {
+          "call_id": "b0e2a9129aff4c55a59adb2039a2bf1b",
+          "name": "check_holding",
+          "args": [
+            "red cube"
+          ],
+          "kwargs": {},
+          "status": "completed",
+          "result": {
+            "status": "verified"
+          }
+        }
+      ],
+      "execution": "completed",
+      "effect": "verified",
+      "cancel_requested": false,
+      "verification_wait": {
+        "status": "ready",
+        "reason": "public_window_complete",
+        "action_step": 168,
+        "snapshot_age_seconds": 0.4395437240600586,
+        "snapshot_after_action": true,
+        "windows": [
+          {
+            "relation": "holding",
+            "observed_window_steps": 25,
+            "required_window_steps": 20,
+            "first_step": 250,
+            "last_step": 275
+          }
+        ],
+        "evidence_ref": "frame-000275.npz",
+        "elapsed_seconds": 0.0004900449421256781
+      },
+      "goal_verification": {
+        "status": "verified",
+        "evidence": [
+          {
+            "state": "satisfied",
+            "object_name": "red cube",
+            "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+            "samples": [
+              {
+                "control_step": 250,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.11758935523231934,
+                "surface_tcp_distance_m": 0.021498346850030506,
+                "tcp_height_above_reference_m": 0.11606998850937976
+              },
+              {
+                "control_step": 255,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.11759021162261873,
+                "surface_tcp_distance_m": 0.02183694818157344,
+                "tcp_height_above_reference_m": 0.116147201575787
+              },
+              {
+                "control_step": 260,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.11756540077223065,
+                "surface_tcp_distance_m": 0.021998723280349415,
+                "tcp_height_above_reference_m": 0.11618823815564443
+              },
+              {
+                "control_step": 265,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.11751104445651364,
+                "surface_tcp_distance_m": 0.02202325742995316,
+                "tcp_height_above_reference_m": 0.11620515931225323
+              },
+              {
+                "control_step": 270,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.1174524061892997,
+                "surface_tcp_distance_m": 0.022004841746789197,
+                "tcp_height_above_reference_m": 0.11621196804449956
+              },
+              {
+                "control_step": 275,
+                "evidence": "holding_supported",
+                "visible_surface_lift_m": 0.1173834423019045,
+                "surface_tcp_distance_m": 0.02228564800301313,
+                "tcp_height_above_reference_m": 0.11621345812755877
+              }
+            ],
+            "window_control_steps": 25,
+            "maximum_relative_surface_drift_m": 0.0009239731841517812,
+            "estimated_center_tcp_offset_xyz": [
+              0.015259449789711499,
+              0.001160245580671515,
+              -0.015041089128633512
+            ],
+            "reference_tcp_wxyz": [
+              0.01733691245317459,
+              0.004275470972061157,
+              0.9998387694358826,
+              0.0017659179866313934
+            ],
+            "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+            "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+          }
+        ],
+        "evidence_ref": "frame-000275.npz",
+        "captured_at": 1795111457.7250931,
+        "control_step": 275
+      },
+      "stage_verification": {
+        "status": "unknown",
+        "reason": "No public postcondition declared"
+      }
+    },
+    "public_final": {
+      "status": "verified",
+      "evidence": [
+        {
+          "state": "satisfied",
+          "object_name": "red cube",
+          "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+          "samples": [
+            {
+              "control_step": 250,
+              "evidence": "holding_supported",
+              "visible_surface_lift_m": 0.11758935523231934,
+              "surface_tcp_distance_m": 0.021498346850030506,
+              "tcp_height_above_reference_m": 0.11606998850937976
+            },
+            {
+              "control_step": 255,
+              "evidence": "holding_supported",
+              "visible_surface_lift_m": 0.11759021162261873,
+              "surface_tcp_distance_m": 0.02183694818157344,
+              "tcp_height_above_reference_m": 0.116147201575787
+            },
+            {
+              "control_step": 260,
+              "evidence": "holding_supported",
+              "visible_surface_lift_m": 0.11756540077223065,
+              "surface_tcp_distance_m": 0.021998723280349415,
+              "tcp_height_above_reference_m": 0.11618823815564443
+            },
+            {
+              "control_step": 265,
+              "evidence": "holding_supported",
+              "visible_surface_lift_m": 0.11751104445651364,
+              "surface_tcp_distance_m": 0.02202325742995316,
+              "tcp_height_above_reference_m": 0.11620515931225323
+            },
+            {
+              "control_step": 270,
+              "evidence": "holding_supported",
+              "visible_surface_lift_m": 0.1174524061892997,
+              "surface_tcp_distance_m": 0.022004841746789197,
+              "tcp_height_above_reference_m": 0.11621196804449956
+            },
+            {
+              "control_step": 275,
+              "evidence": "holding_supported",
+              "visible_surface_lift_m": 0.1173834423019045,
+              "surface_tcp_distance_m": 0.02228564800301313,
+              "tcp_height_above_reference_m": 0.11621345812755877
+            }
+          ],
+          "window_control_steps": 25,
+          "maximum_relative_surface_drift_m": 0.0009239731841517812,
+          "estimated_center_tcp_offset_xyz": [
+            0.015259449789711499,
+            0.001160245580671515,
+            -0.015041089128633512
+          ],
+          "reference_tcp_wxyz": [
+            0.01733691245317459,
+            0.004275470972061157,
+            0.9998387694358826,
+            0.0017659179866313934
+          ],
+          "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+          "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+        }
+      ],
+      "evidence_ref": "frame-000275.npz",
+      "captured_at": 1795111457.7250931,
+      "control_step": 275
+    },
+    "goal": {
+      "holding": "red cube"
+    },
+    "closed": "closed",
+    "used": {
+      "decisions": 4,
+      "calls": 12,
+      "motion_steps": 120,
+      "idle_steps": 196,
+      "wall_seconds": 17.511297835968435
+    },
+    "source_unchanged": true
+  }
+]

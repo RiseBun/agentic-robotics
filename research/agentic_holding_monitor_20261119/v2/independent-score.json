@@ -1,0 +1,108 @@
+{
+  "job": 20764,
+  "trials": [
+    {
+      "mode": "no_fault",
+      "episode_id": "565811c2f6cef5ac18a0bcf9dca754f3",
+      "diagnosis_passed": true,
+      "physical_outcome": {
+        "status": "verified",
+        "sample_count": 3,
+        "span_seconds": 1.001981258392334,
+        "values": [
+          true,
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_final": "verified",
+      "false_completion": false,
+      "monitor_triggered": false,
+      "hold_confirmed": false,
+      "injected_fault_to_detection_seconds": null,
+      "first_private_failure_sample_to_detection_seconds": null,
+      "monitor_to_hold_seconds": null,
+      "old_decision_rejected": null,
+      "late_probe_actions": 1,
+      "reset_count": 1,
+      "source_unchanged": true,
+      "used": {
+        "decisions": 3,
+        "calls": 9,
+        "motion_steps": 113,
+        "idle_steps": 344,
+        "wall_seconds": 30.692665613023564
+      }
+    },
+    {
+      "mode": "actuator_release",
+      "episode_id": "7afae2a5d262a950bf251d0e51aedcf9",
+      "diagnosis_passed": true,
+      "physical_outcome": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5495727062225342,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_final": "failed",
+      "false_completion": false,
+      "monitor_triggered": true,
+      "hold_confirmed": true,
+      "injected_fault_to_detection_seconds": 2.0873188972473145,
+      "first_private_failure_sample_to_detection_seconds": 1.6607210636138916,
+      "monitor_to_hold_seconds": 0.04095520009286702,
+      "old_decision_rejected": true,
+      "late_probe_actions": 0,
+      "reset_count": 1,
+      "source_unchanged": true,
+      "used": {
+        "decisions": 3,
+        "calls": 8,
+        "motion_steps": 113,
+        "idle_steps": 172,
+        "wall_seconds": 16.030490215867758
+      }
+    },
+    {
+      "mode": "red_pixels_missing",
+      "episode_id": "1be2c716a0a5e62700536a7fc783b1e9",
+      "diagnosis_passed": true,
+      "physical_outcome": {
+        "status": "verified",
+        "sample_count": 3,
+        "span_seconds": 1.1011910438537598,
+        "values": [
+          true,
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_final": "unknown",
+      "false_completion": false,
+      "monitor_triggered": false,
+      "hold_confirmed": false,
+      "injected_fault_to_detection_seconds": null,
+      "first_private_failure_sample_to_detection_seconds": null,
+      "monitor_to_hold_seconds": null,
+      "old_decision_rejected": null,
+      "late_probe_actions": 1,
+      "reset_count": 1,
+      "source_unchanged": true,
+      "used": {
+        "decisions": 3,
+        "calls": 9,
+        "motion_steps": 113,
+        "idle_steps": 236,
+        "wall_seconds": 19.20468518906273
+      }
+    }
+  ],
+  "scorer_sha256": "67140030bb9ff5654ea0a7c010ec90b1407caafd3c6db10d3a93726bd0a33a89",
+  "scope": "Three injected-fault/fixed-controller physical diagnoses, one seed; not natural slip, collision or robot-hardware evidence"
+}

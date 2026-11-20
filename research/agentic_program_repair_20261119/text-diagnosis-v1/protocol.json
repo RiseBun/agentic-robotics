@@ -1,0 +1,16 @@
+{
+  "source_episode": "32b95e94629045b3bfdeabeafda09ff9",
+  "model": "gpt-5.6-sol",
+  "conditions": [
+    "compact",
+    "full_text"
+  ],
+  "runs_each": 1,
+  "original_full_image_result": "unchanged rejected code; guarded before API",
+  "no_runtime_connection": true,
+  "scope": "Text-only engineering capability diagnosis; no robot execution, no causal or success-rate claim",
+  "requests_sha256": {
+    "compact": "f7857fed68a58d43ceddda6c3cb1ff0d733cac0c8b2eae3495b962bb80d046b4",
+    "full_text": "3e97e48304fc0e2ddfadc0d235143dca8e567fbad994ced06b876c91e7819fa5"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schedule": [
+    {
+      "pair_id": "stack-s70",
+      "task": "cube_stack",
+      "seed": 70,
+      "variant": "recoverable"
+    },
+    {
+      "pair_id": "stack-s70",
+      "task": "cube_stack",
+      "seed": 70,
+      "variant": "occluded"
+    }
+  ],
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "controller": "product model from initial scene; no fixed preparation or handoff",
+  "fault": "one actual actuator release for thirty steps, scheduled ten steps after first verified red hold and idle",
+  "occluded": "mask red public RGB-D in both cameras after monitor hold confirmation; never clear automatically",
+  "budgets": {
+    "decisions": 12,
+    "calls": 40,
+    "motion_steps": 1500,
+    "wall_seconds": 300
+  },
+  "experience": "disabled",
+  "admission": "retain all outcomes, no reset/replay; private scoring only after both episodes closed",
+  "limitations": [
+    "Two fault conditions once each; no algorithm comparator or statistical claim",
+    "Injected actuator/sensor faults, not natural slip or collision",
+    "Actual model/thinking/action phase at detection audited from events, not assumed"
+  ],
+  "purpose": "Recovery progress regression using the same historical seed 70; two diagnostic conditions, not an algorithm comparator",
+  "changes": [
+    "authoritative per-segment public API attempts",
+    "whole-segment name preflight",
+    "new grasp invalidates prior failed grasp evidence",
+    "task-fact recovery context and repeated-attempt guard",
+    "separate model and system assistance origin; owner-confirmed hold before assistance"
+  ],
+  "progression": "frame/time changes do not count; visible public centers quantized to centimetres for repetition only, never verification",
+  "guard_scope": "exact failed code, repeated observe/finish; does not prove semantic equivalence of distinct Python programs"
+}

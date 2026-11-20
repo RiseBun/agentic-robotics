@@ -1,0 +1,21 @@
+{
+  "tasks": [
+    "cube_restack"
+  ],
+  "seed": 86,
+  "repeats": 1,
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "source_root": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_program_repair_20261119\\v1\\source",
+  "original_freeze_sha256": "f244a22f4717f821a4043dca41cabf0213984fcbb9e483b5d5dab7d142771037",
+  "batch_sha256": "fae28198bf7499d852db5d30c8abf0675b1e9559c99361adfee83225c01b76a5",
+  "limitations": [
+    "New trial, not a resume or replacement for the interrupted seed-85 case",
+    "Same frozen policy and Runtime; no paired baseline or statistical claim",
+    "No reset or budget clearing within the task; score only after authoritative close"
+  ]
+}

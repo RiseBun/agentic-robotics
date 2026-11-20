@@ -1,0 +1,245 @@
+{
+  "files": [
+    {
+      "path": "cap-runtime/agentic_cap/__init__.py",
+      "sha256": "5cb4b242593ae0ce5b128a906afdeb25197722c581f1817c12f673763f291558"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/active_evidence.py",
+      "sha256": "299d609eb946a6b75d3c74c23419dee9105a4dea1c27241c5822a0b5df89ecb4"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/cap_backend.py",
+      "sha256": "1bae4e3d795dd7ff94b4364e4eb49df16e9c173d487913854692960b6cd3c3f6"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/core.py",
+      "sha256": "841ce4e3fba224aa8e9e85d8fd15725dc6ab9ffb5f2a4dc5eb8edd5b5fac6968"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/evaluator.py",
+      "sha256": "3cdb33f44881a31dabd1584ddb3aa630a6514b331b5e605b1492abf210431b89"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/feedback.py",
+      "sha256": "94ac8ac92cbb1a701a496863406ee2a6d23c1d624e50fdc1332d400ae6d89efe"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/fixture.py",
+      "sha256": "01573511535ee1fa94e388cacfe5c10abe8cd5bee9963c4ba260affa81d9fed3"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/holding.py",
+      "sha256": "c67e0e703440cbecabf731768b5995444c795149cef751f0383824c90125ad81"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/interpreter.py",
+      "sha256": "c5b3cb191a71e6e5ca4c00689d74d82df8670046885f9ca56353073e77c5a6bc"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/placement_evidence.py",
+      "sha256": "d798feb237223ea9379b0902cd4e4fb1211be0065473e622dd7229e5e5538bc5"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/public_sensors.py",
+      "sha256": "723ea8bfe84826e9f78b7be08204963a6368822c4f72b82860f28bca37835713"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/public_views.py",
+      "sha256": "1ed92584d3518bdee3a22b15a98348fbda94e405ae2e9c81932dc60a55507853"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/safe_retreat.py",
+      "sha256": "a8808362bee32500e403c5e081a9412613c11bec35e916cc221be10688dbc381"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/server.py",
+      "sha256": "0d462a44c4b475b74962ceea4cf5a1b38d920caaf1b8541abfbbb1a4e8d191c7"
+    },
+    {
+      "path": "cap-runtime/experiments/active_view_trial.py",
+      "sha256": "9f816bf5e3b320ce0cc7dcd4f49c1a7807283348075b4a4d1bb6ac355f513399"
+    },
+    {
+      "path": "cap-runtime/experiments/episode_deadline_trial.py",
+      "sha256": "a4593c5eb97d77ae9a8ee8eb49290cda5c1d27116957f13a60ee0085f85a08f3"
+    },
+    {
+      "path": "cap-runtime/experiments/placement_inspection_trial.py",
+      "sha256": "5d62ec4fc1dd0c42e8583e1bdc9335bfb0c0e562768f286d90d0e917a2e3cc5f"
+    },
+    {
+      "path": "cap-runtime/experiments/placement_view_trial.py",
+      "sha256": "dee25aadf614836e7a8059e3f77cf94730259d620195663c61441e708396eaca"
+    },
+    {
+      "path": "cap-runtime/experiments/public_cube_geometry.py",
+      "sha256": "d13e9c63af1acb4d3126cb7a5feaecc6edd312d84b9a8318856007fa1e4a71b2"
+    },
+    {
+      "path": "cap-runtime/experiments/release_camera_probe.py",
+      "sha256": "550cbca8d50b9a3ebbf1dc762e6b16136c80d7e928f29ea3b43fa16b05263693"
+    },
+    {
+      "path": "cap-runtime/experiments/release_second_view_trial.py",
+      "sha256": "f23f513e292ca944bb487786941653620e350ab9abc9c636d9c0c6316adc8f4c"
+    },
+    {
+      "path": "cap-runtime/experiments/replay_public_geometry.py",
+      "sha256": "bbe89932bbf937d825b541be72c2751b2edd73afa12f5b0668a610b10a0b16d8"
+    },
+    {
+      "path": "cap-runtime/experiments/retreat_model_server.py",
+      "sha256": "f63d18daa5020d4ec1663f839950c59c96fa195e163107125398114909e2c0eb"
+    },
+    {
+      "path": "cap-runtime/experiments/run_active_evidence_smoke.py",
+      "sha256": "4c167189e18f09671a70f1e4e82fc49ddb3107e55d058d36ee966abb248b3e41"
+    },
+    {
+      "path": "cap-runtime/experiments/runtime_support_trial.py",
+      "sha256": "614e9bd7bb8b8772fe0c189e824b8d4f3dab16302735d60fb43bed1292971146"
+    },
+    {
+      "path": "cap-runtime/experiments/score_active_view.py",
+      "sha256": "aa495bb8138a23dd3d441a00975e798480cc146f614a4cf5bf37950fa489e288"
+    },
+    {
+      "path": "cap-runtime/experiments/score_evidence_campaign.py",
+      "sha256": "e5b3a3db41859d9c188baf1494f5be6853da4dff35b85714d8a6bad2c44ce97b"
+    },
+    {
+      "path": "cap-runtime/experiments/score_experience_trial.py",
+      "sha256": "6ef74341cae79a97d007410d0cb926d4909dd824005d6dde4a97b4e8958cbf53"
+    },
+    {
+      "path": "cap-runtime/experiments/score_placement_diagnosis.py",
+      "sha256": "914bca37acf7dc0569035036fb6c732fcd50cb31b24adb3a874a724b014e0298"
+    },
+    {
+      "path": "cap-runtime/experiments/score_public_geometry.py",
+      "sha256": "ae3eadc2937153a4463b31a9915abf4c182b9213eb8040b9e389ab793c69cf72"
+    },
+    {
+      "path": "cap-runtime/experiments/score_retreat_model.py",
+      "sha256": "2293d4f9bb822ae5fa5d71ef156635f422b4e066500e38cb9e1b1bad0320a4ac"
+    },
+    {
+      "path": "cap-runtime/experiments/score_vertical_retreat.py",
+      "sha256": "81c066a9dbd6a3503b5ae2964e25c6ff42f307afdde1dacdd1b42d621aefc41d"
+    },
+    {
+      "path": "cap-runtime/experiments/vertical_retreat_trial.py",
+      "sha256": "ef4d4e6c771148e9d1b9147bf470d18136cd92c19f1cae0345bce394c124cb7f"
+    },
+    {
+      "path": "runtime/application-service.mjs",
+      "sha256": "c0f9c5a4d8a70ac8e057fb43ad839cbd089f11104e70eb15f43f56ad57067d4d"
+    },
+    {
+      "path": "runtime/assistant-output.mjs",
+      "sha256": "8a32acf455595cdab717ad601afd297c1408305e7928f89e3456059c8a0e69bb"
+    },
+    {
+      "path": "runtime/channels.mjs",
+      "sha256": "f1dfd21475c8479b5aae443d53971fdacd057fbf8903b84a220190b907b2c897"
+    },
+    {
+      "path": "runtime/config-store.mjs",
+      "sha256": "7f6e467ce7c867e69281e6317dfd32db5b62b86d943fb59f10f808fb0b7edaf7"
+    },
+    {
+      "path": "runtime/model-providers/errors.mjs",
+      "sha256": "0e1ea0819c01bbbbf6076914fbd24a4f7aa918680e809ba57853f6d304d98c29"
+    },
+    {
+      "path": "runtime/model-providers/openai-responses.mjs",
+      "sha256": "1769fb8ae0b39ddaf88eca7453670cebd7614d9153526479feb3bd884cf20529"
+    },
+    {
+      "path": "runtime/model-providers/registry.mjs",
+      "sha256": "0ed1cf36f4182acdcb60d025071c6e757029117cfa65db552b21ae49b955729d"
+    },
+    {
+      "path": "runtime/package-lock.json",
+      "sha256": "f38eabb5b6f7101f11860feb75d8879cb6278e6b68f2f30a61a26c73fb6b4269"
+    },
+    {
+      "path": "runtime/package.json",
+      "sha256": "3ec0950ab027df7ca807d50525b474a8bf4ef76f6d2895c813c5e2a29af50ebc"
+    },
+    {
+      "path": "runtime/record-database.mjs",
+      "sha256": "16dbc5b36fe1081c7a0b5d95dc654691d73ac92eded485b8d8e698a7aaa34483"
+    },
+    {
+      "path": "runtime/robot/application.mjs",
+      "sha256": "91707646ed256b8ee7a948e2786d2a19e7053152bfca55b5a93169853f9a9b3d"
+    },
+    {
+      "path": "runtime/robot/coordinator.mjs",
+      "sha256": "957fc4607c33ea6d582b08b52e2429aab21c31928360cd3d3f4ba21a0af46573"
+    },
+    {
+      "path": "runtime/robot/deadline.mjs",
+      "sha256": "1309b056293b86cfa4f7b36a89af598cbaedd0a96e1e40ee379ec013559508ea"
+    },
+    {
+      "path": "runtime/robot/experience.mjs",
+      "sha256": "4f591588009f81ef66e32f3ce94b8ac4da01171ec18eb86977458ac194f8e9cb"
+    },
+    {
+      "path": "runtime/robot/model.mjs",
+      "sha256": "ca41e14db28a701e12d6d041eb541f0f5a7e3f17497b5b1773ea66443aa7e4ba"
+    },
+    {
+      "path": "runtime/robot/runtime-client.mjs",
+      "sha256": "61cc326e01ab7629a5aab1756bab29b5cf19a4cf5a18561dbb4a9f57ace50e64"
+    },
+    {
+      "path": "runtime/scripts/campaign-host.cjs",
+      "sha256": "5aef3904c048c550e2162c10c9cc0108fa87f8b1a3894e966649acff0d360497"
+    },
+    {
+      "path": "runtime/scripts/export-campaign.mjs",
+      "sha256": "15c180c57d839332e7bc8575147dd267a34d0d5c51dfec5edc76c5fbfe35669b"
+    },
+    {
+      "path": "runtime/scripts/export-robot-live.mjs",
+      "sha256": "bcdc115a7764ddc7ce389c3931b1ee803561635bdf4bcf65cf27fd02eea583c8"
+    },
+    {
+      "path": "runtime/scripts/import-repair-experience.mjs",
+      "sha256": "7c098c3ac1b985325c13c1a265f0d9388ab7d48d0bb8548614335e9175e77426"
+    },
+    {
+      "path": "runtime/scripts/retreat-model-diagnosis.mjs",
+      "sha256": "7e0226ba391c0a4f06e403d62e4fbf23bc531d72e0dbaae057b0fa8d6f88610a"
+    },
+    {
+      "path": "runtime/scripts/robot-campaign.mjs",
+      "sha256": "bcf655eb9793b4ed9f7cc530e9a73bf5be0de5b407e86054fce256ccd551e57c"
+    },
+    {
+      "path": "runtime/scripts/smoke-robot-desktop.mjs",
+      "sha256": "2a01f038cf7e414d4c5ebefa468d332fc132f6e6c84e6be44406e7e6baf724d7"
+    },
+    {
+      "path": "runtime/scripts/stage-robot-runtime.mjs",
+      "sha256": "61dc05349b607b0e5a3413dfb54e25ea78f325bfc4092ea7fbf5ccdadc020885"
+    },
+    {
+      "path": "runtime/scripts/trial-robot-live.mjs",
+      "sha256": "dd358ecbe8f6ff7e99ca8097cdc3136ca50b25a939274b808068c298e8b1d346"
+    },
+    {
+      "path": "runtime/secret-store.mjs",
+      "sha256": "6a7e97be4bb39d791d977dff2dbe92820c886580b869274da4f291fff7c626ba"
+    },
+    {
+      "path": "runtime/utility-entry.mjs",
+      "sha256": "27002a0cea308f552e277859c70d1f8c8684e03b13477a81f1407d11d257cd0e"
+    }
+  ],
+  "archive_sha256": "71e893617ac2b5090fc65f579149cb1fa677d4168c77f1933d95d30c8f6b5a8e"
+}

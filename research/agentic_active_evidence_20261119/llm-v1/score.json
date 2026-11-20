@@ -1,0 +1,413 @@
+{
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "groups": {
+    "baseline": {
+      "trials": 4,
+      "independent_physical_successes": 1,
+      "verified_system_successes": 1,
+      "false_completions": 0,
+      "unknown_independent": 0,
+      "inspect_support_calls": 0,
+      "unknown_to_available": 0
+    },
+    "candidate": {
+      "trials": 4,
+      "independent_physical_successes": 4,
+      "verified_system_successes": 4,
+      "false_completions": 0,
+      "unknown_independent": 0,
+      "inspect_support_calls": 2,
+      "unknown_to_available": 2
+    }
+  },
+  "rows": [
+    {
+      "pair_id": "stack-s61",
+      "variant": "baseline",
+      "task": "cube_stack",
+      "seed": 61,
+      "episode_id": "358b783ecbc45bb8da4cbb156fd5632a",
+      "outcome": "needs_attention",
+      "independent_physical": "failed",
+      "independent_evidence": {
+        "status": "failed",
+        "sample_count": 3,
+        "span_seconds": 1.0506033897399902,
+        "values": [
+          false,
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "unknown",
+      "false_completion": false,
+      "verified_system_success": false,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 12,
+        "calls": 17,
+        "motion_steps": 323,
+        "idle_steps": 3036,
+        "wall_seconds": 175.7567306451965
+      },
+      "total_seconds": 185.17900013923645,
+      "inspect_support_calls": 0,
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 1,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 0,
+      "successful_open_calls": 2,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "stack-s61",
+      "variant": "candidate",
+      "task": "cube_stack",
+      "seed": 61,
+      "episode_id": "9859c873165b9b2e624274787baf7bd7",
+      "outcome": "completed",
+      "independent_physical": "verified",
+      "independent_evidence": {
+        "status": "verified",
+        "sample_count": 3,
+        "span_seconds": 1.0573761463165283,
+        "values": [
+          true,
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "verified",
+      "false_completion": false,
+      "verified_system_success": true,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 5,
+        "calls": 17,
+        "motion_steps": 245,
+        "idle_steps": 1304,
+        "wall_seconds": 85.56168401194736
+      },
+      "total_seconds": 93.9980001449585,
+      "inspect_support_calls": 1,
+      "acquisition_results": 1,
+      "unknown_acquisitions": 1,
+      "unknown_to_available": 1,
+      "unknown_to_available_ratio": 1.0,
+      "view_attempts": 2,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 0,
+      "acquisition_costs": [
+        {
+          "status": "available",
+          "used": {
+            "decisions": 0,
+            "calls": 5,
+            "motion_steps": 36,
+            "idle_steps": 71
+          },
+          "wall_seconds": 5.328581692883745
+        }
+      ],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 0,
+      "successful_open_calls": 2,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "restack-s61",
+      "variant": "candidate",
+      "task": "cube_restack",
+      "seed": 61,
+      "episode_id": "6bba04c49c4176663b56e961651e6541",
+      "outcome": "completed",
+      "independent_physical": "verified",
+      "independent_evidence": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.500044584274292,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "verified",
+      "false_completion": false,
+      "verified_system_success": true,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 7,
+        "calls": 22,
+        "motion_steps": 386,
+        "idle_steps": 1646,
+        "wall_seconds": 104.51606139610521
+      },
+      "total_seconds": 113.09800004959106,
+      "inspect_support_calls": 0,
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 0,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 0,
+      "successful_open_calls": 4,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "restack-s61",
+      "variant": "baseline",
+      "task": "cube_restack",
+      "seed": 61,
+      "episode_id": "9b048dedd565c21bd83d8ea1a7173ad5",
+      "outcome": "needs_attention",
+      "independent_physical": "failed",
+      "independent_evidence": {
+        "status": "failed",
+        "sample_count": 3,
+        "span_seconds": 1.0017733573913574,
+        "values": [
+          false,
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "unknown",
+      "false_completion": false,
+      "verified_system_success": false,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 12,
+        "calls": 21,
+        "motion_steps": 341,
+        "idle_steps": 2084,
+        "wall_seconds": 123.95104526099749
+      },
+      "total_seconds": 132.4980001449585,
+      "inspect_support_calls": 0,
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 2,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 0,
+      "successful_open_calls": 3,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "stack-s62",
+      "variant": "baseline",
+      "task": "cube_stack",
+      "seed": 62,
+      "episode_id": "d34f75878111c438d071f0c52bcbc79b",
+      "outcome": "completed",
+      "independent_physical": "verified",
+      "independent_evidence": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.5012600421905518,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "verified",
+      "false_completion": false,
+      "verified_system_success": true,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 4,
+        "calls": 10,
+        "motion_steps": 202,
+        "idle_steps": 742,
+        "wall_seconds": 48.94155267812312
+      },
+      "total_seconds": 56.83500003814697,
+      "inspect_support_calls": 0,
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 0,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 0,
+      "successful_open_calls": 2,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "stack-s62",
+      "variant": "candidate",
+      "task": "cube_stack",
+      "seed": 62,
+      "episode_id": "34f6c63b2fb89affa9670d7c4f7c02bf",
+      "outcome": "completed",
+      "independent_physical": "verified",
+      "independent_evidence": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.5028173923492432,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "verified",
+      "false_completion": false,
+      "verified_system_success": true,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 4,
+        "calls": 11,
+        "motion_steps": 194,
+        "idle_steps": 720,
+        "wall_seconds": 47.58207429200411
+      },
+      "total_seconds": 54.63499999046326,
+      "inspect_support_calls": 0,
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 0,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 0,
+      "successful_open_calls": 2,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "restack-s62",
+      "variant": "candidate",
+      "task": "cube_restack",
+      "seed": 62,
+      "episode_id": "a65a37d9673189f470339265c4f76b4f",
+      "outcome": "completed",
+      "independent_physical": "verified",
+      "independent_evidence": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.5015029907226562,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "verified",
+      "false_completion": false,
+      "verified_system_success": true,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 8,
+        "calls": 23,
+        "motion_steps": 403,
+        "idle_steps": 1742,
+        "wall_seconds": 108.96978936903179
+      },
+      "total_seconds": 116.78999996185303,
+      "inspect_support_calls": 1,
+      "acquisition_results": 1,
+      "unknown_acquisitions": 1,
+      "unknown_to_available": 1,
+      "unknown_to_available_ratio": 1.0,
+      "view_attempts": 1,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 0,
+      "acquisition_costs": [
+        {
+          "status": "available",
+          "used": {
+            "decisions": 0,
+            "calls": 3,
+            "motion_steps": 16,
+            "idle_steps": 50
+          },
+          "wall_seconds": 3.2576860019471496
+        }
+      ],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 0,
+      "successful_open_calls": 4,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    },
+    {
+      "pair_id": "restack-s62",
+      "variant": "baseline",
+      "task": "cube_restack",
+      "seed": 62,
+      "episode_id": "88a240b11a3f2a961b211eb01616dd04",
+      "outcome": "needs_attention",
+      "independent_physical": "failed",
+      "independent_evidence": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5391929149627686,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "autonomous_public": "unknown",
+      "false_completion": false,
+      "verified_system_success": false,
+      "additional_user_inputs": 0,
+      "used": {
+        "decisions": 12,
+        "calls": 26,
+        "motion_steps": 464,
+        "idle_steps": 2828,
+        "wall_seconds": 166.35054026008584
+      },
+      "total_seconds": 174.0809998512268,
+      "inspect_support_calls": 0,
+      "acquisition_results": 0,
+      "unknown_acquisitions": 0,
+      "unknown_to_available": 0,
+      "unknown_to_available_ratio": null,
+      "view_attempts": 0,
+      "duplicate_views_within_acquisition": 0,
+      "blocked_placement_attempts": 4,
+      "acquisition_costs": [],
+      "unknown_evidence_release_violations": null,
+      "recorded_release_gates": 0,
+      "successful_open_calls": 3,
+      "release_violation_audit": "Requires per-release public gate evidence; not inferred from missing errors"
+    }
+  ],
+  "scorer_sha256": "33c3ab5a44e8a5dafafc0ba71ebfa0f35c1973377a6e7c54242304b346d8bda9",
+  "limitations": [
+    "One trial per task/seed/condition; diagnostic only",
+    "Physical success concerns the recorded end window only",
+    "Missing per-release evidence is unscored, never assumed safe"
+  ]
+}

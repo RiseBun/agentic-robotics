@@ -1,0 +1,161 @@
+{
+  "rows": [
+    {
+      "mode": "retreat_recovers",
+      "episode_id": "80540b17e2b1b70fcce6c096f4089325",
+      "diagnosis_passed": false,
+      "error": "Runtime condition did not complete",
+      "release_denied": false,
+      "allowed_recorded_retreats": 0,
+      "gripper_calls_after_denial": 0,
+      "successful_gripper_changes_after_denial": [],
+      "holding_contact_proxy": {
+        "status": "unknown",
+        "sample_count": 0,
+        "scope": "bilateral finger contact proxy after release denial; not calibrated slip detection"
+      },
+      "acquisitions": [],
+      "interruption": null,
+      "stop_latencies": [],
+      "public_final": "unknown",
+      "original_task_complete": {
+        "status": "failed",
+        "sample_count": 3,
+        "span_seconds": 1.0715761184692383,
+        "values": [
+          false,
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "reset_count": 1,
+      "used": {
+        "decisions": 4,
+        "calls": 9,
+        "motion_steps": 155,
+        "idle_steps": 358,
+        "wall_seconds": 33.49511424591765
+      }
+    },
+    {
+      "mode": "persistent_unknown",
+      "episode_id": "ba225b9895eafb5ed01ea5320527c9d9",
+      "diagnosis_passed": false,
+      "error": "Runtime condition did not complete",
+      "release_denied": false,
+      "allowed_recorded_retreats": 0,
+      "gripper_calls_after_denial": 0,
+      "successful_gripper_changes_after_denial": [],
+      "holding_contact_proxy": {
+        "status": "unknown",
+        "sample_count": 0,
+        "scope": "bilateral finger contact proxy after release denial; not calibrated slip detection"
+      },
+      "acquisitions": [],
+      "interruption": null,
+      "stop_latencies": [],
+      "public_final": "unknown",
+      "original_task_complete": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5491127967834473,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "reset_count": 1,
+      "used": {
+        "decisions": 4,
+        "calls": 9,
+        "motion_steps": 155,
+        "idle_steps": 270,
+        "wall_seconds": 22.997860380914062
+      }
+    },
+    {
+      "mode": "cancel_retreat",
+      "episode_id": "34335cf42e144aaf93d08c252d445437",
+      "diagnosis_passed": false,
+      "error": "Runtime condition did not complete",
+      "release_denied": false,
+      "allowed_recorded_retreats": 0,
+      "gripper_calls_after_denial": 0,
+      "successful_gripper_changes_after_denial": [],
+      "holding_contact_proxy": {
+        "status": "unknown",
+        "sample_count": 0,
+        "scope": "bilateral finger contact proxy after release denial; not calibrated slip detection"
+      },
+      "acquisitions": [],
+      "interruption": null,
+      "stop_latencies": [],
+      "public_final": "unknown",
+      "original_task_complete": {
+        "status": "failed",
+        "sample_count": 3,
+        "span_seconds": 1.0480847358703613,
+        "values": [
+          false,
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "reset_count": 1,
+      "used": {
+        "decisions": 4,
+        "calls": 9,
+        "motion_steps": 155,
+        "idle_steps": 267,
+        "wall_seconds": 22.832428124034777
+      }
+    },
+    {
+      "mode": "change_goal_retreat",
+      "episode_id": "05a28dfea5f90feb060b3a1307ec116a",
+      "diagnosis_passed": false,
+      "error": "Runtime condition did not complete",
+      "release_denied": false,
+      "allowed_recorded_retreats": 0,
+      "gripper_calls_after_denial": 0,
+      "successful_gripper_changes_after_denial": [],
+      "holding_contact_proxy": {
+        "status": "unknown",
+        "sample_count": 0,
+        "scope": "bilateral finger contact proxy after release denial; not calibrated slip detection"
+      },
+      "acquisitions": [],
+      "interruption": null,
+      "stop_latencies": [],
+      "public_final": "unknown",
+      "original_task_complete": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5001845359802246,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "reset_count": 1,
+      "used": {
+        "decisions": 4,
+        "calls": 9,
+        "motion_steps": 155,
+        "idle_steps": 267,
+        "wall_seconds": 22.802780190017074
+      }
+    }
+  ],
+  "scope": "synthetic post-descent support RGB-D mask; fixed driver; recovery coverage, not benchmark",
+  "scorer_sha256": "e27333226de5b3e0786a2be1f142b3487ec548fe945c42e0dcbb4bc2a85f0cbb",
+  "limitations": [
+    "Synthetic occlusion, fixed driver, seen stack seed 62",
+    "Recovery protocol diagnosis; tasks intentionally remain holding, not a completion benchmark",
+    "Private task score follows recorded goals, including explicit goal changes"
+  ]
+}

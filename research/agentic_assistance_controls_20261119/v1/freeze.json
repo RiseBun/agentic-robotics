@@ -1,0 +1,176 @@
+{
+  "files": [
+    {
+      "path": "cap-runtime/agentic_cap/__init__.py",
+      "sha256": "5cb4b242593ae0ce5b128a906afdeb25197722c581f1817c12f673763f291558"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/active_evidence.py",
+      "sha256": "d802b0dd3373c142b2d32bbb1cd047605e570ac5590397d0c2e19f8affe01c20"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/cap_backend.py",
+      "sha256": "e09a566ae785c83aa02bc3b0b5b6bbd96f7869f08f329c6b01c472fa7f6eb414"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/core.py",
+      "sha256": "275113d573641f35dc6ada898a91f2a22635b0632059105417fcd4a27336a3fc"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/evaluator.py",
+      "sha256": "3cdb33f44881a31dabd1584ddb3aa630a6514b331b5e605b1492abf210431b89"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/feedback.py",
+      "sha256": "6ac25231e6761fd0dce750a306ef7fcbb91617bf68c3a9b6e6f96941fa7daf94"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/fixture.py",
+      "sha256": "01573511535ee1fa94e388cacfe5c10abe8cd5bee9963c4ba260affa81d9fed3"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/holding.py",
+      "sha256": "c67e0e703440cbecabf731768b5995444c795149cef751f0383824c90125ad81"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/holding_watchdog.py",
+      "sha256": "f1fdd660192f639298a95499a4bd97e252b0bae04dedf8c3f5b9161e7577dab4"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/interpreter.py",
+      "sha256": "09eda6de71e688d28c2acbbf833c06809d90e50e994458e11aff0b7eda770ef1"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/placement_evidence.py",
+      "sha256": "d798feb237223ea9379b0902cd4e4fb1211be0065473e622dd7229e5e5538bc5"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/public_sensors.py",
+      "sha256": "723ea8bfe84826e9f78b7be08204963a6368822c4f72b82860f28bca37835713"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/public_views.py",
+      "sha256": "1ed92584d3518bdee3a22b15a98348fbda94e405ae2e9c81932dc60a55507853"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/safe_retreat.py",
+      "sha256": "a8808362bee32500e403c5e081a9412613c11bec35e916cc221be10688dbc381"
+    },
+    {
+      "path": "cap-runtime/agentic_cap/server.py",
+      "sha256": "28e32a3122ace07a7be6188c0701ae1fb15cf9539597c75fd50840faecafc4e1"
+    },
+    {
+      "path": "runtime/application-service.mjs",
+      "sha256": "c0f9c5a4d8a70ac8e057fb43ad839cbd089f11104e70eb15f43f56ad57067d4d"
+    },
+    {
+      "path": "runtime/assistant-output.mjs",
+      "sha256": "8a32acf455595cdab717ad601afd297c1408305e7928f89e3456059c8a0e69bb"
+    },
+    {
+      "path": "runtime/channels.mjs",
+      "sha256": "f1dfd21475c8479b5aae443d53971fdacd057fbf8903b84a220190b907b2c897"
+    },
+    {
+      "path": "runtime/config-store.mjs",
+      "sha256": "7f6e467ce7c867e69281e6317dfd32db5b62b86d943fb59f10f808fb0b7edaf7"
+    },
+    {
+      "path": "runtime/model-providers/errors.mjs",
+      "sha256": "0e1ea0819c01bbbbf6076914fbd24a4f7aa918680e809ba57853f6d304d98c29"
+    },
+    {
+      "path": "runtime/model-providers/openai-responses.mjs",
+      "sha256": "1769fb8ae0b39ddaf88eca7453670cebd7614d9153526479feb3bd884cf20529"
+    },
+    {
+      "path": "runtime/model-providers/registry.mjs",
+      "sha256": "0ed1cf36f4182acdcb60d025071c6e757029117cfa65db552b21ae49b955729d"
+    },
+    {
+      "path": "runtime/package-lock.json",
+      "sha256": "f38eabb5b6f7101f11860feb75d8879cb6278e6b68f2f30a61a26c73fb6b4269"
+    },
+    {
+      "path": "runtime/package.json",
+      "sha256": "3ec0950ab027df7ca807d50525b474a8bf4ef76f6d2895c813c5e2a29af50ebc"
+    },
+    {
+      "path": "runtime/record-database.mjs",
+      "sha256": "16dbc5b36fe1081c7a0b5d95dc654691d73ac92eded485b8d8e698a7aaa34483"
+    },
+    {
+      "path": "runtime/robot/application.mjs",
+      "sha256": "91707646ed256b8ee7a948e2786d2a19e7053152bfca55b5a93169853f9a9b3d"
+    },
+    {
+      "path": "runtime/robot/coordinator.mjs",
+      "sha256": "83ca9af05a5e73a337e763812cae4a28a6a4da21e21d38d690c0be0df0f0e681"
+    },
+    {
+      "path": "runtime/robot/deadline.mjs",
+      "sha256": "1309b056293b86cfa4f7b36a89af598cbaedd0a96e1e40ee379ec013559508ea"
+    },
+    {
+      "path": "runtime/robot/experience.mjs",
+      "sha256": "ba52555182da8bc05b3bdb183cb91bea0b4fb675ea5c0f426d0c19167af9285d"
+    },
+    {
+      "path": "runtime/robot/model.mjs",
+      "sha256": "0a67a41168fe7f22a3ea67ab420f1e850b5b221bb8577b8394d830581400f313"
+    },
+    {
+      "path": "runtime/robot/recovery.mjs",
+      "sha256": "f6413d1f39e0144adf759f615c14b63d0eb5c5cd44f69290a993d8feba40e20e"
+    },
+    {
+      "path": "runtime/robot/runtime-client.mjs",
+      "sha256": "61cc326e01ab7629a5aab1756bab29b5cf19a4cf5a18561dbb4a9f57ace50e64"
+    },
+    {
+      "path": "runtime/scripts/campaign-host.cjs",
+      "sha256": "5aef3904c048c550e2162c10c9cc0108fa87f8b1a3894e966649acff0d360497"
+    },
+    {
+      "path": "runtime/scripts/export-campaign.mjs",
+      "sha256": "15c180c57d839332e7bc8575147dd267a34d0d5c51dfec5edc76c5fbfe35669b"
+    },
+    {
+      "path": "runtime/scripts/export-robot-live.mjs",
+      "sha256": "bcdc115a7764ddc7ce389c3931b1ee803561635bdf4bcf65cf27fd02eea583c8"
+    },
+    {
+      "path": "runtime/scripts/import-repair-experience.mjs",
+      "sha256": "7c098c3ac1b985325c13c1a265f0d9388ab7d48d0bb8548614335e9175e77426"
+    },
+    {
+      "path": "runtime/scripts/retreat-model-diagnosis.mjs",
+      "sha256": "7e0226ba391c0a4f06e403d62e4fbf23bc531d72e0dbaae057b0fa8d6f88610a"
+    },
+    {
+      "path": "runtime/scripts/robot-campaign.mjs",
+      "sha256": "2ce7a76fa79eb62e9a2675270e8d351c918de4f1cda5c5e02f79d2affed9fa57"
+    },
+    {
+      "path": "runtime/scripts/smoke-robot-desktop.mjs",
+      "sha256": "2a01f038cf7e414d4c5ebefa468d332fc132f6e6c84e6be44406e7e6baf724d7"
+    },
+    {
+      "path": "runtime/scripts/stage-robot-runtime.mjs",
+      "sha256": "61dc05349b607b0e5a3413dfb54e25ea78f325bfc4092ea7fbf5ccdadc020885"
+    },
+    {
+      "path": "runtime/scripts/trial-robot-live.mjs",
+      "sha256": "dd358ecbe8f6ff7e99ca8097cdc3136ca50b25a939274b808068c298e8b1d346"
+    },
+    {
+      "path": "runtime/secret-store.mjs",
+      "sha256": "6a7e97be4bb39d791d977dff2dbe92820c886580b869274da4f291fff7c626ba"
+    },
+    {
+      "path": "runtime/utility-entry.mjs",
+      "sha256": "27002a0cea308f552e277859c70d1f8c8684e03b13477a81f1407d11d257cd0e"
+    }
+  ]
+}

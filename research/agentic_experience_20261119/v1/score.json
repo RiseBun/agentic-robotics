@@ -1,0 +1,185 @@
+{
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "sources": "eec4d44f67fbbf5b5dc41d304f845a7768d1296196df83c7ec7119b13e59d50a",
+  "rows": [
+    {
+      "mode": "baseline",
+      "episode_id": "08c113259092762281c11bda88c3ca96",
+      "outcome": "needs_attention",
+      "independent_physical": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5005130767822266,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_at_decision": "unknown",
+      "false_completion": false,
+      "model_decisions": 2,
+      "decision_sequence": [
+        "run_code",
+        "run_code"
+      ],
+      "autonomous_retreats": 1,
+      "support_inspections": 0,
+      "support_available_after_retreat": true,
+      "acquisitions": [],
+      "views": 0,
+      "duplicate_views": 0,
+      "successful_releases": 0,
+      "release_gates": [
+        {
+          "allowed": false,
+          "evidence": {
+            "status": "unknown",
+            "object_name": "green cube",
+            "evidence_ref": "frame-002265.npz",
+            "scope": "public RGB-D support visibility; center not independently verified",
+            "captured_at": 1795101960.6624153,
+            "control_step": 2265,
+            "horizontal_span_ratio": 0.0035423728099638276,
+            "observed_scale_m": 0.04187029302386365,
+            "visible_depth_pixels": 145,
+            "reason": "support_horizontal_extent_truncated"
+          }
+        }
+      ],
+      "contact_before_intentional_release": {
+        "status": "verified",
+        "sample_count": 102,
+        "scope": "bilateral contact proxy, not a calibrated slip detector"
+      },
+      "model_asked_user": false,
+      "reset_count": 1,
+      "preparation_used": {
+        "decisions": 10,
+        "calls": 26,
+        "motion_steps": 371,
+        "idle_steps": 534,
+        "wall_seconds": 53.374977705068886
+      },
+      "used": {
+        "decisions": 12,
+        "calls": 34,
+        "motion_steps": 430,
+        "idle_steps": 1972,
+        "wall_seconds": 128.21056687505916
+      },
+      "model_elapsed_seconds": 69.35599994659424,
+      "condition": "baseline",
+      "task": "cube_restack",
+      "seed": 65,
+      "retrievals": 0,
+      "hits": 0,
+      "retrieved_ids": [],
+      "retrieval_milliseconds": 0,
+      "retrieval_errors": 0
+    },
+    {
+      "mode": "candidate",
+      "episode_id": "51da2877dbd41af6025cb63664dc833a",
+      "outcome": "completed",
+      "independent_physical": {
+        "status": "verified",
+        "sample_count": 3,
+        "span_seconds": 1.0478510856628418,
+        "values": [
+          true,
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_at_decision": "verified",
+      "false_completion": false,
+      "model_decisions": 2,
+      "decision_sequence": [
+        "run_code",
+        "run_code"
+      ],
+      "autonomous_retreats": 1,
+      "support_inspections": 0,
+      "support_available_after_retreat": true,
+      "acquisitions": [],
+      "views": 0,
+      "duplicate_views": 0,
+      "successful_releases": 1,
+      "release_gates": [
+        {
+          "allowed": true,
+          "evidence": {
+            "status": "available",
+            "object_name": "green cube",
+            "evidence_ref": "frame-003792.npz",
+            "scope": "public RGB-D support visibility; center not independently verified",
+            "captured_at": 1795102037.8701503,
+            "control_step": 3792,
+            "horizontal_span_ratio": 0.5620889702877017,
+            "observed_scale_m": 0.04187029302386365,
+            "visible_depth_pixels": 221,
+            "reason": "visible_box_support; not_center_verified"
+          }
+        }
+      ],
+      "contact_before_intentional_release": {
+        "status": "verified",
+        "sample_count": 96,
+        "scope": "bilateral contact proxy, not a calibrated slip detector"
+      },
+      "model_asked_user": false,
+      "reset_count": 1,
+      "preparation_used": {
+        "decisions": 10,
+        "calls": 26,
+        "motion_steps": 371,
+        "idle_steps": 506,
+        "wall_seconds": 52.87534046010114
+      },
+      "used": {
+        "decisions": 12,
+        "calls": 34,
+        "motion_steps": 480,
+        "idle_steps": 3514,
+        "wall_seconds": 208.6726637640968
+      },
+      "model_elapsed_seconds": 75.53099989891052,
+      "condition": "candidate",
+      "task": "cube_restack",
+      "seed": 65,
+      "retrievals": 2,
+      "hits": 0,
+      "retrieved_ids": [],
+      "retrieval_milliseconds": 296,
+      "retrieval_errors": 0
+    }
+  ],
+  "scorer_sha256": "6ef74341cae79a97d007410d0cb926d4909dd824005d6dde4a97b4e8958cbf53",
+  "limitations": [
+    "One new restack seed, fixed preparation and explicit sensor masking; not natural or end-to-end tasks",
+    "Same model/prompt/guards/budget; only historical hints vary; one case per condition",
+    "Corpus recognizes one predefined repair shape; not automatic general skill discovery",
+    "Retrieval is not proof the model causally used the experience; no statistical conclusion"
+  ],
+  "experience_corpus": {
+    "files": [
+      {
+        "path": "candidates/dd6e64ac7a5baf2a22bd33544b1bc6b5c0dd9f079cc24f8648737c8585c56052.json",
+        "sha256": "293513a6bf784f8331887dc54a9246c8461d4506ec4bf0c5cb79bd38e7c49beb"
+      },
+      {
+        "path": "validated/dd6e64ac7a5baf2a22bd33544b1bc6b5c0dd9f079cc24f8648737c8585c56052.json",
+        "sha256": "2d97ae552541e9e0f025ba718deb61c9648e5c868444d957ad077bce1a937079"
+      }
+    ],
+    "digest": "cb56ce1e767266fd0257aecdc1b62524b561d29478709c1df796d5f05fea0c1c"
+  },
+  "recovery_scorer_sha256": "2293d4f9bb822ae5fa5d71ef156635f422b4e066500e38cb9e1b1bad0320a4ac"
+}

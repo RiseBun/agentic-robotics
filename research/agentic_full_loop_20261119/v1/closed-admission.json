@@ -1,0 +1,26 @@
+[
+  {
+    "variant": "normal",
+    "trial_id": "cube_lifting-s73-r0",
+    "episode_id": "7ff4b332a0d0ee9e49e21ec6128b499f",
+    "outcome": "completed"
+  },
+  {
+    "variant": "normal",
+    "trial_id": "cube_stack-s73-r0",
+    "episode_id": "fa28381fd01fa12fb4ed05a3e2f1b858",
+    "outcome": "awaiting_user"
+  },
+  {
+    "variant": "normal",
+    "trial_id": "cube_restack-s73-r0",
+    "episode_id": "777362eb02cfcafc65cd0e46c60b4b88",
+    "outcome": "awaiting_user"
+  },
+  {
+    "variant": "active",
+    "trial_id": "cube_stack-s74-r0",
+    "episode_id": "b633417dd1925d89217c9fa3baf4bafe",
+    "outcome": "completed"
+  }
+]

@@ -1,0 +1,152 @@
+{
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "sources": "eeec78e18bd5d20bda5bfdcafcb0b510fde7f4326e07f8a8a864ee8348f83f99",
+  "rows": [
+    {
+      "mode": "retreat_recovers",
+      "episode_id": "486e963af5dd4cdd782e5215bd78d2e4",
+      "outcome": "completed",
+      "independent_physical": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.5002000331878662,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_at_decision": "verified",
+      "false_completion": false,
+      "model_decisions": 2,
+      "decision_sequence": [
+        "run_code",
+        "run_code"
+      ],
+      "autonomous_retreats": 1,
+      "support_inspections": 0,
+      "support_available_after_retreat": true,
+      "acquisitions": [],
+      "views": 0,
+      "duplicate_views": 0,
+      "successful_releases": 1,
+      "release_gates": [
+        {
+          "allowed": true,
+          "evidence": {
+            "status": "available",
+            "object_name": "green cube",
+            "evidence_ref": "frame-001363.npz",
+            "scope": "public RGB-D support visibility; center not independently verified",
+            "captured_at": 1795097535.46755,
+            "control_step": 1363,
+            "horizontal_span_ratio": 0.7363434599837975,
+            "observed_scale_m": 0.05267223169090142,
+            "visible_depth_pixels": 648,
+            "reason": "visible_box_support; not_center_verified"
+          }
+        }
+      ],
+      "contact_before_intentional_release": {
+        "status": "verified",
+        "sample_count": 56,
+        "scope": "bilateral contact proxy, not a calibrated slip detector"
+      },
+      "model_asked_user": false,
+      "reset_count": 1,
+      "preparation_used": {
+        "decisions": 6,
+        "calls": 12,
+        "motion_steps": 155,
+        "idle_steps": 279,
+        "wall_seconds": 30.674813461955637
+      },
+      "used": {
+        "decisions": 8,
+        "calls": 20,
+        "motion_steps": 264,
+        "idle_steps": 1268,
+        "wall_seconds": 85.55950245587155
+      },
+      "model_elapsed_seconds": 49.44599986076355
+    },
+    {
+      "mode": "persistent_unknown",
+      "episode_id": "ffdeaafa873594713c05f750ebba6c27",
+      "outcome": "awaiting_user",
+      "independent_physical": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5461299419403076,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "public_at_decision": "unknown",
+      "false_completion": false,
+      "model_decisions": 5,
+      "decision_sequence": [
+        "run_code",
+        "observe",
+        "run_code",
+        "observe",
+        "ask_user"
+      ],
+      "autonomous_retreats": 1,
+      "support_inspections": 1,
+      "support_available_after_retreat": false,
+      "acquisitions": [
+        {
+          "status": "unknown",
+          "reason": "support_remains_unobservable; views_exhausted",
+          "views_used": 2,
+          "used_delta": {
+            "decisions": 0,
+            "calls": 5,
+            "motion_steps": 35,
+            "idle_steps": 82
+          }
+        }
+      ],
+      "views": 2,
+      "duplicate_views": 0,
+      "successful_releases": 0,
+      "release_gates": [],
+      "contact_before_intentional_release": {
+        "status": "verified",
+        "sample_count": 139,
+        "scope": "bilateral contact proxy, not a calibrated slip detector"
+      },
+      "model_asked_user": true,
+      "reset_count": 1,
+      "preparation_used": {
+        "decisions": 6,
+        "calls": 12,
+        "motion_steps": 155,
+        "idle_steps": 263,
+        "wall_seconds": 30.659858980216086
+      },
+      "used": {
+        "decisions": 11,
+        "calls": 19,
+        "motion_steps": 211,
+        "idle_steps": 3064,
+        "wall_seconds": 173.47455838811584
+      },
+      "model_elapsed_seconds": 84.70299983024597
+    }
+  ],
+  "scorer_sha256": "2293d4f9bb822ae5fa5d71ef156635f422b4e066500e38cb9e1b1bad0320a4ac",
+  "limitations": [
+    "One seen stack seed, two explicit sensor fault conditions, no algorithm comparator",
+    "Preparation fixed by a public controller; only post-failure recovery decisions are autonomous",
+    "All preparation and waiting costs remain in the episode budget; no statistical claim"
+  ]
+}

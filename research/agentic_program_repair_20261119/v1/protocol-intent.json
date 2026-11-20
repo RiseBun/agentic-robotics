@@ -1,0 +1,36 @@
+{
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "diagnostic": {
+    "task": "cube_restack",
+    "seed": 84,
+    "preparation": "public green grasp; one read-only API then invalid state[0]; same-scene model repair"
+  },
+  "natural": {
+    "tasks": [
+      "cube_lifting",
+      "cube_stack",
+      "cube_restack"
+    ],
+    "seeds": [
+      85
+    ],
+    "repeats": 1
+  },
+  "experience": "disabled",
+  "budgets": {
+    "decisions": 12,
+    "calls": 40,
+    "motion_steps": 1500,
+    "wall_seconds": 300
+  },
+  "limitations": [
+    "No paired baseline or statistical claim",
+    "Never merge prepared diagnosis with natural task success rate",
+    "No environment or budget reset; all four episodes close before private scoring"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "normal": [],
+  "repair": [
+    {
+      "episode_id": "ac14883b72abe4445c2809ef4b676889",
+      "status": "closed",
+      "termination_reason": "wall_budget_exhausted",
+      "used": {
+        "decisions": 6,
+        "calls": 15,
+        "motion_steps": 215,
+        "idle_steps": 5602,
+        "wall_seconds": 300.0432785348967
+      },
+      "last_event_id": 86
+    }
+  ]
+}

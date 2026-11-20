@@ -1,0 +1,67 @@
+{
+  "schedule": [
+    {
+      "pair_id": "stack-s67",
+      "task": "cube_stack",
+      "seed": 67,
+      "variant": "baseline"
+    },
+    {
+      "pair_id": "stack-s67",
+      "task": "cube_stack",
+      "seed": 67,
+      "variant": "candidate"
+    },
+    {
+      "pair_id": "restack-s67",
+      "task": "cube_restack",
+      "seed": 67,
+      "variant": "candidate"
+    },
+    {
+      "pair_id": "restack-s67",
+      "task": "cube_restack",
+      "seed": 67,
+      "variant": "baseline"
+    },
+    {
+      "pair_id": "stack-s68",
+      "task": "cube_stack",
+      "seed": 68,
+      "variant": "baseline"
+    },
+    {
+      "pair_id": "stack-s68",
+      "task": "cube_stack",
+      "seed": 68,
+      "variant": "candidate"
+    },
+    {
+      "pair_id": "restack-s68",
+      "task": "cube_restack",
+      "seed": 68,
+      "variant": "candidate"
+    },
+    {
+      "pair_id": "restack-s68",
+      "task": "cube_restack",
+      "seed": 68,
+      "variant": "baseline"
+    }
+  ],
+  "preparation": "none; actual product model receives goal from initial environment",
+  "experience": "disabled",
+  "budgets": {
+    "decisions": 12,
+    "calls": 40,
+    "motion_steps": 1500,
+    "wall_seconds": 300
+  },
+  "comparison": "same sources, model, prompt, skills, thresholds and budgets; secondary calibrated RGB-D sensor differs",
+  "admission": "all cases retained, no replay; all episodes closed before private scoring",
+  "limitations": [
+    "Two seeds, one trial per condition; no statistical significance claim",
+    "Candidate receives extra visual information; measures system capability, not planner-only improvement",
+    "Natural scenes only; cancellation and persistent sensor-fault tests reported separately"
+  ]
+}

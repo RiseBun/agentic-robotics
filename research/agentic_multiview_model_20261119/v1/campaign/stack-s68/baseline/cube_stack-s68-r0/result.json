@@ -1,0 +1,197 @@
+{
+  "trial_id": "cube_stack-s68-r0",
+  "task": "cube_stack",
+  "seed": 68,
+  "repeat": 0,
+  "text": "把红色方块放到绿色方块上，释放后空夹爪。",
+  "outcome": "completed",
+  "episode_id": "92a778a73fc4255305c47898e91c98b4",
+  "started_at": 1795106091.841,
+  "terminal_at": 1795106194.681,
+  "policy_seconds": 102.83999991416931,
+  "public_at_decision": {
+    "status": "verified",
+    "evidence": [
+      {
+        "status": "verified",
+        "evidence_ref": "frame-001867.npz",
+        "captured_at": 1795106194.4939132,
+        "gripper_width_m": 0.07988595580967696,
+        "command": "open",
+        "reason": "public_open_aperture; bounded_cube_scope"
+      },
+      {
+        "relation": [
+          "red cube",
+          "green cube"
+        ],
+        "samples": [
+          "verified",
+          "verified",
+          "verified",
+          "verified",
+          "verified"
+        ],
+        "geometry": [
+          {
+            "control_step": 1847,
+            "horizontal_residual_m": 0.020576506107769878,
+            "height_difference_m": 0.0452884330880226,
+            "support_width_m": 0.053202732608928834,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          },
+          {
+            "control_step": 1852,
+            "horizontal_residual_m": 0.020576506107769878,
+            "height_difference_m": 0.045287696024670324,
+            "support_width_m": 0.053202732608928834,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          },
+          {
+            "control_step": 1857,
+            "horizontal_residual_m": 0.020576506107769878,
+            "height_difference_m": 0.045287696024670324,
+            "support_width_m": 0.053202732608928834,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          },
+          {
+            "control_step": 1862,
+            "horizontal_residual_m": 0.020576506107769878,
+            "height_difference_m": 0.045287696024670324,
+            "support_width_m": 0.053202732608928834,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          },
+          {
+            "control_step": 1867,
+            "horizontal_residual_m": 0.020576506107769878,
+            "height_difference_m": 0.045287696024670324,
+            "support_width_m": 0.053202732608928834,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          }
+        ],
+        "window_steps": 20,
+        "scope": "visible geometry after release; not contact truth"
+      }
+    ],
+    "evidence_ref": "frame-001867.npz",
+    "captured_at": 1795106194.4939132,
+    "control_step": 1867
+  },
+  "used_at_decision": {
+    "decisions": 6,
+    "calls": 26,
+    "motion_steps": 236,
+    "idle_steps": 1635,
+    "wall_seconds": 94.83490522298962
+  },
+  "public_after_settle": {
+    "status": "verified",
+    "evidence": [
+      {
+        "status": "verified",
+        "evidence_ref": "frame-001905.npz",
+        "captured_at": 1795106196.4109042,
+        "gripper_width_m": 0.07997844185539232,
+        "command": "open",
+        "reason": "public_open_aperture; bounded_cube_scope"
+      },
+      {
+        "relation": [
+          "red cube",
+          "green cube"
+        ],
+        "samples": [
+          "verified",
+          "verified",
+          "verified",
+          "verified",
+          "verified"
+        ],
+        "geometry": [
+          {
+            "control_step": 1885,
+            "horizontal_residual_m": 0.020577183113575856,
+            "height_difference_m": 0.045287696024670324,
+            "support_width_m": 0.053202732608928834,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          },
+          {
+            "control_step": 1890,
+            "horizontal_residual_m": 0.020577183113575856,
+            "height_difference_m": 0.045287696024670324,
+            "support_width_m": 0.053202732608928834,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          },
+          {
+            "control_step": 1895,
+            "horizontal_residual_m": 0.020577183113575856,
+            "height_difference_m": 0.045287696024670324,
+            "support_width_m": 0.053202732608928834,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          },
+          {
+            "control_step": 1900,
+            "horizontal_residual_m": 0.020577183113575856,
+            "height_difference_m": 0.045287696024670324,
+            "support_width_m": 0.053202732608928834,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          },
+          {
+            "control_step": 1905,
+            "horizontal_residual_m": 0.020577183113575856,
+            "height_difference_m": 0.045287696024670324,
+            "support_width_m": 0.053202732608928834,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          }
+        ],
+        "window_steps": 20,
+        "scope": "visible geometry after release; not contact truth"
+      }
+    ],
+    "evidence_ref": "frame-001905.npz",
+    "captured_at": 1795106196.4109042,
+    "control_step": 1905
+  },
+  "private_scoring": "pending_offline",
+  "feedback_categories": [],
+  "ended_at": 1795106197.38,
+  "total_seconds": 105.53900003433228,
+  "used_at_close": {
+    "decisions": 6,
+    "calls": 26,
+    "motion_steps": 236,
+    "idle_steps": 1684,
+    "wall_seconds": 97.26049688202329
+  },
+  "source_unchanged": true
+}

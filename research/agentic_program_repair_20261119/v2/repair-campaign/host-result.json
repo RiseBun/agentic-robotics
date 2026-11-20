@@ -1,0 +1,192 @@
+[
+  {
+    "mode": "unbound_name",
+    "task": "cube_restack",
+    "seed": 87,
+    "episode_id": "eec412e80f61769fbcd39e433252016d",
+    "started_at": 1795143934.095,
+    "preparation_used": {
+      "decisions": 2,
+      "calls": 0,
+      "motion_steps": 0,
+      "idle_steps": 6,
+      "wall_seconds": 9.715121055021882
+    },
+    "handoff_context": {
+      "version": 2,
+      "facts": {
+        "goal": {
+          "on": [
+            "red cube",
+            "green cube"
+          ],
+          "empty_gripper": true
+        },
+        "objects": [
+          {
+            "name": "green cube",
+            "status": "visible",
+            "center_m": [
+              0.5813524937585349,
+              0.053052241807710475,
+              -0.04410071151676215
+            ],
+            "support": "available"
+          },
+          {
+            "name": "red cube",
+            "status": "visible",
+            "center_m": [
+              0.5973167538941395,
+              0.057749711637215914,
+              -0.0928104493772744
+            ],
+            "support": null
+          }
+        ],
+        "empty_gripper": "verified",
+        "hold_alert": null
+      },
+      "fact_key": "cf0fc250c0bd3a1a5388e0d01eb54f1f7d02ce710175bc42cc76cf50f916227b",
+      "current_evidence": {
+        "evidence_ref": "frame-000026.npz",
+        "captured_at": 1795143934.997801,
+        "control_step": 26
+      },
+      "missing_facts": [],
+      "consecutive_unchanged_attempts": 0,
+      "consecutive_blocked_attempts": 0,
+      "repeated_no_progress": false,
+      "bounded_routes": [
+        {
+          "skill": "inspect_support",
+          "status": "requires_runtime_preconditions",
+          "views_used": null,
+          "support": "green cube",
+          "held_object": "red cube"
+        },
+        {
+          "skill": "inspect_placement",
+          "status": "recorded_release_required",
+          "views_used": null
+        }
+      ],
+      "program_repair": {
+        "status": "revise_rejected_code",
+        "segment_id": "32b95e94629045b3bfdeabeafda09ff9",
+        "rejected_code": "g = get_object_pose(\"green cube\")\np = g[0]\nx = p[0]\ny = p[1]\nz = p[2]\nq = [0,0,1,0]\nopen_gripper()\ngoto_pose([x,y,nz],q,z_approach=0.10)\nclose_gripper()",
+        "diagnostic": {
+          "kind": "unbound_name",
+          "name": "nz",
+          "line": 8,
+          "column": 16,
+          "available_locals": [
+            "g",
+            "p",
+            "q",
+            "x",
+            "y",
+            "z"
+          ],
+          "scope": "Names bound at this expression; no inferred replacement or robot action"
+        },
+        "scope": "Code repair only; not a registered robot skill or physical permission"
+      },
+      "recent_attempts": [
+        {
+          "decision": "run_code",
+          "code_key": "1e4e6c18b25926cac46878781b0128d69bb1d23dbff62dba92682848e3ce0594",
+          "revision": 1,
+          "fact_key": "39d61209af2530d9ff8048c7556e5d00f3e8292f157e99dd097406efaddc2da9",
+          "evidence_before": {
+            "goal": {
+              "on": [
+                "red cube",
+                "green cube"
+              ],
+              "empty_gripper": true
+            },
+            "objects": [
+              {
+                "name": "green cube",
+                "status": "visible",
+                "center_m": [
+                  0.5815951971029998,
+                  0.0529794193906887,
+                  -0.044947046702400295
+                ],
+                "support": "available"
+              },
+              {
+                "name": "red cube",
+                "status": "visible",
+                "center_m": [
+                  0.5971546200100297,
+                  0.057847827165295705,
+                  -0.09297171903738732
+                ],
+                "support": null
+              }
+            ],
+            "empty_gripper": "unknown",
+            "hold_alert": null
+          },
+          "observation": {
+            "evidence_ref": "frame-000001.npz",
+            "captured_at": 1795143933.543699,
+            "control_step": 1
+          },
+          "segment_id": "32b95e94629045b3bfdeabeafda09ff9",
+          "execution": "failed",
+          "rejected_code": "g = get_object_pose(\"green cube\")\np = g[0]\nx = p[0]\ny = p[1]\nz = p[2]\nq = [0,0,1,0]\nopen_gripper()\ngoto_pose([x,y,nz],q,z_approach=0.10)\nclose_gripper()",
+          "feedback": {
+            "category": "invalid_program",
+            "api": null,
+            "message": "Unbound local name 'nz'; define it before use (line 8)",
+            "diagnostic": {
+              "kind": "unbound_name",
+              "name": "nz",
+              "line": 8,
+              "column": 16,
+              "available_locals": [
+                "g",
+                "p",
+                "q",
+                "x",
+                "y",
+                "z"
+              ],
+              "scope": "Names bound at this expression; no inferred replacement or robot action"
+            },
+            "causal_status": "not_established"
+          },
+          "api_attempts": [],
+          "acquisition": null,
+          "verification_required": false,
+          "verification": {
+            "status": "unknown",
+            "reason": "No public postcondition declared"
+          }
+        }
+      ],
+      "recommendation": "revise_code",
+      "instruction": "Repair the latest rejected Python using the documented API return schema and diagnostic, then re-check the intended phase in the same episode. A program error is not evidence of physical failure or exhausted sensing routes. Do not repeat rejected code or infer that the environment needs a reset. All physical preconditions and cumulative budgets still apply.",
+      "causal_status": "not_established",
+      "scope": "Public task facts only; a 0.01m per-axis position tolerance is a repetition heuristic, never verification or a physical cause diagnosis."
+    },
+    "outcome": "awaiting_user",
+    "public_at_decision": {
+      "status": "unknown"
+    },
+    "terminal_at": 1795143948.757,
+    "ended_at": 1795143951.31,
+    "used_at_close": {
+      "decisions": 3,
+      "calls": 0,
+      "motion_steps": 0,
+      "idle_steps": 368,
+      "wall_seconds": 27.800212151836604
+    },
+    "source_unchanged": true
+  }
+]

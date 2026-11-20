@@ -1,0 +1,66 @@
+[
+  {
+    "pair_id": "stack-s67",
+    "variant": "baseline",
+    "task": "cube_stack",
+    "seed": 67,
+    "episode_id": "60b87f8d027e760ef41469536d128643",
+    "outcome": "awaiting_user"
+  },
+  {
+    "pair_id": "stack-s67",
+    "variant": "candidate",
+    "task": "cube_stack",
+    "seed": 67,
+    "episode_id": "8e11a50c44abc59bfa828e5f6308ba3c",
+    "outcome": "completed"
+  },
+  {
+    "pair_id": "restack-s67",
+    "variant": "candidate",
+    "task": "cube_restack",
+    "seed": 67,
+    "episode_id": "c2bf06e64ab4f0eb4de6fe089c3aab7e",
+    "outcome": "completed"
+  },
+  {
+    "pair_id": "restack-s67",
+    "variant": "baseline",
+    "task": "cube_restack",
+    "seed": 67,
+    "episode_id": "542d008bf71168eaa799851bacb408d2",
+    "outcome": "needs_attention"
+  },
+  {
+    "pair_id": "stack-s68",
+    "variant": "baseline",
+    "task": "cube_stack",
+    "seed": 68,
+    "episode_id": "92a778a73fc4255305c47898e91c98b4",
+    "outcome": "completed"
+  },
+  {
+    "pair_id": "stack-s68",
+    "variant": "candidate",
+    "task": "cube_stack",
+    "seed": 68,
+    "episode_id": "66aa98e2ed1a8704a5fce23d0a2f1169",
+    "outcome": "completed"
+  },
+  {
+    "pair_id": "restack-s68",
+    "variant": "candidate",
+    "task": "cube_restack",
+    "seed": 68,
+    "episode_id": "9d9de92ef8258e896ba44e0922504560",
+    "outcome": "completed"
+  },
+  {
+    "pair_id": "restack-s68",
+    "variant": "baseline",
+    "task": "cube_restack",
+    "seed": 68,
+    "episode_id": "718e9df9f708da39624aa9564728d303",
+    "outcome": "awaiting_user"
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-19",
+  "goal": "Autonomous support inspection selection; common evidence guards",
+  "model": {
+    "model": "gpt-5.6-sol",
+    "api": "openai-responses",
+    "baseURL": "https://www.iaiemas.com:20443/ias-openai-model/v1",
+    "reasoningEffort": "off"
+  },
+  "schedule": [
+    {
+      "pair_id": "stack-s61",
+      "task": "cube_stack",
+      "seed": 61,
+      "variant": "baseline"
+    },
+    {
+      "pair_id": "stack-s61",
+      "task": "cube_stack",
+      "seed": 61,
+      "variant": "candidate"
+    },
+    {
+      "pair_id": "restack-s61",
+      "task": "cube_restack",
+      "seed": 61,
+      "variant": "candidate"
+    },
+    {
+      "pair_id": "restack-s61",
+      "task": "cube_restack",
+      "seed": 61,
+      "variant": "baseline"
+    },
+    {
+      "pair_id": "stack-s62",
+      "task": "cube_stack",
+      "seed": 62,
+      "variant": "baseline"
+    },
+    {
+      "pair_id": "stack-s62",
+      "task": "cube_stack",
+      "seed": 62,
+      "variant": "candidate"
+    },
+    {
+      "pair_id": "restack-s62",
+      "task": "cube_restack",
+      "seed": 62,
+      "variant": "candidate"
+    },
+    {
+      "pair_id": "restack-s62",
+      "task": "cube_restack",
+      "seed": 62,
+      "variant": "baseline"
+    }
+  ],
+  "trials": 8,
+  "repeats_per_condition": 1,
+  "camera_fault": "disabled",
+  "source": "Shared frozen source; CAP_ACTIVE_EVIDENCE=0 baseline, 1 candidate",
+  "limits": {
+    "motion_steps": 1500,
+    "calls": 40,
+    "wall_seconds": 300,
+    "decisions": 12
+  },
+  "scoring": "Offline only after every admitted episode closed",
+  "limitations": [
+    "61 seen in earlier engineering smoke; no pristine held-out claim",
+    "One trial per condition; no significance claim"
+  ],
+  "runtime_tar_sha256": "F02ECD263AEBDEBEEB5947C6F9F7A3B6630A5C2C4EFD56274A90D359BBC4EEB3",
+  "first_allocation": {
+    "job": 20707,
+    "status": "TIMEOUT before any campaign task started"
+  }
+}

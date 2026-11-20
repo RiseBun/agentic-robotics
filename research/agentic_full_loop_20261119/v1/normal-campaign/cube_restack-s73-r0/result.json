@@ -1,0 +1,157 @@
+{
+  "trial_id": "cube_restack-s73-r0",
+  "task": "cube_restack",
+  "seed": 73,
+  "repeat": 0,
+  "text": "把绿色方块从红色方块上移开，再将红色方块放在绿色方块上，释放后空夹爪。",
+  "outcome": "awaiting_user",
+  "episode_id": "777362eb02cfcafc65cd0e46c60b4b88",
+  "started_at": 1795110869.73,
+  "terminal_at": 1795111048.509,
+  "policy_seconds": 178.77900004386902,
+  "public_at_decision": {
+    "status": "unknown",
+    "evidence": [
+      {
+        "status": "unknown",
+        "evidence_ref": "frame-003212.npz",
+        "captured_at": 1795111040.5482664,
+        "gripper_width_m": 0.039620605282474866,
+        "command": "closed",
+        "reason": "open_empty_gripper_not_confirmed"
+      },
+      {
+        "relation": [
+          "red cube",
+          "green cube"
+        ],
+        "samples": [
+          "unknown"
+        ],
+        "geometry": [
+          {
+            "control_step": 3212,
+            "horizontal_residual_m": 0.005474529900178842,
+            "height_difference_m": 0.056947027326418174,
+            "support_width_m": 0.03600855451090787,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          }
+        ],
+        "window_steps": 0,
+        "scope": "visible geometry after release; not contact truth"
+      }
+    ],
+    "evidence_ref": "frame-003212.npz",
+    "captured_at": 1795111040.5482664,
+    "control_step": 3212
+  },
+  "used_at_decision": {
+    "decisions": 12,
+    "calls": 33,
+    "motion_steps": 374,
+    "idle_steps": 2993,
+    "wall_seconds": 171.22909889998846
+  },
+  "public_after_settle": {
+    "status": "unknown",
+    "evidence": [
+      {
+        "status": "unknown",
+        "evidence_ref": "frame-003401.npz",
+        "captured_at": 1795111049.9850647,
+        "gripper_width_m": 0.039620585735326085,
+        "command": "closed",
+        "reason": "open_empty_gripper_not_confirmed"
+      },
+      {
+        "relation": [
+          "red cube",
+          "green cube"
+        ],
+        "samples": [
+          "unknown",
+          "unknown",
+          "unknown",
+          "unknown",
+          "unknown"
+        ],
+        "geometry": [
+          {
+            "control_step": 3381,
+            "horizontal_residual_m": 0.006370109544214821,
+            "height_difference_m": 0.05483621781112765,
+            "support_width_m": 0.036157793124544785,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          },
+          {
+            "control_step": 3386,
+            "horizontal_residual_m": 0.006362150137149855,
+            "height_difference_m": 0.05483939472558433,
+            "support_width_m": 0.036157793124544785,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          },
+          {
+            "control_step": 3391,
+            "horizontal_residual_m": 0.006359057430570244,
+            "height_difference_m": 0.05483987250313599,
+            "support_width_m": 0.036157793124544785,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          },
+          {
+            "control_step": 3396,
+            "horizontal_residual_m": 0.006358749216780194,
+            "height_difference_m": 0.05484499568905868,
+            "support_width_m": 0.036157793124544785,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          },
+          {
+            "control_step": 3401,
+            "horizontal_residual_m": 0.006357003328451786,
+            "height_difference_m": 0.054848414363389095,
+            "support_width_m": 0.036157793124544785,
+            "center_methods": [
+              "visible_box",
+              "visible_box"
+            ]
+          }
+        ],
+        "window_steps": 20,
+        "scope": "visible geometry after release; not contact truth"
+      }
+    ],
+    "evidence_ref": "frame-003401.npz",
+    "captured_at": 1795111049.9850647,
+    "control_step": 3401
+  },
+  "private_scoring": "pending_offline",
+  "feedback_categories": [
+    "invalid_program",
+    "insufficient_evidence",
+    "insufficient_evidence"
+  ],
+  "ended_at": 1795111051.97,
+  "total_seconds": 182.24000000953674,
+  "used_at_close": {
+    "decisions": 12,
+    "calls": 33,
+    "motion_steps": 374,
+    "idle_steps": 3052,
+    "wall_seconds": 174.15203630900942
+  },
+  "source_unchanged": true
+}

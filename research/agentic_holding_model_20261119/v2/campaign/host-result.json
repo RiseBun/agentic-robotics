@@ -1,0 +1,23 @@
+{
+  "planned": 2,
+  "results": [
+    {
+      "pair_id": "stack-s70",
+      "variant": "recoverable",
+      "task": "cube_stack",
+      "seed": 70,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_holding_model_20261119\\v2\\campaign\\stack-s70\\recoverable"
+    },
+    {
+      "pair_id": "stack-s70",
+      "variant": "occluded",
+      "task": "cube_stack",
+      "seed": 70,
+      "attempted_this_run": 1,
+      "planned": 1,
+      "output": "C:\\Users\\LPN19\\Desktop\\qicitech.com\\update\\research\\agentic_holding_model_20261119\\v2\\campaign\\stack-s70\\occluded"
+    }
+  ]
+}

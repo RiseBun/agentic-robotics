@@ -1,0 +1,1207 @@
+{
+  "rows": [
+    {
+      "mode": "retreat_recovers",
+      "episode_id": "80540b17e2b1b70fcce6c096f4089325",
+      "diagnosis_passed": true,
+      "error": null,
+      "release_denied": true,
+      "allowed_recorded_retreats": 1,
+      "gripper_calls_after_denial": 0,
+      "successful_gripper_changes_after_denial": [],
+      "holding_contact_proxy": {
+        "status": "verified",
+        "sample_count": 15,
+        "scope": "bilateral finger contact proxy after release denial; not calibrated slip detection"
+      },
+      "acquisitions": [
+        {
+          "status": "unknown",
+          "reason": "retract_before_lateral_inspection",
+          "views_used": 0,
+          "used_delta": {
+            "decisions": 0,
+            "calls": 1,
+            "motion_steps": 0,
+            "idle_steps": 29
+          }
+        },
+        {
+          "status": "available",
+          "reason": "already_available",
+          "views_used": 0,
+          "used_delta": {
+            "decisions": 0,
+            "calls": 1,
+            "motion_steps": 0,
+            "idle_steps": 27
+          }
+        }
+      ],
+      "interruption": null,
+      "stop_latencies": [
+        0.06317392713390291,
+        0.0387195881921798,
+        0.050136937061324716,
+        0.03438635193742812,
+        0.05102640716359019,
+        0.05609632609412074
+      ],
+      "public_final": "unknown",
+      "recorded_goal_complete_at_end": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5003931522369385,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "reset_count": 1,
+      "used": {
+        "decisions": 9,
+        "calls": 16,
+        "motion_steps": 176,
+        "idle_steps": 393,
+        "wall_seconds": 36.75920013803989
+      }
+    },
+    {
+      "mode": "persistent_unknown",
+      "episode_id": "ba225b9895eafb5ed01ea5320527c9d9",
+      "diagnosis_passed": true,
+      "error": null,
+      "release_denied": true,
+      "allowed_recorded_retreats": 1,
+      "gripper_calls_after_denial": 1,
+      "successful_gripper_changes_after_denial": [],
+      "holding_contact_proxy": {
+        "status": "verified",
+        "sample_count": 21,
+        "scope": "bilateral finger contact proxy after release denial; not calibrated slip detection"
+      },
+      "acquisitions": [
+        {
+          "status": "unknown",
+          "reason": "retract_before_lateral_inspection",
+          "views_used": 0,
+          "used_delta": {
+            "decisions": 0,
+            "calls": 1,
+            "motion_steps": 0,
+            "idle_steps": 26
+          }
+        },
+        {
+          "status": "unknown",
+          "reason": "support_remains_unobservable; views_exhausted",
+          "views_used": 2,
+          "used_delta": {
+            "decisions": 0,
+            "calls": 5,
+            "motion_steps": 35,
+            "idle_steps": 73
+          }
+        }
+      ],
+      "interruption": null,
+      "stop_latencies": [
+        0.03198974905535579,
+        0.03836502390913665,
+        0.049415129935368896,
+        0.028503655921667814,
+        0.06944732903502882,
+        0.05715795001015067
+      ],
+      "public_final": "unknown",
+      "recorded_goal_complete_at_end": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5494146347045898,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "reset_count": 1,
+      "used": {
+        "decisions": 9,
+        "calls": 20,
+        "motion_steps": 211,
+        "idle_steps": 318,
+        "wall_seconds": 27.98570181406103
+      }
+    },
+    {
+      "mode": "cancel_retreat",
+      "episode_id": "34335cf42e144aaf93d08c252d445437",
+      "diagnosis_passed": true,
+      "error": null,
+      "release_denied": true,
+      "allowed_recorded_retreats": 1,
+      "gripper_calls_after_denial": 0,
+      "successful_gripper_changes_after_denial": [],
+      "holding_contact_proxy": {
+        "status": "verified",
+        "sample_count": 6,
+        "scope": "bilateral finger contact proxy after release denial; not calibrated slip detection"
+      },
+      "acquisitions": [
+        {
+          "status": "unknown",
+          "reason": "retract_before_lateral_inspection",
+          "views_used": 0,
+          "used_delta": {
+            "decisions": 0,
+            "calls": 1,
+            "motion_steps": 0,
+            "idle_steps": 26
+          }
+        }
+      ],
+      "interruption": {
+        "id": 97,
+        "episode_id": "34335cf42e144aaf93d08c252d445437",
+        "segment_id": null,
+        "time": 1795096492.157152,
+        "kind": "diagnostic_interrupt_checked",
+        "mode": "cancel_retreat",
+        "stop": {
+          "stopped": true,
+          "hold_serial": 7
+        },
+        "old_revision": 2,
+        "stale_rejected": null,
+        "before_api_count": 13,
+        "after_api_count": 13
+      },
+      "stop_latencies": [
+        0.05776096088811755,
+        0.032220839988440275,
+        0.04227156192064285,
+        0.05108298803679645,
+        0.037610657047480345
+      ],
+      "public_final": "unknown",
+      "recorded_goal_complete_at_end": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5445671081542969,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "reset_count": 1,
+      "used": {
+        "decisions": 7,
+        "calls": 13,
+        "motion_steps": 155,
+        "idle_steps": 226,
+        "wall_seconds": 20.55183637700975
+      }
+    },
+    {
+      "mode": "change_goal_retreat",
+      "episode_id": "05a28dfea5f90feb060b3a1307ec116a",
+      "diagnosis_passed": true,
+      "error": null,
+      "release_denied": true,
+      "allowed_recorded_retreats": 1,
+      "gripper_calls_after_denial": 0,
+      "successful_gripper_changes_after_denial": [],
+      "holding_contact_proxy": {
+        "status": "verified",
+        "sample_count": 7,
+        "scope": "bilateral finger contact proxy after release denial; not calibrated slip detection"
+      },
+      "acquisitions": [
+        {
+          "status": "unknown",
+          "reason": "retract_before_lateral_inspection",
+          "views_used": 0,
+          "used_delta": {
+            "decisions": 0,
+            "calls": 1,
+            "motion_steps": 0,
+            "idle_steps": 26
+          }
+        }
+      ],
+      "interruption": {
+        "id": 98,
+        "episode_id": "05a28dfea5f90feb060b3a1307ec116a",
+        "segment_id": null,
+        "time": 1795096513.1610754,
+        "kind": "diagnostic_interrupt_checked",
+        "mode": "change_goal_retreat",
+        "stop": {
+          "id": "05a28dfea5f90feb060b3a1307ec116a",
+          "task": "cube_stack",
+          "seed": 62,
+          "goal": {
+            "holding": "green cube"
+          },
+          "creation": {
+            "request_id": "case-3",
+            "payload": {
+              "task": "cube_stack",
+              "seed": 62,
+              "goal": {
+                "on": [
+                  "red cube",
+                  "green cube"
+                ],
+                "empty_gripper": true
+              },
+              "limits": null
+            }
+          },
+          "revision": 3,
+          "status": "ready",
+          "active_segment": "668bff59760f4f949a43942118fd5cb0",
+          "used": {
+            "decisions": 7,
+            "calls": 13,
+            "motion_steps": 155,
+            "idle_steps": 192,
+            "wall_seconds": 18.843368873931468
+          },
+          "limits": {
+            "decisions": 12,
+            "calls": 40,
+            "motion_steps": 1500,
+            "wall_seconds": 300
+          },
+          "segments": {
+            "f73ea9eb127b4e7ead298f0cb70851e4": {
+              "id": "f73ea9eb127b4e7ead298f0cb70851e4",
+              "revision": 1,
+              "subgoal": "grasp-red cube",
+              "code": "p, unused, extent = get_object_pose('red cube')\nopen_gripper()\ngoto_pose(p, [0,0,1,0], z_approach=0.10)\nclose_gripper()",
+              "contract": null,
+              "precondition_results": [],
+              "execution": "completed",
+              "effect": "failed",
+              "cancel_requested": false,
+              "verification_wait": {
+                "status": "ready",
+                "reason": "public_window_complete",
+                "action_step": 86,
+                "snapshot_age_seconds": 0.29019975662231445,
+                "snapshot_after_action": true,
+                "windows": [
+                  {
+                    "relation": "on",
+                    "observed_window_steps": 20,
+                    "required_window_steps": 20,
+                    "first_step": 91,
+                    "last_step": 111
+                  }
+                ],
+                "evidence_ref": "frame-000111.npz",
+                "elapsed_seconds": 0.00021090288646519184
+              },
+              "goal_verification": {
+                "status": "failed",
+                "evidence": [
+                  {
+                    "status": "unknown",
+                    "evidence_ref": "frame-000111.npz",
+                    "captured_at": 1795096500.890299,
+                    "gripper_width_m": 0.03997038032557812,
+                    "command": "closed",
+                    "reason": "open_empty_gripper_not_confirmed"
+                  },
+                  {
+                    "relation": [
+                      "red cube",
+                      "green cube"
+                    ],
+                    "samples": [
+                      "failed",
+                      "failed",
+                      "failed",
+                      "failed",
+                      "failed"
+                    ],
+                    "geometry": [
+                      {
+                        "control_step": 91,
+                        "horizontal_residual_m": 0.19153808955085802,
+                        "height_difference_m": -0.006742741932583077,
+                        "support_width_m": 0.05030064712001728,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      },
+                      {
+                        "control_step": 96,
+                        "horizontal_residual_m": 0.19081481939382777,
+                        "height_difference_m": -0.006994150938178026,
+                        "support_width_m": 0.0503512050525943,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      },
+                      {
+                        "control_step": 101,
+                        "horizontal_residual_m": 0.1909411928747029,
+                        "height_difference_m": -0.007034946241348011,
+                        "support_width_m": 0.05031645086011205,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      },
+                      {
+                        "control_step": 106,
+                        "horizontal_residual_m": 0.19088253397223623,
+                        "height_difference_m": -0.007085815594021508,
+                        "support_width_m": 0.05031645086011205,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      },
+                      {
+                        "control_step": 111,
+                        "horizontal_residual_m": 0.19094672216501773,
+                        "height_difference_m": -0.0071106154598673255,
+                        "support_width_m": 0.05031645086011205,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      }
+                    ],
+                    "window_steps": 20,
+                    "scope": "visible geometry after release; not contact truth"
+                  }
+                ],
+                "evidence_ref": "frame-000111.npz",
+                "captured_at": 1795096500.890299,
+                "control_step": 111
+              },
+              "stage_verification": {
+                "status": "unknown",
+                "reason": "No public postcondition declared"
+              }
+            },
+            "ba64a588885541a6b337788f37595421": {
+              "id": "ba64a588885541a6b337788f37595421",
+              "revision": 1,
+              "subgoal": "lift-red cube",
+              "code": "s=get_execution_state()\np=s[\"tcp_xyz\"]\np[2]=p[2]+0.12\ngoto_pose(p,s[\"tcp_wxyz\"])\ncheck_holding('red cube')",
+              "contract": {
+                "preconditions": [],
+                "postcondition": {
+                  "holding": "red cube"
+                }
+              },
+              "precondition_results": [],
+              "execution": "completed",
+              "effect": "failed",
+              "cancel_requested": false,
+              "verification_wait": {
+                "status": "ready",
+                "reason": "public_window_complete",
+                "action_step": 162,
+                "snapshot_age_seconds": 0.24537324905395508,
+                "snapshot_after_action": true,
+                "windows": [
+                  {
+                    "relation": "holding",
+                    "observed_window_steps": 20,
+                    "required_window_steps": 20,
+                    "first_step": 165,
+                    "last_step": 185
+                  },
+                  {
+                    "relation": "on",
+                    "observed_window_steps": 20,
+                    "required_window_steps": 20,
+                    "first_step": 165,
+                    "last_step": 185
+                  }
+                ],
+                "evidence_ref": "frame-000185.npz",
+                "elapsed_seconds": 0.053881715051829815
+              },
+              "goal_verification": {
+                "status": "failed",
+                "evidence": [
+                  {
+                    "status": "unknown",
+                    "evidence_ref": "frame-000185.npz",
+                    "captured_at": 1795096504.5926878,
+                    "gripper_width_m": 0.03962705621267891,
+                    "command": "closed",
+                    "reason": "open_empty_gripper_not_confirmed"
+                  },
+                  {
+                    "relation": [
+                      "red cube",
+                      "green cube"
+                    ],
+                    "samples": [
+                      "failed",
+                      "failed",
+                      "failed",
+                      "failed",
+                      "failed"
+                    ],
+                    "geometry": [
+                      {
+                        "control_step": 165,
+                        "horizontal_residual_m": 0.19045332652690858,
+                        "height_difference_m": 0.10911911364397822,
+                        "support_width_m": 0.05016924838347518,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      },
+                      {
+                        "control_step": 170,
+                        "horizontal_residual_m": 0.19022933405865722,
+                        "height_difference_m": 0.11142377136180497,
+                        "support_width_m": 0.05016924838347518,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      },
+                      {
+                        "control_step": 175,
+                        "horizontal_residual_m": 0.19054443757885028,
+                        "height_difference_m": 0.11177408026026261,
+                        "support_width_m": 0.05016924838347518,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      },
+                      {
+                        "control_step": 180,
+                        "horizontal_residual_m": 0.19017249341250794,
+                        "height_difference_m": 0.11327707360084807,
+                        "support_width_m": 0.05016924838347518,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      },
+                      {
+                        "control_step": 185,
+                        "horizontal_residual_m": 0.1901465783680889,
+                        "height_difference_m": 0.11332878465665627,
+                        "support_width_m": 0.05016924838347518,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      }
+                    ],
+                    "window_steps": 20,
+                    "scope": "visible geometry after release; not contact truth"
+                  }
+                ],
+                "evidence_ref": "frame-000185.npz",
+                "captured_at": 1795096504.5926878,
+                "control_step": 185
+              },
+              "stage_verification": {
+                "condition": {
+                  "holding": "red cube"
+                },
+                "status": "verified",
+                "evidence": [
+                  {
+                    "state": "satisfied",
+                    "object_name": "red cube",
+                    "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+                    "samples": [
+                      {
+                        "control_step": 165,
+                        "evidence": "holding_supported",
+                        "visible_surface_lift_m": 0.11118518295922522,
+                        "surface_tcp_distance_m": 0.018836907657124403,
+                        "tcp_height_above_reference_m": 0.10616034513726279
+                      },
+                      {
+                        "control_step": 170,
+                        "evidence": "holding_supported",
+                        "visible_surface_lift_m": 0.1156144199069668,
+                        "surface_tcp_distance_m": 0.01960058938110846,
+                        "tcp_height_above_reference_m": 0.10828557983928866
+                      },
+                      {
+                        "control_step": 175,
+                        "evidence": "holding_supported",
+                        "visible_surface_lift_m": 0.11554560183349838,
+                        "surface_tcp_distance_m": 0.019275442691208355,
+                        "tcp_height_above_reference_m": 0.10911268595556714
+                      },
+                      {
+                        "control_step": 180,
+                        "evidence": "holding_supported",
+                        "visible_surface_lift_m": 0.11558952478188395,
+                        "surface_tcp_distance_m": 0.019214840011793587,
+                        "tcp_height_above_reference_m": 0.10943469657741355
+                      },
+                      {
+                        "control_step": 185,
+                        "evidence": "holding_supported",
+                        "visible_surface_lift_m": 0.11556009477016632,
+                        "surface_tcp_distance_m": 0.0191769039436089,
+                        "tcp_height_above_reference_m": 0.10956019544132206
+                      }
+                    ],
+                    "window_control_steps": 20,
+                    "maximum_relative_surface_drift_m": 0.0023974288898212276,
+                    "estimated_center_tcp_offset_xyz": [
+                      0.007190771841027677,
+                      -0.0004185562591738634,
+                      -0.00829433615491849
+                    ],
+                    "reference_tcp_wxyz": [
+                      0.008766088634729385,
+                      -8.255243301391602e-06,
+                      0.9999606609344482,
+                      0.0011403143871575594
+                    ],
+                    "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+                    "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+                  }
+                ],
+                "evidence_ref": "frame-000185.npz",
+                "captured_at": 1795096504.5926878,
+                "control_step": 185
+              }
+            },
+            "4f2d78bc9f564ae8a8c64a98e6fbfb4b": {
+              "id": "4f2d78bc9f564ae8a8c64a98e6fbfb4b",
+              "revision": 2,
+              "subgoal": "reach-hover-origin",
+              "code": "goto_pose([0.6697541979554615, -0.11438638812335718, 0.09601125802564141], [0.0087350532412529, -6.3478946685791016e-06, 0.9999610781669617, 0.001135361148044467])",
+              "contract": null,
+              "precondition_results": [],
+              "execution": "completed",
+              "effect": "unknown",
+              "cancel_requested": false,
+              "verification_wait": {
+                "status": "ready",
+                "reason": "public_window_complete",
+                "action_step": 236,
+                "snapshot_age_seconds": 0.24706697463989258,
+                "snapshot_after_action": true,
+                "windows": [
+                  {
+                    "relation": "on",
+                    "observed_window_steps": 20,
+                    "required_window_steps": 20,
+                    "first_step": 240,
+                    "last_step": 260
+                  }
+                ],
+                "evidence_ref": "frame-000260.npz",
+                "elapsed_seconds": 1.404982583830133
+              },
+              "goal_verification": {
+                "status": "unknown",
+                "evidence": [
+                  {
+                    "status": "unknown",
+                    "evidence_ref": "frame-000260.npz",
+                    "captured_at": 1795096508.3414638,
+                    "gripper_width_m": 0.03962049458223796,
+                    "command": "closed",
+                    "reason": "open_empty_gripper_not_confirmed"
+                  },
+                  {
+                    "relation": [
+                      "red cube",
+                      "green cube"
+                    ],
+                    "samples": [
+                      "unknown",
+                      "unknown",
+                      "unknown",
+                      "unknown",
+                      "unknown"
+                    ],
+                    "geometry": [
+                      {
+                        "control_step": 240,
+                        "horizontal_residual_m": 0.010116475233615899,
+                        "height_difference_m": 0.17749746621199114,
+                        "support_width_m": 0.05016924838347518,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      },
+                      {
+                        "control_step": 245,
+                        "horizontal_residual_m": 0.010143761855526637,
+                        "height_difference_m": 0.17748054045535067,
+                        "support_width_m": 0.05016924838347518,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      },
+                      {
+                        "control_step": 250,
+                        "horizontal_residual_m": 0.010126231208286788,
+                        "height_difference_m": 0.17747350061175698,
+                        "support_width_m": 0.05016924838347518,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      },
+                      {
+                        "control_step": 255,
+                        "horizontal_residual_m": 0.01012056211137722,
+                        "height_difference_m": 0.17747137330839322,
+                        "support_width_m": 0.05016924838347518,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      },
+                      {
+                        "control_step": 260,
+                        "horizontal_residual_m": 0.010093559757110224,
+                        "height_difference_m": 0.17746874459368023,
+                        "support_width_m": 0.05016924838347518,
+                        "center_methods": [
+                          "visible_box",
+                          "visible_box"
+                        ]
+                      }
+                    ],
+                    "window_steps": 20,
+                    "scope": "visible geometry after release; not contact truth"
+                  }
+                ],
+                "evidence_ref": "frame-000260.npz",
+                "captured_at": 1795096508.3414638,
+                "control_step": 260
+              },
+              "stage_verification": {
+                "status": "unknown",
+                "reason": "No public postcondition declared"
+              }
+            },
+            "b878d238a10a4557a9eea88f9dfccd88": {
+              "id": "b878d238a10a4557a9eea88f9dfccd88",
+              "revision": 2,
+              "subgoal": "vertical-descent",
+              "code": "goto_pose([0.6718344604039818, -0.1073575128273892, -0.02665521844993629], [0.008566365577280521, -6.67572021484375e-06, 0.9999626874923706, 0.001082494854927063])",
+              "contract": null,
+              "precondition_results": [],
+              "execution": "completed",
+              "effect": "unknown",
+              "cancel_requested": false,
+              "verification_wait": {
+                "status": "ready",
+                "reason": "public_window_complete",
+                "action_step": 286,
+                "snapshot_age_seconds": 0.25136542320251465,
+                "snapshot_after_action": true,
+                "windows": [
+                  {
+                    "relation": "on",
+                    "observed_window_steps": 20,
+                    "required_window_steps": 20,
+                    "first_step": 290,
+                    "last_step": 310
+                  }
+                ],
+                "evidence_ref": "frame-000310.npz",
+                "elapsed_seconds": 1.4119642439763993
+              },
+              "goal_verification": {
+                "status": "unknown",
+                "evidence": [
+                  {
+                    "status": "unknown",
+                    "evidence_ref": "frame-000310.npz",
+                    "captured_at": 1795096510.8454866,
+                    "gripper_width_m": 0.03962066680887996,
+                    "command": "closed",
+                    "reason": "open_empty_gripper_not_confirmed"
+                  },
+                  {
+                    "relation": [
+                      "red cube",
+                      "green cube"
+                    ],
+                    "samples": [
+                      "unknown",
+                      "unknown",
+                      "unknown",
+                      "unknown",
+                      "unknown"
+                    ],
+                    "geometry": [],
+                    "window_steps": 20,
+                    "scope": "visible geometry after release; not contact truth"
+                  }
+                ],
+                "evidence_ref": "frame-000310.npz",
+                "captured_at": 1795096510.8454866,
+                "control_step": 310
+              },
+              "stage_verification": {
+                "status": "unknown",
+                "reason": "No public postcondition declared"
+              }
+            },
+            "4c4118cb17a2436f9233f0b5a58a5acb": {
+              "id": "4c4118cb17a2436f9233f0b5a58a5acb",
+              "revision": 2,
+              "subgoal": "release-must-be-blocked",
+              "code": "open_gripper()",
+              "contract": null,
+              "precondition_results": [],
+              "execution": "failed",
+              "effect": "unknown",
+              "cancel_requested": false,
+              "error": "Public effect unknown",
+              "feedback": {
+                "category": "insufficient_evidence",
+                "phase": "execution",
+                "api": "open_gripper",
+                "call_id": "e7e31c3c6ee34afc945f2661d78f3c97",
+                "message": "Public effect unknown",
+                "evidence": {
+                  "status": "unknown",
+                  "reason": "Support evidence unknown; fresh support evidence required",
+                  "evidence": {
+                    "status": "unknown",
+                    "object_name": "green cube",
+                    "evidence_ref": "frame-000310.npz",
+                    "scope": "public RGB-D support visibility; center not independently verified",
+                    "captured_at": 1795096510.8454866,
+                    "control_step": 310,
+                    "reason": "support_not_visible"
+                  },
+                  "recovery": {
+                    "status": "available",
+                    "reason": "recorded_vertical_reversal_only",
+                    "target_xyz": [
+                      0.6718344604039818,
+                      -0.1073575128273892,
+                      0.0933447815500637
+                    ],
+                    "target_wxyz": [
+                      0.008566365577280521,
+                      -6.67572021484375e-06,
+                      0.9999626874923706,
+                      0.001082494854927063
+                    ],
+                    "evidence_ref": "frame-000260.npz",
+                    "scope": "retrace last public vertical descent; bounded cube scene"
+                  }
+                },
+                "observation": {
+                  "evidence_ref": "frame-000310.npz",
+                  "captured_at": 1795096510.8454866,
+                  "control_step": 310
+                },
+                "causal_status": "not_established"
+              },
+              "verification_wait": {
+                "status": "not_required"
+              },
+              "goal_verification": {
+                "status": "unknown",
+                "evidence": [
+                  {
+                    "status": "unknown",
+                    "evidence_ref": "frame-000310.npz",
+                    "captured_at": 1795096510.8454866,
+                    "gripper_width_m": 0.03962066680887996,
+                    "command": "closed",
+                    "reason": "open_empty_gripper_not_confirmed"
+                  },
+                  {
+                    "relation": [
+                      "red cube",
+                      "green cube"
+                    ],
+                    "samples": [
+                      "unknown",
+                      "unknown",
+                      "unknown",
+                      "unknown",
+                      "unknown"
+                    ],
+                    "geometry": [],
+                    "window_steps": 20,
+                    "scope": "visible geometry after release; not contact truth"
+                  }
+                ],
+                "evidence_ref": "frame-000310.npz",
+                "captured_at": 1795096510.8454866,
+                "control_step": 310
+              },
+              "stage_verification": {
+                "status": "unknown",
+                "reason": "No public postcondition declared"
+              }
+            },
+            "17ebf377d49146238010e5fc36722fb9": {
+              "id": "17ebf377d49146238010e5fc36722fb9",
+              "revision": 2,
+              "subgoal": "low-inspection-must-not-move",
+              "code": "inspect_support(\"green cube\", \"red cube\")",
+              "contract": null,
+              "precondition_results": [],
+              "execution": "failed",
+              "effect": "unknown",
+              "cancel_requested": false,
+              "evidence_acquisition": {
+                "status": "unknown",
+                "acquisition_id": "e297a8037beb47e4a3995552581164f5",
+                "revision": 2,
+                "support": "green cube",
+                "held_object": "red cube",
+                "reason": "retract_before_lateral_inspection",
+                "before": {
+                  "status": "unknown",
+                  "object_name": "green cube",
+                  "evidence_ref": "frame-000310.npz",
+                  "scope": "public RGB-D support visibility; center not independently verified",
+                  "captured_at": 1795096510.8454866,
+                  "control_step": 310,
+                  "reason": "support_not_visible"
+                },
+                "holding": {
+                  "status": "verified",
+                  "evidence": {
+                    "state": "satisfied",
+                    "object_name": "red cube",
+                    "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+                    "samples": [
+                      {
+                        "control_step": 320,
+                        "evidence": "holding_supported",
+                        "visible_surface_lift_m": 0.06081142157951297,
+                        "surface_tcp_distance_m": 0.019156333717064433,
+                        "tcp_height_above_reference_m": 0.05662396337710007
+                      },
+                      {
+                        "control_step": 325,
+                        "evidence": "holding_supported",
+                        "visible_surface_lift_m": 0.0607996462629547,
+                        "surface_tcp_distance_m": 0.01915860061340079,
+                        "tcp_height_above_reference_m": 0.05661545793184698
+                      },
+                      {
+                        "control_step": 330,
+                        "evidence": "holding_supported",
+                        "visible_surface_lift_m": 0.06079262913553629,
+                        "surface_tcp_distance_m": 0.019155749712057333,
+                        "tcp_height_above_reference_m": 0.0566106146007041
+                      },
+                      {
+                        "control_step": 335,
+                        "evidence": "holding_supported",
+                        "visible_surface_lift_m": 0.060785612008117884,
+                        "surface_tcp_distance_m": 0.019151984299277818,
+                        "tcp_height_above_reference_m": 0.056607438496051904
+                      },
+                      {
+                        "control_step": 340,
+                        "evidence": "holding_supported",
+                        "visible_surface_lift_m": 0.06078205538189213,
+                        "surface_tcp_distance_m": 0.019149433539416106,
+                        "tcp_height_above_reference_m": 0.05660534708368822
+                      }
+                    ],
+                    "window_control_steps": 20,
+                    "maximum_relative_surface_drift_m": 1.5652037729157057e-05,
+                    "estimated_center_tcp_offset_xyz": [
+                      0.008692071752460118,
+                      0.00024630034779719867,
+                      -0.008317451423014877
+                    ],
+                    "reference_tcp_wxyz": [
+                      0.007722338195890188,
+                      0.0007261037826538086,
+                      0.999966561794281,
+                      0.0025531223509460688
+                    ],
+                    "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+                    "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+                  }
+                },
+                "recovery": {
+                  "status": "available",
+                  "reason": "recorded_vertical_reversal_only",
+                  "target_xyz": [
+                    0.6718344604039818,
+                    -0.1073575128273892,
+                    0.0933447815500637
+                  ],
+                  "target_wxyz": [
+                    0.008566365577280521,
+                    -6.67572021484375e-06,
+                    0.9999626874923706,
+                    0.001082494854927063
+                  ],
+                  "evidence_ref": "frame-000260.npz",
+                  "scope": "retrace last public vertical descent; bounded cube scene"
+                },
+                "views_used": 0,
+                "total_views_used": 0,
+                "evidence_ref": "frame-000335.npz",
+                "captured_at": 1795096512.0934434,
+                "elapsed_seconds": 1.2577953739091754,
+                "used_delta": {
+                  "decisions": 0,
+                  "calls": 1,
+                  "motion_steps": 0,
+                  "idle_steps": 26
+                }
+              },
+              "error": "Public effect unknown",
+              "feedback": {
+                "category": "insufficient_evidence",
+                "phase": "execution",
+                "api": "inspect_support",
+                "call_id": "9273b48b99314601ad41ec73589f7a56",
+                "message": "Public effect unknown",
+                "evidence": {
+                  "status": "unknown",
+                  "acquisition_id": "e297a8037beb47e4a3995552581164f5",
+                  "revision": 2,
+                  "support": "green cube",
+                  "held_object": "red cube",
+                  "reason": "retract_before_lateral_inspection",
+                  "before": {
+                    "status": "unknown",
+                    "object_name": "green cube",
+                    "evidence_ref": "frame-000310.npz",
+                    "scope": "public RGB-D support visibility; center not independently verified",
+                    "captured_at": 1795096510.8454866,
+                    "control_step": 310,
+                    "reason": "support_not_visible"
+                  },
+                  "holding": {
+                    "status": "verified",
+                    "evidence": {
+                      "state": "satisfied",
+                      "object_name": "red cube",
+                      "scope": "observed_window_only; no_contact_sensor_or_future_stability_guarantee",
+                      "samples": [
+                        {
+                          "control_step": 320,
+                          "evidence": "holding_supported",
+                          "visible_surface_lift_m": 0.06081142157951297,
+                          "surface_tcp_distance_m": 0.019156333717064433,
+                          "tcp_height_above_reference_m": 0.05662396337710007
+                        },
+                        {
+                          "control_step": 325,
+                          "evidence": "holding_supported",
+                          "visible_surface_lift_m": 0.0607996462629547,
+                          "surface_tcp_distance_m": 0.01915860061340079,
+                          "tcp_height_above_reference_m": 0.05661545793184698
+                        },
+                        {
+                          "control_step": 330,
+                          "evidence": "holding_supported",
+                          "visible_surface_lift_m": 0.06079262913553629,
+                          "surface_tcp_distance_m": 0.019155749712057333,
+                          "tcp_height_above_reference_m": 0.0566106146007041
+                        },
+                        {
+                          "control_step": 335,
+                          "evidence": "holding_supported",
+                          "visible_surface_lift_m": 0.060785612008117884,
+                          "surface_tcp_distance_m": 0.019151984299277818,
+                          "tcp_height_above_reference_m": 0.056607438496051904
+                        },
+                        {
+                          "control_step": 340,
+                          "evidence": "holding_supported",
+                          "visible_surface_lift_m": 0.06078205538189213,
+                          "surface_tcp_distance_m": 0.019149433539416106,
+                          "tcp_height_above_reference_m": 0.05660534708368822
+                        }
+                      ],
+                      "window_control_steps": 20,
+                      "maximum_relative_surface_drift_m": 1.5652037729157057e-05,
+                      "estimated_center_tcp_offset_xyz": [
+                        0.008692071752460118,
+                        0.00024630034779719867,
+                        -0.008317451423014877
+                      ],
+                      "reference_tcp_wxyz": [
+                        0.007722338195890188,
+                        0.0007261037826538086,
+                        0.999966561794281,
+                        0.0025531223509460688
+                      ],
+                      "placement_scope": "translation only; preserve this TCP orientation; visible cube geometry",
+                      "reason": "elevated_near_tcp_and_consistent_during_observed_window"
+                    }
+                  },
+                  "recovery": {
+                    "status": "available",
+                    "reason": "recorded_vertical_reversal_only",
+                    "target_xyz": [
+                      0.6718344604039818,
+                      -0.1073575128273892,
+                      0.0933447815500637
+                    ],
+                    "target_wxyz": [
+                      0.008566365577280521,
+                      -6.67572021484375e-06,
+                      0.9999626874923706,
+                      0.001082494854927063
+                    ],
+                    "evidence_ref": "frame-000260.npz",
+                    "scope": "retrace last public vertical descent; bounded cube scene"
+                  },
+                  "views_used": 0,
+                  "total_views_used": 0,
+                  "evidence_ref": "frame-000335.npz",
+                  "captured_at": 1795096512.0934434,
+                  "elapsed_seconds": 1.2577953739091754,
+                  "used_delta": {
+                    "decisions": 0,
+                    "calls": 1,
+                    "motion_steps": 0,
+                    "idle_steps": 26
+                  }
+                },
+                "observation": {
+                  "evidence_ref": "frame-000335.npz",
+                  "captured_at": 1795096512.0934434,
+                  "control_step": 335
+                },
+                "causal_status": "not_established"
+              },
+              "verification_wait": {
+                "status": "not_required"
+              },
+              "goal_verification": {
+                "status": "unknown",
+                "evidence": [
+                  {
+                    "status": "unknown",
+                    "evidence_ref": "frame-000335.npz",
+                    "captured_at": 1795096512.0934434,
+                    "gripper_width_m": 0.03962051705507591,
+                    "command": "closed",
+                    "reason": "open_empty_gripper_not_confirmed"
+                  },
+                  {
+                    "relation": [
+                      "red cube",
+                      "green cube"
+                    ],
+                    "samples": [
+                      "unknown",
+                      "unknown",
+                      "unknown",
+                      "unknown",
+                      "unknown"
+                    ],
+                    "geometry": [],
+                    "window_steps": 20,
+                    "scope": "visible geometry after release; not contact truth"
+                  }
+                ],
+                "evidence_ref": "frame-000335.npz",
+                "captured_at": 1795096512.0934434,
+                "control_step": 335
+              },
+              "stage_verification": {
+                "status": "unknown",
+                "reason": "No public postcondition declared"
+              }
+            },
+            "668bff59760f4f949a43942118fd5cb0": {
+              "id": "668bff59760f4f949a43942118fd5cb0",
+              "revision": 2,
+              "subgoal": "interruptible-retreat",
+              "code": "goto_pose([0.6718344604039818, -0.1073575128273892, 0.0933447815500637], [0.008566365577280521, -6.67572021484375e-06, 0.9999626874923706, 0.001082494854927063])",
+              "contract": null,
+              "precondition_results": [],
+              "execution": "cancelled",
+              "effect": "unknown",
+              "cancel_requested": true,
+              "error": "Cancelled or superseded goal",
+              "feedback": {
+                "category": "cancelled",
+                "phase": "execution",
+                "api": "goto_pose",
+                "call_id": "1b3f272a24614df599d0465208251d1d",
+                "message": "Cancelled or superseded goal",
+                "evidence": null,
+                "observation": {
+                  "evidence_ref": "frame-000340.npz",
+                  "captured_at": 1795096512.3516564,
+                  "control_step": 340
+                },
+                "causal_status": "not_established"
+              }
+            }
+          },
+          "last_event_id": 94
+        },
+        "old_revision": 2,
+        "stale_rejected": true,
+        "before_api_count": 13,
+        "after_api_count": 13
+      },
+      "stop_latencies": [
+        0.05843425798229873,
+        0.04069590591825545,
+        0.05853126081638038,
+        0.062062659999355674,
+        0.0555018859449774
+      ],
+      "public_final": "unknown",
+      "recorded_goal_complete_at_end": {
+        "status": "failed",
+        "sample_count": 3,
+        "span_seconds": 1.051415205001831,
+        "values": [
+          false,
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "reset_count": 1,
+      "used": {
+        "decisions": 7,
+        "calls": 13,
+        "motion_steps": 155,
+        "idle_steps": 228,
+        "wall_seconds": 20.61735440697521
+      }
+    }
+  ],
+  "scope": "synthetic post-descent support RGB-D mask; fixed driver; recovery coverage, not benchmark",
+  "scorer_sha256": "81c066a9dbd6a3503b5ae2964e25c6ff42f307afdde1dacdd1b42d621aefc41d",
+  "limitations": [
+    "Synthetic occlusion, fixed driver, seen stack seed 62",
+    "Recovery protocol diagnosis; tasks intentionally remain holding, not a completion benchmark",
+    "Private task score follows recorded goals, including explicit goal changes"
+  ]
+}

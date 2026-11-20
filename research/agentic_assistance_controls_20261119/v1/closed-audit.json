@@ -1,0 +1,47 @@
+{
+  "cases": [
+    {
+      "mode": "stop",
+      "episode_id": "2bd2651cc15a8feb7361da8fb6232656",
+      "driver_passed": true,
+      "actual_hold_confirmations": 4,
+      "all_cancel_requests_confirmed": true,
+      "public_api_starts": 0,
+      "goal": {
+        "holding": "red cube"
+      },
+      "used": {
+        "decisions": 2,
+        "calls": 0,
+        "motion_steps": 0,
+        "idle_steps": 45,
+        "wall_seconds": 4.13548071612604
+      },
+      "reset_count": 1,
+      "source_unchanged": true,
+      "scope": "Scripted workbench protocol over actual CaP HTTP; no movement or LLM autonomy claim"
+    },
+    {
+      "mode": "goal_change",
+      "episode_id": "60c3e2a88a00b77198e6dbbd52d7cb4c",
+      "driver_passed": true,
+      "actual_hold_confirmations": 6,
+      "all_cancel_requests_confirmed": true,
+      "public_api_starts": 0,
+      "goal": {
+        "holding": "green cube"
+      },
+      "used": {
+        "decisions": 4,
+        "calls": 0,
+        "motion_steps": 0,
+        "idle_steps": 85,
+        "wall_seconds": 5.911390468943864
+      },
+      "reset_count": 1,
+      "source_unchanged": true,
+      "scope": "Scripted workbench protocol over actual CaP HTTP; no movement or LLM autonomy claim"
+    }
+  ],
+  "scorer_sha256": "cafa68f05198ff7e7d96bf9a184cffef605221fa75e59293b1ec33a826353018"
+}

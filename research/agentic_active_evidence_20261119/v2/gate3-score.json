@@ -1,0 +1,2146 @@
+{
+  "planned_trials": 8,
+  "observed_trials": 8,
+  "trials": [
+    {
+      "case": {
+        "task": "cube_stack",
+        "seed": 61,
+        "mode": "passive"
+      },
+      "episode_id": "80540b17e2b1b70fcce6c096f4089325",
+      "status": "needs_attention",
+      "error": "release-red cube: Public effect unknown",
+      "declared_complete": false,
+      "private_outcome": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.500417947769165,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "false_completion": false,
+      "reset_count": 1,
+      "before_inspection": {
+        "status": "estimated",
+        "center_xyz": [
+          0.6234591535682129,
+          0.03769806930228356,
+          0.018508537102482698
+        ],
+        "reason": "three_face_fit_with_earlier_public_size",
+        "scope": "cube_shape_assumption; not_calibrated_confidence_or_contact_truth"
+      },
+      "after_inspection": {
+        "status": "estimated",
+        "center_xyz": [
+          0.6234591535682129,
+          0.03769806930228356,
+          0.018508537102482698
+        ],
+        "reason": "three_face_fit_with_earlier_public_size",
+        "scope": "cube_shape_assumption; not_calibrated_confidence_or_contact_truth"
+      },
+      "before_placement_evidence": {
+        "held_center": {
+          "status": "estimated",
+          "center_xyz": [
+            0.6234591535682129,
+            0.03769806930228356,
+            0.018508537102482698
+          ],
+          "reason": "three_face_fit_with_earlier_public_size",
+          "scope": "cube_shape_assumption; not_calibrated_confidence_or_contact_truth"
+        },
+        "support": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000299.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795069939.4595206,
+          "control_step": 299,
+          "horizontal_span_ratio": 0.18128647769526335,
+          "observed_scale_m": 0.0499270539173422,
+          "visible_depth_pixels": 66,
+          "reason": "support_horizontal_extent_truncated"
+        }
+      },
+      "after_placement_evidence": {
+        "held_center": {
+          "status": "estimated",
+          "center_xyz": [
+            0.6234591535682129,
+            0.03769806930228356,
+            0.018508537102482698
+          ],
+          "reason": "three_face_fit_with_earlier_public_size",
+          "scope": "cube_shape_assumption; not_calibrated_confidence_or_contact_truth"
+        },
+        "support": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000299.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795069939.4595206,
+          "control_step": 299,
+          "horizontal_span_ratio": 0.18128647769526335,
+          "observed_scale_m": 0.0499270539173422,
+          "visible_depth_pixels": 66,
+          "reason": "support_horizontal_extent_truncated"
+        }
+      },
+      "inspections": 0,
+      "used": {
+        "decisions": 4,
+        "calls": 8,
+        "motion_steps": 116,
+        "idle_steps": 216,
+        "wall_seconds": 24.755731023848057
+      },
+      "inspection_contact": [],
+      "geometry": [
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6267631132947711,
+              0.04035020486095248,
+              -0.1034386583332676
+            ],
+            "bracket_seconds": 0.5229425430297852,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.00441041239905961
+        },
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.46600539206468744,
+              -0.008394870550633088,
+              -0.09843871032552753
+            ],
+            "bracket_seconds": 0.5229425430297852,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.006696454833066241
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000225.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6264035619095131,
+              0.039135960525553015,
+              -0.10241221924175525
+            ],
+            "bracket_seconds": 0.5428690910339355,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.015182299821062166
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000225.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.46600539206476316,
+              -0.008394870550771786,
+              -0.09710775542021677
+            ],
+            "bracket_seconds": 0.5428690910339355,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.014309921768401467
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000294.npz",
+          "object_name": "red cube",
+          "candidate_status": "estimated",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6244082974465984,
+              0.03834026355526595,
+              0.01723394676843304
+            ],
+            "bracket_seconds": 0.5923888683319092,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.014150950533432734,
+          "candidate_xy_error_m": 0.0011459875917479696
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000294.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.46600539206476316,
+              -0.008394870550771786,
+              -0.09710775542021677
+            ],
+            "bracket_seconds": 0.5923888683319092,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0278748021099966
+        }
+      ]
+    },
+    {
+      "case": {
+        "task": "cube_stack",
+        "seed": 61,
+        "mode": "support_active"
+      },
+      "episode_id": "ba225b9895eafb5ed01ea5320527c9d9",
+      "status": "completed",
+      "error": null,
+      "declared_complete": true,
+      "private_outcome": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.5563483238220215,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "false_completion": false,
+      "reset_count": 1,
+      "before_inspection": {
+        "status": "estimated",
+        "center_xyz": [
+          0.6234738390472547,
+          0.03766652030779474,
+          0.018533252360399623
+        ],
+        "reason": "three_face_fit_with_earlier_public_size",
+        "scope": "cube_shape_assumption; not_calibrated_confidence_or_contact_truth"
+      },
+      "after_inspection": {
+        "status": "unknown",
+        "reason": "fewer_than_three_faces"
+      },
+      "before_placement_evidence": {
+        "held_center": {
+          "status": "estimated",
+          "center_xyz": [
+            0.6234738390472547,
+            0.03766652030779474,
+            0.018533252360399623
+          ],
+          "reason": "three_face_fit_with_earlier_public_size",
+          "scope": "cube_shape_assumption; not_calibrated_confidence_or_contact_truth"
+        },
+        "support": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000210.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795069953.9317584,
+          "control_step": 210,
+          "horizontal_span_ratio": 0.18128647769526335,
+          "observed_scale_m": 0.0499270539173422,
+          "visible_depth_pixels": 66,
+          "reason": "support_horizontal_extent_truncated"
+        }
+      },
+      "after_placement_evidence": {
+        "held_center": {
+          "status": "unknown",
+          "reason": "fewer_than_three_faces"
+        },
+        "support": {
+          "status": "available",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000305.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795069958.6814148,
+          "control_step": 305,
+          "horizontal_span_ratio": 0.4189087475680874,
+          "observed_scale_m": 0.0499270539173422,
+          "visible_depth_pixels": 147,
+          "reason": "visible_box_support; not_center_verified"
+        }
+      },
+      "inspections": 1,
+      "used": {
+        "decisions": 6,
+        "calls": 14,
+        "motion_steps": 226,
+        "idle_steps": 255,
+        "wall_seconds": 25.777308996999636
+      },
+      "inspection_contact": [
+        {
+          "segment_id": "de1778a5b7394c748a2214ba74ed8357",
+          "sample_count": 6,
+          "bilateral_contact_loss_observed": false,
+          "scope": "contact proxy; not a calibrated slip/drop detector"
+        }
+      ],
+      "geometry": [
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6267631132947725,
+              0.040350204860952386,
+              -0.10344083130255799
+            ],
+            "bracket_seconds": 0.5203440189361572,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004410412399058195
+        },
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.46600539206468733,
+              -0.008394870550632863,
+              -0.09844088337970591
+            ],
+            "bracket_seconds": 0.5203440189361572,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.006696454833066219
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000135.npz",
+          "object_name": "red cube",
+          "candidate_status": "estimated",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6264280994028968,
+              0.03915016542218135,
+              -0.1024176219076286
+            ],
+            "bracket_seconds": 0.5008277893066406,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.015104722232502775,
+          "candidate_xy_error_m": 0.0013993342471840997
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000135.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.46600539206476316,
+              -0.008394870550771786,
+              -0.09710775542021677
+            ],
+            "bracket_seconds": 0.5008277893066406,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.014309921768401467
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000205.npz",
+          "object_name": "red cube",
+          "candidate_status": "estimated",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6244115978826442,
+              0.03833652031660478,
+              0.017227753531687706
+            ],
+            "bracket_seconds": 0.5533320903778076,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.014152340134410812,
+          "candidate_xy_error_m": 0.0011525153557139737
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000205.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.46600539206476316,
+              -0.008394870550771786,
+              -0.09710775542021677
+            ],
+            "bracket_seconds": 0.5533320903778076,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0278748021099966
+        },
+        {
+          "label": "inspect-support",
+          "evidence_ref": "frame-000300.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6221419281594381,
+              -0.06323600769147322,
+              0.01659919685642819
+            ],
+            "bracket_seconds": 0.5520989894866943,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.01514224938113062
+        },
+        {
+          "label": "inspect-support",
+          "evidence_ref": "frame-000300.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.46600539206476316,
+              -0.008394870550771786,
+              -0.09710775542021677
+            ],
+            "bracket_seconds": 0.5520989894866943,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.023411651227103966
+        },
+        {
+          "label": "release-red cube",
+          "evidence_ref": "frame-000446.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.4740919119018847,
+              -0.010912672646028682,
+              -0.052279790018232686
+            ],
+            "bracket_seconds": 0.5451047420501709,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.003609938173550888
+        },
+        {
+          "label": "release-red cube",
+          "evidence_ref": "frame-000446.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.465472378664902,
+              -0.008208498642707347,
+              -0.09715992237642535
+            ],
+            "bracket_seconds": 0.5451047420501709,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.021976812337502618
+        }
+      ]
+    },
+    {
+      "case": {
+        "task": "cube_restack",
+        "seed": 61,
+        "mode": "support_active"
+      },
+      "episode_id": "34335cf42e144aaf93d08c252d445437",
+      "status": "needs_attention",
+      "error": "release-red cube: Public effect unknown",
+      "declared_complete": false,
+      "private_outcome": {
+        "status": "failed",
+        "sample_count": 3,
+        "span_seconds": 1.0512621402740479,
+        "values": [
+          false,
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "false_completion": false,
+      "reset_count": 1,
+      "before_inspection": {
+        "status": "estimated",
+        "center_xyz": [
+          0.6286227657687099,
+          0.03820558700231799,
+          0.01800033611084675
+        ],
+        "reason": "three_face_fit_with_earlier_public_size",
+        "scope": "cube_shape_assumption; not_calibrated_confidence_or_contact_truth"
+      },
+      "after_inspection": {
+        "status": "unknown",
+        "reason": "fewer_than_three_faces"
+      },
+      "before_placement_evidence": {
+        "held_center": {
+          "status": "estimated",
+          "center_xyz": [
+            0.6286227657687099,
+            0.03820558700231799,
+            0.01800033611084675
+          ],
+          "reason": "three_face_fit_with_earlier_public_size",
+          "scope": "cube_shape_assumption; not_calibrated_confidence_or_contact_truth"
+        },
+        "support": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000562.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795069998.9209123,
+          "control_step": 562,
+          "reason": "support_not_visible"
+        }
+      },
+      "after_placement_evidence": {
+        "held_center": {
+          "status": "unknown",
+          "reason": "fewer_than_three_faces"
+        },
+        "support": {
+          "status": "available",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000702.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795070005.9231083,
+          "control_step": 702,
+          "horizontal_span_ratio": 0.8656456618775354,
+          "observed_scale_m": 0.03902229353582032,
+          "visible_depth_pixels": 359,
+          "reason": "visible_box_support; not_center_verified"
+        }
+      },
+      "inspections": 2,
+      "used": {
+        "decisions": 8,
+        "calls": 25,
+        "motion_steps": 393,
+        "idle_steps": 384,
+        "wall_seconds": 41.50240009021945
+      },
+      "inspection_contact": [
+        {
+          "segment_id": "10a2aa28f6f84054b12697bc1735462b",
+          "sample_count": 10,
+          "bilateral_contact_loss_observed": false,
+          "scope": "contact proxy; not a calibrated slip/drop detector"
+        }
+      ],
+      "geometry": [
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6318847250376859,
+              0.040350203421013225,
+              -0.1034514122334157
+            ],
+            "bracket_seconds": 0.5019083023071289,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.011356517948728188
+        },
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6217177888832067,
+              0.04035163074962511,
+              -0.06691609574851154
+            ],
+            "bracket_seconds": 0.5019083023071289,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004579641390380474
+        },
+        {
+          "label": "grasp-green cube",
+          "evidence_ref": "frame-000133.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6318698627883772,
+              0.039719524381450357,
+              -0.10257859679031178
+            ],
+            "bracket_seconds": 0.5011513233184814,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.011160659690323831
+        },
+        {
+          "label": "grasp-green cube",
+          "evidence_ref": "frame-000133.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6213507430894077,
+              0.03927458901915185,
+              -0.06360051762986396
+            ],
+            "bracket_seconds": 0.5011513233184814,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.014296471103682715
+        },
+        {
+          "label": "lift-green cube",
+          "evidence_ref": "frame-000202.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6320521872875754,
+              0.03971892516225158,
+              -0.10210775542021677
+            ],
+            "bracket_seconds": 0.501544713973999,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004389814511166266
+        },
+        {
+          "label": "lift-green cube",
+          "evidence_ref": "frame-000202.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6198797845857545,
+              0.039421324736652684,
+              0.0562643214932369
+            ],
+            "bracket_seconds": 0.501544713973999,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.011057329958366818
+        },
+        {
+          "label": "release-green cube",
+          "evidence_ref": "frame-000345.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6320521872875754,
+              0.03971892516225158,
+              -0.10210775542021677
+            ],
+            "bracket_seconds": 0.5032663345336914,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004389814511166266
+        },
+        {
+          "label": "release-green cube",
+          "evidence_ref": "frame-000345.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.47685349999365867,
+              0.03664353464125872,
+              -0.10210775542021688
+            ],
+            "bracket_seconds": 0.5032663345336914,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.002707640722189324
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000487.npz",
+          "object_name": "red cube",
+          "candidate_status": "estimated",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6316152184941728,
+              0.039045317374003824,
+              -0.10241140094630008
+            ],
+            "bracket_seconds": 0.5020413398742676,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.015216145134317238,
+          "candidate_xy_error_m": 0.0014113681499664295
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000487.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.47685349999365867,
+              0.03664353464125872,
+              -0.10210775542021688
+            ],
+            "bracket_seconds": 0.5020413398742676,
+            "scope": "interpolated_stable_private_window"
+          }
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000557.npz",
+          "object_name": "red cube",
+          "candidate_status": "estimated",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6296155339855285,
+              0.03876094981239772,
+              0.01718037518966009
+            ],
+            "bracket_seconds": 0.5115838050842285,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.014113842715327913,
+          "candidate_xy_error_m": 0.0011375484970518083
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000557.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.47685349999365867,
+              0.03664353464125872,
+              -0.10210775542021688
+            ],
+            "bracket_seconds": 0.5115838050842285,
+            "scope": "interpolated_stable_private_window"
+          }
+        },
+        {
+          "label": "inspect-support",
+          "evidence_ref": "frame-000697.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6273654869957335,
+              0.13832593974073765,
+              0.016232029724355446
+            ],
+            "bracket_seconds": 0.5001165866851807,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.013885376473083837
+        },
+        {
+          "label": "inspect-support",
+          "evidence_ref": "frame-000697.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.47685349999365867,
+              0.03664353464125872,
+              -0.10210775542021688
+            ],
+            "bracket_seconds": 0.5001165866851807,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0026849447026120236
+        }
+      ]
+    },
+    {
+      "case": {
+        "task": "cube_restack",
+        "seed": 61,
+        "mode": "passive"
+      },
+      "episode_id": "05a28dfea5f90feb060b3a1307ec116a",
+      "status": "needs_attention",
+      "error": "No public geometry for green cube",
+      "declared_complete": false,
+      "private_outcome": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5000739097595215,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "false_completion": false,
+      "reset_count": 1,
+      "before_inspection": {
+        "status": "unknown",
+        "reason": "insufficient_visible_span"
+      },
+      "after_inspection": {
+        "status": "unknown",
+        "reason": "insufficient_visible_span"
+      },
+      "before_placement_evidence": {
+        "held_center": {
+          "status": "unknown",
+          "reason": "insufficient_visible_span"
+        },
+        "support": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000564.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795070040.1583548,
+          "control_step": 564,
+          "reason": "support_not_visible"
+        }
+      },
+      "after_placement_evidence": {
+        "held_center": {
+          "status": "unknown",
+          "reason": "insufficient_visible_span"
+        },
+        "support": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000564.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795070040.1583548,
+          "control_step": 564,
+          "reason": "support_not_visible"
+        }
+      },
+      "inspections": 0,
+      "used": {
+        "decisions": 6,
+        "calls": 17,
+        "motion_steps": 319,
+        "idle_steps": 277,
+        "wall_seconds": 31.537040747934952
+      },
+      "inspection_contact": [],
+      "geometry": [
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6318848970394538,
+              0.040350205673815406,
+              -0.10353293922219864
+            ],
+            "bracket_seconds": 0.5258660316467285,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.011356347475497812
+        },
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6217193733662542,
+              0.040351635347868016,
+              -0.06720816721071898
+            ],
+            "bracket_seconds": 0.5258660316467285,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004578143335413194
+        },
+        {
+          "label": "grasp-green cube",
+          "evidence_ref": "frame-000130.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6318924062901693,
+              0.03974321663683353,
+              -0.10260736860691122
+            ],
+            "bracket_seconds": 0.5004177093505859,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.011008577105137607
+        },
+        {
+          "label": "grasp-green cube",
+          "evidence_ref": "frame-000130.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6214175809384072,
+              0.03926322682856069,
+              -0.06364166460530174
+            ],
+            "bracket_seconds": 0.5004177093505859,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.01428417163657877
+        },
+        {
+          "label": "lift-green cube",
+          "evidence_ref": "frame-000204.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.632048528309088,
+              0.03970963654882438,
+              -0.10210775542021677
+            ],
+            "bracket_seconds": 0.5361254215240479,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004356419747267717
+        },
+        {
+          "label": "lift-green cube",
+          "evidence_ref": "frame-000204.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6198784788484253,
+              0.03942020205113514,
+              0.05627633601746773
+            ],
+            "bracket_seconds": 0.5361254215240479,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.010964370708987136
+        },
+        {
+          "label": "release-green cube",
+          "evidence_ref": "frame-000350.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.632048528309088,
+              0.03970963654882438,
+              -0.10210775542021677
+            ],
+            "bracket_seconds": 0.5337769985198975,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004356419747267717
+        },
+        {
+          "label": "release-green cube",
+          "evidence_ref": "frame-000350.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.4768438044327156,
+              0.036473887348558325,
+              -0.10210775542021688
+            ],
+            "bracket_seconds": 0.5337769985198975,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.00265043069062099
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000489.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6316182461198074,
+              0.03922620647174686,
+              -0.10243757912478446
+            ],
+            "bracket_seconds": 0.5032005310058594,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.015498303070224699
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000489.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.4768438044327156,
+              0.036473887348558325,
+              -0.10210775542021688
+            ],
+            "bracket_seconds": 0.5032005310058594,
+            "scope": "interpolated_stable_private_window"
+          }
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000559.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6296424979646557,
+              0.03903153683937519,
+              0.017134181829048023
+            ],
+            "bracket_seconds": 0.5520157814025879,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.015178213423658101
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000559.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.4768438044327156,
+              0.036473887348558325,
+              -0.10210775542021688
+            ],
+            "bracket_seconds": 0.5520157814025879,
+            "scope": "interpolated_stable_private_window"
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "task": "cube_stack",
+        "seed": 62,
+        "mode": "support_active"
+      },
+      "episode_id": "a2ea4a2dc46f6bf3528c6ae5c6e8462b",
+      "status": "completed",
+      "error": null,
+      "declared_complete": true,
+      "private_outcome": {
+        "status": "verified",
+        "sample_count": 3,
+        "span_seconds": 1.051713466644287,
+        "values": [
+          true,
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "false_completion": false,
+      "reset_count": 1,
+      "before_inspection": {
+        "status": "unknown",
+        "reason": "fewer_than_three_faces"
+      },
+      "after_inspection": {
+        "status": "unknown",
+        "reason": "fewer_than_three_faces"
+      },
+      "before_placement_evidence": {
+        "held_center": {
+          "status": "unknown",
+          "reason": "fewer_than_three_faces"
+        },
+        "support": {
+          "status": "available",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000211.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795070054.6688948,
+          "control_step": 211,
+          "horizontal_span_ratio": 0.9021996099024933,
+          "observed_scale_m": 0.05016924838347518,
+          "visible_depth_pixels": 1033,
+          "reason": "visible_box_support; not_center_verified"
+        }
+      },
+      "after_placement_evidence": {
+        "held_center": {
+          "status": "unknown",
+          "reason": "fewer_than_three_faces"
+        },
+        "support": {
+          "status": "available",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000211.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795070054.6688948,
+          "control_step": 211,
+          "horizontal_span_ratio": 0.9021996099024933,
+          "observed_scale_m": 0.05016924838347518,
+          "visible_depth_pixels": 1033,
+          "reason": "visible_box_support; not_center_verified"
+        }
+      },
+      "inspections": 0,
+      "used": {
+        "decisions": 5,
+        "calls": 10,
+        "motion_steps": 194,
+        "idle_steps": 182,
+        "wall_seconds": 20.49912698380649
+      },
+      "inspection_contact": [],
+      "geometry": [
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6946219595645138,
+              0.07841291692071924,
+              -0.10343778799001846
+            ],
+            "bracket_seconds": 0.5239365100860596,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0027687966688864723
+        },
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6777228684095127,
+              -0.11492160757010209,
+              -0.09843783994827815
+            ],
+            "bracket_seconds": 0.5239365100860596,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004389525077216409
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000137.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6949809450587705,
+              0.07679993321162626,
+              -0.10239078111992928
+            ],
+            "bracket_seconds": 0.5557734966278076,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.010443312689032902
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000137.npz",
+          "object_name": "green cube",
+          "candidate_status": "estimated",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6777228684094394,
+              -0.11492160757025996,
+              -0.09710775542021677
+            ],
+            "bracket_seconds": 0.5557734966278076,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004751258914053506,
+          "candidate_xy_error_m": 0.0002992789330892647
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000211.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6952189585541918,
+              0.07510005176350654,
+              0.017493898292525012
+            ],
+            "bracket_seconds": 0.5030999183654785,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.008470607727989143
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000211.npz",
+          "object_name": "green cube",
+          "candidate_status": "estimated",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6777228684094394,
+              -0.11492160757025996,
+              -0.09710775542021677
+            ],
+            "bracket_seconds": 0.5030999183654785,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004747391408250729,
+          "candidate_xy_error_m": 0.00031101942549276277
+        },
+        {
+          "label": "release-red cube",
+          "evidence_ref": "frame-000340.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6698643745254063,
+              -0.11424021918469192,
+              -0.05229786327112351
+            ],
+            "bracket_seconds": 0.5023684501647949,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0007058617988825667
+        },
+        {
+          "label": "release-red cube",
+          "evidence_ref": "frame-000340.npz",
+          "object_name": "green cube",
+          "candidate_status": "estimated",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6777068224742591,
+              -0.11492021973673198,
+              -0.09715996874481958
+            ],
+            "bracket_seconds": 0.5023684501647949,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.008107492721325688,
+          "candidate_xy_error_m": 0.00047319766228589633
+        }
+      ]
+    },
+    {
+      "case": {
+        "task": "cube_stack",
+        "seed": 62,
+        "mode": "passive"
+      },
+      "episode_id": "c6c19ff31ee4c310f7183e905c9f6241",
+      "status": "completed",
+      "error": null,
+      "declared_complete": true,
+      "private_outcome": {
+        "status": "verified",
+        "sample_count": 2,
+        "span_seconds": 0.5004210472106934,
+        "values": [
+          true,
+          true
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "false_completion": false,
+      "reset_count": 1,
+      "before_inspection": {
+        "status": "unknown",
+        "reason": "fewer_than_three_faces"
+      },
+      "after_inspection": {
+        "status": "unknown",
+        "reason": "fewer_than_three_faces"
+      },
+      "before_placement_evidence": {
+        "held_center": {
+          "status": "unknown",
+          "reason": "fewer_than_three_faces"
+        },
+        "support": {
+          "status": "available",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000212.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795070075.8288298,
+          "control_step": 212,
+          "horizontal_span_ratio": 0.9021996099024933,
+          "observed_scale_m": 0.05016924838347518,
+          "visible_depth_pixels": 1033,
+          "reason": "visible_box_support; not_center_verified"
+        }
+      },
+      "after_placement_evidence": {
+        "held_center": {
+          "status": "unknown",
+          "reason": "fewer_than_three_faces"
+        },
+        "support": {
+          "status": "available",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000212.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795070075.8288298,
+          "control_step": 212,
+          "horizontal_span_ratio": 0.9021996099024933,
+          "observed_scale_m": 0.05016924838347518,
+          "visible_depth_pixels": 1033,
+          "reason": "visible_box_support; not_center_verified"
+        }
+      },
+      "inspections": 0,
+      "used": {
+        "decisions": 5,
+        "calls": 10,
+        "motion_steps": 194,
+        "idle_steps": 179,
+        "wall_seconds": 20.27998553402722
+      },
+      "inspection_contact": [],
+      "geometry": [
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6946219595645138,
+              0.07841291692071971,
+              -0.10344186928923726
+            ],
+            "bracket_seconds": 0.5190057754516602,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.002768796668886805
+        },
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6777228684095129,
+              -0.1149216075701016,
+              -0.09844192140693464
+            ],
+            "bracket_seconds": 0.5190057754516602,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004389525077216142
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000138.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6949811747098389,
+              0.07679073890804253,
+              -0.10238881303118741
+            ],
+            "bracket_seconds": 0.5132076740264893,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.01044148551524507
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000138.npz",
+          "object_name": "green cube",
+          "candidate_status": "estimated",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6777228684094394,
+              -0.11492160757025996,
+              -0.09710775542021677
+            ],
+            "bracket_seconds": 0.5132076740264893,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004751258914053506,
+          "candidate_xy_error_m": 0.0002992789330892647
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000212.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6952188204315212,
+              0.07509629111493418,
+              0.017493807930734406
+            ],
+            "bracket_seconds": 0.5201144218444824,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.00847038175423535
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000212.npz",
+          "object_name": "green cube",
+          "candidate_status": "estimated",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6777228684094394,
+              -0.11492160757025996,
+              -0.09710775542021677
+            ],
+            "bracket_seconds": 0.5201144218444824,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.004747391408250729,
+          "candidate_xy_error_m": 0.00031101942549276277
+        },
+        {
+          "label": "release-red cube",
+          "evidence_ref": "frame-000337.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6698643976700166,
+              -0.11424022119687602,
+              -0.05229786323016339
+            ],
+            "bracket_seconds": 0.5034177303314209,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.00070584304448813
+        },
+        {
+          "label": "release-red cube",
+          "evidence_ref": "frame-000337.npz",
+          "object_name": "green cube",
+          "candidate_status": "estimated",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.67770682252145,
+              -0.11492021974085077,
+              -0.09715996874568267
+            ],
+            "bracket_seconds": 0.5034177303314209,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.008107492674269511,
+          "candidate_xy_error_m": 0.00047319769799014405
+        }
+      ]
+    },
+    {
+      "case": {
+        "task": "cube_restack",
+        "seed": 62,
+        "mode": "passive"
+      },
+      "episode_id": "367f1a44c8f7c9dd53d5b55c30d26b77",
+      "status": "needs_attention",
+      "error": "No public geometry for green cube",
+      "declared_complete": false,
+      "private_outcome": {
+        "status": "failed",
+        "sample_count": 2,
+        "span_seconds": 0.5003323554992676,
+        "values": [
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "false_completion": false,
+      "reset_count": 1,
+      "before_inspection": {
+        "status": "unknown",
+        "reason": "fewer_than_three_faces"
+      },
+      "after_inspection": {
+        "status": "unknown",
+        "reason": "fewer_than_three_faces"
+      },
+      "before_placement_evidence": {
+        "held_center": {
+          "status": "unknown",
+          "reason": "fewer_than_three_faces"
+        },
+        "support": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000564.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795070114.4445062,
+          "control_step": 564,
+          "reason": "support_not_visible"
+        }
+      },
+      "after_placement_evidence": {
+        "held_center": {
+          "status": "unknown",
+          "reason": "fewer_than_three_faces"
+        },
+        "support": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000564.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795070114.4445062,
+          "control_step": 564,
+          "reason": "support_not_visible"
+        }
+      },
+      "inspections": 0,
+      "used": {
+        "decisions": 6,
+        "calls": 17,
+        "motion_steps": 322,
+        "idle_steps": 274,
+        "wall_seconds": 31.47357251914218
+      },
+      "inspection_contact": [],
+      "geometry": [
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6846639227430074,
+              0.07841296964633179,
+              -0.10353401970297749
+            ],
+            "bracket_seconds": 0.5280201435089111,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.013901143424018539
+        },
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6745161213501929,
+              0.07838983844711099,
+              -0.0671364823175582
+            ],
+            "bracket_seconds": 0.5280201435089111,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.003604688663506373
+        },
+        {
+          "label": "grasp-green cube",
+          "evidence_ref": "frame-000132.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6847149813546947,
+              0.07762316218040805,
+              -0.10249909272208979
+            ],
+            "bracket_seconds": 0.5008447170257568,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.012945076053169522
+        },
+        {
+          "label": "grasp-green cube",
+          "evidence_ref": "frame-000132.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6741979964014123,
+              0.07708138657344579,
+              -0.06323310739638566
+            ],
+            "bracket_seconds": 0.5008447170257568,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.01758924741856783
+        },
+        {
+          "label": "lift-green cube",
+          "evidence_ref": "frame-000201.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6848993508267733,
+              0.0776179486758464,
+              -0.10210775542021677
+            ],
+            "bracket_seconds": 0.5502781867980957,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0031021647758233233
+        },
+        {
+          "label": "lift-green cube",
+          "evidence_ref": "frame-000201.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6727038937333847,
+              0.07667472961184645,
+              0.056569640122397846
+            ],
+            "bracket_seconds": 0.5502781867980957,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.014242184611245856
+        },
+        {
+          "label": "release-green cube",
+          "evidence_ref": "frame-000346.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6848993508267733,
+              0.0776179486758464,
+              -0.10210775542021677
+            ],
+            "bracket_seconds": 0.5442442893981934,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0031021647758233233
+        },
+        {
+          "label": "release-green cube",
+          "evidence_ref": "frame-000346.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.523281759330453,
+              0.07236984259642817,
+              -0.10210775542021688
+            ],
+            "bracket_seconds": 0.5442442893981934,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0024254481840867413
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000486.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6851430829300407,
+              0.07679899925382945,
+              -0.10234128772545126
+            ],
+            "bracket_seconds": 0.5051512718200684,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0145063715008004
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000486.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.523281759330453,
+              0.07236984259642817,
+              -0.10210775542021688
+            ],
+            "bracket_seconds": 0.5051512718200684,
+            "scope": "interpolated_stable_private_window"
+          }
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000559.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6854567949007024,
+              0.07631767305418483,
+              0.017504098213068975
+            ],
+            "bracket_seconds": 0.5568041801452637,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.011162241629124858
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000559.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.523281759330453,
+              0.07236984259642817,
+              -0.10210775542021688
+            ],
+            "bracket_seconds": 0.5568041801452637,
+            "scope": "interpolated_stable_private_window"
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "task": "cube_restack",
+        "seed": 62,
+        "mode": "support_active"
+      },
+      "episode_id": "f75ccb85a4a0cca626130b33c4fff2c7",
+      "status": "needs_attention",
+      "error": "release-red cube: Public effect unknown",
+      "declared_complete": false,
+      "private_outcome": {
+        "status": "failed",
+        "sample_count": 3,
+        "span_seconds": 1.051257610321045,
+        "values": [
+          false,
+          false,
+          false
+        ],
+        "scope": "observed_end_window_only"
+      },
+      "false_completion": false,
+      "reset_count": 1,
+      "before_inspection": {
+        "status": "unknown",
+        "reason": "fewer_than_three_faces"
+      },
+      "after_inspection": {
+        "status": "unknown",
+        "reason": "fewer_than_three_faces"
+      },
+      "before_placement_evidence": {
+        "held_center": {
+          "status": "unknown",
+          "reason": "fewer_than_three_faces"
+        },
+        "support": {
+          "status": "unknown",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000557.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795070146.2726912,
+          "control_step": 557,
+          "reason": "support_not_visible"
+        }
+      },
+      "after_placement_evidence": {
+        "held_center": {
+          "status": "unknown",
+          "reason": "fewer_than_three_faces"
+        },
+        "support": {
+          "status": "available",
+          "object_name": "green cube",
+          "evidence_ref": "frame-000692.npz",
+          "scope": "public RGB-D support visibility; center not independently verified",
+          "captured_at": 1795070153.028018,
+          "control_step": 692,
+          "horizontal_span_ratio": 0.8637848863772746,
+          "observed_scale_m": 0.040704235548666534,
+          "visible_depth_pixels": 391,
+          "reason": "visible_box_support; not_center_verified"
+        }
+      },
+      "inspections": 2,
+      "used": {
+        "decisions": 8,
+        "calls": 25,
+        "motion_steps": 401,
+        "idle_steps": 369,
+        "wall_seconds": 40.227664679987356
+      },
+      "inspection_contact": [
+        {
+          "segment_id": "d90d76ee9f044bfd9237199b840290a5",
+          "sample_count": 10,
+          "bilateral_contact_loss_observed": false,
+          "scope": "contact proxy; not a calibrated slip/drop detector"
+        }
+      ],
+      "geometry": [
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6846639220299846,
+              0.07841296960847931,
+              -0.10353368249176231
+            ],
+            "bracket_seconds": 0.518667459487915,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.013901144120281626
+        },
+        {
+          "label": "initial-observation",
+          "evidence_ref": "frame-000001.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6745161139144998,
+              0.07838983748416206,
+              -0.06713527616803983
+            ],
+            "bracket_seconds": 0.518667459487915,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0036046959014676746
+        },
+        {
+          "label": "grasp-green cube",
+          "evidence_ref": "frame-000131.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6847144297603388,
+              0.07762450735937773,
+              -0.10249982476022479
+            ],
+            "bracket_seconds": 0.5438928604125977,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0129459200142996
+        },
+        {
+          "label": "grasp-green cube",
+          "evidence_ref": "frame-000131.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6741982811320839,
+              0.07708504718634743,
+              -0.06323427653589453
+            ],
+            "bracket_seconds": 0.5438928604125977,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.017587873076263597
+        },
+        {
+          "label": "lift-green cube",
+          "evidence_ref": "frame-000200.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6848994021979069,
+              0.07761847790178476,
+              -0.10210775542021677
+            ],
+            "bracket_seconds": 0.5217082500457764,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.003102481325856442
+        },
+        {
+          "label": "lift-green cube",
+          "evidence_ref": "frame-000200.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6727048599236698,
+              0.07667559541678672,
+              0.05656929992889237
+            ],
+            "bracket_seconds": 0.5217082500457764,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.014241060744981203
+        },
+        {
+          "label": "release-green cube",
+          "evidence_ref": "frame-000344.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6848994021979069,
+              0.07761847790178476,
+              -0.10210775542021677
+            ],
+            "bracket_seconds": 0.5498216152191162,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.003102481325856442
+        },
+        {
+          "label": "release-green cube",
+          "evidence_ref": "frame-000344.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.5232503029589304,
+              0.0723782752098144,
+              -0.10210775542021677
+            ],
+            "bracket_seconds": 0.5498216152191162,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0024375206288604176
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000483.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6851476193197237,
+              0.07671296163904454,
+              -0.10234069362490827
+            ],
+            "bracket_seconds": 0.5501465797424316,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.015430147677097193
+        },
+        {
+          "label": "grasp-red cube",
+          "evidence_ref": "frame-000483.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.5232503029589304,
+              0.0723782752098144,
+              -0.10210775542021677
+            ],
+            "bracket_seconds": 0.5501465797424316,
+            "scope": "interpolated_stable_private_window"
+          }
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000552.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.685472410985719,
+              0.07611310235500175,
+              0.017483607277373747
+            ],
+            "bracket_seconds": 0.5483827590942383,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.011146775933222474
+        },
+        {
+          "label": "lift-red cube",
+          "evidence_ref": "frame-000552.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.5232503029589304,
+              0.0723782752098144,
+              -0.10210775542021677
+            ],
+            "bracket_seconds": 0.5483827590942383,
+            "scope": "interpolated_stable_private_window"
+          }
+        },
+        {
+          "label": "inspect-support",
+          "evidence_ref": "frame-000687.npz",
+          "object_name": "red cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.6863666243442517,
+              0.1759345689889752,
+              0.01697001428575029
+            ],
+            "bracket_seconds": 0.5831763744354248,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.011692943178969756
+        },
+        {
+          "label": "inspect-support",
+          "evidence_ref": "frame-000687.npz",
+          "object_name": "green cube",
+          "candidate_status": "unknown",
+          "reference": {
+            "status": "scored",
+            "center_base_xyz": [
+              0.5232503029589304,
+              0.0723782752098144,
+              -0.10210775542021677
+            ],
+            "bracket_seconds": 0.5831763744354248,
+            "scope": "interpolated_stable_private_window"
+          },
+          "old_xy_error_m": 0.0024375206288604176
+        }
+      ]
+    }
+  ],
+  "groups": {
+    "passive": {
+      "trials": 4,
+      "outcomes": {
+        "failed": 3,
+        "verified": 1
+      },
+      "false_completions": 0,
+      "inspections": 0,
+      "support_unknown_to_available_trials": 0,
+      "center_unknown_to_estimated_trials": 0
+    },
+    "support_active": {
+      "trials": 4,
+      "outcomes": {
+        "verified": 2,
+        "failed": 2
+      },
+      "false_completions": 0,
+      "inspections": 5,
+      "support_unknown_to_available_trials": 3,
+      "center_unknown_to_estimated_trials": 0
+    }
+  },
+  "scorer_sha256": "aa495bb8138a23dd3d441a00975e798480cc146f614a4cf5bf37950fa489e288",
+  "limitations": [
+    "Fixed controller, no LLM cost or policy-performance claim",
+    "One trial per task/seed/mode; seen and unseen initial states separate",
+    "End window does not guarantee future stability",
+    "Controller never reads this private evaluation file"
+  ]
+}

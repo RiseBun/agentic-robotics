@@ -1,0 +1,56 @@
+{
+  "mode": "persistent_unknown",
+  "episode_id": "ffdeaafa873594713c05f750ebba6c27",
+  "handoff_event_id": 85,
+  "started_at": 1795097545.255,
+  "preparation_used": {
+    "decisions": 6,
+    "calls": 12,
+    "motion_steps": 155,
+    "idle_steps": 1382,
+    "wall_seconds": 86.6079547861591
+  },
+  "outcome": "awaiting_user",
+  "public_at_decision": {
+    "status": "unknown",
+    "evidence": [
+      {
+        "status": "unknown",
+        "evidence_ref": "frame-002522.npz",
+        "captured_at": 1795097594.1887271,
+        "gripper_width_m": 0.03962049835100241,
+        "command": "closed",
+        "reason": "open_empty_gripper_not_confirmed"
+      },
+      {
+        "relation": [
+          "red cube",
+          "green cube"
+        ],
+        "samples": [
+          "unknown",
+          "unknown",
+          "unknown",
+          "unknown",
+          "unknown"
+        ],
+        "geometry": [],
+        "window_steps": 20,
+        "scope": "visible geometry after release; not contact truth"
+      }
+    ],
+    "evidence_ref": "frame-002522.npz",
+    "captured_at": 1795097594.1887271,
+    "control_step": 2522
+  },
+  "terminal_at": 1795097629.958,
+  "ended_at": 1795097632.707,
+  "used_at_close": {
+    "decisions": 11,
+    "calls": 19,
+    "motion_steps": 211,
+    "idle_steps": 3064,
+    "wall_seconds": 173.47455838811584
+  },
+  "source_unchanged": true
+}
