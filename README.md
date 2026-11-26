@@ -1,6 +1,6 @@
 # Agentic Robotics — embuddies + CaP
 
-一个可观察、可中断、能根据失败反馈调整动作的机器人智能体原型。主模型根据公开图像、事实和任务节点选择注册技能，或生成受限 Python；CaP Runtime 在同一环境内持续执行和验证，模型思考期间仿真不暂停。统一架构仍在改造验收中。
+一个可观察、可中断、能根据失败反馈调整动作的机器人智能体原型。主模型根据公开图像、事实和任务节点选择注册技能，或生成受限 Python；CaP Runtime 在同一环境内持续执行和验证，模型思考期间仿真不暂停。统一架构仍在改造验收中。当前主要运行环境和持续集成验收平台均为 Linux；后续开发在 Thor 上进行。
 
 保留 CaP-X 的 cube_lifting、cube_stack、cube_restack，并新增基于 MuJoCo / robosuite 的通用桌面实验模式：持有、支撑物摆放、区域摆放、拆堆、反转堆叠和多对象组合。真机接口暂空；尚未证明跨硬件泛化、长期自治或持续自我改进。
 
@@ -30,7 +30,13 @@ flowchart LR
 | research/ | 历史实验脚本、版本清单和结果摘要 |
 | docs/ | 架构、实现边界和研究记录 |
 
-## Windows 工作台
+## Linux 板子本机使用
+
+Thor 板子源码位于 `/home/li/projects/agentic-robotics`。本机浏览器入口为
+`http://127.0.0.1:8787`，应用菜单入口为 **Agentic Robotics**。
+依赖、服务、密钥迁移与测试边界见[Linux 板子使用说明](docs/linux-board.md)。
+
+## Windows 工作台（历史入口）
 
 安装 Node.js 24；在仓库根目录执行：
 
@@ -45,12 +51,6 @@ npm run build --prefix frontend
 在设置中配置支持图片的模型渠道，以及固定的 CaP Runtime 地址和访问令牌。模型密钥保留在桌面端加密配置，不发送给 CaP Runtime。新任务默认保存到 `%LOCALAPPDATA%\embuddies\data\robot-tasks`；`start-development.ps1` 使用独立开发数据目录。
 
 应用重启会查询原任务并请求保持，不自动重放动作。旧 embuddies 用户数据不会自动迁入机器人状态。
-
-## Linux 板子本机使用
-
-Thor 板子源码位于 `/home/li/projects/agentic-robotics`。本机浏览器入口为
-`http://127.0.0.1:8787`，应用菜单入口为 **Agentic Robotics**。
-依赖、服务、密钥迁移与测试边界见[Linux 板子使用说明](docs/linux-board.md)。
 
 ## Linux 仿真服务
 
@@ -93,15 +93,18 @@ export CAP_SUPPORT_SECOND_VIEW=robot0_eye_in_hand
 
 ## 测试与构建
 
-```powershell
+```bash
+npm ci --prefix runtime
+npm ci --prefix frontend
 npm test --prefix runtime
 npm test --prefix frontend
 npm run build --prefix frontend
 python -m pip install -r cap-runtime/requirements-test.txt
-python -m unittest discover -s cap-runtime/tests -p "test_*.py"
+PYTHONPATH=cap-runtime python -m unittest discover -s cap-runtime/tests -p "test_*.py"
 node runtime/scripts/stage-robot-runtime.mjs build/runtime
-.\build-windows.ps1 -SkipArchive
 ```
+
+GitHub Actions 仅运行 Linux（ubuntu-latest）质量检查。Windows 启动与打包文件作为历史兼容入口保留，不纳入当前开发及验收范围。
 
 协议与几何测试不需要模型密钥、GPU 或 CaP-X；真实仿真诊断另需上述依赖。`--backend fixture` 只用于协议验证，不能用于机器人成功率。研究辅助脚本不进入产品工具清单。
 
