@@ -1,0 +1,220 @@
+[
+  {
+    "run": "support-201-v1",
+    "dropout_injected": true,
+    "dropout_event": 110,
+    "view_attempts": 0,
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "views_used": 0,
+        "status": "available",
+        "reason": "public_observation"
+      },
+      {
+        "id": 26,
+        "object": "block_a",
+        "views_used": 0,
+        "status": "available",
+        "reason": "public_observation"
+      },
+      {
+        "id": 40,
+        "object": "platform",
+        "views_used": 0,
+        "status": "available",
+        "reason": "public_observation"
+      },
+      {
+        "id": 92,
+        "object": "platform",
+        "views_used": 0,
+        "status": "available",
+        "reason": "public_observation"
+      },
+      {
+        "id": 129,
+        "object": "block_a",
+        "views_used": 0,
+        "status": "unknown",
+        "reason": "unknown_custody_forbids_camera_motion"
+      },
+      {
+        "id": 144,
+        "object": "platform",
+        "views_used": 0,
+        "status": "unknown",
+        "reason": "unknown_custody_forbids_camera_motion"
+      }
+    ],
+    "release_checks": [],
+    "false_completion": false,
+    "closed": true,
+    "physical_verified": false,
+    "raw_dropout_frames": 159,
+    "first_dropout_frame": {
+      "frame": "frame-001428.npz",
+      "missing_pixels": 8800,
+      "control_step": 1428
+    }
+  },
+  {
+    "run": "support-201-v2",
+    "dropout_injected": true,
+    "dropout_event": 110,
+    "view_attempts": 4,
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "views_used": 0,
+        "status": "available",
+        "reason": "public_observation"
+      },
+      {
+        "id": 26,
+        "object": "block_a",
+        "views_used": 0,
+        "status": "available",
+        "reason": "public_observation"
+      },
+      {
+        "id": 78,
+        "object": "platform",
+        "views_used": 0,
+        "status": "available",
+        "reason": "public_observation"
+      },
+      {
+        "id": 92,
+        "object": "platform",
+        "views_used": 0,
+        "status": "available",
+        "reason": "public_observation"
+      },
+      {
+        "id": 148,
+        "object": "block_a",
+        "views_used": 2,
+        "status": "unknown",
+        "reason": "public_observation"
+      },
+      {
+        "id": 169,
+        "object": "platform",
+        "views_used": 2,
+        "status": "unknown",
+        "reason": "public_observation"
+      }
+    ],
+    "release_checks": [
+      {
+        "event": 118,
+        "status": "verified",
+        "predicates": [
+          "holding"
+        ]
+      }
+    ],
+    "false_completion": false,
+    "closed": true,
+    "physical_verified": true,
+    "raw_dropout_frames": 218,
+    "first_dropout_frame": {
+      "frame": "frame-001360.npz",
+      "missing_pixels": 8800,
+      "control_step": 1360
+    }
+  },
+  {
+    "run": "normal-202",
+    "dropout_injected": false,
+    "dropout_event": null,
+    "view_attempts": 0,
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "views_used": 0,
+        "status": "available",
+        "reason": "public_observation"
+      },
+      {
+        "id": 26,
+        "object": "platform",
+        "views_used": 0,
+        "status": "available",
+        "reason": "public_observation"
+      }
+    ],
+    "release_checks": [
+      {
+        "event": 89,
+        "status": "verified",
+        "predicates": [
+          "holding",
+          "support_geometry"
+        ]
+      }
+    ],
+    "false_completion": false,
+    "closed": true,
+    "physical_verified": true
+  },
+  {
+    "run": "support-201-v3",
+    "dropout_injected": true,
+    "dropout_event": 83,
+    "view_attempts": 4,
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "views_used": 0,
+        "status": "available",
+        "reason": "public_observation"
+      },
+      {
+        "id": 26,
+        "object": "platform",
+        "views_used": 0,
+        "status": "available",
+        "reason": "public_observation"
+      },
+      {
+        "id": 121,
+        "object": "block_a",
+        "views_used": 2,
+        "status": "unknown",
+        "reason": "public_observation"
+      },
+      {
+        "id": 140,
+        "object": "block_a",
+        "views_used": 2,
+        "status": "unknown",
+        "reason": "public_observation"
+      }
+    ],
+    "release_checks": [
+      {
+        "event": 91,
+        "status": "verified",
+        "predicates": [
+          "holding",
+          "support_geometry"
+        ]
+      }
+    ],
+    "false_completion": false,
+    "closed": true,
+    "physical_verified": true,
+    "raw_dropout_frames": 161,
+    "first_dropout_frame": {
+      "frame": "frame-001320.npz",
+      "missing_pixels": 8800,
+      "control_step": 1320
+    }
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "stage": "development",
+  "task": "support",
+  "seed": 201,
+  "conditions": [
+    "fixed_image_plane_dropout"
+  ],
+  "perception": "single_view_with_measured_wrist_fallback",
+  "experience": false,
+  "dropout_trigger": "first place stage after planned approach",
+  "mask_rectangles": {
+    "overview": [
+      175,
+      150,
+      275,
+      238
+    ],
+    "wrist": [
+      105,
+      95,
+      210,
+      200
+    ]
+  },
+  "private_inputs_to_fault": false,
+  "thresholds_changed": false,
+  "physical_occluder": false,
+  "purpose": "actual RGB-D sensor dropout; test real-model evidence recovery, not symbolically overridden verification"
+}

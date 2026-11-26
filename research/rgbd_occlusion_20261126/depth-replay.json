@@ -1,0 +1,10 @@
+{
+  "stage": "offline_public_camera_replay",
+  "frame": "frame-001428.npz",
+  "raw_missing_depth_pixels": 8800,
+  "provider_nonfinite_pixels": 0,
+  "missing_values_encoded_as_zero": true,
+  "valid_points_after_encoding": 68000,
+  "raw_valid_points": 68000,
+  "source": "same recorded RGB-D; no private physical evaluation inputs"
+}

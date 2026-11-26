@@ -15,7 +15,7 @@ import numpy as np
 from scipy.spatial.transform import Rotation
 from .core import Halt, plain
 from .tabletop_scene import public_catalog
-from .tabletop_sensors import project, geometry, verify
+from .tabletop_sensors import project, geometry, verify, provider_depth
 from .tabletop_evidence import stamp_packet, source_for, save_camera, geometry_problem
 
 
@@ -87,6 +87,7 @@ class TabletopBackend:
                     gripper_joint_positions=fingers,captured_at=time.time(),control_step=self.tick,
                     last_gripper_command='closed' if self.episode.gripper<.5 else 'open',simulation_time=self.sim_time())
         stamp_packet(packet,self.episode.id)
+        packet=self.transform_camera_packet(packet)
         self.raw=packet
         try:self.processing.put_nowait(packet)
         except queue.Full:pass
@@ -112,6 +113,10 @@ class TabletopBackend:
         if self.evaluation:self._private_score()
         return snapshot
 
+    def transform_camera_packet(self,packet):
+        """Adapter hook before raw packets are recorded or consumed; identity by default."""
+        return packet
+
     def _process(self):
         from cap_harness.contracts import CameraObservation,Pose
         from cap_harness.providers.sam3.client import Sam3Provider
@@ -124,7 +129,7 @@ class TabletopBackend:
                 self.appearance.pop(self.reacquire.get_nowait(),None)
             try:
                 cam=packet['cameras']['overview'];T=cam['camera_to_world'];q=Rotation.from_matrix(T[:3,:3]).as_quat()[[3,0,1,2]]
-                obs=CameraObservation(cam['rgb'],cam['depth'],cam['intrinsics'],'overview',Pose(T[:3,3],q,'world'),cam['captured_at'])
+                obs=CameraObservation(cam['rgb'],provider_depth(cam['depth']),cam['intrinsics'],'overview',Pose(T[:3,3],q,'world'),cam['captured_at'])
                 for ident,d in public_catalog()['objects'].items():
                     if ident=='table':continue
                     if ident not in self.appearance:
@@ -159,8 +164,6 @@ class TabletopBackend:
                         import cv2
                         count,labels,stats,centers=cv2.connectedComponentsWithStats(mask.astype(np.uint8),8)
                         if count<2:
-                            if not self.multiview:
-                                objects[ident]=dict(status='unknown',reason='appearance_track_lost');continue
                             mask=np.zeros(mask.shape,dtype=bool)
                         else:
                             largest=1+int(np.argmax(stats[1:,cv2.CC_STAT_AREA]));mask=labels==largest
@@ -170,20 +173,10 @@ class TabletopBackend:
                             self.reference.get(ident),d.get('movable',False),initial_mask=mask)
                         mask=objects[ident].get('mask')
                     else:
-                        objects[ident]=geometry(cam,mask)
-                        objects[ident].update(source='sam3_identity_current_rgbd_tracking',camera='overview',
-                            identity_observed_at=self.appearance[ident]['identity_observed_at'],
-                            segmentation_score=self.appearance[ident]['score'])
-                        if objects[ident]['status']!='available' and ident in self.appearance:
-                            wrist=packet['cameras']['wrist'];rgb=wrist['rgb'].astype(float)
-                            chroma=rgb/np.maximum(rgb.sum(axis=2,keepdims=True),1)
-                            dist=np.linalg.norm(chroma-self.appearance[ident]['chroma'],axis=2);alternate=dist<.10
-                            for key,value in self.appearance.items():
-                                if key!=ident:alternate &= dist+.025<np.linalg.norm(chroma-value['chroma'],axis=2)
-                            other=geometry(wrist,alternate)
-                            if other['status']=='available':
-                                objects[ident]=dict(other,source='sam3_identity_current_rgbd_tracking',camera='wrist',identity_observed_at=self.appearance[ident]['identity_observed_at'])
-                                mask=alternate
+                        from .tabletop_multiview import measure_single_view
+                        objects[ident]=measure_single_view(packet,ident,self.appearance,self.baselines.get(ident),
+                            d.get('movable',False),initial_mask=mask)
+                        mask=objects[ident].get('mask')
                     objects[ident]['evidence_source']=source_for(packet,objects[ident].get('contributing_cameras',[objects[ident].get('camera','overview')]))
                     if objects[ident]['status']=='available':
                         o=objects[ident];center=np.array(o['surface_median_xyz']);prior=self.baselines.get(ident)

@@ -1,0 +1,6 @@
+{
+  "cap-runtime/agentic_cap/tabletop_backend.py": "6d4f048ae95a2bcdf72066d0bddf9128434a22f2b6ebf0d6f600fb1e5376a43d",
+  "cap-runtime/agentic_cap/tabletop_multiview.py": "19fefe7ee08bf6e1e437240ea7b5ab058d842d55214229c841ada0dcf510e8a7",
+  "cap-runtime/experiments/rgbd_occlusion_service.py": "edfdf35086ddee6fbd8ec57dcb0d9539e960ac9c68b6b861bf84b45483bfddd5",
+  "runtime/scripts/rgbd-occlusion-trial.mjs": "9ffea0fad5a29a7c534a09a9931a71a74f797b77732eeaf27cd6d9c3073c92f8"
+}

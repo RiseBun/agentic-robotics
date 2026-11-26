@@ -58,4 +58,24 @@ class ActionBoundaryTests(unittest.TestCase):
         for _ in range(2):self.assertEqual(b.poll_holding_watchdog(dict(last_gripper_command='closed'))['status'],'unknown')
         self.assertEqual(b.poll_holding_watchdog(dict(last_gripper_command='closed'))['status'],'violated')
 
+    def test_release_rechecks_destination_geometry_and_does_not_open_on_unknown(self):
+        for destination in ({'support':'platform'},{'region':'left'}):
+            with self.subTest(destination=destination):
+                b,s=self.backend('place_object',dict(object='block_a',**destination));b.tick=0
+                b._geometry_packet=Mock(return_value=({}, {}, {'status':'available'}))
+                b.wait_public_effect=Mock(return_value={'status':'unknown'})
+                b.episode.gripper=0.;b.episode.snapshot={'evidence_ref':'current'}
+                class AdvancingCV:
+                    def __enter__(self):return self
+                    def __exit__(self,*args):return False
+                    def wait(self,_seconds):b.tick+=20
+                b.episode.cv=AdvancingCV()
+                b.last_plan='place';b.plans['place']=dict(segment='s',kind='place',object='block_a',sequence=['open'],cursor=0,**destination)
+                with self.assertRaisesRegex(ValueError,'destination evidence'):tools(b,s)['set_gripper']('open')
+                self.assertEqual(b.episode.gripper,0.);self.assertEqual(b.plans['place']['cursor'],0)
+                conditions=b.wait_public_effect.call_args.args[1]['all']
+                self.assertIn(dict(predicate='holding',object='block_a'),conditions)
+                expected=dict(predicate='support_geometry',object='platform') if 'support' in destination else dict(predicate='region',region='left')
+                self.assertIn(expected,conditions)
+
 if __name__=='__main__':unittest.main()

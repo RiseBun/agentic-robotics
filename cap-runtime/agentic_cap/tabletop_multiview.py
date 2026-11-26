@@ -60,3 +60,16 @@ def measure_object(packet,ident,identities,prior=None,reference=None,movable=Tru
         source='sam3_identity_current_multiview_rgbd_tracking',
         view_geometry={v['name']:{k:x for k,x in v['geometry'].items() if k in ['surface_q02_xyz','surface_q98_xyz','point_count']} for v in views},
         mask=primary['mask'])
+
+
+def measure_single_view(packet,ident,identities,prior=None,movable=True,initial_mask=None):
+    """Prefer overview, but a lost overview track must still try a measured wrist view."""
+    for name in ('overview','wrist'):
+        camera=packet['cameras'].get(name)
+        if camera is None:continue
+        # Reuse the calibrated same-capture validation of the multiview path.
+        single=dict(packet,cameras={name:camera})
+        measured=measure_object(single,ident,identities,prior=prior,movable=movable,
+            initial_mask=initial_mask if name=='overview' else None)
+        if measured['status']=='available':return measured
+    return dict(status='unknown',reason='no_current_single_camera_geometry')

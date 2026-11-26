@@ -138,11 +138,14 @@ def tools(backend,segment):
                 while b.tick-start<20:e.checkpoint(segment);e.cv.wait(.03)
             if p.get('support'):
                 _,_,support=b._geometry_packet(p['support'],segment)
-            admission=b.wait_public_effect(segment,{'all':[dict(predicate='holding',object=p['object'])]})
+            release_conditions=[dict(predicate='holding',object=p['object'])]
+            if p.get('support'):release_conditions.append(dict(predicate='support_geometry',object=p['support']))
+            if p.get('region'):release_conditions.append(dict(predicate='region',region=p['region']))
+            admission=b.wait_public_effect(segment,{'all':release_conditions})
             e.event('release_admission_checked',object=p['object'],result=admission,
                 evidence_ref=e.snapshot.get('evidence_ref'))
             if admission['status']!='verified':
-                raise ValueError('Unknown holding evidence forbids release')
+                raise ValueError('Unknown holding or destination evidence forbids release')
         with e.cv:
             e.checkpoint(segment);e.gripper=1. if command=='open' else 0.;e.motion=True;start=b.tick
             while b.tick-start<12:e.checkpoint(segment);e.cv.wait(.03)

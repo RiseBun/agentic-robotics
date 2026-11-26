@@ -14,6 +14,16 @@ THRESHOLDS=dict(min_pixels=24,max_age_seconds=1.,window_seconds=.6,minimum_sampl
                 lift_m=.06,tcp_distance_m=.09,relative_drift_m=.015,support_gap_m=.018,region_boundary_uncertainty_m=.01)
 
 
+def provider_depth(depth):
+    """Encode invalid sensor pixels as no-return zero for finite-only providers.
+
+    Raw packets keep their original missing values; neither encoding creates
+    a valid 3D sample because project() rejects depth <= 0.05.
+    """
+    values=np.asarray(depth)
+    return np.where(np.isfinite(values)&(values>0),values,0.)
+
+
 def project(camera,mask=None):
     depth=np.asarray(camera['depth']);rgb=np.asarray(camera['rgb']);K=np.asarray(camera['intrinsics'])
     valid=np.isfinite(depth)&(depth>.05)&(depth<3.)
