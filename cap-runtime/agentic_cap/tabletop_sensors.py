@@ -8,6 +8,7 @@ import time
 import numpy as np
 from scipy.spatial.transform import Rotation
 from .tabletop_scene import public_catalog
+from .tabletop_evidence import geometry_problem, placement_window
 
 THRESHOLDS=dict(min_pixels=24,max_age_seconds=1.,window_seconds=.6,minimum_samples=3,
                 lift_m=.06,tcp_distance_m=.09,relative_drift_m=.015,support_gap_m=.018,region_boundary_uncertainty_m=.01)
@@ -69,7 +70,7 @@ def support_surface(current,reference):
     result=copy.deepcopy(current)
     result.update(surface_q02_xyz=lo.tolist(),surface_q98_xyz=hi.tolist(),
         completion=dict(axes=inferred,method='current_planar_side_plus_public_observed_size',
-                        reference_captured_at=reference.get('captured_at'),uncertainty_m=.01))
+                        reference_captured_at=reference.get('captured_at'),reference_evidence_source=reference.get('evidence_source'),uncertainty_m=.01))
     return result
 
 
@@ -80,7 +81,7 @@ def verify(goal,snapshot,history,reference,custody=None):
     if now-snapshot.get('captured_at',0)>THRESHOLDS['max_age_seconds']:return unknown('stale_public_observation')
     def visible(obj):
         o=objects.get(obj,{})
-        if o.get('status')!='available' or now-o.get('captured_at',0)>1:return None
+        if o.get('status')!='available' or now-o.get('captured_at',0)>1 or geometry_problem(o,snapshot):return None
         return o
     recent=[h for h in history if h['control_step']<=snapshot['control_step'] and h['captured_at']>=snapshot['captured_at']-.9]
     temporal=len(recent)>=THRESHOLDS['minimum_samples'] and recent[-1]['captured_at']-recent[0]['captured_at']>=THRESHOLDS['window_seconds']
@@ -118,13 +119,14 @@ def verify(goal,snapshot,history,reference,custody=None):
             offsets=[];lift=[];sample_times=[];sample_ids=set();views=set()
             for h in recent:
                 v=h.get('objects',{}).get(obj,{})
-                if v.get('status')!='available':return unknown('holding_window_occluded')
+                if v.get('status')!='available' or geometry_problem(v,h):return unknown('holding_window_occluded_or_invalid_source')
                 # The RGB-D worker runs independently of S0. A measured point
                 # belongs with the TCP pose from that image, never a later pose.
                 measured=h.get('geometry_robot_state',h)
                 measured_at=v.get('captured_at',measured.get('captured_at',0))
                 if h['captured_at']-measured_at>THRESHOLDS['max_age_seconds']:
                     return unknown('holding_geometry_stale')
+                if measured.get('control_step',h['control_step'])<snapshot.get('geometry_not_before_step',0):continue
                 identity=(measured.get('control_step',h['control_step']),measured.get('captured_at'))
                 if identity in sample_ids:continue
                 sample_ids.add(identity);sample_times.append(measured.get('captured_at',h['captured_at']))
@@ -153,8 +155,12 @@ def verify(goal,snapshot,history,reference,custody=None):
         if pred in {'on','in_region'}:
             if not o or obj not in reference:return unknown('placed_object_geometry_unavailable')
             if snapshot.get('last_gripper_command')!='open' and (not custody or custody.get('object')==obj):return unknown('placement_requires_release_evidence')
+            required=[obj]+([c['support']] if pred=='on' and c['support']!='table' else [])
+            samples,times=placement_window(recent,required,snapshot.get('geometry_not_before_step',0))
+            if len(samples)<THRESHOLDS['minimum_samples'] or max(times)-min(times)<THRESHOLDS['window_seconds']:
+                return unknown('independent_placement_window_incomplete')
             observed=[]
-            for h in recent:
+            for h in samples:
                 v=h.get('objects',{}).get(obj,{})
                 if v.get('status')!='available' or h['captured_at']-v.get('captured_at',0)>1:
                     return unknown('placement_window_occluded_or_stale')
@@ -200,4 +206,5 @@ def verify(goal,snapshot,history,reference,custody=None):
         return unknown('predicate_has_no_public_verifier')
     results=[dict(condition=c,**check(c)) for c in goal['all']]
     status='failed' if any(c['status']=='failed' for c in results) else 'unknown' if any(c['status']=='unknown' for c in results) else 'verified'
-    return dict(status=status,conditions=results,evidence_ref=snapshot.get('evidence_ref'),scope='observed_supported_tabletop_relations')
+    return dict(status=status,conditions=results,evidence_ref=snapshot.get('evidence_ref'),scope='observed_supported_tabletop_relations',
+        geometry_evidence_source=snapshot.get('geometry_evidence_source'))

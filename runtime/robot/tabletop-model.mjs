@@ -33,6 +33,10 @@ Python allows assignment, lists/dicts/indexing, scalar operations, if, bounded f
 No imports, attributes, definitions, while, files, network, terminal, env or simulator truth.
 Missing geometry is unknown; gather evidence using inspect_object, or ask_user. Inspect
 uses at most two planned view changes. Repeated timestamps/waits do not repair occlusion.
+The current camera image and asynchronously measured geometry may be from different frames.
+Use each object's evidence_source and geometry_robot_state to identify its actual source;
+new image_ref/captured_at does not refresh geometry or prove stability. Runtime rejects
+pre-action, mismatched or repeated measurements as unknown; do not override that judgment.
 Read new results before acting. Unknown holding/destination evidence forbids release.
 Provider unavailable means no capability; IK/interpolation is not collision planning.
 Goal changes invalidate old plans and replies. Never reset the scene to recover or raise

@@ -22,7 +22,7 @@ def tools(backend,segment):
             raise ValueError('Fresh empty-gripper evidence is required before grasp planning')
         from cap_harness.contracts import PointCloud
         from cap_harness.providers.graspnet.client import GraspNetProvider
-        packet,objects,o=b._geometry_packet(obj);cam=packet['cameras'][o['camera']]
+        packet,objects,o=b._geometry_packet(obj,segment);cam=packet['cameras'][o['camera']]
         points,_=project(cam,objects[obj]['mask']);scene,_=project(cam)
         # Contact-GraspNet is trained in camera coordinates. Transform public
         # points into that frame; transform returned poses back to world.
@@ -75,7 +75,7 @@ def tools(backend,segment):
         s=e.observe()
         if b.verify({'all':[dict(predicate='holding',object=obj)]},s)['status']!='verified':
             raise ValueError('Current holding evidence is required')
-        _,_,o=b._geometry_packet(obj);tcp=np.array(s['tcp_xyz']);quat=np.array(s['tcp_wxyz'])
+        _,_,o=b._geometry_packet(obj,segment);tcp=np.array(s['tcp_xyz']);quat=np.array(s['tcp_wxyz'])
         ref=b.reference.get(obj,{})
         if 'observed_height_m' not in ref:raise ValueError('Observed object height is unknown')
         half=ref['observed_height_m']/2
@@ -85,7 +85,7 @@ def tools(backend,segment):
             from .tabletop_scene import public_catalog
             r=public_catalog()['regions'][region];lo,hi=np.array(r['bounds_xy']);target=np.r_[(lo+hi)/2,r['surface_z']+half+.003]-offset
         else:
-            _,_,sup=b._geometry_packet(support)
+            _,_,sup=b._geometry_packet(support,segment)
             from .tabletop_sensors import support_surface
             from .tabletop_scene import public_catalog
             if public_catalog()['objects'][support]['shape']=='box':
@@ -137,8 +137,8 @@ def tools(backend,segment):
                 start=b.tick
                 while b.tick-start<20:e.checkpoint(segment);e.cv.wait(.03)
             if p.get('support'):
-                _,_,support=b._geometry_packet(p['support'])
-            admission=b.verify({'all':[dict(predicate='holding',object=p['object'])]},e.observe())
+                _,_,support=b._geometry_packet(p['support'],segment)
+            admission=b.wait_public_effect(segment,{'all':[dict(predicate='holding',object=p['object'])]})
             e.event('release_admission_checked',object=p['object'],result=admission,
                 evidence_ref=e.snapshot.get('evidence_ref'))
             if admission['status']!='verified':
@@ -212,7 +212,7 @@ def tools(backend,segment):
         with e.cv:
             start=b.tick
             while b.tick-start<20:e.checkpoint(segment);e.cv.wait(.03)
-        result=b.verify({'all':[dict(predicate='holding',object=obj)]},e.observe())
+        result=b.wait_public_effect(segment,{'all':[dict(predicate='holding',object=obj)]})
         e.event('recorded_restore_finished',object=obj,result=result)
         return result
 
@@ -222,7 +222,7 @@ def tools(backend,segment):
         with e.cv:
             start=b.tick
             while b.tick-start<20:e.checkpoint(segment);e.cv.wait(.03)
-        result=b.verify(expected,e.observe())
+        result=b.wait_public_effect(segment,expected)
         if allowed=='acquire_object' and result['status']=='verified':b.holding_watch=dict(object=args['object'],failures=0)
         return result
     return dict(plan_grasp=grasp,plan_place=place,execute_stage=stage,set_gripper=gripper,

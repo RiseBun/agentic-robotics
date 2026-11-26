@@ -25,7 +25,7 @@ def public_catalog():
 
 @lru_cache(maxsize=1)
 def runtime_contract():
-    names=['core.py','interpreter.py','robot_system.py','tabletop_domain.py','tabletop_system.py','tabletop_episode.py','tabletop_scene.py','tabletop_sensors.py','tabletop_actions.py','tabletop_backend.py','tabletop_simulation.py','tabletop_multiview.py']
+    names=['core.py','interpreter.py','robot_system.py','tabletop_domain.py','tabletop_system.py','tabletop_episode.py','tabletop_scene.py','tabletop_sensors.py','tabletop_actions.py','tabletop_backend.py','tabletop_simulation.py','tabletop_multiview.py','tabletop_evidence.py']
     return hashlib.sha256(('perception_multiview='+os.environ.get('TABLETOP_MULTIVIEW','0')+'\n'+''.join(n+'\0'+hashlib.sha256((Path(__file__).parent/n).read_bytes()).hexdigest() for n in names)).encode()).hexdigest()
 
 

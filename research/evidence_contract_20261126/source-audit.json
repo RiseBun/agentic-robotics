@@ -1,0 +1,8 @@
+{
+  "version": "v4",
+  "unique_source_refs_checked": 22,
+  "mismatches": [],
+  "geometry_waits": 4,
+  "effect_waits": 3,
+  "scope": "closed development task public artifact consistency; no statistical performance claim"
+}

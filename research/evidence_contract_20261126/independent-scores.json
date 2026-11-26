@@ -1,0 +1,186 @@
+[
+  {
+    "version": "v1",
+    "outcome": "awaiting_user",
+    "task_wall_seconds": 96.858,
+    "episode_id": "f791d6f61ab1a2fa515d27b74575fcf1",
+    "seed": 201,
+    "status": "scored",
+    "physical_verified": false,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 15,
+      "calls": 10,
+      "motion_steps": 0,
+      "idle_steps": 1761,
+      "wall_seconds": 93.96385594800813
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "version": "v2",
+    "outcome": "awaiting_user",
+    "task_wall_seconds": 132.46,
+    "episode_id": "f0cbfb4d6b45d786c646fbda19b80555",
+    "seed": 201,
+    "status": "scored",
+    "physical_verified": false,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 17,
+      "calls": 20,
+      "motion_steps": 45,
+      "idle_steps": 2440,
+      "wall_seconds": 129.74094740703003
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 0.9999999999976694,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "version": "v3",
+    "outcome": "needs_attention",
+    "task_wall_seconds": 264.983,
+    "episode_id": "d509d38a03f16ba05cb9e5c45246d611",
+    "seed": 201,
+    "status": "scored",
+    "physical_verified": false,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 24,
+      "calls": 54,
+      "motion_steps": 1022,
+      "idle_steps": 4023,
+      "wall_seconds": 262.76480604097014
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0000000000047748,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "version": "v4",
+    "outcome": "completed",
+    "task_wall_seconds": 80.753,
+    "episode_id": "1be0dfe9fd3a44f1c4a696baa5fce039",
+    "seed": 201,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 17,
+      "motion_steps": 293,
+      "idle_steps": 1179,
+      "wall_seconds": 77.84554525400745
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  }
+]

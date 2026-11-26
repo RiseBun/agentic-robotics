@@ -16,6 +16,7 @@ from scipy.spatial.transform import Rotation
 from .core import Halt, plain
 from .tabletop_scene import public_catalog
 from .tabletop_sensors import project, geometry, verify
+from .tabletop_evidence import stamp_packet, source_for, save_camera, geometry_problem
 
 
 class TabletopBackend:
@@ -85,6 +86,7 @@ class TabletopBackend:
         packet=dict(cameras=packets,joint_positions=self.encoder.copy(),tcp_xyz=pos,tcp_wxyz=quat,
                     gripper_joint_positions=fingers,captured_at=time.time(),control_step=self.tick,
                     last_gripper_command='closed' if self.episode.gripper<.5 else 'open',simulation_time=self.sim_time())
+        stamp_packet(packet,self.episode.id)
         self.raw=packet
         try:self.processing.put_nowait(packet)
         except queue.Full:pass
@@ -97,15 +99,11 @@ class TabletopBackend:
             coordinate_convention=dict(frame='world',length_unit='meter',quaternion_order='wxyz'),
             perception_error=self.perception_error,capabilities=['inspect_object'],planning_scope='public_point_cloud')
         # Record actual public camera packets, never object poses or contact labels.
-        with (self.episode.directory/(name+'.npz')).open('wb') as stream:
-            np.savez_compressed(stream,rgb=packets['overview']['rgb'],depth=packets['overview']['depth'].astype(np.float32),
-                intrinsics=packets['overview']['intrinsics'],camera_to_world=packets['overview']['camera_to_world'],
-                joint_positions=self.encoder,control_step=self.tick,captured_at=packet['captured_at'])
+        save_camera(self.episode.directory,packet,'overview')
         wrist_name=f'view-robot0_eye_in_hand-{self.tick:06d}'
         Image.fromarray(packets['wrist']['rgb']).save(self.episode.directory/(wrist_name+'.png'))
-        with (self.episode.directory/(wrist_name+'.npz')).open('wb') as stream:
-            np.savez_compressed(stream,rgb=packets['wrist']['rgb'],depth=packets['wrist']['depth'].astype(np.float32),
-                intrinsics=packets['wrist']['intrinsics'],camera_to_world=packets['wrist']['camera_to_world'])
+        save_camera(self.episode.directory,packet,'wrist')
+        snapshot.update(geometry_evidence_schema=1,geometry_not_before_step=self.last_action_tick)
         snapshot['sensors']={key:dict(intrinsics=cam['intrinsics'].tolist(),camera_to_world=cam['camera_to_world'].tolist(),captured_at=cam['captured_at'],image_size=[320,240]) for key,cam in packets.items()}
         snapshot['camera_views']={'robot0_eye_in_hand':dict(camera_name='robot0_eye_in_hand',episode_id=self.episode.id,
             captured_at=packet['captured_at'],control_step=self.tick,coordinate_convention=snapshot['coordinate_convention'],
@@ -186,6 +184,7 @@ class TabletopBackend:
                             if other['status']=='available':
                                 objects[ident]=dict(other,source='sam3_identity_current_rgbd_tracking',camera='wrist',identity_observed_at=self.appearance[ident]['identity_observed_at'])
                                 mask=alternate
+                    objects[ident]['evidence_source']=source_for(packet,objects[ident].get('contributing_cameras',[objects[ident].get('camera','overview')]))
                     if objects[ident]['status']=='available':
                         o=objects[ident];center=np.array(o['surface_median_xyz']);prior=self.baselines.get(ident)
                         if prior is not None and np.linalg.norm(center-prior)>.02:self.object_versions[ident]+=1
@@ -195,7 +194,7 @@ class TabletopBackend:
                         # objects do not silently acquire inferred dimensions.
                         lo=o['surface_q02_xyz'];hi=o['surface_q98_xyz']
                         if ident not in self.reference and lo[2]<.82 and hi[2]>.815:
-                            self.reference[ident]=dict(o,observed_height_m=hi[2]-.8)
+                            self.reference[ident]=dict({k:v for k,v in o.items() if k!='mask'},observed_height_m=hi[2]-.8)
                         o['mask']=mask
                 for ident,o in objects.items():
                     if ident in self.reference or o.get('status')!='available':continue
@@ -208,7 +207,7 @@ class TabletopBackend:
                             supports.append((other,bhi[2]))
                     if len(supports)==1:
                         support,z=supports[0]
-                        self.reference[ident]=dict(o,observed_height_m=float(hi[2]-z),height_reference='observed_support_surface',support=support)
+                        self.reference[ident]=dict({k:v for k,v in o.items() if k!='mask'},observed_height_m=float(hi[2]-z),height_reference='observed_support_surface',support=support)
                 table_points,_=project(cam)
                 plane=table_points[(abs(table_points[:,2]-.8)<.006)&(abs(table_points[:,0])<.4)&(abs(table_points[:,1])<.4)]
                 if len(plane)>=100:
@@ -216,7 +215,9 @@ class TabletopBackend:
                     objects['table']=dict(status='available',surface_q02_xyz=lo.tolist(),surface_q98_xyz=hi.tolist(),
                         surface_span_xyz=(hi-lo).tolist(),surface_median_xyz=np.median(plane,axis=0).tolist(),
                         captured_at=cam['captured_at'],source='rgbd_at_calibrated_table_plane',camera='overview')
-                self.latest=dict(objects={k:{n:v for n,v in o.items() if n!='mask'} for k,o in objects.items()},
+                for o in objects.values():
+                    o.setdefault('evidence_source',source_for(packet,[o.get('camera','overview')]))
+                self.latest=dict(geometry_evidence_schema=1,geometry_evidence_source=source_for(packet,list(packet['cameras'])),objects={k:{n:v for n,v in o.items() if n!='mask'} for k,o in objects.items()},
                                  object_versions=self.object_versions.copy(),geometry_captured_at=packet['captured_at'],
                                  geometry_robot_state={k:plain(packet[k]) for k in ('tcp_xyz','tcp_wxyz','gripper_joint_positions','last_gripper_command','captured_at','control_step')})
                 self.segmented_packet=(packet,objects);self.perception_error=None
@@ -259,9 +260,30 @@ class TabletopBackend:
         return result
 
     def verification_readiness(self,goals,snapshot):
-        rows=[s for s in self.history if s['control_step']>=self.last_action_tick]
-        ready=len(rows)>=3 and rows[-1]['captured_at']-rows[0]['captured_at']>=.6
+        unique={}
+        for s in self.history:
+            measured=s.get('geometry_robot_state',{})
+            if measured.get('control_step',-1)>=self.last_action_tick:
+                unique[(measured['control_step'],measured['captured_at'])]=measured['captured_at']
+        rows=sorted(unique.values())
+        ready=len(rows)>=3 and rows[-1]-rows[0]>=.6
         return dict(status='ready' if ready else 'pending',reason='public_post_action_window',samples=len(rows))
+
+    def wait_public_effect(self,segment,goal,timeout=2.5):
+        """Wait for evidence, never substitute elapsed time for sensor proof."""
+        e=self.episode;end=time.monotonic()+timeout;announced=False
+        while True:
+            e.checkpoint(segment)
+            result=self.verify(goal,e.observe())
+            if result['status']!='unknown' or time.monotonic()>=end:
+                if announced:e.event('public_effect_wait_finished',result=result)
+                return result
+            if not announced:
+                e.event('public_effect_wait_started',goal=goal,timeout_seconds=timeout)
+                announced=True
+            with e.cv:
+                e.checkpoint(segment)
+                e.cv.wait(min(.05,max(0,end-time.monotonic())))
 
     def _typed_state(self,snapshot):
         from cap_harness.contracts import Pose,RobotState,RobotPlanningContext
@@ -272,13 +294,34 @@ class TabletopBackend:
         context=RobotPlanningContext('robosuite','panda',{'primary':names},{'primary':np.eye(4)},{'primary':'panda_hand'})
         return state,context
 
-    def _geometry_packet(self,obj):
-        data=getattr(self,'segmented_packet',None)
-        if data is None:raise ValueError('No public segmentation yet')
-        packet,objects=data;o=objects.get(obj,{})
-        if o.get('status')!='available' or time.time()-o.get('captured_at',0)>1:
-            raise ValueError('Current object geometry is unknown or stale')
-        return packet,objects,o
+    def _geometry_packet(self,obj,segment=None,timeout=1.5):
+        e=self.episode;end=time.monotonic()+timeout;waiting=False
+        while True:
+            if segment is not None:e.checkpoint(segment)
+            data=getattr(self,'segmented_packet',None)
+            reason='no_public_segmentation'
+            if data is not None:
+                packet,objects=data;o=objects.get(obj,{})
+                # Worker geometry belongs to its own immutable capture pose,
+                # not the independently published workbench image/robot state.
+                current=dict(geometry_evidence_schema=1,episode_id=e.id,
+                    captured_at=time.time(),control_step=self.tick,
+                    geometry_not_before_step=self.last_action_tick,
+                    geometry_robot_state=packet)
+                reason=geometry_problem(o,current) or ('object_not_available' if o.get('status')!='available' else None)
+                if reason is None and 0<=time.time()-o.get('captured_at',0)<=1:
+                    if waiting:e.event('geometry_wait_finished',object=obj,evidence_source=o['evidence_source'])
+                    return packet,objects,o
+            if segment is None or time.monotonic()>=end:
+                if waiting:e.event('geometry_wait_finished',object=obj,status='unknown',reason=reason)
+                raise ValueError('Current object geometry is unknown or stale: '+str(reason))
+            if not waiting:
+                e.event('geometry_wait_started',object=obj,reason=reason,timeout_seconds=timeout)
+                waiting=True
+            # Release the owner lock while waiting; S0 and cancellation continue.
+            with e.cv:
+                e.checkpoint(segment)
+                e.cv.wait(min(.03,max(0,end-time.monotonic())))
 
     def _plan_pose(self,segment,xyz,quat,exclude=None):
         from cap_harness.contracts import Pose,PlanningScene,PointCloud
@@ -288,7 +331,7 @@ class TabletopBackend:
         points=points[(points[:,2]>.75)&(points[:,2]<1.8)]
         # Object-specific carving removes only its measured segmented pixels.
         if exclude is not None:
-            p,objects,o=self._geometry_packet(exclude)
+            p,objects,o=self._geometry_packet(exclude,segment)
             mask=objects[exclude]['mask'];points,_=project(p['cameras'][o['camera']],~mask)
             points=points[(points[:,2]>.75)&(points[:,2]<1.8)]
         points=points[::max(1,len(points)//15000)]-self.base_T[:3,3]
