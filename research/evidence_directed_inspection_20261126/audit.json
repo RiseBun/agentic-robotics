@@ -1,0 +1,2127 @@
+[
+  {
+    "run": "fault201-coverage",
+    "orderings": [],
+    "acquisitions": [
+      {
+        "id": 12,
+        "segment_id": "0f3fbbc8cb4840f8aa4de0b64ddd8785",
+        "object": "block_a",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.005375507986173034
+      },
+      {
+        "id": 26,
+        "segment_id": "78f3e441a6e241b4af10cd0ac803a13c",
+        "object": "block_a",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.005534921016078442
+      },
+      {
+        "id": 40,
+        "segment_id": "071ae01fd90d4402a4e24512481b470a",
+        "object": "platform",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.0058273139875382185
+      },
+      {
+        "id": 54,
+        "segment_id": "a64250312f994e708af63fa9f3c70bae",
+        "object": "platform",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.006136493000667542
+      },
+      {
+        "id": 161,
+        "segment_id": "e4a6e571907c457faa0ff771e88c56a4",
+        "object": "platform",
+        "status": "unknown",
+        "reason": "public_observation",
+        "views_used": 2,
+        "motion_steps": 55,
+        "wall_seconds": 14.729922240949236
+      },
+      {
+        "id": 216,
+        "segment_id": "7bce61754a59465b920885c686db350d",
+        "object": "platform",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 1,
+        "motion_steps": 77,
+        "wall_seconds": 8.960131591011304
+      },
+      {
+        "id": 240,
+        "segment_id": "032847561f4f4e48b2cf8ef705891f67",
+        "object": "cylinder_a",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 1,
+        "motion_steps": 53,
+        "wall_seconds": 7.74844551703427
+      },
+      {
+        "id": 321,
+        "segment_id": "3059bfd180674d328f3fd1db464fe8e0",
+        "object": "platform",
+        "status": "unknown",
+        "reason": "no_admissible_projected_view; change_evidence_condition_or_ask_user",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 3.062781464017462
+      }
+    ],
+    "post_view_evidence": [
+      {
+        "id": 155,
+        "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+        "segment_id": "e4a6e571907c457faa0ff771e88c56a4",
+        "time": 1795694218.453549,
+        "kind": "inspection_post_view_evidence",
+        "object": "platform",
+        "view_index": 1,
+        "joint_result": {
+          "status": "unknown",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "support_geometry",
+                "object": "platform"
+              },
+              "status": "unknown",
+              "reason": "support_extent_not_established_from_current_surface",
+              "evidence_gap": {
+                "status": "unknown",
+                "reason": "missing_extent_requires_current_planar_side",
+                "missing_axes": [
+                  1
+                ],
+                "span_fraction_xy": [
+                  1.0068310211230669,
+                  0.46914875088935415
+                ]
+              }
+            },
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 2.844807128231921e-05,
+                "surface_tcp_distance_m": 0.021833889261974868,
+                "minimum_lift_m": 0.1693922509397452,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.7430782318115234,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            }
+          ],
+          "evidence_ref": "frame-002085.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+            "control_step": 2078,
+            "captured_at": 1795694217.8825128,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 2078,
+                "captured_at": 1795694217.8787549,
+                "evidence_ref": "frame-002078.npz",
+                "image_ref": "frame-002078.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 2078,
+                "captured_at": 1795694217.8821423,
+                "evidence_ref": "view-robot0_eye_in_hand-002078.npz",
+                "image_ref": "view-robot0_eye_in_hand-002078.png"
+              }
+            ]
+          }
+        },
+        "custody": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 2.844807128231921e-05,
+                "surface_tcp_distance_m": 0.021833889261974868,
+                "minimum_lift_m": 0.1693922509397452,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.7430782318115234,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            }
+          ],
+          "evidence_ref": "frame-002085.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+            "control_step": 2078,
+            "captured_at": 1795694217.8825128,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 2078,
+                "captured_at": 1795694217.8787549,
+                "evidence_ref": "frame-002078.npz",
+                "image_ref": "frame-002078.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 2078,
+                "captured_at": 1795694217.8821423,
+                "evidence_ref": "view-robot0_eye_in_hand-002078.npz",
+                "image_ref": "view-robot0_eye_in_hand-002078.png"
+              }
+            ]
+          }
+        },
+        "evidence_ref": "frame-002085.npz"
+      },
+      {
+        "id": 160,
+        "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+        "segment_id": "e4a6e571907c457faa0ff771e88c56a4",
+        "time": 1795694224.1886866,
+        "kind": "inspection_post_view_evidence",
+        "object": "platform",
+        "view_index": 2,
+        "joint_result": {
+          "status": "unknown",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "support_geometry",
+                "object": "platform"
+              },
+              "status": "unknown",
+              "reason": "support_extent_not_established_from_current_surface",
+              "evidence_gap": {
+                "status": "unknown",
+                "reason": "missing_extent_requires_current_planar_side",
+                "missing_axes": [
+                  1
+                ],
+                "span_fraction_xy": [
+                  1.0066118351512818,
+                  0.3770941461013559
+                ]
+              }
+            },
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 7.393335268509812e-06,
+                "surface_tcp_distance_m": 0.021874359475138768,
+                "minimum_lift_m": 0.1649644293038517,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.7064957618713379,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            }
+          ],
+          "evidence_ref": "frame-002194.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+            "control_step": 2187,
+            "captured_at": 1795694223.6293297,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 2187,
+                "captured_at": 1795694223.6253843,
+                "evidence_ref": "frame-002187.npz",
+                "image_ref": "frame-002187.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 2187,
+                "captured_at": 1795694223.6289551,
+                "evidence_ref": "view-robot0_eye_in_hand-002187.npz",
+                "image_ref": "view-robot0_eye_in_hand-002187.png"
+              }
+            ]
+          }
+        },
+        "custody": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 7.393335268509812e-06,
+                "surface_tcp_distance_m": 0.021874359475138768,
+                "minimum_lift_m": 0.1649644293038517,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.7064957618713379,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            }
+          ],
+          "evidence_ref": "frame-002194.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+            "control_step": 2187,
+            "captured_at": 1795694223.6293297,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 2187,
+                "captured_at": 1795694223.6253843,
+                "evidence_ref": "frame-002187.npz",
+                "image_ref": "frame-002187.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 2187,
+                "captured_at": 1795694223.6289551,
+                "evidence_ref": "view-robot0_eye_in_hand-002187.npz",
+                "image_ref": "view-robot0_eye_in_hand-002187.png"
+              }
+            ]
+          }
+        },
+        "evidence_ref": "frame-002194.npz"
+      },
+      {
+        "id": 215,
+        "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+        "segment_id": "7bce61754a59465b920885c686db350d",
+        "time": 1795694275.9308076,
+        "kind": "inspection_post_view_evidence",
+        "object": "platform",
+        "view_index": 1,
+        "joint_result": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "support_geometry",
+                "object": "platform"
+              },
+              "status": "verified",
+              "reason": "current_support_measurement_with_public_size_prior",
+              "evidence_gap": {
+                "status": "available",
+                "reason": "current_surface_supports_extent",
+                "missing_axes": [],
+                "span_fraction_xy": [
+                  0.9972068418147106,
+                  0.9812631715566243
+                ]
+              }
+            }
+          ],
+          "evidence_ref": "frame-003192.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+            "control_step": 3184,
+            "captured_at": 1795694275.3494837,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 3184,
+                "captured_at": 1795694275.3458056,
+                "evidence_ref": "frame-003184.npz",
+                "image_ref": "frame-003184.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 3184,
+                "captured_at": 1795694275.3491359,
+                "evidence_ref": "view-robot0_eye_in_hand-003184.npz",
+                "image_ref": "view-robot0_eye_in_hand-003184.png"
+              }
+            ]
+          }
+        },
+        "custody": null,
+        "evidence_ref": "frame-003192.npz"
+      },
+      {
+        "id": 239,
+        "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+        "segment_id": "032847561f4f4e48b2cf8ef705891f67",
+        "time": 1795694297.8938477,
+        "kind": "inspection_post_view_evidence",
+        "object": "cylinder_a",
+        "view_index": 1,
+        "joint_result": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "geometry",
+                "object": "cylinder_a"
+              },
+              "status": "verified",
+              "reason": "current_rgbd_surface_geometry"
+            }
+          ],
+          "evidence_ref": "frame-003611.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+            "control_step": 3604,
+            "captured_at": 1795694297.3688242,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 3604,
+                "captured_at": 1795694297.3654618,
+                "evidence_ref": "frame-003604.npz",
+                "image_ref": "frame-003604.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 3604,
+                "captured_at": 1795694297.3684826,
+                "evidence_ref": "view-robot0_eye_in_hand-003604.npz",
+                "image_ref": "view-robot0_eye_in_hand-003604.png"
+              }
+            ]
+          }
+        },
+        "custody": null,
+        "evidence_ref": "frame-003611.npz"
+      }
+    ],
+    "releases": [
+      {
+        "id": 116,
+        "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+        "segment_id": "1a24b949252b414988272669434ea855",
+        "time": 1795694188.7321942,
+        "kind": "release_admission_checked",
+        "object": "block_a",
+        "result": {
+          "status": "unknown",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 9.88395848704905e-06,
+                "surface_tcp_distance_m": 0.019974089003190185,
+                "minimum_lift_m": 0.04420252392928781,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.6919996738433838,
+                "cameras": [
+                  "wrist"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            },
+            {
+              "condition": {
+                "predicate": "support_geometry",
+                "object": "platform"
+              },
+              "status": "unknown",
+              "reason": "support_extent_not_established_from_current_surface",
+              "evidence_gap": {
+                "status": "unknown",
+                "reason": "two_horizontal_extents_missing",
+                "missing_axes": [
+                  0,
+                  1
+                ],
+                "span_fraction_xy": [
+                  0.5792435131812664,
+                  0.1985556164563524
+                ]
+              }
+            }
+          ],
+          "evidence_ref": "frame-001526.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+            "control_step": 1519,
+            "captured_at": 1795694188.1877584,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1519,
+                "captured_at": 1795694188.1839683,
+                "evidence_ref": "frame-001519.npz",
+                "image_ref": "frame-001519.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1519,
+                "captured_at": 1795694188.187391,
+                "evidence_ref": "view-robot0_eye_in_hand-001519.npz",
+                "image_ref": "view-robot0_eye_in_hand-001519.png"
+              }
+            ]
+          }
+        },
+        "evidence_ref": "frame-001526.npz"
+      },
+      {
+        "id": 187,
+        "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+        "segment_id": "bea57cd457d34c4d9229e98912cde13f",
+        "time": 1795694253.9193902,
+        "kind": "release_admission_checked",
+        "object": "block_a",
+        "result": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 3.528654355907443e-05,
+                "surface_tcp_distance_m": 0.022234539160892082,
+                "minimum_lift_m": 0.0055100186360157455,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.6959223747253418,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            },
+            {
+              "condition": {
+                "predicate": "region",
+                "region": "left"
+              },
+              "status": "verified",
+              "reason": "calibrated_static_region"
+            }
+          ],
+          "evidence_ref": "frame-002773.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+            "control_step": 2766,
+            "captured_at": 1795694253.3873703,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 2766,
+                "captured_at": 1795694253.3848157,
+                "evidence_ref": "frame-002766.npz",
+                "image_ref": "frame-002766.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 2766,
+                "captured_at": 1795694253.3870735,
+                "evidence_ref": "view-robot0_eye_in_hand-002766.npz",
+                "image_ref": "view-robot0_eye_in_hand-002766.png"
+              }
+            ]
+          }
+        },
+        "evidence_ref": "frame-002773.npz"
+      }
+    ],
+    "terminal_events": [
+      {
+        "id": 336,
+        "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+        "segment_id": null,
+        "time": 1795694368.4560251,
+        "kind": "task_assistance_requested",
+        "assistance": {
+          "request_id": "2f3c6594-b38e-4ba9-a368-a84985291ae8",
+          "revision": 2,
+          "goal_version": 1,
+          "origin": "model",
+          "reason": "The grey platform is currently occluded, and no admissible camera view can recover its support geometry while the blue block is held. Please make the grey platform visible to the cameras, then tell me to continue.",
+          "status": "holding",
+          "hold_confirmed": false
+        }
+      }
+    ]
+  },
+  {
+    "run": "fault201-evidence",
+    "orderings": [
+      {
+        "event_id": 123,
+        "request": {
+          "target": {
+            "predicate": "support_geometry",
+            "object": "platform"
+          },
+          "requirements": [
+            {
+              "predicate": "support_geometry",
+              "object": "platform"
+            },
+            {
+              "predicate": "holding",
+              "object": "block_a"
+            }
+          ],
+          "target_status": "unknown",
+          "target_reason": "support_not_observed",
+          "missing_axes": [],
+          "extent_detail": {},
+          "custody": {
+            "status": "verified",
+            "conditions": [
+              {
+                "condition": {
+                  "predicate": "holding",
+                  "object": "block_a"
+                },
+                "status": "verified",
+                "reason": "current_relative_surface_and_gripper_support_custody",
+                "metrics": {
+                  "relative_drift_m": 4.489778920540577e-06,
+                  "surface_tcp_distance_m": 0.024686606760379048,
+                  "minimum_lift_m": 0.16797692022168587,
+                  "independent_samples": 3,
+                  "measurement_span_seconds": 0.7100377082824707,
+                  "cameras": [
+                    "overview"
+                  ],
+                  "pairing": "image_capture_robot_state"
+                }
+              }
+            ],
+            "evidence_ref": "frame-001708.npz",
+            "scope": "observed_supported_tabletop_relations",
+            "geometry_evidence_source": {
+              "schema": 1,
+              "episode_id": "bf89a25fa25c2a08ea32dc3961bb4ca5",
+              "control_step": 1701,
+              "captured_at": 1795694473.818261,
+              "frame": "world",
+              "length_unit": "meter",
+              "observations": [
+                {
+                  "camera": "overview",
+                  "control_step": 1701,
+                  "captured_at": 1795694473.8151906,
+                  "evidence_ref": "frame-001701.npz",
+                  "image_ref": "frame-001701.png"
+                },
+                {
+                  "camera": "wrist",
+                  "control_step": 1701,
+                  "captured_at": 1795694473.8179035,
+                  "evidence_ref": "view-robot0_eye_in_hand-001701.npz",
+                  "image_ref": "view-robot0_eye_in_hand-001701.png"
+                }
+              ]
+            }
+          },
+          "interpretation": "diagnostic_only; does_not_authorize_motion"
+        },
+        "coverage_order": [
+          [
+            16,
+            4,
+            100
+          ],
+          [
+            16,
+            20,
+            100
+          ]
+        ],
+        "evidence_order": [
+          [
+            16,
+            4,
+            100
+          ],
+          [
+            16,
+            20,
+            100
+          ]
+        ],
+        "top_changed": false,
+        "first_two_changed": false,
+        "prediction_statuses": [
+          "predicted",
+          "predicted"
+        ],
+        "predictions": [
+          {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.4444444444444444,
+              1.0,
+              0.1111111111111111,
+              1.0
+            ],
+            "target_minimum_edge_fraction": 0.1111111111111111,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.0
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.1111111111111111,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          },
+          {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.4444444444444444,
+              1.0,
+              1.0,
+              0.1111111111111111
+            ],
+            "target_minimum_edge_fraction": 0.1111111111111111,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.0
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.1111111111111111,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        ]
+      },
+      {
+        "event_id": 151,
+        "request": {
+          "target": {
+            "predicate": "support_geometry",
+            "object": "platform"
+          },
+          "requirements": [
+            {
+              "predicate": "support_geometry",
+              "object": "platform"
+            },
+            {
+              "predicate": "holding",
+              "object": "block_a"
+            }
+          ],
+          "target_status": "unknown",
+          "target_reason": "support_extent_not_established_from_current_surface",
+          "missing_axes": [
+            1
+          ],
+          "extent_detail": {
+            "status": "unknown",
+            "reason": "missing_extent_requires_current_planar_side",
+            "missing_axes": [
+              1
+            ],
+            "span_fraction_xy": [
+              0.9942076002371505,
+              0.37710183754081356
+            ]
+          },
+          "custody": {
+            "status": "verified",
+            "conditions": [
+              {
+                "condition": {
+                  "predicate": "holding",
+                  "object": "block_a"
+                },
+                "status": "verified",
+                "reason": "current_relative_surface_and_gripper_support_custody",
+                "metrics": {
+                  "relative_drift_m": 5.445267232574487e-06,
+                  "surface_tcp_distance_m": 0.02453029388255104,
+                  "minimum_lift_m": 0.16838150829898013,
+                  "independent_samples": 3,
+                  "measurement_span_seconds": 0.7143294811248779,
+                  "cameras": [
+                    "overview"
+                  ],
+                  "pairing": "image_capture_robot_state"
+                }
+              }
+            ],
+            "evidence_ref": "frame-002180.npz",
+            "scope": "observed_supported_tabletop_relations",
+            "geometry_evidence_source": {
+              "schema": 1,
+              "episode_id": "bf89a25fa25c2a08ea32dc3961bb4ca5",
+              "control_step": 2173,
+              "captured_at": 1795694498.895317,
+              "frame": "world",
+              "length_unit": "meter",
+              "observations": [
+                {
+                  "camera": "overview",
+                  "control_step": 2173,
+                  "captured_at": 1795694498.8929179,
+                  "evidence_ref": "frame-002173.npz",
+                  "image_ref": "frame-002173.png"
+                },
+                {
+                  "camera": "wrist",
+                  "control_step": 2173,
+                  "captured_at": 1795694498.8949795,
+                  "evidence_ref": "view-robot0_eye_in_hand-002173.npz",
+                  "image_ref": "view-robot0_eye_in_hand-002173.png"
+                }
+              ]
+            }
+          },
+          "interpretation": "diagnostic_only; does_not_authorize_motion"
+        },
+        "coverage_order": [],
+        "evidence_order": [],
+        "top_changed": false,
+        "first_two_changed": false,
+        "prediction_statuses": [],
+        "predictions": []
+      }
+    ],
+    "acquisitions": [
+      {
+        "id": 12,
+        "segment_id": "84d04a3208ea4cd19e0c1c1e3a1bdaef",
+        "object": "block_a",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.0058566530351527035
+      },
+      {
+        "id": 26,
+        "segment_id": "bf3fa3652da34dac9b8f37f2a6a3b161",
+        "object": "platform",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.005955892032943666
+      },
+      {
+        "id": 136,
+        "segment_id": "6e51d81abad64e1fa718fcaa66c8b3a6",
+        "object": "platform",
+        "status": "unknown",
+        "reason": "public_observation",
+        "views_used": 2,
+        "motion_steps": 55,
+        "wall_seconds": 14.896221593953669
+      },
+      {
+        "id": 154,
+        "segment_id": "d65b80ac0f4b424db20f7c047443c571",
+        "object": "platform",
+        "status": "unknown",
+        "reason": "no_admissible_projected_view; change_evidence_condition_or_ask_user",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 3.2142539620399475
+      }
+    ],
+    "post_view_evidence": [
+      {
+        "id": 130,
+        "episode_id": "bf89a25fa25c2a08ea32dc3961bb4ca5",
+        "segment_id": "6e51d81abad64e1fa718fcaa66c8b3a6",
+        "time": 1795694480.0788212,
+        "kind": "inspection_post_view_evidence",
+        "object": "platform",
+        "view_index": 1,
+        "joint_result": {
+          "status": "unknown",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "support_geometry",
+                "object": "platform"
+              },
+              "status": "unknown",
+              "reason": "support_extent_not_established_from_current_surface",
+              "evidence_gap": {
+                "status": "unknown",
+                "reason": "missing_extent_requires_current_planar_side",
+                "missing_axes": [
+                  1
+                ],
+                "span_fraction_xy": [
+                  0.9946534499216211,
+                  0.46949910285832785
+                ]
+              }
+            },
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 7.42930188926873e-06,
+                "surface_tcp_distance_m": 0.024970993584525873,
+                "minimum_lift_m": 0.17259528181511485,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.6956098079681396,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            }
+          ],
+          "evidence_ref": "frame-001814.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "bf89a25fa25c2a08ea32dc3961bb4ca5",
+            "control_step": 1808,
+            "captured_at": 1795694479.5259194,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1808,
+                "captured_at": 1795694479.5221324,
+                "evidence_ref": "frame-001808.npz",
+                "image_ref": "frame-001808.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1808,
+                "captured_at": 1795694479.5255737,
+                "evidence_ref": "view-robot0_eye_in_hand-001808.npz",
+                "image_ref": "view-robot0_eye_in_hand-001808.png"
+              }
+            ]
+          }
+        },
+        "custody": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 7.42930188926873e-06,
+                "surface_tcp_distance_m": 0.024970993584525873,
+                "minimum_lift_m": 0.17259528181511485,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.6956098079681396,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            }
+          ],
+          "evidence_ref": "frame-001814.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "bf89a25fa25c2a08ea32dc3961bb4ca5",
+            "control_step": 1808,
+            "captured_at": 1795694479.5259194,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1808,
+                "captured_at": 1795694479.5221324,
+                "evidence_ref": "frame-001808.npz",
+                "image_ref": "frame-001808.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1808,
+                "captured_at": 1795694479.5255737,
+                "evidence_ref": "view-robot0_eye_in_hand-001808.npz",
+                "image_ref": "view-robot0_eye_in_hand-001808.png"
+              }
+            ]
+          }
+        },
+        "evidence_ref": "frame-001814.npz"
+      },
+      {
+        "id": 135,
+        "episode_id": "bf89a25fa25c2a08ea32dc3961bb4ca5",
+        "segment_id": "6e51d81abad64e1fa718fcaa66c8b3a6",
+        "time": 1795694486.0381978,
+        "kind": "inspection_post_view_evidence",
+        "object": "platform",
+        "view_index": 2,
+        "joint_result": {
+          "status": "unknown",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "support_geometry",
+                "object": "platform"
+              },
+              "status": "unknown",
+              "reason": "support_extent_not_established_from_current_surface",
+              "evidence_gap": {
+                "status": "unknown",
+                "reason": "missing_extent_requires_current_planar_side",
+                "missing_axes": [
+                  1
+                ],
+                "span_fraction_xy": [
+                  0.9953400916309034,
+                  0.3773483918490943
+                ]
+              }
+            },
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 0.00015051714776076973,
+                "surface_tcp_distance_m": 0.02485874220440318,
+                "minimum_lift_m": 0.16967360246943808,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.703237771987915,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            }
+          ],
+          "evidence_ref": "frame-001927.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "bf89a25fa25c2a08ea32dc3961bb4ca5",
+            "control_step": 1920,
+            "captured_at": 1795694485.4498055,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1920,
+                "captured_at": 1795694485.446027,
+                "evidence_ref": "frame-001920.npz",
+                "image_ref": "frame-001920.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1920,
+                "captured_at": 1795694485.4494371,
+                "evidence_ref": "view-robot0_eye_in_hand-001920.npz",
+                "image_ref": "view-robot0_eye_in_hand-001920.png"
+              }
+            ]
+          }
+        },
+        "custody": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 0.00015051714776076973,
+                "surface_tcp_distance_m": 0.02485874220440318,
+                "minimum_lift_m": 0.16967360246943808,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.703237771987915,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            }
+          ],
+          "evidence_ref": "frame-001927.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "bf89a25fa25c2a08ea32dc3961bb4ca5",
+            "control_step": 1920,
+            "captured_at": 1795694485.4498055,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1920,
+                "captured_at": 1795694485.446027,
+                "evidence_ref": "frame-001920.npz",
+                "image_ref": "frame-001920.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1920,
+                "captured_at": 1795694485.4494371,
+                "evidence_ref": "view-robot0_eye_in_hand-001920.npz",
+                "image_ref": "view-robot0_eye_in_hand-001920.png"
+              }
+            ]
+          }
+        },
+        "evidence_ref": "frame-001927.npz"
+      }
+    ],
+    "releases": [
+      {
+        "id": 90,
+        "episode_id": "bf89a25fa25c2a08ea32dc3961bb4ca5",
+        "segment_id": "2149314dfd5e4761b4bddf7f5aa6078e",
+        "time": 1795694448.6969702,
+        "kind": "release_admission_checked",
+        "object": "block_a",
+        "result": {
+          "status": "unknown",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 8.43624472091178e-06,
+                "surface_tcp_distance_m": 0.023479355316086033,
+                "minimum_lift_m": 0.0480107993871739,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.7109270095825195,
+                "cameras": [
+                  "wrist"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            },
+            {
+              "condition": {
+                "predicate": "support_geometry",
+                "object": "platform"
+              },
+              "status": "unknown",
+              "reason": "support_extent_not_established_from_current_surface",
+              "evidence_gap": {
+                "status": "unknown",
+                "reason": "two_horizontal_extents_missing",
+                "missing_axes": [
+                  0,
+                  1
+                ],
+                "span_fraction_xy": [
+                  0.5871637263010285,
+                  0.19250562078241495
+                ]
+              }
+            }
+          ],
+          "evidence_ref": "frame-001215.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "bf89a25fa25c2a08ea32dc3961bb4ca5",
+            "control_step": 1208,
+            "captured_at": 1795694448.0130892,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1208,
+                "captured_at": 1795694448.009781,
+                "evidence_ref": "frame-001208.npz",
+                "image_ref": "frame-001208.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1208,
+                "captured_at": 1795694448.0127509,
+                "evidence_ref": "view-robot0_eye_in_hand-001208.npz",
+                "image_ref": "view-robot0_eye_in_hand-001208.png"
+              }
+            ]
+          }
+        },
+        "evidence_ref": "frame-001215.npz"
+      }
+    ],
+    "terminal_events": [
+      {
+        "id": 169,
+        "episode_id": "bf89a25fa25c2a08ea32dc3961bb4ca5",
+        "segment_id": null,
+        "time": 1795694506.0375519,
+        "kind": "task_assistance_requested",
+        "assistance": {
+          "request_id": "ee887c47-dcc0-4e9f-9392-6d7fb0f6b309",
+          "revision": 2,
+          "goal_version": 1,
+          "origin": "model",
+          "reason": "I cannot safely release the blue block because the grey platform\u2019s full support geometry remains unverified after two inspection attempts, and no further admissible camera view is available. Please expose the platform\u2019s full top surface or provide another supported destination.",
+          "status": "holding",
+          "hold_confirmed": false
+        }
+      }
+    ]
+  },
+  {
+    "run": "fault202-evidence",
+    "orderings": [],
+    "acquisitions": [
+      {
+        "id": 12,
+        "segment_id": "5e60839fb87a49c9b4a856cf8471f499",
+        "object": "block_a",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.005179869942367077
+      },
+      {
+        "id": 26,
+        "segment_id": "ed74f44751c24e588c20eece72cdd40d",
+        "object": "block_a",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.006442363024689257
+      },
+      {
+        "id": 40,
+        "segment_id": "05d635d6fed64636891c6d8c5c5960a6",
+        "object": "platform",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.005933482956606895
+      },
+      {
+        "id": 54,
+        "segment_id": "0e20305103174916a3fa24980a84a2b4",
+        "object": "platform",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.006997192976996303
+      },
+      {
+        "id": 133,
+        "segment_id": "499e10b924ef488d95af613b9709ccd9",
+        "object": "platform",
+        "status": "unknown",
+        "reason": "low_held_pose_requires_recorded_restore_before_inspection",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 3.1708424200187437
+      }
+    ],
+    "post_view_evidence": [],
+    "releases": [
+      {
+        "id": 116,
+        "episode_id": "119abdac2622ea0f13827aaa57a5d0ba",
+        "segment_id": "96d9a7a11d564999bca89f30fb9f5848",
+        "time": 1795694597.2530239,
+        "kind": "release_admission_checked",
+        "object": "block_a",
+        "result": {
+          "status": "unknown",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 5.323001255988738e-06,
+                "surface_tcp_distance_m": 0.016864440973228655,
+                "minimum_lift_m": 0.040679939021006195,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.7087709903717041,
+                "cameras": [
+                  "wrist"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            },
+            {
+              "condition": {
+                "predicate": "support_geometry",
+                "object": "platform"
+              },
+              "status": "unknown",
+              "reason": "support_extent_not_established_from_current_surface",
+              "evidence_gap": {
+                "status": "unknown",
+                "reason": "two_horizontal_extents_missing",
+                "missing_axes": [
+                  0,
+                  1
+                ],
+                "span_fraction_xy": [
+                  0.5693966961137974,
+                  0.17284084021107465
+                ]
+              }
+            }
+          ],
+          "evidence_ref": "frame-001408.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "119abdac2622ea0f13827aaa57a5d0ba",
+            "control_step": 1403,
+            "captured_at": 1795694596.684232,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1403,
+                "captured_at": 1795694596.6803272,
+                "evidence_ref": "frame-001403.npz",
+                "image_ref": "frame-001403.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1403,
+                "captured_at": 1795694596.6838484,
+                "evidence_ref": "view-robot0_eye_in_hand-001403.npz",
+                "image_ref": "view-robot0_eye_in_hand-001403.png"
+              }
+            ]
+          }
+        },
+        "evidence_ref": "frame-001408.npz"
+      }
+    ],
+    "terminal_events": [
+      {
+        "id": 148,
+        "episode_id": "119abdac2622ea0f13827aaa57a5d0ba",
+        "segment_id": null,
+        "time": 1795694620.7122219,
+        "kind": "task_assistance_requested",
+        "assistance": {
+          "request_id": "71dad310-786e-491f-9d34-90087ebae56d",
+          "revision": 2,
+          "goal_version": 1,
+          "origin": "model",
+          "reason": "The blue block is still securely held at a low pose, but release is forbidden because the platform support geometry is unknown. Inspection cannot proceed from this pose, and no recorded descent is available for the authorized restore skill. Please manually return the robot while preserving its grip to a safe raised pose, or provide assistance that makes the platform fully inspectable.",
+          "status": "holding",
+          "hold_confirmed": false
+        }
+      }
+    ]
+  },
+  {
+    "run": "fault202-coverage",
+    "orderings": [],
+    "acquisitions": [
+      {
+        "id": 12,
+        "segment_id": "3ded2657cd2d45d5b743d88abff2e6a8",
+        "object": "block_a",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.005557176016736776
+      },
+      {
+        "id": 26,
+        "segment_id": "03e97c54b0b54259a52804f9c41d067a",
+        "object": "block_a",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.006509069993626326
+      },
+      {
+        "id": 40,
+        "segment_id": "332ffeb1226a4a18a2d91785ffeeaab7",
+        "object": "platform",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.006049704970791936
+      },
+      {
+        "id": 54,
+        "segment_id": "ed61c38536bc47beab7e9ee6b7e4459f",
+        "object": "platform",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.006148119980935007
+      },
+      {
+        "id": 133,
+        "segment_id": "41b15779346c4dd693fc3396ca99f0c0",
+        "object": "platform",
+        "status": "unknown",
+        "reason": "low_held_pose_requires_recorded_restore_before_inspection",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 3.1716047899681143
+      }
+    ],
+    "post_view_evidence": [],
+    "releases": [
+      {
+        "id": 116,
+        "episode_id": "62b8abe2ae4204ccb5fbec06782e38cd",
+        "segment_id": "bba98f1e34c44549be8ac1f18b417714",
+        "time": 1795694714.7779243,
+        "kind": "release_admission_checked",
+        "object": "block_a",
+        "result": {
+          "status": "unknown",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 4.866211135165473e-06,
+                "surface_tcp_distance_m": 0.01880164992534483,
+                "minimum_lift_m": 0.04250397932645311,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.7014861106872559,
+                "cameras": [
+                  "wrist"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            },
+            {
+              "condition": {
+                "predicate": "support_geometry",
+                "object": "platform"
+              },
+              "status": "unknown",
+              "reason": "support_extent_not_established_from_current_surface",
+              "evidence_gap": {
+                "status": "unknown",
+                "reason": "two_horizontal_extents_missing",
+                "missing_axes": [
+                  0,
+                  1
+                ],
+                "span_fraction_xy": [
+                  0.5695828228944854,
+                  0.1729077846920241
+                ]
+              }
+            }
+          ],
+          "evidence_ref": "frame-001478.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "62b8abe2ae4204ccb5fbec06782e38cd",
+            "control_step": 1471,
+            "captured_at": 1795694714.1665266,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1471,
+                "captured_at": 1795694714.1628,
+                "evidence_ref": "frame-001471.npz",
+                "image_ref": "frame-001471.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1471,
+                "captured_at": 1795694714.1661603,
+                "evidence_ref": "view-robot0_eye_in_hand-001471.npz",
+                "image_ref": "view-robot0_eye_in_hand-001471.png"
+              }
+            ]
+          }
+        },
+        "evidence_ref": "frame-001478.npz"
+      }
+    ],
+    "terminal_events": [
+      {
+        "id": 148,
+        "episode_id": "62b8abe2ae4204ccb5fbec06782e38cd",
+        "segment_id": null,
+        "time": 1795694747.2618248,
+        "kind": "task_assistance_requested",
+        "assistance": {
+          "request_id": "962b538d-073f-49af-91cd-fb24936a4e04",
+          "revision": 2,
+          "goal_version": 1,
+          "origin": "model",
+          "reason": "The blue block is still securely held in a low pose over the platform, but release was refused because the platform\u2019s support geometry is unverified. A distinct-view inspection is also refused from this low pose, and no recorded descent is available for the supported restore operation. Please provide manual assistance to move the held block to a safe elevated pose while preserving the grip, then confirm when ready.",
+          "status": "holding",
+          "hold_confirmed": false
+        }
+      }
+    ]
+  },
+  {
+    "run": "normal202-coverage",
+    "orderings": [],
+    "acquisitions": [
+      {
+        "id": 12,
+        "segment_id": "22499c8c536f4bd38dfa9a94f4c8f2e5",
+        "object": "block_a",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.00551699404604733
+      },
+      {
+        "id": 26,
+        "segment_id": "5a0a9f6557cf45b29fe76bbf28ca724f",
+        "object": "block_a",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.005273532995488495
+      },
+      {
+        "id": 40,
+        "segment_id": "47c3188dcbae4b5ea91d03c91a28bb33",
+        "object": "platform",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.005301271041389555
+      },
+      {
+        "id": 54,
+        "segment_id": "9195b70c33f64e839b2bd5b841069cc5",
+        "object": "platform",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.006227706035133451
+      }
+    ],
+    "post_view_evidence": [],
+    "releases": [
+      {
+        "id": 115,
+        "episode_id": "4cc04212678503e5e33b29e65e0f1050",
+        "segment_id": "0c410dc478414e158b2e59156b5f529b",
+        "time": 1795694838.8886075,
+        "kind": "release_admission_checked",
+        "object": "block_a",
+        "result": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 0.0011223564112505318,
+                "surface_tcp_distance_m": 0.01952396015987183,
+                "minimum_lift_m": 0.03323385124478917,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.7027924060821533,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            },
+            {
+              "condition": {
+                "predicate": "support_geometry",
+                "object": "platform"
+              },
+              "status": "verified",
+              "reason": "current_support_measurement_with_public_size_prior",
+              "evidence_gap": {
+                "status": "available",
+                "reason": "current_surface_supports_extent",
+                "missing_axes": [],
+                "span_fraction_xy": [
+                  0.7637464906932159,
+                  1.003616911424063
+                ]
+              }
+            }
+          ],
+          "evidence_ref": "frame-001434.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "4cc04212678503e5e33b29e65e0f1050",
+            "control_step": 1427,
+            "captured_at": 1795694838.3637898,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1427,
+                "captured_at": 1795694838.360798,
+                "evidence_ref": "frame-001427.npz",
+                "image_ref": "frame-001427.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1427,
+                "captured_at": 1795694838.3634567,
+                "evidence_ref": "view-robot0_eye_in_hand-001427.npz",
+                "image_ref": "view-robot0_eye_in_hand-001427.png"
+              }
+            ]
+          }
+        },
+        "evidence_ref": "frame-001434.npz"
+      }
+    ],
+    "terminal_events": [
+      {
+        "id": 134,
+        "episode_id": "4cc04212678503e5e33b29e65e0f1050",
+        "segment_id": null,
+        "time": 1795694843.9309516,
+        "kind": "finish_checked",
+        "result": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "on",
+                "object": "block_a",
+                "support": "platform"
+              },
+              "status": "verified",
+              "reason": "visible_footprint_and_support_height",
+              "metrics": {
+                "object_center_xy": [
+                  0.1636477645502003,
+                  0.1267273311014282
+                ],
+                "support_lower_xy": [
+                  0.10566509101588234,
+                  0.06573374073170009
+                ],
+                "support_upper_xy": [
+                  0.23046722019609328,
+                  0.1916188397960146
+                ],
+                "center_clearance_m": 0.05798267353431796,
+                "visible_overlap_fraction": 1.0,
+                "bottom_support_gap_m": -0.0007499916937258044,
+                "object_height_reference_m": 0.043827417610348696,
+                "object_cameras": [
+                  "overview"
+                ],
+                "support_cameras": [
+                  "overview"
+                ]
+              }
+            },
+            {
+              "condition": {
+                "predicate": "empty_gripper"
+              },
+              "status": "verified",
+              "reason": "gripper_encoder_open_or_closed_empty"
+            }
+          ],
+          "evidence_ref": "frame-001529.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "4cc04212678503e5e33b29e65e0f1050",
+            "control_step": 1526,
+            "captured_at": 1795694843.3148923,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1526,
+                "captured_at": 1795694843.3115194,
+                "evidence_ref": "frame-001526.npz",
+                "image_ref": "frame-001526.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1526,
+                "captured_at": 1795694843.3145452,
+                "evidence_ref": "view-robot0_eye_in_hand-001526.npz",
+                "image_ref": "view-robot0_eye_in_hand-001526.png"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": 135,
+        "episode_id": "4cc04212678503e5e33b29e65e0f1050",
+        "segment_id": null,
+        "time": 1795694845.529124,
+        "kind": "finish_checked",
+        "result": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "on",
+                "object": "block_a",
+                "support": "platform"
+              },
+              "status": "verified",
+              "reason": "visible_footprint_and_support_height",
+              "metrics": {
+                "object_center_xy": [
+                  0.1636477645502003,
+                  0.1267273311014282
+                ],
+                "support_lower_xy": [
+                  0.10566509101588234,
+                  0.06573374073170009
+                ],
+                "support_upper_xy": [
+                  0.23046722019609328,
+                  0.1916188397960146
+                ],
+                "center_clearance_m": 0.05798267353431796,
+                "visible_overlap_fraction": 1.0,
+                "bottom_support_gap_m": -0.0007499916937258044,
+                "object_height_reference_m": 0.043827417610348696,
+                "object_cameras": [
+                  "overview"
+                ],
+                "support_cameras": [
+                  "overview"
+                ]
+              }
+            },
+            {
+              "condition": {
+                "predicate": "empty_gripper"
+              },
+              "status": "verified",
+              "reason": "gripper_encoder_open_or_closed_empty"
+            }
+          ],
+          "evidence_ref": "frame-001557.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "4cc04212678503e5e33b29e65e0f1050",
+            "control_step": 1550,
+            "captured_at": 1795694844.8889499,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1550,
+                "captured_at": 1795694844.8852746,
+                "evidence_ref": "frame-001550.npz",
+                "image_ref": "frame-001550.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1550,
+                "captured_at": 1795694844.888612,
+                "evidence_ref": "view-robot0_eye_in_hand-001550.npz",
+                "image_ref": "view-robot0_eye_in_hand-001550.png"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "run": "normal202-evidence",
+    "orderings": [],
+    "acquisitions": [
+      {
+        "id": 12,
+        "segment_id": "f36e1c905511413ab9800cdb70ec43e5",
+        "object": "block_a",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.0058322459808550775
+      },
+      {
+        "id": 26,
+        "segment_id": "9291c612f01648108f5529fc7a2ec4a3",
+        "object": "platform",
+        "status": "available",
+        "reason": "public_observation",
+        "views_used": 0,
+        "motion_steps": 0,
+        "wall_seconds": 0.006252527004107833
+      }
+    ],
+    "post_view_evidence": [],
+    "releases": [
+      {
+        "id": 89,
+        "episode_id": "668bf6d7889efa3ae4df8f7ea2a3d557",
+        "segment_id": "20603525724343a19b8cc947853dfeca",
+        "time": 1795694922.0282643,
+        "kind": "release_admission_checked",
+        "object": "block_a",
+        "result": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 0.0019099221908434754,
+                "surface_tcp_distance_m": 0.019934457959716448,
+                "minimum_lift_m": 0.03316248534754451,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.7504069805145264,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            },
+            {
+              "condition": {
+                "predicate": "support_geometry",
+                "object": "platform"
+              },
+              "status": "verified",
+              "reason": "current_support_measurement_with_public_size_prior",
+              "evidence_gap": {
+                "status": "available",
+                "reason": "current_surface_supports_extent",
+                "missing_axes": [],
+                "span_fraction_xy": [
+                  0.7637464906932159,
+                  1.0035662893243327
+                ]
+              }
+            }
+          ],
+          "evidence_ref": "frame-001168.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "668bf6d7889efa3ae4df8f7ea2a3d557",
+            "control_step": 1161,
+            "captured_at": 1795694921.5029843,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1161,
+                "captured_at": 1795694921.5009956,
+                "evidence_ref": "frame-001161.npz",
+                "image_ref": "frame-001161.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1161,
+                "captured_at": 1795694921.5027094,
+                "evidence_ref": "view-robot0_eye_in_hand-001161.npz",
+                "image_ref": "view-robot0_eye_in_hand-001161.png"
+              }
+            ]
+          }
+        },
+        "evidence_ref": "frame-001168.npz"
+      }
+    ],
+    "terminal_events": [
+      {
+        "id": 108,
+        "episode_id": "668bf6d7889efa3ae4df8f7ea2a3d557",
+        "segment_id": null,
+        "time": 1795694926.6064985,
+        "kind": "finish_checked",
+        "result": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "on",
+                "object": "block_a",
+                "support": "platform"
+              },
+              "status": "verified",
+              "reason": "visible_footprint_and_support_height",
+              "metrics": {
+                "object_center_xy": [
+                  0.16355969131545384,
+                  0.12680171229262485
+                ],
+                "support_lower_xy": [
+                  0.10566509101588234,
+                  0.06573337616492493
+                ],
+                "support_upper_xy": [
+                  0.2304679690699361,
+                  0.19162037157888315
+                ],
+                "center_clearance_m": 0.0578946002995715,
+                "visible_overlap_fraction": 1.0,
+                "bottom_support_gap_m": -0.0007499916937258044,
+                "object_height_reference_m": 0.043827417610348696,
+                "object_cameras": [
+                  "overview"
+                ],
+                "support_cameras": [
+                  "overview"
+                ]
+              }
+            },
+            {
+              "condition": {
+                "predicate": "empty_gripper"
+              },
+              "status": "verified",
+              "reason": "gripper_encoder_open_or_closed_empty"
+            }
+          ],
+          "evidence_ref": "frame-001254.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "668bf6d7889efa3ae4df8f7ea2a3d557",
+            "control_step": 1251,
+            "captured_at": 1795694926.003082,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1251,
+                "captured_at": 1795694926.000698,
+                "evidence_ref": "frame-001251.npz",
+                "image_ref": "frame-001251.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1251,
+                "captured_at": 1795694926.0028005,
+                "evidence_ref": "view-robot0_eye_in_hand-001251.npz",
+                "image_ref": "view-robot0_eye_in_hand-001251.png"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": 109,
+        "episode_id": "668bf6d7889efa3ae4df8f7ea2a3d557",
+        "segment_id": null,
+        "time": 1795694928.2022843,
+        "kind": "finish_checked",
+        "result": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "on",
+                "object": "block_a",
+                "support": "platform"
+              },
+              "status": "verified",
+              "reason": "visible_footprint_and_support_height",
+              "metrics": {
+                "object_center_xy": [
+                  0.16355969131545384,
+                  0.12680171229262485
+                ],
+                "support_lower_xy": [
+                  0.10566509101588234,
+                  0.06573337616492493
+                ],
+                "support_upper_xy": [
+                  0.2304679690699361,
+                  0.19162037157888315
+                ],
+                "center_clearance_m": 0.0578946002995715,
+                "visible_overlap_fraction": 1.0,
+                "bottom_support_gap_m": -0.0007499916937258044,
+                "object_height_reference_m": 0.043827417610348696,
+                "object_cameras": [
+                  "overview"
+                ],
+                "support_cameras": [
+                  "overview"
+                ]
+              }
+            },
+            {
+              "condition": {
+                "predicate": "empty_gripper"
+              },
+              "status": "verified",
+              "reason": "gripper_encoder_open_or_closed_empty"
+            }
+          ],
+          "evidence_ref": "frame-001282.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "668bf6d7889efa3ae4df8f7ea2a3d557",
+            "control_step": 1275,
+            "captured_at": 1795694927.5696983,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1275,
+                "captured_at": 1795694927.5663633,
+                "evidence_ref": "frame-001275.npz",
+                "image_ref": "frame-001275.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1275,
+                "captured_at": 1795694927.5694268,
+                "evidence_ref": "view-robot0_eye_in_hand-001275.npz",
+                "image_ref": "view-robot0_eye_in_hand-001275.png"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+]

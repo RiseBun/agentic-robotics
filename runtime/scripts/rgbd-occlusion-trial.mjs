@@ -19,7 +19,7 @@ const seed=Number(option('seed','201')),task=option('task','hold');
 const condition=option('condition','system_no_memory');
 if(!['direct_cap','system_no_memory','system_with_memory'].includes(condition))throw new Error('Invalid comparison condition');
 const inspection=option('inspection','lateral');
-if(!['lateral','coverage'].includes(inspection))throw new Error('Invalid inspection policy');
+if(!['lateral','coverage','evidence'].includes(inspection))throw new Error('Invalid inspection policy');
 const perception=option('perception','single_view');
 if(!['single_view','multiview'].includes(perception))throw new Error('Invalid perception mode');
 const faultSourcePath=path.join(root,'cap-runtime/experiments/rgbd_occlusion_service.py');

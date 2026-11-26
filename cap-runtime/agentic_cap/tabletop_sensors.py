@@ -49,39 +49,42 @@ def geometry(camera,mask):
         point_count=len(pts),scope='visible_surface_only',captured_at=camera['captured_at'])
 
 
-def support_surface(current,reference):
-    """Complete one measured planar side of an upright box using observed size.
-
-    This is a bounded geometry estimate, not an assertion that occluded space
-    is free. Entirely missing/truncated segments and two missing axes remain
-    unknown. Initial measured dimensions and current RGB-D are both required.
-    """
-    if not current or not reference:return None
+def support_extent_assessment(current,reference):
+    """Explain the same conservative completion used by the public verifier."""
+    def gap(reason,**details):return dict(status='unknown',reason=reason,**details)
+    if not current:return gap('current_support_surface_missing')
+    if not reference:return gap('public_support_reference_missing')
     lo=np.array(current['surface_q02_xyz'],float);hi=np.array(current['surface_q98_xyz'],float)
     expected=np.array(reference['surface_span_xyz'],float)
     missing=np.flatnonzero((hi[:2]-lo[:2])<.65*expected[:2])
-    if len(missing)>1:return None
+    metrics=dict(missing_axes=missing.tolist(),span_fraction_xy=np.divide(hi[:2]-lo[:2],expected[:2],
+        out=np.zeros(2),where=expected[:2]>0).tolist())
+    if len(missing)>1:return gap('two_horizontal_extents_missing',**metrics)
     inferred=[]
     if len(missing)==1:
         axis=int(missing[0]);normal=np.array(current.get('plane_normal_xyz',[0,0,0]))
-        if abs(normal[axis])<.95 or current.get('plane_residual_m',1)>.003:return None
+        if abs(normal[axis])<.95 or current.get('plane_residual_m',1)>.003:
+            return gap('missing_extent_requires_current_planar_side',**metrics)
         camera=np.array(current.get('camera_center_world',[0,0,0]))
         face=float(current['surface_median_xyz'][axis]);width=float(expected[axis])
-        if width<=.015:return None
+        if width<=.015:return gap('public_side_width_unavailable',**metrics)
         if camera[axis]>face:lo[axis],hi[axis]=face-width,face
         else:lo[axis],hi[axis]=face,face+width
         inferred.append(axis)
     height=reference.get('observed_height_m')
     if height and hi[2]-lo[2]<.65*height and abs(np.array(current.get('plane_normal_xyz',[0,0,0]))[2])<.8:
-        # A visible lower edge on the calibrated table bounds the hidden top.
-        # Without that current lower edge, do not invent a support height.
-        if abs(lo[2]-.8)>.012:return None
+        if abs(lo[2]-.8)>.012:return gap('current_lower_edge_required_for_support_height',**metrics)
         hi[2]=.8+height;inferred.append(2)
     result=copy.deepcopy(current)
     result.update(surface_q02_xyz=lo.tolist(),surface_q98_xyz=hi.tolist(),
         completion=dict(axes=inferred,method='current_planar_side_plus_public_observed_size',
                         reference_captured_at=reference.get('captured_at'),reference_evidence_source=reference.get('evidence_source'),uncertainty_m=.01))
-    return result
+    return dict(status='available',reason='current_surface_supports_extent',surface=result,**metrics)
+
+
+def support_surface(current,reference):
+    """Complete measured geometry under the unchanged public evidence rules."""
+    return support_extent_assessment(current,reference).get('surface')
 
 
 def verify(goal,snapshot,history,reference,custody=None):
@@ -105,7 +108,11 @@ def verify(goal,snapshot,history,reference,custody=None):
         if pred=='support_geometry':
             if not o:return unknown('support_not_observed')
             reconstructed=support_surface(o,reference.get(obj)) if cat['objects'][obj]['shape']=='box' else o
-            return known(True,'current_support_measurement_with_public_size_prior') if reconstructed is not None else unknown('support_extent_not_established_from_current_surface')
+            result=known(True,'current_support_measurement_with_public_size_prior') if reconstructed is not None else unknown('support_extent_not_established_from_current_surface')
+            if cat['objects'][obj]['shape']=='box':
+                detail=support_extent_assessment(o,reference.get(obj))
+                result['evidence_gap']={k:v for k,v in detail.items() if k!='surface'}
+            return result
         if pred=='accessible':
             if not o:return unknown('target_geometry_unavailable_for_access')
             if not temporal:return unknown('accessibility_requires_public_temporal_window')

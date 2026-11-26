@@ -1,0 +1,13 @@
+{
+  "base_commit": "89219670c53da53e31b33163b36394df2ff490d7",
+  "files": {
+    "cap-runtime/agentic_cap/tabletop_sensors.py": "cd3198c094bccd7bb89c6a77f617d211154c00b5ca3372b19d41e6dc7bbb36b3",
+    "cap-runtime/agentic_cap/tabletop_inspection.py": "f580b6437092e995452d7bc7bb5b58807956d6ea8630d176e017c710d1e36c45",
+    "cap-runtime/agentic_cap/tabletop_actions.py": "1cab67b2bcde0ad7b12942afceb29f60d83bf97226db245f1ea8a7556c58a704",
+    "cap-runtime/agentic_cap/tabletop_scene.py": "066d2aaec2c4af1bf1d5de140a19f4f0305c45988ba7ef2f35d98e1dd0aa65d1",
+    "cap-runtime/tests/test_evidence_inspection.py": "5a0f4282f6123d8a89d98f5745fda15fada63003a3d833f3d128bb45f862eb29",
+    "runtime/scripts/tabletop-model-trial.mjs": "61bf26d9ef01c5badc21fdfe39e39f17db99355c26d88c201217eaaa26499d21",
+    "runtime/scripts/rgbd-occlusion-trial.mjs": "67cef21f13f3ee6a8fd00df853676ea55efa8a4cda39ed0c6b64634e275231c8",
+    "docs/generic-robotics.md": "a0cc14b61980d5f9d697e5b1a8822787f015093aefaac3efc8c52b81d56780db"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "noted_at": 1795694285.1538806,
+  "first_run_overlapped_full_checks": true,
+  "cost_interpretation": "descriptive only; no causal timing/speed claims",
+  "source_freeze": "no product or runner source edits between registered task runs",
+  "acceptance": "do not drop assistance requests or replace failures"
+}

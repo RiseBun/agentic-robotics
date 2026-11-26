@@ -1,0 +1,5 @@
+{
+  "cases": 1200,
+  "differences": [],
+  "scope": "deterministic synthetic support completion regression against saved pre-refactor source; not task evidence"
+}

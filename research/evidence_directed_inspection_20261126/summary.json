@@ -1,0 +1,26 @@
+[
+  {
+    "inspection": "coverage",
+    "runs": 3,
+    "physical_successes": 1,
+    "public_successes": 1,
+    "false_completions": 0,
+    "unconfirmed_physical_completions": 0,
+    "total_active_view_attempts": 4,
+    "mean_task_wall_seconds": 156.076,
+    "mean_motion_steps": 561,
+    "mean_total_tokens": 530066
+  },
+  {
+    "inspection": "evidence",
+    "runs": 3,
+    "physical_successes": 1,
+    "public_successes": 1,
+    "false_completions": 0,
+    "unconfirmed_physical_completions": 0,
+    "total_active_view_attempts": 2,
+    "mean_task_wall_seconds": 100.68933333333334,
+    "mean_motion_steps": 373.3333333333333,
+    "mean_total_tokens": 339723.3333333333
+  }
+]

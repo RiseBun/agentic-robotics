@@ -1,0 +1,50 @@
+[
+  {
+    "name": "fault201-coverage",
+    "task": "support",
+    "seed": 201,
+    "dropout": "partial",
+    "inspection": "coverage",
+    "exit_code": 0
+  },
+  {
+    "name": "fault201-evidence",
+    "task": "support",
+    "seed": 201,
+    "dropout": "partial",
+    "inspection": "evidence",
+    "exit_code": 0
+  },
+  {
+    "name": "fault202-evidence",
+    "task": "support",
+    "seed": 202,
+    "dropout": "partial",
+    "inspection": "evidence",
+    "exit_code": 0
+  },
+  {
+    "name": "fault202-coverage",
+    "task": "support",
+    "seed": 202,
+    "dropout": "partial",
+    "inspection": "coverage",
+    "exit_code": 0
+  },
+  {
+    "name": "normal202-coverage",
+    "task": "support",
+    "seed": 202,
+    "dropout": "none",
+    "inspection": "coverage",
+    "exit_code": 0
+  },
+  {
+    "name": "normal202-evidence",
+    "task": "support",
+    "seed": 202,
+    "dropout": "none",
+    "inspection": "evidence",
+    "exit_code": 0
+  }
+]

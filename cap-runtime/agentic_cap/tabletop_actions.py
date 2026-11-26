@@ -180,7 +180,8 @@ def tools(backend,segment):
             # moved by declaring a new view; only the wrist pose may change.
             initial=np.array(before['tcp_xyz']);quat=np.array(before['tcp_wxyz'])
             candidates=[dict(target_xyz=(initial+[0,dy,0]).tolist()) for dy in [-.08,.08]]
-            coverage=getattr(b,'inspection_policy','lateral')=='coverage'
+            policy=getattr(b,'inspection_policy','lateral')
+            coverage=policy in {'coverage','evidence'}
             if coverage:
                 from .tabletop_views import rank_views,signature as view_signature
                 empty=b.verify({'all':[dict(predicate='empty_gripper')]},e.observe())['status']=='verified'
@@ -201,6 +202,15 @@ def tools(backend,segment):
                 else:
                     packet=b.raw
                     candidates=rank_views(packet,anchor,prior,reference.get('surface_span_xyz',[.04,.04,.04]),visited,holding=bool(held))
+                    if policy=='evidence':
+                        from .tabletop_inspection import evidence_request,order_evidence_views
+                        observed=e.observe();target_result=b.verify(desired,observed)
+                        custody=b.verify({'all':[dict(predicate='holding',object=held)]},observed) if held else None
+                        request=evidence_request(obj,evidence,target_result,held,custody)
+                        candidates=order_evidence_views(candidates,packet,observed,b.reference,request,held)
+                        e.event('inspection_evidence_request',request=request,
+                            prediction_source_captured_at=packet.get('captured_at'),
+                            current_evidence_ref=observed.get('evidence_ref'),candidates=candidates)
                     e.event('inspection_selection_inputs',object=obj,aim_xyz=np.asarray(prior).tolist(),
                         measured_span=reference.get('surface_span_xyz'),
                         source_captured_at=packet.get('captured_at'),selection_time=time.time(),
@@ -218,7 +228,7 @@ def tools(backend,segment):
                 signature=view_signature(target) if coverage else tuple(np.round(target,3))
                 if signature in visited:continue
                 visited.add(signature);views+=1
-                e.event('view_attempt',object=obj,view_index=views,before_evidence_ref=e.snapshot.get('evidence_ref'),target_xyz=target.tolist(),camera='wrist',view_policy='coverage' if coverage else 'lateral',prediction=candidate)
+                e.event('view_attempt',object=obj,view_index=views,before_evidence_ref=e.snapshot.get('evidence_ref'),target_xyz=target.tolist(),camera='wrist',view_policy=policy,prediction=candidate)
                 try:trajectory=b._plan_pose(segment,target,quat)
                 except ValueError as exc:
                     if not coverage:raise

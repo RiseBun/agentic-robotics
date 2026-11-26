@@ -1,0 +1,18 @@
+{
+  "python": {
+    "exit_code": 0
+  },
+  "node": {
+    "exit_code": 0
+  },
+  "counts": {
+    "python": 463,
+    "node": 132,
+    "new_tests": 12
+  },
+  "node_script_syntax": "passed",
+  "support_completion_equivalence": {
+    "cases": 1200,
+    "differences": 0
+  }
+}

@@ -1,0 +1,312 @@
+[
+  {
+    "run": "fault201-coverage",
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 26,
+        "object": "block_a",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 40,
+        "object": "platform",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 54,
+        "object": "platform",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 161,
+        "object": "platform",
+        "reason": "public_observation",
+        "status": "unknown",
+        "views_used": 2
+      },
+      {
+        "id": 216,
+        "object": "platform",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 1
+      },
+      {
+        "id": 240,
+        "object": "cylinder_a",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 1
+      },
+      {
+        "id": 321,
+        "object": "platform",
+        "reason": "no_admissible_projected_view; change_evidence_condition_or_ask_user",
+        "status": "unknown",
+        "views_used": 0
+      }
+    ],
+    "registered_restores": [
+      {
+        "id": 131,
+        "kind": "recorded_restore_started",
+        "object": "block_a",
+        "result": null
+      },
+      {
+        "id": 134,
+        "kind": "recorded_restore_finished",
+        "object": "block_a",
+        "result": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 0.0008705183492110177,
+                "surface_tcp_distance_m": 0.021763975719461967,
+                "minimum_lift_m": 0.16069641646110022,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.6999738216400146,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            }
+          ],
+          "evidence_ref": "frame-001835.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "928a84823ad2b5b923cbf64699fcea19",
+            "control_step": 1827,
+            "captured_at": 1795694204.0469372,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1827,
+                "captured_at": 1795694204.043184,
+                "evidence_ref": "frame-001827.npz",
+                "image_ref": "frame-001827.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1827,
+                "captured_at": 1795694204.0465717,
+                "evidence_ref": "view-robot0_eye_in_hand-001827.npz",
+                "image_ref": "view-robot0_eye_in_hand-001827.png"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "physical_view_attempts": 4,
+    "ranking_requests": 0
+  },
+  {
+    "run": "fault201-evidence",
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 26,
+        "object": "platform",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 136,
+        "object": "platform",
+        "reason": "public_observation",
+        "status": "unknown",
+        "views_used": 2
+      },
+      {
+        "id": 154,
+        "object": "platform",
+        "reason": "no_admissible_projected_view; change_evidence_condition_or_ask_user",
+        "status": "unknown",
+        "views_used": 0
+      }
+    ],
+    "registered_restores": [
+      {
+        "id": 105,
+        "kind": "recorded_restore_started",
+        "object": "block_a",
+        "result": null
+      },
+      {
+        "id": 108,
+        "kind": "recorded_restore_finished",
+        "object": "block_a",
+        "result": {
+          "status": "verified",
+          "conditions": [
+            {
+              "condition": {
+                "predicate": "holding",
+                "object": "block_a"
+              },
+              "status": "verified",
+              "reason": "current_relative_surface_and_gripper_support_custody",
+              "metrics": {
+                "relative_drift_m": 0.0003577007973619507,
+                "surface_tcp_distance_m": 0.024825722305442895,
+                "minimum_lift_m": 0.16570144288182154,
+                "independent_samples": 3,
+                "measurement_span_seconds": 0.7010958194732666,
+                "cameras": [
+                  "overview"
+                ],
+                "pairing": "image_capture_robot_state"
+              }
+            }
+          ],
+          "evidence_ref": "frame-001539.npz",
+          "scope": "observed_supported_tabletop_relations",
+          "geometry_evidence_source": {
+            "schema": 1,
+            "episode_id": "bf89a25fa25c2a08ea32dc3961bb4ca5",
+            "control_step": 1532,
+            "captured_at": 1795694464.5374017,
+            "frame": "world",
+            "length_unit": "meter",
+            "observations": [
+              {
+                "camera": "overview",
+                "control_step": 1532,
+                "captured_at": 1795694464.5336607,
+                "evidence_ref": "frame-001532.npz",
+                "image_ref": "frame-001532.png"
+              },
+              {
+                "camera": "wrist",
+                "control_step": 1532,
+                "captured_at": 1795694464.5370662,
+                "evidence_ref": "view-robot0_eye_in_hand-001532.npz",
+                "image_ref": "view-robot0_eye_in_hand-001532.png"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "physical_view_attempts": 2,
+    "ranking_requests": 2
+  },
+  {
+    "run": "fault202-evidence",
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 26,
+        "object": "block_a",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 40,
+        "object": "platform",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 54,
+        "object": "platform",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 133,
+        "object": "platform",
+        "reason": "low_held_pose_requires_recorded_restore_before_inspection",
+        "status": "unknown",
+        "views_used": 0
+      }
+    ],
+    "registered_restores": [],
+    "physical_view_attempts": 0,
+    "ranking_requests": 0
+  },
+  {
+    "run": "fault202-coverage",
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 26,
+        "object": "block_a",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 40,
+        "object": "platform",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 54,
+        "object": "platform",
+        "reason": "public_observation",
+        "status": "available",
+        "views_used": 0
+      },
+      {
+        "id": 133,
+        "object": "platform",
+        "reason": "low_held_pose_requires_recorded_restore_before_inspection",
+        "status": "unknown",
+        "views_used": 0
+      }
+    ],
+    "registered_restores": [],
+    "physical_view_attempts": 0,
+    "ranking_requests": 0
+  }
+]
