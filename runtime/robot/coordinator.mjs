@@ -610,11 +610,11 @@ export class RobotCoordinator {
     this.eventsAbort?.abort();
     this.eventsAbort = new AbortController();
     const signal = this.eventsAbort.signal;
-    (async () => {
+    this.eventsPromise = (async () => {
       while (!signal.aborted && this.state.episode?.id === id && !['closed', 'interrupted'].includes(this.state.episode.status)) {
         try {
           await this.client.events(id, this.eventCursor, signal, async event => {
-            if (event.id <= this.eventCursor) return;
+            if (signal.aborted || this.state.episode?.id !== id || event.id <= this.eventCursor) return;
             this.eventCursor = event.id;
             this.state.events.push(event);
             const pending = this.pendingModel;
@@ -668,6 +668,10 @@ export class RobotCoordinator {
       }
     }
     this.eventsAbort?.abort();
+    // Cancellation requests are asynchronous: drain the subscriber before the
+    // final write queue so no late callback can recreate closed task storage.
+    await this.eventsPromise;
+    await this.recordQueue;
     this.state.status = 'closed';
     return this.state;
   }

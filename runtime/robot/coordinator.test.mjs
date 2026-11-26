@@ -1085,3 +1085,33 @@ test('model assistance with unchanged blocked facts remains a user assistance re
     assert.equal(fixture.client.calls.filter(c=>c.route.endsWith('/assistance')).length,1);
   }finally{await fixture.cleanup();}
 });
+
+
+test('close drains the event subscriber and rejects buffered callbacks after abort', async () => {
+  const {c,client,cleanup}=await setup(async()=>finish);
+  const release=deferred(),aborted=deferred();
+  client.episode={id:'episode',revision:1,status:'ready',goal:observe.goal,segments:{},used:{decisions:0}};
+  c.state.episode=structuredClone(client.episode);
+  c.taskId='close-drain';c.recordDir=path.join(c.root,c.taskId);
+  client.events=async(_id,_after,signal,callback)=>{
+    signal.addEventListener('abort',()=>aborted.resolve(),{once:true});
+    await release.promise;
+    await callback({id:999,kind:'buffered_after_close'});
+  };
+  c.connectEvents('episode');
+  let settled=false;
+  const closing=c.close().then(value=>{settled=true;return value;});
+  try {
+    await aborted.promise;await Promise.resolve();await Promise.resolve();
+    assert.equal(settled,false,'close must await subscription shutdown');
+    release.resolve();await closing;
+    assert.equal(c.state.status,'closed');
+    assert.equal(c.state.events.length,0,'cancelled buffered event must not mutate state');
+    const pack=await c.export();
+    assert.ok(pack.workbench_jsonl.includes('episode_closed'));
+    assert.ok(!pack.workbench_jsonl.includes('buffered_after_close'));
+    await fs.rm(c.root,{recursive:true,force:true});
+    await Promise.resolve();
+    await assert.rejects(fs.stat(c.root),{code:'ENOENT'});
+  } finally {release.resolve();await closing;await cleanup();}
+});
