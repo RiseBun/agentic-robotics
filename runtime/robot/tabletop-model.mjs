@@ -21,9 +21,10 @@ run_skill includes state_id,task_node,skill copied from a current READY node.
 run_code includes task_ref:{state_id,task_node},code and optional contract. Each segment
 has fresh locals. Registered APIs are plan_grasp(object),plan_place(object,support=ID)
 or plan_place(object,region=ID),execute_stage(plan_id,stage),set_gripper("open"|"closed"),
-inspect_object(object,evidence="geometry"),restore_grip_pose(object),verify_effect(goal).
+inspect_object(object,evidence="geometry"),restore_grip_pose(object),replan_grip_pose(object),verify_effect(goal).
 An inspection may target visible, geometry, holding, or support_geometry. In a plan use skill.arguments.evidence to name the missing fact. Visibility alone is not complete support geometry or current custody.
 A restore_grip_pose skill is available only with verified recorded_descent evidence. It reverses the recorded descent without releasing, then rechecks custody. After a refused low-pose release, prefer this restoration before another placement attempt.
+If registered, replan_grip_pose uses current observed geometry to plan to the Runtime-recorded pre-descent pose. Use its own READY node when recorded_retreat_target and current holding are verified, including when the old reverse-path scene version expired. It cannot accept model-authored coordinates or change the gripper. A planning result alone is not restored custody.
 Bound code may use only APIs for that node operation; inspect_object requires an inspect node, and restore_grip_pose requires a restore node. Propose a revised plan to add these nodes when needed. Plans reference provider-produced geometry.
 Nodes may expose retry_constraint with failures and blocked. Two failed attempts under
 unchanged operation conditions block that operation across plan rewrites and bound code.

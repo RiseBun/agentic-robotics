@@ -1,7 +1,7 @@
 """Dynamic plans and evidence. Simulator truth and model assertions are not inputs."""
 import copy
 import time
-from .tabletop_domain import SKILLS, digest, fact_key, condition_from_key, effects_for, validate_plan
+from .tabletop_domain import SKILLS, enabled_skills, digest, fact_key, condition_from_key, effects_for, validate_plan
 from .tabletop_scene import public_catalog, system_description
 from .tabletop_recovery import context_for, constraint, operation
 
@@ -28,6 +28,8 @@ class TabletopSystem:
         for obj in self.catalog['objects']:
             for predicate in ['visible','geometry','holding','accessible','recorded_descent','restored_pose','support_geometry']:
                 c=dict(predicate=predicate,object=obj);conditions[fact_key(c)]=c
+            if 'replan_grip_pose' in enabled_skills():
+                c=dict(predicate='recorded_retreat_target',object=obj);conditions[fact_key(c)]=c
         for obj,d in self.catalog['objects'].items():
             if not d.get('movable',False):continue
             for support in self.catalog['objects']:
@@ -95,7 +97,7 @@ class TabletopSystem:
             description=system_description(),world=dict(fresh=fresh,age_seconds=age,source=source,facts=facts,object_versions=copy.deepcopy(versions)),
             task=dict(goal=goal,nodes=nodes,plan_version=self.plan_version,status='verified' if g['status']=='verified' else 'active',
                       execution=dict(phase=phase,ready_nodes=ready,last_feedback_category=last_feedback)),
-            skills=[dict(name=name,**copy.deepcopy(spec)) for name,spec in SKILLS.items()],
+            skills=[dict(name=name,**copy.deepcopy(spec)) for name,spec in enabled_skills().items()],
             executor=dict(active_segment=active,hold_pending=hold_pending),resources=resources)
         self.latest=result;self.cuts[state_id]=copy.deepcopy(result)
         while len(self.cuts)>64:self.cuts.pop(next(iter(self.cuts)))

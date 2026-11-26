@@ -161,3 +161,11 @@ Runtime 将拒绝重复动作并记录 recovery_dispatch_blocked。模型可以�
 recorded_descent验收返回逐项checks/blockers、编码器误差和变化对象版本。recorded_descent_saved记录下降完成现场，release_admission_checked同时记录恢复准入。原恢复条件不变。
 
 一次开发复现定位到平台版本变化造成恢复不可用；关闭后独立物理记录支持可见表面变化产生了误拦信号。固定归档公开现场的三个离线规划输入均返回候选，但均未执行，不能称为恢复修复。仅开发故障适配器可显式设置RGBD_RESTORE_PLAN_PROBE=1进行一次只规划探测，不会派发新运动，详见[恢复诊断与固定现场规划](../research/recorded_restore_diagnosis_20261126/RESULTS.md)。
+
+## 显式重新规划撤回（实验功能，默认关闭）
+
+开发CLI显式增加 `--replanned-retreat` 才公开并接受replan_grip_pose技能。它要求当前holding与recorded_retreat_target，目标只能绑定已记录的下降前approach位姿。旧restore_grip_pose的场景版本等条件保持不变。
+
+主模型选择注册节点后，S1以当前公开点云重新规划；规划返回后再次复核目标/记录绑定、持有、其他对象版本与取消状态，再交给同一轨迹执行器。夹爪不变，执行后独立检查holding。规划期间的场景变化会拒绝派发，相同条件下失败最多两次，累计预算不重置。
+
+该功能不证明携带物碰撞安全，也不保证撤回后支撑面一定可验收。方法与阶段结果见[执行契约](../research/replanned_retreat_20261126/METHOD.md)及[开发结果](../research/replanned_retreat_20261126/RESULTS.md)。生产服务未切换。

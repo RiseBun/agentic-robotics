@@ -19,6 +19,7 @@ const seed=Number(option('seed','201')),task=option('task','hold');
 const condition=option('condition','system_no_memory');
 if(!['direct_cap','system_no_memory','system_with_memory'].includes(condition))throw new Error('Invalid comparison condition');
 const inspection=option('inspection','lateral');
+const replannedRetreat=process.argv.includes('--replanned-retreat');
 if(!['lateral','coverage','evidence'].includes(inspection))throw new Error('Invalid inspection policy');
 const perception=option('perception','single_view');
 if(!['single_view','multiview'].includes(perception))throw new Error('Invalid perception mode');
@@ -61,19 +62,19 @@ const s2Digest=s2Fingerprint.digest('hex');
 if(campaign&&campaign.model_fingerprint!==modelFingerprint)throw new Error('Frozen model configuration changed');
 const token=crypto.randomBytes(32).toString('hex');const log=await fs.open(path.join(output,'runtime.log'),'a');
 const runtime=spawn(path.join(root,'.venv/bin/python'),['-u','-m','agentic_cap.server','--backend','cap','--host','127.0.0.1','--port',String(port),'--upstream',path.join(root,'third_party/cap-x'),'--records',path.join(output,'physical'),'--evaluation'],
- {cwd:path.join(root,'cap-runtime'),stdio:['ignore',log.fd,log.fd],env:{...process.env,...(library?{TABLETOP_SKILL_LIBRARY:path.resolve(library)}:{}),CAP_RUNTIME_TOKEN:token,TABLETOP_INSPECTION_POLICY:inspection,TABLETOP_MULTIVIEW:perception==='multiview'?'1':'0',MUJOCO_GL:'egl',PYOPENGL_PLATFORM:'egl',JAX_PLATFORMS:'cpu'}});
+ {cwd:path.join(root,'cap-runtime'),stdio:['ignore',log.fd,log.fd],env:{...process.env,...(library?{TABLETOP_SKILL_LIBRARY:path.resolve(library)}:{}),CAP_RUNTIME_TOKEN:token,TABLETOP_INSPECTION_POLICY:inspection,TABLETOP_REPLANNED_RETREAT:replannedRetreat?'1':'0',TABLETOP_MULTIVIEW:perception==='multiview'?'1':'0',MUJOCO_GL:'egl',PYOPENGL_PLATFORM:'egl',JAX_PLATFORMS:'cpu'}});
 const exited=once(runtime,'exit');const client=new RuntimeClient('http://127.0.0.1:'+port,token);
 const coordinator=new RobotCoordinator({root:path.join(output,'workbench'),configuration:async()=>fixedConfiguration,client});
 try {
  for(let i=0;i<120;i++){try{await client.request('/health');break;}catch{if(runtime.exitCode!==null)throw new Error('Runtime startup failed');await delay(250);}}
  const configuration=fixedConfiguration;
  const runtimeHealth=await client.request('/health');
- const runtimeFingerprint=crypto.createHash('sha256').update(runtimeHealth.source_digest+'\0'+s2Digest+'\0'+perception+'\0'+inspection).digest('hex');
+ const runtimeFingerprint=crypto.createHash('sha256').update(runtimeHealth.source_digest+'\0'+s2Digest+'\0'+perception+'\0'+inspection+'\0'+String(replannedRetreat)).digest('hex');
  if(campaign&&campaign.runtime_fingerprint!==runtimeFingerprint)throw new Error('Frozen Runtime or S2 source changed');
  const retrievedLibrary=library?await import('node:child_process').then(({execFileSync})=>JSON.parse(execFileSync(path.join(root,'.venv/bin/python'),['-c','import sys,json; from agentic_cap.tabletop_memory import SkillLibrary; print(json.dumps(SkillLibrary(sys.argv[1]).fingerprint()))',path.resolve(library)],{cwd:path.join(root,'cap-runtime'),encoding:'utf8'}))):null;
  if(campaign&&campaign.library_fingerprint!==retrievedLibrary&&condition==='system_with_memory')throw new Error('Frozen library changed');
  coordinator.tabletopExperienceEnabled=condition==='system_with_memory';
- await fs.writeFile(path.join(output,'protocol.json'),JSON.stringify({stage:campaign?'frozen_test':'development',task,seed,started_at:new Date().toISOString(),scene:taskCase.scene,model:configuration.active?.model,configuration_fingerprint:modelFingerprint,runtime_fingerprint:runtimeFingerprint,runtime:runtimeHealth,condition,perception,inspection,library_fingerprint:retrievedLibrary,memory:condition==='system_with_memory',input_text:taskCase.text,expected_goal:taskCase.goal,scope:'real model; no task-specific program supplied'},null,2));
+ await fs.writeFile(path.join(output,'protocol.json'),JSON.stringify({stage:campaign?'frozen_test':'development',task,seed,started_at:new Date().toISOString(),scene:taskCase.scene,model:configuration.active?.model,configuration_fingerprint:modelFingerprint,runtime_fingerprint:runtimeFingerprint,runtime:runtimeHealth,condition,perception,inspection,library_fingerprint:retrievedLibrary,memory:condition==='system_with_memory',replanned_retreat:replannedRetreat,input_text:taskCase.text,expected_goal:taskCase.goal,scope:'real model; no task-specific program supplied'},null,2));
  await coordinator.start({task:'tabletop',text:taskCase.text,scene:taskCase.scene,seed,policy:condition==='direct_cap'?'direct_cap':'system'});
  await coordinator.loopPromise;
  if (coordinator.state.episode) {

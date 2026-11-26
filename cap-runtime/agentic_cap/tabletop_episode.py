@@ -3,7 +3,7 @@ import copy
 import os
 from pathlib import Path
 from .core import Episode, StaleRevision
-from .tabletop_domain import LIMITS, SKILLS, validate_goal, validate_skill, compile_skill, digest
+from .tabletop_domain import LIMITS, SKILLS, enabled_skills, validate_goal, validate_skill, compile_skill, digest
 from .tabletop_scene import public_catalog, system_description
 from .tabletop_system import TabletopSystem
 
@@ -30,7 +30,7 @@ class TabletopEpisode(Episode):
         result=system_description();result['execution_policy']=self.policy
         if self.backend is not None and hasattr(self.backend,'capability_health'):
             result['providers']=self.backend.capability_health()
-        result['skills']=[dict(name=n,**copy.deepcopy(s)) for n,s in SKILLS.items()]
+        result['skills']=[dict(name=n,**copy.deepcopy(s)) for n,s in enabled_skills().items()]
         return result
 
     def experiences(self):

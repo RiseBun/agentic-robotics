@@ -1,0 +1,17 @@
+{
+  "base_commit": "5c82e02c92328ae0e6447ca07fccf45b315b9b17",
+  "files": {
+    "cap-runtime/agentic_cap/tabletop_domain.py": "422412b6be78922bac3c1cb410d9ddb581c857d1c1a3390ae81978f8a64eec26",
+    "cap-runtime/agentic_cap/tabletop_episode.py": "c358ede91869ecfe1648834af718f16b73cd9ad1dc0a87651318daa92bf7c950",
+    "cap-runtime/agentic_cap/tabletop_system.py": "11991fc1cdf1148da5fa92b0f2a37f1dbb6fbc1d3b24179b742d223eeb766f03",
+    "cap-runtime/agentic_cap/tabletop_scene.py": "e3f530b8197318d462621d332b90871953f3b0480b40621bcfc184b91652f796",
+    "cap-runtime/agentic_cap/tabletop_backend.py": "f0358f33e49fcf852c8dd526439b35a83df81a344fde471c834d07d640bc6a6b",
+    "cap-runtime/agentic_cap/tabletop_actions.py": "26d2c5b7f98457f1619c0d4e4e7fe7780d1b3af55c6da43de40430109b0158b0",
+    "cap-runtime/agentic_cap/tabletop_recovery.py": "ebc67a426a083816bf7783cbea38bd0f05e7d26faf97fe246f7e182d82cf7b54",
+    "cap-runtime/tests/test_replanned_retreat.py": "d6c6a6644be8106a34d1c598418108fd6e2f2dd3ab14f84929eb05aadfe90378",
+    "runtime/robot/tabletop-model.mjs": "003f3eba6d5c95fd9bfbc9e1bfdb71e578b5e7fa0a09a79fdc24a5e942f99b18",
+    "runtime/scripts/tabletop-model-trial.mjs": "29196336a44f906e745a4b019c3a96e748d9e08976cf864cc53f7e9af9561fbc",
+    "runtime/scripts/rgbd-occlusion-trial.mjs": "5934f2d606bea27cd4d2cfff3941c763a794993dc12c49d60936b86c8963c562",
+    "docs/generic-robotics.md": "1241c5cbd2161195bb11bd98b452f6ec39f4f675c838ad741dfabbefa18c16dc"
+  }
+}

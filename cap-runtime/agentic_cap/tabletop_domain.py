@@ -3,6 +3,7 @@ import copy
 import hashlib
 import json
 import re
+import os
 
 LIMITS = dict(decisions=24, calls=80, motion_steps=3000, wall_seconds=600)
 ID = re.compile(r'^[a-zA-Z][a-zA-Z0-9_-]{0,63}$')
@@ -22,11 +23,18 @@ SKILLS = {
                         description='Plan supported placement, release, retreat, then verify effects.'),
     'restore_grip_pose': dict(parameters=['object'],requires=['recorded_descent:{object}'],ensures=['holding:{object}','restored_pose:{object}'],
         effects=[dict(predicate='holding',object='{object}')],description='Reverse a recorded completed descent, preserve gripper, and verify current custody. No release or new grasp.'),
+    'replan_grip_pose': dict(parameters=['object'],requires=['holding:{object}','recorded_retreat_target:{object}'],
+        ensures=['holding:{object}','restored_pose:{object}'],effects=[dict(predicate='holding',object='{object}')],
+        description='Explicitly replan from current public geometry to the recorded pre-descent pose, preserve gripper, then verify custody. Available only when enabled; no old-path reuse.'),
     'place_in_region': dict(parameters=['object','region'], requires=['holding:{object}', 'region:{region}'],
                            ensures=['in_region:{object}:{region}', 'empty_gripper'],
                            effects=[dict(predicate='in_region', object='{object}', region='{region}'), dict(predicate='empty_gripper')],
                            description='Place within a calibrated tabletop region and check public evidence.'),
 }
+
+
+def enabled_skills():
+    return {k:v for k,v in SKILLS.items() if k!='replan_grip_pose' or os.environ.get('TABLETOP_REPLANNED_RETREAT','0')=='1'}
 
 
 def digest(value):
@@ -37,7 +45,7 @@ def validate_condition(condition, catalog, *, internal=False):
     if not isinstance(condition,dict): raise ValueError('Condition must be an object')
     predicate=condition.get('predicate')
     fields=PREDICATES.get(predicate)
-    if internal and predicate in {'visible','geometry','accessible','recorded_descent','restored_pose','support_geometry'}: fields={'object'}
+    if internal and predicate in {'visible','geometry','accessible','recorded_descent','recorded_retreat_target','restored_pose','support_geometry'}: fields={'object'}
     if fields is None or set(condition)!={'predicate'}|fields:
         raise ValueError('Unsupported predicate or condition fields')
     for key in fields:
@@ -82,12 +90,12 @@ def fact_key(condition):
 def condition_from_key(key):
     parts=key.split(':');p=parts[0]
     fields={'holding':['object'],'on':['object','support'],'in_region':['object','region'],
-            'empty_gripper':[],'visible':['object'],'geometry':['object'],'accessible':['object'],'recorded_descent':['object'],'restored_pose':['object'],'support_geometry':['object'],'region':['region']}[p]
+            'empty_gripper':[],'visible':['object'],'geometry':['object'],'accessible':['object'],'recorded_descent':['object'],'recorded_retreat_target':['object'],'restored_pose':['object'],'support_geometry':['object'],'region':['region']}[p]
     return dict(predicate=p,**dict(zip(fields,parts[1:])))
 
 
 def validate_skill(skill,catalog):
-    if not isinstance(skill,dict) or set(skill)!={'name','arguments'} or skill['name'] not in SKILLS:
+    if not isinstance(skill,dict) or set(skill)!={'name','arguments'} or skill['name'] not in enabled_skills():
         raise ValueError('Unknown registered tabletop skill')
     name=skill['name'];args=skill['arguments'];spec=SKILLS[name]
     optional=spec.get('optional_parameters',{})
@@ -100,7 +108,7 @@ def validate_skill(skill,catalog):
         if key in optional:continue
         collection=catalog['regions'] if key=='region' else catalog['objects']
         if not isinstance(value,str) or value not in collection: raise ValueError('Unknown skill binding')
-    if name.startswith(('acquire','place')) and not catalog['objects'][args['object']].get('movable',False):
+    if (name.startswith(('acquire','place')) or name=='replan_grip_pose') and not catalog['objects'][args['object']].get('movable',False):
         raise ValueError('Cannot manipulate a fixed support')
     if args.get('object')==args.get('support'): raise ValueError('Self-support is invalid')
     if name=='place_in_region' and not catalog['objects'][args['object']].get('movable',False):raise ValueError('Region placement requires a movable object')
@@ -141,7 +149,7 @@ def validate_plan(plan,catalog):
 def compile_skill(skill,catalog):
     name,a=validate_skill(skill,catalog)
     if name=='inspect_object':return f'inspect_object({a["object"]!r},evidence={a["evidence"]!r})',None
-    if name=='restore_grip_pose':return f'restore_grip_pose({a["object"]!r})',dict(postcondition={'all':effects_for(name,a)})
+    if name in {'restore_grip_pose','replan_grip_pose'}:return f'{name}({a["object"]!r})',dict(postcondition={'all':effects_for(name,a)})
     plan='plan_grasp' if name=='acquire_object' else 'plan_place'
     arguments=repr(a['object'])
     if name=='place_object':arguments+=', support='+repr(a['support'])

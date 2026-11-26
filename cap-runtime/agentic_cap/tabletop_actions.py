@@ -122,9 +122,10 @@ def tools(backend,segment):
         if p['kind']=='place' and stage=='place':
             snap=e.observe();b.recorded_descent=dict(object=p['object'],trajectory=trajectory,revision=e.revision,
                 other_versions={k:v for k,v in snap.get('object_versions',{}).items() if k!=p['object']},
-                evidence_ref=snap.get('evidence_ref'))
+                evidence_ref=snap.get('evidence_ref'),
+                retreat_target=dict(xyz=np.asarray(p['targets']['approach'][0]).tolist(),wxyz=np.asarray(p['targets']['approach'][1]).tolist()))
             e.event('recorded_descent_saved',object=p['object'],revision=e.revision,
-                other_versions=b.recorded_descent['other_versions'],
+                other_versions=b.recorded_descent['other_versions'],retreat_target=b.recorded_descent['retreat_target'],
                 trajectory_endpoint=np.asarray(trajectory.joint_positions[-1]).tolist(),
                 measured_encoders=np.asarray(b.encoder).tolist(),evidence_ref=snap.get('evidence_ref'))
         return result
@@ -282,6 +283,36 @@ def tools(backend,segment):
         e.event('recorded_restore_finished',object=obj,result=result)
         return result
 
+    def replan_restore(obj):
+        check('replan_grip_pose',obj)
+        target_goal={'all':[dict(predicate='recorded_retreat_target',object=obj)]}
+        hold_goal={'all':[dict(predicate='holding',object=obj)]}
+        before=e.observe()
+        if b.verify(target_goal,before)['status']!='verified':raise ValueError('Current recorded retreat target unavailable')
+        if b.verify(hold_goal,before)['status']!='verified':raise ValueError('Current custody required before retreat replanning')
+        record=b.recorded_descent;target=record['retreat_target']
+        versions={k:v for k,v in before.get('object_versions',{}).items() if k!=obj}
+        e.event('replanned_retreat_started',object=obj,target=copy.deepcopy(target),
+            old_path_admission=b.verify({'all':[dict(predicate='recorded_descent',object=obj)]},before),
+            planning_evidence_ref=before.get('evidence_ref'))
+        trajectory=b._plan_pose(segment,np.array(target['xyz']),np.array(target['wxyz']),exclude=obj)
+        e.checkpoint(segment);current=e.observe()
+        if b.recorded_descent is not record or b.verify(target_goal,current)['status']!='verified':
+            raise ValueError('Recorded retreat binding changed during planning')
+        if {k:v for k,v in current.get('object_versions',{}).items() if k!=obj}!=versions:
+            raise ValueError('Observed scene changed during retreat planning')
+        if b.verify(hold_goal,current)['status']!='verified':raise ValueError('Custody unknown after retreat planning')
+        e.event('replanned_retreat_plan_accepted',object=obj,evidence_ref=current.get('evidence_ref'),
+            scene_versions=versions,collision_scope='observed_scene_and_robot; attached_object_not_modeled')
+        b._move_trajectory(segment,trajectory);b.recorded_descent=None
+        b.restoration_done=dict(object=obj,revision=e.revision,joints=b.encoder.tolist())
+        with e.cv:
+            start=b.tick
+            while b.tick-start<20:e.checkpoint(segment);e.cv.wait(.03)
+        result=b.wait_public_effect(segment,hold_goal)
+        e.event('replanned_retreat_finished',object=obj,result=result)
+        return result
+
     def verify_effect(goal):
         expected={'all':effects_for(allowed,args)}
         if goal!=expected:raise ValueError('Cannot replace Runtime skill verification')
@@ -292,4 +323,4 @@ def tools(backend,segment):
         if allowed=='acquire_object' and result['status']=='verified':b.holding_watch=dict(object=args['object'],failures=0)
         return result
     return dict(plan_grasp=grasp,plan_place=place,execute_stage=stage,set_gripper=gripper,
-                inspect_object=inspect,restore_grip_pose=restore,verify_effect=verify_effect)
+                inspect_object=inspect,restore_grip_pose=restore,replan_grip_pose=replan_restore,verify_effect=verify_effect)

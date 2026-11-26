@@ -2,7 +2,7 @@
 import copy
 from .tabletop_domain import digest
 
-GUARDED={'acquire_object','place_object','place_in_region'}
+GUARDED={'acquire_object','place_object','place_in_region','replan_grip_pose'}
 MAX_UNCHANGED_FAILURES=2
 
 class RecoveryBlocked(ValueError):
@@ -16,7 +16,7 @@ def context_for(skill,goal_version,snapshot,segments):
     relevant={obj,args.get('support')}-{None}
     versions=snapshot.get('object_versions',{})
     # A held object's travel/retreat does not repair a placement failure.
-    watched=relevant if name=='acquire_object' else relevant-{obj}
+    watched=set(versions)-{obj} if name=='replan_grip_pose' else relevant if name=='acquire_object' else relevant-{obj}
     observations={};grasp=None
     for segment in segments.values():
         binding=segment.get('task_binding',{})

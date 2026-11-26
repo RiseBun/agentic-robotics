@@ -1,0 +1,23 @@
+[
+  {
+    "name": "fault202",
+    "seed": 202,
+    "fault": true,
+    "replanned_retreat": true,
+    "exit_code": 0
+  },
+  {
+    "name": "fault201",
+    "seed": 201,
+    "fault": true,
+    "replanned_retreat": true,
+    "exit_code": 0
+  },
+  {
+    "name": "normal202-default",
+    "seed": 202,
+    "fault": false,
+    "replanned_retreat": false,
+    "exit_code": 0
+  }
+]

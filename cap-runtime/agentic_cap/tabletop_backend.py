@@ -239,6 +239,17 @@ class TabletopBackend:
             ok=bool(row and row['object']==obj and row['revision']==self.episode.revision and
                 snapshot.get('last_gripper_command')=='closed' and np.max(abs(self.encoder-np.array(row['joints'])))<.05)
             return dict(status='verified' if ok else 'unknown',reason='recorded_restore_pose_checked' if ok else 'no_current_completed_restore')
+        if len(goal.get('all',[]))==1 and goal['all'][0]['predicate']=='recorded_retreat_target':
+            from .tabletop_domain import enabled_skills
+            from .tabletop_restore import assess_recorded_descent
+            assessment=assess_recorded_descent(self.recorded_descent,goal['all'][0]['object'],
+                self.episode.revision,self.encoder.copy(),snapshot)
+            blockers=[k for k in assessment['blockers'] if k!='scene_versions_match']
+            if 'replan_grip_pose' not in enabled_skills():blockers.append('feature_disabled')
+            if not (self.recorded_descent or {}).get('retreat_target'):blockers.append('recorded_target_missing')
+            return dict(status='unknown' if blockers else 'verified',reason='recorded_target_requires_fresh_plan',
+                blockers=blockers,old_path_admission=assessment,
+                scope='recorded_target_availability_only; not_motion_permission')
         if len(goal.get('all',[]))==1 and goal['all'][0]['predicate']=='recorded_descent':
             from .tabletop_restore import assess_recorded_descent
             return assess_recorded_descent(self.recorded_descent,goal['all'][0]['object'],

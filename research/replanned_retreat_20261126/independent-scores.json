@@ -1,0 +1,155 @@
+[
+  {
+    "name": "fault202",
+    "seed": 202,
+    "fault": true,
+    "replanned_retreat": true,
+    "outcome": "awaiting_user",
+    "task_wall_seconds": 159.322,
+    "replan_attempts": 1,
+    "replan_executions": 1,
+    "replan_verified_holding": 1,
+    "episode_id": "65f75b5b9f7eef74ef1c7d9f74b490ce",
+    "status": "scored",
+    "physical_verified": false,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 14,
+      "calls": 18,
+      "motion_steps": 437,
+      "idle_steps": 2500,
+      "wall_seconds": 156.16135033796309
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "name": "fault201",
+    "seed": 201,
+    "fault": true,
+    "replanned_retreat": true,
+    "outcome": "awaiting_user",
+    "task_wall_seconds": 146.798,
+    "replan_attempts": 0,
+    "replan_executions": 0,
+    "replan_verified_holding": 0,
+    "episode_id": "4936e1f28ccf1a6317109d6a491ffaaa",
+    "status": "scored",
+    "physical_verified": false,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 12,
+      "calls": 17,
+      "motion_steps": 417,
+      "idle_steps": 2295,
+      "wall_seconds": 143.8895238309633
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "name": "normal202-default",
+    "seed": 202,
+    "fault": false,
+    "replanned_retreat": false,
+    "outcome": "completed",
+    "task_wall_seconds": 89.966,
+    "replan_attempts": 0,
+    "replan_executions": 0,
+    "replan_verified_holding": 0,
+    "episode_id": "5eea159b24983e6a7280a3f21b95586c",
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 17,
+      "motion_steps": 372,
+      "idle_steps": 1265,
+      "wall_seconds": 87.49230292899301
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0999999999974364,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  }
+]
