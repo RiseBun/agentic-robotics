@@ -246,7 +246,8 @@ class Episode:
                     # lets the cancellable executor finish its record.
                     if (self.status == 'budget_exhausted' and self.active is None
                             and self.expiration_hold_serial is not None
-                            and self.hold_ack >= self.expiration_hold_serial):
+                            and self.hold_ack >= self.expiration_hold_serial
+                            and self.hold_ack >= self.hold_serial):
                         self._mark_closed('wall_budget_exhausted')
                 deadline += period
                 delay = deadline - time.monotonic()
