@@ -1,0 +1,15 @@
+{
+  "stage": "development",
+  "date": "2026-11-26",
+  "task": "support",
+  "seed": 201,
+  "fault": "same fixed image-plane RGB-D dropout as prior development",
+  "changed": "semantic refresh transaction and existing appearance tolerance; no geometry/verification threshold changes",
+  "same_pixels_replay": "historical development frames only, no frozen seeds or private state",
+  "versions": [
+    "v1-failure-only-retention",
+    "v2-retention-and-appearance-consistency"
+  ],
+  "experience": false,
+  "defaults_changed": false
+}

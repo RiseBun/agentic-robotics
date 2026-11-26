@@ -1,0 +1,34 @@
+{
+  "run": "support-201-v2",
+  "dropout_event_id": 82,
+  "acquisitions": [
+    {
+      "id": 119,
+      "object": "block_a",
+      "status": "available",
+      "views_used": 1,
+      "evidence_ref": "frame-001784.npz",
+      "reason": "public_observation"
+    },
+    {
+      "id": 139,
+      "object": "platform",
+      "status": "unknown",
+      "views_used": 2,
+      "evidence_ref": "frame-002061.npz",
+      "reason": "public_observation"
+    },
+    {
+      "id": 158,
+      "object": "platform",
+      "status": "unknown",
+      "views_used": 2,
+      "evidence_ref": "frame-002430.npz",
+      "reason": "public_observation"
+    }
+  ],
+  "identity_refresh_rejections": 1,
+  "closed": true,
+  "false_completion": false,
+  "scope": "actual public RGB-D development; object geometry recovered but support/final acceptance still unknown"
+}

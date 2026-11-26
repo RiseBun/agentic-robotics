@@ -1,0 +1,140 @@
+[
+  {
+    "run": "support-201",
+    "outcome": "awaiting_user",
+    "task_wall_seconds": 133.375,
+    "episode_id": "92d64821f80aad0680542c56a817d4a3",
+    "seed": 201,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 10,
+      "calls": 17,
+      "motion_steps": 477,
+      "idle_steps": 2029,
+      "wall_seconds": 129.8168847130146
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "run": "support-201-v2",
+    "outcome": "awaiting_user",
+    "task_wall_seconds": 142.315,
+    "episode_id": "3809427a7958b0f3ef1e42ce02d949f0",
+    "seed": 201,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 11,
+      "calls": 18,
+      "motion_steps": 526,
+      "idle_steps": 2155,
+      "wall_seconds": 139.37384327600012
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1000000000052523,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "run": "normal-202",
+    "outcome": "completed",
+    "task_wall_seconds": 89.253,
+    "episode_id": "38176066519ca923b93f516aa029956f",
+    "seed": 202,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 17,
+      "motion_steps": 373,
+      "idle_steps": 1238,
+      "wall_seconds": 85.85641480598133
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0999999999974364,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  }
+]

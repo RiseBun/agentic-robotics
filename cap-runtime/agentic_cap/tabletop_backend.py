@@ -125,25 +125,25 @@ class TabletopBackend:
             try:packet=self.processing.get(timeout=.5)
             except queue.Empty:continue
             objects={}
-            while not self.reacquire.empty():
-                self.appearance.pop(self.reacquire.get_nowait(),None)
+            renew=set()
+            while not self.reacquire.empty():renew.add(self.reacquire.get_nowait())
             try:
                 cam=packet['cameras']['overview'];T=cam['camera_to_world'];q=Rotation.from_matrix(T[:3,:3]).as_quat()[[3,0,1,2]]
                 obs=CameraObservation(cam['rgb'],provider_depth(cam['depth']),cam['intrinsics'],'overview',Pose(T[:3,3],q,'world'),cam['captured_at'])
                 for ident,d in public_catalog()['objects'].items():
                     if ident=='table':continue
-                    if ident not in self.appearance:
+                    mask=None
+                    if ident not in self.appearance or ident in renew:
+                        from .tabletop_multiview import refresh_identity
                         result=provider.segment_text(obs,d['label'])
-                        if not result.ok or not result.segmentations:
-                            objects[ident]=dict(status='unknown',reason='segmentation_unavailable');continue
-                        best=max(result.segmentations,key=lambda s:s.score)
-                        pixels=cam['rgb'][best.mask].astype(float)
-                        if len(pixels)<24:
-                            objects[ident]=dict(status='unknown',reason='insufficient_identity_pixels');continue
-                        chroma=pixels/np.maximum(pixels.sum(axis=1,keepdims=True),1)
-                        self.appearance[ident]=dict(chroma=np.median(chroma,axis=0),score=float(best.score),identity_observed_at=cam['captured_at'])
-                        mask=best.mask
-                    else:
+                        mask=refresh_identity(cam,ident,self.appearance,result)
+                        if mask is None and ident not in self.appearance:
+                            objects[ident]=dict(status='unknown',reason='semantic_identity_unavailable');continue
+                        if mask is None:
+                            self.episode.event('identity_refresh_unavailable',object=ident,
+                                evidence_source=source_for(packet,['overview']),
+                                action='retain_prior_identity_and_measure_current_pixels')
+                    if mask is None:
                         # SAM establishes semantic identity. Subsequent facts use
                         # CURRENT RGB-D pixels, never a timestamp refreshed on an
                         # old mask/geometry. Ambiguous appearance stays unknown.

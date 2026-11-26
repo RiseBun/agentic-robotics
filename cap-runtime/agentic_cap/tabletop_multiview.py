@@ -73,3 +73,28 @@ def measure_single_view(packet,ident,identities,prior=None,movable=True,initial_
             initial_mask=initial_mask if name=='overview' else None)
         if measured['status']=='available':return measured
     return dict(status='unknown',reason='no_current_single_camera_geometry')
+
+
+def refresh_identity(camera,ident,identities,result):
+    """Commit a replacement identity only after valid current semantic evidence.
+
+    Failure retains the prior semantic identity, not a prior mask or geometry.
+    Subsequent measurements still require unambiguous CURRENT RGB-D pixels.
+    """
+    if not result.ok or not result.segmentations:return None
+    best=max(result.segmentations,key=lambda row:row.score)
+    mask=np.asarray(best.mask,dtype=bool)
+    depth=np.asarray(camera['depth']);rgb=np.asarray(camera['rgb'])
+    if mask.shape!=depth.shape:return None
+    mask=mask&np.isfinite(depth)&(depth>.05)&(rgb.sum(axis=2)>0)
+    pixels=rgb[mask].astype(float)
+    if len(pixels)<24:return None
+    chroma=pixels/np.maximum(pixels.sum(axis=1,keepdims=True),1)
+    proposed=np.median(chroma,axis=0)
+    # Reuse the current track's appearance tolerance and ambiguity margin.
+    # A text detector's success does not authorize rebinding another object.
+    if ident in identities and np.linalg.norm(proposed-identities[ident]['chroma'])>=.10:return None
+    if any(np.linalg.norm(proposed-other['chroma'])<=.025 for key,other in identities.items() if key!=ident):return None
+    identities[ident]=dict(chroma=proposed,score=float(best.score),
+                          identity_observed_at=camera['captured_at'])
+    return mask

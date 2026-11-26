@@ -1,0 +1,59 @@
+{
+  "initial_semantic_frame": "frame-000411.npz",
+  "rows": [
+    {
+      "control_step": 1793,
+      "overview_refresh_committed": false,
+      "old_identity_time_preserved": true,
+      "status": "unknown",
+      "camera": null,
+      "point_count": null,
+      "source_frames": [
+        "frame-001793.npz",
+        "view-robot0_eye_in_hand-001793.npz"
+      ],
+      "scope": "current visible surface only; not task completion"
+    },
+    {
+      "control_step": 1853,
+      "overview_refresh_committed": false,
+      "old_identity_time_preserved": true,
+      "status": "available",
+      "camera": "wrist",
+      "point_count": 30,
+      "source_frames": [
+        "frame-001853.npz",
+        "view-robot0_eye_in_hand-001853.npz"
+      ],
+      "scope": "current visible surface only; not task completion"
+    },
+    {
+      "control_step": 1918,
+      "overview_refresh_committed": false,
+      "old_identity_time_preserved": true,
+      "status": "available",
+      "camera": "wrist",
+      "point_count": 470,
+      "source_frames": [
+        "frame-001918.npz",
+        "view-robot0_eye_in_hand-001918.npz"
+      ],
+      "scope": "current visible surface only; not task completion"
+    },
+    {
+      "control_step": 2246,
+      "overview_refresh_committed": false,
+      "old_identity_time_preserved": true,
+      "status": "available",
+      "camera": "wrist",
+      "point_count": 1488,
+      "source_frames": [
+        "frame-002246.npz",
+        "view-robot0_eye_in_hand-002246.npz"
+      ],
+      "scope": "current visible surface only; not task completion"
+    }
+  ],
+  "private_state_used": false,
+  "role": "development historical replay, no frozen-test seeds"
+}
