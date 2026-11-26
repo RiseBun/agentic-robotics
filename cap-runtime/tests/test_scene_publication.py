@@ -53,7 +53,7 @@ class ScenePublicationTests(unittest.TestCase):
         self.assertIsNotNone(self.e.active)
         self.assertEqual(self.e.revision, original)
         self.e.backend.complete_window = True
-        until(lambda: self.e.active is None)
+        until(lambda: self.e.state()['active_segment'] is None)
         state = self.e.state()
         segment = state['segments'][sid]
         self.assertEqual(segment['execution'], 'completed')
@@ -92,9 +92,12 @@ class ScenePublicationTests(unittest.TestCase):
         sid = self.e.execute('cancel', original, 'pick', 'pick("red cube")')
         until(lambda: self.e.snapshot['objects']['red cube']['surface_median_xyz'][0] == .5)
         self.assertTrue(self.e.cancel()['stopped'])
-        until(lambda: self.e.active is None)
-        segment = self.e.segments[sid]
+        until(lambda: self.e.state()['active_segment'] is None)
+        # The HTTP interface reads state under the episode lock. Reading the
+        # worker's raw fields can observe active=None before result publication.
+        state = self.e.state()
+        segment = state['segments'][sid]
         self.assertEqual(segment['execution'], 'cancelled')
-        self.assertEqual(segment['result_revision'], self.e.revision)
-        self.assertGreater(self.e.revision, original)
+        self.assertEqual(segment['result_revision'], state['revision'])
+        self.assertGreater(state['revision'], original)
         self.assertEqual(self.e.used['calls'], 1)
