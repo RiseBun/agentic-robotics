@@ -1,0 +1,10 @@
+{
+  "stage": "development_diagnosis",
+  "task": "support",
+  "seed": 202,
+  "inspection": "coverage",
+  "dropout": "partial",
+  "change": "explain unchanged recorded restore gates and log saved descent/release-time checks",
+  "exact_historical_replay": false,
+  "verification_thresholds_changed": false
+}

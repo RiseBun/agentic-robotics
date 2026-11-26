@@ -1,0 +1,14 @@
+{
+  "base_commit": "221864d5ffeed746d421b6dde450b74cc69ead6c",
+  "files": {
+    "cap-runtime/agentic_cap/tabletop_restore.py": "fb6ff81ff8e6e942f32218e14a65c41f28940576b447ed31ce79cebf2f2276d4",
+    "cap-runtime/agentic_cap/tabletop_backend.py": "ad26a0f5c757f1227576c9be38ccb78c7ec678fa4d8e96a23ee0169ac7858f87",
+    "cap-runtime/agentic_cap/tabletop_actions.py": "7c9806121527d5d8f902ee29ccedc4ad07d62a13563992ad5f3b7991b4d3fa06",
+    "cap-runtime/agentic_cap/tabletop_scene.py": "5d32422498fe2c6f12180d9233c22e4882b2973d7d7573926c3da4537d07b72c",
+    "cap-runtime/tests/test_tabletop_restore.py": "e11d69810fbfea72661a8379a23b95f09f05fb6edf35754f6f2bff6e7247e69c",
+    "cap-runtime/tests/test_restore_plan_probe.py": "10f569f769c00b3f22b30e575cb4c5b37cc219549e6fa1e21da0820b0097fca9",
+    "cap-runtime/experiments/recorded_restore_probe.py": "fc22861b9d4c1b1e281eeec85e50f37b43d8f619f776433fbe734a8815101b47",
+    "cap-runtime/experiments/rgbd_occlusion_service.py": "b341c6da2dc92e11647603ef70b6f3b134530f51e5fff2b5a574055676e6dbfa",
+    "docs/generic-robotics.md": "7b685676ee06c3374fe63fc9a4c7cd576b6b55298a02c86372effa17b11d7e6b"
+  }
+}

@@ -40,7 +40,11 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--records',required=True);parser.add_argument('--port',type=int,default=8121)
     parser.add_argument('--mode',choices=['partial','persistent'],default='partial');args=parser.parse_args()
     os.environ['RGBD_OCCLUSION_MODE']=args.mode
-    manager=Manager(args.records,OccludedBackend)
+    backend=OccludedBackend
+    if os.environ.get('RGBD_RESTORE_PLAN_PROBE','0')=='1':
+        from .recorded_restore_probe import probed_backend
+        backend=probed_backend(backend)
+    manager=Manager(args.records,backend)
     server=serve(manager,'127.0.0.1',args.port,os.environ['CAP_RUNTIME_TOKEN'],runtime_provenance('cap'))
     print(json.dumps({'port':server.server_address[1],'experiment':'actual_rgbd_sensor_dropout'}),flush=True)
     try:server.serve_forever()

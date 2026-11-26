@@ -1,0 +1,88 @@
+{
+  "scope": "offline archived public scene feasibility only; no physical execution or current-live certificate",
+  "inputs": [
+    {
+      "camera": "overview",
+      "source_file": "research/recorded_restore_diagnosis_20261126/fault202-v1/physical/d3f07dd6ddac00df6c1cdd65026c541e/frame-001498.npz",
+      "source_sha256": "af6557c0a491fea6f41a3cd9c608b15506004d3a553fbe2f0140f9400373a864",
+      "captured_at": 1795695851.8104093,
+      "control_step": 1498,
+      "start_joints": [
+        0.08134886105850762,
+        1.176963480723507,
+        0.13096070949647987,
+        -1.2053518540496198,
+        -0.17414547445111928,
+        2.370770300779567,
+        -2.0994834723049323
+      ]
+    },
+    {
+      "camera": "wrist",
+      "source_file": "research/recorded_restore_diagnosis_20261126/fault202-v1/physical/d3f07dd6ddac00df6c1cdd65026c541e/view-robot0_eye_in_hand-001498.npz",
+      "source_sha256": "8e6ea0f26a686355cdcfec93c473439b5ac3d3de5ade2079259a5ef9a127fc28",
+      "captured_at": 1795695851.8104093,
+      "control_step": 1498,
+      "start_joints": [
+        0.08134886105850762,
+        1.176963480723507,
+        0.13096070949647987,
+        -1.2053518540496198,
+        -0.17414547445111928,
+        2.370770300779567,
+        -2.0994834723049323
+      ]
+    }
+  ],
+  "target_xyz": [
+    0.16499179650699292,
+    0.12847911626497002,
+    0.994747799641744
+  ],
+  "target_wxyz": [
+    -3.197809575893557e-05,
+    -0.0005198024659516077,
+    0.9999998640578536,
+    2.582774136683403e-05
+  ],
+  "results": [
+    {
+      "camera": "overview",
+      "variant": "uncarved",
+      "points": 18187,
+      "ok": true,
+      "error": null,
+      "collision_aware": true,
+      "waypoints": 27,
+      "wall_seconds": 0.8581690589780919,
+      "executed": false
+    },
+    {
+      "camera": "wrist",
+      "variant": "uncarved",
+      "points": 19685,
+      "ok": true,
+      "error": null,
+      "collision_aware": true,
+      "waypoints": 27,
+      "wall_seconds": 0.2379538849927485,
+      "executed": false
+    },
+    {
+      "camera": "wrist",
+      "variant": "fresh_sam_held_mask_reconstruction",
+      "points": 19659,
+      "ok": true,
+      "error": null,
+      "collision_aware": true,
+      "waypoints": 27,
+      "wall_seconds": 0.20410775701748207,
+      "executed": false
+    }
+  ],
+  "limitations": [
+    "no attached-object collision model",
+    "fresh SAM mask is reconstructed, not exact original segmentation",
+    "missing image depth remains unobserved; no free-space certificate"
+  ]
+}

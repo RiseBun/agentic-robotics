@@ -155,3 +155,9 @@ Runtime 将拒绝重复动作并记录 recovery_dispatch_blocked。模型可以�
 `inspection_evidence_request` 记录当前请求、实际缺失原因、当前持有结果及全部候选预测。`support_geometry` 的结果增加 `evidence_gap`，由原补全规则的同一实现生成，不放宽几何阈值。预测不验证事实、不生成新动作，不豁免持有/规划/取消/预算准入；动作后仍需实际联合验收，每次最多两次候选尝试。
 
 该评分只近似当前深度孔径，尚未预测未来遮挡；不能据此声称当前动作可见或安全。详见[方法与开发比较协议](../research/evidence_directed_inspection_20261126/METHOD.md)，具体收益以关闭任务后的独立评分为准。没有默认启用或切换生产服务。
+
+## 记录路径失效诊断（2026-11-26）
+
+recorded_descent验收返回逐项checks/blockers、编码器误差和变化对象版本。recorded_descent_saved记录下降完成现场，release_admission_checked同时记录恢复准入。原恢复条件不变。
+
+一次开发复现定位到平台版本变化造成恢复不可用；关闭后独立物理记录支持可见表面变化产生了误拦信号。固定归档公开现场的三个离线规划输入均返回候选，但均未执行，不能称为恢复修复。仅开发故障适配器可显式设置RGBD_RESTORE_PLAN_PROBE=1进行一次只规划探测，不会派发新运动，详见[恢复诊断与固定现场规划](../research/recorded_restore_diagnosis_20261126/RESULTS.md)。

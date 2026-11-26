@@ -240,12 +240,9 @@ class TabletopBackend:
                 snapshot.get('last_gripper_command')=='closed' and np.max(abs(self.encoder-np.array(row['joints'])))<.05)
             return dict(status='verified' if ok else 'unknown',reason='recorded_restore_pose_checked' if ok else 'no_current_completed_restore')
         if len(goal.get('all',[]))==1 and goal['all'][0]['predicate']=='recorded_descent':
-            obj=goal['all'][0]['object'];record=self.recorded_descent
-            ok=bool(record and record['object']==obj and record['revision']==self.episode.revision
-                and snapshot.get('last_gripper_command')=='closed'
-                and max(abs(self.encoder-np.array(record['trajectory'].joint_positions[-1])))<.05
-                and all(snapshot.get('object_versions',{}).get(k)==v for k,v in record['other_versions'].items()))
-            return dict(status='verified' if ok else 'unknown',reason='recorded_reverse_path' if ok else 'recorded_restore_not_available',scope='same_goal_and_observed_scene; not_new_motion_certification')
+            from .tabletop_restore import assess_recorded_descent
+            return assess_recorded_descent(self.recorded_descent,goal['all'][0]['object'],
+                self.episode.revision,self.encoder.copy(),snapshot)
         result=verify(goal,snapshot,list(self.history),self.reference,self.holding_watch)
         # Custody follows authoritative positive sensor evidence, including
         # bound CaP postconditions; it must not depend on calling one particular

@@ -123,6 +123,10 @@ def tools(backend,segment):
             snap=e.observe();b.recorded_descent=dict(object=p['object'],trajectory=trajectory,revision=e.revision,
                 other_versions={k:v for k,v in snap.get('object_versions',{}).items() if k!=p['object']},
                 evidence_ref=snap.get('evidence_ref'))
+            e.event('recorded_descent_saved',object=p['object'],revision=e.revision,
+                other_versions=b.recorded_descent['other_versions'],
+                trajectory_endpoint=np.asarray(trajectory.joint_positions[-1]).tolist(),
+                measured_encoders=np.asarray(b.encoder).tolist(),evidence_ref=snap.get('evidence_ref'))
         return result
     def gripper(command):
         e.checkpoint(segment);p=b.plans.get(b.last_plan)
@@ -142,8 +146,9 @@ def tools(backend,segment):
             if p.get('support'):release_conditions.append(dict(predicate='support_geometry',object=p['support']))
             if p.get('region'):release_conditions.append(dict(predicate='region',region=p['region']))
             admission=b.wait_public_effect(segment,{'all':release_conditions})
+            restore_admission=b.verify({'all':[dict(predicate='recorded_descent',object=p['object'])]},e.observe())
             e.event('release_admission_checked',object=p['object'],result=admission,
-                evidence_ref=e.snapshot.get('evidence_ref'))
+                restore_admission=restore_admission,evidence_ref=e.snapshot.get('evidence_ref'))
             if admission['status']!='verified':
                 raise ValueError('Unknown holding or destination evidence forbids release')
         with e.cv:

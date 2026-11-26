@@ -1,0 +1,15 @@
+{
+  "python": {
+    "exit_code": 0
+  },
+  "node": {
+    "exit_code": 0
+  },
+  "counts": {
+    "python": 472,
+    "node": 132,
+    "new_restore_tests": 5,
+    "new_planning_probe_tests": 4
+  },
+  "admission_equivalence_cases": 1600
+}
