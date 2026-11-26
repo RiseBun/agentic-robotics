@@ -179,16 +179,51 @@ def tools(backend,segment):
             # Finite, calibrated camera candidates. A fixed camera cannot be
             # moved by declaring a new view; only the wrist pose may change.
             initial=np.array(before['tcp_xyz']);quat=np.array(before['tcp_wxyz'])
-            for dy in [-.08,.08]:
+            candidates=[dict(target_xyz=(initial+[0,dy,0]).tolist()) for dy in [-.08,.08]]
+            coverage=getattr(b,'inspection_policy','lateral')=='coverage'
+            if coverage:
+                from .tabletop_views import rank_views,signature as view_signature
+                empty=b.verify({'all':[dict(predicate='empty_gripper')]},e.observe())['status']=='verified'
+                # Translation-only broad candidates require observed empty grip;
+                # unknown custody never authorizes an exploratory camera motion.
+                cannot_move=not held and not empty
+                key=(e.robot_system.goal_version,obj)
+                anchor=b.inspection_anchors.setdefault(key,initial.copy())
+                reference=b.reference.get(obj,{})
+                from .tabletop_scene import public_catalog
+                prior=reference.get('surface_median_xyz') if not public_catalog()['objects'][obj].get('movable',False) else b.baselines.get(obj)
+                if cannot_move:
+                    candidates=[];result=dict(status='unknown',reason='empty_gripper_not_verified_for_view_selection')
+                elif prior is None:
+                    candidates=[];result=dict(status='unknown',reason='no_public_aiming_prior')
+                elif held and anchor[2]<.95:
+                    candidates=[];result=dict(status='unknown',reason='low_held_pose_requires_recorded_restore_before_inspection')
+                else:
+                    packet=b.raw
+                    candidates=rank_views(packet,anchor,prior,reference.get('surface_span_xyz',[.04,.04,.04]),visited,holding=bool(held))
+                    e.event('inspection_selection_inputs',object=obj,aim_xyz=np.asarray(prior).tolist(),
+                        measured_span=reference.get('surface_span_xyz'),
+                        source_captured_at=packet.get('captured_at'),selection_time=time.time(),
+                        source_robot_xyz=np.asarray(packet.get('tcp_xyz')).tolist(),
+                        camera_times={k:v.get('captured_at') for k,v in packet['cameras'].items()},
+                        visited=[list(v) for v in visited])
+                    if not candidates:result=dict(status='unknown',reason='no_admissible_projected_view; change_evidence_condition_or_ask_user')
+                e.event('inspection_candidates_ranked',object=obj,evidence=evidence,candidates=candidates,
+                    aim_source='prior_public_measurement_not_current_fact',anchor_xyz=anchor.tolist())
+            for candidate in candidates[:2]:
                 e.checkpoint(segment)
                 if held and b.verify({'all':[dict(predicate='holding',object=held)]},e.observe())['status']!='verified':
                     result=dict(status='unknown',reason='unknown_custody_forbids_camera_motion');break
-                target=initial+np.array([0,dy,0])
-                signature=tuple(np.round(target,3))
+                target=np.array(candidate['target_xyz'])
+                signature=view_signature(target) if coverage else tuple(np.round(target,3))
                 if signature in visited:continue
                 visited.add(signature);views+=1
-                e.event('view_attempt',object=obj,view_index=views,before_evidence_ref=e.snapshot.get('evidence_ref'),target_xyz=target.tolist(),camera='wrist')
-                trajectory=b._plan_pose(segment,target,quat)
+                e.event('view_attempt',object=obj,view_index=views,before_evidence_ref=e.snapshot.get('evidence_ref'),target_xyz=target.tolist(),camera='wrist',view_policy='coverage' if coverage else 'lateral',prediction=candidate)
+                try:trajectory=b._plan_pose(segment,target,quat)
+                except ValueError as exc:
+                    if not coverage:raise
+                    e.event('inspection_candidate_rejected',object=obj,target_xyz=target.tolist(),reason=str(exc))
+                    continue
                 b._move_trajectory(segment,trajectory)
                 with e.cv:
                     start_tick=b.tick

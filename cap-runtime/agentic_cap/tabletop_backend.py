@@ -28,6 +28,7 @@ class TabletopBackend:
         self.restoration_done=None;self.recorded_descent=None;self.grasp_attempts={};self.object_versions={k:0 for k in public_catalog()['objects']};self.baselines={}
         self.multiview=os.environ.get('TABLETOP_MULTIVIEW','0')=='1';self.perception_error=None;self.planner_verified=False;self.last_action_tick=0
         self.base_T=np.eye(4);self.last_plan=None;self.held_hint=None;self.appearance={};self.inspection_sessions={};self.holding_watch=None
+        self.inspection_policy=os.environ.get('TABLETOP_INSPECTION_POLICY','lateral');self.inspection_anchors={}
 
     def initialize(self):
         from robosuite.controllers import load_composite_controller_config,load_part_controller_config
@@ -161,6 +162,9 @@ class TabletopBackend:
                         if prior is not None:
                             radius=.13 if not d.get('movable',False) else .22
                             mask &= np.linalg.norm(world-prior,axis=2)<radius
+                        if not d.get('movable',False):
+                            from .tabletop_multiview import fixed_reference_mask
+                            mask=fixed_reference_mask(cam,mask,self.reference.get(ident))
                         import cv2
                         count,labels,stats,centers=cv2.connectedComponentsWithStats(mask.astype(np.uint8),8)
                         if count<2:
@@ -175,7 +179,7 @@ class TabletopBackend:
                     else:
                         from .tabletop_multiview import measure_single_view
                         objects[ident]=measure_single_view(packet,ident,self.appearance,self.baselines.get(ident),
-                            d.get('movable',False),initial_mask=mask)
+                            d.get('movable',False),initial_mask=mask,reference=self.reference.get(ident))
                         mask=objects[ident].get('mask')
                     objects[ident]['evidence_source']=source_for(packet,objects[ident].get('contributing_cameras',[objects[ident].get('camera','overview')]))
                     if objects[ident]['status']=='available':

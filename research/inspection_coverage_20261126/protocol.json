@@ -1,0 +1,25 @@
+{
+  "stage": "development",
+  "task": "support",
+  "seed": 201,
+  "inspection": "coverage",
+  "default_inspection": "lateral",
+  "perception": "single_view",
+  "experience": false,
+  "fault": "same fixed image-plane RGB-D dropout",
+  "view_limit_per_call": 2,
+  "source": "prior public geometry for aim only, current calibrated camera and missing-depth projection",
+  "claims": "candidate ranking is not visibility proof; thresholds unchanged",
+  "versions": [
+    "v1",
+    "v2-diagnostic",
+    "v3-fixed-region",
+    "v4-filter-before-component-and-low-pose-feedback"
+  ],
+  "normal_regressions": [
+    "normal-202",
+    "normal-final-202"
+  ],
+  "fixed_region_association_margin_m": 0.02,
+  "relation_thresholds_changed": false
+}

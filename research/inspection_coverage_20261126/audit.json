@@ -1,0 +1,558 @@
+[
+  {
+    "run": "support-201",
+    "ranked_requests": 3,
+    "empty_candidate_requests": 2,
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 64,
+        "object": "platform",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 123,
+        "object": "block_a",
+        "status": "available",
+        "views_used": 2,
+        "reason": "public_observation"
+      },
+      {
+        "id": 140,
+        "object": "platform",
+        "status": "unknown",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 156,
+        "object": "platform",
+        "status": "unknown",
+        "views_used": 0,
+        "reason": "public_observation"
+      }
+    ],
+    "candidate_attempts": [
+      {
+        "event": 118,
+        "object": "block_a",
+        "view_index": 1,
+        "target_xyz": [
+          0.2358352099706037,
+          0.20059778692297303,
+          1.001868022406893
+        ],
+        "signature": [
+          24,
+          20,
+          100
+        ],
+        "predicted_valid_fraction": 0.8888888888888888
+      },
+      {
+        "event": 121,
+        "object": "block_a",
+        "view_index": 2,
+        "target_xyz": [
+          0.2358352099706037,
+          0.04059778692297303,
+          1.001868022406893
+        ],
+        "signature": [
+          24,
+          4,
+          100
+        ],
+        "predicted_valid_fraction": 0.7777777777777778
+      }
+    ],
+    "rejected_plans": 1,
+    "input_records": [],
+    "false_completion": false,
+    "scope": "per-call view-count and recorded decision audit; not complete physical safety certification"
+  },
+  {
+    "run": "support-201-v2",
+    "ranked_requests": 5,
+    "empty_candidate_requests": 4,
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 26,
+        "object": "block_a",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 40,
+        "object": "platform",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 54,
+        "object": "platform",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 152,
+        "object": "block_a",
+        "status": "available",
+        "views_used": 2,
+        "reason": "public_observation"
+      },
+      {
+        "id": 170,
+        "object": "platform",
+        "status": "unknown",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 187,
+        "object": "platform",
+        "status": "unknown",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 204,
+        "object": "platform",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 218,
+        "object": "platform",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 234,
+        "object": "platform",
+        "status": "unknown",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 253,
+        "object": "platform",
+        "status": "unknown",
+        "views_used": 0,
+        "reason": "public_observation"
+      }
+    ],
+    "candidate_attempts": [
+      {
+        "event": 147,
+        "object": "block_a",
+        "view_index": 1,
+        "target_xyz": [
+          0.2354691753255035,
+          0.20055728452368052,
+          1.001595651740723
+        ],
+        "signature": [
+          24,
+          20,
+          100
+        ],
+        "predicted_valid_fraction": 0.8888888888888888
+      },
+      {
+        "event": 150,
+        "object": "block_a",
+        "view_index": 2,
+        "target_xyz": [
+          0.2354691753255035,
+          0.040557284523680515,
+          1.001595651740723
+        ],
+        "signature": [
+          24,
+          4,
+          100
+        ],
+        "predicted_valid_fraction": 0.7777777777777778
+      }
+    ],
+    "rejected_plans": 1,
+    "input_records": [
+      {
+        "id": 145,
+        "object": "block_a",
+        "aim_xyz": [
+          0.14674279349323802,
+          0.10498696792281907,
+          0.8869835181033028
+        ],
+        "measured_span": [
+          0.04124562648714303,
+          0.04530649977170145,
+          0.04483242484567285
+        ],
+        "source_captured_at": 1795686447.5043402,
+        "selection_time": 1795686447.6607225
+      },
+      {
+        "id": 168,
+        "object": "platform",
+        "aim_xyz": [
+          0.253325957831038,
+          0.02822602243345555,
+          1.1279908842520179
+        ],
+        "measured_span": [
+          0.12990392414510532,
+          0.13207594793745908,
+          0.023174398587528344
+        ],
+        "source_captured_at": 1795686462.661516,
+        "selection_time": 1795686462.8069882
+      },
+      {
+        "id": 185,
+        "object": "platform",
+        "aim_xyz": [
+          0.253325957831038,
+          0.028226045476570982,
+          1.1279908842520179
+        ],
+        "measured_span": [
+          0.12990392414510532,
+          0.13207594793745908,
+          0.023174398587528344
+        ],
+        "source_captured_at": 1795686472.74492,
+        "selection_time": 1795686472.9240828
+      },
+      {
+        "id": 232,
+        "object": "platform",
+        "aim_xyz": [
+          0.253325957831038,
+          0.028226045476570982,
+          1.1279908842520179
+        ],
+        "measured_span": [
+          0.12990392414510532,
+          0.13207594793745908,
+          0.023174398587528344
+        ],
+        "source_captured_at": 1795686509.0247767,
+        "selection_time": 1795686509.1830063
+      },
+      {
+        "id": 251,
+        "object": "platform",
+        "aim_xyz": [
+          0.253325957831038,
+          0.028226045476570982,
+          1.1279908842520179
+        ],
+        "measured_span": [
+          0.12990392414510532,
+          0.13207594793745908,
+          0.023174398587528344
+        ],
+        "source_captured_at": 1795686525.042963,
+        "selection_time": 1795686525.2074375
+      }
+    ],
+    "false_completion": false,
+    "scope": "per-call view-count and recorded decision audit; not complete physical safety certification"
+  },
+  {
+    "run": "support-201-v3",
+    "ranked_requests": 2,
+    "empty_candidate_requests": 2,
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 26,
+        "object": "block_a",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 40,
+        "object": "platform",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 54,
+        "object": "platform",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 136,
+        "object": "platform",
+        "status": "unknown",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 153,
+        "object": "platform",
+        "status": "unknown",
+        "views_used": 0,
+        "reason": "public_observation"
+      }
+    ],
+    "candidate_attempts": [],
+    "rejected_plans": 0,
+    "input_records": [
+      {
+        "id": 134,
+        "object": "platform",
+        "aim_xyz": [
+          0.17537103736072912,
+          0.12053642055091628,
+          0.8316098600777185
+        ],
+        "measured_span": [
+          0.12990392414510532,
+          0.13207594793745908,
+          0.023174398587528344
+        ],
+        "source_captured_at": 1795686740.4106636,
+        "selection_time": 1795686740.5722249
+      },
+      {
+        "id": 151,
+        "object": "platform",
+        "aim_xyz": [
+          0.17537103736072912,
+          0.12053642055091628,
+          0.8316098600777185
+        ],
+        "measured_span": [
+          0.12990392414510532,
+          0.13207594793745908,
+          0.023174398587528344
+        ],
+        "source_captured_at": 1795686749.4212048,
+        "selection_time": 1795686749.7036798
+      }
+    ],
+    "false_completion": false,
+    "scope": "per-call view-count and recorded decision audit; not complete physical safety certification"
+  },
+  {
+    "run": "normal-202",
+    "ranked_requests": 0,
+    "empty_candidate_requests": 0,
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 26,
+        "object": "platform",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      }
+    ],
+    "candidate_attempts": [],
+    "rejected_plans": 0,
+    "input_records": [],
+    "false_completion": false,
+    "scope": "per-call view-count and recorded decision audit; not complete physical safety certification"
+  },
+  {
+    "run": "support-201-v4",
+    "ranked_requests": 2,
+    "empty_candidate_requests": 0,
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 26,
+        "object": "block_a",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 40,
+        "object": "platform",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 54,
+        "object": "platform",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 155,
+        "object": "platform",
+        "status": "unknown",
+        "views_used": 1,
+        "reason": "holding_not_verified_after_inspection"
+      },
+      {
+        "id": 174,
+        "object": "platform",
+        "status": "unknown",
+        "views_used": 1,
+        "reason": "holding_not_verified_after_inspection"
+      }
+    ],
+    "candidate_attempts": [
+      {
+        "event": 153,
+        "object": "platform",
+        "view_index": 1,
+        "target_xyz": [
+          0.15521118688276178,
+          0.040482330731162045,
+          1.0008356627139485
+        ],
+        "signature": [
+          16,
+          4,
+          100
+        ],
+        "predicted_valid_fraction": 0.4444444444444444
+      },
+      {
+        "event": 172,
+        "object": "platform",
+        "view_index": 1,
+        "target_xyz": [
+          0.15521118688276178,
+          0.20048233073116206,
+          1.0008356627139485
+        ],
+        "signature": [
+          16,
+          20,
+          100
+        ],
+        "predicted_valid_fraction": 0.5555555555555556
+      }
+    ],
+    "rejected_plans": 0,
+    "input_records": [
+      {
+        "id": 151,
+        "object": "platform",
+        "aim_xyz": [
+          0.17537103736072912,
+          0.12053642055091628,
+          0.8316098600777185
+        ],
+        "measured_span": [
+          0.12990392414510532,
+          0.13207594793745908,
+          0.023174398587528344
+        ],
+        "source_captured_at": 1795687158.7202935,
+        "selection_time": 1795687158.886139
+      },
+      {
+        "id": 170,
+        "object": "platform",
+        "aim_xyz": [
+          0.17537103736072912,
+          0.12053642055091628,
+          0.8316098600777185
+        ],
+        "measured_span": [
+          0.12990392414510532,
+          0.13207594793745908,
+          0.023174398587528344
+        ],
+        "source_captured_at": 1795687173.1609395,
+        "selection_time": 1795687173.3072915
+      }
+    ],
+    "false_completion": false,
+    "scope": "per-call view-count and recorded decision audit; not complete physical safety certification"
+  },
+  {
+    "run": "normal-final-202",
+    "ranked_requests": 0,
+    "empty_candidate_requests": 0,
+    "acquisitions": [
+      {
+        "id": 12,
+        "object": "block_a",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 26,
+        "object": "block_a",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 40,
+        "object": "platform",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      },
+      {
+        "id": 54,
+        "object": "platform",
+        "status": "available",
+        "views_used": 0,
+        "reason": "public_observation"
+      }
+    ],
+    "candidate_attempts": [],
+    "rejected_plans": 0,
+    "input_records": [],
+    "false_completion": false,
+    "scope": "per-call view-count and recorded decision audit; not complete physical safety certification"
+  }
+]

@@ -3,7 +3,7 @@ import numpy as np
 from .tabletop_sensors import geometry,project
 
 
-def track_mask(camera,ident,identities,prior,movable):
+def track_mask(camera,ident,identities,prior,movable,reference=None):
     import cv2
     rgb=np.asarray(camera['rgb'],float);chroma=rgb/np.maximum(rgb.sum(axis=2,keepdims=True),1)
     dist=np.linalg.norm(chroma-identities[ident]['chroma'],axis=2);mask=dist<.10
@@ -14,9 +14,24 @@ def track_mask(camera,ident,identities,prior,movable):
     world=local@T[:3,:3].T+T[:3,3]
     mask &= np.isfinite(depth)&(depth>.05)&(world[:,:,2]>.805)&(world[:,:,2]<1.4)&(abs(world[:,:,0])<.38)&(abs(world[:,:,1])<.38)
     if prior is not None:mask &= np.linalg.norm(world-np.asarray(prior),axis=2)<(.22 if movable else .13)
+    if not movable:mask=fixed_reference_mask(camera,mask,reference)
     count,labels,stats,_=cv2.connectedComponentsWithStats(mask.astype(np.uint8),8)
     if count<2:return np.zeros(depth.shape,dtype=bool)
     largest=1+int(np.argmax(stats[1:,cv2.CC_STAT_AREA]));return labels==largest
+
+
+def fixed_reference_mask(camera,mask,reference):
+    """Associate a declared FIXED object's current pixels with its observed region.
+
+    No point is synthesized; hidden support stays unknown. The existing 2cm
+    material-change tolerance bounds association, not relation verification.
+    """
+    if reference is None:return mask
+    depth=np.asarray(camera['depth']);yy,xx=np.indices(depth.shape);K=np.asarray(camera['intrinsics']);T=np.asarray(camera['camera_to_world'])
+    local=np.stack([(xx-K[0,2])*depth/K[0,0],(yy-K[1,2])*depth/K[1,1],depth],axis=-1)
+    world=local@T[:3,:3].T+T[:3,3]
+    lo=np.asarray(reference['surface_q02_xyz'])-.02;hi=np.asarray(reference['surface_q98_xyz'])+.02
+    return np.asarray(mask,bool)&np.isfinite(depth)&np.all(world>=lo,axis=-1)&np.all(world<=hi,axis=-1)
 
 
 def measure_object(packet,ident,identities,prior=None,reference=None,movable=True,initial_mask=None):
@@ -35,7 +50,8 @@ def measure_object(packet,ident,identities,prior=None,reference=None,movable=Tru
         except (KeyError,ValueError,TypeError):valid=False
         if not valid:return dict(status='unknown',reason='incoherent_multiview_calibration_or_time')
     for name,camera in packet['cameras'].items():
-        mask=initial_mask if name=='overview' and initial_mask is not None else track_mask(camera,ident,identities,prior,movable)
+        mask=initial_mask if name=='overview' and initial_mask is not None else track_mask(camera,ident,identities,prior,movable,reference)
+        if not movable:mask=fixed_reference_mask(camera,mask,reference)
         result=geometry(camera,mask)
         if result['status']!='available':continue
         points,_=project(camera,mask);views.append(dict(name=name,camera=camera,mask=mask,geometry=result,points=points))
@@ -62,14 +78,14 @@ def measure_object(packet,ident,identities,prior=None,reference=None,movable=Tru
         mask=primary['mask'])
 
 
-def measure_single_view(packet,ident,identities,prior=None,movable=True,initial_mask=None):
+def measure_single_view(packet,ident,identities,prior=None,movable=True,initial_mask=None,reference=None):
     """Prefer overview, but a lost overview track must still try a measured wrist view."""
     for name in ('overview','wrist'):
         camera=packet['cameras'].get(name)
         if camera is None:continue
         # Reuse the calibrated same-capture validation of the multiview path.
         single=dict(packet,cameras={name:camera})
-        measured=measure_object(single,ident,identities,prior=prior,movable=movable,
+        measured=measure_object(single,ident,identities,prior=prior,movable=movable,reference=reference,
             initial_mask=initial_mask if name=='overview' else None)
         if measured['status']=='available':return measured
     return dict(status='unknown',reason='no_current_single_camera_geometry')

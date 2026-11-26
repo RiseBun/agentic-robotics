@@ -1,0 +1,9 @@
+{
+  "cap-runtime/agentic_cap/tabletop_backend.py": "674369847064df5db46ea25d76517f7407b1f7c76fb6f386caf1f97ebe40ce8e",
+  "cap-runtime/agentic_cap/tabletop_actions.py": "b4595bd429ec5ed89c16497732dc68899f66b7401692d4b2eb6c40268e2e1ede",
+  "cap-runtime/agentic_cap/tabletop_multiview.py": "cdd315fd1e96e55bc1b6ba6efddf6855621fb4128bf70af3c1f8aac2a6b90c08",
+  "cap-runtime/agentic_cap/tabletop_views.py": "3cd497347055c368f17d533195bb4c5aaf84775ce2aa54309dacadd4afe2cbbd",
+  "cap-runtime/agentic_cap/tabletop_scene.py": "93506a7b838e5d6c42eb32dcc6ebbf40cac31200d8a2f72bd6552c1c255f3800",
+  "runtime/scripts/tabletop-model-trial.mjs": "11bb9aa5beae6a693c3d8adf7dfa23e35c06533285c0c4127677e888a458d83e",
+  "runtime/scripts/rgbd-occlusion-trial.mjs": "df2b5968e9bbaeeedf926dc8ccb8413912759fb1ecde275bf0be7e853525e590"
+}
