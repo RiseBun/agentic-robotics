@@ -1,0 +1,775 @@
+{
+  "scope": "archived public-frame counterfactual projection only; reconstructed held identity; no trajectory or visibility proof",
+  "source_episode": "65f75b5b9f7eef74ef1c7d9f74b490ce",
+  "source_control_step": 2244,
+  "source_captured_at": 1795699297.637197,
+  "selection": {
+    "id": 156,
+    "episode_id": "65f75b5b9f7eef74ef1c7d9f74b490ce",
+    "segment_id": "d353ca27cece49a3b51b6f2781c8d809",
+    "time": 1795699297.9427078,
+    "kind": "inspection_selection_inputs",
+    "object": "platform",
+    "aim_xyz": [
+      0.18184607953617032,
+      0.12828095776117557,
+      0.8306966236165904
+    ],
+    "measured_span": [
+      0.12478304566677789,
+      0.12537124022372506,
+      0.022238135674421122
+    ],
+    "source_captured_at": 1795699297.637197,
+    "selection_time": 1795699297.9426925,
+    "source_robot_xyz": [
+      0.16471826300985706,
+      0.12854031716034287,
+      0.9976232786692284
+    ],
+    "camera_times": {
+      "overview": 1795699297.6346543,
+      "wrist": 1795699297.636842
+    },
+    "visited": []
+  },
+  "ranked_anchor": [
+    0.16472793832834576,
+    0.12853935416826331,
+    0.9976379057306892
+  ],
+  "families": [
+    {
+      "expanded": false,
+      "candidates": [
+        {
+          "target_xyz": [
+            0.16472793832834576,
+            0.04853935416826331,
+            0.9976379057306892
+          ],
+          "signature": [
+            16,
+            5,
+            100
+          ],
+          "score": 0.5293333333333333,
+          "predicted_valid_fraction": 0.3333333333333333,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.5293333333333333,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.4444444444444444,
+              0.4444444444444444,
+              0.0,
+              1.0
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.16472793832834576,
+            0.2085393541682633,
+            0.9976379057306892
+          ],
+          "signature": [
+            16,
+            21,
+            100
+          ],
+          "score": 0.5293333333333333,
+          "predicted_valid_fraction": 0.3333333333333333,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.5293333333333333,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.4444444444444444,
+              0.4444444444444444,
+              1.0,
+              0.0
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        }
+      ]
+    },
+    {
+      "expanded": true,
+      "candidates": [
+        {
+          "target_xyz": [
+            0.24472793832834577,
+            0.2085393541682633,
+            0.9976379057306892
+          ],
+          "signature": [
+            24,
+            21,
+            100
+          ],
+          "score": 0.7498987013060632,
+          "predicted_valid_fraction": 0.5555555555555556,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.7498987013060632,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              1.0,
+              0.4444444444444444,
+              1.0,
+              0.3333333333333333
+            ],
+            "target_minimum_edge_fraction": 0.3333333333333333,
+            "custody_aperture_fraction": 0.7777777777777778,
+            "custody_cameras": {
+              "overview": 0.7777777777777778,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.3333333333333333,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.24472793832834577,
+            0.04853935416826331,
+            0.9976379057306892
+          ],
+          "signature": [
+            24,
+            5,
+            100
+          ],
+          "score": 0.7498987013060632,
+          "predicted_valid_fraction": 0.5555555555555556,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.7498987013060632,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              1.0,
+              0.4444444444444444,
+              0.3333333333333333,
+              1.0
+            ],
+            "target_minimum_edge_fraction": 0.3333333333333333,
+            "custody_aperture_fraction": 0.3333333333333333,
+            "custody_cameras": {
+              "overview": 0.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.3333333333333333,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.24472793832834577,
+            0.04853935416826331,
+            1.0576379057306893
+          ],
+          "signature": [
+            24,
+            5,
+            106
+          ],
+          "score": 0.7491524313181227,
+          "predicted_valid_fraction": 0.5555555555555556,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.7491524313181227,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              1.0,
+              0.3333333333333333,
+              0.2222222222222222,
+              1.0
+            ],
+            "target_minimum_edge_fraction": 0.2222222222222222,
+            "custody_aperture_fraction": 0.3333333333333333,
+            "custody_cameras": {
+              "overview": 0.3333333333333333,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.2222222222222222,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.24472793832834577,
+            0.2085393541682633,
+            1.0576379057306893
+          ],
+          "signature": [
+            24,
+            21,
+            106
+          ],
+          "score": 0.7491524313181227,
+          "predicted_valid_fraction": 0.5555555555555556,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.7491524313181227,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              1.0,
+              0.2222222222222222,
+              1.0,
+              0.2222222222222222
+            ],
+            "target_minimum_edge_fraction": 0.2222222222222222,
+            "custody_aperture_fraction": 0.3333333333333333,
+            "custody_cameras": {
+              "overview": 0.3333333333333333,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.2222222222222222,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.08472793832834576,
+            0.04853935416826331,
+            0.9976379057306892
+          ],
+          "signature": [
+            8,
+            5,
+            100
+          ],
+          "score": 0.5721209235282854,
+          "predicted_valid_fraction": 0.4444444444444444,
+          "predicted_in_frame_fraction": 0.6666666666666666,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.5721209235282854,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.4444444444444444,
+              0.0,
+              0.2222222222222222,
+              0.6666666666666666
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.08472793832834576,
+            0.2085393541682633,
+            0.9976379057306892
+          ],
+          "signature": [
+            8,
+            21,
+            100
+          ],
+          "score": 0.5721209235282854,
+          "predicted_valid_fraction": 0.4444444444444444,
+          "predicted_in_frame_fraction": 0.6666666666666666,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.5721209235282854,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.4444444444444444,
+              0.0,
+              0.6666666666666666,
+              0.2222222222222222
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.16472793832834576,
+            0.04853935416826331,
+            0.9976379057306892
+          ],
+          "signature": [
+            16,
+            5,
+            100
+          ],
+          "score": 0.5293333333333333,
+          "predicted_valid_fraction": 0.3333333333333333,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.5293333333333333,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.4444444444444444,
+              0.4444444444444444,
+              0.0,
+              1.0
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.16472793832834576,
+            0.2085393541682633,
+            0.9976379057306892
+          ],
+          "signature": [
+            16,
+            21,
+            100
+          ],
+          "score": 0.5293333333333333,
+          "predicted_valid_fraction": 0.3333333333333333,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.5293333333333333,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.4444444444444444,
+              0.4444444444444444,
+              1.0,
+              0.0
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.16472793832834576,
+            0.04853935416826331,
+            1.0576379057306893
+          ],
+          "signature": [
+            16,
+            5,
+            106
+          ],
+          "score": 0.5283333333333333,
+          "predicted_valid_fraction": 0.3333333333333333,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.5283333333333333,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.0,
+              1.0
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.16472793832834576,
+            0.2085393541682633,
+            1.0576379057306893
+          ],
+          "signature": [
+            16,
+            21,
+            106
+          ],
+          "score": 0.5283333333333333,
+          "predicted_valid_fraction": 0.3333333333333333,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.5283333333333333,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.2222222222222222,
+              0.2222222222222222,
+              1.0,
+              0.0
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.08472793832834576,
+            0.12853935416826331,
+            0.9976379057306892
+          ],
+          "signature": [
+            8,
+            13,
+            100
+          ],
+          "score": 0.46266666666666667,
+          "predicted_valid_fraction": 0.3333333333333333,
+          "predicted_in_frame_fraction": 0.6666666666666666,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.46266666666666667,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.0,
+              0.0,
+              0.2222222222222222,
+              0.2222222222222222
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.08472793832834576,
+            0.04853935416826331,
+            1.0576379057306893
+          ],
+          "signature": [
+            8,
+            5,
+            106
+          ],
+          "score": 0.4158190979847894,
+          "predicted_valid_fraction": 0.2222222222222222,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.4158190979847894,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.3333333333333333,
+              0.0,
+              0.2222222222222222,
+              0.8888888888888888
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.08472793832834576,
+            0.2085393541682633,
+            1.0576379057306893
+          ],
+          "signature": [
+            8,
+            21,
+            106
+          ],
+          "score": 0.4158190979847894,
+          "predicted_valid_fraction": 0.2222222222222222,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.4158190979847894,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.2222222222222222,
+              0.0,
+              0.8888888888888888,
+              0.2222222222222222
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.16472793832834576,
+            0.12853935416826331,
+            1.0576379057306893
+          ],
+          "signature": [
+            16,
+            13,
+            106
+          ],
+          "score": 0.197,
+          "predicted_valid_fraction": 0.0,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.197,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.08472793832834576,
+            0.12853935416826331,
+            1.0576379057306893
+          ],
+          "signature": [
+            8,
+            13,
+            106
+          ],
+          "score": 0.195,
+          "predicted_valid_fraction": 0.0,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.195,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              0.0,
+              0.0,
+              0.2222222222222222,
+              0.2222222222222222
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 1.0,
+            "custody_cameras": {
+              "overview": 1.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.24472793832834577,
+            0.12853935416826331,
+            1.0576379057306893
+          ],
+          "signature": [
+            24,
+            13,
+            106
+          ],
+          "score": 0.5283333333333333,
+          "predicted_valid_fraction": 0.3333333333333333,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.5283333333333333,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              1.0,
+              0.0,
+              0.2222222222222222,
+              0.2222222222222222
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 0.5555555555555556,
+            "custody_cameras": {
+              "overview": 0.5555555555555556,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        },
+        {
+          "target_xyz": [
+            0.24472793832834577,
+            0.12853935416826331,
+            0.9976379057306892
+          ],
+          "signature": [
+            24,
+            13,
+            100
+          ],
+          "score": 0.5293333333333333,
+          "predicted_valid_fraction": 0.3333333333333333,
+          "predicted_in_frame_fraction": 1.0,
+          "scope": "image_projection_and_current_missing_depth_only; not_visibility_or_collision_proof",
+          "coverage_score": 0.5293333333333333,
+          "evidence_prediction": {
+            "status": "predicted",
+            "target_edge_fractions": [
+              1.0,
+              0.0,
+              0.3333333333333333,
+              0.3333333333333333
+            ],
+            "target_minimum_edge_fraction": 0.0,
+            "custody_aperture_fraction": 0.3333333333333333,
+            "custody_cameras": {
+              "overview": 0.0,
+              "wrist": 0.3333333333333333
+            },
+            "required_axes": [
+              0,
+              1
+            ],
+            "joint_minimum_fraction": 0.0,
+            "scope": "public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact"
+          }
+        }
+      ]
+    }
+  ]
+}

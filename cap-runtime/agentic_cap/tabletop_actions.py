@@ -189,12 +189,14 @@ def tools(backend,segment):
             policy=getattr(b,'inspection_policy','lateral')
             coverage=policy in {'coverage','evidence'}
             if coverage:
-                from .tabletop_views import rank_views,signature as view_signature
+                from .tabletop_views import rank_views,inspection_anchor_key,signature as view_signature
                 empty=b.verify({'all':[dict(predicate='empty_gripper')]},e.observe())['status']=='verified'
                 # Translation-only broad candidates require observed empty grip;
                 # unknown custody never authorizes an exploratory camera motion.
                 cannot_move=not held and not empty
-                key=(e.robot_system.goal_version,obj)
+                restoration=getattr(b,'restoration_done',None)
+                if restoration and restoration.get('revision')!=e.revision:restoration=None
+                key=inspection_anchor_key(e.robot_system.goal_version,obj,restoration)
                 anchor=b.inspection_anchors.setdefault(key,initial.copy())
                 reference=b.reference.get(obj,{})
                 from .tabletop_scene import public_catalog
@@ -207,7 +209,7 @@ def tools(backend,segment):
                     candidates=[];result=dict(status='unknown',reason='low_held_pose_requires_recorded_restore_before_inspection')
                 else:
                     packet=b.raw
-                    candidates=rank_views(packet,anchor,prior,reference.get('surface_span_xyz',[.04,.04,.04]),visited,holding=bool(held))
+                    candidates=rank_views(packet,anchor,prior,reference.get('surface_span_xyz',[.04,.04,.04]),visited,holding=bool(held),expanded_holding=getattr(b,'expanded_held_views',False))
                     if policy=='evidence':
                         from .tabletop_inspection import evidence_request,order_evidence_views
                         observed=e.observe();target_result=b.verify(desired,observed)
@@ -219,7 +221,8 @@ def tools(backend,segment):
                             current_evidence_ref=observed.get('evidence_ref'),candidates=candidates)
                     e.event('inspection_selection_inputs',object=obj,aim_xyz=np.asarray(prior).tolist(),
                         measured_span=reference.get('surface_span_xyz'),
-                        source_captured_at=packet.get('captured_at'),selection_time=time.time(),
+                        source_captured_at=packet.get('captured_at'),source_control_step=packet.get('control_step'),
+                        expanded_held_views=getattr(b,'expanded_held_views',False),anchor_context=key,selection_time=time.time(),
                         source_robot_xyz=np.asarray(packet.get('tcp_xyz')).tolist(),
                         camera_times={k:v.get('captured_at') for k,v in packet['cameras'].items()},
                         visited=[list(v) for v in visited])
@@ -235,11 +238,22 @@ def tools(backend,segment):
                 if signature in visited:continue
                 visited.add(signature);views+=1
                 e.event('view_attempt',object=obj,view_index=views,before_evidence_ref=e.snapshot.get('evidence_ref'),target_xyz=target.tolist(),camera='wrist',view_policy=policy,prediction=candidate)
-                try:trajectory=b._plan_pose(segment,target,quat)
+                expanded_held=bool(held) and getattr(b,'expanded_held_views',False)
+                versions={k:v for k,v in e.observe().get('object_versions',{}).items() if k!=held} if expanded_held else None
+                try:
+                    trajectory=b._plan_pose(segment,target,quat,exclude=held) if expanded_held else b._plan_pose(segment,target,quat)
                 except ValueError as exc:
                     if not coverage:raise
                     e.event('inspection_candidate_rejected',object=obj,target_xyz=target.tolist(),reason=str(exc))
                     continue
+                if expanded_held:
+                    e.checkpoint(segment);current=e.observe()
+                    if b.verify({'all':[dict(predicate='holding',object=held)]},current)['status']!='verified':
+                        result=dict(status='unknown',reason='custody_changed_during_inspection_planning')
+                        e.event('inspection_dispatch_blocked',object=obj,reason=result['reason']);break
+                    if {k:v for k,v in current.get('object_versions',{}).items() if k!=held}!=versions:
+                        result=dict(status='unknown',reason='scene_changed_during_inspection_planning')
+                        e.event('inspection_dispatch_blocked',object=obj,reason=result['reason']);break
                 b._move_trajectory(segment,trajectory)
                 with e.cv:
                     start_tick=b.tick

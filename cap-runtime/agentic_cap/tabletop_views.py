@@ -8,7 +8,15 @@ import numpy as np
 
 def signature(xyz):return tuple(np.round(np.asarray(xyz)/.01).astype(int))
 
-def rank_views(packet,initial,center,span,visited=(),*,holding=False):
+def inspection_anchor_key(goal_version,obj,restoration=None):
+    """New anchors follow completed restoration, never live encoder noise."""
+    if restoration:
+        token=(restoration['object'],restoration['revision'],tuple(restoration['joints']))
+        return goal_version,obj,token
+    return goal_version,obj
+
+
+def rank_views(packet,initial,center,span,visited=(),*,holding=False,expanded_holding=False):
     xyz=np.asarray(initial,float);center=np.asarray(center,float);span=np.asarray(span,float)
     cam=packet.get('cameras',{}).get('wrist')
     if cam is None or not np.isfinite(np.r_[xyz,center,span]).all():return []
@@ -22,7 +30,7 @@ def rank_views(packet,initial,center,span,visited=(),*,holding=False):
     except (KeyError,TypeError,ValueError):return []
     # Measured 3x3 surface samples; no claim about hidden free space or extent.
     points=np.array([center+[x,y,0] for x in [-span[0]/2,0,span[0]/2] for y in [-span[1]/2,0,span[1]/2]])
-    offsets=([np.array([0,dy,0]) for dy in [-.08,.08]] if holding else
+    offsets=([np.array([0,dy,0]) for dy in [-.08,.08]] if holding and not expanded_holding else
         [np.array([dx,dy,dz]) for dz in [0,.06] for dx,dy in itertools.product([-.08,0,.08],repeat=2) if dx or dy or dz])
     h,w=depth.shape;result=[]
     for delta in offsets:

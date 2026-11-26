@@ -1,0 +1,342 @@
+[
+  {
+    "name": "fault202-evidence",
+    "seed": 202,
+    "fault": true,
+    "inspection": "evidence",
+    "expanded": true,
+    "replan": true,
+    "outcome": "awaiting_user",
+    "task_wall_seconds": 146.935,
+    "model_responses": 13,
+    "usage_records": 13,
+    "model_usage": {
+      "input_tokens": 544613,
+      "output_tokens": 3640,
+      "total_tokens": 548253
+    },
+    "fault_injected": true,
+    "active_view_attempts": 2,
+    "completed_view_checks": 1,
+    "rejected_view_plans": 1,
+    "joint_support_holding_confirmations": 1,
+    "expanded_pose_attempts": 2,
+    "active_support_confirmations": 1,
+    "dispatch_blocks": 0,
+    "evidence_requests": 1,
+    "top_order_changes": 1,
+    "unconfirmed_physical_completion": false,
+    "episode_id": "9305157d74a554fc6d3ddc81dca551b5",
+    "status": "scored",
+    "physical_verified": false,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 13,
+      "calls": 21,
+      "motion_steps": 513,
+      "idle_steps": 2197,
+      "wall_seconds": 143.84141255001305
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "name": "fault202-coverage",
+    "seed": 202,
+    "fault": true,
+    "inspection": "coverage",
+    "expanded": true,
+    "replan": true,
+    "outcome": "awaiting_user",
+    "task_wall_seconds": 196.062,
+    "model_responses": 18,
+    "usage_records": 18,
+    "model_usage": {
+      "input_tokens": 772060,
+      "output_tokens": 4858,
+      "total_tokens": 776918
+    },
+    "fault_injected": true,
+    "active_view_attempts": 3,
+    "completed_view_checks": 2,
+    "rejected_view_plans": 1,
+    "joint_support_holding_confirmations": 1,
+    "expanded_pose_attempts": 2,
+    "active_support_confirmations": 1,
+    "dispatch_blocks": 0,
+    "evidence_requests": 0,
+    "top_order_changes": 0,
+    "unconfirmed_physical_completion": false,
+    "episode_id": "d5a1218cab9c33f1a1ebd95c024b96a0",
+    "status": "scored",
+    "physical_verified": false,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 18,
+      "calls": 24,
+      "motion_steps": 591,
+      "idle_steps": 3050,
+      "wall_seconds": 193.21467462996952
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "name": "fault201-coverage",
+    "seed": 201,
+    "fault": true,
+    "inspection": "coverage",
+    "expanded": true,
+    "replan": true,
+    "outcome": "awaiting_user",
+    "task_wall_seconds": 167.012,
+    "model_responses": 16,
+    "usage_records": 16,
+    "model_usage": {
+      "input_tokens": 692076,
+      "output_tokens": 4245,
+      "total_tokens": 696321
+    },
+    "fault_injected": true,
+    "active_view_attempts": 3,
+    "completed_view_checks": 2,
+    "rejected_view_plans": 1,
+    "joint_support_holding_confirmations": 1,
+    "expanded_pose_attempts": 2,
+    "active_support_confirmations": 1,
+    "dispatch_blocks": 0,
+    "evidence_requests": 0,
+    "top_order_changes": 0,
+    "unconfirmed_physical_completion": false,
+    "episode_id": "e225e36baa2ec556504049f71288d72f",
+    "status": "scored",
+    "physical_verified": false,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 16,
+      "calls": 23,
+      "motion_steps": 468,
+      "idle_steps": 2592,
+      "wall_seconds": 164.29563505901024
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "name": "fault201-evidence",
+    "seed": 201,
+    "fault": true,
+    "inspection": "evidence",
+    "expanded": true,
+    "replan": true,
+    "outcome": "awaiting_user",
+    "task_wall_seconds": 161.674,
+    "model_responses": 15,
+    "usage_records": 15,
+    "model_usage": {
+      "input_tokens": 632795,
+      "output_tokens": 4615,
+      "total_tokens": 637410
+    },
+    "fault_injected": true,
+    "active_view_attempts": 2,
+    "completed_view_checks": 1,
+    "rejected_view_plans": 1,
+    "joint_support_holding_confirmations": 1,
+    "expanded_pose_attempts": 2,
+    "active_support_confirmations": 1,
+    "dispatch_blocks": 0,
+    "evidence_requests": 1,
+    "top_order_changes": 1,
+    "unconfirmed_physical_completion": false,
+    "episode_id": "5e6524e8c3b8096b826413e3662ac259",
+    "status": "scored",
+    "physical_verified": false,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 15,
+      "calls": 22,
+      "motion_steps": 514,
+      "idle_steps": 2482,
+      "wall_seconds": 158.88001971202902
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "name": "normal202-default",
+    "seed": 202,
+    "fault": false,
+    "inspection": "coverage",
+    "expanded": false,
+    "replan": false,
+    "outcome": "completed",
+    "task_wall_seconds": 87.037,
+    "model_responses": 8,
+    "usage_records": 8,
+    "model_usage": {
+      "input_tokens": 277219,
+      "output_tokens": 2106,
+      "total_tokens": 279325
+    },
+    "fault_injected": false,
+    "active_view_attempts": 0,
+    "completed_view_checks": 0,
+    "rejected_view_plans": 0,
+    "joint_support_holding_confirmations": 0,
+    "expanded_pose_attempts": 0,
+    "active_support_confirmations": 0,
+    "dispatch_blocks": 0,
+    "evidence_requests": 0,
+    "top_order_changes": 0,
+    "unconfirmed_physical_completion": false,
+    "episode_id": "1d6b29d31420402455980d4ffc5664c5",
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 17,
+      "motion_steps": 369,
+      "idle_steps": 1227,
+      "wall_seconds": 84.5013954199967
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  }
+]

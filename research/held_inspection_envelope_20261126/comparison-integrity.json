@@ -1,0 +1,15 @@
+{
+  "configuration_fingerprints": [
+    "f85ca2bb0081fc65749367540fbe3d6fc070cb0ec285580a847e4ca6bfc22294"
+  ],
+  "runtime_source_digests": [
+    "a8e78efb03687842f28d02e1c9ef1e1b6b047f2152bac3302a1707fa6b983f14"
+  ],
+  "input_texts": [
+    "Put the blue block on the grey platform and leave the gripper empty."
+  ],
+  "models": [
+    "gpt-5.6-sol"
+  ],
+  "all_episodes_closed": true
+}

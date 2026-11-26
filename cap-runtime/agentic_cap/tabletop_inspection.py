@@ -103,5 +103,5 @@ def order_evidence_views(candidates,packet,snapshot,reference,request,held=None)
                 custody_cameras=custody_views,required_axes=axes,joint_minimum_fraction=min(target_score,custody_score),
                 scope='public_aperture_only; ignores_future_occlusion_and_does_not_verify_any_fact')
         return sorted(rows,key=lambda r:(r['evidence_prediction']['joint_minimum_fraction'],
-            r['evidence_prediction']['target_minimum_edge_fraction'],r['score']),reverse=True)
+            r['evidence_prediction']['target_minimum_edge_fraction'],r['evidence_prediction']['custody_aperture_fraction'],r['score']),reverse=True)
     except (KeyError,TypeError,ValueError,IndexError):return fallback('public_projection_input_incomplete')

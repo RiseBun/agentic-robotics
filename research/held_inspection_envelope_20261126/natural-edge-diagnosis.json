@@ -1,0 +1,59 @@
+{
+  "scope": "offline exploratory fresh initial SAM identity and current color tracking; valid top-to-calibrated-table neighbors only; no verifier modification or release permission",
+  "rows": [
+    {
+      "step": 1640,
+      "status": "diagnosed",
+      "source": "research/held_inspection_envelope_20261126/fault202-evidence/physical/9305157d74a554fc6d3ddc81dca551b5/view-robot0_eye_in_hand-001640.npz",
+      "top_z": 0.8294318921962114,
+      "natural_table_edge_pairs": 115,
+      "hypotheses": [
+        {
+          "axis": 0,
+          "coordinate": 0.10319437861377165,
+          "unique_pixels": 29,
+          "line_span_m": 0.02168385476347942,
+          "maximum_axis_residual_m": 0.002579803644803008,
+          "outward_delta_m": -0.003553677410323669,
+          "prior_width_m": 0.12478304566677789
+        },
+        {
+          "axis": 1,
+          "coordinate": 0.1934512867339871,
+          "unique_pixels": 90,
+          "line_span_m": 0.07627337527176095,
+          "maximum_axis_residual_m": 0.0009180303655930977,
+          "outward_delta_m": 0.015183239249395436,
+          "prior_width_m": 0.12537124022372506
+        }
+      ]
+    },
+    {
+      "step": 2516,
+      "status": "diagnosed",
+      "source": "research/held_inspection_envelope_20261126/fault202-evidence/physical/9305157d74a554fc6d3ddc81dca551b5/view-robot0_eye_in_hand-002516.npz",
+      "top_z": 0.8294326739939908,
+      "natural_table_edge_pairs": 134,
+      "hypotheses": [
+        {
+          "axis": 0,
+          "coordinate": 0.10298291093064618,
+          "unique_pixels": 34,
+          "line_span_m": 0.02808060345985887,
+          "maximum_axis_residual_m": 0.0008921831811738445,
+          "outward_delta_m": -0.004867742932577912,
+          "prior_width_m": 0.12478304566677789
+        },
+        {
+          "axis": 1,
+          "coordinate": 0.06683354148370556,
+          "unique_pixels": 102,
+          "line_span_m": 0.08765315695520412,
+          "maximum_axis_residual_m": 0.0007811250726607599,
+          "outward_delta_m": -0.017637757435225956,
+          "prior_width_m": 0.12537124022372506
+        }
+      ]
+    }
+  ]
+}

@@ -29,6 +29,7 @@ class TabletopBackend:
         self.multiview=os.environ.get('TABLETOP_MULTIVIEW','0')=='1';self.perception_error=None;self.planner_verified=False;self.last_action_tick=0
         self.base_T=np.eye(4);self.last_plan=None;self.held_hint=None;self.appearance={};self.inspection_sessions={};self.holding_watch=None
         self.inspection_policy=os.environ.get('TABLETOP_INSPECTION_POLICY','lateral');self.inspection_anchors={}
+        self.expanded_held_views=os.environ.get('TABLETOP_EXPANDED_HELD_VIEWS','0')=='1'
 
     def initialize(self):
         from robosuite.controllers import load_composite_controller_config,load_part_controller_config

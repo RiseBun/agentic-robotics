@@ -1,0 +1,47 @@
+[
+  {
+    "name": "fault202-evidence",
+    "seed": 202,
+    "fault": true,
+    "inspection": "evidence",
+    "expanded": true,
+    "replan": true,
+    "exit_code": 0
+  },
+  {
+    "name": "fault202-coverage",
+    "seed": 202,
+    "fault": true,
+    "inspection": "coverage",
+    "expanded": true,
+    "replan": true,
+    "exit_code": 0
+  },
+  {
+    "name": "fault201-coverage",
+    "seed": 201,
+    "fault": true,
+    "inspection": "coverage",
+    "expanded": true,
+    "replan": true,
+    "exit_code": 0
+  },
+  {
+    "name": "fault201-evidence",
+    "seed": 201,
+    "fault": true,
+    "inspection": "evidence",
+    "expanded": true,
+    "replan": true,
+    "exit_code": 0
+  },
+  {
+    "name": "normal202-default",
+    "seed": 202,
+    "fault": false,
+    "inspection": "coverage",
+    "expanded": false,
+    "replan": false,
+    "exit_code": 0
+  }
+]

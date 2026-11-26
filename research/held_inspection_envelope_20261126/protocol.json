@@ -1,0 +1,107 @@
+{
+  "stage": "development_matched_expanded_candidate_family",
+  "base_commit": "f307db0145131e6526709f59eec970a38392fe71",
+  "runs": [
+    {
+      "name": "fault202-evidence",
+      "seed": 202,
+      "fault": true,
+      "inspection": "evidence",
+      "expanded": true,
+      "replan": true
+    },
+    {
+      "name": "fault202-coverage",
+      "seed": 202,
+      "fault": true,
+      "inspection": "coverage",
+      "expanded": true,
+      "replan": true
+    },
+    {
+      "name": "fault201-coverage",
+      "seed": 201,
+      "fault": true,
+      "inspection": "coverage",
+      "expanded": true,
+      "replan": true
+    },
+    {
+      "name": "fault201-evidence",
+      "seed": 201,
+      "fault": true,
+      "inspection": "evidence",
+      "expanded": true,
+      "replan": true
+    },
+    {
+      "name": "normal202-default",
+      "seed": 202,
+      "fault": false,
+      "inspection": "coverage",
+      "expanded": false,
+      "replan": false
+    }
+  ],
+  "hypothesis": "finite X/Z views may expose current support extent after retreat; joint ordering may differ from area coverage",
+  "controls": [
+    "same expanded family for both ranking policies",
+    "same real model and prompt",
+    "same verification thresholds",
+    "same cumulative limits and two attempts per inspection call",
+    "replanned retreat enabled in all fault cases",
+    "no task program or coordinates supplied to model"
+  ],
+  "limitations": [
+    "expanded action capability differs from previous Y-only studies",
+    "model trajectories not fixed by seed",
+    "prediction ignores future occlusion",
+    "not independent final evaluation",
+    "normal-default means new capabilities off, inspection remains explicit coverage"
+  ],
+  "source_sha256": {
+    "cap-runtime/agentic_cap/holding_watchdog.py": "f1fdd660192f639298a95499a4bd97e252b0bae04dedf8c3f5b9161e7577dab4",
+    "cap-runtime/agentic_cap/tabletop_episode.py": "c358ede91869ecfe1648834af718f16b73cd9ad1dc0a87651318daa92bf7c950",
+    "cap-runtime/agentic_cap/skills.py": "db2391052235e6b8d00791e60f388e35e330591003d05563f6eab50c89bdb850",
+    "cap-runtime/agentic_cap/robot_system.py": "2989de3d6e57b9dc640373796c4ba963385d8a02f2e69b5e08bb6c711cc6f5e7",
+    "cap-runtime/agentic_cap/feedback.py": "766245793c241cdc499afa25427f1b5d8a3f93357cd8136033d3edc9c1330398",
+    "cap-runtime/agentic_cap/tabletop_system.py": "11991fc1cdf1148da5fa92b0f2a37f1dbb6fbc1d3b24179b742d223eeb766f03",
+    "cap-runtime/agentic_cap/task_recipes.py": "1054c09f3fe0f4b8bf9751bf5a01242897d45609d32eec6a3105ea9bb7e61510",
+    "cap-runtime/agentic_cap/tabletop_actions.py": "0b140f44ea0eaeebedf4debeca3336d82826d2313fc42eaad349f4024f1f0121",
+    "cap-runtime/agentic_cap/interpreter.py": "db47d03455c3140d4274c5f40eb55597c1f3ee2a94cbba68281861db71726f37",
+    "cap-runtime/agentic_cap/__init__.py": "5cb4b242593ae0ce5b128a906afdeb25197722c581f1817c12f673763f291558",
+    "cap-runtime/agentic_cap/evaluator.py": "3cdb33f44881a31dabd1584ddb3aa630a6514b331b5e605b1492abf210431b89",
+    "cap-runtime/agentic_cap/tabletop_restore.py": "fb6ff81ff8e6e942f32218e14a65c41f28940576b447ed31ce79cebf2f2276d4",
+    "cap-runtime/agentic_cap/cap_backend.py": "76156d3f4ed788404de85312629baa78f438d4f14667c2078e734b6e3dcdeee7",
+    "cap-runtime/agentic_cap/fixture.py": "01573511535ee1fa94e388cacfe5c10abe8cd5bee9963c4ba260affa81d9fed3",
+    "cap-runtime/agentic_cap/tabletop_scene.py": "7b5cbb102fe4d88ddfc41cc0b1a1a841f37e7d0e036887039a241e3f919b47aa",
+    "cap-runtime/agentic_cap/placement_retry.py": "bbd0fd7fb081b40d5801a525d9dfb6902498cca95198b2fbaf5fd46544ffc94b",
+    "cap-runtime/agentic_cap/tabletop_domain.py": "422412b6be78922bac3c1cb410d9ddb581c857d1c1a3390ae81978f8a64eec26",
+    "cap-runtime/agentic_cap/public_views.py": "235d194dc78d18c5b302263566615a8d3429f67fd73461ea7b9e3dd2caad210b",
+    "cap-runtime/agentic_cap/server.py": "95f147406186924a01d2cc7df12b48e49fdeaf13cdd6013decd934ee1ea281db",
+    "cap-runtime/agentic_cap/cartesian_motion.py": "a13653595ca46e742fc31b91db9a18a386939ea84db68a93fa8c873095dc28a3",
+    "cap-runtime/agentic_cap/tabletop_inspection.py": "a45f185e2bccdfa28b2f8fed6a4361dd74bbbca10063bc0eeb8818595d51eb11",
+    "cap-runtime/agentic_cap/program_resources.py": "073d284554495173e82d862486a4a868756516defdcb3cbc21e3ba05321a616f",
+    "cap-runtime/agentic_cap/safe_retreat.py": "a8808362bee32500e403c5e081a9412613c11bec35e916cc221be10688dbc381",
+    "cap-runtime/agentic_cap/tabletop_views.py": "3282dfada76ca94840a6e35bfe03824fd2f8f86729fb8c13868a18271dc20bd8",
+    "cap-runtime/agentic_cap/core.py": "584052294f3740c66c4ae56a62e3cca1f159ae60757fd72e0f365e8876ed01d5",
+    "cap-runtime/agentic_cap/tabletop_simulation.py": "0cfc5137ac332a5c4ca90caa74f04456eb5bbec546f9e78f84ec0b16b65787b2",
+    "cap-runtime/agentic_cap/tabletop_backend.py": "ea600ea04cf9a81fd7b9c2f355b9cce914bfe6555f429813c275cc9bb0bfeb7f",
+    "cap-runtime/agentic_cap/continuation_resources.py": "bb72830285f1a6538a4ceab7921ee908cf730cabbf083508413a454bbdb2471e",
+    "cap-runtime/agentic_cap/tabletop_campaign.py": "ff43a2c5aa7b972400d6c63ea59e355e81ee088fb41da3937e844fc25662dec6",
+    "cap-runtime/agentic_cap/holding.py": "c67e0e703440cbecabf731768b5995444c795149cef751f0383824c90125ad81",
+    "cap-runtime/agentic_cap/placement_evidence.py": "1ac28c604783081630f9058d43960cc0c085ad58a8bd5dc4ccff597c30d6c543",
+    "cap-runtime/agentic_cap/tabletop_sensors.py": "cd3198c094bccd7bb89c6a77f617d211154c00b5ca3372b19d41e6dc7bbb36b3",
+    "cap-runtime/agentic_cap/active_evidence.py": "1781bcb275278229bfe10d15a4fe669914264251665666ff99c58403dca25a5e",
+    "cap-runtime/agentic_cap/tabletop_recovery.py": "ebc67a426a083816bf7783cbea38bd0f05e7d26faf97fe246f7e182d82cf7b54",
+    "cap-runtime/agentic_cap/tabletop_fixture.py": "f0a6fa53207beafc8c99ba8caf604ed6cdc94c5052bfed70f70f3016f9bb89a1",
+    "cap-runtime/agentic_cap/tabletop_evidence.py": "3f27362117f83db358c7a3106c81ea74d1d5e69ac0c7fd2aa5f6cd90143cf9ba",
+    "cap-runtime/agentic_cap/tabletop_memory.py": "db54f17f9c4e5734da4a6a6fda18be24aa71cd3386ade1e510ec910aafff4ce7",
+    "cap-runtime/agentic_cap/tabletop_multiview.py": "cdd315fd1e96e55bc1b6ba6efddf6855621fb4128bf70af3c1f8aac2a6b90c08",
+    "cap-runtime/agentic_cap/public_sensors.py": "e615a6121b4d41432709397f1c00924ffde2579b6b3e3fa0b2929a7850b7d449",
+    "cap-runtime/agentic_cap/tabletop_evaluation.py": "28e5fa26ea22fa5614645fe361860aadaa343bd2d691389b9e3b61fbc2065cad",
+    "runtime/robot/tabletop-model.mjs": "003f3eba6d5c95fd9bfbc9e1bfdb71e578b5e7fa0a09a79fdc24a5e942f99b18",
+    "runtime/scripts/rgbd-occlusion-trial.mjs": "96f1758cdc9a160749377d04066f874a6fe0a3baf1eea1a0ded2aeed209d421e",
+    "runtime/scripts/tabletop-model-trial.mjs": "31b342d74522654a716db027f0fb3c88701bb1c8ce3b86545957570ebe2c68ba"
+  }
+}

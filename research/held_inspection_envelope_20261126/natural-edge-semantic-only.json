@@ -1,0 +1,13 @@
+{
+  "scope": "offline exploratory reconstructed SAM masks; valid top-to-calibrated-table neighbors only; no verifier modification or release permission",
+  "rows": [
+    {
+      "step": 1640,
+      "status": "no_current_component"
+    },
+    {
+      "step": 2516,
+      "status": "no_current_component"
+    }
+  ]
+}
