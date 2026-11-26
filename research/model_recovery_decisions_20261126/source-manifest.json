@@ -1,0 +1,7 @@
+{
+  "cap-runtime/experiments/model_recovery_fixture.py": "a10cb3703c0e4876d4dbdcd4e1c737cb7cb6e5222931c2be381cc4143004761b",
+  "runtime/scripts/model-recovery-fixture-probe.mjs": "49c6114aa8e4b123afb2f171b203cee7a3261032e704d561eda1dd46d5e1e5c5",
+  "runtime/robot/coordinator.mjs": "8d52af19e19adcf9cfa9de1d9d50f25ced367523a71e9e004766e86c91ef4045",
+  "runtime/robot/tabletop-model.mjs": "e56063fcd626e00cfcdcbb43efd278f336cacabb2bf78ea6427621ecb0f43a7f",
+  "cap-runtime/agentic_cap/tabletop_recovery.py": "dbd891c4bb59548e82c5372b7d0fc5f89bcb1d5287e164f02a1f68dbf271058c"
+}

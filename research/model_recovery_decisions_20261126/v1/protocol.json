@@ -1,0 +1,19 @@
+{
+  "fixture_only": true,
+  "model": "gpt-5.6-sol",
+  "model_fingerprint": "f85ca2bb0081fc65749367540fbe3d6fc070cb0ec285580a847e4ca6bfc22294",
+  "s2_fingerprint": "24956a0e11ffcb01c1c83ed89c5681182e2f104edac48b21025dceda8b447bec",
+  "modes": [
+    "recoverable",
+    "persistent"
+  ],
+  "trials_per_mode": 1,
+  "goal": "place blue block on grey platform and leave gripper empty",
+  "budgets": {
+    "decisions": 24,
+    "calls": 80,
+    "motion_steps": 3000,
+    "wall_seconds": 600
+  },
+  "scope": "real model decision behavior over synthetic public evidence; not robot performance or frozen benchmark"
+}

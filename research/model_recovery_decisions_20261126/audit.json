@@ -1,0 +1,71 @@
+[
+  {
+    "mode": "recoverable",
+    "fixture_only": true,
+    "episode_id": "75b2ee5bae27c08cfbb3fcd038ac7520",
+    "status": "completed",
+    "used": {
+      "decisions": 9,
+      "calls": 20,
+      "motion_steps": 89,
+      "idle_steps": 3461,
+      "wall_seconds": 35.49766124598682
+    },
+    "view_attempts": 1,
+    "skill_sequence": [
+      "acquire_object",
+      "place_object",
+      "restore_grip_pose",
+      "inspect_object",
+      "inspect_object",
+      "place_object"
+    ],
+    "fault_event_id": 41,
+    "resolved_event_id": 73,
+    "assertions": {
+      "goal_unchanged": true,
+      "single_creation": true,
+      "no_verified_gripper_result_during_fault": true,
+      "within_decision_budget": true,
+      "bounded_views": true,
+      "closed": true,
+      "completed_after_actual_view": true,
+      "distinct_plan_after_failure": true,
+      "exactly_one_failed_place_before_recovery": true
+    }
+  },
+  {
+    "mode": "persistent",
+    "fixture_only": true,
+    "episode_id": "1771824d2ea1d9b0c4b203c2dc64cbe8",
+    "status": "awaiting_user",
+    "used": {
+      "decisions": 8,
+      "calls": 13,
+      "motion_steps": 66,
+      "idle_steps": 3049,
+      "wall_seconds": 31.158377417945303
+    },
+    "view_attempts": 2,
+    "skill_sequence": [
+      "acquire_object",
+      "place_object",
+      "restore_grip_pose",
+      "inspect_object"
+    ],
+    "fault_event_id": 41,
+    "resolved_event_id": null,
+    "assertions": {
+      "goal_unchanged": true,
+      "single_creation": true,
+      "no_verified_gripper_result_during_fault": true,
+      "within_decision_budget": true,
+      "bounded_views": true,
+      "closed": true,
+      "model_requested_help": true,
+      "hold_confirmed": true,
+      "no_retry_after_unknown": true,
+      "no_finish_success": true
+    }
+  }
+]
