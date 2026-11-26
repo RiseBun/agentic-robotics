@@ -1,0 +1,22 @@
+[
+  {
+    "dy": -0.08,
+    "samples": 961,
+    "depth_valid_fraction": 0.5005202913631633,
+    "projected_valid_span_ratio_xy": [
+      1.0,
+      1.0
+    ],
+    "scope": "projection through archived pixel dropout only; not future object visibility or collision proof"
+  },
+  {
+    "dy": 0.08,
+    "samples": 961,
+    "depth_valid_fraction": 0.4068678459937565,
+    "projected_valid_span_ratio_xy": [
+      1.0,
+      1.0
+    ],
+    "scope": "projection through archived pixel dropout only; not future object visibility or collision proof"
+  }
+]

@@ -1,0 +1,538 @@
+{
+  "scope": "offline reconstruction with new SAM identity on archived public RGB-D; not exact live identities or independent success evaluation",
+  "initial_step": 306,
+  "reference": {
+    "status": "available",
+    "camera": "overview",
+    "contributing_cameras": [
+      "overview"
+    ],
+    "plane_normal_xyz": [
+      0.05935035445780359,
+      -0.005687826806659357,
+      0.9982210096225936
+    ],
+    "plane_residual_m": 0.005386419355769602,
+    "camera_center_world": [
+      0.5,
+      0.0,
+      1.35
+    ],
+    "surface_min_xyz": [
+      0.09028072203038845,
+      0.05358732125904138,
+      0.8043477030205766
+    ],
+    "surface_max_xyz": [
+      0.22507743031659522,
+      0.18939800707398546,
+      0.8327663880502938
+    ],
+    "surface_q02_xyz": [
+      0.09313489272653924,
+      0.054433127007663805,
+      0.8085668186751044
+    ],
+    "surface_q98_xyz": [
+      0.22507061320110172,
+      0.18651241940643704,
+      0.8327623624714517
+    ],
+    "surface_median_xyz": [
+      0.17364975737166122,
+      0.12046003344623434,
+      0.8326352488770208
+    ],
+    "surface_span_xyz": [
+      0.13193572047456248,
+      0.13207929239877322,
+      0.024195543796347363
+    ],
+    "point_count": 4162,
+    "scope": "calibrated_current_visible_surface_union_only",
+    "captured_at": 1795687704.304099,
+    "identity_observed_at": 1795687704.3007152,
+    "source": "sam3_identity_current_multiview_rgbd_tracking",
+    "view_geometry": {
+      "overview": {
+        "surface_q02_xyz": [
+          0.09313489272653924,
+          0.054433127007663805,
+          0.8085668186751044
+        ],
+        "surface_q98_xyz": [
+          0.22507061320110172,
+          0.18651241940643704,
+          0.8327623624714517
+        ],
+        "point_count": 4162
+      }
+    },
+    "observed_height_m": 0.0327623624714517
+  },
+  "identities": {
+    "block_a": {
+      "chroma": [
+        0.07692307692307693,
+        0.23255813953488372,
+        0.6918604651162791
+      ],
+      "score": 0.921875,
+      "identity_observed_at": 1795687704.3007152
+    },
+    "block_b": {
+      "chroma": [
+        0.5138004246284501,
+        0.4288747346072187,
+        0.05732484076433121
+      ],
+      "score": 0.87109375,
+      "identity_observed_at": 1795687704.3007152
+    },
+    "cylinder_a": {
+      "chroma": [
+        0.4060324825986079,
+        0.09280742459396751,
+        0.5
+      ],
+      "score": 0.9453125,
+      "identity_observed_at": 1795687704.3007152
+    },
+    "platform": {
+      "chroma": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "score": 0.4921875,
+      "identity_observed_at": 1795687704.3007152
+    }
+  },
+  "rows": [
+    {
+      "step": 306,
+      "cameras": {
+        "overview": {
+          "status": "available",
+          "camera": "overview",
+          "contributing_cameras": [
+            "overview"
+          ],
+          "plane_normal_xyz": [
+            0.045607530383249155,
+            -0.008904129401716587,
+            0.9989197513574043
+          ],
+          "plane_residual_m": 0.00465110239047371,
+          "camera_center_world": [
+            0.5,
+            0.0,
+            1.35
+          ],
+          "surface_min_xyz": [
+            0.08980522974615834,
+            0.05355078269616932,
+            0.8051297201444721
+          ],
+          "surface_max_xyz": [
+            0.22507743031659522,
+            0.1900093907159313,
+            0.8327663880502938
+          ],
+          "surface_q02_xyz": [
+            0.09313489272653924,
+            0.05406460821476792,
+            0.8110122396677613
+          ],
+          "surface_q98_xyz": [
+            0.22507061320110172,
+            0.1872227999632833,
+            0.8327623624714517
+          ],
+          "surface_median_xyz": [
+            0.17364975737166122,
+            0.12067758329326658,
+            0.8326402885479403
+          ],
+          "surface_span_xyz": [
+            0.13193572047456248,
+            0.1331581917485154,
+            0.021750122803690486
+          ],
+          "point_count": 4150,
+          "scope": "calibrated_current_visible_surface_union_only",
+          "captured_at": 1795687704.304099,
+          "identity_observed_at": 1795687704.3007152,
+          "source": "sam3_identity_current_multiview_rgbd_tracking",
+          "view_geometry": {
+            "overview": {
+              "surface_q02_xyz": [
+                0.09313489272653924,
+                0.05406460821476792,
+                0.8110122396677613
+              ],
+              "surface_q98_xyz": [
+                0.22507061320110172,
+                0.1872227999632833,
+                0.8327623624714517
+              ],
+              "point_count": 4150
+            }
+          },
+          "span_ratio_xy": [
+            1.0,
+            1.0081685730605277
+          ],
+          "support_extent_established": true
+        },
+        "wrist": {
+          "status": "available",
+          "camera": "wrist",
+          "contributing_cameras": [
+            "wrist"
+          ],
+          "plane_normal_xyz": [
+            0.03925878742312162,
+            0.012004533331137601,
+            -0.999156964039969
+          ],
+          "plane_residual_m": 0.004686462226318829,
+          "camera_center_world": [
+            -0.06656876989617981,
+            0.003007224088987853,
+            1.1262076125948277
+          ],
+          "surface_min_xyz": [
+            0.09164455507131679,
+            0.05520211567301342,
+            0.805186917309233
+          ],
+          "surface_max_xyz": [
+            0.22811509629286597,
+            0.19158400341611484,
+            0.8316502536911047
+          ],
+          "surface_q02_xyz": [
+            0.09167267030397845,
+            0.05526823963359539,
+            0.8103633458581603
+          ],
+          "surface_q98_xyz": [
+            0.22531527049607547,
+            0.1887729936663951,
+            0.8316496262731014
+          ],
+          "surface_median_xyz": [
+            0.1499208189422799,
+            0.12182524163922817,
+            0.8316399918208075
+          ],
+          "surface_span_xyz": [
+            0.133642600192097,
+            0.1335047540327997,
+            0.021286280414941072
+          ],
+          "point_count": 4416,
+          "scope": "calibrated_current_visible_surface_union_only",
+          "captured_at": 1795687704.304099,
+          "identity_observed_at": 1795687704.3007152,
+          "source": "sam3_identity_current_multiview_rgbd_tracking",
+          "view_geometry": {
+            "wrist": {
+              "surface_q02_xyz": [
+                0.09167267030397845,
+                0.05526823963359539,
+                0.8103633458581603
+              ],
+              "surface_q98_xyz": [
+                0.22531527049607547,
+                0.1887729936663951,
+                0.8316496262731014
+              ],
+              "point_count": 4416
+            }
+          },
+          "span_ratio_xy": [
+            1.012937206932247,
+            1.010792468737058
+          ],
+          "support_extent_established": true
+        }
+      },
+      "selected": "overview",
+      "union_available": "available",
+      "union_support_extent_established": true
+    },
+    {
+      "step": 1290,
+      "cameras": {
+        "overview": {
+          "status": "unknown",
+          "reason": "no_current_camera_geometry"
+        },
+        "wrist": {
+          "status": "available",
+          "camera": "wrist",
+          "contributing_cameras": [
+            "wrist"
+          ],
+          "plane_normal_xyz": [
+            5.1860958347926946e-08,
+            1.3482718476013234e-07,
+            0.9999999999999897
+          ],
+          "plane_residual_m": 3.143163134303988e-08,
+          "camera_center_world": [
+            0.10507576949053446,
+            0.12054267031224243,
+            0.9683720672023912
+          ],
+          "surface_min_xyz": [
+            0.08994523272448171,
+            0.16434746237398062,
+            0.8313652435977172
+          ],
+          "surface_max_xyz": [
+            0.17051439971695267,
+            0.18979826425378343,
+            0.831365375889612
+          ],
+          "surface_q02_xyz": [
+            0.09084223210957797,
+            0.1643795726653312,
+            0.8313652552726544
+          ],
+          "surface_q98_xyz": [
+            0.16613985883146046,
+            0.18977594681451315,
+            0.8313653663522066
+          ],
+          "surface_median_xyz": [
+            0.12761593208892508,
+            0.17752741265618704,
+            0.8313653109019811
+          ],
+          "surface_span_xyz": [
+            0.07529762672188249,
+            0.025396374149181944,
+            1.1107955222300347e-07
+          ],
+          "point_count": 2582,
+          "scope": "calibrated_current_visible_surface_union_only",
+          "captured_at": 1795687754.8957934,
+          "identity_observed_at": 1795687704.3007152,
+          "source": "sam3_identity_current_multiview_rgbd_tracking",
+          "view_geometry": {
+            "wrist": {
+              "surface_q02_xyz": [
+                0.09084223210957797,
+                0.1643795726653312,
+                0.8313652552726544
+              ],
+              "surface_q98_xyz": [
+                0.16613985883146046,
+                0.18977594681451315,
+                0.8313653663522066
+              ],
+              "point_count": 2582
+            }
+          },
+          "span_ratio_xy": [
+            0.5707144846827138,
+            0.1922812705000366
+          ],
+          "support_extent_established": false
+        }
+      },
+      "selected": "wrist",
+      "union_available": "available",
+      "union_support_extent_established": false
+    },
+    {
+      "step": 1583,
+      "cameras": {
+        "overview": {
+          "status": "unknown",
+          "reason": "no_current_camera_geometry"
+        },
+        "wrist": {
+          "status": "unknown",
+          "reason": "no_current_camera_geometry"
+        }
+      },
+      "selected": null,
+      "union_available": "unknown",
+      "union_support_extent_established": false
+    },
+    {
+      "step": 1902,
+      "cameras": {
+        "overview": {
+          "status": "unknown",
+          "reason": "no_current_camera_geometry"
+        },
+        "wrist": {
+          "status": "available",
+          "camera": "wrist",
+          "contributing_cameras": [
+            "wrist"
+          ],
+          "plane_normal_xyz": [
+            -2.1436493755524482e-07,
+            -7.481705929089129e-08,
+            0.9999999999999744
+          ],
+          "plane_residual_m": 1.1935768017215342e-07,
+          "camera_center_world": [
+            0.10496421048526139,
+            0.04044103141339651,
+            1.1009435025026484
+          ],
+          "surface_min_xyz": [
+            0.08878561621688177,
+            0.12659962003161043,
+            0.8313666306336212
+          ],
+          "surface_max_xyz": [
+            0.2232170210758719,
+            0.18875656023945822,
+            0.8313671083282452
+          ],
+          "surface_q02_xyz": [
+            0.09056396110180666,
+            0.1267061500840192,
+            0.8313666606760516
+          ],
+          "surface_q98_xyz": [
+            0.21975272282928351,
+            0.1886855725468748,
+            0.8313670698256684
+          ],
+          "surface_median_xyz": [
+            0.15431048319580587,
+            0.1593564221068273,
+            0.8313668662223587
+          ],
+          "surface_span_xyz": [
+            0.12918876172747684,
+            0.06197942246285559,
+            4.0914961685345475e-07
+          ],
+          "point_count": 2839,
+          "scope": "calibrated_current_visible_surface_union_only",
+          "captured_at": 1795687786.8304358,
+          "identity_observed_at": 1795687704.3007152,
+          "source": "sam3_identity_current_multiview_rgbd_tracking",
+          "view_geometry": {
+            "wrist": {
+              "surface_q02_xyz": [
+                0.09056396110180666,
+                0.1267061500840192,
+                0.8313666606760516
+              ],
+              "surface_q98_xyz": [
+                0.21975272282928351,
+                0.1886855725468748,
+                0.8313670698256684
+              ],
+              "point_count": 2839
+            }
+          },
+          "span_ratio_xy": [
+            0.979179567616677,
+            0.46925919526982013
+          ],
+          "support_extent_established": false
+        }
+      },
+      "selected": "wrist",
+      "union_available": "available",
+      "union_support_extent_established": false
+    },
+    {
+      "step": 2009,
+      "cameras": {
+        "overview": {
+          "status": "unknown",
+          "reason": "no_current_camera_geometry"
+        },
+        "wrist": {
+          "status": "available",
+          "camera": "wrist",
+          "contributing_cameras": [
+            "wrist"
+          ],
+          "plane_normal_xyz": [
+            2.8125094903899158e-08,
+            -1.9446591825650046e-07,
+            0.9999999999999808
+          ],
+          "plane_residual_m": 1.1915363281574949e-07,
+          "camera_center_world": [
+            0.10491964838324436,
+            0.20032804717743033,
+            1.10089196068662
+          ],
+          "surface_min_xyz": [
+            0.08928978355591345,
+            0.05393311143167753,
+            0.8313659029969283
+          ],
+          "surface_max_xyz": [
+            0.22374187717676675,
+            0.10424319394790803,
+            0.8313663777554476
+          ],
+          "surface_q02_xyz": [
+            0.0910826311135365,
+            0.05418269613443418,
+            0.8313659345106599
+          ],
+          "surface_q98_xyz": [
+            0.22029322637331183,
+            0.10401310445386024,
+            0.8313663390054883
+          ],
+          "surface_median_xyz": [
+            0.15486589110118332,
+            0.07836446294422936,
+            0.8313661367452216
+          ],
+          "surface_span_xyz": [
+            0.12921059525977535,
+            0.049830408319426055,
+            4.044948284098737e-07
+          ],
+          "point_count": 2334,
+          "scope": "calibrated_current_visible_surface_union_only",
+          "captured_at": 1795687792.5692945,
+          "identity_observed_at": 1795687704.3007152,
+          "source": "sam3_identity_current_multiview_rgbd_tracking",
+          "view_geometry": {
+            "wrist": {
+              "surface_q02_xyz": [
+                0.0910826311135365,
+                0.05418269613443418,
+                0.8313659345106599
+              ],
+              "surface_q98_xyz": [
+                0.22029322637331183,
+                0.10401310445386024,
+                0.8313663390054883
+              ],
+              "point_count": 2334
+            }
+          },
+          "span_ratio_xy": [
+            0.9793450537505305,
+            0.37727646336095066
+          ],
+          "support_extent_established": false
+        }
+      },
+      "selected": "wrist",
+      "union_available": "available",
+      "union_support_extent_established": false
+    }
+  ]
+}
