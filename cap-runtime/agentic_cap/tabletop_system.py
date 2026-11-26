@@ -3,6 +3,7 @@ import copy
 import time
 from .tabletop_domain import SKILLS, digest, fact_key, condition_from_key, effects_for, validate_plan
 from .tabletop_scene import public_catalog, system_description
+from .tabletop_recovery import context_for, constraint, operation
 
 
 class TabletopSystem:
@@ -71,9 +72,18 @@ class TabletopSystem:
         satisfied={n['plan_node'] for n in nodes if n['status'] in {'completed','satisfied'}}
         for n in nodes:
             if n['status']=='blocked' and fresh and all(d in satisfied for d in n['depends_on']) and all(facts[c['fact']]['status']==c['expected'] for c in n['requirements']):n['status']='ready'
+        for n in nodes:
+            skill=operation(n)
+            context=context_for(skill,self.goal_version,snapshot,segments)
+            n['recovery_context_key']=digest(context)
+            retry=constraint(skill,context,segments)
+            if retry:
+                n['retry_constraint']=retry
+                if retry['blocked'] and n['status']=='ready':n['status']='blocked'
         versions=snapshot.get('object_versions',{})
         signature=dict(goal_version=self.goal_version,plan_version=self.plan_version,revision=revision,
-                       facts={k:v['status'] for k,v in facts.items()},object_versions=versions)
+                       facts={k:v['status'] for k,v in facts.items()},object_versions=versions,
+                       recovery={n['id']:n.get('retry_constraint') for n in nodes})
         state_id=digest(signature)
         ready=[n['id'] for n in nodes if n['status']=='ready'] if not active and not assistance else []
         phase='running' if active else 'holding' if hold_pending else 'awaiting_user' if assistance else 'verified' if g['status']=='verified' else 'ready'

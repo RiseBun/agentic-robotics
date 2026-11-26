@@ -1,0 +1,12 @@
+{
+  "stage": "development",
+  "task": "support",
+  "seed": 202,
+  "perception": "single_view",
+  "experience": false,
+  "unchanged_failed_attempt_limit": 2,
+  "budgets_changed": false,
+  "verification_thresholds_changed": false,
+  "fault_scope": "deterministic protocol fixture, no physical benchmark claim",
+  "physical_scope": "one real-model simulation compatibility case; independent score only after close"
+}

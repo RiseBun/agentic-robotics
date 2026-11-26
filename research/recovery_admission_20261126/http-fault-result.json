@@ -1,0 +1,28 @@
+{
+  "fixture_only": true,
+  "failed_placement_attempts": 2,
+  "blocked_status": 409,
+  "blocked_code": "RECOVERY_BLOCKED",
+  "bound_code_status": 409,
+  "bound_code_error": "RECOVERY_BLOCKED",
+  "unchanged_calls_and_motion": true,
+  "unchanged_segment_count": true,
+  "idempotent_replay": true,
+  "stop_confirmed": true,
+  "one_environment": true,
+  "public_retry_constraint": {
+    "blocked": true,
+    "context_key": "b124e2d7f696a4bbf7f2c465c1d0daa2d42f3bfcb599bef35d54653716045785",
+    "failures": 2,
+    "maximum_unchanged_failures": 2,
+    "failed_segments": [
+      "37a3221dcafe4bd899eb82ef7085c318",
+      "6a9e694aa18f4fda8eb406e135900bb3"
+    ],
+    "last_failed_api": "set_gripper",
+    "reason": "unchanged_operation_failures",
+    "next_action": "acquire_distinct_evidence_or_replan_or_ask_user",
+    "scope": "goal-local semantic operation; node labels, code wording, fresh timestamps and retreat do not clear failures"
+  },
+  "scope": "synthetic protocol fault, not a physical robot or model recovery score"
+}

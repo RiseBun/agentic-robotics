@@ -1,0 +1,8 @@
+{
+  "cap-runtime/agentic_cap/tabletop_recovery.py": "dbd891c4bb59548e82c5372b7d0fc5f89bcb1d5287e164f02a1f68dbf271058c",
+  "cap-runtime/agentic_cap/tabletop_system.py": "72bec64d728fd94511fdec6eb66910eb696acfe627445312582e04a1dcf487e4",
+  "cap-runtime/agentic_cap/tabletop_episode.py": "a933afe1a6e7e81d5dcee1f2b96938b98bf9011a3e8c1e910c77a2612cdad1f2",
+  "cap-runtime/agentic_cap/tabletop_scene.py": "7861dcb01e5a146525d0567e90b41e8e8d59320fc96a626e3f2e1ad7c1fb53f5",
+  "runtime/robot/coordinator.mjs": "8d52af19e19adcf9cfa9de1d9d50f25ced367523a71e9e004766e86c91ef4045",
+  "runtime/robot/tabletop-model.mjs": "e56063fcd626e00cfcdcbb43efd278f336cacabb2bf78ea6427621ecb0f43a7f"
+}

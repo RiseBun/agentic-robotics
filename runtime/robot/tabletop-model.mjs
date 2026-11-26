@@ -25,6 +25,13 @@ inspect_object(object,evidence="geometry"),restore_grip_pose(object),verify_effe
 An inspection may target visible, geometry, holding, or support_geometry. In a plan use skill.arguments.evidence to name the missing fact. Visibility alone is not complete support geometry or current custody.
 A restore_grip_pose skill is available only with verified recorded_descent evidence. It reverses the recorded descent without releasing, then rechecks custody. After a refused low-pose release, prefer this restoration before another placement attempt.
 Bound code may use only APIs for that node operation; inspect_object requires an inspect node, and restore_grip_pose requires a restore node. Propose a revised plan to add these nodes when needed. Plans reference provider-produced geometry.
+Nodes may expose retry_constraint with failures and blocked. Two failed attempts under
+unchanged operation conditions block that operation across plan rewrites and bound code.
+Renaming nodes, waiting, new frame timestamps or restore_grip_pose alone do not reset it.
+Choose a relevant inspect node with an actual distinct view, another supported destination
+or strategy, or ask_user. Passive successful inspection alone does not reset failures.
+A new verified grasp or relevant support version change is re-evaluated by Runtime.
+Never propose a new user goal or regrasp just to clear a retry guard.
 Grasp sequence: plan_grasp, set_gripper("open"), approach, grasp, set_gripper("closed"), lift.
 Place sequence: plan_place, approach, place, set_gripper("open"), retreat.
 Actual gripper changes use set_gripper, never execute_stage. Low-level calls still check

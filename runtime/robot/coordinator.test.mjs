@@ -1115,3 +1115,22 @@ test('close drains the event subscriber and rejects buffered callbacks after abo
     await assert.rejects(fs.stat(c.root),{code:'ENOENT'});
   } finally {release.resolve();await closing;await cleanup();}
 });
+
+
+test('runtime recovery admission rejection requests confirmed assistance without another dispatch',async()=>{
+  const {c,client,cleanup}=await setup(async(_channel,ctx)=>ctx.mode==='interpretation'?observe:run);
+  let dispatches=0;
+  const request=client.request.bind(client);
+  client.request=async(route,body)=>{
+    if(route.endsWith('/segments')){dispatches++;throw Object.assign(new Error('unchanged retry blocked'),{code:'RECOVERY_BLOCKED'});}
+    return request(route,body);
+  };
+  try {
+    await c.start({task:'tabletop',text:'hold the block',seed:201});await c.loopPromise;
+    assert.equal(dispatches,1);
+    assert.equal(c.state.status,'awaiting_user');
+    assert.equal(c.state.stop_confirmed,true);
+    assert.equal(c.state.assistance.origin,'recovery_guard');
+    assert.equal(Object.keys(c.state.episode.segments).length,0);
+  }finally{await c.close();await cleanup();}
+});

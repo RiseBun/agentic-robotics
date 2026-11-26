@@ -490,6 +490,11 @@ export class RobotCoordinator {
           if(this.modelProtocolFailures>=2){await this.requestAssistance(epoch,'model_protocol','The model repeatedly returned an invalid decision; the robot is held and no invalid response was executed.');return;}
           continue;
         }
+        if (error.code === 'RECOVERY_BLOCKED') {
+          await this.requestAssistance(epoch,'recovery_guard',
+            '相同条件下的操作已重复失败，Runtime 已阻止再次派发；需要新的取证条件、不同策略或用户协助。');
+          return;
+        }
         if (error.code === 'AWAITING_USER') {
           this.assertCurrent(epoch);
           await this.refresh();

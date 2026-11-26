@@ -40,6 +40,20 @@ class TabletopEpisode(Episode):
         library=SkillLibrary(root)
         return dict(enabled=True,library_fingerprint=library.fingerprint(),items=library.retrieve(self.observe()['system']))
 
+    def _bind_task(self,revision,state_id,task_node):
+        from .tabletop_recovery import RecoveryBlocked,operation
+        # Enforce before TaskExecutive converts all blocked nodes to generic
+        # stale dependencies. Both skill and bound-code paths pass this gate.
+        current=self.observe()['system']
+        node=next((n for n in current['task']['nodes'] if n['id']==task_node),None)
+        retry=(node or {}).get('retry_constraint',{})
+        if revision==self.revision and retry.get('blocked'):
+            self.event('recovery_dispatch_blocked',node_id=task_node,retry_constraint=retry)
+            raise RecoveryBlocked('Repeated operation requires changed evidence, a different strategy, or user assistance')
+        snapshot,system,node,binding=super()._bind_task(revision,state_id,task_node)
+        binding.update(recovery_context_key=node['recovery_context_key'],recovery_operation=operation(node))
+        return snapshot,system,node,binding
+
     def submit_plan(self,request_id,revision,plan):
         if self.policy!='system':raise ValueError('Direct CaP does not accept a task graph')
         return self._accept_plan(request_id,revision,plan)

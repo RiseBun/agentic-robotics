@@ -1,0 +1,44 @@
+{
+  "episode_id": "28107ed367f9cbec8a0007b461f58853",
+  "seed": 202,
+  "status": "scored",
+  "physical_verified": true,
+  "public_verified": true,
+  "false_completion": false,
+  "used": {
+    "decisions": 8,
+    "calls": 17,
+    "motion_steps": 396,
+    "idle_steps": 1180,
+    "wall_seconds": 83.6584684390109
+  },
+  "evaluator_version": 3,
+  "requested_goal": {
+    "all": [
+      {
+        "predicate": "on",
+        "object": "block_a",
+        "support": "platform"
+      },
+      {
+        "predicate": "empty_gripper"
+      }
+    ]
+  },
+  "registered_goal": {
+    "all": [
+      {
+        "predicate": "on",
+        "object": "block_a",
+        "support": "platform"
+      },
+      {
+        "predicate": "empty_gripper"
+      }
+    ]
+  },
+  "registered_goal_matches_expected": true,
+  "physical_window_seconds": 1.049999999997553,
+  "scope": "limited rigid tabletop evaluator; no universal physical correctness claim",
+  "task_wall_seconds": 86.547
+}
