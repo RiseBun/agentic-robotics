@@ -1,0 +1,9 @@
+{
+  "base_commit": "676001ab7e03283a723cf8d717b71a6afd763003",
+  "files": {
+    "cap-runtime/agentic_cap/tabletop_actions.py": "5dc02469c7fa7155a0b81e02253323a2365249528e32164f364afded655f8807",
+    "cap-runtime/tests/test_joint_inspection_evidence.py": "1e3ceb66ee2bf7e3c4e27973b313c3f3fcbd1a5e950f6d1d27008bf4421bbb14",
+    "cap-runtime/agentic_cap/tabletop_backend.py": "674369847064df5db46ea25d76517f7407b1f7c76fb6f386caf1f97ebe40ce8e",
+    "cap-runtime/agentic_cap/tabletop_sensors.py": "9cac943012a801fad784f87bafe03f2dc91b03053f9cf4ae848c44f0c6c1f73e"
+  }
+}

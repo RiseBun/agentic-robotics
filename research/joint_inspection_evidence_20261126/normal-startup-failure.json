@@ -1,0 +1,7 @@
+{
+  "stage": "before_episode_start",
+  "command": "rgbd-occlusion-trial.mjs --dropout none",
+  "reason": "unsupported mode; fault runner accepts only partial or persistent",
+  "included_in_task_scores": false,
+  "replacement": "tabletop-model-trial.mjs --inspection coverage; fresh normal-202-v2 output"
+}

@@ -1,0 +1,12 @@
+{
+  "stage": "development",
+  "task": "support",
+  "seed": 201,
+  "inspection": "coverage",
+  "dropout": "same partial image-plane mask",
+  "experience": false,
+  "change": "bounded joint target/custody post-view evidence wait; no next motion on unknown custody",
+  "wait_seconds": 2.5,
+  "verification_thresholds_changed": false,
+  "view_count_changed": false
+}

@@ -1,0 +1,14 @@
+{
+  "python": {
+    "exit_code": 0
+  },
+  "node": {
+    "exit_code": 0
+  },
+  "counts": {
+    "python": 451,
+    "node": 132,
+    "new_joint_tests": 4
+  },
+  "diff_check_exit_code": 0
+}

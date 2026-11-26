@@ -228,9 +228,22 @@ def tools(backend,segment):
                 with e.cv:
                     start_tick=b.tick
                     while b.tick-start_tick<20:e.checkpoint(segment);e.cv.wait(.03)
+                # A physics wait is not a measurement window. Stay at this
+                # view until independent post-motion evidence is ready, bounded
+                # by the same cancellation, goal revision and task budget.
+                joint={'all':list(desired['all'])}
+                if held and not (obj==held and evidence=='holding'):
+                    joint['all'].append(dict(predicate='holding',object=held))
+                if hasattr(b,'wait_public_effect'):
+                    measured=b.wait_public_effect(segment,joint)
+                else:measured=b.verify(joint,e.observe())
                 current=e.observe()
-                if held and b.verify({'all':[dict(predicate='holding',object=held)]},current)['status']!='verified':
-                    result=dict(status='unknown',reason='holding_not_verified_after_inspection');break
+                custody=b.verify({'all':[dict(predicate='holding',object=held)]},current) if held else None
+                e.event('inspection_post_view_evidence',object=obj,view_index=views,
+                    joint_result=measured,custody=custody,evidence_ref=current.get('evidence_ref'))
+                if held and custody['status']!='verified':
+                    result=dict(status='unknown',reason='holding_not_verified_after_inspection',
+                        joint_evidence=measured,custody=custody);break
                 result=b.verify(desired,current)
                 if result['status']=='verified':break
         out=dict(status='available' if result['status']=='verified' else 'unknown',views_used=views,object=obj,
