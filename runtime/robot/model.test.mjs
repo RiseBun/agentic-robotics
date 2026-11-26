@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { modelInput, requestDecision } from './model.mjs';
+import { modelInput, parseDecision, requestDecision } from './model.mjs';
 
 function fixture() {
   const segment = {id:'bad',execution:'failed',code:'p=get_object_pose("green cube")\nz=p[0][2]\ngoto_pose([p[0][0],p[0][1],nz],[0,0,1,0])',
@@ -70,4 +70,39 @@ test('repair allows assistance but rejects observe/finish; abort signal reaches 
   await assert.rejects(requestDecision(channel,c,[],abort.signal,async()=>{},async(url,options)=>{
     options.signal.throwIfAborted();
   }),{name:'AbortError'});
+});
+
+test('bound code repair retains the Runtime node and rebinds its current state reference', async () => {
+  const c = fixture();
+  c.recent_attempts[0].task_binding = { node_id: '2:clear', goal_version: 2 };
+  c.robot_system = { contract_version: 1, goal_version: 2, state_id: 'a'.repeat(64), task: { nodes: [{ id: '2:clear' }] } };
+  const decision = await requestDecision(channel, c, [], new AbortController().signal, async () => {}, async () => output({
+    decision: 'run_code', message: 'fixed', remaining_steps: [], code: 'z=1',
+    task_ref: { state_id: 'b'.repeat(64), task_node: '2:place' }
+  }));
+  assert.deepEqual(decision.task_ref, { state_id: c.robot_system.state_id, task_node: '2:clear' });
+  assert.deepEqual(decision.contract, c.recent_attempts[0].contract);
+  c.robot_system.goal_version = 3;
+  assert.equal(modelInput(c, []).repair, null);
+});
+
+test('code task references cannot include model-defined conditions or unsupported nodes', () => {
+  const decision = { decision: 'run_code', message: 'bound', remaining_steps: [], code: 'pass',
+    task_ref: { state_id: 'c'.repeat(64), task_node: '1:clear' } };
+  assert.deepEqual(parseDecision(JSON.stringify(decision)).task_ref, decision.task_ref);
+  for (const ref of [{ ...decision.task_ref, requirements: [] }, { ...decision.task_ref, task_node: '1:shell' },
+    { ...decision.task_ref, state_id: 'old' }]) {
+    assert.throws(() => parseDecision(JSON.stringify({ ...decision, task_ref: ref })));
+  }
+});
+
+
+test('registered alternate reorientation node is accepted only through the skill decision protocol',()=>{
+  const value={decision:'run_skill',message:'Try bounded high-clearance alternative',remaining_steps:[],
+    state_id:'a'.repeat(64),task_node:'1:reorient',skill:{name:'reorient_held_object',arguments:{object:'red cube'}}};
+  assert.equal(parseDecision(JSON.stringify(value)).task_node,'1:reorient');
+  assert.throws(()=>parseDecision(JSON.stringify({...value,code:'open_gripper()'})));
+  assert.throws(()=>parseDecision(JSON.stringify({...value,task_node:'1:unregistered'})));
+  assert.throws(()=>parseDecision(JSON.stringify({decision:'run_code',message:'bypass',remaining_steps:[],code:'open_gripper()',
+    task_ref:{state_id:value.state_id,task_node:'1:reorient'}})));
 });

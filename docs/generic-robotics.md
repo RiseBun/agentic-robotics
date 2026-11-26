@@ -1,0 +1,105 @@
+# 通用桌面实验模式
+
+本模式在 Thor 的 `/home/li/projects/agentic-robotics` 开发，保留旧方块任务。
+
+## 执行职责
+
+- S2：embuddies 单主模型提出目标、动态计划、技能、短代码、取证和恢复。
+- Harness：公开事实、证据来源、任务版本、节点依赖、预算和三值验收。
+- S1：公开 RGB-D / SAM3 身份与当前图像跟踪、GraspNet 和测量几何候选、ASPIRE/cuRobo 规划、受限动作。
+- S0：唯一物理控制线程；感知、模型和规划请求不拥有仿真步进权。
+- Monitor：停止、换目标、超时和公开持有证据反驳；不是硬件急停认证。
+- 离线经验：proposed → verified → library；验证种子 301/302；默认关闭。
+
+## 接口
+
+`GET /system` 返回公开机器人、相机、坐标约定、对象目录和区域配置。
+
+`POST /episodes` 新模式示例：
+
+```json
+{"request_id":"unique-id","scene":"tabletop_v1","seed":201,"goal":{"all":[{"predicate":"on","object":"block_a","support":"platform"},{"predicate":"empty_gripper"}]}}
+```
+
+`tabletop_stacked_v1` 是另一种初始布局，目标仍独立提供。限制为 24 decisions / 80 calls / 3000 motion steps / 600 seconds；累计不重置。
+
+`POST /episodes/{id}/plan`：
+
+```json
+{"request_id":"plan-id","revision":1,"plan":{"nodes":[{"id":"pick","skill":{"name":"acquire_object","arguments":{"object":"block_a"}},"depends_on":[]},{"id":"put","skill":{"name":"place_object","arguments":{"object":"block_a","support":"platform"}},"depends_on":["pick"]}]}}
+```
+
+节点不接受模型提供的前后置条件。其后通过原 `skills` 或绑定节点的 `segments` 接口执行。参考状态与对象依赖必须在派发时重新检查。
+
+`GET /episodes/{id}/system` 获取描述与提供器状态；`GET /episodes/{id}/experiences` 只返回已发布历史技能建议，不提供导入、验证或发布权限。原有停止、目标变更、事件、验收、导出接口保持不变。
+
+支持目标谓词：holding、on、in_region、empty_gripper 的合取。用户不可通过目标声明 visible 或 geometry 已成立。
+
+## 依赖与标定
+
+ASPIRE 固定 fa00f0e，cuRobo 固定 a35a708，详见依赖清单。上游仓库未修改。ASPIRE/cuRobo 均保留原许可证与 NOTICE。MAESTRO 的扫描/感知规划组织方式、EMOS 的描述/适配方式、TAMPAgent 的证据约束和 ENPIRE 的经验工作流用于设计参考；未把它们整个运行框架复制入产品。
+
+现有 Torch 2.13.0+cu132、MuJoCo 3.5.0 和旧 Runtime 环境保持原版本。cuRobo 在 `.venv-curobo`，通过 HTTP 服务隔离。CUDA_PATH / CUDA_HOME 必须指向该 Thor 已安装的 `nvidia/cu13` 头文件根目录，否则内核运行时编译会报 NVRTC 目录缺失。
+
+机器人 mounting、GraspNet gripper-base → TCP 和 TCP → planner hand 的变换均属于设备适配标定，不能当作任意机器人的通用常量。当前桥接器只实现此仿真 Panda。
+
+RGB-D 跟踪只在身份和外观可区分时提供证据；语义分割、当前几何和时间分别记录。几何规则只适用于目前声明的直立刚体与平面支撑；尚不构成通用碰撞安全或任意语言目标的验证器。
+
+## 测试与评测
+
+开发 201/202，候选验证 301/302，冻结测试 701/702/703。`tabletop_campaign` 定义六类目标、三个条件及 54 次清单；必须先通过 A/B/C 和独立技能验证，不能直接启动冻结试验。
+
+协议 fixture 的完成只证明 API 和状态管理，不计入物理成功。物理真值仅写入 `evaluation-private.jsonl`，在线工具不读取；独立评分要求所有相关任务已关闭。
+
+实际结果、失败及尚未完成的阶段见 `research/generic_robotics_20261124/`。没有通过验收的阶段不得写成已完成或自动切换为默认模式。
+
+## 当前规划范围
+
+cuRobo 桥接返回的是观测点云与机器人碰撞规划结果，尚无挂载物体碰撞模型；遮挡未观测区域也不等于自由空间。因此不能将 collision_aware 字段描述为完整搬运安全认证。物理与模型测试仍按阶段门槛验收。
+
+## 命令与阶段门槛
+
+依赖安装使用现有 Thor Python 3.12 环境：
+
+```sh
+.venv/bin/python scripts/linux/install-generic-planner.py
+```
+
+安装脚本只注册 cuRobo 服务，不自动启动它，也不更改旧 Runtime/工作台的默认模式。现有手工开发服务使用 8118 时，必须先结束它再启动同端口的托管服务。
+
+实际模型开发测试：
+
+```sh
+~/.local/share/agentic-robotics/tools/node/bin/node runtime/scripts/tabletop-model-trial.mjs --output research/new-tabletop-development --task support --seed 201
+```
+
+开发命令只允许种子 201/202。`--condition direct_cap` 使用无 S2 任务图/经验的短代码路径；其操作仍绑定同一注册条件和效果，不因此开放任意机器人权限。`system_with_memory` 必须显式提供已验证、冻结的技能目录。
+
+独立技能验证：
+
+```sh
+cd cap-runtime
+../.venv/bin/python -m experiments.tabletop_skill_validation --library /absolute/candidate-library --candidate CANDIDATE_ID --bindings '{"arg1":"block_a","arg2":"platform"}' --records /absolute/fresh-validation-records
+```
+
+这一步只运行保留的 301/302，不发布技能。源 Runtime/验证契约不一致或物理、公开检查任一失败，都不能晋升。候选可能只是复用已有技能的建议，不等于学习到了新控制能力；实际收益必须通过对照检验。
+
+`experiments.tabletop_campaign` 只有在 A/B/C 和 D_validation 均带有通过证据、技能已发布且模型/Runtime/技能目录已冻结时，才创建并运行 54 次评测。没有满足门槛时，不允许用开发成功样例冒充冻结报告。
+
+## 通用恢复
+
+`restore_grip_pose(object)` 将原方块 Runtime 的记录路径恢复思想用于通用对象。只有当前目标版本、编码器终点、夹爪命令和相关场景版本仍匹配时，才允许反向执行已完成的下降路径。它不释放物体，也不证明重新获得了持有；执行后仍须检查公开证据。
+
+## 本轮验收状态
+
+完整实现记录、失败原因和阶段门槛见 [实现与验收](../research/generic_robotics_20261124/IMPLEMENTATION_STATUS.md)。该文档记录最初实施阶段；后续已完成六类最低闭环覆盖与 54 次冻结对照。最新结论以以下冻结报告为准，通用模式和经验仍不默认开启。
+
+最新后续进展见 [继续推进与验收](../research/generic_robotics_followup_20261124/PROGRESS.md)。
+
+本轮正式54次对照已完成：[冻结结果与负结果](../research/generic_robotics_followup_20261124/FORMAL_RESULTS.md)。三组公开确认均16/18，未观察到经验收益；经验仍默认关闭。
+
+## 多视角候选（2026-11-26）
+
+开发 CLI 可显式增加 `--perception multiview`，默认仍为 `single_view`。候选合并同次采集、时间与标定一致的主相机/腕部相机公开表面；不一致或不可用时保留 unknown，不放宽验证阈值。该选项进入运行指纹及经验契约；旧经验不能未经重新验证直接沿用。
+
+6 次开发运行的物理与公开验收均通过，但单视角对照同样成功，尚未证明收益。详见[开发结果与未完成项](../research/geometry_evidence_20261125/RESULTS.md)。

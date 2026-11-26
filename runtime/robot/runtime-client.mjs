@@ -23,12 +23,12 @@ export class RuntimeClient {
     return response.json();
     }, { signal, milliseconds: Math.min(15_000, timeout), label: 'Runtime request' });
   }
-  async bytes(path, timeout = 15_000) {
+  async bytes(path, timeout = 15_000, parentSignal) {
     return boundedOperation(async signal => {
     const response = await this.fetcher(this.base + path, { headers: { Authorization: `Bearer ${this.token}` }, signal });
     if (!response.ok) throw new Error(`读取执行产物失败（${response.status}）`);
     return Buffer.from(await response.arrayBuffer());
-    }, { milliseconds: Math.min(600_000, timeout), label: 'Runtime artifact' });
+    }, { signal: parentSignal, milliseconds: Math.min(600_000, timeout), label: 'Runtime artifact' });
   }
   async events(episodeId, after, signal, callback) {
     const response = await this.fetcher(`${this.base}/episodes/${episodeId}/events?after=${after}`, {

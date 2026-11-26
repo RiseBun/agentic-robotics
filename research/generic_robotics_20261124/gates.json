@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-11-24T22:45:03.326171+09:00",
+  "release_status": "blocked",
+  "A": {
+    "status": "partial",
+    "execution_semantics": "passed",
+    "reason": "legacy cube_restack remains unknown, paired before-change baseline is also unknown",
+    "evidence": [
+      "checks-final.json",
+      "physical-fault-probe/checks.json",
+      "legacy-regression/results.json",
+      "legacy-before-restack/results.json"
+    ]
+  },
+  "B": {
+    "status": "passed",
+    "scope": "protocol and fixture; not physical task success",
+    "evidence": [
+      "checks-final.json",
+      "../../cap-runtime/tests/test_tabletop.py",
+      "../../runtime/robot/tabletop-model.test.mjs"
+    ]
+  },
+  "C": {
+    "status": "blocked",
+    "reason": "no six-class dual success under current verifier; multi-object recovery exhausted budget; historical false completion retained",
+    "evidence": [
+      "post-fence-development/independent-results.json",
+      "boundary-fixed-development/independent-results-v3.json"
+    ]
+  },
+  "D_validation": {
+    "status": "blocked",
+    "reason": "C is incomplete; no candidate passed independent 301/302 validation; obsolete contracts rejected",
+    "evidence": [
+      "obsolete-candidate-rejection.json",
+      "current-candidates/"
+    ]
+  },
+  "E": {
+    "status": "implemented_not_deployed",
+    "reason": "experimental opt-in only; production Runtime/web not restarted",
+    "evidence": [
+      "checks-final.json",
+      "deployment-status.json",
+      "source-provenance-final.json"
+    ]
+  }
+}

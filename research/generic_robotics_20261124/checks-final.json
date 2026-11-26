@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-11-24T22:45:03.326171+09:00",
+  "checks": [
+    {
+      "kind": "python",
+      "passed": 372,
+      "failed": 0,
+      "log": "python-release-check.log"
+    },
+    {
+      "kind": "node",
+      "passed": 126,
+      "failed": 0,
+      "log": "node-release-check.log"
+    },
+    {
+      "kind": "frontend",
+      "passed": 10,
+      "failed": 0,
+      "log": "frontend-final-v2.log"
+    },
+    {
+      "kind": "typecheck_and_build",
+      "status": "passed",
+      "log": "frontend-build-final-v2.log"
+    }
+  ],
+  "source_provenance": "source-provenance-final.json",
+  "fixture_results_are_not_physical_results": true,
+  "git_diff_check": "passed",
+  "physical_protocol_probe": {
+    "scope": "real simulation; injected model delay; no task-success claim",
+    "model_delay": {
+      "wall_seconds": 5.012618412,
+      "simulation_seconds": 4.899999999999616,
+      "control_steps": 98
+    },
+    "idempotent_creation": true,
+    "idempotent_execution": true,
+    "stop": {
+      "confirmed": true,
+      "latency_seconds": 0.05370759199999884,
+      "motion_steps_after_ack": 0,
+      "old_request_rejected": true
+    },
+    "target_change": {
+      "same_episode": true,
+      "old_request_rejected": true,
+      "revision": 3
+    },
+    "status": "passed"
+  }
+}

@@ -132,7 +132,7 @@ async function decisionFixture(t, { age = .01, transport = 0 } = {}) {
   await store.validate(candidate.id, receipt(candidate));
   const q = query(); let imageRead = false, retrievedBeforeImage = false, modelContext;
   q.observation.captured_at -= 3600; // Deliberately different machine wall clocks.
-  q.observation.age_seconds = age; q.observation.image_ref = 'frame.png';
+  q.observation.age_seconds = age; q.observation.image_ref = 'frame-000120.png';
   const client = {
     request: async route => {
       if (route === '/health') return q.provenance;

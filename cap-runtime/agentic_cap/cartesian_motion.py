@@ -56,6 +56,46 @@ def reached(evidence, *, ik=False):
             and evidence['orientation_error_rad'] <= MOTION_PROTOCOL[prefix+'orientation_tolerance_rad'])
 
 
+def solve_pose_candidate(position, quaternion_wxyz, initial_configuration, tcp_offset,
+                         solver, fk, checkpoint, on_attempt=None):
+    """Read-only endpoint IK check shared by motion and diagnostic preview.
+
+    Callbacks receive copies. This function cannot submit a joint target and
+    does not certify a path, collisions or future state. Rejection means only
+    that this bounded warm-start solve did not meet existing FK tolerances.
+    """
+    pos, quat = vector(position, 3), orientation(quaternion_wxyz)
+    target = dict(xyz=pos.tolist(), wxyz=quat.tolist())
+    rot = Rotation.from_quat(quat[[1, 2, 3, 0]])
+    payload = np.concatenate([quat, pos+rot.apply(vector(tcp_offset, 3))])
+    cfg = vector(initial_configuration, 8).astype(np.float32).copy()
+    attempts = []
+    for attempt in range(1, MOTION_PROTOCOL['max_ik_attempts']+1):
+        checkpoint()
+        started = time.monotonic()
+        solved = np.asarray(solver(target_pose_wxyz_xyz=payload.copy(), prev_cfg=cfg.copy()), dtype=float)
+        checkpoint()
+        if solved.shape != (8,) or not np.isfinite(solved).all():
+            raise MotionError(dict(status='failed', reason='invalid_ik_solution', control_steps=0))
+        xyz, wxyz = fk(solved[:7].copy())
+        checkpoint()
+        evidence = pose_evidence(xyz, wxyz, target)
+        row = dict(attempt=attempt, **evidence, joint_solution=solved[:7].tolist(),
+                   elapsed_seconds=time.monotonic()-started, accepted=reached(evidence, ik=True))
+        attempts.append(row)
+        if on_attempt is not None:
+            on_attempt(copy.deepcopy(row))
+        checkpoint()
+        if row['accepted']:
+            return dict(status='accepted', reason='bounded_ik_residual_passed', configuration=solved.tolist(),
+                        ik_attempts=attempts, **evidence, control_steps=0,
+                        scope='Endpoint FK residual only; no motion, path or collision certification')
+        cfg = solved.copy()
+    return dict(status='rejected', reason='ik_target_residual', configuration=None,
+                ik_attempts=attempts, **evidence, control_steps=0,
+                scope='Bounded solver rejection; not a proof that the pose is unreachable')
+
+
 def install_cartesian_motion(backend, segment, api, functions):
     """Keep the registered API signature, while replacing raw goto_pose semantics."""
     e = backend.episode
@@ -84,37 +124,27 @@ def install_cartesian_motion(backend, segment, api, functions):
         completed = []
         for phase, target_xyz in phases:
             target = dict(xyz=target_xyz.tolist(), wxyz=quat.tolist())
-            hand_xyz = target_xyz + rot.apply(vector(api._TCP_OFFSET, 3))
-            payload = np.concatenate([quat, vector(hand_xyz, 3)])
             with e.lock:
                 checkpoint()
                 cfg = np.concatenate([vector(backend.encoder, 7), [0.]]).astype(np.float32)
-            attempts = []
-            for attempt in range(1, MOTION_PROTOCOL['max_ik_attempts']+1):
-                checkpoint()
-                start = time.monotonic()
-                solved = np.asarray(api.ik_solve_fn(target_pose_wxyz_xyz=payload,
-                                                   prev_cfg=cfg), dtype=float)
-                checkpoint()  # A late solver cannot submit or record an old-goal action.
-                if solved.shape != (8,) or not np.isfinite(solved).all():
-                    raise MotionError(dict(status='failed', reason='invalid_ik_solution',
-                                           command_id=command_id, phase=phase))
-                xyz, wxyz = backend.monitor.fk(solved[:7])
-                evidence = pose_evidence(xyz, wxyz, target)
-                row = dict(attempt=attempt, **evidence, joint_solution=solved[:7].tolist(),
-                           elapsed_seconds=time.monotonic()-start, accepted=reached(evidence, ik=True))
-                attempts.append(row)
-                emit('cartesian_ik_checked', command_id=command_id, phase=phase, **row)
-                if row['accepted']:
-                    break
-                cfg = solved
-            else:
+            try:
+                preview = solve_pose_candidate(target_xyz, quat, cfg, api._TCP_OFFSET,
+                    api.ik_solve_fn, backend.monitor.fk, checkpoint,
+                    lambda row: emit('cartesian_ik_checked', command_id=command_id, phase=phase, **row))
+            except MotionError as exc:
+                exc.evidence.update(command_id=command_id, phase=phase)
+                raise
+            attempts = preview['ik_attempts']
+            if preview['status'] != 'accepted':
                 failure = dict(status='failed', reason='ik_target_residual', command_id=command_id,
-                    phase=phase, ik_attempts=attempts, **evidence, control_steps=0)
+                    phase=phase, ik_attempts=attempts,
+                    **{key:value for key,value in preview.items() if key not in
+                       {'status','reason','configuration','ik_attempts','scope','control_steps'}}, control_steps=0)
                 with e.lock:
                     checkpoint()
                     backend.motion_result = copy.deepcopy(failure)
                 raise MotionError(failure)
+            solved = np.asarray(preview['configuration'])
             # move rechecks cancellation under the same lock as target admission.
             result = backend.move(segment, solved[:7], MOTION_PROTOCOL['joint_tolerance_rad'],
                                   MOTION_PROTOCOL['max_control_steps_per_phase'], tcp_target=target)

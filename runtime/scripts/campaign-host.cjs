@@ -44,7 +44,9 @@ app.whenReady().then(async () => {
   const { createConfigStore } = await import(pathToFileURL(path.join(runtimeRoot, 'config-store.mjs')).href);
   const { runCampaign, runPairedCampaign } = await import(pathToFileURL(path.join(__dirname, 'robot-campaign.mjs')).href);
   const config = createConfigStore(runtimeRoot, isolated);
-  const runner = options.programRepairEpisodes
+  const runner = options.decisionProbe
+    ? (await import(pathToFileURL(path.join(__dirname, 'unified-model-probe.mjs')).href)).runUnifiedProbe
+    : options.programRepairEpisodes
     ? (await import(pathToFileURL(path.join(__dirname, 'program-repair-model-diagnosis.mjs')).href)).runProgramRepairDiagnosis
     : options.retreatEpisodes
     ? (await import(pathToFileURL(path.join(__dirname, 'retreat-model-diagnosis.mjs')).href)).runRetreatModelDiagnosis

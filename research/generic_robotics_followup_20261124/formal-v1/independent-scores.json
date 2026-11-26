@@ -1,0 +1,2450 @@
+[
+  {
+    "task": "hold",
+    "condition": "direct_cap",
+    "episode_id": "00403338e25ac5b2bfff97e6da936a20",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 4,
+      "calls": 9,
+      "motion_steps": 129,
+      "idle_steps": 584,
+      "wall_seconds": 38.1843372649746
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1000000000013443,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "hold",
+    "condition": "system_no_memory",
+    "episode_id": "fce5574539bf6fabceead32561e6d866",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 5,
+      "calls": 9,
+      "motion_steps": 154,
+      "idle_steps": 565,
+      "wall_seconds": 38.00074443098856
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000012832,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "hold",
+    "condition": "system_with_memory",
+    "episode_id": "fd4b7d10a3fe7feea34878257967b575",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 5,
+      "calls": 9,
+      "motion_steps": 179,
+      "idle_steps": 577,
+      "wall_seconds": 39.63992871902883
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1000000000013443,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "hold",
+    "condition": "system_no_memory",
+    "episode_id": "f817995b3e4354765cc6bcdbe576e86a",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 4,
+      "calls": 8,
+      "motion_steps": 154,
+      "idle_steps": 484,
+      "wall_seconds": 33.743319978995714
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999999418,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "hold",
+    "condition": "system_with_memory",
+    "episode_id": "524ad16509b4818ccd7a922ad817fe82",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 5,
+      "calls": 9,
+      "motion_steps": 180,
+      "idle_steps": 595,
+      "wall_seconds": 40.58435280295089
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000012832,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "hold",
+    "condition": "direct_cap",
+    "episode_id": "1bfc325bf03f45f653ef53b194ee816c",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 3,
+      "calls": 8,
+      "motion_steps": 154,
+      "idle_steps": 389,
+      "wall_seconds": 29.609216223994736
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999999418,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "hold",
+    "condition": "system_with_memory",
+    "episode_id": "2ac0f1c8e3bb6756e453d28393dad461",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 5,
+      "calls": 9,
+      "motion_steps": 182,
+      "idle_steps": 594,
+      "wall_seconds": 40.826112230017316
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000012832,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "hold",
+    "condition": "direct_cap",
+    "episode_id": "af7e739df8bfa27871f189f0918dac3d",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 4,
+      "calls": 10,
+      "motion_steps": 166,
+      "idle_steps": 548,
+      "wall_seconds": 37.94333420199109
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000012832,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "hold",
+    "condition": "system_no_memory",
+    "episode_id": "39823006355f6f0525ab9a6450670221",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 5,
+      "calls": 9,
+      "motion_steps": 155,
+      "idle_steps": 666,
+      "wall_seconds": 42.86103990400443
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "holding",
+          "object": "block_a"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000012832,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "support",
+    "condition": "direct_cap",
+    "episode_id": "e35dd8ca9549125b9d6e4c8e2dfc222e",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 6,
+      "calls": 17,
+      "motion_steps": 272,
+      "idle_steps": 846,
+      "wall_seconds": 58.2466129460372
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1000000000013443,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "support",
+    "condition": "system_no_memory",
+    "episode_id": "ce0868a5c8fadf29c90086b714f40887",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 17,
+      "motion_steps": 371,
+      "idle_steps": 1039,
+      "wall_seconds": 73.41754788701655
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "support",
+    "condition": "system_with_memory",
+    "episode_id": "bc64ecde40d735ef20ddd1af2d8c2187",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 17,
+      "motion_steps": 398,
+      "idle_steps": 1096,
+      "wall_seconds": 77.64116125000874
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "support",
+    "condition": "system_no_memory",
+    "episode_id": "d520a2e870c7ca155e3f5d672d045e3a",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 6,
+      "calls": 15,
+      "motion_steps": 422,
+      "idle_steps": 848,
+      "wall_seconds": 65.89456449600402
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000012832,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "support",
+    "condition": "system_with_memory",
+    "episode_id": "d0c46cc87ef21b98ab952bba8d94a022",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 17,
+      "motion_steps": 374,
+      "idle_steps": 1032,
+      "wall_seconds": 73.12798840703908
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1499999999973198,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "support",
+    "condition": "direct_cap",
+    "episode_id": "5832a66b3f650bb33473ee770ab8f9fe",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 5,
+      "calls": 17,
+      "motion_steps": 410,
+      "idle_steps": 929,
+      "wall_seconds": 69.29511563305277
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0999999999974364,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "support",
+    "condition": "system_with_memory",
+    "episode_id": "c222e57590b1ad541911c429140c46c1",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 17,
+      "motion_steps": 372,
+      "idle_steps": 1054,
+      "wall_seconds": 73.73448900401127
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "support",
+    "condition": "direct_cap",
+    "episode_id": "cc224c95a0934935ec1146c530f752b2",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 5,
+      "calls": 17,
+      "motion_steps": 406,
+      "idle_steps": 931,
+      "wall_seconds": 69.46568813204067
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0999999999974364,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "support",
+    "condition": "system_no_memory",
+    "episode_id": "4ee6260e740394fef1903a2876962c2f",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 17,
+      "motion_steps": 399,
+      "idle_steps": 1079,
+      "wall_seconds": 76.41625933902105
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_a",
+          "support": "platform"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "region",
+    "condition": "direct_cap",
+    "episode_id": "a5ecefd063ceeca99627f8164fe72548",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 5,
+      "calls": 15,
+      "motion_steps": 334,
+      "idle_steps": 769,
+      "wall_seconds": 57.613034778041765
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1000000000013443,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "region",
+    "condition": "system_no_memory",
+    "episode_id": "9732dfca7b3c12af039dc51033eb0638",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 5,
+      "calls": 14,
+      "motion_steps": 318,
+      "idle_steps": 648,
+      "wall_seconds": 50.302185811975505
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 0.8000000000009777,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "region",
+    "condition": "system_with_memory",
+    "episode_id": "5f5f3af60a291d19a9516b2abd8ec9a2",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 23,
+      "motion_steps": 522,
+      "idle_steps": 1156,
+      "wall_seconds": 86.43891863099998
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "region",
+    "condition": "system_no_memory",
+    "episode_id": "fb33017c4d5e7c2c5e74bc1e38a5e070",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 23,
+      "motion_steps": 549,
+      "idle_steps": 1177,
+      "wall_seconds": 89.53992926003411
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "region",
+    "condition": "system_with_memory",
+    "episode_id": "b426a173475f6a85c68b177fcbf664fd",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 6,
+      "calls": 15,
+      "motion_steps": 274,
+      "idle_steps": 784,
+      "wall_seconds": 55.245201767014805
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1500000000014055,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "region",
+    "condition": "direct_cap",
+    "episode_id": "6edbc0b0047f806933d3ca344d89210e",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 4,
+      "calls": 13,
+      "motion_steps": 269,
+      "idle_steps": 608,
+      "wall_seconds": 46.36402460600948
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1500000000014055,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "region",
+    "condition": "system_with_memory",
+    "episode_id": "049a672baef97cf30049298197cd56a6",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 6,
+      "calls": 15,
+      "motion_steps": 346,
+      "idle_steps": 838,
+      "wall_seconds": 61.778881944017485
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1000000000013443,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "region",
+    "condition": "direct_cap",
+    "episode_id": "dc6ad1f21fb868c90bce9d5d76a61435",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 5,
+      "calls": 15,
+      "motion_steps": 362,
+      "idle_steps": 695,
+      "wall_seconds": 55.075811359041836
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1000000000013443,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "region",
+    "condition": "system_no_memory",
+    "episode_id": "e6ddad3eebb8cf251d4b9c288651e7b9",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 6,
+      "calls": 15,
+      "motion_steps": 272,
+      "idle_steps": 813,
+      "wall_seconds": 56.4805481210351
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "left"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000012832,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "unstack",
+    "condition": "direct_cap",
+    "episode_id": "a9897e6ee477d24797397c443fa4a702",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 4,
+      "calls": 13,
+      "motion_steps": 297,
+      "idle_steps": 546,
+      "wall_seconds": 44.48846528399736
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1000000000013443,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "unstack",
+    "condition": "system_no_memory",
+    "episode_id": "918bd604ef8f09d230802761db6da29e",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 7,
+      "calls": 19,
+      "motion_steps": 408,
+      "idle_steps": 1053,
+      "wall_seconds": 75.41903235000791
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "unstack",
+    "condition": "system_with_memory",
+    "episode_id": "735bb820e018a139f8d0b546d56e13cb",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 5,
+      "calls": 14,
+      "motion_steps": 346,
+      "idle_steps": 632,
+      "wall_seconds": 51.08938946999842
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000012832,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "unstack",
+    "condition": "system_no_memory",
+    "episode_id": "fb64e7fea262545fdbb6c385c888ce8b",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 7,
+      "calls": 15,
+      "motion_steps": 275,
+      "idle_steps": 902,
+      "wall_seconds": 61.32492939801887
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1500000000014055,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "unstack",
+    "condition": "system_with_memory",
+    "episode_id": "eb7605fec89c72c760a5fec34cf0a404",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 6,
+      "calls": 15,
+      "motion_steps": 268,
+      "idle_steps": 907,
+      "wall_seconds": 61.12583916797303
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1000000000013443,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "unstack",
+    "condition": "direct_cap",
+    "episode_id": "5464c3757f49d6b60192b0326e36e196",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 4,
+      "calls": 13,
+      "motion_steps": 324,
+      "idle_steps": 569,
+      "wall_seconds": 47.18975717102876
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000012832,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "unstack",
+    "condition": "system_with_memory",
+    "episode_id": "84135431b279e91e0ded3260b22da12b",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 5,
+      "calls": 14,
+      "motion_steps": 298,
+      "idle_steps": 688,
+      "wall_seconds": 51.59258688701084
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000012832,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "unstack",
+    "condition": "direct_cap",
+    "episode_id": "cb949a9532c9f5c78ec9a21a3a6f9be4",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 4,
+      "calls": 13,
+      "motion_steps": 298,
+      "idle_steps": 568,
+      "wall_seconds": 45.65701602899935
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1500000000014055,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "unstack",
+    "condition": "system_no_memory",
+    "episode_id": "5ca2c24b11368d3ffe2796f231a84029",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 6,
+      "calls": 15,
+      "motion_steps": 349,
+      "idle_steps": 774,
+      "wall_seconds": 58.00501624302706
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1500000000014055,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "reverse",
+    "condition": "direct_cap",
+    "episode_id": "8f10ab48d101741565c121913cde2c1d",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 19,
+      "calls": 80,
+      "motion_steps": 2106,
+      "idle_steps": 4030,
+      "wall_seconds": 312.79101023002295
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "reverse",
+    "condition": "system_no_memory",
+    "episode_id": "b449e6d663b11617769ece209b8b8c73",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 13,
+      "calls": 29,
+      "motion_steps": 718,
+      "idle_steps": 2216,
+      "wall_seconds": 150.16287575900787
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.150000000005491,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "reverse",
+    "condition": "system_with_memory",
+    "episode_id": "c1178e073d21cd92741da6a41db7d614",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 24,
+      "calls": 77,
+      "motion_steps": 1371,
+      "idle_steps": 4138,
+      "wall_seconds": 281.5914657510002
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "reverse",
+    "condition": "system_no_memory",
+    "episode_id": "28cffff3eeb0155115862ab5a87cd47a",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 18,
+      "calls": 46,
+      "motion_steps": 1024,
+      "idle_steps": 3030,
+      "wall_seconds": 206.58093273895793
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "reverse",
+    "condition": "system_with_memory",
+    "episode_id": "e8c5c27569405c3685c29bd3c72ec46d",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 15,
+      "calls": 42,
+      "motion_steps": 1022,
+      "idle_steps": 2563,
+      "wall_seconds": 183.0122932260274
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1000000000052523,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "reverse",
+    "condition": "direct_cap",
+    "episode_id": "dbe574cc2b2cf7c3cafdd0dc21bd61ce",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 12,
+      "calls": 48,
+      "motion_steps": 1197,
+      "idle_steps": 2680,
+      "wall_seconds": 198.26674126903526
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "reverse",
+    "condition": "system_with_memory",
+    "episode_id": "a712069847eaeeb7a97761ad4339c0f8",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": false,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 19,
+      "calls": 35,
+      "motion_steps": 702,
+      "idle_steps": 3493,
+      "wall_seconds": 213.50114990503062
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "reverse",
+    "condition": "direct_cap",
+    "episode_id": "ffdbbc1b049d2fed29544249a5ef5272",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": false,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 10,
+      "calls": 18,
+      "motion_steps": 302,
+      "idle_steps": 2303,
+      "wall_seconds": 133.70024439599365
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "reverse",
+    "condition": "system_no_memory",
+    "episode_id": "51f471f52c3df410318a7afcde28ff26",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": false,
+    "false_completion": false,
+    "used": {
+      "decisions": 15,
+      "calls": 37,
+      "motion_steps": 977,
+      "idle_steps": 2817,
+      "wall_seconds": 192.91407706402242
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "on",
+          "object": "block_b",
+          "support": "block_a"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "multiple",
+    "condition": "direct_cap",
+    "episode_id": "b849c2891a67785dfb754c062c543352",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 33,
+      "motion_steps": 844,
+      "idle_steps": 1484,
+      "wall_seconds": 120.25193444098113
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0999999999974364,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "multiple",
+    "condition": "system_no_memory",
+    "episode_id": "7dbd87c15025a809fa6c6791bccdd4bf",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 10,
+      "calls": 32,
+      "motion_steps": 704,
+      "idle_steps": 1693,
+      "wall_seconds": 122.71664807799971
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0999999999974364,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "multiple",
+    "condition": "system_with_memory",
+    "episode_id": "34e04fa7033cbb1a134384ffaffa57ff",
+    "seed": 701,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 10,
+      "calls": 32,
+      "motion_steps": 729,
+      "idle_steps": 1743,
+      "wall_seconds": 126.38828861701768
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "multiple",
+    "condition": "system_no_memory",
+    "episode_id": "f3b3b35788bdbe224834c05d7ddfdac2",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 8,
+      "calls": 30,
+      "motion_steps": 779,
+      "idle_steps": 1450,
+      "wall_seconds": 113.88836922403425
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0999999999974364,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "multiple",
+    "condition": "system_with_memory",
+    "episode_id": "7d6ed38efe7335e02b0b8683b1e774be",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 9,
+      "calls": 28,
+      "motion_steps": 673,
+      "idle_steps": 1391,
+      "wall_seconds": 105.86873857298633
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1999999999972033,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "multiple",
+    "condition": "direct_cap",
+    "episode_id": "0e8e00725fc171cad4aed1b3e29fd299",
+    "seed": 702,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 7,
+      "calls": 28,
+      "motion_steps": 734,
+      "idle_steps": 1276,
+      "wall_seconds": 103.9062256559846
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.049999999997553,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "multiple",
+    "condition": "system_with_memory",
+    "episode_id": "cf3427c2b8743f73fd6eea10620fe40b",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 11,
+      "calls": 36,
+      "motion_steps": 796,
+      "idle_steps": 1854,
+      "wall_seconds": 135.5156750419992
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.0500000000050136,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "multiple",
+    "condition": "direct_cap",
+    "episode_id": "e1de2014390bbdacd210f6cb4500c746",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 9,
+      "calls": 35,
+      "motion_steps": 824,
+      "idle_steps": 1639,
+      "wall_seconds": 125.8756912809913
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1499999999973198,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  },
+  {
+    "task": "multiple",
+    "condition": "system_no_memory",
+    "episode_id": "a1d2f698593ea61c499ea27dbbf4395d",
+    "seed": 703,
+    "status": "scored",
+    "physical_verified": true,
+    "public_verified": true,
+    "false_completion": false,
+    "used": {
+      "decisions": 13,
+      "calls": 37,
+      "motion_steps": 792,
+      "idle_steps": 2059,
+      "wall_seconds": 145.61079288402107
+    },
+    "evaluator_version": 3,
+    "requested_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal": {
+      "all": [
+        {
+          "predicate": "in_region",
+          "object": "block_a",
+          "region": "left"
+        },
+        {
+          "predicate": "in_region",
+          "object": "cylinder_a",
+          "region": "right"
+        },
+        {
+          "predicate": "empty_gripper"
+        }
+      ]
+    },
+    "registered_goal_matches_expected": true,
+    "physical_window_seconds": 1.1000000000052523,
+    "scope": "limited rigid tabletop evaluator; no universal physical correctness claim"
+  }
+]

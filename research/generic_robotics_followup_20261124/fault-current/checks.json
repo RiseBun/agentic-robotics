@@ -1,0 +1,22 @@
+{
+  "scope": "real simulation; injected model delay; no task-success claim",
+  "model_delay": {
+    "wall_seconds": 5.036658469,
+    "simulation_seconds": 5.249999999999577,
+    "control_steps": 105
+  },
+  "idempotent_creation": true,
+  "idempotent_execution": true,
+  "stop": {
+    "confirmed": true,
+    "latency_seconds": 0.04984573599999931,
+    "motion_steps_after_ack": 0,
+    "old_request_rejected": true
+  },
+  "target_change": {
+    "same_episode": true,
+    "old_request_rejected": true,
+    "revision": 3
+  },
+  "status": "passed"
+}

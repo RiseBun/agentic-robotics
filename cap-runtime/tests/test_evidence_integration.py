@@ -203,7 +203,27 @@ class EvidenceIntegrationTests(unittest.TestCase):
     def test_nested_api_calls_use_cumulative_budget(self):
         self.e.limits['calls'] = 2  # outer inspection + initial holding only
         result = self.inspect()
+        self.assertEqual(result['execution'], 'failed')
+        self.assertEqual(result['feedback']['category'], 'resources_insufficient')
+        self.assertEqual(self.e.used['calls'], 0)
+        self.assertEqual(result['api_attempts'], [])
+        self.assertEqual(self.b.view_targets, [])
+
+    def test_nested_per_call_guard_remains_when_limit_changes_after_preflight(self):
+        original = self.b.tools
+        def tools(segment):
+            result = original(segment)
+            inspect = result['inspect_support']
+            def lower_limit(*args):
+                self.e.limits['calls'] = 2
+                return inspect(*args)
+            result['inspect_support'] = lower_limit
+            return result
+        self.b.tools = tools
+        result = self.inspect()
+        self.assertEqual(result['resources']['status'], 'fits')
         self.assertEqual(result['execution'], 'cancelled')
+        self.assertEqual(result['feedback']['category'], 'budget_exhausted')
         self.assertEqual(self.e.used['calls'], 2)
         self.assertEqual(self.b.view_targets, [])
 

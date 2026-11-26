@@ -328,11 +328,12 @@ test('only a coherent registered wrist frame is attached as the second scene ima
       const result=await original(route,...args);
       if(!route.endsWith('/observe'))return result;
       const wrist={camera_name:'robot0_eye_in_hand',episode_id:'episode',control_step:120,
-        captured_at:result.captured_at,image_ref:'view-robot0_eye_in_hand-000120.png'};
+        captured_at:result.captured_at,image_ref:'view-robot0_eye_in_hand-000120.png',
+        evidence_ref:'view-robot0_eye_in_hand-000120.npz',coordinate_convention:{frame:'cap_robot_base'}};
       if(mode==='old_step')wrist.control_step--;
       if(mode==='old_episode')wrist.episode_id='other';
       if(mode==='unrecorded_file')wrist.image_ref='../../secret.png';
-      return {...result,image_ref:'frame-000120.png',control_step:120,camera_views:{robot0_eye_in_hand:wrist}};
+      return {...result,episode_id:'episode',coordinate_convention:{frame:'cap_robot_base'},image_ref:'frame-000120.png',control_step:120,camera_views:{robot0_eye_in_hand:wrist}};
     };
     try{
       await fixture.c.start({task:'cube_lifting',text:'抬起红方块'});await fixture.c.loopPromise;
@@ -965,3 +966,122 @@ for (const confirmHold of [true, false]) {
     } finally { late.resolve(run); await fixture.cleanup(); }
   });
 }
+
+
+test('stop during scene image loading fences late response before execution model or robot dispatch',async()=>{
+  const late=deferred();let loading=false,executionModels=0;
+  const fixture=await setup(async(_channel,context)=>{
+    if(context.mode==='interpretation')return observe;
+    executionModels++;return run;
+  });
+  const original=fixture.client.request.bind(fixture.client);
+  fixture.client.request=async(route,...args)=>{
+    const result=await original(route,...args);
+    return route.endsWith('/observe')?{...result,image_ref:'frame-000120.png',control_step:120}:result;
+  };
+  fixture.client.bytes=async()=>{loading=true;return late.promise;};
+  try{
+    await fixture.c.start({task:'cube_lifting',text:'抬起红方块'});await until(()=>loading);
+    await fixture.c.stop();late.resolve(Buffer.from('late'));await fixture.c.loopPromise;
+    assert.equal(executionModels,0);
+    assert.equal(fixture.client.calls.filter(x=>x.route.endsWith('/segments')).length,0);
+    assert.equal(fixture.c.state.status,'stopped');
+  }finally{late.resolve(Buffer.from('late'));await fixture.cleanup();}
+});
+
+
+test('initial sensor window becomes ready before execution model budget is charged',async()=>{
+  let ready=false,execution=0,observations=0;
+  const fixture=await setup(async(_channel,context)=>{
+    if(context.mode==='interpretation')return observe;
+    execution++;assert.equal(ready,true);
+    assert.equal(context.latest_observation.decision_evidence.status,'ready');
+    assert.equal(context.decision_observation_wait.status,'ready');
+    return finish;
+  });
+  const request=fixture.client.request.bind(fixture.client);
+  fixture.client.request=async(route,body,signal)=>{
+    if(route.endsWith('/observe')){observations++;return {...unknownScene(),decision_evidence:{status:ready?'ready':'pending'}};}
+    return request(route,body,signal);
+  };
+  try{
+    await fixture.c.start({task:'cube_lifting',text:'抬起红方块'});
+    await until(()=>observations>0);
+    assert.equal(execution,0);assert.equal(fixture.client.episode.used.decisions,1);
+    ready=true;await fixture.c.loopPromise;
+    assert.equal(execution,1);assert.equal(fixture.client.episode.used.decisions,2);
+  }finally{await fixture.cleanup();}
+});
+
+test('stop during pending sensor window prevents execution model and action admission',async()=>{
+  let execution=0,observations=0;
+  const fixture=await setup(async(_channel,context)=>{
+    if(context.mode==='interpretation')return observe;
+    execution++;return run;
+  });
+  const request=fixture.client.request.bind(fixture.client);
+  fixture.client.request=async(route,body,signal)=>{
+    if(route.endsWith('/observe')){observations++;return {...unknownScene(),decision_evidence:{status:'pending'}};}
+    return request(route,body,signal);
+  };
+  try{
+    await fixture.c.start({task:'cube_lifting',text:'抬起红方块'});
+    await until(()=>observations>0);await fixture.c.stop();await fixture.c.loopPromise;
+    assert.equal(execution,0);assert.equal(fixture.c.state.status,'stopped');
+    assert.equal(fixture.client.calls.filter(c=>c.route.endsWith('/segments')).length,0);
+  }finally{await fixture.cleanup();}
+});
+
+
+function actionableScene(ready){
+  return {...unknownScene(),decision_evidence:{status:'ready'},system:{contract_version:1,episode_id:'episode',goal_version:1,
+    world:{fresh:true,facts:{empty_gripper:{status:'verified'},goal:{status:'unknown'}}},executor:{status:'ready',hold_pending:false,active_segment:null},
+    task:{execution:{ready_nodes:ready?['1:acquire']:[]}}}};
+}
+
+test('blocked-to-ready while thinking reconsiders assistance through a charged fresh model request',async()=>{
+  let execution=0,ready=false;
+  const fixture=await setup(async(_channel,context)=>{
+    if(context.mode==='interpretation')return observe;
+    execution++;
+    if(execution===1){assert.equal(context.robot_system.task.execution.ready_nodes.length,0);ready=true;return {decision:'ask_user',message:'missing evidence',remaining_steps:[]};}
+    assert.equal(context.robot_system.task.execution.ready_nodes.length,1);return finish;
+  });
+  const request=fixture.client.request.bind(fixture.client);
+  fixture.client.request=(route,body,signal)=>route.endsWith('/observe')?Promise.resolve(actionableScene(ready)):request(route,body,signal);
+  try{
+    await fixture.c.start({task:'cube_lifting',text:'抬起红方块'});await fixture.c.loopPromise;
+    assert.equal(execution,2);assert.equal(fixture.client.episode.used.decisions,3);
+    assert.equal(fixture.client.calls.filter(c=>c.route.endsWith('/assistance')).length,0);
+    const trace=await fs.readFile(path.join(fixture.c.recordDir,'workbench.jsonl'),'utf8');
+    assert.ok(trace.includes('assistance_reconsidered'));
+    assert.equal(fixture.client.calls.filter(c=>c.route.endsWith('/segments')).length,0);
+  }finally{await fixture.cleanup();}
+});
+
+test('model assistance with unchanged blocked facts remains a user assistance request',async()=>{
+  let execution=0;
+  const fixture=await setup(async(_channel,context)=>{
+    if(context.mode==='interpretation')return observe;
+    execution++;return {decision:'ask_user',message:'persistent occlusion',remaining_steps:[]};
+  });
+  const request=fixture.client.request.bind(fixture.client);
+  fixture.client.request=async(route,body,signal)=>{
+    if(route.endsWith('/observe'))return actionableScene(false);
+    const result=await request(route,body,signal);
+    if(route==='/episodes'){
+      fixture.client.episode.system={task:{recipe:{name:'test_recipe'}}};
+      return structuredClone(fixture.client.episode);
+    }
+    if(route.endsWith('/assistance')){
+      fixture.client.episode.assistance={hold_confirmed:true};
+      return structuredClone(fixture.client.episode);
+    }
+    return result;
+  };
+  try{
+    await fixture.c.start({task:'cube_lifting',text:'抬起红方块'});await fixture.c.loopPromise;
+    assert.equal(execution,1);
+    assert.equal(fixture.client.calls.filter(c=>c.route.endsWith('/assistance')).length,1);
+  }finally{await fixture.cleanup();}
+});

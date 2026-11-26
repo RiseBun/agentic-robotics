@@ -16,7 +16,8 @@ from agentic_cap.active_evidence import install_inspector
 from agentic_cap.cap_backend import CaPBackend
 from agentic_cap.core import Manager
 from agentic_cap.fixture import FixtureBackend
-from agentic_cap.placement_evidence import empty_gripper_evidence
+from agentic_cap.placement_evidence import (clearance_evidence, clearance_retreat_target,
+                                          empty_gripper_evidence)
 from agentic_cap.server import export_episode
 from test_runtime import until
 
@@ -44,6 +45,8 @@ class PlacementFixture(FixtureBackend):
         self.missing_aperture, self.occlude_below, self.fail_motion = False, None, False
         self.gate, self.entered = None, threading.Event()
         self.correct = True
+        self.moves, self.retreat_bias = [], 0.
+        self.block_retreat, self.close_after_retreat = False, False
 
     @property
     def tick(self):
@@ -76,7 +79,8 @@ class PlacementFixture(FixtureBackend):
 
         def move(xyz, quat):
             lateral = self.releases and abs(xyz[1]-self.xyz[1]) > .05
-            if lateral:
+            retreat = self.releases and xyz[2] > self.xyz[2] and not lateral
+            if lateral or (retreat and self.block_retreat):
                 self.entered.set()
                 if self.gate:
                     self.gate.wait(4)
@@ -85,6 +89,11 @@ class PlacementFixture(FixtureBackend):
                 return dict(status='failed', reason='injected motion failure')
             wait_motion(4)
             self.xyz, self.quat = list(xyz), list(quat)
+            if retreat:
+                self.xyz[2] -= self.retreat_bias
+                if self.close_after_retreat:
+                    self.episode.gripper = 0.
+            self.moves.append((self.xyz.copy(), self.quat.copy()))
             self.last_action_tick = self.tick
             if lateral:
                 self.lateral.append((list(xyz), list(quat)))
@@ -186,10 +195,128 @@ class PlacementEvidenceTests(unittest.TestCase):
         self.assertEqual(self.inspect()['evidence_acquisition']['status'], 'unknown')
         self.assertEqual(self.b.lateral, [])
 
-    def test_release_without_retreat_cannot_move_laterally(self):
+    def test_release_without_retreat_establishes_measured_clearance_before_lateral_view(self):
         self.run_code('open_gripper()', 'release-only')
-        self.assertEqual(self.inspect()['evidence_acquisition']['reason'], 'vertical_retreat_not_confirmed')
+        result = self.inspect()
+        self.assertEqual(result['goal_verification']['status'], 'verified')
+        retreat, view = self.b.moves
+        self.assertEqual(retreat[0][:2], [.5, 0.])
+        self.assertAlmostEqual(retreat[0][2], .346)
+        self.assertEqual(retreat[1], [0., 0., 1., 0.])
+        self.assertEqual(view[0][2], retreat[0][2])
+        self.assertEqual((self.b.releases, self.b.grasps), (1, 0))
+
+    def test_submillimetre_clearance_gap_gets_one_tolerance_aware_retreat(self):
+        self.run_code('open_gripper()\ngoto_pose([.5, 0., .33972], [0., 0., 1., 0.])', 'short')
+        # The Cartesian endpoint may undershoot by its accepted 3 mm tolerance.
+        self.b.retreat_bias = .003
+        result = self.inspect()
+        self.assertEqual(result['goal_verification']['status'], 'verified')
+        events = [x for x in self.e.events if x['kind'] == 'placement_clearance_retreat_finished']
+        self.assertEqual(len(events), 1)
+        self.assertGreaterEqual(events[0]['actual_tcp_xyz'][2], events[0]['after']['required_tcp_z_m'])
+        self.assertEqual(events[0]['after']['status'], 'available')
+        self.assertGreater(events[0]['used_delta']['motion_steps'], 0)
+        self.assertEqual(events[0]['used_delta']['calls'], 1)
+        self.inspect('repeat')
+        self.assertEqual(sum(x['kind'] == 'placement_clearance_retreat_started' for x in self.e.events), 1)
+
+    def test_insufficient_actual_retreat_stays_unknown_without_lateral_or_retries(self):
+        self.run_code('open_gripper()', 'release-only')
+        self.b.retreat_bias = .007
+        result = self.inspect()
+        self.assertEqual(result['evidence_acquisition']['reason'], 'vertical_retreat_not_confirmed')
+        self.assertEqual(result['evidence_acquisition']['views_used'], 0)
         self.assertEqual(self.b.lateral, [])
+        self.inspect('repeat')
+        self.assertEqual(len(self.b.moves), 1)
+
+    def test_retreat_that_recovers_visibility_does_not_add_a_lateral_view(self):
+        self.b.recover_at, self.b.occlude_below = 0, .345
+        self.run_code('open_gripper()', 'release-only')
+        result = self.inspect()
+        self.assertEqual(result['goal_verification']['status'], 'verified')
+        self.assertEqual(result['evidence_acquisition']['views_used'], 0)
+        self.assertEqual(len(self.b.moves), 1)
+
+    def test_retreat_losing_open_gripper_cannot_start_inspection(self):
+        self.run_code('open_gripper()', 'release-only')
+        self.b.close_after_retreat = True
+        result = self.inspect()
+        self.assertEqual(result['evidence_acquisition']['status'], 'unknown')
+        self.assertEqual(self.b.lateral, [])
+
+    def test_low_lateral_or_rotated_pose_does_not_admit_clearance_repair(self):
+        self.run_code('open_gripper()', 'release-only')
+        for xyz, quat in [([.55, 0., .24], [0., 0., 1., 0.]),
+                          ([.5, 0., .24], [1., 0., 0., 0.]),
+                          ([.5, 0., .23], [0., 0., 1., 0.])]:
+            with self.e.lock:
+                self.b.xyz, self.b.quat = xyz, quat
+            until(lambda: self.e.observe()['tcp_xyz'] == xyz and self.e.observe()['tcp_wxyz'] == quat)
+            self.assertEqual(self.inspect(str(xyz)+str(quat))['evidence_acquisition']['status'], 'unknown')
+        self.assertEqual(self.b.moves, [])
+
+    def start_blocked_retreat(self):
+        self.run_code('open_gripper()', 'release-only')
+        self.b.block_retreat, self.b.gate = True, threading.Event()
+        sid = self.e.execute('slow-retreat', self.e.revision, 'inspect',
+                             'inspect_placement("red cube", "green cube")\nopen_gripper()')
+        self.assertTrue(self.b.entered.wait(3))
+        return sid
+
+    def test_cancel_during_clearance_retreat_cannot_dispatch_late_motion(self):
+        sid = self.start_blocked_retreat()
+        self.e.cancel()
+        self.b.gate.set()
+        until(lambda: self.e.active is None)
+        self.assertEqual(self.e.segments[sid]['execution'], 'cancelled')
+        self.assertEqual(self.b.moves, [])
+        self.assertEqual(self.b.releases, 1)
+
+    def test_goal_change_during_clearance_retreat_invalidates_all_old_actions(self):
+        sid = self.start_blocked_retreat()
+        self.e.update_goal(dict(holding='green cube'))
+        self.b.gate.set()
+        until(lambda: self.e.active is None)
+        self.assertEqual(self.e.segments[sid]['execution'], 'cancelled')
+        self.assertEqual(self.b.moves, [])
+        self.assertEqual(self.b.releases, 1)
+
+    def test_clearance_retreat_consumes_original_call_budget(self):
+        self.run_code('open_gripper()', 'release-only')
+        self.e.limits['calls'] = self.e.used['calls'] + 1  # inspect itself; no nested motion budget
+        before = self.e.used['calls']
+        result = self.inspect()
+        self.assertEqual(result['execution'], 'failed')
+        self.assertEqual(result['feedback']['category'], 'resources_insufficient')
+        self.assertEqual(self.e.used['calls'], before)
+        self.assertEqual(result['api_attempts'], [])
+        self.assertEqual(self.b.moves, [])
+
+    def test_repeated_request_does_not_repeat_clearance_retreat(self):
+        self.run_code('open_gripper()', 'release-only')
+        result = self.inspect('same-id')
+        moves = len(self.b.moves)
+        # A retry must resend the original payload, including its old revision.
+        repeated = self.e.execute('same-id', result['revision'], 'placement evidence',
+                                  'inspect_placement("red cube", "green cube")')
+        self.assertEqual(repeated, result['id'])
+        self.assertEqual(len(self.b.moves), moves)
+
+    def test_full_clearance_event_chain_exports_release_and_fresh_frame(self):
+        self.run_code('open_gripper()', 'release-only')
+        self.inspect()
+        self.e.close()
+        with zipfile.ZipFile(io.BytesIO(export_episode(self.manager.root, self.e.id))) as pack:
+            events = [json.loads(x) for x in pack.read(self.e.id+'/events.jsonl').decode().splitlines()]
+        started = next(x for x in events if x['kind'] == 'placement_clearance_retreat_started')
+        finished = next(x for x in events if x['kind'] == 'placement_clearance_retreat_finished')
+        view = next(x for x in events if x['kind'] == 'view_attempt')
+        self.assertEqual(started['release_id'], finished['release_id'])
+        self.assertEqual(started['acquisition_id'], finished['acquisition_id'])
+        self.assertNotEqual(finished['evidence_ref'], started['before_evidence_ref'])
+        self.assertLess(finished['id'], view['id'])
 
     def test_loss_of_open_gripper_stops_after_first_view(self):
         self.b.recover_at, self.b.close_after_view = None, 1
@@ -240,7 +367,12 @@ class PlacementEvidenceTests(unittest.TestCase):
     def test_budget_counts_outer_skill_and_inner_motion(self):
         self.release_and_retreat()
         self.e.limits['calls'] = self.e.used['calls'] + 1
-        self.assertEqual(self.inspect()['execution'], 'cancelled')
+        before = self.e.used['calls']
+        result = self.inspect()
+        self.assertEqual(result['execution'], 'failed')
+        self.assertEqual(result['feedback']['category'], 'resources_insufficient')
+        self.assertEqual(self.e.used['calls'], before)
+        self.assertEqual(result['api_attempts'], [])
         self.assertEqual(self.b.lateral, [])
 
     def test_idempotency_does_not_repeat_a_view(self):
@@ -369,6 +501,33 @@ class EmptyGripperEvidenceTests(unittest.TestCase):
         self.assertEqual(empty_gripper_evidence(dict(snapshot, captured_at=time.time()-2))['status'], 'unknown')
         self.assertEqual(empty_gripper_evidence(dict(snapshot, gripper_joint_positions=[float('nan'), .04]))['status'], 'unknown')
         self.assertEqual(empty_gripper_evidence(dict(snapshot, last_gripper_command='closed'))['status'], 'unknown')
+
+
+class ClearanceCompositionTests(unittest.TestCase):
+    def test_target_margin_tracks_motion_protocol_without_weakening_clearance(self):
+        from types import SimpleNamespace
+        from agentic_cap.cartesian_motion import MOTION_PROTOCOL
+        snapshot = dict(captured_at=time.time(), last_gripper_command='open',
+                        gripper_joint_positions=[.04, -.04], tcp_xyz=[.5, 0., .11972],
+                        tcp_wxyz=[0., 0., 1., 0.], control_step=2,
+                        objects={'red cube': cube([.5, 0., 0.])})
+        marker = dict(id='release', goal={'empty_gripper': True}, release_tcp_xyz=[.5, 0., 0.],
+                      release_tcp_wxyz=[0., 0., 1., 0.], release_step=1,
+                      scene_ceiling_m=.02, event_id=0, tried=[])
+        backend = SimpleNamespace(episode=SimpleNamespace(goal=marker['goal'], events=[]))
+        gate = clearance_evidence(backend, snapshot, marker)
+        self.assertEqual(gate['status'], 'unknown')
+        target = clearance_retreat_target(snapshot, marker, gate)
+        tolerance = MOTION_PROTOCOL['position_tolerance_m']
+        self.assertAlmostEqual(target[2], .12+2*tolerance)
+        self.assertEqual(target[:2], snapshot['tcp_xyz'][:2])
+        # Even the maximum admitted downward arrival error must clear the gate.
+        gate_after = clearance_evidence(backend, dict(snapshot, tcp_xyz=[.5, 0., target[2]-tolerance]), marker)
+        self.assertEqual(gate_after['status'], 'available')
+        for z in [.11972, .117, .10]:
+            self.assertEqual(clearance_evidence(backend, dict(snapshot, tcp_xyz=[.5, 0., z]), marker)['status'], 'unknown')
+        self.assertIsNone(clearance_retreat_target(snapshot, dict(marker, clearance_attempted=True), gate))
+        self.assertIsNone(clearance_retreat_target(snapshot, marker, dict(gate, required_tcp_z_m=1.)))
 
 
 if __name__ == '__main__':

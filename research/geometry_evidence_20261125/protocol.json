@@ -1,0 +1,43 @@
+{
+  "stage": "development",
+  "schedule": [
+    {
+      "task": "reverse",
+      "seed": 201,
+      "perception": "single_view"
+    },
+    {
+      "task": "reverse",
+      "seed": 201,
+      "perception": "multiview"
+    },
+    {
+      "task": "reverse",
+      "seed": 202,
+      "perception": "multiview"
+    },
+    {
+      "task": "reverse",
+      "seed": 202,
+      "perception": "single_view"
+    },
+    {
+      "task": "support",
+      "seed": 201,
+      "perception": "multiview"
+    },
+    {
+      "task": "multiple",
+      "seed": 202,
+      "perception": "multiview"
+    }
+  ],
+  "seeds": [
+    201,
+    202
+  ],
+  "experience": false,
+  "threshold_changes": false,
+  "original_frozen_results_unchanged": true,
+  "private_scoring_after_all_closed": true
+}

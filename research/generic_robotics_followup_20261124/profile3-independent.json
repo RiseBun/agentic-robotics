@@ -1,0 +1,44 @@
+[
+  {
+    "task": "cube_lifting",
+    "public": "verified",
+    "physical": "verified",
+    "false_completion": false,
+    "reset_count": 1,
+    "used": {
+      "decisions": 2,
+      "calls": 6,
+      "motion_steps": 92,
+      "idle_steps": 239,
+      "wall_seconds": 22.452960786002222
+    }
+  },
+  {
+    "task": "cube_stack",
+    "public": "verified",
+    "physical": "verified",
+    "false_completion": false,
+    "reset_count": 1,
+    "used": {
+      "decisions": 3,
+      "calls": 12,
+      "motion_steps": 182,
+      "idle_steps": 415,
+      "wall_seconds": 35.71067070704885
+    }
+  },
+  {
+    "task": "cube_restack",
+    "public": "verified",
+    "physical": "verified",
+    "false_completion": false,
+    "reset_count": 1,
+    "used": {
+      "decisions": 5,
+      "calls": 26,
+      "motion_steps": 369,
+      "idle_steps": 1099,
+      "wall_seconds": 79.49633564503165
+    }
+  }
+]

@@ -57,13 +57,13 @@ def archive_payload(file):
 
 
 def export_episode(root, episode_id):
-    """Keep every artifact, while compressing repeated waiting frames together.
+    """Keep public artifacts, while compressing repeated waiting frames together.
 
     PNG/NPZ are individually compressed; ordinary ZIP cannot share their repeated
     bytes across frames. A bounded LZMA dictionary can, without dropping evidence.
     """
     root = Path(root)
-    files = sorted((f for f in (root / episode_id).rglob('*') if f.is_file() and f.suffix != '.tmp'),
+    files = sorted((f for f in (root / episode_id).rglob('*') if f.is_file() and f.suffix != '.tmp' and not f.name.startswith('evaluation-private')),
                    key=lambda f: f.relative_to(root).as_posix())
     binary = io.BytesIO()
     with tarfile.open(fileobj=binary, mode='w:xz', preset=2) as archive:
@@ -81,6 +81,7 @@ def export_episode(root, episode_id):
         archive.writestr('observations.tar.xz', binary.getvalue())
         archive.writestr('manifest.json', json.dumps(dict(version=2, episode_id=episode_id,
             files=len(files), binary_archive='observations.tar.xz',
+            scope='public execution evidence only; independent evaluation data stays offline',
             reencoding='Lossless PNG/NPZ compression only; decoded pixels and arrays preserved.',
             instructions='Extract ZIP, then observations.tar.xz to recover original artifact paths.')))
     return package.getvalue()
@@ -93,12 +94,12 @@ def runtime_provenance(backend, upstream=None):
     result = dict(backend=backend, source_digest=hashlib.sha256(''.join(rows).encode()).hexdigest(), python=platform.python_version())
     if backend == 'cap':
         contract_files = ['active_evidence.py', 'cap_backend.py', 'cartesian_motion.py', 'core.py', 'feedback.py', 'holding.py', 'holding_watchdog.py', 'interpreter.py', 'public_views.py',
-                          'placement_evidence.py', 'public_sensors.py', 'safe_retreat.py']
-        contract = 'bounded-cube-recovery-v5\n' + ''.join(
+                          'placement_evidence.py', 'public_sensors.py', 'safe_retreat.py', 'robot_system.py', 'skills.py', 'task_recipes.py', 'placement_retry.py', 'program_resources.py', 'continuation_resources.py']
+        contract = 'bounded-cube-recovery-v10\n' + ''.join(
             name + '\0' + hashlib.sha256((Path(__file__).parent / name).read_bytes()).hexdigest() + '\n'
             for name in contract_files)
         result['recovery_contract'] = hashlib.sha256(contract.encode()).hexdigest()
-        result['features'] = dict(inspect_support=os.environ.get('CAP_ACTIVE_EVIDENCE', '0') == '1',
+        result['features'] = dict(alternate_placement=os.environ.get('CAP_ALTERNATE_PLACEMENT', '0') == '1', inspect_support=os.environ.get('CAP_ACTIVE_EVIDENCE', '0') == '1',
                                   support_second_view=os.environ.get('CAP_SUPPORT_SECOND_VIEW', ''),
                                   holding_watchdog=os.environ.get('CAP_HOLDING_WATCHDOG', '0') == '1',
                                   inspect_placement=os.environ.get('CAP_PLACEMENT_EVIDENCE', '0') == '1',
@@ -154,6 +155,9 @@ def serve(manager, host, port, token, provenance=None):
                 body = json.loads(self.rfile.read(size)) if size else {}
                 if method == 'GET' and parts == ['health']:
                     return self.send(200, dict(service='agentic-cap', protocol=1, **provenance))
+                if method == 'GET' and parts == ['system']:
+                    from .tabletop_scene import system_description
+                    return self.send(200, system_description())
                 if method == 'POST' and parts == ['episodes']:
                     return self.send(202, manager.create(**body))
                 if len(parts) < 2 or parts[0] != 'episodes':
@@ -210,14 +214,32 @@ def serve(manager, host, port, token, provenance=None):
                 episode = manager.episodes.get(episode_id)
                 if not episode:
                     return self.send(409, {'error': 'Episode interrupted; physical execution cannot resume'})
+                if action == 'system' and method == 'GET':
+                    if not hasattr(episode, 'describe'): raise ValueError('System description requires tabletop mode')
+                    return self.send(200, episode.describe())
+                if action == 'experiences' and method == 'GET':
+                    if not hasattr(episode, 'experiences'): raise ValueError('Generic experience requires tabletop mode')
+                    return self.send(200, episode.experiences())
+                if action == 'operation' and method == 'POST':
+                    if not hasattr(episode, 'submit_operation'): raise ValueError('Direct operation requires tabletop mode')
+                    return self.send(200, episode.submit_operation(**body))
+                if action == 'plan' and method == 'POST':
+                    if not hasattr(episode, 'submit_plan'): raise ValueError('Dynamic plans require tabletop mode')
+                    return self.send(200, episode.submit_plan(**body))
                 if action == 'observe' and method == 'GET':
                     return self.send(200, episode.observe())
                 if action == 'verify' and method == 'POST':
                     return self.send(200, episode.finish(body['revision']))
                 if action == 'segments' and method == 'POST':
+                    if not isinstance(body, dict) or not body.get('task_ref'):
+                        raise ValueError('Public code execution requires a Runtime task_ref')
                     return self.send(202, dict(segment_id=episode.execute(**body)))
+                if action == 'skills' and method == 'POST':
+                    return self.send(202, dict(segment_id=episode.execute_skill(**body)))
                 if action == 'cancel' and method == 'POST':
                     return self.send(200, episode.cancel(segment_id=body.get('segment_id')))
+                if action == 'assistance' and method == 'POST':
+                    return self.send(200, episode.request_assistance(**body))
                 if action == 'goal' and method == 'POST':
                     return self.send(200, episode.update_goal(body['goal']))
                 if action == 'decisions' and method == 'POST':
@@ -263,10 +285,13 @@ def main():
         parser.error('Set CAP_RUNTIME_TOKEN to at least 16 characters')
     if args.backend == 'fixture':
         from .fixture import FixtureBackend
-        factory = FixtureBackend
+        from .tabletop_fixture import TabletopFixtureBackend
+        factory = lambda episode: TabletopFixtureBackend(episode) if episode.task == 'tabletop' else FixtureBackend(episode)
     else:
         from .cap_backend import CaPBackend
-        factory = lambda episode: CaPBackend(episode, args.upstream, evaluation=args.evaluation)
+        from .tabletop_backend import TabletopBackend
+        factory = lambda episode: (TabletopBackend(episode, evaluation=args.evaluation) if episode.task == 'tabletop'
+                                   else CaPBackend(episode, args.upstream, evaluation=args.evaluation))
     manager = Manager(args.records, factory)
     server = serve(manager, args.host, args.port, token, runtime_provenance(args.backend, args.upstream))
     print(json.dumps(dict(listening=args.port, backend=args.backend)), flush=True)

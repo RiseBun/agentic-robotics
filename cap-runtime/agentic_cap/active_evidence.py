@@ -277,6 +277,16 @@ def install_inspector(backend, segment, functions):
                 recovery = retreat_evidence(backend, before, getattr(backend, 'safe_retreat', None))
                 raise EffectError(dict(status='unknown', reason='Support evidence unknown; fresh support evidence required',
                                        evidence=evidence, recovery=recovery))
+        if final_release:
+            # The registered place program still needs a fresh measured TCP and
+            # one vertical retreat after opening. The outer API wrapper has
+            # already charged this open call. Never release with no call budget
+            # left to finish the registered sequence.
+            remaining = e.limits['calls']-e.used['calls']
+            from .program_resources import RELEASE_FOLLOWUP_CALLS
+            if remaining < RELEASE_FOLLOWUP_CALLS:
+                emit('placement_release_budget_blocked', remaining_calls=remaining, required_calls=RELEASE_FOLLOWUP_CALLS)
+                raise Halt('Insufficient API budget for release and measured retreat', 'BUDGET_EXHAUSTED')
         result = functions['open_gripper'](*args, **kwargs)
         checkpoint()
         if isinstance(result, dict) and result.get('status') in {'unknown', 'failed'}:

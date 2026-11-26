@@ -57,3 +57,17 @@ robot-records/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Isolated Thor collision-planning environment
+/.venv-curobo/
+
+# Local experimental images, workbench state and source backups
+research/**/*.png
+research/**/*.jpg
+research/**/workbench/
+research/**/physical/
+research/**/before/
+research/**/frozen-source*/
+research/**/*.final-source
+research/**/*.v1-source
+research/**/*.physical-trial-source

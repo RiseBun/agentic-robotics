@@ -15,6 +15,14 @@ ALLOWED_CAMERAS = (PRIMARY_CAMERA, 'agentview', 'frontview', 'robot0_eye_in_hand
 MAX_VIEW_SKEW_SECONDS = .15
 
 
+def validate_secondary_camera(name):
+    # These are existing calibrated public sensors. Configuration never accepts
+    # a new camera pose, a primary-camera duplicate, or an arbitrary sensor name.
+    if name not in ('', *ALLOWED_CAMERAS[1:]):
+        raise ValueError('Unsupported secondary support camera')
+    return name
+
+
 def read_camera_packet(backend, name, apply_fault=False):
     if name not in ALLOWED_CAMERAS:
         raise ValueError('Unregistered public camera')

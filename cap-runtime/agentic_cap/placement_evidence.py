@@ -14,6 +14,7 @@ from .core import identifier, plain
 
 CLEARANCE_M = .10
 ORIGIN_TOLERANCE_M = .01
+MAX_CLEARANCE_RETREAT_M = .15
 
 
 def finite_vector(value, length):
@@ -83,8 +84,6 @@ def clearance_evidence(backend, snapshot, marker):
         return dict(result, reason='missing_public_scene_height')
     required = max(origin[2], max(ceilings)) + CLEARANCE_M
     result.update(required_tcp_z_m=required, actual_tcp_xyz=tcp, release_id=marker['id'])
-    if tcp[2] < required - 1e-6:
-        return dict(result, reason='vertical_retreat_not_confirmed')
     # Before establishing a lateral path the retreat must have been vertical.
     # Later views stay on that path's X/Z plane and keep its orientation.
     path_origin = marker.get('origin')
@@ -93,7 +92,32 @@ def clearance_evidence(backend, snapshot, marker):
     if path_origin is not None and (abs(tcp[0]-path_origin[0]) > ORIGIN_TOLERANCE_M
                                     or abs(tcp[2]-path_origin[2]) > ORIGIN_TOLERANCE_M):
         return dict(result, reason='inspection_origin_changed')
+    if tcp[2] < required - 1e-6:
+        return dict(result, reason='vertical_retreat_not_confirmed')
     return dict(result, status='available', reason='bounded_cube_post_release_clearance')
+
+
+def clearance_retreat_target(snapshot, marker, gate):
+    """Compose strict clearance with the existing measured arrival tolerance.
+
+    Only the release column, before any lateral inspection, admits this bounded
+    upward motion. A commanded endpoint is never accepted as clearance evidence.
+    """
+    from .cartesian_motion import MOTION_PROTOCOL
+
+    tolerance = MOTION_PROTOCOL['position_tolerance_m']
+    if (gate.get('reason') != 'vertical_retreat_not_confirmed' or not marker
+            or marker.get('origin') is not None or marker.get('tried')
+            or marker.get('clearance_attempted') or marker.get('blocked')):
+        return None
+    tcp = snapshot['tcp_xyz']
+    if tcp[2] < marker['release_tcp_xyz'][2] - tolerance:
+        return None
+    target = list(tcp)
+    target[2] = gate['required_tcp_z_m'] + 2*tolerance
+    if not 0 < target[2]-tcp[2] <= MAX_CLEARANCE_RETREAT_M:
+        return None
+    return target
 
 
 def install_placement_inspector(backend, segment, functions, *, call, fresh_after, emit):
@@ -134,6 +158,40 @@ def install_placement_inspector(backend, segment, functions, *, call, fresh_afte
             snapshot = e.observe()
             gate = clearance_evidence(backend, snapshot, marker)
             result['clearance'] = gate
+            target = clearance_retreat_target(snapshot, marker, gate)
+            if target is not None:
+                with e.lock:
+                    e.checkpoint(segment)
+                    marker['clearance_attempted'] = True
+                used, retreat_start = dict(e.used), time.monotonic()
+                row = dict(acquisition_id=result['acquisition_id'], release_id=marker['id'],
+                           target_xyz=target, target_wxyz=copy.deepcopy(snapshot['tcp_wxyz']),
+                           before=gate, before_evidence_ref=snapshot.get('evidence_ref'))
+                emit('placement_clearance_retreat_started', **row)
+                call('goto_pose', functions['goto_pose'], target, row['target_wxyz'],
+                     parent_api='inspect_placement')
+                e.checkpoint(segment)
+                snapshot = fresh_after(max(snapshot['control_step'], backend.tick))
+                e.checkpoint(segment)
+                gate = clearance_evidence(backend, snapshot, marker)
+                result.update(clearance=gate, clearance_retreat_used=True,
+                              evidence_ref=snapshot.get('evidence_ref'),
+                              captured_at=snapshot.get('captured_at'))
+                emit('placement_clearance_retreat_finished', **row, after=gate,
+                     evidence_ref=snapshot.get('evidence_ref'), actual_tcp_xyz=snapshot.get('tcp_xyz'),
+                     actual_tcp_wxyz=snapshot.get('tcp_wxyz'),
+                     elapsed_seconds=time.monotonic()-retreat_start,
+                     used_delta={key: e.used[key]-used[key] for key in used})
+                if gate['status'] != 'available':
+                    marker['blocked'] = True
+                else:
+                    verification = verify_current()
+                    result.update(goal_verification=verification,
+                                  evidence_ref=verification.get('evidence_ref'),
+                                  captured_at=verification.get('captured_at'))
+                    if verification['status'] != 'unknown':
+                        result.update(status=verification['status'], reason='relation_observable_after_clearance')
+                        return result
             if gate['status'] != 'available':
                 result['reason'] = gate['reason']
                 return result

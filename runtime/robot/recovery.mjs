@@ -2,6 +2,8 @@ import crypto from 'node:crypto';
 
 const digest = value => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const codeKey = code => digest((code || '').replaceAll('\r\n', '\n').trim());
+const actionKey = decision => decision.decision === 'run_skill'
+  ? digest([decision.skill?.name, Object.entries(decision.skill?.arguments || {}).sort()]) : codeKey(decision.code);
 const position = value => Array.isArray(value) && value.length === 3 && value.every(Number.isFinite) ? [...value] : null;
 const status = value => value?.status || 'unknown';
 
@@ -10,15 +12,17 @@ const status = value => value?.status || 'unknown';
 // comparison tolerance, avoiding progress caused by crossing a rounding bin.
 export function recoveryFacts(episode, observation) {
   const goal = structuredClone(episode?.goal || {});
+  const world = observation?.system?.contract_version === 1 ? observation.system.world : null;
   const names = [...new Set([goal.holding, ...(goal.on || [])].filter(n => n && n !== 'table'))].sort();
   return {
     goal,
     objects: names.map(name => {
       const obj = observation?.objects?.[name];
       return { name, status: status(obj), center_m: status(obj) === 'visible' ? position(obj.surface_median_xyz) : null,
-        support: goal.on?.[1] === name ? status(observation?.support_evidence?.[name]) : null };
+        support: goal.on?.[1] === name ? world ? (world.facts[`support:${name}`]?.status === 'verified' ? 'available' : 'unknown') : status(observation?.support_evidence?.[name]) : null };
     }),
-    empty_gripper: status(observation?.empty_gripper_evidence),
+    empty_gripper: world ? status(world.facts.empty_gripper) : status(observation?.empty_gripper_evidence),
+    ...(world ? { runtime_fact_statuses: Object.entries(world.facts).map(([key, fact]) => [key, fact.status]).sort() } : {}),
     hold_alert: episode?.runtime_alert ? { code: episode.runtime_alert.code,
       object_name: episode.runtime_alert.object_name, hold_confirmed: episode.runtime_alert.hold_confirmed === true } : null,
   };
@@ -28,7 +32,8 @@ export function newRecoveryMemory() { return { version: 2, attempts: [] }; }
 
 function sameFacts(a, b) {
   if (!a || !b || JSON.stringify(a.goal) !== JSON.stringify(b.goal) || a.empty_gripper !== b.empty_gripper
-      || JSON.stringify(a.hold_alert) !== JSON.stringify(b.hold_alert) || a.objects.length !== b.objects.length) return false;
+      || JSON.stringify(a.hold_alert) !== JSON.stringify(b.hold_alert) || a.objects.length !== b.objects.length
+      || JSON.stringify(a.runtime_fact_statuses) !== JSON.stringify(b.runtime_fact_statuses)) return false;
   return a.objects.every((object, i) => {
     const other = b.objects[i];
     if (object.name !== other.name || object.status !== other.status || object.support !== other.support) return false;
@@ -39,7 +44,7 @@ function sameFacts(a, b) {
 
 export function recordRecoveryAttempt(memory, { decision, segment, verification, facts, revision, observation }) {
   const feedback = segment?.feedback;
-  memory.attempts.push({ decision: decision.decision, code_key: decision.decision === 'run_code' ? codeKey(decision.code) : null,
+  memory.attempts.push({ decision: decision.decision, code_key: ['run_code', 'run_skill'].includes(decision.decision) ? actionKey(decision) : null,
     revision, fact_key: digest(facts), evidence_before: facts,
     observation: observation ? { evidence_ref: observation.evidence_ref, captured_at: observation.captured_at,
       control_step: observation.control_step } : null,
@@ -49,8 +54,8 @@ export function recordRecoveryAttempt(memory, { decision, segment, verification,
       diagnostic: feedback.category === 'invalid_program' ? feedback.evidence || null : null,
       causal_status: feedback.causal_status || 'not_established' } : null,
     api_attempts: segment?.api_attempts || [], acquisition: segment?.evidence_acquisition || null,
-    verification_required: Boolean(verification || segment?.contract?.postcondition || segment?.stage_verification?.condition),
-    verification: verification || segment?.stage_verification || null });
+    verification_required: Boolean(verification || segment?.task_binding || segment?.contract?.postcondition || segment?.stage_verification?.condition),
+    verification: verification || segment?.node_verification || segment?.stage_verification || null });
   // The episode decision limit is twelve; leave headroom for audit without
   // creating a second, unbounded memory subsystem.
   if (memory.attempts.length > 40) memory.attempts.shift();
@@ -129,7 +134,7 @@ export function guardRecoveryDecision(memory, context, decision) {
   if (decision.decision === 'ask_user') return null;
   const unchanged = context.consecutive_unchanged_attempts ? memory.attempts.slice(-context.consecutive_unchanged_attempts) : [];
   const invalid = memory.attempts.filter(a => a.feedback?.category === 'invalid_program');
-  if (decision.decision === 'run_code' && [...unchanged, ...invalid].some(a => a.code_key === codeKey(decision.code) &&
+  if (['run_code', 'run_skill'].includes(decision.decision) && [...unchanged, ...invalid].some(a => a.code_key === actionKey(decision) &&
       (a.execution === 'failed' || a.feedback))) {
     return { code: 'REPEATED_FAILED_PROGRAM', message: '相同公开证据下重复提交已失败代码；需要修正或用户协助。' };
   }

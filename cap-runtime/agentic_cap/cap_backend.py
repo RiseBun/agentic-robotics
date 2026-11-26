@@ -92,9 +92,8 @@ class CaPBackend:
         # Experimental skills are opt-in; paired groups share all guards.
         self.active_evidence_enabled = os.environ.get('CAP_ACTIVE_EVIDENCE', '0') == '1'
         self.placement_evidence_enabled = os.environ.get('CAP_PLACEMENT_EVIDENCE', '0') == '1'
-        self.secondary_camera = os.environ.get('CAP_SUPPORT_SECOND_VIEW', '')
-        if self.secondary_camera not in {'', 'robot0_eye_in_hand'}:
-            raise ValueError('Unsupported secondary support camera')
+        from .public_views import validate_secondary_camera
+        self.secondary_camera = validate_secondary_camera(os.environ.get('CAP_SUPPORT_SECOND_VIEW', ''))
         self.inspection_sessions = {}
         self.held_hint = None
         # Optional public-camera fault injection for the active-evidence A/B
@@ -309,6 +308,8 @@ class CaPBackend:
                 self.reference = copy.deepcopy(state)
             state['capabilities'] = (['inspect_support'] if self.active_evidence_enabled else []) + (
                 ['inspect_placement'] if self.placement_evidence_enabled else [])
+            if os.environ.get('CAP_ALTERNATE_PLACEMENT', '0') == '1':
+                state['capabilities'].append('reorient_held_object')
             from .placement_evidence import empty_gripper_evidence
             state['empty_gripper_evidence'] = empty_gripper_evidence(state)
             state['support_evidence'] = {
@@ -328,6 +329,9 @@ class CaPBackend:
                 views_used=len(value['tried']), blocked=bool(value.get('blocked')))
                 for key, value in sorted(sessions.items())],
             placement_session=dict(release_id=marker['id'], views_used=len(marker['tried']),
+                current_goal=marker.get('goal') == self.episode.goal and not any(
+                    event['kind'] == 'goal_changed' and event['id'] > marker.get('event_id', -1)
+                    for event in self.episode.events),
                 blocked=bool(marker.get('blocked'))) if marker else None)
 
     def arm_holding_watchdog(self, name, snapshot):

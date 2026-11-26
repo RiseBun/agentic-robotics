@@ -1,0 +1,17 @@
+{
+  "candidate_id": "0fecc2568f21e6b8377995cbf01ca1941af9a756e624037882f45cd5b3c3eb69",
+  "library_fingerprint": "7f904acbb36fa97150ef8c85a3add9cb47906f66fad394195cee0bf595bb6747",
+  "runtime_contract": "c7f6184d96ce13d10184c19194d33028a9e9add0e31d326b0a0a3ec551d67fb0",
+  "validation_report": "skill-validation-place-v1/independent-validation.json",
+  "default_enabled": false,
+  "scope": "parameterized registered placement continuation; no new low-level controller learned",
+  "source_bindings": {
+    "arg1": "cylinder_a",
+    "arg2": "right"
+  },
+  "validation_bindings": {
+    "arg1": "block_a",
+    "arg2": "left"
+  },
+  "retrieval_smoke": "passed"
+}

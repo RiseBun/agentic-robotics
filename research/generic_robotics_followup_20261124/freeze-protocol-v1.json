@@ -1,0 +1,50 @@
+{
+  "stage": "development",
+  "task": "multiple",
+  "seed": 202,
+  "started_at": "2026-11-25T04:54:38.828Z",
+  "scene": "tabletop_v1",
+  "model": "gpt-5.6-sol",
+  "configuration_fingerprint": "f85ca2bb0081fc65749367540fbe3d6fc070cb0ec285580a847e4ca6bfc22294",
+  "runtime_fingerprint": "489773d08e976eed409c45ea9b87ad2af05fa1ac19508cf133a7707ae06a30bd",
+  "runtime": {
+    "service": "agentic-cap",
+    "protocol": 1,
+    "backend": "cap",
+    "source_digest": "7b99dec0307660fa75e5403bbee010e92f8b24442de1af001913799cbcd21284",
+    "python": "3.12.3",
+    "recovery_contract": "faf372ad63eab6b17b8a59d75a904b0e3c0543ef044426db93e2aef0b6fae1cd",
+    "features": {
+      "alternate_placement": true,
+      "inspect_support": true,
+      "support_second_view": "robot0_eye_in_hand",
+      "holding_watchdog": true,
+      "inspect_placement": true,
+      "support_camera_fault": ""
+    },
+    "upstream_source_digest": "0fa5306451e6b9ada1224e99c3344b8bf1075cbb36515bd623beed98ba640e3f",
+    "upstream_revision": "53e9966d7a8e2fa7494676772bccc35280f5c0ed"
+  },
+  "condition": "system_no_memory",
+  "library_fingerprint": null,
+  "memory": false,
+  "input_text": "Put the blue block in the left marked region and the purple cylinder in the right marked region. Leave the gripper empty.",
+  "expected_goal": {
+    "all": [
+      {
+        "predicate": "in_region",
+        "object": "block_a",
+        "region": "left"
+      },
+      {
+        "predicate": "in_region",
+        "object": "cylinder_a",
+        "region": "right"
+      },
+      {
+        "predicate": "empty_gripper"
+      }
+    ]
+  },
+  "scope": "real model; no task-specific program supplied"
+}

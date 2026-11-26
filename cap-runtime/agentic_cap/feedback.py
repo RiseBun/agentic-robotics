@@ -23,6 +23,9 @@ def feedback(exc, *, phase='execution', call_id=None, api=None, observation=None
         category = 'insufficient_evidence' if exc.result['status'] == 'unknown' else 'condition_not_satisfied'
     elif isinstance(exc, MotionError):
         category = 'motion_target_not_reached'
+    elif code == 'INSUFFICIENT_STAGE_BUDGET':
+        category = 'resources_insufficient'
+        phase = 'program_preflight'
     elif code == 'BUDGET_EXHAUSTED':
         category = 'budget_exhausted'
     elif code == 'PUBLIC_HOLDING_LOSS':

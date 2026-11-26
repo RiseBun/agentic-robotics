@@ -1,0 +1,63 @@
+{
+  "A": {
+    "status": "passed",
+    "scope": "three legacy tasks; seed 12, wrist camera and bounded alternative capability enabled; prior failures retained",
+    "evidence": [
+      "profile3-independent.json",
+      "fault-current/checks.json",
+      "python-current.log",
+      "node-current.log"
+    ]
+  },
+  "B": {
+    "status": "passed",
+    "evidence": [
+      "python-current.log",
+      "node-current.log"
+    ]
+  },
+  "C": {
+    "status": "passed",
+    "scope": "minimum six-class development coverage; no frozen-test claim",
+    "runtime_contract": "c7f6184d96ce13d10184c19194d33028a9e9add0e31d326b0a0a3ec551d67fb0",
+    "evidence": [
+      "development-v1/analysis.json",
+      "smoke-current/independent-score.json"
+    ]
+  },
+  "D_validation": {
+    "status": "passed",
+    "scope": "one parameterized placement continuation; benefit not yet established",
+    "evidence": [
+      "skill-validation-place-v1/independent-validation.json",
+      "library-freeze.json"
+    ]
+  },
+  "E": {
+    "status": "experimental_not_default",
+    "evidence": [
+      "../generic_robotics_20261124/frontend-build-final-v2.log"
+    ]
+  },
+  "D": {
+    "status": "evaluated_no_observed_gain",
+    "evidence": [
+      "formal-v1/analysis.json",
+      "formal-v1/experience-exposure.json"
+    ]
+  },
+  "formal": {
+    "status": "evaluated",
+    "runs": 54,
+    "false_completions": 0,
+    "unscored": 0,
+    "evidence": [
+      "formal-v1/independent-scores.json",
+      "acceptance-final.json"
+    ]
+  },
+  "release": {
+    "status": "experimental_only",
+    "reason": "no automatic default switch; limited simulation scope and public verification false rejections remain"
+  }
+}

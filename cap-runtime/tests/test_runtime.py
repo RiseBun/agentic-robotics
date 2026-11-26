@@ -121,7 +121,11 @@ class RuntimeTests(unittest.TestCase):
     def test_cumulative_budget(self):
         self.e.limits['calls'] = 1
         self.run_segment('first', 'wait_motion()')
-        self.assertEqual(self.run_segment('second', 'pick("red cube")')['execution'], 'cancelled')
+        result = self.run_segment('second', 'pick("red cube")')
+        self.assertEqual(result['execution'], 'failed')
+        self.assertEqual(result['feedback']['category'], 'resources_insufficient')
+        self.assertEqual(result['api_attempts'], [])
+        self.assertEqual(self.e.used['calls'], 1)
         self.assertIsNone(self.e.backend.held)
         self.e.decision('d1', 1)
         self.e.decision('d1', 1)

@@ -1,0 +1,31 @@
+{
+  "candidate": {
+    "id": "0fecc2568f21e6b8377995cbf01ca1941af9a756e624037882f45cd5b3c3eb69",
+    "steps": [
+      {
+        "name": "place_in_region",
+        "arguments": {
+          "object": "$arg1",
+          "region": "$arg2"
+        }
+      }
+    ],
+    "source_bindings": {
+      "arg1": "cylinder_a",
+      "arg2": "right"
+    },
+    "initial_holding": "$arg1",
+    "source_episode": "1a3b8521e38e690aade74eae0e1fd53d"
+  },
+  "bindings": {
+    "arg1": "block_a",
+    "arg2": "left"
+  },
+  "validation_seeds": [
+    301,
+    302
+  ],
+  "source_objects_differ": true,
+  "model_not_called": true,
+  "library_default": false
+}

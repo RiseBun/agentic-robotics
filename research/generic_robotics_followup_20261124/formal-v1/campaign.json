@@ -1,0 +1,499 @@
+{
+  "schema": 1,
+  "model_fingerprint": "f85ca2bb0081fc65749367540fbe3d6fc070cb0ec285580a847e4ca6bfc22294",
+  "runtime_fingerprint": "489773d08e976eed409c45ea9b87ad2af05fa1ac19508cf133a7707ae06a30bd",
+  "library_fingerprint": "7f904acbb36fa97150ef8c85a3add9cb47906f66fad394195cee0bf595bb6747",
+  "limits": {
+    "decisions": 24,
+    "calls": 80,
+    "motion_steps": 3000,
+    "wall_seconds": 600
+  },
+  "tasks": [
+    {
+      "id": "hold",
+      "scene": "tabletop_v1",
+      "text": "Pick up the blue block and keep holding it.",
+      "goal": {
+        "all": [
+          {
+            "predicate": "holding",
+            "object": "block_a"
+          }
+        ]
+      }
+    },
+    {
+      "id": "support",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block on the grey platform and leave the gripper empty.",
+      "goal": {
+        "all": [
+          {
+            "predicate": "on",
+            "object": "block_a",
+            "support": "platform"
+          },
+          {
+            "predicate": "empty_gripper"
+          }
+        ]
+      }
+    },
+    {
+      "id": "region",
+      "scene": "tabletop_v1",
+      "text": "Move the purple cylinder into the left marked region and release it. Leave the gripper empty.",
+      "goal": {
+        "all": [
+          {
+            "predicate": "in_region",
+            "object": "cylinder_a",
+            "region": "left"
+          },
+          {
+            "predicate": "empty_gripper"
+          }
+        ]
+      }
+    },
+    {
+      "id": "unstack",
+      "scene": "tabletop_stacked_v1",
+      "text": "Remove the blue block from the yellow block and put it in the right marked region. Leave the gripper empty.",
+      "goal": {
+        "all": [
+          {
+            "predicate": "in_region",
+            "object": "block_a",
+            "region": "right"
+          },
+          {
+            "predicate": "empty_gripper"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reverse",
+      "scene": "tabletop_stacked_v1",
+      "text": "Reverse the stack: place the yellow block on the blue block and release. Leave the gripper empty.",
+      "goal": {
+        "all": [
+          {
+            "predicate": "on",
+            "object": "block_b",
+            "support": "block_a"
+          },
+          {
+            "predicate": "empty_gripper"
+          }
+        ]
+      }
+    },
+    {
+      "id": "multiple",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block in the left marked region and the purple cylinder in the right marked region. Leave the gripper empty.",
+      "goal": {
+        "all": [
+          {
+            "predicate": "in_region",
+            "object": "block_a",
+            "region": "left"
+          },
+          {
+            "predicate": "in_region",
+            "object": "cylinder_a",
+            "region": "right"
+          },
+          {
+            "predicate": "empty_gripper"
+          }
+        ]
+      }
+    }
+  ],
+  "runs": [
+    {
+      "task": "hold",
+      "scene": "tabletop_v1",
+      "text": "Pick up the blue block and keep holding it.",
+      "seed": 701,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "hold",
+      "scene": "tabletop_v1",
+      "text": "Pick up the blue block and keep holding it.",
+      "seed": 701,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "hold",
+      "scene": "tabletop_v1",
+      "text": "Pick up the blue block and keep holding it.",
+      "seed": 701,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "hold",
+      "scene": "tabletop_v1",
+      "text": "Pick up the blue block and keep holding it.",
+      "seed": 702,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "hold",
+      "scene": "tabletop_v1",
+      "text": "Pick up the blue block and keep holding it.",
+      "seed": 702,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "hold",
+      "scene": "tabletop_v1",
+      "text": "Pick up the blue block and keep holding it.",
+      "seed": 702,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "hold",
+      "scene": "tabletop_v1",
+      "text": "Pick up the blue block and keep holding it.",
+      "seed": 703,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "hold",
+      "scene": "tabletop_v1",
+      "text": "Pick up the blue block and keep holding it.",
+      "seed": 703,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "hold",
+      "scene": "tabletop_v1",
+      "text": "Pick up the blue block and keep holding it.",
+      "seed": 703,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "support",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block on the grey platform and leave the gripper empty.",
+      "seed": 701,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "support",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block on the grey platform and leave the gripper empty.",
+      "seed": 701,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "support",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block on the grey platform and leave the gripper empty.",
+      "seed": 701,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "support",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block on the grey platform and leave the gripper empty.",
+      "seed": 702,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "support",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block on the grey platform and leave the gripper empty.",
+      "seed": 702,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "support",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block on the grey platform and leave the gripper empty.",
+      "seed": 702,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "support",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block on the grey platform and leave the gripper empty.",
+      "seed": 703,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "support",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block on the grey platform and leave the gripper empty.",
+      "seed": 703,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "support",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block on the grey platform and leave the gripper empty.",
+      "seed": 703,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "region",
+      "scene": "tabletop_v1",
+      "text": "Move the purple cylinder into the left marked region and release it. Leave the gripper empty.",
+      "seed": 701,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "region",
+      "scene": "tabletop_v1",
+      "text": "Move the purple cylinder into the left marked region and release it. Leave the gripper empty.",
+      "seed": 701,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "region",
+      "scene": "tabletop_v1",
+      "text": "Move the purple cylinder into the left marked region and release it. Leave the gripper empty.",
+      "seed": 701,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "region",
+      "scene": "tabletop_v1",
+      "text": "Move the purple cylinder into the left marked region and release it. Leave the gripper empty.",
+      "seed": 702,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "region",
+      "scene": "tabletop_v1",
+      "text": "Move the purple cylinder into the left marked region and release it. Leave the gripper empty.",
+      "seed": 702,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "region",
+      "scene": "tabletop_v1",
+      "text": "Move the purple cylinder into the left marked region and release it. Leave the gripper empty.",
+      "seed": 702,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "region",
+      "scene": "tabletop_v1",
+      "text": "Move the purple cylinder into the left marked region and release it. Leave the gripper empty.",
+      "seed": 703,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "region",
+      "scene": "tabletop_v1",
+      "text": "Move the purple cylinder into the left marked region and release it. Leave the gripper empty.",
+      "seed": 703,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "region",
+      "scene": "tabletop_v1",
+      "text": "Move the purple cylinder into the left marked region and release it. Leave the gripper empty.",
+      "seed": 703,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "unstack",
+      "scene": "tabletop_stacked_v1",
+      "text": "Remove the blue block from the yellow block and put it in the right marked region. Leave the gripper empty.",
+      "seed": 701,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "unstack",
+      "scene": "tabletop_stacked_v1",
+      "text": "Remove the blue block from the yellow block and put it in the right marked region. Leave the gripper empty.",
+      "seed": 701,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "unstack",
+      "scene": "tabletop_stacked_v1",
+      "text": "Remove the blue block from the yellow block and put it in the right marked region. Leave the gripper empty.",
+      "seed": 701,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "unstack",
+      "scene": "tabletop_stacked_v1",
+      "text": "Remove the blue block from the yellow block and put it in the right marked region. Leave the gripper empty.",
+      "seed": 702,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "unstack",
+      "scene": "tabletop_stacked_v1",
+      "text": "Remove the blue block from the yellow block and put it in the right marked region. Leave the gripper empty.",
+      "seed": 702,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "unstack",
+      "scene": "tabletop_stacked_v1",
+      "text": "Remove the blue block from the yellow block and put it in the right marked region. Leave the gripper empty.",
+      "seed": 702,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "unstack",
+      "scene": "tabletop_stacked_v1",
+      "text": "Remove the blue block from the yellow block and put it in the right marked region. Leave the gripper empty.",
+      "seed": 703,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "unstack",
+      "scene": "tabletop_stacked_v1",
+      "text": "Remove the blue block from the yellow block and put it in the right marked region. Leave the gripper empty.",
+      "seed": 703,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "unstack",
+      "scene": "tabletop_stacked_v1",
+      "text": "Remove the blue block from the yellow block and put it in the right marked region. Leave the gripper empty.",
+      "seed": 703,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "reverse",
+      "scene": "tabletop_stacked_v1",
+      "text": "Reverse the stack: place the yellow block on the blue block and release. Leave the gripper empty.",
+      "seed": 701,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "reverse",
+      "scene": "tabletop_stacked_v1",
+      "text": "Reverse the stack: place the yellow block on the blue block and release. Leave the gripper empty.",
+      "seed": 701,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "reverse",
+      "scene": "tabletop_stacked_v1",
+      "text": "Reverse the stack: place the yellow block on the blue block and release. Leave the gripper empty.",
+      "seed": 701,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "reverse",
+      "scene": "tabletop_stacked_v1",
+      "text": "Reverse the stack: place the yellow block on the blue block and release. Leave the gripper empty.",
+      "seed": 702,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "reverse",
+      "scene": "tabletop_stacked_v1",
+      "text": "Reverse the stack: place the yellow block on the blue block and release. Leave the gripper empty.",
+      "seed": 702,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "reverse",
+      "scene": "tabletop_stacked_v1",
+      "text": "Reverse the stack: place the yellow block on the blue block and release. Leave the gripper empty.",
+      "seed": 702,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "reverse",
+      "scene": "tabletop_stacked_v1",
+      "text": "Reverse the stack: place the yellow block on the blue block and release. Leave the gripper empty.",
+      "seed": 703,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "reverse",
+      "scene": "tabletop_stacked_v1",
+      "text": "Reverse the stack: place the yellow block on the blue block and release. Leave the gripper empty.",
+      "seed": 703,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "reverse",
+      "scene": "tabletop_stacked_v1",
+      "text": "Reverse the stack: place the yellow block on the blue block and release. Leave the gripper empty.",
+      "seed": 703,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "multiple",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block in the left marked region and the purple cylinder in the right marked region. Leave the gripper empty.",
+      "seed": 701,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "multiple",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block in the left marked region and the purple cylinder in the right marked region. Leave the gripper empty.",
+      "seed": 701,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "multiple",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block in the left marked region and the purple cylinder in the right marked region. Leave the gripper empty.",
+      "seed": 701,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "multiple",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block in the left marked region and the purple cylinder in the right marked region. Leave the gripper empty.",
+      "seed": 702,
+      "condition": "system_no_memory"
+    },
+    {
+      "task": "multiple",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block in the left marked region and the purple cylinder in the right marked region. Leave the gripper empty.",
+      "seed": 702,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "multiple",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block in the left marked region and the purple cylinder in the right marked region. Leave the gripper empty.",
+      "seed": 702,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "multiple",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block in the left marked region and the purple cylinder in the right marked region. Leave the gripper empty.",
+      "seed": 703,
+      "condition": "system_with_memory"
+    },
+    {
+      "task": "multiple",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block in the left marked region and the purple cylinder in the right marked region. Leave the gripper empty.",
+      "seed": 703,
+      "condition": "direct_cap"
+    },
+    {
+      "task": "multiple",
+      "scene": "tabletop_v1",
+      "text": "Put the blue block in the left marked region and the purple cylinder in the right marked region. Leave the gripper empty.",
+      "seed": 703,
+      "condition": "system_no_memory"
+    }
+  ],
+  "scoring": "all episodes closed before independent evaluation; no truth exposed online",
+  "manifest_id": "98cd6843f8794fda2c1cb16d53a94632f2198e41fc21eb805207e76433ab9d7a"
+}

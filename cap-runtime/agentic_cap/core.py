@@ -8,9 +8,12 @@ import concurrent.futures
 from pathlib import Path
 
 from .interpreter import Interpreter
+from .program_resources import program_calls, assess_calls, StageBudgetError
 from .feedback import EffectError, feedback
+from .robot_system import RobotSystem, TaskExecutive
+from .skills import DEFINITIONS, compile_skill, validate_skill
 
-TASKS = {'cube_lifting', 'cube_stack', 'cube_restack'}
+TASKS = {'cube_lifting', 'cube_stack', 'cube_restack', 'tabletop'}
 DEFAULTS = dict(decisions=12, calls=40, motion_steps=1500, wall_seconds=300)
 POST_ACTION_EVIDENCE_TIMEOUT_SECONDS = 3.0
 
@@ -67,7 +70,29 @@ class HoldPending(ValueError):
     code = 'HOLD_PENDING'
 
 
+class DependenciesChanged(ValueError):
+    code = 'STALE_DEPENDENCIES'
+
+
+class AssistancePending(ValueError):
+    code = 'AWAITING_USER'
+
+
 class Episode:
+    default_limits = DEFAULTS
+    validate_goal = staticmethod(validate_goal)
+    validate_skill = staticmethod(validate_skill)
+    compile_skill = staticmethod(compile_skill)
+
+    def make_robot_system(self):
+        return RobotSystem(self.id)
+
+    def skill_definition(self, name):
+        return DEFINITIONS[name]
+
+    def evidence_goals(self):
+        return [self.goal, dict(holding="red cube"), dict(on=["red cube", "green cube"])]
+
     def __init__(self, root, task, seed, goal, backend_factory, limits=None, episode_id=None, creation=None):
         if task not in TASKS:
             raise ValueError('Unsupported task')
@@ -79,10 +104,10 @@ class Episode:
         self.directory.mkdir(parents=True, exist_ok=True)
         self.lock = threading.RLock()
         self.cv = threading.Condition(self.lock)
-        self.task, self.seed, self.goal = task, seed, validate_goal(goal)
+        self.task, self.seed, self.goal = task, seed, self.validate_goal(goal)
         self.revision = 1
-        self.limits = {**DEFAULTS, **(limits or {})}
-        if set(self.limits) != set(DEFAULTS) or any(not isinstance(v, (int, float)) or isinstance(v, bool) or not 0 < v <= DEFAULTS[k] for k, v in self.limits.items()):
+        self.limits = {**self.default_limits, **(limits or {})}
+        if set(self.limits) != set(self.default_limits) or any(not isinstance(v, (int, float)) or isinstance(v, bool) or not 0 < v <= self.default_limits[k] for k, v in self.limits.items()):
             raise ValueError('Limits must be positive and cannot exceed defaults')
         self.used = dict(decisions=0, calls=0, motion_steps=0, idle_steps=0)
         self.created = time.time()
@@ -104,6 +129,8 @@ class Episode:
         self.backend_factory = backend_factory
         self.scene_facts = None
         self.runtime_alert = None
+        self.assistance = None
+        self.robot_system = self.make_robot_system()
         self.monitor_requested_at = None
         self.monitor_error = None
         self.thread = threading.Thread(target=self._loop, name='physics-' + self.id, daemon=True)
@@ -133,7 +160,9 @@ class Episode:
             return copy.deepcopy(dict(id=self.id, task=self.task, seed=self.seed, goal=self.goal,
                 creation=self.creation,
                 revision=self.revision, status=self.status, termination_reason=self.termination_reason, active_segment=self.active,
-                runtime_alert=self.runtime_alert,
+                runtime_alert=self.runtime_alert, assistance=self.assistance,
+                system=self.robot_system.view(self.revision, self.status, self.active, self.segments.get(self.active), self.assistance,
+                    remaining_calls=self.limits['calls']-self.used['calls'], hold_pending=self.hold_ack < self.hold_serial),
                 used={**self.used, 'wall_seconds': (self.ended if self.ended is not None else time.monotonic()) - self.started},
                 limits=self.limits, segments=self.segments, last_event_id=len(self.events)))
 
@@ -199,24 +228,8 @@ class Episode:
                                     self.event('holding_watchdog_unavailable', error=str(exc))
                         if self.runtime_alert is not None:
                             self.snapshot['runtime_alert'] = copy.deepcopy(self.runtime_alert)
-                        objects = self.snapshot.get('objects', {})
-                        facts = {name: (obj.get('status'), obj.get('surface_median_xyz')) for name, obj in objects.items()}
-                        changed = False
-                        if self.scene_facts is not None and not self.active:
-                            for name in set(facts) | set(self.scene_facts):
-                                a, b = self.scene_facts.get(name), facts.get(name)
-                                if a is None or b is None or a[0] != b[0]:
-                                    changed = True
-                                elif a[1] and b[1] and sum((x-y)**2 for x, y in zip(a[1], b[1])) > .02**2:
-                                    changed = True
-                            if changed:
-                                self.revision += 1
-                                self.snapshot['revision'] = self.revision
-                                self.event('scene_changed', revision=self.revision, objects=objects)
                         if not self.active:
-                            # Compare to the last material state, not a drifting per-frame baseline.
-                            if self.scene_facts is None or changed:
-                                self.scene_facts = copy.deepcopy(facts)
+                            self._publish_scene_change()
                         last_capture = time.monotonic()
                     if ack is not None:
                         self.hold_ack = ack
@@ -252,8 +265,36 @@ class Episode:
             if self.backend:
                 self.backend.close()
 
+    def _publish_scene_change(self):
+        """Publish material public facts under the episode lock.
+
+        Active actions defer scene revisions so their own motion cannot cancel
+        them. Their terminal transition reconciles the latest published sensor
+        packet before clients can observe an idle episode and start inference.
+        Later sensor changes still invalidate decisions normally.
+        """
+        objects = self.snapshot.get('objects', {})
+        facts = {name: (obj.get('status'), obj.get('surface_median_xyz')) for name, obj in objects.items()}
+        changed = False
+        if self.scene_facts is not None:
+            for name in set(facts) | set(self.scene_facts):
+                a, b = self.scene_facts.get(name), facts.get(name)
+                if a is None or b is None or a[0] != b[0]:
+                    changed = True
+                elif a[1] and b[1] and sum((x-y)**2 for x, y in zip(a[1], b[1])) > .02**2:
+                    changed = True
+        if changed:
+            self.revision += 1
+            self.snapshot['revision'] = self.revision
+            self.event('scene_changed', revision=self.revision, objects=objects)
+        # Preserve the material baseline so gradual drift cannot evade fencing.
+        if self.scene_facts is None or changed:
+            self.scene_facts = copy.deepcopy(facts)
+
     def checkpoint(self, segment):
         with self.lock:
+            if self.assistance:
+                raise Halt('Task awaits user instruction', 'CANCELLED')
             if segment.get('cancel_requested') or segment['revision'] != self.revision:
                 raise Halt('Cancelled or superseded goal', segment.get('halt_code', 'CANCELLED'), segment.get('halt_evidence'))
             if self.status != 'ready' or time.monotonic() - self.started >= self.limits['wall_seconds']:
@@ -270,6 +311,24 @@ class Episode:
             if recovery_state is not None:
                 result['bounded_recovery_state'] = plain(recovery_state())
             result['age_seconds'] = time.time() - result.get('captured_at', time.time())
+            # Sensor-window readiness is independent of whether a fact is true.
+            # All current cube task recipes consume holding and placement facts.
+            readiness = getattr(self.backend, 'verification_readiness', None)
+            if readiness is None:
+                result['decision_evidence'] = dict(status='not_required', reason='backend_has_no_temporal_window')
+            else:
+                try:
+                    evidence = plain(readiness(self.evidence_goals(), copy.deepcopy(self.snapshot)))
+                    if not isinstance(evidence, dict) or evidence.get('status') not in {'ready', 'pending'}:
+                        raise ValueError('Invalid evidence-readiness result')
+                    result['decision_evidence'] = evidence
+                except Exception:
+                    result['decision_evidence'] = dict(status='unknown', reason='public_window_readiness_unavailable')
+            if self.backend is not None:
+                result['system'] = self.robot_system.publish(result, self.goal, self.revision,
+                    self.backend.verify, status=self.status, active=self.active,
+                    segments=self.segments, alert=self.runtime_alert, hold_pending=self.hold_ack < self.hold_serial,
+                    assistance=self.assistance, budget=dict(limits=self.limits,used={**self.used, 'wall_seconds':(self.ended if self.ended is not None else time.monotonic())-self.started}))
             return result
 
     def interrupt_public_hold(self, report):
@@ -298,33 +357,100 @@ class Episode:
             self.runtime_alert['event_id'] = event['id']
             return True
 
-    def decision(self, request_id, revision):
+    def decision(self, request_id, revision, purpose='execution'):
+        if purpose not in {'execution', 'interpretation'}:
+            raise ValueError('Unknown decision purpose')
         with self.lock:
             key = 'decision:' + request_id
             if key in self.requests:
+                if self.requests.get('decision-purpose:'+request_id, 'execution') != purpose:
+                    raise ValueError('Decision request purpose conflicts with original')
                 return self.requests[key]
             if revision != self.revision:
                 raise StaleRevision('Stale goal or scene revision')
             if self.status != 'ready':
                 raise ValueError('Episode unavailable')
-            if self.runtime_alert is not None and not self.runtime_alert['hold_confirmed']:
+            if self.assistance and purpose != 'interpretation':
+                raise AssistancePending('Task awaits user instruction')
+            if self.hold_ack < self.hold_serial or (self.runtime_alert is not None and not self.runtime_alert['hold_confirmed']):
                 raise HoldPending('Wait for owner-confirmed protective hold')
             if self.used['decisions'] >= self.limits['decisions']:
                 raise ValueError('Decision budget exhausted')
             self.used['decisions'] += 1
-            self.requests[key] = self.event('decision_admitted', request_id=request_id)['id']
+            self.requests['decision-purpose:'+request_id] = purpose
+            self.requests[key] = self.event('decision_admitted', request_id=request_id, purpose=purpose)['id']
             return self.requests[key]
 
-    def execute(self, request_id, revision, subgoal, code, contract=None):
+    def execute(self, request_id, revision, subgoal, code, contract=None, task_ref=None):
+        if task_ref is None:
+            return self._admit_segment(request_id, revision, subgoal, code, contract)
+        if not isinstance(task_ref, dict) or set(task_ref) != {'state_id', 'task_node'}:
+            raise ValueError('Task reference requires state_id and task_node only')
+        payload = [revision, subgoal, code, contract, task_ref]
+        digest = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
+        with self.lock:
+            if request_id in self.requests:
+                previous = self.requests[request_id]
+                if previous.get('bound_program_digest') != digest:
+                    raise ValueError('Idempotency key conflicts with original bound program')
+                return previous['segment_id']
+            _, _, node, binding = self._bind_task(revision, **task_ref)
+            if node.get('skill_only'):
+                raise ValueError('This recovery node accepts its registered skill only')
+            sid = self._admit_segment(request_id, revision, subgoal or node['title'], code, contract, binding=binding)
+            self.requests[request_id]['bound_program_digest'] = digest
+            self._persist()
+            return sid
+
+    def _bind_task(self, revision, state_id, task_node):
+        if self.assistance:
+            raise AssistancePending('Task awaits user instruction')
+        if revision != self.revision:
+            raise StaleRevision('Stale goal or scene revision')
+        if not isinstance(state_id, str) or not isinstance(task_node, str):
+            raise ValueError('Task reference fields must be strings')
+        snapshot = self.observe()
+        system = snapshot['system']
+        try:
+            node = self.robot_system.bind(state_id, task_node, revision)
+            binding = TaskExecutive.admit(system, node)
+        except ValueError as exc:
+            raise DependenciesChanged(str(exc)) from exc
+        binding['requested_state_id'] = state_id
+        return snapshot, system, node, binding
+
+    def execute_skill(self, request_id, revision, state_id, task_node, skill):
+        name, args = self.validate_skill(skill)
+        skill = dict(name=name, arguments=args)
+        payload = dict(revision=revision, state_id=state_id, task_node=task_node, skill=skill)
+        digest = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
+        with self.lock:
+            if request_id in self.requests:
+                previous = self.requests[request_id]
+                if previous.get('skill_digest') != digest:
+                    raise ValueError('Idempotency key conflicts with original skill request')
+                return previous['segment_id']
+            snapshot, system, node, binding = self._bind_task(revision, state_id, task_node)
+            if name not in node['skills'] or name not in {s['name'] for s in system['skills']}:
+                raise ValueError('Skill is not registered for this task node')
+            if any(args[key] != node['arguments'].get(key) for key in args):
+                raise ValueError('Skill arguments must match the current task goal node')
+            code, contract = self.compile_skill(skill, system, snapshot)
+            sid = self._admit_segment(request_id, revision, node['title'], code, contract, skill, binding)
+            self.requests[request_id]['skill_digest'] = digest
+            self._persist()
+            return sid
+
+    def _admit_segment(self, request_id, revision, subgoal, code, contract=None, skill=None, binding=None):
         if contract is not None:
             if not isinstance(contract, dict) or set(contract) - {'preconditions', 'postcondition'}:
                 raise ValueError('Contract supports preconditions and postcondition only')
             preconditions = contract.get('preconditions', [])
             if not isinstance(preconditions, list) or len(preconditions) > 4:
                 raise ValueError('At most four public preconditions are supported')
-            contract = dict(preconditions=[validate_goal(g) for g in preconditions],
-                            **({'postcondition': validate_goal(contract['postcondition'])} if 'postcondition' in contract else {}))
-        digest = hashlib.sha256(json.dumps([revision, subgoal, code, contract], sort_keys=True).encode()).hexdigest()
+            contract = dict(preconditions=[self.validate_goal(g) for g in preconditions],
+                            **({'postcondition': self.validate_goal(contract['postcondition'])} if 'postcondition' in contract else {}))
+        digest = hashlib.sha256(json.dumps([revision, subgoal, code, contract, skill, binding], sort_keys=True).encode()).hexdigest()
         with self.lock:
             if request_id in self.requests:
                 existing = self.requests[request_id]
@@ -335,7 +461,9 @@ class Episode:
                 raise StaleRevision('Stale goal or scene revision')
             if self.status != 'ready' or self.active:
                 raise ValueError('Busy or unavailable episode')
-            if self.runtime_alert is not None and not self.runtime_alert['hold_confirmed']:
+            if self.assistance:
+                raise AssistancePending('Task awaits user instruction')
+            if self.hold_ack < self.hold_serial or (self.runtime_alert is not None and not self.runtime_alert['hold_confirmed']):
                 raise HoldPending('Wait for owner-confirmed protective hold')
             if not isinstance(code, str) or len(code) > 12000:
                 raise ValueError('Invalid code')
@@ -343,6 +471,10 @@ class Episode:
             segment = dict(id=segment_id, revision=revision, subgoal=subgoal, code=code,
                            contract=contract, precondition_results=[], api_attempts=[],
                            execution='running', effect='unknown', cancel_requested=False)
+            if skill is not None:
+                segment['skill'] = copy.deepcopy(skill)
+            if binding is not None:
+                segment['task_binding'] = copy.deepcopy(binding)
             self.segments[segment_id] = segment
             self.active = segment_id
             self.requests[request_id] = dict(digest=digest, segment_id=segment_id)
@@ -391,6 +523,12 @@ class Episode:
             return call
         try:
             self.checkpoint(segment)
+            if segment.get('task_binding'):
+                system = self.observe()['system']
+                required = segment['task_binding']['requirements']
+                if not system['world']['fresh'] or any(
+                        system['world']['facts'][item['fact']]['status'] != item['expected'] for item in required):
+                    raise EffectError(dict(status='unknown', reason='Task dependencies changed before execution'), phase='precondition')
             for goal in (segment.get('contract') or {}).get('preconditions', []):
                 result = self.verify(goal)
                 segment['precondition_results'].append(dict(condition=goal, **result))
@@ -400,7 +538,16 @@ class Episode:
                     raise EffectError(result, phase='precondition')
             registered = self._cancellable_worker(segment, lambda: self.backend.tools(segment))
             tools = {name: invoke(name, fn) for name, fn in registered.items()}
-            Interpreter(tools, lambda: self.checkpoint(segment)).run(segment['code'])
+            interpreter = Interpreter(tools, lambda: self.checkpoint(segment))
+            tree = interpreter.validate(segment['code'])
+            with self.lock:
+                self.checkpoint(segment)
+                resources = assess_calls(program_calls(tree, tools, final_placement=bool(self.goal.get('on'))), self.limits['calls']-self.used['calls'])
+                segment['resources'] = resources
+                self.event('program_resources_checked', segment_id=segment['id'], resources=resources)
+                if resources['status'] == 'insufficient':
+                    raise StageBudgetError(resources)
+            interpreter.block(tree.body)
             self.checkpoint(segment)
             segment['execution'] = 'completed'
         except Halt as exc:
@@ -446,7 +593,43 @@ class Episode:
                         segment['feedback'] = feedback(EffectError(result, 'postcondition'), observation=self.observe())
                 else:
                     segment['stage_verification'] = dict(status='unknown', reason='Segment did not complete' if condition else 'No public postcondition declared')
+                system = self.observe()['system']
+                if segment.get('task_binding'):
+                    conditions = segment['task_binding']['postconditions']
+                    checked = [dict(condition=item, fact=system['world']['facts'][item['fact']]) for item in conditions]
+                    known_wrong = any(row['fact']['status'] not in {'unknown', row['condition']['expected']} for row in checked)
+                    all_match = all(row['fact']['status'] == row['condition']['expected'] for row in checked)
+                    result = ('unknown' if segment['execution'] != 'completed' or unavailable or not checked else
+                              'failed' if known_wrong else 'verified' if all_match else 'unknown')
+                    segment['node_verification'] = dict(status=result, conditions=checked,
+                        reason='Runtime_task_node_postconditions' if result != 'unknown' else 'node_effect_not_established')
+                    self.event('task_node_checked', segment_id=segment['id'], node_id=segment['task_binding']['node_id'],
+                               result=segment['node_verification'])
+                    if result != 'verified' and segment['execution'] == 'completed' and not segment.get('feedback'):
+                        segment['feedback'] = feedback(EffectError(dict(status=result,
+                            reason='Runtime task node postconditions not established', evidence=checked), 'postcondition'),
+                            observation=self.observe())
+                if segment.get('skill'):
+                    spec = self.skill_definition(segment['skill']['name'])
+                    facts = system['world']['facts']
+                    checked = {key.format(**segment['skill']['arguments']): facts[key.format(**segment['skill']['arguments'])]
+                               for key in spec['ensures']}
+                    statuses = [item['status'] for item in checked.values()]
+                    effect = ('unknown' if segment['execution'] != 'completed' or unavailable else
+                              'failed' if 'failed' in statuses else
+                              'verified' if all(item == 'verified' for item in statuses) else 'unknown')
+                    segment['skill_verification'] = dict(status=effect, facts=checked,
+                        reason='registered_skill_public_postconditions' if effect != 'unknown' else 'skill_not_completed_or_evidence_insufficient')
+                    self.event('skill_postcondition_checked', segment_id=segment['id'], result=segment['skill_verification'])
+                if segment.get('task_binding'):
+                    segment['task_outcome'] = TaskExecutive.outcome(segment)
+                    self.event('task_attempt_finished', segment_id=segment['id'],
+                               node_id=segment['task_binding']['node_id'], outcome=segment['task_outcome'])
                 self.active = None
+                self._publish_scene_change()
+                segment['result_revision'] = self.revision
+                segment['result_evidence_ref'] = self.snapshot.get('evidence_ref')
+                self.observe()
                 self.event('segment_finished', segment=segment)
 
     def _cancellable_worker(self, segment, function):
@@ -504,10 +687,53 @@ class Episode:
                 self.cv.wait(min(.05, remaining))
 
     def cancel(self, wait=True, segment_id=None):
+        # In-flight HTTP commands must be stale before waiting for owner hold.
+        # Internal finalization uses _hold directly and preserves the revision.
+        with self.lock:
+            if self.status != 'closed' and (segment_id is None or segment_id == self.active):
+                self.revision += 1
+                if self.snapshot:self.snapshot['revision'] = self.revision
+                self.event('dispatch_fenced', revision=self.revision, reason='cancel_requested')
         return self._hold(wait, segment_id, cancel_execution=True)
 
-    def _hold(self, wait=True, segment_id=None, cancel_execution=True):
+    def request_assistance(self, request_id, revision, origin, reason):
+        if (not isinstance(request_id, str) or not 1 <= len(request_id) <= 128
+                or origin not in {'model', 'recovery_guard', 'executive'}
+                or not isinstance(reason, str) or not 1 <= len(reason) <= 2000):
+            raise ValueError('Assistance requires a bounded request id, origin and reason')
+        digest = hashlib.sha256(json.dumps([revision, origin, reason]).encode()).hexdigest()
+        key = 'assistance:'+request_id
+        with self.lock:
+            if key in self.requests:
+                if self.requests[key]['digest'] != digest:
+                    raise ValueError('Idempotency key conflicts with assistance request')
+                return self.state()
+            if revision != self.revision:
+                raise StaleRevision('Stale assistance goal')
+            if self.status != 'ready':
+                raise ValueError('Episode unavailable')
+            if self.assistance:
+                raise AssistancePending('Task already awaits user instruction')
+            pending = dict(request_id=request_id, revision=revision, goal_version=self.robot_system.goal_version,
+                           origin=origin, reason=reason, status='holding', hold_confirmed=False)
+            self.assistance = pending
+            self.requests[key] = dict(digest=digest)
+            self.event('task_assistance_requested', assistance=pending)
+        try:
+            result = self._hold(wait=True, expected_revision=revision)
+        except StaleRevision:
+            return self.state()  # A late assistance request cannot stop a newer goal.
+        with self.lock:
+            if self.assistance is pending and revision == self.revision:
+                pending.update(status='awaiting_user' if result['stopped'] else 'holding', hold_confirmed=result['stopped'])
+                self.observe()
+                self.event('task_assistance_ready', assistance=pending)
+            return self.state()
+
+    def _hold(self, wait=True, segment_id=None, cancel_execution=True, expected_revision=None):
         with self.cv:
+            if expected_revision is not None and expected_revision != self.revision:
+                raise StaleRevision('Assistance hold superseded by a new goal')
             if self.status == 'closed':
                 return dict(stopped=self.hold_serial > 0 and self.hold_ack >= self.hold_serial,
                             hold_serial=self.hold_ack)
@@ -529,7 +755,7 @@ class Episode:
             return dict(stopped=confirmed, hold_serial=serial)
 
     def update_goal(self, goal):
-        goal = validate_goal(goal)
+        goal = self.validate_goal(goal)
         with self.lock:
             if self.status not in {'ready', 'initializing'}:
                 raise ValueError('Episode unavailable; cannot change a terminal goal')
@@ -538,18 +764,27 @@ class Episode:
             if self.status != 'ready':
                 raise ValueError('Episode unavailable; cannot change a terminal goal')
             self.goal = goal
-            self.revision += 1
+            self.assistance = None
+            # cancel() already fenced old requests before the physical hold.
+            self.robot_system.change_goal()
             self.event('goal_changed', revision=self.revision, goal=goal)
             return self.state()
 
     def verify(self, goal=None):
         with self.lock:
-            if self.runtime_alert is not None and not self.runtime_alert['hold_confirmed']:
+            if self.hold_ack < self.hold_serial or (self.runtime_alert is not None and not self.runtime_alert['hold_confirmed']):
                 return dict(status='unknown', reason='Protective hold not confirmed')
             if not self.snapshot or time.time() - self.snapshot['captured_at'] > 1:
                 return dict(status='unknown', reason='Missing or stale observation')
             try:
-                result = plain(self.backend.verify(self.goal if goal is None else goal, copy.deepcopy(self.snapshot)))
+                if goal is None or goal == self.goal:
+                    result = copy.deepcopy(self.observe()['system']['world']['facts']['goal']['result'])
+                else:
+                    result = plain(self.backend.verify(goal, copy.deepcopy(self.snapshot)))
+                    alert = self.runtime_alert
+                    if (goal.get('holding') and alert and alert.get('code') == 'PUBLIC_HOLDING_LOSS'
+                            and goal['holding'] == (alert.get('evidence') or {}).get('object_name')):
+                        result = dict(status='failed', reason='public_holding_monitor_contradiction')
                 if result.get('status') not in {'verified', 'failed', 'unknown'}:
                     raise ValueError('Invalid verifier result')
             except Exception as exc:
@@ -603,6 +838,15 @@ class Manager:
             data = json.loads(file.read_text(encoding='utf-8'))
             if data['status'] != 'closed':
                 data['status'] = 'interrupted'
+                data['active_segment'] = None
+                if data.get('system'):
+                    system_class = RobotSystem
+                    if data.get('task') == 'tabletop':
+                        from .tabletop_system import TabletopSystem
+                        system_class = TabletopSystem
+                    system = system_class(data['id'])
+                    system.latest = data['system']
+                    data['system'] = system.view(data['revision'], 'interrupted')
                 for segment in data['segments'].values():
                     if segment['execution'] == 'running':
                         segment['execution'] = 'cancelled'
@@ -612,11 +856,22 @@ class Manager:
         if index.exists():
             self.keys = json.loads(index.read_text())
 
-    def create(self, request_id, task, seed, goal, limits=None):
+    def create(self, request_id, task=None, seed=0, goal=None, limits=None, scene=None, policy=None):
         with self.lock:
             if not isinstance(request_id, str) or not 1 <= len(request_id) <= 128:
                 raise ValueError('request_id must be a 1..128 character string')
+            if scene is not None:
+                from .tabletop_scene import SCENES
+                if scene not in SCENES or task not in {None, "tabletop"}:
+                    raise ValueError("Unsupported or conflicting tabletop scene")
+                task = "tabletop"
+            if task == "tabletop" and scene is None:
+                scene = "tabletop_v1"
             payload = dict(task=task, seed=seed, goal=goal, limits=limits)
+            if scene is not None: payload["scene"] = scene
+            if policy is not None:
+                if task != 'tabletop' or policy not in {'system','direct_cap'}:raise ValueError('Unsupported execution policy')
+                payload['policy'] = policy
             if request_id in self.keys:
                 prior = self.keys[request_id]
                 if prior['payload'] != payload:
@@ -633,7 +888,11 @@ class Manager:
                 return prior
             if any(e.status not in {'closed', 'failed'} for e in self.episodes.values()):
                 raise ValueError('Close current episode first')
-            episode = Episode(self.root, task, seed, goal, self.factory, limits,
+            episode_class = Episode
+            if task == "tabletop":
+                from .tabletop_episode import TabletopEpisode
+                episode_class = TabletopEpisode
+            episode = episode_class(self.root, task, seed, goal, self.factory, limits,
                               episode_id=episode_id, creation=dict(request_id=request_id, payload=payload))
             self.episodes[episode.id] = episode
             self.keys[request_id] = dict(id=episode.id, payload=payload)

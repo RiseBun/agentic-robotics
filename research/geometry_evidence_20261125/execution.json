@@ -1,0 +1,104 @@
+[
+  {
+    "task": "reverse",
+    "seed": 201,
+    "perception": "single_view",
+    "index": 0,
+    "exit_code": 0,
+    "folder": "/home/li/projects/agentic-robotics/research/geometry_evidence_20261125/00-reverse-201-single_view",
+    "status": "completed",
+    "used": {
+      "decisions": 14,
+      "calls": 44,
+      "motion_steps": 889,
+      "idle_steps": 2180,
+      "wall_seconds": 157.6606601170497
+    },
+    "task_wall_seconds": 160.106
+  },
+  {
+    "task": "reverse",
+    "seed": 201,
+    "perception": "multiview",
+    "index": 1,
+    "exit_code": 0,
+    "folder": "/home/li/projects/agentic-robotics/research/geometry_evidence_20261125/01-reverse-201-multiview",
+    "status": "completed",
+    "used": {
+      "decisions": 11,
+      "calls": 33,
+      "motion_steps": 676,
+      "idle_steps": 1746,
+      "wall_seconds": 124.66596727195429
+    },
+    "task_wall_seconds": 128.306
+  },
+  {
+    "task": "reverse",
+    "seed": 202,
+    "perception": "multiview",
+    "index": 2,
+    "exit_code": 0,
+    "folder": "/home/li/projects/agentic-robotics/research/geometry_evidence_20261125/02-reverse-202-multiview",
+    "status": "completed",
+    "used": {
+      "decisions": 20,
+      "calls": 54,
+      "motion_steps": 1064,
+      "idle_steps": 3343,
+      "wall_seconds": 227.15463191195158
+    },
+    "task_wall_seconds": 229.819
+  },
+  {
+    "task": "reverse",
+    "seed": 202,
+    "perception": "single_view",
+    "index": 3,
+    "exit_code": 0,
+    "folder": "/home/li/projects/agentic-robotics/research/geometry_evidence_20261125/03-reverse-202-single_view",
+    "status": "completed",
+    "used": {
+      "decisions": 18,
+      "calls": 47,
+      "motion_steps": 914,
+      "idle_steps": 2771,
+      "wall_seconds": 190.3314932680223
+    },
+    "task_wall_seconds": 192.759
+  },
+  {
+    "task": "support",
+    "seed": 201,
+    "perception": "multiview",
+    "index": 4,
+    "exit_code": 0,
+    "folder": "/home/li/projects/agentic-robotics/research/geometry_evidence_20261125/04-support-201-multiview",
+    "status": "completed",
+    "used": {
+      "decisions": 8,
+      "calls": 17,
+      "motion_steps": 372,
+      "idle_steps": 1048,
+      "wall_seconds": 74.20335389097454
+    },
+    "task_wall_seconds": 76.543
+  },
+  {
+    "task": "multiple",
+    "seed": 202,
+    "perception": "multiview",
+    "index": 5,
+    "exit_code": 0,
+    "folder": "/home/li/projects/agentic-robotics/research/geometry_evidence_20261125/05-multiple-202-multiview",
+    "status": "completed",
+    "used": {
+      "decisions": 13,
+      "calls": 44,
+      "motion_steps": 987,
+      "idle_steps": 2115,
+      "wall_seconds": 159.30835174396634
+    },
+    "task_wall_seconds": 162.127
+  }
+]

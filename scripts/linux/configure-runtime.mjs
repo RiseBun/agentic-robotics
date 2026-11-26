@@ -1,0 +1,10 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { localCrypto } from '../../runtime/robot/local-crypto.mjs';
+import { createSecretStore } from '../../runtime/secret-store.mjs';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
+const data = process.argv[2];
+globalThis.embuddiesCrypto = await localCrypto(data);
+await createSecretStore(path.join(root,'runtime'), data).set('robot-runtime', (await fs.readFile(path.join(data,'runtime-token.txt'),'utf8')).trim());
+console.log('Runtime credential stored in native host encryption');

@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-26",
+  "scope": "Thor source publication; no Windows project changes",
+  "checks": {
+    "python": {
+      "passed": 388,
+      "evidence": "research/geometry_evidence_20261125/python-all.log (Thor only)",
+      "rerun_for_push": false,
+      "note": "Same executable source; only publication documentation and ignore rules changed after this test"
+    },
+    "node": {
+      "passed": 130,
+      "rerun_for_push": true
+    },
+    "frontend": {
+      "passed": 10,
+      "rerun_for_push": true
+    },
+    "frontend_build": {
+      "passed": true,
+      "rerun_for_push": true
+    },
+    "git_diff_check": {
+      "passed": true
+    },
+    "staged_secret_pattern_scan": {
+      "findings": 0,
+      "scope": "167 staged files before adding this report; pattern check is not a complete secret audit"
+    }
+  },
+  "formal_evaluation": {
+    "runs": 54,
+    "public_verified_by_group": [
+      16,
+      16,
+      16
+    ],
+    "group_size": 18,
+    "physical_verified_by_group": [
+      17,
+      18,
+      17
+    ],
+    "false_completion": 0,
+    "experience_benefit_demonstrated": false
+  },
+  "multiview_development": {
+    "runs": 6,
+    "physical_verified": 6,
+    "public_verified": 6,
+    "false_completion": 0,
+    "baseline_also_passed": true,
+    "benefit_demonstrated": false
+  },
+  "defaults": {
+    "multiview": "off",
+    "experience": "off",
+    "generic_mode": "experimental"
+  },
+  "excluded": "Raw images, workbench state, credentials, local model configuration, weights, external dependency directories and source backups remain on Thor",
+  "deployment": "Publication does not restart services or switch experimental defaults"
+}

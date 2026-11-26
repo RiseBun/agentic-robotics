@@ -4,7 +4,7 @@ import time
 import unittest
 from types import SimpleNamespace
 import numpy as np
-from agentic_cap.public_views import read_camera_packet, choose_support_view, fuse_public_surface, camera_snapshot
+from agentic_cap.public_views import read_camera_packet, choose_support_view, fuse_public_surface, camera_snapshot, validate_secondary_camera
 from agentic_cap.public_sensors import COORDINATE_CONVENTION
 from agentic_cap.active_evidence import support_evidence, _single_support_evidence
 
@@ -25,6 +25,13 @@ class PublicViewTests(unittest.TestCase):
             robots=[SimpleNamespace(_ref_gripper_joint_pos_indexes={'right': [0,1]})])
         return SimpleNamespace(low=low, encoder=[0.]*7,
             episode=SimpleNamespace(thread=SimpleNamespace(ident=threading.get_ident())))
+
+    def test_secondary_configuration_uses_only_existing_distinct_public_sensors(self):
+        for name in ['', 'agentview', 'frontview', 'robot0_eye_in_hand']:
+            self.assertEqual(validate_secondary_camera(name), name)
+        for name in ['robot0_robotview', '../../truth', 'free_camera', 'frontview,agentview', None]:
+            with self.subTest(name=name), self.assertRaises(ValueError):
+                validate_secondary_camera(name)
 
     def test_public_reader_allowlist_calibration_and_restoration(self):
         backend = self.backend()
@@ -73,6 +80,20 @@ class SupportViewSelectionTests(unittest.TestCase):
         self.assertEqual(evidence['primary_evidence']['status'], 'unknown')
         self.assertEqual(evidence['evidence_ref'], 'view-agentview-000120.npz')
         self.assertEqual(bundle['objects']['green cube']['status'], 'unknown')
+
+    def test_each_registered_secondary_uses_the_same_visibility_and_coherence_gates(self):
+        for name in ['agentview', 'frontview', 'robot0_eye_in_hand']:
+            with self.subTest(name=name):
+                bundle=self.bundle(); view=bundle['camera_views'].pop('agentview')
+                view.update(camera_name=name, evidence_ref=f'view-{name}-000120.npz', image_ref=f'view-{name}-000120.png')
+                bundle['camera_views'][name]=view
+                evidence=self.choose(bundle)
+                self.assertEqual((evidence['status'], evidence['camera_name']), ('available',name))
+                view['objects']['green cube']['surface_span_xyz']=[.001,.04,.04]
+                self.assertEqual(self.choose(bundle)['status'], 'unknown')
+                view['objects']['green cube']['surface_span_xyz']=[.04,.04,.04]
+                view['control_step']=119
+                self.assertEqual(self.choose(bundle)['status'], 'unknown')
 
     def test_all_unknown_and_truncated_views_remain_unknown_with_same_threshold(self):
         bundle = self.bundle()

@@ -4,7 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 export const CONTRACT_FILES = ['active_evidence.py', 'cap_backend.py', 'cartesian_motion.py', 'core.py', 'feedback.py', 'holding.py', 'holding_watchdog.py', 'interpreter.py', 'public_views.py',
-  'placement_evidence.py', 'public_sensors.py', 'safe_retreat.py'];
+  'placement_evidence.py', 'public_sensors.py', 'safe_retreat.py', 'robot_system.py', 'skills.py', 'task_recipes.py', 'placement_retry.py', 'program_resources.py', 'continuation_resources.py'];
 export const digest = value => crypto.createHash('sha256').update(typeof value === 'string' ? value : JSON.stringify(value)).digest('hex');
 export function recoveryContract(files) {
   const rows = CONTRACT_FILES.map(name => {
@@ -12,7 +12,7 @@ export function recoveryContract(files) {
     if (!entry || !/^[a-f0-9]{64}$/.test(entry.sha256)) throw new Error('Missing recovery contract source: '+name);
     return name+'\0'+entry.sha256+'\n';
   });
-  return digest('bounded-cube-recovery-v5\n'+rows.join(''));
+  return digest('bounded-cube-recovery-v10\n'+rows.join(''));
 }
 const names = ['red cube', 'green cube'];
 const sha = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);

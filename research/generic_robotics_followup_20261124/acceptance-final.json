@@ -1,0 +1,121 @@
+{
+  "updated_at": "2026-11-25T14:38:55.454004+08:00",
+  "stage": "evaluated_not_automatically_promoted",
+  "frozen_runs": 54,
+  "closed_runs": 54,
+  "unscored": 0,
+  "source_archive_unchanged": true,
+  "model_configuration_unchanged": true,
+  "library_unchanged": true,
+  "metrics": [
+    {
+      "condition": "direct_cap",
+      "n": 18,
+      "physical": 17,
+      "public": 16,
+      "false_completion": 0,
+      "mean_decisions": 6.555555555555555,
+      "mean_calls": 22.333333333333332,
+      "mean_motion_steps": 523.7777777777778,
+      "mean_wall": 91.40133333333333,
+      "mean_tokens": 120766.05555555556
+    },
+    {
+      "condition": "system_no_memory",
+      "n": 18,
+      "physical": 18,
+      "public": 16,
+      "false_completion": 0,
+      "mean_decisions": 8.444444444444445,
+      "mean_calls": 21.5,
+      "mean_motion_steps": 490,
+      "mean_wall": 94.69666666666667,
+      "mean_tokens": 166240.22222222222
+    },
+    {
+      "condition": "system_with_memory",
+      "n": 18,
+      "physical": 17,
+      "public": 16,
+      "false_completion": 0,
+      "mean_decisions": 9.055555555555555,
+      "mean_calls": 23.555555555555557,
+      "mean_motion_steps": 501.77777777777777,
+      "mean_wall": 100.57922222222223,
+      "mean_tokens": 183918.27777777778
+    }
+  ],
+  "paired": [
+    {
+      "comparison": "system_vs_direct",
+      "physical_wins": 1,
+      "physical_losses": 0,
+      "public_wins": 0,
+      "public_losses": 0
+    },
+    {
+      "comparison": "memory_vs_no_memory",
+      "physical_wins": 0,
+      "physical_losses": 1,
+      "public_wins": 0,
+      "public_losses": 0
+    }
+  ],
+  "publicly_rejected_but_physically_completed": [
+    {
+      "task": "reverse",
+      "seed": 701,
+      "condition": "direct_cap",
+      "status": "failed"
+    },
+    {
+      "task": "reverse",
+      "seed": 701,
+      "condition": "system_no_memory",
+      "status": "unknown"
+    },
+    {
+      "task": "reverse",
+      "seed": 701,
+      "condition": "system_with_memory",
+      "status": "failed"
+    },
+    {
+      "task": "reverse",
+      "seed": 703,
+      "condition": "system_no_memory",
+      "status": "unknown"
+    }
+  ],
+  "experience_exposure": [
+    {
+      "condition": "direct_cap",
+      "runs": 18,
+      "queries": 0,
+      "nonempty_queries": 0,
+      "tasks_with_suggestions": 0
+    },
+    {
+      "condition": "system_no_memory",
+      "runs": 18,
+      "queries": 0,
+      "nonempty_queries": 0,
+      "tasks_with_suggestions": 0
+    },
+    {
+      "condition": "system_with_memory",
+      "runs": 18,
+      "queries": 145,
+      "nonempty_queries": 5,
+      "tasks_with_suggestions": 3
+    }
+  ],
+  "tests": {
+    "python": 380,
+    "node": 130,
+    "frontend_previous": 10
+  },
+  "default_experience_enabled": false,
+  "production_restarted": false,
+  "conclusion": "No observed improvement in autonomous public success from dynamic graph or experience on this sample. No statistical significance claim."
+}

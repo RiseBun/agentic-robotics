@@ -1,0 +1,466 @@
+{
+  "scope": "Recorded retrieval exposure only; this does not prove causal adoption of a suggestion",
+  "summary": [
+    {
+      "condition": "direct_cap",
+      "runs": 18,
+      "queries": 0,
+      "nonempty_queries": 0,
+      "tasks_with_suggestions": 0
+    },
+    {
+      "condition": "system_no_memory",
+      "runs": 18,
+      "queries": 0,
+      "nonempty_queries": 0,
+      "tasks_with_suggestions": 0
+    },
+    {
+      "condition": "system_with_memory",
+      "runs": 18,
+      "queries": 145,
+      "nonempty_queries": 5,
+      "tasks_with_suggestions": 3
+    }
+  ],
+  "runs": [
+    {
+      "task": "hold",
+      "seed": 701,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "hold",
+      "seed": 701,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "hold",
+      "seed": 701,
+      "condition": "system_with_memory",
+      "queries": 4,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "hold",
+      "seed": 702,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "hold",
+      "seed": 702,
+      "condition": "system_with_memory",
+      "queries": 4,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "hold",
+      "seed": 702,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "hold",
+      "seed": 703,
+      "condition": "system_with_memory",
+      "queries": 4,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "hold",
+      "seed": 703,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "hold",
+      "seed": 703,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "support",
+      "seed": 701,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "support",
+      "seed": 701,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "support",
+      "seed": 701,
+      "condition": "system_with_memory",
+      "queries": 7,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "support",
+      "seed": 702,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "support",
+      "seed": 702,
+      "condition": "system_with_memory",
+      "queries": 7,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "support",
+      "seed": 702,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "support",
+      "seed": 703,
+      "condition": "system_with_memory",
+      "queries": 7,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "support",
+      "seed": 703,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "support",
+      "seed": 703,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "region",
+      "seed": 701,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "region",
+      "seed": 701,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "region",
+      "seed": 701,
+      "condition": "system_with_memory",
+      "queries": 7,
+      "nonempty_queries": 2,
+      "candidate_ids": [
+        "0fecc2568f21e6b8377995cbf01ca1941af9a756e624037882f45cd5b3c3eb69"
+      ]
+    },
+    {
+      "task": "region",
+      "seed": 702,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "region",
+      "seed": 702,
+      "condition": "system_with_memory",
+      "queries": 5,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "region",
+      "seed": 702,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "region",
+      "seed": 703,
+      "condition": "system_with_memory",
+      "queries": 5,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "region",
+      "seed": 703,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "region",
+      "seed": 703,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "unstack",
+      "seed": 701,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "unstack",
+      "seed": 701,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "unstack",
+      "seed": 701,
+      "condition": "system_with_memory",
+      "queries": 4,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "unstack",
+      "seed": 702,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "unstack",
+      "seed": 702,
+      "condition": "system_with_memory",
+      "queries": 5,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "unstack",
+      "seed": 702,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "unstack",
+      "seed": 703,
+      "condition": "system_with_memory",
+      "queries": 4,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "unstack",
+      "seed": 703,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "unstack",
+      "seed": 703,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "reverse",
+      "seed": 701,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "reverse",
+      "seed": 701,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "reverse",
+      "seed": 701,
+      "condition": "system_with_memory",
+      "queries": 23,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "reverse",
+      "seed": 702,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "reverse",
+      "seed": 702,
+      "condition": "system_with_memory",
+      "queries": 14,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "reverse",
+      "seed": 702,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "reverse",
+      "seed": 703,
+      "condition": "system_with_memory",
+      "queries": 18,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "reverse",
+      "seed": 703,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "reverse",
+      "seed": 703,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "multiple",
+      "seed": 701,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "multiple",
+      "seed": 701,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "multiple",
+      "seed": 701,
+      "condition": "system_with_memory",
+      "queries": 9,
+      "nonempty_queries": 1,
+      "candidate_ids": [
+        "0fecc2568f21e6b8377995cbf01ca1941af9a756e624037882f45cd5b3c3eb69"
+      ]
+    },
+    {
+      "task": "multiple",
+      "seed": 702,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "multiple",
+      "seed": 702,
+      "condition": "system_with_memory",
+      "queries": 8,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "multiple",
+      "seed": 702,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "multiple",
+      "seed": 703,
+      "condition": "system_with_memory",
+      "queries": 10,
+      "nonempty_queries": 2,
+      "candidate_ids": [
+        "0fecc2568f21e6b8377995cbf01ca1941af9a756e624037882f45cd5b3c3eb69"
+      ]
+    },
+    {
+      "task": "multiple",
+      "seed": 703,
+      "condition": "direct_cap",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    },
+    {
+      "task": "multiple",
+      "seed": 703,
+      "condition": "system_no_memory",
+      "queries": 0,
+      "nonempty_queries": 0,
+      "candidate_ids": []
+    }
+  ]
+}
