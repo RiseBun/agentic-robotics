@@ -153,8 +153,18 @@ class LifecycleTests(unittest.TestCase):
         calls=self.e.used['calls'];time.sleep(.15)
         self.assertEqual(calls,self.e.used['calls']);self.assertEqual(self.e.segments[sid]['execution'],'cancelled')
     def test_model_wait_does_not_pause_owner(self):
-        before=self.e.observe()['simulation_time'];start=time.monotonic();time.sleep(.2)
-        after=self.e.observe()['simulation_time'];self.assertGreater(after-before,.12)
+        before=self.e.observe();idle_before=self.e.used['idle_steps']
+        # Capture is throttled to 0.2s: sleeping exactly one capture interval
+        # can legitimately return the previous published frame on a busy host.
+        # This protocol gate checks bounded progress without model/API actions;
+        # the separate physical delay probe measures real-time factor.
+        until(lambda:self.e.observe()['simulation_time']-before['simulation_time']>.12)
+        after=self.e.observe()
+        self.assertGreater(after['captured_at'],before['captured_at'])
+        self.assertGreater(after['simulation_time']-before['simulation_time'],.12)
+        self.assertGreater(self.e.used['idle_steps'],idle_before)
+        self.assertEqual(self.e.used['calls'],0)
+        self.assertEqual(self.e.used['motion_steps'],0)
     def test_direct_cap_has_no_model_task_graph_and_cannot_use_foreign_operation(self):
         self.e.close()
         s=self.manager.create('direct',scene='tabletop_v1',seed=201,goal=goal(holding()),policy='direct_cap')
