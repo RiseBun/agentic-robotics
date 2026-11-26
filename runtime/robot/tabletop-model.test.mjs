@@ -36,6 +36,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 const capRuntime=fileURLToPath(new URL('../../cap-runtime/',import.meta.url));
 import {spawn} from 'node:child_process';
+import {once} from 'node:events';
 import {setTimeout as delay} from 'node:timers/promises';
 import {RuntimeClient} from './runtime-client.mjs';
 test('single S2 loop submits dynamic plan over HTTP and completes fixture without a task recipe',async()=>{
@@ -48,12 +49,13 @@ import sys,json
 s=serve(Manager(sys.argv[1],TabletopFixtureBackend),'127.0.0.1',0,sys.argv[2])
 print(json.dumps({'port':s.server_address[1]}),flush=True)
 s.serve_forever()`;
-  const child=spawn(process.env.ROBOT_TEST_PYTHON||'python',['-u','-c',program,path.join(folder,'runtime'),token],{cwd:capRuntime,env:{...process.env,PYTHONPATH:capRuntime},stdio:['ignore','pipe','pipe']});
+  const child=spawn(process.env.ROBOT_TEST_PYTHON||'python',['-u','-c',program,path.join(folder,'runtime'),token],{cwd:capRuntime,windowsHide:true,env:{...process.env,PYTHONPATH:capRuntime},stdio:['ignore','pipe','pipe']});
+  let failure;child.on('error',error=>failure=error);
   let output='',errors='';child.stdout.on('data',b=>output+=b);child.stderr.on('data',b=>errors+=b);
   let c; let rejected=0;
   try {
-    for(let i=0;i<100&&!output.includes('\n');i++){if(child.exitCode!==null)throw new Error(errors);await delay(30);}
-    assert.ok(output.includes('\n'),errors);
+    for(let i=0;i<150&&!output.includes('\n');i++){if(failure||child.exitCode!==null)throw failure||new Error(errors);await delay(100);}
+    assert.ok(output.includes('\n'),'Python fixture did not become ready within 15 seconds: '+errors);
     const client=new RuntimeClient('http://127.0.0.1:'+JSON.parse(output.split('\n')[0]).port,token);
     c=new RobotCoordinator({root:path.join(folder,'workbench'),client,configuration:async()=>({active:{}}),model:async(_channel,ctx)=>{
       const b={message:'test decision',remaining_steps:[]};
@@ -82,7 +84,7 @@ s.serve_forever()`;
     await assert.rejects(client.request(`/episodes/${paused.id}/skills`,{request_id:'foreign-after-assistance',revision:paused.revision,
       state_id:observed.system.state_id,task_node:observed.system.task.nodes[0].id,
       skill:{name:'acquire_object',arguments:{object:'block_a'}}}),{code:'AWAITING_USER'});
-  } finally {if(c?.state.episode)await c.close().catch(()=>{});c?.eventsAbort?.abort();child.kill();await delay(50);await fs.rm(folder,{recursive:true,force:true});}
+  } finally {if(c?.state.episode)await c.close().catch(()=>{});c?.eventsAbort?.abort();await c?.eventsPromise;await c?.recordQueue;if(child.exitCode===null&&child.signalCode===null){const closed=once(child,'close');child.kill();await closed;}await fs.rm(folder,{recursive:true,force:true});}
 });
 
 test('interpretation requires a root final goal and a text subgoal',()=>{

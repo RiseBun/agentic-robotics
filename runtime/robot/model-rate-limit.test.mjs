@@ -6,6 +6,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 const capRuntime=fileURLToPath(new URL('../../cap-runtime/',import.meta.url));
 import {spawn} from 'node:child_process';
+import {once} from 'node:events';
 import {setTimeout as delay} from 'node:timers/promises';
 import {modelHTTPError} from './model.mjs';
 import {RobotCoordinator} from './coordinator.mjs';
@@ -21,14 +22,15 @@ import sys,json
 s=serve(Manager(sys.argv[1],TabletopFixtureBackend),'127.0.0.1',0,sys.argv[2])
 print(json.dumps({'port':s.server_address[1]}),flush=True)
 s.serve_forever()`;
- const child=spawn(process.env.ROBOT_TEST_PYTHON||'python',['-u','-c',code,path.join(dir,'runtime'),token],{cwd:capRuntime,env:{...process.env,PYTHONPATH:capRuntime},stdio:['ignore','pipe','pipe']});
+ const child=spawn(process.env.ROBOT_TEST_PYTHON||'python',['-u','-c',code,path.join(dir,'runtime'),token],{cwd:capRuntime,windowsHide:true,env:{...process.env,PYTHONPATH:capRuntime},stdio:['ignore','pipe','pipe']});
+ let failure;child.on('error',error=>failure=error);
  let output='',errors='',c;child.stdout.on('data',b=>output+=b);child.stderr.on('data',b=>errors+=b);
  try{
-  for(let i=0;i<120&&!output.includes('\n');i++){if(child.exitCode!==null)throw new Error(errors);await delay(20);}
-  assert.ok(output.includes('\n'),errors);
+  for(let i=0;i<150&&!output.includes('\n');i++){if(failure||child.exitCode!==null)throw failure||new Error(errors);await delay(100);}
+  assert.ok(output.includes('\n'),'Python fixture did not become ready within 15 seconds: '+errors);
   const client=new RuntimeClient('http://127.0.0.1:'+JSON.parse(output.split('\n')[0]).port,token);
   await run({dir,client,set:value=>c=value});
- }finally{if(c?.state.episode)await c.close().catch(()=>{});c?.eventsAbort?.abort();child.kill();await delay(30);await fs.rm(dir,{recursive:true,force:true});}
+ }finally{if(c?.state.episode)await c.close().catch(()=>{});c?.eventsAbort?.abort();await c?.eventsPromise;await c?.recordQueue;if(child.exitCode===null&&child.signalCode===null){const closed=once(child,'close');child.kill();await closed;}await fs.rm(dir,{recursive:true,force:true});}
 }
 
 test('HTTP 429 honors numeric/date Retry-After while other errors are not retried',()=>{
