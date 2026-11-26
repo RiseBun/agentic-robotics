@@ -33,6 +33,8 @@ test('mode budgets remain cumulative and preserve legacy defaults',()=>{
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const capRuntime=fileURLToPath(new URL('../../cap-runtime/',import.meta.url));
 import {spawn} from 'node:child_process';
 import {setTimeout as delay} from 'node:timers/promises';
 import {RuntimeClient} from './runtime-client.mjs';
@@ -46,7 +48,7 @@ import sys,json
 s=serve(Manager(sys.argv[1],TabletopFixtureBackend),'127.0.0.1',0,sys.argv[2])
 print(json.dumps({'port':s.server_address[1]}),flush=True)
 s.serve_forever()`;
-  const child=spawn(process.env.ROBOT_TEST_PYTHON||'python',['-u','-c',program,path.join(folder,'runtime'),token],{cwd:path.resolve('cap-runtime'),env:{...process.env,PYTHONPATH:path.resolve('cap-runtime')},stdio:['ignore','pipe','pipe']});
+  const child=spawn(process.env.ROBOT_TEST_PYTHON||'python',['-u','-c',program,path.join(folder,'runtime'),token],{cwd:capRuntime,env:{...process.env,PYTHONPATH:capRuntime},stdio:['ignore','pipe','pipe']});
   let output='',errors='';child.stdout.on('data',b=>output+=b);child.stderr.on('data',b=>errors+=b);
   let c; let rejected=0;
   try {
